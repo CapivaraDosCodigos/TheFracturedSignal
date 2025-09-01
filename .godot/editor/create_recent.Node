@@ -1,0 +1,14 @@
+MarginContainer
+Control
+HBoxContainer
+VBoxContainer
+BoxContainer
+HFlowContainer
+ItemList
+HSplitContainer
+ObjectPlayer
+AnimatedSprite2D
+Sprite2D
+Marker2D
+Node2D
+TextureRect

@@ -1,0 +1,34 @@
+res://Godot/classes/Inimigos/bebedouro .tres
+res://shader/black and white.gdshader
+res://shader/PSX-Camera.gdshader
+res://shader/PSX.gdshader
+res://shader/ScreenNoise.gdshader
+res://shader/shadow.gdshader
+res://shader/SkyShader.gdshader
+res://shader/test.gdshader
+res://shader/VHS.gdshader
+res://shader/zeno.gdshader
+res://Godot/Godot Cenas/manager.tscn
+res://addons/dialogue_manager/dialogue_manager.gd
+res://shader/palette_limiterONE.gdshader
+res://texture/folder tres/texturas/fenda_texture.tres
+res://texture/folder tres/materials/tile3.tres
+res://Godot/classes/itens/armaduras/óculos_simples.tres
+res://Godot/classes/itens/consumíveis/sandwich.tres
+res://Godot/classes/itens/armaduras/sem_armadura.tres
+res://Godot/classes/itens/armas/Signal_Weapon.tres
+res://texture/folder tres/materials/fenda.tres
+res://texture/folder tres/EP1.tres
+res://shader/paletasWOW.gdshader
+res://Godot/classes/itens/começo.tres
+res://Godot/classes/personagens/zeno.tres
+res://shader/paletteWOWOWOW.gdshader
+res://Godot/Godot Scripts/intro.gd
+res://addons/post_processing/shaders/palette_limiter.gdshader
+res://texture/folder tres/materials/BATALHA.tres
+res://texture/folder tres/zeko.tres
+res://texture/folder tres/example_balloonLINE.tres
+res://Characters/Players/cenas/zeno.tscn
+res://Characters/Players/cenas/BATALHA.tscn
+res://Areais/EP 1/começo.tscn
+res://Characters/Players/cenas/ambição.tscn
