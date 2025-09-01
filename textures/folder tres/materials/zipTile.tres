@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://k4w23p5s4wpn"]
+
+[ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="1_15etb"]
+[ext_resource type="Texture2D" uid="uid://co6qn46s58rns" path="res://textures/paleta/P2.png" id="2_338ob"]
+
+[resource]
+shader = ExtResource("1_15etb")
+shader_parameter/palette = ExtResource("2_338ob")
+shader_parameter/palette_width = 22
+shader_parameter/palette_height = 1
+shader_parameter/color_match_strength = 1.0

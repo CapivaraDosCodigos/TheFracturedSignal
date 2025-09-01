@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://qnawrw7fje8y"]
+
+[ext_resource type="Texture2D" uid="uid://csy3v52ygrgam" path="res://textures/characters/inimigos/Arcade.png" id="1_2qwv1"]
+
+[sub_resource type="GDScript" id="GDScript_jeaxr"]
+resource_name = "teste "
+script/source = "extends CharacterBody2D
+@export var player: CharacterBody2D
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Zeno\"):
+		call_deferred(\"_trocar_para_batalha\")
+					
+func _trocar_para_batalha() -> void:
+	Manager.tocar_musica_manager(\"res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3\", 100, false)
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file(\"res://Player/BATALHA.tscn\")
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0uxj"]
+atlas = ExtResource("1_2qwv1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nibqj"]
+atlas = ExtResource("1_2qwv1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ork62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0uxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0uxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nibqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nibqj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]
+size = Vector2(10, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeaxr"]
+size = Vector2(20, 28)
+
+[node name="Arceus" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 3
+script = SubResource("GDScript_jeaxr")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ork62")
+autoplay = "default"
+frame_progress = 0.736315
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_e81kj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="collision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jeaxr")
+debug_color = Color(0.231373, 0.639216, 0, 0.117647)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

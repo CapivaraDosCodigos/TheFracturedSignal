@@ -1,0 +1,183 @@
+[gd_scene load_steps=17 format=3 uid="uid://dygph1mmtcdv8"]
+
+[ext_resource type="Shader" uid="uid://84wmppkbbltb" path="res://shader/black and white.gdshader" id="1_mih8j"]
+[ext_resource type="Texture2D" uid="uid://dfpwtsokcjsu4" path="res://textures/characters/Assets/Extra/static_shadow.png" id="2_ipxyf"]
+[ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="3_h7yws"]
+[ext_resource type="Texture2D" uid="uid://cu1d6yh71q1eh" path="res://textures/characters/npcs/bah/blu blu.png" id="4_ensn7"]
+
+[sub_resource type="GDScript" id="GDScript_anah5"]
+resource_name = "blu blu"
+script/source = "extends StaticBody2D
+
+func _process(_delta: float) -> void:
+	if Manager.Body == self and Manager.current_status == Manager.GameState.MAP:
+		DialogueManager.show_example_dialogue_balloon(load(\"res://Godot/testText.dialogue\"), \"blublu\")
+															
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s20o0"]
+shader = ExtResource("1_mih8j")
+shader_parameter/horizontal_oscillation = 0.01
+shader_parameter/vertical_oscillation = 0.01
+shader_parameter/scanline_wave_frequency = 10.0
+shader_parameter/scanline_wave_speed = 1.0
+shader_parameter/alternate_direction = false
+shader_parameter/viewport_size = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_2cfip"]
+colors = PackedColorArray(0.220075, 0.220075, 0.220075, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sqirv"]
+gradient = SubResource("Gradient_2cfip")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c81vo"]
+shader = ExtResource("3_h7yws")
+shader_parameter/palette_tex = SubResource("GradientTexture1D_sqirv")
+shader_parameter/palette_size = 16
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtlnl"]
+atlas = ExtResource("4_ensn7")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cfip"]
+atlas = ExtResource("4_ensn7")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqirv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtlnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cfip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anah5"]
+size = Vector2(23, 28)
+
+[sub_resource type="Animation" id="Animation_sqirv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blu blu:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_c81vo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blu blu:material:shader_parameter/palette_tex:gradient:colors")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedColorArray(0.220075, 0.220075, 0.220075, 1, 1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2cfip"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blu blu:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_c81vo"), SubResource("ShaderMaterial_c81vo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blu blu:material:shader_parameter/palette_tex:gradient:colors")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.179043, 0.46004, 0.748498, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [PackedColorArray(0.220075, 0.220075, 0.220075, 1, 1, 1, 1, 1), PackedColorArray(0.096404, 0.0964039, 0.0964039, 1, 1, 1, 1, 1), PackedColorArray(0.308061, 0.308061, 0.308061, 1, 1, 1, 1, 1), PackedColorArray(0.472452, 0.472452, 0.472452, 1, 1, 1, 1, 1), PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sqirv"]
+_data = {
+&"RESET": SubResource("Animation_sqirv"),
+&"new_animation": SubResource("Animation_2cfip")
+}
+
+[node name="blu blu" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = SubResource("GDScript_anah5")
+
+[node name="shadow" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_s20o0")
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ipxyf")
+
+[node name="blu blu" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_c81vo")
+sprite_frames = SubResource("SpriteFrames_sqirv")
+autoplay = "default"
+frame_progress = 0.246693
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_anah5")
+debug_color = Color(0.633732, 0.523271, 0.198529, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sqirv")
+}
+autoplay = "new_animation"
+speed_scale = 0.25

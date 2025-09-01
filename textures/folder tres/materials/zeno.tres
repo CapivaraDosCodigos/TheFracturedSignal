@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dbasxtrsiswkc"]
+
+[ext_resource type="Shader" uid="uid://bxe5f02ex8x24" path="res://shader/zeno.gdshader" id="1_n6bnl"]
+
+[resource]
+shader = ExtResource("1_n6bnl")
+shader_parameter/horizontal_oscillation = 0.05
+shader_parameter/vertical_oscillation = 0.03
+shader_parameter/scanline_wave_frequency = 40.0
+shader_parameter/scanline_wave_speed = 1.0
+shader_parameter/alternate_direction = true
+shader_parameter/viewport_size = Vector2(30, 0)
+shader_parameter/hue_shift_speed = 0.2
+shader_parameter/hue_strength = 0.5

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bfoa3cshnjc2f"]
+
+[ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="1_e77dg"]
+[ext_resource type="Texture2D" uid="uid://bhggqpnthhq4x" path="res://textures/folder tres/texturas/fenda_texture.tres" id="2_a36ae"]
+
+[resource]
+shader = ExtResource("1_e77dg")
+shader_parameter/palette = ExtResource("2_a36ae")
+shader_parameter/palette_width = 256
+shader_parameter/palette_height = 1
+shader_parameter/color_match_strength = 1.0

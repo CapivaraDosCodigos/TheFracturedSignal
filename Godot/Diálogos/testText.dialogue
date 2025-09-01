@@ -1,0 +1,31 @@
+import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
+
+
+~ start
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Sistema Interno: parece só uma parede[next=auto]
+Sistema Interno: não gaste sua energia com isso[next=auto]
+=> DialogueResource/Map
+
+~ blublu
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Blu blu: eu sou o blu blu!
+Blu blu: sempre me confundem com o vaporio
+Blu blu: acho que gostaria de não existe...
+Blu blu: pode me fazer um favor?
+- Sim
+	Blu blu: não volte
+- Não tenho tempo
+	=> DialogueResource/Map
+=> DialogueResource/Map
+
+~ comercio
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Lila: Olá
+Lila: gostaria de comprar alguma coisa?
+- não, obrigado
+	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
+- sim!
+	Lila: bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]
+=> DialogueResource/Map
+

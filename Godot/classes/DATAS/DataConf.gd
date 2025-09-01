@@ -1,0 +1,17 @@
+## Classe que armazena as configurações do jogo.
+##
+## Inclui volume de efeitos, música, preferências de jogabilidade
+## e idioma selecionado.
+class_name DataConf extends Resource
+
+## Volume dos efeitos sonoros (0-100).
+@export var effects: int = 100
+
+## Volume da música (0-100).
+@export var music: int = 100
+
+## Se verdadeiro, o jogo executa automaticamente (auto-run).
+@export var auto_run: bool = false
+
+## Idioma selecionado no jogo (por padrão "pt").
+@export var idioma: String = "pt"

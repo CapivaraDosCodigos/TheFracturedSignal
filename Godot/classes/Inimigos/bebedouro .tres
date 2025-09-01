@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EnemiesBase" load_steps=5 format=3 uid="uid://bwq6iwhy0hgmu"]
+
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://textures/characters/inimigos/bebedouro.png" id="1_51ct3"]
+[ext_resource type="Script" uid="uid://d3e8walkx38as" path="res://Godot/classes/Inimigos/EnemiesBase.gd" id="2_rkbil"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm6gh"]
+atlas = ExtResource("1_51ct3")
+region = Rect2(0, 0, 27, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06wve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm6gh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_rkbil")
+nome = "Bebedouro"
+Anime = SubResource("SpriteFrames_06wve")
+life = 30
+maxlife = 30
+strength = 1
+defense = 1
+time = 7.0
+metadata/_custom_type_script = "uid://d3e8walkx38as"

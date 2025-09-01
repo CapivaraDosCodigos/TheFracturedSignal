@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wv6c3f2k5r8r"
+path="res://.godot/imported/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3-9aab854628a5eb8829c6a84d37cc7de6.mp3str"
+
+[deps]
+
+source_file="res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3"
+dest_files=["res://.godot/imported/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3-9aab854628a5eb8829c6a84d37cc7de6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

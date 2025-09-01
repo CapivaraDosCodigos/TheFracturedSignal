@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dmph4vbnd6qcj"]
+
+[ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="1_bu2m3"]
+[ext_resource type="Texture2D" uid="uid://l6wg1m1aqei0" path="res://textures/paleta/P3.png" id="2_u5yls"]
+
+[resource]
+shader = ExtResource("1_bu2m3")
+shader_parameter/palette_tex = ExtResource("2_u5yls")
+shader_parameter/palette_size = 22
+shader_parameter/offset_y = 0.0

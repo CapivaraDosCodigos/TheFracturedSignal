@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bagmpwwi4w302"]
+
+[ext_resource type="Texture2D" uid="uid://nmeinsw5i5xt" path="res://textures/characters/Zeno's/Pequeno_Zeno.png" id="1_jau4s"]
+
+[resource]
+atlas = ExtResource("1_jau4s")
+region = Rect2(0, 24, 24, 24)

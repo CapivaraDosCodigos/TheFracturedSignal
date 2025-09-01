@@ -1,0 +1,11 @@
+~ Map
+do Manager.change_state(Manager.GameState.MAP)
+=> END
+
+~ Batalha
+do Manager.change_state(Manager.GameState.BATTLE)
+=> END
+
+~ BatalhaMenu
+do Manager.change_state(Manager.GameState.BATTLE_MENU)
+=> END

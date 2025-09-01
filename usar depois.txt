@@ -1,0 +1,36 @@
+	print(OS.get_data_dir()) » caminho da godot data
+
+	print(OS.get_locale_language()) » linguage
+
+	print(OS.get_distribution_name()) » dispositivo
+	print(OS.get_name()) » nao sei diferença 
+
+	print(OS.get_model_name()) » nome do dispositivo
+
+	print(OS.get_locale()= » local?
+	
+	OS.alert("em baixo", "em cima")
+
+	match OS.get_name():
+		"Windows":
+			print("Welcome to Windows!")
+		"macOS":
+			print("Welcome to macOS!")
+		"Linux", "FreeBSD", "NetBSD", "OpenBSD", "BSD":
+			print("Welcome to Linux/BSD!")
+		"Android":
+			print("Welcome to Android!")
+		"iOS":
+			print("Welcome to iOS!")
+		"Web":
+			print("Welcome to the Web!")
+
+	var file_to_remove = "user://slot1.save"
+	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
+	
+	#if armorEN >= 0 and armorEN < inv.armor.size():
+		#armorE = inv.armor[armorEN]
+	#if weaponsEN >= 0 and weaponsEN < inv.weapons.size():
+		#weaponsE = inv.weapons[weaponsEN]
+
+[] {} @ = < >

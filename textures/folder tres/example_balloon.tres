@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b04crvegsktm7"]
+
+[ext_resource type="Texture2D" uid="uid://c712e4ff4wvb7" path="res://textures/PNG/funds/Deco All 10.png" id="1_6b5br"]
+
+[resource]
+texture = ExtResource("1_6b5br")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(320, 128, 64, 64)
+modulate_color = Color(0.762978, 0.67987, 0.906681, 1)

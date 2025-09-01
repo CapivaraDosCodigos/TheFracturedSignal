@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgs8qnmsvgs1g"]
+
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://textures/characters/inimigos/bebedouro.png" id="1_jeaxr"]
+[ext_resource type="Material" uid="uid://k4w23p5s4wpn" path="res://textures/folder tres/materials/zipTile.tres" id="1_qurpp"]
+
+[sub_resource type="GDScript" id="GDScript_jeaxr"]
+resource_name = "teste "
+script/source = "extends CharacterBody2D
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Zeno\"):
+		call_deferred(\"_trocar_para_batalha\")
+					
+func _trocar_para_batalha() -> void:
+	Manager.tocar_musica_manager(\"res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3\", 100, false, 0.0, 2)
+	await get_tree().create_timer(1.0).timeout
+	Manager.SceneTransition(\"res://Characters/Players/cenas/BATALHA.tscn\")
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]
+size = Vector2(10, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeaxr"]
+size = Vector2(20, 28)
+
+[node name="bebedouro" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 3
+script = SubResource("GDScript_jeaxr")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("1_qurpp")
+position = Vector2(2, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jeaxr")
+hframes = 2
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_e81kj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="collision" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_jeaxr")
+debug_color = Color(0.231373, 0.639216, 0, 0.117647)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

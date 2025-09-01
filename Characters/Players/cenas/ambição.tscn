@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://8sgdpebe3e0a"]
+
+[ext_resource type="Script" uid="uid://b87x0fkq7trfu" path="res://Characters/Players/script/ambição.gd" id="1_3xyvn"]
+[ext_resource type="Texture2D" uid="uid://cwryjra5dwabw" path="res://textures/font/alma.png" id="2_3xyvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
+radius = 9.0
+
+[node name="Ambição" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_mask = 131
+script = ExtResource("1_3xyvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_uryig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3xyvn")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b8s8ct3smhv3e"
+path="res://.godot/imported/bebedouro.dialogue-dff3c82e75e76266521564a8a827eea7.tres"
+
+[deps]
+
+source_file="res://Godot/Diálogos/bebedouro.dialogue"
+dest_files=["res://.godot/imported/bebedouro.dialogue-dff3c82e75e76266521564a8a827eea7.tres"]
+
+[params]
+
+defaults=true

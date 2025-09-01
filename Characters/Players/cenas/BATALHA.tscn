@@ -1,0 +1,675 @@
+[gd_scene load_steps=36 format=3 uid="uid://76pvbuk718a4"]
+
+[ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Characters/Players/script/batalha2.gd" id="1_2h8af"]
+[ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_hrhgg"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="3_74a5d"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/PNG/16x16.png" id="4_eohca"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="5_ucvin"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://textures/folder tres/materials/BATALHA.tres" id="6_7ogxe"]
+[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="7_7ogxe"]
+[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://textures/paleta/Screenshot_30-600x600.png" id="7_utovu"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://textures/folder tres/zeko.tres" id="8_7ogxe"]
+[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://textures/PNG/Default/Border/panel-border-014.png" id="8_ckmqr"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="9_74a5d"]
+[ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="9_438ye"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="15_otx5r"]
+
+[sub_resource type="Animation" id="Animation_nt1gt"]
+resource_name = "E_panel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(0, 404)]
+}
+
+[sub_resource type="Animation" id="Animation_h7tth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 404)]
+}
+
+[sub_resource type="Animation" id="Animation_fq6de"]
+resource_name = "S_panel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 404), Vector2(0, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nt1gt"]
+_data = {
+&"E_panel": SubResource("Animation_nt1gt"),
+&"RESET": SubResource("Animation_h7tth"),
+&"S_panel": SubResource("Animation_fq6de")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mvwj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejoer"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h8af"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrhgg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ogxe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_otx5r"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig8w"]
+a = Vector2(4, 11.5)
+b = Vector2(140, 11.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_py3aq"]
+a = Vector2(131, 10)
+b = Vector2(-4.5, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fq6de"]
+a = Vector2(121, 7.99924)
+b = Vector2(-12.9999, 8.00008)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h7tth"]
+a = Vector2(124, 23.9992)
+b = Vector2(-11.4998, 24.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ig8w"]
+size = Vector2(139.5, 139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
+atlas = ExtResource("4_eohca")
+region = Rect2(96, 720, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7tth"]
+font = ExtResource("5_ucvin")
+font_size = 64
+font_color = Color(0.261599, 0.524783, 0.894781, 1)
+outline_size = 8
+outline_color = Color(0.12549, 0.0784314, 0.2, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq6de"]
+atlas = ExtResource("4_eohca")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucvin"]
+atlas = ExtResource("4_eohca")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otx5r"]
+atlas = ExtResource("4_eohca")
+region = Rect2(112, 656, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74a5d"]
+atlas = ExtResource("4_eohca")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="GDScript" id="GDScript_7ogxe"]
+resource_name = "test"
+script/source = "extends ItemList
+
+var current_index: int = 0
+var item_bool: bool = false
+
+signal item_confirmado(texto: String, index: int)
+
+# 👉 Essa função ativa o menu e só continua quando confirmar
+func itemsIvt() -> Dictionary:
+	item_bool = true
+	visible = true
+	current_index = 0
+	if get_item_count() > 0:
+		select(current_index, true)
+
+	# Espera até o jogador confirmar
+	var result = await self.item_confirmado
+	return {\"texto\": result[0], \"index\": result[1]}
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not item_bool:
+		return
+
+	if event.is_action_pressed(\"Down\"):
+		current_index = (current_index + 1) % get_item_count()
+		select(current_index, true)
+		ensure_current_is_visible()
+
+	elif event.is_action_pressed(\"Up\"):
+		current_index = (current_index - 1 + get_item_count()) % get_item_count()
+		select(current_index, true)
+		ensure_current_is_visible()
+
+	elif event.is_action_pressed(\"confirm\"):
+		var texto = get_item_text(current_index)
+		print(\"Confirmado:\", texto)
+		emit_signal(\"item_confirmado\", texto, current_index)
+		item_bool = false
+		visible = false
+			
+"
+
+[node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_2h8af")
+anim = NodePath("Batalha2D/Anim")
+inimigos = Array[Object]([ExtResource("2_hrhgg")])
+metadata/_edit_vertical_guides_ = [-112.0]
+
+[node name="Batalha2D" type="Node2D" parent="."]
+
+[node name="Camera" type="Camera2D" parent="Batalha2D"]
+anchor_mode = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.3
+drag_vertical_offset = 0.4
+drag_left_margin = 0.3
+drag_top_margin = 0.4
+drag_right_margin = 0.3
+drag_bottom_margin = 0.4
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Anim" type="AnimationPlayer" parent="Batalha2D"]
+root_node = NodePath("../../BatalhaCanvas")
+libraries = {
+&"": SubResource("AnimationLibrary_nt1gt")
+}
+
+[node name="BatalhaCanvas" type="CanvasLayer" parent="."]
+layer = 0
+metadata/_edit_vertical_guides_ = [256.0]
+
+[node name="TextureRect" type="TextureRect" parent="BatalhaCanvas"]
+material = ExtResource("6_7ogxe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_utovu")
+expand_mode = 1
+
+[node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
+scale = Vector2(4, 4)
+
+[node name="Ambição" parent="BatalhaCanvas/Personagens" instance=ExtResource("9_438ye")]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+position = Vector2(144, 60)
+scale = Vector2(0.5, 0.5)
+
+[node name="player1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(64, 56)
+sprite_frames = SubResource("SpriteFrames_6mvwj")
+
+[node name="player2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(24, 32)
+sprite_frames = SubResource("SpriteFrames_ejoer")
+
+[node name="player3" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(24, 80)
+sprite_frames = SubResource("SpriteFrames_2h8af")
+
+[node name="inimigo1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(224, 56)
+sprite_frames = SubResource("SpriteFrames_hrhgg")
+
+[node name="inimigo2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(264, 32)
+sprite_frames = SubResource("SpriteFrames_7ogxe")
+
+[node name="inimigo3" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(264, 80)
+sprite_frames = SubResource("SpriteFrames_otx5r")
+
+[node name="Control" type="Control" parent="BatalhaCanvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BATTLE_ARENA" type="NinePatchRect" parent="BatalhaCanvas/Control"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.454902, 0.662745, 0.960784, 1)
+z_index = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.504
+anchor_right = 0.514
+anchor_bottom = 0.504
+offset_left = -160.128
+offset_top = -161.16
+offset_right = -16.128
+offset_bottom = -17.16
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("8_ckmqr")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
+z_index = -4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="ColorRect" parent="BatalhaCanvas/Control/BATTLE_ARENA/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Static2D" type="StaticBody2D" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
+visible = false
+collision_layer = 2
+collision_mask = 3
+
+[node name="Shape2D" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
+position = Vector2(0, -7)
+shape = SubResource("SegmentShape2D_7ig8w")
+
+[node name="Shape2D2" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
+position = Vector2(9, 129.5)
+shape = SubResource("SegmentShape2D_py3aq")
+
+[node name="Shape2D3" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
+position = Vector2(-3.5, 126)
+rotation = -1.57079
+shape = SubResource("SegmentShape2D_fq6de")
+
+[node name="Shape2D4" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
+position = Vector2(115.5, 128)
+rotation = -1.57079
+shape = SubResource("SegmentShape2D_h7tth")
+
+[node name="Area2D" type="Area2D" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
+visible = false
+collision_layer = 128
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Area2D"]
+position = Vector2(72.25, 72)
+shape = SubResource("RectangleShape2D_7ig8w")
+debug_color = Color(0.834632, 0.367256, 0.347572, 0.42)
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+offset_top = 404.0
+offset_right = 1152.0
+offset_bottom = 540.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+
+[node name="panel1" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = ExtResource("7_7ogxe")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_ucvin")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = ExtResource("8_7ogxe")
+theme_override_styles/normal = ExtResource("9_74a5d")
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
+material = ExtResource("3_74a5d")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_eohca")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "ATK"
+label_settings = SubResource("LabelSettings_h7tth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panel2" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = ExtResource("7_7ogxe")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = ExtResource("8_7ogxe")
+theme_override_styles/normal = ExtResource("9_74a5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
+material = ExtResource("3_74a5d")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_fq6de")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "ITM"
+label_settings = SubResource("LabelSettings_h7tth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panel3" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = ExtResource("7_7ogxe")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = ExtResource("8_7ogxe")
+theme_override_styles/normal = ExtResource("9_74a5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
+material = ExtResource("3_74a5d")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_ucvin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "EXE"
+label_settings = SubResource("LabelSettings_h7tth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panel4" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = ExtResource("7_7ogxe")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = ExtResource("8_7ogxe")
+theme_override_styles/normal = ExtResource("9_74a5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
+material = ExtResource("3_74a5d")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_otx5r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "DEF"
+label_settings = SubResource("LabelSettings_h7tth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panel5" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = ExtResource("7_7ogxe")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = ExtResource("8_7ogxe")
+theme_override_styles/normal = ExtResource("9_74a5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
+material = ExtResource("3_74a5d")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_74a5d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "MRC"
+label_settings = SubResource("LabelSettings_h7tth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BatalhaCanvas/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 4
+theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
+theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
+theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
+theme_override_constants/outline_size = 16
+theme_override_constants/v_separation = 16
+theme_override_constants/icon_margin = 16
+theme_override_constants/h_separation = 8
+theme_override_fonts/font = ExtResource("5_ucvin")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = ExtResource("9_74a5d")
+theme_override_styles/panel = ExtResource("9_74a5d")
+theme_override_styles/selected = ExtResource("15_otx5r")
+theme_override_styles/selected_focus = ExtResource("15_otx5r")
+max_text_lines = 2
+icon_scale = 1.6
+fixed_icon_size = Vector2i(16, 16)
+script = SubResource("GDScript_7ogxe")
+
+[node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(880, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3

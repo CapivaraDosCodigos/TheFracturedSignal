@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=10 format=3 uid="uid://d302slnl03gy4"]
+
+[ext_resource type="Texture2D" uid="uid://bpmp6013dypnk" path="res://textures/characters/Zeno's/Zeno scientist .png" id="1_f2i5v"]
+[ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="2_4uxj1"]
+[ext_resource type="PackedScene" uid="uid://drtftoc47qyxk" path="res://Characters/Players/cenas/zeno.tscn" id="2_f2i5v"]
+[ext_resource type="Script" uid="uid://jncy8sypkenk" path="res://Godot/classes/ClassePlayer/ClassePlayer.gd" id="3_2d11r"]
+[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_4kryh"]
+[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_52or3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d11r"]
+atlas = ExtResource("1_f2i5v")
+region = Rect2(21, 0, 21, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kryh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d11r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_aip5c"]
+script = ExtResource("3_2d11r")
+nome = "Generico"
+metadata/_custom_type_script = "uid://jncy8sypkenk"
+
+[resource]
+script = ExtResource("2_4uxj1")
+Nome = "Zeno"
+Classe = SubResource("Resource_aip5c")
+lider = true
+Anime = SubResource("SpriteFrames_4kryh")
+CharaterBody = ExtResource("2_f2i5v")
+Save_position = Vector2(0, 0)
+Lv = 1
+Life = 30
+Bitcoin = 25
+Exp = 0
+base_life = 60
+growth_rate_life = 1.15
+base_defense = 10
+growth_rate_defense = 1.15
+base_resource = 5
+growth_rate_resource = 1.15
+base_attack = 5
+growth_rate_attack = 1.15
+base_sp = 250
+multiplier_sp = 1.5
+armorE = ExtResource("3_4kryh")
+weaponsE = ExtResource("5_52or3")
+armorEN = 0
+weaponsEN = 0
+metadata/_custom_type_script = "uid://bj6w76m0cfh2q"

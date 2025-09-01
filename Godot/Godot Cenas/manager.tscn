@@ -1,0 +1,160 @@
+[gd_scene load_steps=13 format=3 uid="uid://qd88j5u4y4ji"]
+
+[ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
+[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/Godot Scripts/audio_player.gd" id="2_cconj"]
+[ext_resource type="Shader" uid="uid://bt5w87kqqgvk0" path="res://shader/paletteWOWOWOW.gdshader" id="3_rsoxv"]
+[ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://textures/paleta/Screenshot_31-600x600.png" id="4_6ebhy"]
+[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="5_i2lsb"]
+[ext_resource type="Script" uid="uid://rwmxke1xgsn5" path="res://addons/post_processing/node/post_process.gd" id="6_55auu"]
+[ext_resource type="Script" uid="uid://cw3nr8nnejgjg" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="7_o5s8j"]
+[ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
+
+[sub_resource type="Gradient" id="Gradient_mxm6a"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l3v1h"]
+gradient = SubResource("Gradient_mxm6a")
+width = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4qvna"]
+shader = ExtResource("3_rsoxv")
+shader_parameter/horizontal_oscillation = 0.01
+shader_parameter/vertical_oscillation = 0.01
+shader_parameter/scanline_wave_frequency = 70.0
+shader_parameter/scanline_wave_speed = 1.5
+shader_parameter/alternate_direction = false
+shader_parameter/viewport_size = Vector2(600, 600)
+shader_parameter/palette_tex = SubResource("GradientTexture1D_l3v1h")
+shader_parameter/palette_size = 20
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="Resource" id="Resource_hwlqp"]
+resource_local_to_scene = true
+script = ExtResource("7_o5s8j")
+reload = false
+ASCII = false
+ASCIISize = Vector2(4, 9)
+ChromaticAberration = false
+StrenghtCA = 1.0
+Blur = false
+L_O_D = 1.0
+FishEye = false
+FishEyeAspect = 1.0
+FishEyeDistortion = 1.0
+FishEyeRadius = 1.0
+FishEyeAlpha = 1.0
+FishEyeCrop = 1.0
+FishEyeCropColor = Color(0, 0, 0, 1)
+Vignette = false
+VignetteIntensity = 0.7
+VignetteOpacity = 0.5
+VignetteR_G_B = Color(0, 0, 0, 1)
+Glitch = false
+GlitchRange = 0.05
+GlitchNoiseQuality = 250.0
+GlitchIntenity = 0.0088
+GlitchOffset = 0.03
+GlitchColorOffset = 1.3
+Outline = false
+OutlineColor = Color(0, 0, 0, 1)
+OutlineThreshold = 0.0
+OutlineBlend = 0.01
+Grain = false
+GrainPower = 75
+CircularWaves = false
+CircularWavesAmplitude = 2.0
+CircularWavesFrequency = 12.69
+CircularWavesRippleRate = 9.2
+SpeedLines = false
+SpeedLinesColor = Color(1, 1, 1, 1)
+SpeedLinesCount = 2
+SpeedLineDensity = 0.072
+SpeedLineSpeed = 20
+particle_storm = false
+particle_storm_color = Color(0.87, 0.78, 0.6, 1)
+particle_storm_intensity = 0.5
+particle_storm_chaos = 1.0
+particle_storm_scale = 1.0
+particle_storm_density = 1.0
+particle_storm_wind_direction = Vector2(1, 0.2)
+particle_storm_wind_speed = 1.0
+directional_drift = false
+directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
+directional_drift_density = 0.3
+directional_drift_speed = 1.0
+directional_drift_scale = 30.0
+directional_drift_direction = Vector2(1, 0.5)
+directional_drift_layer_ratio = 1.2
+ColorCorrection = false
+ColorCorrectionTint = Color(0, 0, 0, 1)
+ColorCorrectionBrightness = 0.0
+ColorCorrectionSaturation = 0.0
+Palette = false
+Pixelate = false
+PixelatePixelSize = 8
+CRT = false
+overlay = false
+scanlines_opacity = 0.4
+scanlines_width = 0.25
+grille_opacity = 0.3
+pixelate = true
+roll_speed = 8.0
+roll_size = 15.0
+roll_variation = 1.8
+distort_intensity = 0.05
+noise_opacity = 0.4
+noise_speed = 5.0
+static_noise_intensity = 0.06
+aberration = 0.03
+brightness = 1.4
+discolor = true
+warp_amount = 1.0
+clip_warp = false
+vignette_intensity = 0.4
+vignette_opacity = 0.5
+AnalogMonitor = false
+AnalogMonitorResolution = Vector2(256, 256)
+ScreenShake = false
+ScreenShakePower = 0.1
+metadata/_custom_type_script = "uid://cw3nr8nnejgjg"
+
+[node name="manager" type="Node"]
+script = ExtResource("1_cconj")
+
+[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_cconj")
+
+[node name="AudioPlayerS" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_cconj")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(600, 600)
+
+[node name="fundo" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4qvna")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -336.0
+offset_right = 360.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6ebhy")
+
+[node name="CanvasL" type="CanvasLayer" parent="."]
+layer = 98
+
+[node name="Node" parent="CanvasL" instance=ExtResource("5_i2lsb")]
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource("6_55auu")
+configuration = SubResource("Resource_hwlqp")
+metadata/_custom_type_script = "uid://rwmxke1xgsn5"
+
+[node name="time" parent="." instance=ExtResource("8_oug2w")]

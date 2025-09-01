@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://3ij1bxmrihpu"
+path="res://.godot/imported/Symptoms.dialogue-f1b1c5ef7a019c40f1226a74b031d71f.tres"
+
+[deps]
+
+source_file="res://Godot/Diálogos/Symptoms.dialogue"
+dest_files=["res://.godot/imported/Symptoms.dialogue-f1b1c5ef7a019c40f1226a74b031d71f.tres"]
+
+[params]
+
+defaults=true

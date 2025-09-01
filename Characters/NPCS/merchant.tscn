@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://3x7rgqstg6mq"]
+
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="1_qhk00"]
+[ext_resource type="Texture2D" path="res://texture/characters/npcs/bah/NPC Merchant-idle.png" id="2_m02bx"]
+
+[sub_resource type="GDScript" id="GDScript_a8i7l"]
+resource_name = "comerciante"
+script/source = "extends StaticBody2D
+
+func _process(_delta: float) -> void:
+	if Manager.Body == self and Manager.current_status == Manager.GameState.MAP:
+		DialogueManager.show_example_dialogue_balloon(load(\"res://Godot/Diálogos/testText.dialogue\"), \"comercio\")
+	if Manager.BodyInteract == self and Manager.current_status == Manager.GameState.MAP:
+		Manager.InteractionMode = \"balloonZ\"
+	
+	
+																				
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goviq"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(0, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fccn2"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(110, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi15x"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(220, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0dhq"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(330, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4mot"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(440, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucd4l"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(550, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe5ye"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(660, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8jey"]
+atlas = ExtResource("2_m02bx")
+region = Rect2(770, 0, 110, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1we13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goviq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fccn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi15x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0dhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4mot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucd4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe5ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8jey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8i7l"]
+radius = 9.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_goviq"]
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppfeg"]
+radius = 8.00001
+height = 32.0
+
+[node name="merchant" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_a8i7l")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+material = ExtResource("1_qhk00")
+sprite_frames = SubResource("SpriteFrames_1we13")
+autoplay = "default"
+frame_progress = 0.851674
+speed_scale = 2.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(6, 3)
+shape = SubResource("CapsuleShape2D_a8i7l")
+debug_color = Color(0.621562, 0.529536, 0.189281, 0.42)
+
+[node name="CollisionS" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-4, -3)
+shape = SubResource("CapsuleShape2D_goviq")
+debug_color = Color(0.646446, 0.519731, 0.119445, 0.42)
+
+[node name="CollisionS2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-4, -12)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_ppfeg")
+debug_color = Color(0.646446, 0.519731, 0.119445, 0.42)
