@@ -10,6 +10,8 @@ extends Node
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
 @onready var inimigosI: Array[AnimatedSprite2D] = [$BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3]
 @onready var playerI: Array[AnimatedSprite2D] = [$BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3]
+@onready var itemMenu: MarginContainer = $BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer
+
 
 const MAX_ENENINES: int = 3
 
@@ -45,10 +47,6 @@ func _ready() -> void:
 		inimigosI[idx].material = inimigos[idx].MaterialI
 		inimigosI[idx].play("default")
 	
-	for i in range(Starts.InvData.itens.size()):
-		var inv := Starts.InvData.itens
-		%ItemList.add_item(inv[i].nome, inv[i].icone)
-	
 	panels = [ATK, ITM, EXE, DEF, MRC]
 	panel_dict = {"ATK": ATK,"ITM": ITM,"EXE": EXE,"DEF": DEF,"MRC": MRC}
 
@@ -80,6 +78,7 @@ func _iniciar_selecao():
 	current_index = 0
 	selecoes = []
 	selecoes.resize(players)
+	_atualizar_itemlist()
 	_focus_current_panel()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -92,13 +91,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			_fechar_submenu()
 		return
 	
-	if event.is_action_pressed("Right"):
-		current_index = (current_index + 1) % panels.size()
-		_focus_current_panel()
-	
-	elif event.is_action_pressed("Left"):
-		current_index = (current_index - 1 + panels.size()) % panels.size()
-		_focus_current_panel()
+	if Input.is_action_pressed("Right"):
+		if not current_index == panels.size() - 1:
+			current_index = (current_index + 1) % panels.size()
+			_focus_current_panel()
+		print("Right")
+		
+	elif Input.is_action_pressed("Left"):
+		if not current_index == 0:
+			current_index = (current_index - 1 + panels.size()) % panels.size()
+			_focus_current_panel()
+		print("Left")
 	
 	elif event.is_action_pressed("confirm"):
 		_abrir_submenu(panels[current_index])
@@ -121,8 +124,7 @@ func _abrir_submenu(panel: Control) -> void:
 					_confirmar_acao(nome)
 				"ITM":
 					submenu_ativo = true
-					var menu = $%ItemList
-					var resultado = await menu.itemsIvt()
+					var resultado = await itemMenu.itemsIvt()
 					submenu_resultado = resultado
 					_confirmar_acao(nome, submenu_resultado)
 					_fechar_submenu()
@@ -132,12 +134,15 @@ func _abrir_submenu(panel: Control) -> void:
 func _fechar_submenu() -> void:
 	submenu_ativo = false
 	submenu_resultado = null
+	
+	itemMenu.cancel()
+	
 	_focus_current_panel()
 
 func _confirmar_acao(nome: String, _dados_extra = null) -> void:
 	selecoes[jogador_atual] = nome
 	jogador_atual += 1
-	
+
 	if jogador_atual >= players:
 		selecao_ativa = false
 		selecao_finalizada = true
@@ -165,7 +170,13 @@ func _act(act: String, ent: int, _enem: int = 0):
 			print("Executar")
 		"ITM":
 			print("Usar item:", submenu_resultado)
+			Starts.InvData.itens.remove_at(submenu_resultado["index"])
 		"MRC":
 			print("Mercy")
 		_:
 			print("erro")
+
+func _atualizar_itemlist():
+	%ItemList.clear()
+	for item in Starts.InvData.itens:
+		%ItemList.add_item(item.nome, item.icone)

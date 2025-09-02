@@ -34,15 +34,15 @@ func _process(_delta: float) -> void:
 
 func _input(_event: InputEvent) -> void:
 	pass
-	var _shader_material := preload("res://texture/folder tres/materials/tile3.tres")
-	var _imagem_path := "res://texture/characters/Zeno's/Niko.png"
-	if Input.is_action_just_pressed("menu"):
+	#var _shader_material := preload("res://textures/folder tres/materials/tile3.tres")
+	#var _imagem_path := "res://texture/characters/Zeno's/Niko.png"
+	#if Input.is_action_just_pressed("menu"):
 		#Starts.SAVE(1)
 		#print(Starts.ZenoData.armorE)
 		#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
 		#print(Starts.ZenoData.armorE)
 		#salvar_print_visivel()
-		$time.aplicar_material_e_salvar(_imagem_path, _shader_material)
+		#$time.aplicar_material_e_salvar(_imagem_path, _shader_material)
 
 func change_state(estado: GameState) -> void:
 	current_status = estado

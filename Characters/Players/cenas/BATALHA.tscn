@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://textures/PNG/Default/Border/panel-border-014.png" id="8_ckmqr"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="9_74a5d"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="9_438ye"]
+[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Characters/Players/script/margin_container.gd" id="13_7ogxe"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="15_otx5r"]
 
 [sub_resource type="Animation" id="Animation_nt1gt"]
@@ -195,50 +196,6 @@ region = Rect2(112, 656, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_74a5d"]
 atlas = ExtResource("4_eohca")
 region = Rect2(176, 0, 16, 16)
-
-[sub_resource type="GDScript" id="GDScript_7ogxe"]
-resource_name = "test"
-script/source = "extends ItemList
-
-var current_index: int = 0
-var item_bool: bool = false
-
-signal item_confirmado(texto: String, index: int)
-
-# 👉 Essa função ativa o menu e só continua quando confirmar
-func itemsIvt() -> Dictionary:
-	item_bool = true
-	visible = true
-	current_index = 0
-	if get_item_count() > 0:
-		select(current_index, true)
-
-	# Espera até o jogador confirmar
-	var result = await self.item_confirmado
-	return {\"texto\": result[0], \"index\": result[1]}
-
-func _unhandled_input(event: InputEvent) -> void:
-	if not item_bool:
-		return
-
-	if event.is_action_pressed(\"Down\"):
-		current_index = (current_index + 1) % get_item_count()
-		select(current_index, true)
-		ensure_current_is_visible()
-
-	elif event.is_action_pressed(\"Up\"):
-		current_index = (current_index - 1 + get_item_count()) % get_item_count()
-		select(current_index, true)
-		ensure_current_is_visible()
-
-	elif event.is_action_pressed(\"confirm\"):
-		var texto = get_item_text(current_index)
-		print(\"Confirmado:\", texto)
-		emit_signal(\"item_confirmado\", texto, current_index)
-		item_bool = false
-		visible = false
-			
-"
 
 [node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_2h8af")
@@ -424,10 +381,13 @@ unique_name_in_owner = true
 material = ExtResource("7_7ogxe")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
 theme_override_fonts/font = ExtResource("5_ucvin")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = ExtResource("8_7ogxe")
 theme_override_styles/normal = ExtResource("9_74a5d")
+button_mask = 0
 expand_icon = true
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1"]
@@ -466,8 +426,11 @@ unique_name_in_owner = true
 material = ExtResource("7_7ogxe")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
 theme_override_styles/focus = ExtResource("8_7ogxe")
 theme_override_styles/normal = ExtResource("9_74a5d")
+button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2"]
 layout_mode = 1
@@ -505,8 +468,10 @@ unique_name_in_owner = true
 material = ExtResource("7_7ogxe")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
 theme_override_styles/focus = ExtResource("8_7ogxe")
 theme_override_styles/normal = ExtResource("9_74a5d")
+button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3"]
 layout_mode = 1
@@ -544,8 +509,11 @@ unique_name_in_owner = true
 material = ExtResource("7_7ogxe")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
 theme_override_styles/focus = ExtResource("8_7ogxe")
 theme_override_styles/normal = ExtResource("9_74a5d")
+button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4"]
 layout_mode = 1
@@ -583,8 +551,11 @@ unique_name_in_owner = true
 material = ExtResource("7_7ogxe")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
 theme_override_styles/focus = ExtResource("8_7ogxe")
 theme_override_styles/normal = ExtResource("9_74a5d")
+button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5"]
 layout_mode = 1
@@ -631,21 +602,35 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("13_7ogxe")
 
-[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("9_74a5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
+mouse_filter = 2
 mouse_force_pass_scroll_events = false
-mouse_default_cursor_shape = 4
 theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
 theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
 theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
@@ -656,14 +641,10 @@ theme_override_constants/icon_margin = 16
 theme_override_constants/h_separation = 8
 theme_override_fonts/font = ExtResource("5_ucvin")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = ExtResource("9_74a5d")
-theme_override_styles/panel = ExtResource("9_74a5d")
 theme_override_styles/selected = ExtResource("15_otx5r")
 theme_override_styles/selected_focus = ExtResource("15_otx5r")
-max_text_lines = 2
 icon_scale = 1.6
 fixed_icon_size = Vector2i(16, 16)
-script = SubResource("GDScript_7ogxe")
 
 [node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(880, 0)

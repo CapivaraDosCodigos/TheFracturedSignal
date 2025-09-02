@@ -1,4 +1,6 @@
+Label
 MarginContainer
+PanelContainer
 Control
 HBoxContainer
 VBoxContainer
@@ -11,4 +13,3 @@ AnimatedSprite2D
 Sprite2D
 Marker2D
 Node2D
-TextureRect
