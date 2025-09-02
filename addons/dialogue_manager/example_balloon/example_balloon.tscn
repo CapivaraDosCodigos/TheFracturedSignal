@@ -143,6 +143,9 @@ next_action = &"cancel"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 1
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 theme_override_colors/font_disabled_color = Color(0.482353, 0.67451, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.482353, 0.67451, 1, 1)
 theme_override_colors/font_hover_color = Color(0.480393, 0.67647, 1, 1)
@@ -153,6 +156,7 @@ theme_override_fonts/font = ExtResource("5_v42gu")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = ExtResource("9_wbrl0")
 theme_override_styles/normal = ExtResource("8_wqs7j")
+button_mask = 0
 text = "Response example"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]

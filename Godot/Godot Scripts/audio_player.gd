@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 var volume_local: float = 100.0; var volume_global_anterior: float = -1.0
-var Vmusic: int 
+var Vmusic: int
 
 func _process(_delta: float) -> void:
 	if Starts.Conf != null:

@@ -1,4 +1,3 @@
-@icon("res://texture/font/logo.png")
 extends Node
 
 @onready var audio := $AudioPlayerZ; @onready var audio2 := $AudioPlayerS
@@ -47,45 +46,49 @@ func _input(_event: InputEvent) -> void:
 func change_state(estado: GameState) -> void:
 	current_status = estado
 
-func nova_palette(_caminho: String, _ligado: bool = true) -> void:
-	cfg.Palette = _ligado
-	if not _ligado:
+func nova_palette(caminho: String, ligado: bool = true) -> void:
+	cfg.Palette = ligado
+	if not ligado:
 		return
 	
-	if not ResourceLoader.exists(_caminho):
-		push_warning("⚠️ Caminho inválido: " + _caminho)
+	if not ResourceLoader.exists(caminho):
+		push_warning("⚠️ Caminho inválido: " + caminho)
 		return
 	
-	var textureload = load(_caminho)
+	var textureload = load(caminho)
 	if textureload == null or not textureload is Texture2D:
-		push_warning("⚠️ Arquivo não é um texture2D válido: " + _caminho)
+		push_warning("⚠️ Arquivo não é um texture2D válido: " + caminho)
 		return
 	
 	cfg.PalettePalette = textureload
 
-func tocar_musica_manager(_caminho: String, _volume: float = 100.0, _loop: bool = true, _atraso: float = 0.0, _canal: int = 1) -> void:
-	if _canal == 1:
-		audio.tocar_musica(_caminho, _volume, _loop, _atraso)
-	elif _canal == 2:
-		audio2.tocar_musica(_caminho, _volume, _loop, _atraso)
+func tocar_musica_manager(caminho: String, volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1) -> void:
+	if canal == 1:
+		audio.tocar_musica(caminho, volume, loop, atraso)
+	elif canal == 2:
+		audio2.tocar_musica(caminho, volume, loop, atraso)
 	else:
-		push_warning("⚠️ Não existe canal" + str(_canal))
+		push_warning("⚠️ Não existe canal" + str(canal))
 		return
 
-func SceneTransition(_caminho: String):
-	if not ResourceLoader.exists(_caminho):
-		push_error("❌ Caminho da cena inválido: " + _caminho)
+func SceneTransition(caminho: String) -> void:
+	if not ResourceLoader.exists(caminho):
+		push_error("❌ Caminho da cena inválido: " + caminho)
 		return
 		
 	$%fundo.visible = false
-	get_tree().change_scene_to_file(_caminho)
+	get_tree().change_scene_to_file(caminho)
 	await get_tree().create_timer(0.1).timeout
 	$%fundo.visible = true
 
-func salvar_print_visivel():
-	var img = get_viewport().get_texture().get_image()
-	var dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
-	var nome = "screenshot_" + Time.get_time_string_from_system().replace(":", "-") + ".png"
-	var caminho = dir + "/" + nome
-	img.save_png(caminho)
-	print("Salvo em:", caminho)
+func StartBatalha(inimigos: Array[EnemiesBase]) -> void:
+	inimigosA = inimigos
+	SceneTransition("res://Godot/Batalha/cenas/BATALHA.tscn")
+
+#func _salvar_print_visivel():
+	#var img = get_viewport().get_texture().get_image()
+	#var dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
+	#var nome = "screenshot_" + Time.get_time_string_from_system().replace(":", "-") + ".png"
+	#var caminho = dir + "/" + nome
+	#img.save_png(caminho)
+	#print("Salvo em:", caminho)

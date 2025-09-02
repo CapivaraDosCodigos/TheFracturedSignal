@@ -1,19 +1,19 @@
 [gd_scene load_steps=36 format=3 uid="uid://76pvbuk718a4"]
 
-[ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Characters/Players/script/batalha2.gd" id="1_2h8af"]
-[ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_hrhgg"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="3_74a5d"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/PNG/16x16.png" id="4_eohca"]
-[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="5_ucvin"]
-[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://textures/folder tres/materials/BATALHA.tres" id="6_7ogxe"]
-[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="7_7ogxe"]
-[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://textures/paleta/Screenshot_30-600x600.png" id="7_utovu"]
-[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://textures/folder tres/zeko.tres" id="8_7ogxe"]
-[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://textures/PNG/Default/Border/panel-border-014.png" id="8_ckmqr"]
-[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="9_74a5d"]
-[ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="9_438ye"]
-[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Characters/Players/script/margin_container.gd" id="13_7ogxe"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="15_otx5r"]
+[ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
+[ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_apq3t"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://textures/folder tres/materials/BATALHA.tres" id="3_lwg78"]
+[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://textures/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
+[ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="5_i08h0"]
+[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://textures/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
+[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="7_t3mxv"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="8_4jxlp"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://textures/folder tres/zeko.tres" id="9_6s2d6"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="10_pblfg"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="11_ww2i2"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/PNG/16x16.png" id="12_vuo06"]
+[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="14_i253q"]
 
 [sub_resource type="Animation" id="Animation_nt1gt"]
 resource_name = "E_panel"
@@ -171,36 +171,36 @@ b = Vector2(-11.4998, 24.0001)
 size = Vector2(139.5, 139)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
-atlas = ExtResource("4_eohca")
+atlas = ExtResource("12_vuo06")
 region = Rect2(96, 720, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h7tth"]
-font = ExtResource("5_ucvin")
+font = ExtResource("8_4jxlp")
 font_size = 64
 font_color = Color(0.261599, 0.524783, 0.894781, 1)
 outline_size = 8
 outline_color = Color(0.12549, 0.0784314, 0.2, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq6de"]
-atlas = ExtResource("4_eohca")
+atlas = ExtResource("12_vuo06")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucvin"]
-atlas = ExtResource("4_eohca")
+atlas = ExtResource("12_vuo06")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otx5r"]
-atlas = ExtResource("4_eohca")
+atlas = ExtResource("12_vuo06")
 region = Rect2(112, 656, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74a5d"]
-atlas = ExtResource("4_eohca")
+atlas = ExtResource("12_vuo06")
 region = Rect2(176, 0, 16, 16)
 
 [node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
-script = ExtResource("1_2h8af")
+script = ExtResource("1_wuibh")
 anim = NodePath("Batalha2D/Anim")
-inimigos = Array[Object]([ExtResource("2_hrhgg")])
+inimigos = Array[Object]([ExtResource("2_apq3t")])
 metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Batalha2D" type="Node2D" parent="."]
@@ -231,19 +231,19 @@ layer = 0
 metadata/_edit_vertical_guides_ = [256.0]
 
 [node name="TextureRect" type="TextureRect" parent="BatalhaCanvas"]
-material = ExtResource("6_7ogxe")
+material = ExtResource("3_lwg78")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_utovu")
+texture = ExtResource("4_62nk7")
 expand_mode = 1
 
 [node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
 scale = Vector2(4, 4)
 
-[node name="Ambição" parent="BatalhaCanvas/Personagens" instance=ExtResource("9_438ye")]
+[node name="Ambição" parent="BatalhaCanvas/Personagens" instance=ExtResource("5_i08h0")]
 unique_name_in_owner = true
 visible = false
 z_index = 1
@@ -301,7 +301,7 @@ offset_bottom = -17.16
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-texture = ExtResource("8_ckmqr")
+texture = ExtResource("6_h4uln")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -378,15 +378,15 @@ theme_override_constants/separation = 4
 
 [node name="panel1" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_7ogxe")
+material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 2
-theme_override_fonts/font = ExtResource("5_ucvin")
+theme_override_fonts/font = ExtResource("8_4jxlp")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/focus = ExtResource("8_7ogxe")
-theme_override_styles/normal = ExtResource("9_74a5d")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+theme_override_styles/normal = ExtResource("10_pblfg")
 button_mask = 0
 expand_icon = true
 
@@ -407,7 +407,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
-material = ExtResource("3_74a5d")
+material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_eohca")
@@ -423,13 +423,13 @@ vertical_alignment = 1
 
 [node name="panel2" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_7ogxe")
+material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 2
-theme_override_styles/focus = ExtResource("8_7ogxe")
-theme_override_styles/normal = ExtResource("9_74a5d")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+theme_override_styles/normal = ExtResource("10_pblfg")
 button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2"]
@@ -449,7 +449,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
-material = ExtResource("3_74a5d")
+material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_fq6de")
@@ -465,12 +465,12 @@ vertical_alignment = 1
 
 [node name="panel3" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_7ogxe")
+material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/focus = ExtResource("8_7ogxe")
-theme_override_styles/normal = ExtResource("9_74a5d")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+theme_override_styles/normal = ExtResource("10_pblfg")
 button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3"]
@@ -490,7 +490,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
-material = ExtResource("3_74a5d")
+material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_ucvin")
@@ -506,13 +506,13 @@ vertical_alignment = 1
 
 [node name="panel4" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_7ogxe")
+material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 2
-theme_override_styles/focus = ExtResource("8_7ogxe")
-theme_override_styles/normal = ExtResource("9_74a5d")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+theme_override_styles/normal = ExtResource("10_pblfg")
 button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4"]
@@ -532,7 +532,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
-material = ExtResource("3_74a5d")
+material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_otx5r")
@@ -548,13 +548,13 @@ vertical_alignment = 1
 
 [node name="panel5" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_7ogxe")
+material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 2
-theme_override_styles/focus = ExtResource("8_7ogxe")
-theme_override_styles/normal = ExtResource("9_74a5d")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+theme_override_styles/normal = ExtResource("10_pblfg")
 button_mask = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5"]
@@ -574,7 +574,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
-material = ExtResource("3_74a5d")
+material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_74a5d")
@@ -609,12 +609,12 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
-script = ExtResource("13_7ogxe")
+script = ExtResource("13_rkhsf")
 
 [node name="PanelContainer" type="PanelContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("9_74a5d")
+theme_override_styles/panel = ExtResource("10_pblfg")
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -639,10 +639,10 @@ theme_override_constants/outline_size = 16
 theme_override_constants/v_separation = 16
 theme_override_constants/icon_margin = 16
 theme_override_constants/h_separation = 8
-theme_override_fonts/font = ExtResource("5_ucvin")
+theme_override_fonts/font = ExtResource("8_4jxlp")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/selected = ExtResource("15_otx5r")
-theme_override_styles/selected_focus = ExtResource("15_otx5r")
+theme_override_styles/selected = ExtResource("14_i253q")
+theme_override_styles/selected_focus = ExtResource("14_i253q")
 icon_scale = 1.6
 fixed_icon_size = Vector2i(16, 16)
 

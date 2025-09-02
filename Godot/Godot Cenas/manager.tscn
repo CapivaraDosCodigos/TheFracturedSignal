@@ -117,7 +117,7 @@ ScreenShake = false
 ScreenShakePower = 0.1
 metadata/_custom_type_script = "uid://cw3nr8nnejgjg"
 
-[node name="manager" type="Node"]
+[node name="Manager" type="Node"]
 script = ExtResource("1_cconj")
 
 [node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
@@ -127,6 +127,7 @@ script = ExtResource("2_cconj")
 script = ExtResource("2_cconj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 0.8)

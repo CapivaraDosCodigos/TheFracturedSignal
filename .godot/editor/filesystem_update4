@@ -25,6 +25,5 @@ res://shader/SkyShader.gdshader
 res://shader/PSX-Camera.gdshader
 res://shader/shadow.gdshader
 res://Characters/Players/cenas/zeno.tscn
-res://Characters/Players/cenas/BATALHA.tscn
+res://Godot/Batalha/cenas/BATALHA.tscn
 res://Areais/EP 1/começo.tscn
-res://Characters/Players/script/batalha2.gd

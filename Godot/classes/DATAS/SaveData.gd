@@ -2,9 +2,9 @@ class_name SaveData extends Resource
 
 enum TIPO_DATAS { Global, NotSave }
 
-static var not_save_path: String = Database.PATH_NOT_SAVE
-static var save_path: String = Database.SAVE_PATH
-static var total_slot: int = Database.TOTAL_SLOTS
+const not_save_path: String = Database.PATH_NOT_SAVE
+const save_path: String = Database.SAVE_PATH
+const total_slot: int = Database.TOTAL_SLOTS
 
 static func Carregar(slot: int, tipo: TIPO_DATAS) -> Datas:
 	if not _is_slot_valid(slot):
@@ -15,21 +15,17 @@ static func Carregar(slot: int, tipo: TIPO_DATAS) -> Datas:
 		TIPO_DATAS.Global:
 			var path := save_path % slot
 			if not ResourceLoader.exists(path):
-				print("📂 Nenhum save no slot %d." % slot)
 				return GlobalData.new()
 			
 			var loaded_data = ResourceLoader.load(path)
-			print("✅ Dados carregados do slot %d." % slot)
 			return loaded_data
 			
 		TIPO_DATAS.NotSave:
 			var path := not_save_path % slot
 			if not ResourceLoader.exists(path):
-				print("📂 Nenhum save no slot %d." % slot)
 				return GlobalData.new()
 			
 			var loaded_data = ResourceLoader.load(path)
-			print("✅ Dados carregados do slot %d." % slot)
 			return loaded_data
 	
 	push_warning("erro, sem tipo")
@@ -41,7 +37,6 @@ static func Carregar_Arquivo(caminho: String) -> Datas:
 		return null
 	
 	var loaded_data = ResourceLoader.load(caminho)
-	print("✅ Dados carregados de:", caminho)
 	return loaded_data
 
 static func Salvar(slot: int, origem: Datas, tipo: TIPO_DATAS) -> void:
@@ -70,17 +65,11 @@ static func Deletar(slot: int, tipo: TIPO_DATAS) -> void:
 			var path := save_path % slot
 			if FileAccess.file_exists(path):
 				OS.move_to_trash(ProjectSettings.globalize_path(path))
-				print("🗑️ Slot %d apagado." % slot)
-			else:
-				print("📭 Slot %d já estava vazio." % slot)
 			
 		TIPO_DATAS.NotSave:
 			var path := not_save_path % slot
 			if FileAccess.file_exists(path):
 				OS.move_to_trash(ProjectSettings.globalize_path(path))
-				print("🗑️ Slot %d apagado." % slot)
-			else:
-				print("📭 Slot %d já estava vazio." % slot)
 
 static func _is_slot_valid(slot: int) -> bool:
 	if slot < 1 or slot > total_slot:

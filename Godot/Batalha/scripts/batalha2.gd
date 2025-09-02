@@ -8,22 +8,17 @@ extends Node
 @export var inimigos: Array[EnemiesBase] = [EnemiesBase.new()]
 
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
-@onready var inimigosI: Array[AnimatedSprite2D] = [$BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3]
-@onready var playerI: Array[AnimatedSprite2D] = [$BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3]
+@onready var inimigosI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
+@onready var playerI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
 @onready var itemMenu: MarginContainer = $BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer
-
 
 const MAX_ENENINES: int = 3
 
-var last_state = null
+var last_state = null; var submenu_resultado = null
 var PlayersDIR: Dictionary; var panel_dict: Dictionary
 var panels: Array; var selecoes: Array
-var players: int; var current_index: int = 0; var jogador_atual: int = 0
-var selecao_ativa: bool = false; var selecao_finalizada: bool = false
-
-# NOVO: controle de submenu
-var submenu_ativo: bool = false
-var submenu_resultado = null
+var players: int = 1; var current_index: int = 0; var jogador_atual: int = 0
+var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var submenu_ativo: bool = false
 
 #endregion
 
@@ -91,17 +86,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			_fechar_submenu()
 		return
 	
-	if Input.is_action_pressed("Right"):
+	if event.is_action_pressed("Right"):
 		if not current_index == panels.size() - 1:
 			current_index = (current_index + 1) % panels.size()
 			_focus_current_panel()
-		print("Right")
 		
-	elif Input.is_action_pressed("Left"):
+	elif event.is_action_pressed("Left"):
 		if not current_index == 0:
 			current_index = (current_index - 1 + panels.size()) % panels.size()
 			_focus_current_panel()
-		print("Left")
 	
 	elif event.is_action_pressed("confirm"):
 		_abrir_submenu(panels[current_index])
@@ -113,6 +106,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_focus_current_panel()
 
 func _abrir_submenu(panel: Control) -> void:
+	current_index = 0
 	for nome in panel_dict:
 		if panel_dict[nome] == panel:
 			match nome:

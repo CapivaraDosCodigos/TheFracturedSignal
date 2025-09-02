@@ -296,53 +296,6 @@ shader_parameter/palette_tex = ExtResource("6_jgcw0")
 shader_parameter/palette_size = 22
 shader_parameter/offset_y = 0.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44t6t"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og32f"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm3rk"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(176, 0, 16, 16)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqdtj"]
 texture = ExtResource("9_vnh4c")
 texture_margin_left = 16.0
@@ -360,6 +313,53 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
 atlas = ExtResource("11_mm3rk")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm3rk"]
+texture = ExtResource("9_vnh4c")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)
+modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og32f"]
+texture = ExtResource("9_vnh4c")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)
+modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44t6t"]
+texture = ExtResource("9_vnh4c")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)
+modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(80, 0, 16, 16)
 
 [node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat") groups=["Zeno"]]
 collision_layer = 9
@@ -458,10 +458,10 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_7qrlc")
 
 [node name="MENU" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("5_mm3rk")
 
 [node name="UI_menu" type="Control" parent="MENU"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -469,15 +469,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer2" type="NinePatchRect" parent="MENU/UI_menu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/UI_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer"]
 self_modulate = Color(0, 0, 0, 1)
 clip_children = 2
 material = SubResource("ShaderMaterial_44t6t")
 layout_mode = 2
-offset_left = 64.0
-offset_top = 16.0
-offset_right = 1088.0
-offset_bottom = 144.0
+size_flags_vertical = 3
 texture = ExtResource("7_vnh4c")
 region_rect = Rect2(256, 448, 64, 64)
 patch_margin_left = 16
@@ -487,86 +499,133 @@ patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="inventory" type="Button" parent="MENU/UI_menu/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="settings" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 48.0
-offset_top = 16.0
-offset_right = 256.0
-offset_bottom = 112.0
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
-icon = SubResource("AtlasTexture_jqdtj")
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/PanelContainer2/inventory"]
-material = ExtResource("10_og32f")
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 192.0
-offset_bottom = 80.0
-texture = SubResource("AtlasTexture_og32f")
-stretch_mode = 5
-
-[node name="equipment" type="Button" parent="MENU/UI_menu/PanelContainer2"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 288.0
-offset_top = 16.0
-offset_right = 496.0
-offset_bottom = 112.0
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_og32f")
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/PanelContainer2/equipment"]
-material = ExtResource("10_og32f")
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 192.0
-offset_bottom = 80.0
-texture = SubResource("AtlasTexture_mm3rk")
-stretch_mode = 5
-
-[node name="status" type="Button" parent="MENU/UI_menu/PanelContainer2"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 528.0
-offset_top = 16.0
-offset_right = 736.0
-offset_bottom = 112.0
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_mm3rk")
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/PanelContainer2/status"]
-material = ExtResource("10_og32f")
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 192.0
-offset_bottom = 80.0
-texture = SubResource("AtlasTexture_rxsed")
-stretch_mode = 5
-
-[node name="settings" type="Button" parent="MENU/UI_menu/PanelContainer2"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 768.0
-offset_top = 16.0
-offset_right = 976.0
-offset_bottom = 112.0
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
 theme_override_styles/focus = ExtResource("8_jgcw0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jqdtj")
+button_mask = 0
 icon = SubResource("AtlasTexture_prgsq")
 
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/PanelContainer2/settings"]
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
 material = ExtResource("10_og32f")
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 192.0
-offset_bottom = 80.0
+layout_mode = 2
 texture = SubResource("AtlasTexture_uow6m")
 stretch_mode = 5
 
-[connection signal="pressed" from="MENU/UI_menu/PanelContainer2/status" to="MENU" method="_on_status_pressed"]
+[node name="status" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mm3rk")
+button_mask = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_rxsed")
+stretch_mode = 5
+
+[node name="equipment" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_og32f")
+button_mask = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_mm3rk")
+stretch_mode = 5
+
+[node name="inventory" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_og32f")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MENU/UI_menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3

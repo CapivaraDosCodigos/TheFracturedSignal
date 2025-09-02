@@ -40,7 +40,7 @@ window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/handheld/orientation=4
-mouse_cursor/custom_image="uid://4t63sbm15mlv"
+window/custom_image="uid://4t63sbm15mlv"
 
 [editor_plugins]
 
@@ -50,10 +50,12 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 folder_colors={
 "res://Characters/": "purple",
+"res://Characters/Players/": "purple",
 "res://Characters/enemies/": "red",
 "res://Characters/enemies/bebedouro/": "blue",
 "res://Godot/": "green",
-"res://Godot/Diálogos/": "gray",
+"res://Godot/Batalha/": "gray",
+"res://Godot/Diálogos/": "teal",
 "res://Godot/Godot Cenas/": "blue",
 "res://Godot/classes/": "orange",
 "res://addons/": "pink",
