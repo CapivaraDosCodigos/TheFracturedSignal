@@ -11,7 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://textures/folder tres/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="10_pblfg"]
 [ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="11_ww2i2"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/PNG/16x16.png" id="12_vuo06"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/objetos/16x16.png" id="12_vuo06"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="14_i253q"]
 
@@ -254,6 +254,8 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(64, 56)
 sprite_frames = SubResource("SpriteFrames_6mvwj")
 
+[node name="Sprite2D" type="Sprite2D" parent="BatalhaCanvas/Personagens/player1"]
+
 [node name="player2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(24, 32)
 sprite_frames = SubResource("SpriteFrames_ejoer")
@@ -290,16 +292,14 @@ self_modulate = Color(0.454902, 0.662745, 0.960784, 1)
 z_index = 4
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.514
-anchor_top = 0.504
-anchor_right = 0.514
-anchor_bottom = 0.504
-offset_left = -160.128
-offset_top = -161.16
-offset_right = -16.128
-offset_bottom = -17.16
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.375
+anchor_top = 0.207
+anchor_right = 0.625
+anchor_bottom = 0.739
+offset_left = -3.05176e-05
+offset_top = -0.780006
+offset_right = -144.0
+offset_bottom = -144.06
 scale = Vector2(2, 2)
 texture = ExtResource("6_h4uln")
 patch_margin_left = 16
@@ -636,7 +636,7 @@ theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1
 theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
 theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
 theme_override_constants/outline_size = 16
-theme_override_constants/v_separation = 16
+theme_override_constants/v_separation = 32
 theme_override_constants/icon_margin = 16
 theme_override_constants/h_separation = 8
 theme_override_fonts/font = ExtResource("8_4jxlp")

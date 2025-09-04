@@ -1,0 +1,712 @@
+[gd_scene load_steps=36 format=3 uid="uid://uvyb32ag2irr"]
+
+[ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_vbq2r"]
+[ext_resource type="Texture2D" uid="uid://eo6pojuwje15" path="res://textures/characters/Zeno's/Niko.png" id="2_sufyp"]
+[ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/scripts/menu/sprite.gd" id="4_nxg10"]
+[ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://textures/PNG/funds/tilemap_packed.png" id="5_os2e1"]
+[ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/scripts/menu/menu.gd" id="6_i7hjv"]
+[ext_resource type="Material" uid="uid://ccsii6wbq0dhs" path="res://textures/folder tres/materials/zenoTest.tres" id="7_gbh7j"]
+[ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://textures/PNG/funds/Border All 7.png" id="8_2pive"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="9_qe563"]
+[ext_resource type="Texture2D" uid="uid://dkpfptdx5dya8" path="res://textures/PNG/funds/Border All 6.png" id="10_ugpsu"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="11_pdonl"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/objetos/16x16.png" id="12_dw61x"]
+[ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="13_rgyuw"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="14_ulmpl"]
+[ext_resource type="Texture2D" uid="uid://c3gupndh6ko5o" path="res://textures/PNG/funds/Deco All 3.png" id="15_mw84w"]
+[ext_resource type="Script" uid="uid://b1uvtvif0pg8j" path="res://Characters/Players/scripts/menu/SubMenuBase.gd" id="16_u8x1t"]
+
+[sub_resource type="Animation" id="Animation_ylfkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rtt46"]
+resource_name = "i_Down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_aax7i"]
+resource_name = "i_Left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_vn43q"]
+resource_name = "i_Right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_hdype"]
+resource_name = "i_Up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_vk12c"]
+resource_name = "w_Down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3), Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_070s6"]
+resource_name = "w_Left"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 1), Vector2i(3, 2), Vector2i(3, 3), Vector2i(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_wuym2"]
+resource_name = "w_Right"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 1), Vector2i(1, 2), Vector2i(1, 3), Vector2i(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_iodl2"]
+resource_name = "w_Up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 1), Vector2i(2, 2), Vector2i(2, 3), Vector2i(2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0146534),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wuym2"]
+_data = {
+&"RESET": SubResource("Animation_ylfkn"),
+&"i_Down": SubResource("Animation_rtt46"),
+&"i_Left": SubResource("Animation_aax7i"),
+&"i_Right": SubResource("Animation_vn43q"),
+&"i_Up": SubResource("Animation_hdype"),
+&"w_Down": SubResource("Animation_vk12c"),
+&"w_Left": SubResource("Animation_070s6"),
+&"w_Right": SubResource("Animation_wuym2"),
+&"w_Up": SubResource("Animation_iodl2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7qrlc"]
+radius = 7.0
+height = 28.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44t6t"]
+texture = ExtResource("10_ugpsu")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(128, 256, 64, 64)
+modulate_color = Color(0.552941, 0.560784, 0.972549, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
+atlas = ExtResource("12_dw61x")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
+atlas = ExtResource("12_dw61x")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
+atlas = ExtResource("12_dw61x")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
+atlas = ExtResource("12_dw61x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5mvp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5mvp"]
+texture = ExtResource("15_mw84w")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)
+modulate_color = Color(0.408143, 0.275222, 0.581094, 1)
+
+[node name="Niko" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat") groups=["Player"]]
+collision_layer = 9
+collision_mask = 14
+script = ExtResource("1_vbq2r")
+anim_player = NodePath("Anim")
+RayChat = NodePath("RayCast")
+metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(4.8, 4.8)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.15
+drag_vertical_offset = 0.2
+drag_left_margin = 0.15
+drag_right_margin = 0.15
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="RayCast" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(0, 25)
+collision_mask = 14
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wuym2")
+}
+speed_scale = 0.5
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_sufyp")
+hframes = 24
+vframes = 4
+script = ExtResource("4_nxg10")
+
+[node name="balloonZ" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.454902, 0.662745, 0.960784, 0.254902)
+z_index = 30
+position = Vector2(0, -21)
+texture = ExtResource("5_os2e1")
+region_enabled = true
+region_rect = Rect2(176, 32, 16, 16)
+
+[node name="magnifyingZ" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.454902, 0.662745, 0.960784, 0.254902)
+z_index = 30
+position = Vector2(0, -21)
+texture = ExtResource("5_os2e1")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)
+
+[node name="takeZ" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.454902, 0.662745, 0.960784, 0.254902)
+z_index = 30
+position = Vector2(0, -21)
+texture = ExtResource("5_os2e1")
+region_enabled = true
+region_rect = Rect2(240, 96, 16, 16)
+
+[node name="questionZ" type="Sprite2D" parent="Sprite"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.454902, 0.662745, 0.960784, 0.254902)
+z_index = 30
+position = Vector2(0, -21)
+texture = ExtResource("5_os2e1")
+region_enabled = true
+region_rect = Rect2(0, 144, 16, 16)
+
+[node name="Label" type="Label" parent="Sprite"]
+offset_left = -24.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -17.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_7qrlc")
+
+[node name="MENU" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("6_i7hjv")
+
+[node name="UI_menu" type="Control" parent="MENU"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/UI_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+clip_children = 2
+material = ExtResource("7_gbh7j")
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_2pive")
+region_rect = Rect2(256, 448, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="inventory" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("9_qe563")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/MarginContainer"]
+material = ExtResource("11_pdonl")
+layout_mode = 2
+texture = SubResource("AtlasTexture_og32f")
+stretch_mode = 5
+
+[node name="equipment" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("9_qe563")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
+material = ExtResource("11_pdonl")
+layout_mode = 2
+texture = SubResource("AtlasTexture_mm3rk")
+stretch_mode = 5
+
+[node name="status" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("9_qe563")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
+material = ExtResource("11_pdonl")
+layout_mode = 2
+texture = SubResource("AtlasTexture_rxsed")
+stretch_mode = 5
+
+[node name="settings" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("9_qe563")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
+material = ExtResource("11_pdonl")
+layout_mode = 2
+texture = SubResource("AtlasTexture_uow6m")
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="InventoryMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("13_rgyuw")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 188
+theme_override_constants/margin_right = 188
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+clip_children = 2
+material = ExtResource("7_gbh7j")
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_2pive")
+region_rect = Rect2(256, 448, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ItemList" type="ItemList" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/NinePatchRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
+theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
+theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/v_separation = 32
+theme_override_constants/icon_margin = 8
+theme_override_constants/h_separation = 32
+theme_override_fonts/font = ExtResource("14_ulmpl")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rxsed")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k5mvp")
+theme_override_styles/selected = SubResource("StyleBoxTexture_k5mvp")
+max_columns = 3
+same_column_width = true
+icon_scale = 1.6
+fixed_icon_size = Vector2i(16, 16)
+
+[node name="EquipmentMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("16_u8x1t")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="StatusMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("16_u8x1t")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="SettingsMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("16_u8x1t")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 2)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_7qrlc")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

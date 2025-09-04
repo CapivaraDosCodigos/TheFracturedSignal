@@ -1,5 +1,6 @@
 extends Node
 
+@onready var fps_label: Label = %fps_label
 @onready var audio := $AudioPlayerZ; @onready var audio2 := $AudioPlayerS
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
@@ -8,10 +9,14 @@ var inimigosA: Array[EnemiesBase] = []
 var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var BodyInteract: Node; var Body: Node
 var InteractionMode: String = "balloonZ"
-var cfg: PostProcessingConfiguration
+var cfg: PostProcessingConfiguration 
 
 func _ready() -> void:
 	cfg = $PostProcess.configuration as PostProcessingConfiguration
+	#print(Engine.get_version_info())
+
+func _physics_process(_delta: float) -> void:
+	fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and raio != null:
@@ -31,17 +36,18 @@ func _process(_delta: float) -> void:
 		if InteractionMode != "":
 			InteractionMode = ""
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	pass
-	#var _shader_material := preload("res://textures/folder tres/materials/tile3.tres")
-	#var _imagem_path := "res://texture/characters/Zeno's/Niko.png"
-	#if Input.is_action_just_pressed("menu"):
+	#var _shader_material := preload("res://textures/folder tres/materials/tile.tres")
+	#var _path := "res://textures/tiles top down/Texture/"
+	#if event.is_action_pressed("menu"):
+		#aplicar_em_todos_pngs(_path, _shader_material)
 		#Starts.SAVE(1)
 		#print(Starts.ZenoData.armorE)
 		#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
 		#print(Starts.ZenoData.armorE)
 		#salvar_print_visivel()
-		#$time.aplicar_material_e_salvar(_imagem_path, _shader_material)
+		#$time.aplicar_material_e_salvar("res://textures/objetos/16x16.png", _shader_material)
 
 func change_state(estado: GameState) -> void:
 	current_status = estado
@@ -84,6 +90,25 @@ func SceneTransition(caminho: String) -> void:
 func StartBatalha(inimigos: Array[EnemiesBase]) -> void:
 	inimigosA = inimigos
 	SceneTransition("res://Godot/Batalha/cenas/BATALHA.tscn")
+
+func aplicar_em_todos_pngs(pasta: String, shader: ShaderMaterial) -> void:
+	var dir := DirAccess.open(pasta)
+	if dir == null:
+		push_error("❌ Não foi possível abrir a pasta: " + pasta)
+		return
+	
+	# Garante que a pasta começa no lugar certo
+	dir.list_dir_begin()
+	var arquivo := dir.get_next()
+	while arquivo != "":
+		# Ignora subpastas
+		if not dir.current_is_dir():
+			if arquivo.to_lower().ends_with(".png"):
+				var caminho := pasta.path_join(arquivo)
+				print("🔹 Aplicando shader em:", caminho)
+				$time.aplicar_material_e_salvar(caminho, shader)
+		arquivo = dir.get_next()
+	dir.list_dir_end()
 
 #func _salvar_print_visivel():
 	#var img = get_viewport().get_texture().get_image()

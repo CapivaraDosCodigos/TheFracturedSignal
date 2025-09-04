@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://dbsryso5vgo6s"]
 
-[ext_resource type="Script" uid="uid://i6lfw4evyoa8" path="res://Characters/Players/script/ZekoNode.gd" id="1_cprly"]
+[ext_resource type="Script" uid="uid://i6lfw4evyoa8" path="res://Characters/Players/scripts/ZekoNode.gd" id="1_cprly"]
 [ext_resource type="Texture2D" uid="uid://nmeinsw5i5xt" path="res://textures/characters/Zeno's/Pequeno_Zeno.png" id="2_yjfde"]
-[ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/script/sprite.gd" id="4_6sfyn"]
+[ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/scripts/menu/sprite.gd" id="4_6sfyn"]
 [ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://textures/PNG/funds/tilemap_packed.png" id="5_kwisv"]
 [ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://textures/PNG/GUI.png" id="6_yjfde"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="7_7yoew"]
@@ -167,7 +167,7 @@ region = Rect2(5, 20, 52, 7)
 [sub_resource type="LabelSettings" id="LabelSettings_ds22u"]
 font = ExtResource("7_7yoew")
 
-[node name="Zeko" type="CharacterBody2D" groups=["Zeno"]]
+[node name="Zeko" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 41
 collision_mask = 40
 script = ExtResource("1_cprly")

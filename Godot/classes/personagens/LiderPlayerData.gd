@@ -1,0 +1,2 @@
+extends PlayerData
+class_name LiderPlayerData

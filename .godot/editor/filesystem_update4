@@ -9,6 +9,7 @@ res://textures/folder tres/materials/fenda.tres
 res://textures/folder tres/texturas/fenda_texture.tres
 res://textures/folder tres/EP1.tres
 res://shader/paletasWOW.gdshader
+res://textures/folder tres/materials/zenoTest.tres
 res://Godot/classes/itens/começo.tres
 res://Godot/classes/personagens/zeno.tres
 res://shader/paletteWOWOWOW.gdshader
@@ -24,6 +25,9 @@ res://shader/VHS.gdshader
 res://shader/SkyShader.gdshader
 res://shader/PSX-Camera.gdshader
 res://shader/shadow.gdshader
+res://Characters/Players/ObjectPlayer2.gd
+res://Characters/Players/ObjectPlayer.gd
 res://Characters/Players/cenas/zeno.tscn
 res://Godot/Batalha/cenas/BATALHA.tscn
 res://Areais/EP 1/começo.tscn
+res://Characters/Players/cenas/niko.tscn

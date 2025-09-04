@@ -28,7 +28,7 @@ func _ready() -> void:
 	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
 	while inimigos.size() > MAX_ENENINES:
 		inimigos.pop_back()
-	if Starts.Pdir != null:
+	if Starts.Pdir:
 		PlayersDIR = Starts.Pdir
 		players = Starts.Pdir.size()
 		var keys = PlayersDIR.keys()
@@ -37,6 +37,7 @@ func _ready() -> void:
 			playerI[idx].sprite_frames = PlayersDIR[key].Anime
 			playerI[idx].material = PlayersDIR[key].MaterialP
 			playerI[idx].play("default")
+	
 	for idx in range(inimigos.size()):
 		inimigosI[idx].sprite_frames = inimigos[idx].Anime
 		inimigosI[idx].material = inimigos[idx].MaterialI
@@ -79,6 +80,8 @@ func _iniciar_selecao():
 func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
 		return
+	
+	
 	
 	# Se um submenu está aberto, ele que controla input
 	if submenu_ativo:

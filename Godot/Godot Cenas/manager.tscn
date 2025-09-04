@@ -152,6 +152,15 @@ layer = 98
 
 [node name="Node" parent="CanvasL" instance=ExtResource("5_i2lsb")]
 
+[node name="fps_label" type="Label" parent="CanvasL"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+
 [node name="PostProcess" type="CanvasLayer" parent="."]
 layer = 128
 script = ExtResource("6_55auu")

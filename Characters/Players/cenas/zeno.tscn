@@ -1,18 +1,20 @@
-[gd_scene load_steps=36 format=3 uid="uid://drtftoc47qyxk"]
+[gd_scene load_steps=37 format=3 uid="uid://drtftoc47qyxk"]
 
-[ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/script/ZenoNode.gd" id="1_vk12c"]
-[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="2_jqdtj"]
+[ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_vk12c"]
 [ext_resource type="Texture2D" uid="uid://bpmp6013dypnk" path="res://textures/characters/Zeno's/Zeno scientist .png" id="3_jqdtj"]
-[ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="5_3ow6h"]
-[ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/script/menu.gd" id="5_mm3rk"]
-[ext_resource type="Texture2D" uid="uid://co6qn46s58rns" path="res://textures/paleta/P2.png" id="6_jgcw0"]
+[ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/scripts/menu/menu.gd" id="5_mm3rk"]
 [ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://textures/PNG/funds/tilemap_packed.png" id="6_vj6wd"]
+[ext_resource type="Material" uid="uid://ccsii6wbq0dhs" path="res://textures/folder tres/materials/zenoTest.tres" id="7_rxsed"]
 [ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://textures/PNG/funds/Border All 7.png" id="7_vnh4c"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="8_jgcw0"]
 [ext_resource type="Texture2D" uid="uid://dkpfptdx5dya8" path="res://textures/PNG/funds/Border All 6.png" id="9_vnh4c"]
 [ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="10_og32f"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/PNG/16x16.png" id="11_mm3rk"]
-[ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/script/sprite.gd" id="15_duemv"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/objetos/16x16.png" id="11_mm3rk"]
+[ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="14_prgsq"]
+[ext_resource type="Script" uid="uid://b1uvtvif0pg8j" path="res://Characters/Players/scripts/menu/SubMenuBase.gd" id="14_uow6m"]
+[ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/scripts/menu/sprite.gd" id="15_duemv"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="15_k5mvp"]
+[ext_resource type="Texture2D" uid="uid://c3gupndh6ko5o" path="res://textures/PNG/funds/Deco All 3.png" id="15_rxsed"]
 
 [sub_resource type="Animation" id="Animation_ylfkn"]
 length = 0.001
@@ -290,60 +292,6 @@ _data = {
 radius = 7.0
 height = 28.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_44t6t"]
-shader = ExtResource("5_3ow6h")
-shader_parameter/palette_tex = ExtResource("6_jgcw0")
-shader_parameter/palette_size = 22
-shader_parameter/offset_y = 0.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqdtj"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_prgsq"]
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm3rk"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(176, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og32f"]
-texture = ExtResource("9_vnh4c")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
-atlas = ExtResource("11_mm3rk")
-region = Rect2(64, 0, 16, 16)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44t6t"]
 texture = ExtResource("9_vnh4c")
 texture_margin_left = 16.0
@@ -352,8 +300,8 @@ texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(384, 128, 64, 64)
-modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
+region_rect = Rect2(128, 256, 64, 64)
+modulate_color = Color(0.552941, 0.560784, 0.972549, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
 
@@ -361,20 +309,46 @@ modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
 atlas = ExtResource("11_mm3rk")
 region = Rect2(80, 0, 16, 16)
 
-[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat") groups=["Zeno"]]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
+atlas = ExtResource("11_mm3rk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5mvp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5mvp"]
+texture = ExtResource("15_rxsed")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)
+modulate_color = Color(0.408143, 0.275222, 0.581094, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxsed"]
+radius = 7.0
+height = 28.0
+
+[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat") groups=["Player"]]
 collision_layer = 9
 collision_mask = 14
 script = ExtResource("1_vk12c")
-speed_running = 1.5
-speed_walk = 1.0
-anim_running = 1.2
-anim_walk = 0.8
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
 metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
 
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 zoom = Vector2(4.8, 4.8)
 process_callback = 0
 limit_smoothed = true
@@ -400,7 +374,6 @@ libraries = {
 speed_scale = 0.5
 
 [node name="Sprite" type="Sprite2D" parent="."]
-material = ExtResource("2_jqdtj")
 texture = ExtResource("3_jqdtj")
 hframes = 4
 vframes = 4
@@ -458,10 +431,10 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_7qrlc")
 
 [node name="MENU" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("5_mm3rk")
 
 [node name="UI_menu" type="Control" parent="MENU"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -487,7 +460,7 @@ theme_override_constants/margin_right = 16
 [node name="NinePatchRect" type="NinePatchRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer"]
 self_modulate = Color(0, 0, 0, 1)
 clip_children = 2
-material = SubResource("ShaderMaterial_44t6t")
+material = ExtResource("7_rxsed")
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("7_vnh4c")
@@ -514,88 +487,6 @@ theme_override_constants/margin_bottom = 10
 [node name="HBoxContainer" type="HBoxContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="settings" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_jqdtj")
-button_mask = 0
-icon = SubResource("AtlasTexture_prgsq")
-
-[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
-material = ExtResource("10_og32f")
-layout_mode = 2
-texture = SubResource("AtlasTexture_uow6m")
-stretch_mode = 5
-
-[node name="status" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_mm3rk")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
-material = ExtResource("10_og32f")
-layout_mode = 2
-texture = SubResource("AtlasTexture_rxsed")
-stretch_mode = 5
-
-[node name="equipment" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-theme_override_styles/focus = ExtResource("8_jgcw0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_og32f")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
-material = ExtResource("10_og32f")
-layout_mode = 2
-texture = SubResource("AtlasTexture_mm3rk")
-stretch_mode = 5
 
 [node name="inventory" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -625,7 +516,200 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_og32f")
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="MENU/UI_menu/VBoxContainer"]
+[node name="equipment" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_mm3rk")
+stretch_mode = 5
+
+[node name="status" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_rxsed")
+stretch_mode = 5
+
+[node name="settings" type="Button" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = ExtResource("8_jgcw0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
+material = ExtResource("10_og32f")
+layout_mode = 2
+texture = SubResource("AtlasTexture_uow6m")
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="InventoryMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("14_prgsq")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 188
+theme_override_constants/margin_right = 188
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer"]
+self_modulate = Color(0, 0, 0, 1)
+clip_children = 2
+material = ExtResource("7_rxsed")
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_vnh4c")
+region_rect = Rect2(256, 448, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ItemList" type="ItemList" parent="MENU/UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/NinePatchRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
+theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
+theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/v_separation = 32
+theme_override_constants/icon_margin = 8
+theme_override_constants/h_separation = 32
+theme_override_fonts/font = ExtResource("15_k5mvp")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rxsed")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k5mvp")
+theme_override_styles/selected = SubResource("StyleBoxTexture_k5mvp")
+max_columns = 3
+same_column_width = true
+icon_scale = 1.6
+fixed_icon_size = Vector2i(16, 16)
+
+[node name="EquipmentMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("14_uow6m")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="StatusMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("14_uow6m")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="SettingsMenu" type="Control" parent="MENU/UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("14_uow6m")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 2)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_rxsed")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

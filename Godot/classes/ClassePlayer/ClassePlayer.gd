@@ -1,11 +1,9 @@
 class_name ClassePlayer extends Resource
 
-@export var nome: String = "Generico"
-
 #region funcs
 
 func _to_string() -> String:
-	return nome
+	return self.resource_name
 
 func signal_calculator(base: int, growth_rate: float, level: int, extra: int) -> int:
 	return int(base * pow(growth_rate, level -1)) + extra

@@ -4,11 +4,10 @@ class_name PlayerData extends Resource
 @export_group("GamePLayer")
 @export var Nome: String = "Player"
 @export var Classe: ClassePlayer = ClassePlayer.new()
-@export var lider: bool = false
-@export var Anime: SpriteFrames = SpriteFrames.new()
-@export var MaterialP: ShaderMaterial = null
-@export var CharaterBody: PackedScene = PackedScene.new()
-@export var Save_position: Vector2 = Vector2(0.0, 0.0)
+@export var Anime: SpriteFrames
+@export var MaterialP: ShaderMaterial 
+@export var PlayerPath : String
+@export var Save_position: Vector2
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
