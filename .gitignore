@@ -1,0 +1,22 @@
+# Godot
+.godot/
+.import/
+export_presets.cfg
+export.cfg
+*.import
+*.mono/
+*.mono_build/
+*.mono_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE/editors
+.vscode/
+.idea/
+*.swp
+
+# Build / bin
+build/
+bin/
