@@ -1,15 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=11 format=3 uid="uid://cd53fp8qruq48"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=10 format=3 uid="uid://cd53fp8qruq48"]
 
 [ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="1_1ras7"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="1_ma64n"]
 [ext_resource type="Resource" uid="uid://bohkkwf5y2kmp" path="res://Godot/classes/itens/consumíveis/sandwich.tres" id="2_36n3i"]
 [ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/DATAS/InventoryData.gd" id="3_sahh3"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/objetos/16x16.png" id="4_qmuw0"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_qmuw0"]
 [ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/ItemArma.gd" id="6_j0fqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0fqg"]
-atlas = ExtResource("4_qmuw0")
 region = Rect2(48, 1104, 16, 16)
 
 [sub_resource type="Resource" id="Resource_6w1f0"]

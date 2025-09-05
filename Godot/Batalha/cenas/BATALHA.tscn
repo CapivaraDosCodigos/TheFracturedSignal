@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_apq3t"]
-[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://textures/folder tres/materials/BATALHA.tres" id="3_lwg78"]
-[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://textures/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folder tres/materials/BATALHA.tres" id="3_lwg78"]
+[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="5_i08h0"]
-[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://textures/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
-[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="7_t3mxv"]
-[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="8_4jxlp"]
-[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://textures/folder tres/zeko.tres" id="9_6s2d6"]
-[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://textures/folder tres/zeno.tres" id="10_pblfg"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="11_ww2i2"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://textures/objetos/16x16.png" id="12_vuo06"]
+[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
+[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://texture/folder tres/materials/tile3.tres" id="7_t3mxv"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folder tres/zeko.tres" id="9_6s2d6"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folder tres/zeno.tres" id="10_pblfg"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folder tres/materials/tile.tres" id="11_ww2i2"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="12_vuo06"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="14_i253q"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folder tres/example_balloonLINE.tres" id="14_i253q"]
 
 [sub_resource type="Animation" id="Animation_nt1gt"]
 resource_name = "E_panel"
@@ -199,8 +199,8 @@ region = Rect2(176, 0, 16, 16)
 
 [node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_wuibh")
-anim = NodePath("Batalha2D/Anim")
 inimigos = Array[Object]([ExtResource("2_apq3t")])
+anim = NodePath("Batalha2D/Anim")
 metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Batalha2D" type="Node2D" parent="."]

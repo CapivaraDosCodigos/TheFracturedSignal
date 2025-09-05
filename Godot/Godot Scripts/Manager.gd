@@ -1,11 +1,12 @@
 extends Node
 
 @onready var fps_label: Label = %fps_label
+@onready var Menu: CanvasLayer = $MENU
 @onready var audio := $AudioPlayerZ; @onready var audio2 := $AudioPlayerS
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
 
-var inimigosA: Array[EnemiesBase] = []
+var inimigosA: Array[EnemiesBase] = []; var batalha: DataBatalha = DataBatalha.new()
 var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var BodyInteract: Node; var Body: Node
 var InteractionMode: String = "balloonZ"
@@ -35,19 +36,6 @@ func _process(_delta: float) -> void:
 	if current_status != GameState.MAP:
 		if InteractionMode != "":
 			InteractionMode = ""
-
-func _input(event: InputEvent) -> void:
-	pass
-	#var _shader_material := preload("res://textures/folder tres/materials/tile.tres")
-	#var _path := "res://textures/tiles top down/Texture/"
-	#if event.is_action_pressed("menu"):
-		#aplicar_em_todos_pngs(_path, _shader_material)
-		#Starts.SAVE(1)
-		#print(Starts.ZenoData.armorE)
-		#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
-		#print(Starts.ZenoData.armorE)
-		#salvar_print_visivel()
-		#$time.aplicar_material_e_salvar("res://textures/objetos/16x16.png", _shader_material)
 
 func change_state(estado: GameState) -> void:
 	current_status = estado
@@ -87,29 +75,29 @@ func SceneTransition(caminho: String) -> void:
 	await get_tree().create_timer(0.1).timeout
 	$%fundo.visible = true
 
-func StartBatalha(inimigos: Array[EnemiesBase]) -> void:
-	inimigosA = inimigos
+func StartBatalha(batalhaS: DataBatalha) -> void:
+	batalha = batalhaS
+	inimigosA = batalha.inimigosB
 	SceneTransition("res://Godot/Batalha/cenas/BATALHA.tscn")
 
-func aplicar_em_todos_pngs(pasta: String, shader: ShaderMaterial) -> void:
-	var dir := DirAccess.open(pasta)
-	if dir == null:
-		push_error("❌ Não foi possível abrir a pasta: " + pasta)
-		return
-	
+#func aplicar_em_todos_pngs(pasta: String, shader: ShaderMaterial) -> void:
+	#var dir := DirAccess.open(pasta)
+	#if dir == null:
+		#push_error("❌ Não foi possível abrir a pasta: " + pasta)
+		#return
+	#
 	# Garante que a pasta começa no lugar certo
-	dir.list_dir_begin()
-	var arquivo := dir.get_next()
-	while arquivo != "":
+	#dir.list_dir_begin()
+	#var arquivo := dir.get_next()
+	#while arquivo != "":
 		# Ignora subpastas
-		if not dir.current_is_dir():
-			if arquivo.to_lower().ends_with(".png"):
-				var caminho := pasta.path_join(arquivo)
-				print("🔹 Aplicando shader em:", caminho)
-				$time.aplicar_material_e_salvar(caminho, shader)
-		arquivo = dir.get_next()
-	dir.list_dir_end()
-
+		#if not dir.current_is_dir():
+			#if arquivo.to_lower().ends_with(".png"):
+				#var caminho := pasta.path_join(arquivo)
+				#print("🔹 Aplicando shader em:", caminho)
+				#$time.aplicar_material_e_salvar(caminho, shader)
+		#arquivo = dir.get_next()
+	#dir.list_dir_end()
 #func _salvar_print_visivel():
 	#var img = get_viewport().get_texture().get_image()
 	#var dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
@@ -117,3 +105,15 @@ func aplicar_em_todos_pngs(pasta: String, shader: ShaderMaterial) -> void:
 	#var caminho = dir + "/" + nome
 	#img.save_png(caminho)
 	#print("Salvo em:", caminho)
+#func _input(_event: InputEvent) -> void:
+	#pass
+	#var _shader_material := preload("res://textures/folder tres/materials/tile.tres")
+	#var _path := "res://textures/tiles top down/Texture/"
+	#if event.is_action_pressed("menu"):
+		#aplicar_em_todos_pngs(_path, _shader_material)
+		#Starts.SAVE(1)
+		#print(Starts.ZenoData.armorE)
+		#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
+		#print(Starts.ZenoData.armorE)
+		#salvar_print_visivel()
+		#$time.aplicar_material_e_salvar("res://textures/objetos/16x16.png", _shader_material)

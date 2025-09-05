@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemiesBase" load_steps=5 format=3 uid="uid://bwq6iwhy0hgmu"]
 
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://textures/characters/inimigos/bebedouro.png" id="1_51ct3"]
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_51ct3"]
 [ext_resource type="Script" uid="uid://d3e8walkx38as" path="res://Godot/classes/Inimigos/EnemiesBase.gd" id="2_rkbil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm6gh"]

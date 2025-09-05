@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=15 format=3 uid="uid://dcxot31v0dfa6"]
 
-[ext_resource type="Texture2D" uid="uid://bpems8kj61h0w" path="res://textures/tiles top down/texture3/chão.png" id="1_ubm2y"]
-[ext_resource type="Material" uid="uid://c50qouuix1qg" path="res://textures/folder tres/materials/fenda.tres" id="3_ledxo"]
-[ext_resource type="Texture2D" uid="uid://5bswcxnd4p4t" path="res://textures/tiles top down/texture3/murrosTop.png" id="4_ds7vt"]
-[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://textures/folder tres/materials/tile3.tres" id="5_u0kip"]
-[ext_resource type="Texture2D" uid="uid://bsl7of8j3hu65" path="res://textures/tiles top down/Texture/TX Tileset Stone Ground.png" id="6_e6hc6"]
-[ext_resource type="Texture2D" uid="uid://dt81ephegbgig" path="res://textures/tiles top down/texture3/escadasTop.png" id="7_lt1eb"]
-[ext_resource type="Texture2D" uid="uid://w1usmtc8c2mh" path="res://textures/tiles top down/Texture/TX Props.png" id="8_g3m38"]
-[ext_resource type="Texture2D" uid="uid://b7ecr7uuouwc5" path="res://textures/tiles top down/Texture/TX Plant.png" id="8_u0kip"]
+[ext_resource type="Texture2D" uid="uid://bpems8kj61h0w" path="res://texture/tiles top down/texture3/chão.png" id="1_ubm2y"]
+[ext_resource type="Material" uid="uid://c50qouuix1qg" path="res://texture/folder tres/materials/fenda.tres" id="3_ledxo"]
+[ext_resource type="Texture2D" uid="uid://5bswcxnd4p4t" path="res://texture/tiles top down/texture3/murrosTop.png" id="4_ds7vt"]
+[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://texture/folder tres/materials/tile3.tres" id="5_u0kip"]
+[ext_resource type="Texture2D" uid="uid://bsl7of8j3hu65" path="res://texture/tiles top down/Texture/TX Tileset Stone Ground.png" id="6_e6hc6"]
+[ext_resource type="Texture2D" uid="uid://dt81ephegbgig" path="res://texture/tiles top down/texture3/escadasTop.png" id="7_lt1eb"]
+[ext_resource type="Texture2D" uid="uid://w1usmtc8c2mh" path="res://texture/tiles top down/Texture/TX Props.png" id="8_g3m38"]
+[ext_resource type="Texture2D" uid="uid://b7ecr7uuouwc5" path="res://texture/tiles top down/Texture/TX Plant.png" id="8_u0kip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf0vv"]
 texture = ExtResource("1_ubm2y")

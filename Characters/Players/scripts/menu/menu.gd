@@ -1,5 +1,4 @@
 extends CanvasLayer
-class_name CanvasLayerMenu
 
 @onready var buttons: Array[Button] = [ %inventory, %equipment, %status, %settings ]
 

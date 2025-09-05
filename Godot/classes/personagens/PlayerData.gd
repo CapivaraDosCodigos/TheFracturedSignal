@@ -6,7 +6,7 @@ class_name PlayerData extends Resource
 @export var Classe: ClassePlayer = ClassePlayer.new()
 @export var Anime: SpriteFrames
 @export var MaterialP: ShaderMaterial 
-@export var PlayerPath : String
+@export var objectplayer: PackedScene
 @export var Save_position: Vector2
 
 @export_group("PlayerStarts")

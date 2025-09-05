@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://qd88j5u4y4ji"]
+[gd_scene load_steps=14 format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/Godot Scripts/audio_player.gd" id="2_cconj"]
 [ext_resource type="Shader" uid="uid://bt5w87kqqgvk0" path="res://shader/paletteWOWOWOW.gdshader" id="3_rsoxv"]
-[ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://textures/paleta/Screenshot_31-600x600.png" id="4_6ebhy"]
+[ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="4_6ebhy"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="5_i2lsb"]
 [ext_resource type="Script" uid="uid://rwmxke1xgsn5" path="res://addons/post_processing/node/post_process.gd" id="6_55auu"]
+[ext_resource type="PackedScene" uid="uid://b4isedjlkckn0" path="res://Characters/Players/cenas/menu.tscn" id="6_pvfw1"]
 [ext_resource type="Script" uid="uid://cw3nr8nnejgjg" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="7_o5s8j"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
 
@@ -160,6 +161,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
+
+[node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 layer = 128

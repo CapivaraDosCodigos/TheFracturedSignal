@@ -15,7 +15,7 @@ extends Node
 const MAX_ENENINES: int = 3
 
 var last_state = null; var submenu_resultado = null
-var PlayersDIR: Dictionary; var panel_dict: Dictionary
+var PlayersDIR: Dictionary; var panel_dict: Dictionary; var batalha: DataBatalha
 var panels: Array; var selecoes: Array
 var players: int = 1; var current_index: int = 0; var jogador_atual: int = 0
 var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var submenu_ativo: bool = false
@@ -23,6 +23,7 @@ var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var subme
 #endregion
 
 func _ready() -> void:
+	batalha = Manager.batalha
 	Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
 	Manager.nova_palette("", false)
 	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
@@ -47,6 +48,7 @@ func _ready() -> void:
 	panel_dict = {"ATK": ATK,"ITM": ITM,"EXE": EXE,"DEF": DEF,"MRC": MRC}
 
 func _process(_delta: float) -> void:
+	batalha = Manager.batalha
 	var current_state = Manager.current_status
 	if current_state != last_state:
 		match current_state:

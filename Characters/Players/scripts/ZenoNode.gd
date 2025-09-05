@@ -1,6 +1,11 @@
 extends ObjectPlayer
 
 func _ready() -> void:
+# Desativar a câmera
+	#$Camera.current = false
+		# Ativar esta câmera
+	$Camera.enabled = false
+	#$OutraCamera.current = true
 	Manager.tocar_musica_manager("res://sons/music/acid_tunnel.ogg", 90, true)
 	#Manager.nova_palette("res://addons/post_processing/assets/green_palette.png", true)
 
@@ -11,9 +16,3 @@ func _physics_process(_delta) -> void:
 	
 	elif Manager.current_status == Manager.GameState.DIALOGUE:
 		update_animation(Vector2.ZERO)
-
-func player_physics() -> void:
-	if $MENU.menu:
-		update_animation(Vector2.ZERO)
-		return
-	super.player_physics()

@@ -59,9 +59,13 @@ folder_colors={
 "res://Godot/Diálogos/": "teal",
 "res://Godot/Godot Cenas/": "blue",
 "res://Godot/classes/": "orange",
+"res://Godot/classes/DATAS/": "blue",
+"res://Godot/classes/Inimigos/": "orange",
+"res://Godot/classes/itens/": "gray",
 "res://addons/": "pink",
 "res://shader/": "pink",
 "res://sons/": "blue",
+"res://texture/": "teal",
 "res://textures/": "teal",
 "res://textures/PNG/": "teal",
 "res://textures/characters/": "red",
@@ -71,6 +75,10 @@ folder_colors={
 "res://textures/objetos/": "gray",
 "res://textures/tiles top down/": "yellow"
 }
+
+[global_group]
+
+Player=""
 
 [gui]
 

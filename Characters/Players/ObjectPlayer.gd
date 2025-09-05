@@ -1,88 +1,130 @@
+## Classe responsável por controlar o Player principal e os seguidores no estilo Deltarune.
+## O mesmo script funciona tanto para o personagem controlado pelo jogador quanto para os "followers".
 class_name ObjectPlayer
 extends CharacterBody2D
 
+## Velocidade base do personagem.
 @export var speed: float = 70.0
-@export var no_player: bool = false # se true, vira "seguidor"
+## Define se este objeto NÃO é o player principal (ou seja, será um seguidor).
+@export var no_player: bool = false
 
-@export_group("Speed", "speed_")
-@export var speed_running: float = 1.0
-@export var speed_walk: float = 1.5
+@export_group("Velocidades")
+## Multiplicador de velocidade ao correr.
+@export var speed_running: float = 1.5
+## Multiplicador de velocidade ao andar.
+@export var speed_walk: float = 1.0
 
-@export_group("Anim", "anim_")
-@export var anim_running: float = 1.0
-@export var anim_walk: float = 1.5
+@export_group("Amimaçoes")
+## Velocidade das animações ao correr.
+@export var anim_running: float = 1.5
+## Velocidade das animações ao andar.
+@export var anim_walk: float = 1.0
 
 @export_group("Nodes")
+## Referência ao AnimationPlayer que controla as animações.
 @export var anim_player: AnimationPlayer
+## RayCast usado para detectar colisões à frente.
 @export var RayChat: RayCast2D
+## Referência ao líder (outro ObjectPlayer) caso este seja um seguidor.
+@export var leader: ObjectPlayer
+## A camera do jogo em cada personagem.
+@export var can: Camera2D
+## A área do player.
+@export var area: Area2D
 
-@export var leader: ObjectPlayer # referência ao personagem que vai seguir
-
+## Direção atual do movimento.
 var direction: Vector2 = Vector2.ZERO
+## Última direção em que o personagem estava virado (para animações).
 var last_facing: String = "Down"
+## Multiplicador de velocidade atual.
 var running: float = 1.0
 
-# memória de posições (para followers)
+## Flag que indica se o personagem está parado por colidir com uma área especial.
 var stopped_by_area: bool = false
+
+## Array que armazena as posições do player para gerar a "trilha" que os seguidores usam.
 var trail: Array[Vector2] = []
+## Quantidade máxima de posições que serão mantidas na trilha.
+@export var trail_length: int = 20
 
-@export var trail_length: int = 20 # atraso do seguidor
-
+## Física do player controlado pelo usuário.
 func player_physics() -> void:
 	if no_player:
 		return
+	can.enabled = true
 	
+	if Manager.Menu.menu:
+		update_animation(Vector2.ZERO)
+		return
+	
+	## Atualiza referência global do RayCast no Manager.
 	Manager.raio = RayChat
-	var _is_running := not Input.is_action_pressed("cancel")
+	
+	## Verifica se está correndo (pressionando "cancel").
+	var _is_running := Input.is_action_pressed("cancel")
 	direction = _input_direction()
 	
+	## Ajusta velocidade da animação e multiplicador de movimento.
 	anim_player.speed_scale = speed_running if _is_running else speed_walk
 	running = anim_running if _is_running else anim_walk
 	
+	## Aplica movimento.
 	velocity = direction * speed * running
 	move_and_slide()
 	update_animation(direction)
 	
-	# grava trilha
+	## Grava posição atual na trilha.
 	trail.push_front(global_position)
 	if trail.size() > trail_length:
 		trail.pop_back()
 
+## Física de um seguidor (segue o líder pela trilha).
 func follower_physics() -> void:
-	if leader == null and not no_player:
+	if not no_player:
 		return
-		
-	var _is_running := not Input.is_action_pressed("cancel")
+	can.enabled = false
+	
+	if leader == null:
+		return
+	
+	
+	var _is_running := Input.is_action_pressed("cancel")
 	anim_player.speed_scale = speed_running if _is_running else speed_walk
 	running = anim_running if _is_running else anim_walk
 	
+	## Se estiver parado por área especial.
 	if stopped_by_area:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
-	
-	
+	## Se colidir diretamente com o líder.
 	if RayChat.is_colliding() and RayChat.get_collider() == leader:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
-	# garante que o líder tenha trilha
+	## Se o líder ainda não tem trilha suficiente, não segue.
 	if leader.trail.size() < trail_length:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
+	## Calcula direção em relação ao ponto mais antigo da trilha do líder.
 	var target_pos = leader.trail.back()
 	var dir = (target_pos - global_position).normalized()
-	velocity = dir * speed * running # ligeiramente mais lento que o player
+	velocity = dir * speed * running
 	move_and_slide()
 	update_animation(dir)
+	
+	trail.push_front(global_position)
+	if trail.size() > trail_length:
+		trail.pop_back()
 
+## Atualiza a animação de acordo com a direção atual.
 func update_animation(_dir: Vector2) -> void:
 	if _dir != Vector2.ZERO:
 		if abs(_dir.x) > abs(_dir.y):
@@ -93,14 +135,21 @@ func update_animation(_dir: Vector2) -> void:
 	else:
 		anim_player.play("i_" + last_facing)
 
+## Calcula a direção a partir das teclas de movimento.
 func _input_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
 		Input.get_action_strength("Down") - Input.get_action_strength("Up")
 	).normalized()
-	
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	stopped_by_area = true
 
+## Callback chamado quando entra em uma área especial → para o movimento.
+func _on_area_2d_area_entered(_area: Area2D) -> void:
+	if not leader == null:
+		if leader.area == _area:
+			stopped_by_area = true
+
+## Callback chamado quando sai de uma área especial → retoma o movimento.
 func _on_area_2d_area_exited(_area: Area2D) -> void:
-	stopped_by_area = false
+	if not leader == null:
+		if leader.area == _area:
+			stopped_by_area = false

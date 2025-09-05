@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cwod1ylh8y1cj"]
+[gd_scene load_steps=7 format=4 uid="uid://cwod1ylh8y1cj"]
 
-[ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://textures/folder tres/EP1.tres" id="1_nn1m4"]
+[ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folder tres/EP1.tres" id="1_nn1m4"]
 [ext_resource type="PackedScene" uid="uid://3x7rgqstg6mq" path="res://Characters/NPCS/merchant.tscn" id="2_bfgb3"]
 [ext_resource type="PackedScene" uid="uid://drtftoc47qyxk" path="res://Characters/Players/cenas/zeno.tscn" id="2_nn1m4"]
-[ext_resource type="PackedScene" uid="uid://uvyb32ag2irr" path="res://Characters/Players/cenas/niko.tscn" id="3_ddk66"]
-[ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://textures/tiles top down/textura2/Scene Overview.png" id="4_t34vy"]
+[ext_resource type="PackedScene" uid="uid://uvyb32ag2irr" path="res://Characters/Players/cenas/niko.tscn" id="3_oq4xn"]
+[ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="4_t34vy"]
+[ext_resource type="PackedScene" uid="uid://dg5uvgn7uowbx" path="res://Characters/Players/cenas/arceus.tscn" id="6_oq4xn"]
 
 [node name="O Começo" type="Node2D"]
 
@@ -28,15 +29,19 @@ use_parent_material = true
 tile_set = ExtResource("1_nn1m4")
 
 [node name="Zeno" parent="." instance=ExtResource("2_nn1m4")]
-position = Vector2(176, 112)
 
-[node name="Niko" parent="." node_paths=PackedStringArray("leader") instance=ExtResource("3_ddk66")]
-position = Vector2(238, 114)
+[node name="Niko" parent="." node_paths=PackedStringArray("leader") instance=ExtResource("3_oq4xn")]
+position = Vector2(48, 0)
 no_player = true
 leader = NodePath("../Zeno")
 
+[node name="Arceus" parent="." node_paths=PackedStringArray("leader") instance=ExtResource("6_oq4xn")]
+position = Vector2(96, 0)
+no_player = true
+leader = NodePath("../Niko")
+
 [node name="merchant" parent="." instance=ExtResource("2_bfgb3")]
-position = Vector2(-51.8683, -66.8852)
+position = Vector2(-80, -48)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -58

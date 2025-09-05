@@ -1,13 +1,12 @@
 [gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://d302slnl03gy4"]
 
-[ext_resource type="Texture2D" uid="uid://bpmp6013dypnk" path="res://textures/characters/Zeno's/Zeno scientist .png" id="1_f2i5v"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="2_4uxj1"]
 [ext_resource type="Script" uid="uid://jncy8sypkenk" path="res://Godot/classes/ClassePlayer/ClassePlayer.gd" id="3_2d11r"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_4kryh"]
+[ext_resource type="PackedScene" uid="uid://drtftoc47qyxk" path="res://Characters/Players/cenas/zeno.tscn" id="3_52or3"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_52or3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d11r"]
-atlas = ExtResource("1_f2i5v")
 region = Rect2(21, 0, 21, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kryh"]
@@ -30,7 +29,7 @@ script = ExtResource("2_4uxj1")
 Nome = "Zeno"
 Classe = SubResource("Resource_aip5c")
 Anime = SubResource("SpriteFrames_4kryh")
-PlayerPath = "res://Characters/Players/cenas/zeno.tscn"
+objectplayer = ExtResource("3_52or3")
 Save_position = Vector2(0, 0)
 Lv = 1
 Life = 30
