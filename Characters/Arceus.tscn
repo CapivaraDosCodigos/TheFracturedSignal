@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://qnawrw7fje8y"]
 
-[ext_resource type="Texture2D" uid="uid://csy3v52ygrgam" path="res://texture/characters/inimigos/Arcade.png" id="1_2qwv1"]
+[ext_resource type="Texture2D" uid="uid://csy3v52ygrgam" path="res://texture/Characters/inimigos/Arcade.png" id="1_2qwv1"]
 
 [sub_resource type="GDScript" id="GDScript_jeaxr"]
 resource_name = "teste "

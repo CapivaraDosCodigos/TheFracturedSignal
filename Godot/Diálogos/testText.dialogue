@@ -21,11 +21,13 @@ Blu blu: pode me fazer um favor?
 
 ~ comercio
 do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.DialogoTexture("res://texture/Characters/dialogos/comecio.tres", "res://texture/folder tres/materials/tile.tres")
 Lila: Olá
 Lila: gostaria de comprar alguma coisa?
 - não, obrigado
 	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
 - sim!
 	Lila: bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]
+do Manager.DialogoTexture()
 => DialogueResource/Map
 

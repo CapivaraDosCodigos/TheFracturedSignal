@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://dygph1mmtcdv8"]
 
 [ext_resource type="Shader" uid="uid://84wmppkbbltb" path="res://shader/black and white.gdshader" id="1_mih8j"]
-[ext_resource type="Texture2D" uid="uid://dfpwtsokcjsu4" path="res://textures/characters/Assets/Extra/static_shadow.png" id="2_ipxyf"]
+[ext_resource type="Texture2D" uid="uid://dfpwtsokcjsu4" path="res://texture/Characters/Assets/Extra/static_shadow.png" id="2_ipxyf"]
 [ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="3_h7yws"]
-[ext_resource type="Texture2D" uid="uid://cu1d6yh71q1eh" path="res://textures/characters/npcs/bah/blu blu.png" id="4_ensn7"]
+[ext_resource type="Texture2D" uid="uid://cu1d6yh71q1eh" path="res://texture/Characters/npcs/bah/blu blu.png" id="4_ensn7"]
 
 [sub_resource type="GDScript" id="GDScript_anah5"]
 resource_name = "blu blu"

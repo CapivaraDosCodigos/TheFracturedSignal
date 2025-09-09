@@ -2,18 +2,16 @@ extends Node
 
 @onready var fps_label: Label = %fps_label
 @onready var Menu: CanvasLayer = $MENU
+@onready var cfg: PostProcessingConfiguration = $PostProcess.configuration
 @onready var audio := $AudioPlayerZ; @onready var audio2 := $AudioPlayerS
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
 
 var inimigosA: Array[EnemiesBase] = []; var batalha: DataBatalha = DataBatalha.new()
 var current_status: GameState = GameState.MAP: set = change_state
-var raio: RayCast2D; var BodyInteract: Node; var Body: Node
-var InteractionMode: String = "balloonZ"
-var cfg: PostProcessingConfiguration 
+var raio: RayCast2D; var Body: Node; var textureD: Texture; var materialD: ShaderMaterial
 
-func _ready() -> void:
-	cfg = $PostProcess.configuration as PostProcessingConfiguration
+#func _ready() -> void:
 	#print(Engine.get_version_info())
 
 func _physics_process(_delta: float) -> void:
@@ -25,17 +23,6 @@ func _process(_delta: float) -> void:
 			Body = raio.get_collider()
 	else:
 		Body = null
-	
-	if raio != null and raio.is_colliding():
-		BodyInteract = raio.get_collider()
-	else:
-		BodyInteract = null
-		if InteractionMode != "":
-			InteractionMode = ""
-	
-	if current_status != GameState.MAP:
-		if InteractionMode != "":
-			InteractionMode = ""
 
 func change_state(estado: GameState) -> void:
 	current_status = estado
@@ -80,6 +67,18 @@ func StartBatalha(batalhaS: DataBatalha) -> void:
 	inimigosA = batalha.inimigosB
 	SceneTransition("res://Godot/Batalha/cenas/BATALHA.tscn")
 
+func DialogoTexture(texture: String = "", material: String = "") -> void:
+	if texture == "":
+		textureD = null
+	else:
+		textureD = load(texture)
+	
+	if material == "":
+		materialD = null
+	else:
+		materialD = load(material)
+
+
 #func aplicar_em_todos_pngs(pasta: String, shader: ShaderMaterial) -> void:
 	#var dir := DirAccess.open(pasta)
 	#if dir == null:
@@ -105,15 +104,16 @@ func StartBatalha(batalhaS: DataBatalha) -> void:
 	#var caminho = dir + "/" + nome
 	#img.save_png(caminho)
 	#print("Salvo em:", caminho)
-#func _input(_event: InputEvent) -> void:
-	#pass
-	#var _shader_material := preload("res://textures/folder tres/materials/tile.tres")
-	#var _path := "res://textures/tiles top down/Texture/"
-	#if event.is_action_pressed("menu"):
+	
+func _input(event: InputEvent) -> void:
+	pass
+	var _shader_material := preload("res://texture/folder tres/materials/wow.tres")
+	var _path := "res://texture/PNG/funds/Border All 7.png"
+	if event.is_action_pressed("menu"):
 		#aplicar_em_todos_pngs(_path, _shader_material)
 		#Starts.SAVE(1)
 		#print(Starts.ZenoData.armorE)
 		#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
 		#print(Starts.ZenoData.armorE)
 		#salvar_print_visivel()
-		#$time.aplicar_material_e_salvar("res://textures/objetos/16x16.png", _shader_material)
+		$time.aplicar_material_e_salvar(_path, _shader_material)

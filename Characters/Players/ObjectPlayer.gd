@@ -65,8 +65,8 @@ func player_physics() -> void:
 	direction = _input_direction()
 	
 	## Ajusta velocidade da animação e multiplicador de movimento.
-	anim_player.speed_scale = speed_running if _is_running else speed_walk
-	running = anim_running if _is_running else anim_walk
+	running = speed_running if _is_running else speed_walk
+	anim_player.speed_scale = anim_running if _is_running else anim_walk
 	
 	## Aplica movimento.
 	velocity = direction * speed * running
@@ -87,33 +87,28 @@ func follower_physics() -> void:
 	if leader == null:
 		return
 	
-	
 	var _is_running := Input.is_action_pressed("cancel")
-	anim_player.speed_scale = speed_running if _is_running else speed_walk
-	running = anim_running if _is_running else anim_walk
+	anim_player.speed_scale = anim_running if _is_running else anim_walk
+	running = speed_running if _is_running else speed_walk
 	
-	## Se estiver parado por área especial.
 	if stopped_by_area:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
-	## Se colidir diretamente com o líder.
 	if RayChat.is_colliding() and RayChat.get_collider() == leader:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
-	## Se o líder ainda não tem trilha suficiente, não segue.
 	if leader.trail.size() < trail_length:
 		velocity = Vector2.ZERO
 		update_animation(Vector2.ZERO)
 		move_and_slide()
 		return
 	
-	## Calcula direção em relação ao ponto mais antigo da trilha do líder.
 	var target_pos = leader.trail.back()
 	var dir = (target_pos - global_position).normalized()
 	velocity = dir * speed * running

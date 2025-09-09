@@ -66,6 +66,10 @@ folder_colors={
 "res://shader/": "pink",
 "res://sons/": "blue",
 "res://texture/": "teal",
+"res://texture/Characters/": "blue",
+"res://texture/Characters/dialogos/": "teal",
+"res://texture/folder tres/": "orange",
+"res://texture/objetos/": "gray",
 "res://textures/": "teal",
 "res://textures/PNG/": "teal",
 "res://textures/characters/": "red",
@@ -139,12 +143,6 @@ pointing/emulate_touch_from_mouse=true
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.dialogue", "res://Godot/Diálogos/bebedouro.dialogue", "res://Godot/Diálogos/Symptoms.dialogue")
-
-[layer_names]
-
-2d_physics/layer_1="player"
-2d_physics/layer_2="assets"
-2d_physics/layer_3="enemies"
 
 [rendering]
 

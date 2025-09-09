@@ -199,8 +199,8 @@ region = Rect2(176, 0, 16, 16)
 
 [node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_wuibh")
-inimigos = Array[Object]([ExtResource("2_apq3t")])
 anim = NodePath("Batalha2D/Anim")
+inimigos = Array[Object]([ExtResource("2_apq3t")])
 metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Batalha2D" type="Node2D" parent="."]

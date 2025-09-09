@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://3x7rgqstg6mq"]
 
 [ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folder tres/materials/tile.tres" id="1_qhk00"]
-[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="2_m02bx"]
+[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/Characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="2_m02bx"]
 
 [sub_resource type="GDScript" id="GDScript_a8i7l"]
 resource_name = "comerciante"
@@ -10,8 +10,6 @@ script/source = "extends StaticBody2D
 func _process(_delta: float) -> void:
 	if Manager.Body == self and Manager.current_status == Manager.GameState.MAP:
 		DialogueManager.show_example_dialogue_balloon(load(\"res://Godot/Diálogos/testText.dialogue\"), \"comercio\")
-	if Manager.BodyInteract == self and Manager.current_status == Manager.GameState.MAP:
-		Manager.InteractionMode = \"balloonZ\"
 	
 	
 																				

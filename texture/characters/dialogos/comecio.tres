@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bsm8xyiso12j3"]
+
+[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/Characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="1_mmusa"]
+
+[resource]
+atlas = ExtResource("1_mmusa")
+region = Rect2(376, 32, 32, 32)

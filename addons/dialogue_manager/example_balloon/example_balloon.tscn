@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://textures/font/kenney_mini_square.ttf" id="3_r5ei8"]
-[ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="4_wbrl0"]
-[ext_resource type="Texture2D" uid="uid://co6qn46s58rns" path="res://textures/paleta/P2.png" id="5_83g4i"]
-[ext_resource type="FontFile" uid="uid://b056rcdsyltht" path="res://textures/font/Mojangles.ttf" id="5_v42gu"]
-[ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://textures/PNG/funds/Border All 7.png" id="6_wbrl0"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="3_r5ei8"]
+[ext_resource type="Material" uid="uid://clfr2oy780nku" path="res://texture/folder tres/materials/wow.tres" id="4_wbrl0"]
+[ext_resource type="FontFile" uid="uid://b056rcdsyltht" path="res://texture/font/Mojangles.ttf" id="5_v42gu"]
+[ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="6_83g4i"]
+[ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://texture/PNG/funds/Border All 7.png" id="6_wbrl0"]
+[ext_resource type="Script" uid="uid://sxqj8grp2l78" path="res://addons/dialogue_manager/example_balloon/texture_rect.gd" id="7_83g4i"]
 [ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="7_exrs5"]
-[ext_resource type="Texture2D" uid="uid://ucljqcw0m3mk" path="res://textures/paleta/palette_20colors_32x1.png" id="8_o6t3l"]
-[ext_resource type="Texture2D" uid="uid://bjc7fwmqhjoko" path="res://textures/PNG/Default/Transparent border/panel-transparent-border-001.png" id="8_v42gu"]
-[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://textures/folder tres/example_balloon.tres" id="8_wqs7j"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://textures/folder tres/example_balloonLINE.tres" id="9_wbrl0"]
+[ext_resource type="Texture2D" uid="uid://ucljqcw0m3mk" path="res://texture/paleta/palette_20colors_32x1.png" id="8_o6t3l"]
+[ext_resource type="Texture2D" uid="uid://bjc7fwmqhjoko" path="res://texture/PNG/Default/Transparent border/panel-transparent-border-001.png" id="8_v42gu"]
+[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folder tres/example_balloon.tres" id="8_wqs7j"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folder tres/example_balloonLINE.tres" id="9_wbrl0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v42gu"]
 texture = ExtResource("8_v42gu")
@@ -65,12 +66,6 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jjgm"]
-shader = ExtResource("4_wbrl0")
-shader_parameter/palette_tex = ExtResource("5_83g4i")
-shader_parameter/palette_size = 22
-shader_parameter/offset_y = 0.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8fyy4"]
 shader = ExtResource("7_exrs5")
 shader_parameter/palette = ExtResource("8_o6t3l")
@@ -99,7 +94,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = -156.0
+offset_top = -172.0
 offset_right = 16.0
 offset_bottom = 4.0
 grow_horizontal = 2
@@ -108,7 +103,7 @@ grow_vertical = 0
 [node name="PanelContainer" type="NinePatchRect" parent="Balloon/MarginContainer"]
 self_modulate = Color(0, 0, 0, 1)
 clip_children = 2
-material = SubResource("ShaderMaterial_2jjgm")
+material = ExtResource("4_wbrl0")
 layout_mode = 2
 texture = ExtResource("6_wbrl0")
 region_rect = Rect2(256, 448, 64, 64)
@@ -120,15 +115,83 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -6.0
-offset_top = 3.0
-offset_right = 1122.0
-offset_bottom = 121.0
+offset_right = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResponsesMenu" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" node_paths=PackedStringArray("response_template")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_83g4i")
+region_rect = Rect2(320, 192, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("7_83g4i")
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/NinePatchRect"]
+z_index = -1
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -54.0
+offset_right = 54.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+material = SubResource("ShaderMaterial_8fyy4")
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_r5ei8")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.266159, 0.147006, 0.469168, 1)
+theme_override_fonts/normal_font = ExtResource("5_v42gu")
+theme_override_font_sizes/normal_font_size = 24
+text = "diálogos"
+skip_action = &"menu"
+seconds_per_step = 0.05
+seconds_per_pause_step = 0.35
+
+[node name="ResponsesMenu" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -139,7 +202,7 @@ script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 next_action = &"cancel"
 
-[node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -153,40 +216,11 @@ theme_override_colors/font_color = Color(0.384314, 0.541176, 0.8, 1)
 theme_override_colors/font_focus_color = Color(0.384314, 0.541176, 0.8, 1)
 theme_override_colors/font_pressed_color = Color(0.384314, 0.541176, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_v42gu")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = ExtResource("9_wbrl0")
 theme_override_styles/normal = ExtResource("8_wqs7j")
 button_mask = 0
 text = "Response example"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
-material = SubResource("ShaderMaterial_8fyy4")
-layout_mode = 2
-mouse_filter = 1
-theme_override_fonts/normal_font = ExtResource("3_r5ei8")
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = true
-text = "Character"
-fit_content = true
-scroll_active = false
-
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.266159, 0.147006, 0.469168, 1)
-theme_override_fonts/normal_font = ExtResource("5_v42gu")
-theme_override_font_sizes/normal_font_size = 16
-bbcode_enabled = false
-text = "Dialogue..."
-skip_action = &"menu"
-seconds_per_step = 0.05
-seconds_per_pause_step = 0.35
-
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="response_selected" from="Balloon/MarginContainer/PanelContainer/MarginContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="response_selected" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
