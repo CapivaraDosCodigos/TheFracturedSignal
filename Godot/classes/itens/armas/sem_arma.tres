@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemArma" load_steps=2 format=3 uid="uid://cqow08snhfncp"]
 
-[ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/ItemArma.gd" id="1_8spcp"]
+[ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/armas/ItemArma.gd" id="1_8spcp"]
 
 [resource]
 script = ExtResource("1_8spcp")

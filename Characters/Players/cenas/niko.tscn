@@ -1,7 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://uvyb32ag2irr"]
+[gd_scene load_steps=17 format=3 uid="uid://uvyb32ag2irr"]
 
 [ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_vbq2r"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_jolb5"]
 [ext_resource type="Texture2D" uid="uid://eo6pojuwje15" path="res://texture/Characters/Zeno's/Niko.png" id="2_sufyp"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_ee2ux"]
+
+[sub_resource type="Resource" id="Resource_75ux5"]
+script = ExtResource("3_ee2ux")
+duration = 1.0
+transition = 0
+ease = 2
 
 [sub_resource type="Animation" id="Animation_ylfkn"]
 length = 0.001
@@ -283,26 +291,24 @@ height = 28.0
 collision_layer = 9
 collision_mask = 6
 script = ExtResource("1_vbq2r")
+Nome = "Niko"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
 can = NodePath("Camera")
 area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 visible = false
+top_level = true
+script = ExtResource("2_jolb5")
+priority = 5
+follow_mode = 2
+follow_target = NodePath("..")
 zoom = Vector2(4.8, 4.8)
-process_callback = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_horizontal_offset = 0.15
-drag_vertical_offset = 0.2
-drag_left_margin = 0.15
-drag_right_margin = 0.15
-editor_draw_limits = true
-editor_draw_drag_margin = true
+tween_resource = SubResource("Resource_75ux5")
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="RayCast" type="RayCast2D" parent="."]
 visible = false

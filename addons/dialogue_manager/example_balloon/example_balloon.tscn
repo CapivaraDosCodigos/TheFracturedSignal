@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="3_r5ei8"]
-[ext_resource type="Material" uid="uid://clfr2oy780nku" path="res://texture/folder tres/materials/wow.tres" id="4_wbrl0"]
+[ext_resource type="Material" uid="uid://clfr2oy780nku" path="res://texture/folderTres/materials/wow.tres" id="4_wbrl0"]
 [ext_resource type="FontFile" uid="uid://b056rcdsyltht" path="res://texture/font/Mojangles.ttf" id="5_v42gu"]
 [ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="6_83g4i"]
 [ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://texture/PNG/funds/Border All 7.png" id="6_wbrl0"]
@@ -12,8 +12,8 @@
 [ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="7_exrs5"]
 [ext_resource type="Texture2D" uid="uid://ucljqcw0m3mk" path="res://texture/paleta/palette_20colors_32x1.png" id="8_o6t3l"]
 [ext_resource type="Texture2D" uid="uid://bjc7fwmqhjoko" path="res://texture/PNG/Default/Transparent border/panel-transparent-border-001.png" id="8_v42gu"]
-[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folder tres/example_balloon.tres" id="8_wqs7j"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folder tres/example_balloonLINE.tres" id="9_wbrl0"]
+[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folderTres/BoxTexture/example_balloon.tres" id="8_wqs7j"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="9_wbrl0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v42gu"]
 texture = ExtResource("8_v42gu")

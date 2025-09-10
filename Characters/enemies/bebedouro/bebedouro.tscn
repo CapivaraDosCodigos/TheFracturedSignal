@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgs8qnmsvgs1g"]
 
 [ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/Characters/inimigos/bebedouro.png" id="1_jeaxr"]
-[ext_resource type="Material" uid="uid://k4w23p5s4wpn" path="res://texture/folder tres/materials/zipTile.tres" id="1_qurpp"]
+[ext_resource type="Material" uid="uid://k4w23p5s4wpn" path="res://texture/folderTres/materials/zipTile.tres" id="1_qurpp"]
 
 [sub_resource type="GDScript" id="GDScript_jeaxr"]
 resource_name = "teste "

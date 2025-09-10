@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemArmadura" load_steps=3 format=3 uid="uid://014vc1tqhv3q"]
 
-[ext_resource type="Script" uid="uid://dkcvsotc2mgdk" path="res://Godot/classes/itens/ItemArmadura.gd" id="1_qkvb7"]
+[ext_resource type="Script" uid="uid://dkcvsotc2mgdk" path="res://Godot/classes/itens/armaduras/ItemArmadura.gd" id="1_qkvb7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w0ye"]
 region = Rect2(64, 784, 16, 16)

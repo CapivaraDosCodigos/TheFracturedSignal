@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://i6lfw4evyoa8" path="res://Characters/Players/scripts/ZekoNode.gd" id="1_cprly"]
 [ext_resource type="Texture2D" uid="uid://nmeinsw5i5xt" path="res://texture/Characters/Zeno's/Pequeno_Zeno.png" id="2_yjfde"]
 [ext_resource type="Script" uid="uid://cjgvb1l723b2a" path="res://Characters/Players/scripts/menu/sprite.gd" id="4_6sfyn"]
-[ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://texture/PNG/funds/tilemap_packed.png" id="5_kwisv"]
+[ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://texture/PNG/tilemap_packed.png" id="5_kwisv"]
 [ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="6_yjfde"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="7_7yoew"]
 

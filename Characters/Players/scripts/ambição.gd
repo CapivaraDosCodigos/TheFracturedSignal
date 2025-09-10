@@ -4,8 +4,7 @@ extends CharacterBody2D
 
 var direction := Vector2.ZERO
 
-		
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Manager.current_status == Manager.GameState.BATTLE:
 		batalha()
 	else:
@@ -21,5 +20,3 @@ func batalha() -> void:
 	velocity = direction * speed
 	move_and_slide()
 	self.visible = true
-	
-		

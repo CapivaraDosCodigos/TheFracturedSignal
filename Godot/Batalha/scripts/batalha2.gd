@@ -82,9 +82,7 @@ func _iniciar_selecao():
 func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
 		return
-	
-	
-	
+
 	# Se um submenu está aberto, ele que controla input
 	if submenu_ativo:
 		if event.is_action_pressed("cancel"):
@@ -124,6 +122,15 @@ func _abrir_submenu(panel: Control) -> void:
 				"ITM":
 					submenu_ativo = true
 					var resultado = await itemMenu.itemsIvt()
+					if resultado == null or resultado["index"] < 0:
+							# Jogador cancelou
+						if players > 1 and jogador_atual > 0 and not selecao_finalizada:
+							jogador_atual -= 1
+							current_index = selecoes[jogador_atual]
+							_focus_current_panel()
+							_fechar_submenu()
+							return
+																											
 					submenu_resultado = resultado
 					_confirmar_acao(nome, submenu_resultado)
 					_fechar_submenu()
@@ -133,9 +140,7 @@ func _abrir_submenu(panel: Control) -> void:
 func _fechar_submenu() -> void:
 	submenu_ativo = false
 	submenu_resultado = null
-	
-	itemMenu.cancel()
-	
+	itemMenu.end()
 	_focus_current_panel()
 
 func _confirmar_acao(nome: String, _dados_extra = null) -> void:
@@ -168,8 +173,13 @@ func _act(act: String, ent: int, _enem: int = 0):
 		"EXE":
 			print("Executar")
 		"ITM":
-			print("Usar item:", submenu_resultado)
-			Starts.InvData.itens.remove_at(submenu_resultado["index"])
+			if submenu_resultado != null:
+				print("Usar item:", submenu_resultado)
+				print("Índice:", submenu_resultado["index"])
+			else:
+				print("Nenhum item selecionado")
+									
+			#Starts.InvData.itens.remove_at(submenu_resultado["index"])
 		"MRC":
 			print("Mercy")
 		_:

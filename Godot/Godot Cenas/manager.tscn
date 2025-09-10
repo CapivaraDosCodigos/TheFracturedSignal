@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qd88j5u4y4ji"]
+[gd_scene load_steps=15 format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/Godot Scripts/audio_player.gd" id="2_cconj"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="4_6ebhy"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="5_i2lsb"]
 [ext_resource type="Script" uid="uid://rwmxke1xgsn5" path="res://addons/post_processing/node/post_process.gd" id="6_55auu"]
-[ext_resource type="PackedScene" uid="uid://b4isedjlkckn0" path="res://Characters/Players/cenas/menu.tscn" id="6_pvfw1"]
+[ext_resource type="PackedScene" uid="uid://b4isedjlkckn0" path="res://Characters/Players/menu.tscn" id="6_pvfw1"]
 [ext_resource type="Script" uid="uid://cw3nr8nnejgjg" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="7_o5s8j"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="10_rsoxv"]
 
 [sub_resource type="Gradient" id="Gradient_mxm6a"]
 
@@ -171,3 +172,14 @@ configuration = SubResource("Resource_hwlqp")
 metadata/_custom_type_script = "uid://rwmxke1xgsn5"
 
 [node name="time" parent="." instance=ExtResource("8_oug2w")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+zoom = Vector2(4.8, 4.8)
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("10_rsoxv")
+host_layers = 31

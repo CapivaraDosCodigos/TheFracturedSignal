@@ -27,6 +27,7 @@ run/translations/default_csv_locale="en"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Manager="*res://Godot/Godot Cenas/manager.tscn"
 Starts="*res://Godot/Godot Scripts/GameStarts.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [dialogue_manager]
 
@@ -45,7 +46,7 @@ window/custom_image="uid://4t63sbm15mlv"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/post_processing/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/post_processing/plugin.cfg")
 
 [file_customization]
 
@@ -68,7 +69,7 @@ folder_colors={
 "res://texture/": "teal",
 "res://texture/Characters/": "blue",
 "res://texture/Characters/dialogos/": "teal",
-"res://texture/folder tres/": "orange",
+"res://texture/folderTres/": "orange",
 "res://texture/objetos/": "gray",
 "res://textures/": "teal",
 "res://textures/PNG/": "teal",

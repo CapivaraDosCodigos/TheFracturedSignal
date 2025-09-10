@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var speed: float = 70.0
 ## Define se este objeto NÃO é o player principal (ou seja, será um seguidor).
 @export var no_player: bool = false
+## Nome
+@export var Nome: String
 
 @export_group("Velocidades")
 ## Multiplicador de velocidade ao correr.
@@ -28,7 +30,7 @@ extends CharacterBody2D
 ## Referência ao líder (outro ObjectPlayer) caso este seja um seguidor.
 @export var leader: ObjectPlayer
 ## A camera do jogo em cada personagem.
-@export var can: Camera2D
+@export var can: PhantomCamera2D
 ## A área do player.
 @export var area: Area2D
 
@@ -51,7 +53,7 @@ var trail: Array[Vector2] = []
 func player_physics() -> void:
 	if no_player:
 		return
-	can.enabled = true
+#
 	
 	if Manager.Menu.menu:
 		update_animation(Vector2.ZERO)
@@ -82,7 +84,7 @@ func player_physics() -> void:
 func follower_physics() -> void:
 	if not no_player:
 		return
-	can.enabled = false
+	#can.enabled = false
 	
 	if leader == null:
 		return

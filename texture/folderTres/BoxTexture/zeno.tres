@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ehj3gykeutk7"]
+
+[ext_resource type="Texture2D" uid="uid://bh3ncbh415jdm" path="res://texture/PNG/funds/fundoDiverso.png" id="1_n6bnl"]
+
+[resource]
+texture = ExtResource("1_n6bnl")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(384, 128, 64, 64)

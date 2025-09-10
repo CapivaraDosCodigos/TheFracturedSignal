@@ -2,5 +2,5 @@ import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
 
 ~ bebedouro
 do Manager.change_state(Manager.GameState.DIALOGUE)
-O Bebedouro começou uma Batalha [next=auto]
+Bebedouro: blub blub
 => DialogueResource/BatalhaMenu

@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bohkkwf5y2kmp" path="res://Godot/classes/itens/consumíveis/sandwich.tres" id="2_36n3i"]
 [ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/DATAS/InventoryData.gd" id="3_sahh3"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_qmuw0"]
-[ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/ItemArma.gd" id="6_j0fqg"]
+[ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/armas/ItemArma.gd" id="6_j0fqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0fqg"]
 region = Rect2(48, 1104, 16, 16)

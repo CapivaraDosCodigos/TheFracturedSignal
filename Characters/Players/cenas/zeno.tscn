@@ -1,7 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://drtftoc47qyxk"]
+[gd_scene load_steps=17 format=3 uid="uid://drtftoc47qyxk"]
 
 [ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_vk12c"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_7ckmp"]
 [ext_resource type="Texture2D" uid="uid://dn2g3gg3t3fmy" path="res://texture/Characters/Zeno's/Zeno.png" id="2_ioib5"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_7k03i"]
+
+[sub_resource type="Resource" id="Resource_ioib5"]
+script = ExtResource("3_7k03i")
+duration = 0.4
+transition = 7
+ease = 1
 
 [sub_resource type="Animation" id="Animation_ylfkn"]
 length = 0.001
@@ -279,30 +287,27 @@ _data = {
 radius = 8.0
 height = 34.0
 
-[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
+[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "area") groups=["Player"]]
 collision_layer = 9
 collision_mask = 6
 script = ExtResource("1_vk12c")
+Nome = "Zeno"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
-can = NodePath("Camera")
 area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
 
-[node name="Camera" type="Camera2D" parent="."]
-visible = false
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("2_7ckmp")
+priority = 5
+follow_mode = 2
+follow_target = NodePath("..")
 zoom = Vector2(4.8, 4.8)
-process_callback = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_horizontal_offset = 0.15
-drag_vertical_offset = 0.2
-drag_left_margin = 0.15
-drag_right_margin = 0.15
-editor_draw_limits = true
-editor_draw_drag_margin = true
+frame_preview = false
+tween_resource = SubResource("Resource_ioib5")
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="RayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 2)

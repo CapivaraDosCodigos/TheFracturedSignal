@@ -1,19 +1,26 @@
-[gd_scene load_steps=36 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=38 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_apq3t"]
-[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folder tres/materials/BATALHA.tres" id="3_lwg78"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_y71rf"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ky1x7"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="5_i08h0"]
 [ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
-[ext_resource type="Material" uid="uid://bfoa3cshnjc2f" path="res://texture/folder tres/materials/tile3.tres" id="7_t3mxv"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
-[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folder tres/zeko.tres" id="9_6s2d6"]
-[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folder tres/zeno.tres" id="10_pblfg"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folder tres/materials/tile.tres" id="11_ww2i2"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="11_ww2i2"]
 [ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="12_vuo06"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folder tres/example_balloonLINE.tres" id="14_i253q"]
+[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
+
+[sub_resource type="Resource" id="Resource_s0ely"]
+script = ExtResource("4_ky1x7")
+duration = 1.0
+transition = 0
+ease = 2
 
 [sub_resource type="Animation" id="Animation_nt1gt"]
 resource_name = "E_panel"
@@ -205,20 +212,12 @@ metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Batalha2D" type="Node2D" parent="."]
 
-[node name="Camera" type="Camera2D" parent="Batalha2D"]
-anchor_mode = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_horizontal_offset = 0.3
-drag_vertical_offset = 0.4
-drag_left_margin = 0.3
-drag_top_margin = 0.4
-drag_right_margin = 0.3
-drag_bottom_margin = 0.4
-editor_draw_limits = true
-editor_draw_drag_margin = true
+[node name="Camera" type="Node2D" parent="Batalha2D"]
+script = ExtResource("3_y71rf")
+priority = 5
+tween_resource = SubResource("Resource_s0ely")
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Anim" type="AnimationPlayer" parent="Batalha2D"]
 root_node = NodePath("../../BatalhaCanvas")
@@ -243,18 +242,9 @@ expand_mode = 1
 [node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
 scale = Vector2(4, 4)
 
-[node name="Ambição" parent="BatalhaCanvas/Personagens" instance=ExtResource("5_i08h0")]
-unique_name_in_owner = true
-visible = false
-z_index = 1
-position = Vector2(144, 60)
-scale = Vector2(0.5, 0.5)
-
 [node name="player1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(64, 56)
 sprite_frames = SubResource("SpriteFrames_6mvwj")
-
-[node name="Sprite2D" type="Sprite2D" parent="BatalhaCanvas/Personagens/player1"]
 
 [node name="player2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(24, 32)
@@ -325,6 +315,12 @@ theme_override_constants/margin_bottom = 2
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Ambição" parent="BatalhaCanvas/Control/BATTLE_ARENA" instance=ExtResource("5_i08h0")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(72, 64.5)
+scale = Vector2(1, 1)
+
 [node name="Static2D" type="StaticBody2D" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
 visible = false
 collision_layer = 2
@@ -378,7 +374,6 @@ theme_override_constants/separation = 4
 
 [node name="panel1" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
@@ -423,7 +418,6 @@ vertical_alignment = 1
 
 [node name="panel2" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
@@ -465,7 +459,6 @@ vertical_alignment = 1
 
 [node name="panel3" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
@@ -506,7 +499,6 @@ vertical_alignment = 1
 
 [node name="panel4" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
@@ -548,7 +540,6 @@ vertical_alignment = 1
 
 [node name="panel5" type="Button" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
-material = ExtResource("7_t3mxv")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1

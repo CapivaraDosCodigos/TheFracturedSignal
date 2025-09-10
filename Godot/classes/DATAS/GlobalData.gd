@@ -13,10 +13,10 @@ class_name GlobalData extends Datas
 @export var Inv: InventoryData = preload("res://Godot/classes/itens/começo.tres")
 
 ## lista com os dados dos personagens.
-@export var CharDir: Dictionary[String, PlayerData] = {"Zeno": preload("res://Godot/classes/personagens/zeno.tres")}
+@export var CharDir: Dictionary[String, PlayerData] = {"Zeno": preload("res://Godot/classes/personagens/zeno.tres"), "Niko": preload("res://Godot/classes/personagens/niko.tres")}
 
 ## personagem principal selecionado.
-@export var current_player: PlayerData = PlayerData.new()
+@export var current_player: PlayerData = preload("res://Godot/classes/personagens/zeno.tres")
 
 ## Configurações do jogo.
 @export var Conf: DataConf = DataConf.new()

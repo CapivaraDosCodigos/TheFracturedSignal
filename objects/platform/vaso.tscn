@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5v8y4doplcdr"]
 
 [ext_resource type="Texture2D" path="res://texture/platform texture/texture/Assets.png" id="1_6jc1c"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://textures/folder tres/materials/tile.tres" id="1_ow1mr"]
+[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="1_ow1mr"]
 
 [sub_resource type="GDScript" id="GDScript_6jc1c"]
 resource_name = "vaso"

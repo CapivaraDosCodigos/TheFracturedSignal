@@ -1,19 +1,21 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://d302slnl03gy4"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=10 format=3 uid="uid://d302slnl03gy4"]
 
+[ext_resource type="Texture2D" uid="uid://dn2g3gg3t3fmy" path="res://texture/Characters/Zeno's/Zeno.png" id="1_52or3"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="2_4uxj1"]
 [ext_resource type="Script" uid="uid://jncy8sypkenk" path="res://Godot/classes/ClassePlayer/ClassePlayer.gd" id="3_2d11r"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_4kryh"]
 [ext_resource type="PackedScene" uid="uid://drtftoc47qyxk" path="res://Characters/Players/cenas/zeno.tscn" id="3_52or3"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_52or3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2d11r"]
-region = Rect2(21, 0, 21, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2i5v"]
+atlas = ExtResource("1_52or3")
+region = Rect2(19, 0, 19, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kryh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2d11r")
+"texture": SubResource("AtlasTexture_f2i5v")
 }],
 "loop": true,
 "name": &"default",

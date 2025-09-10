@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c78on6ktfk2w3"]
-
-[ext_resource type="Script" uid="uid://db1kqs21muhav" path="res://Godot/Godot Cenas/marker_player.gd" id="1_dcw0w"]
-
-[node name="MarkerPlayer" type="Node2D"]
-script = ExtResource("1_dcw0w")
-metadata/_custom_type_script = "uid://db1kqs21muhav"
