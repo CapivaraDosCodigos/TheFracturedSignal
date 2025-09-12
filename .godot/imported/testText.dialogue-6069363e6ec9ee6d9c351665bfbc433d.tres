@@ -1,0 +1,424 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_e2rvn"]
+
+[resource]
+script = ExtResource("1_e2rvn")
+using_states = PackedStringArray()
+titles = {
+"Map": "19",
+"bebedouro": "33",
+"blublu": "7",
+"comercio": "23",
+"start": "1"
+}
+character_names = PackedStringArray("Sistema Interno", "Blu blu", "Lila")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"id": "1",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "GameState"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"i": 42,
+&"type": &"variable",
+&"value": "DIALOGUE"
+}, {
+&"i": 50,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "2",
+&"type": "mutation"
+},
+"10": {
+&"character": "Blu blu",
+&"id": "10",
+&"next_id": "11",
+&"text": "acho que gostaria de não existe...",
+&"type": "dialogue"
+},
+"11": {
+&"character": "Blu blu",
+&"id": "11",
+&"next_id": "12",
+&"text": "pode me fazer um favor?",
+&"type": "dialogue"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"responses": PackedStringArray("12", "14"),
+&"text": "Sim",
+&"type": "response"
+},
+"13": {
+&"character": "Blu blu",
+&"id": "13",
+&"next_id": "16",
+&"text": "não volte",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"text": "Não tenho tempo",
+&"type": "response"
+},
+"15": {
+&"id": "15",
+&"is_snippet": false,
+&"next_id": "19",
+&"next_id_after": "",
+&"type": "goto"
+},
+"16": {
+&"id": "16",
+&"is_snippet": false,
+&"next_id": "19",
+&"next_id_after": "",
+&"type": "goto"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"type": ""
+},
+"18": {
+&"id": "18",
+&"next_id": "19",
+&"type": "title"
+},
+"19": {
+&"id": "19",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "GameState"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"i": 42,
+&"type": &"variable",
+&"value": "MAP"
+}, {
+&"i": 45,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "20",
+&"type": "mutation"
+},
+"2": {
+&"character": "Sistema Interno",
+&"id": "2",
+&"next_id": "3",
+&"text": "parece só uma parede[next=auto]",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": "title"
+},
+"23": {
+&"id": "23",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "GameState"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"i": 42,
+&"type": &"variable",
+&"value": "DIALOGUE"
+}, {
+&"i": 50,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "24",
+&"type": "mutation"
+},
+"24": {
+&"character": "Lila",
+&"id": "24",
+&"next_id": "25",
+&"text": "Olá",
+&"type": "dialogue"
+},
+"25": {
+&"character": "Lila",
+&"id": "25",
+&"next_id": "26",
+&"text": "gostaria de comprar alguma coisa?",
+&"type": "dialogue"
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"responses": PackedStringArray("26", "28"),
+&"text": "não, obrigado",
+&"type": "response"
+},
+"27": {
+&"character": "Lila",
+&"id": "27",
+&"next_id": "30",
+&"text": "certo, mas quando quiser comprar, já sabe [next=auto]",
+&"type": "dialogue"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"text": "sim!",
+&"type": "response"
+},
+"29": {
+&"character": "Lila",
+&"id": "29",
+&"next_id": "30",
+&"text": "bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Sistema Interno",
+&"id": "3",
+&"next_id": "4",
+&"text": "não gaste sua energia com isso[next=auto]",
+&"type": "dialogue"
+},
+"30": {
+&"id": "30",
+&"is_snippet": false,
+&"next_id": "19",
+&"next_id_after": "",
+&"type": "goto"
+},
+"31": {
+&"id": "31",
+&"next_id": "32",
+&"type": ""
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": "title"
+},
+"33": {
+&"character": "Sistema Interno",
+&"id": "33",
+&"next_id": "35",
+&"text": "o bebedouro começou uma batalha",
+&"type": "dialogue"
+},
+"34": {
+&"id": "34",
+&"next_id": "35",
+&"type": ""
+},
+"35": {
+&"id": "35",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"id": "4",
+&"is_snippet": false,
+&"next_id": "19",
+&"next_id_after": "",
+&"type": "goto"
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"type": ""
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": "title"
+},
+"7": {
+&"id": "7",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "GameState"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"i": 42,
+&"type": &"variable",
+&"value": "DIALOGUE"
+}, {
+&"i": 50,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "8",
+&"type": "mutation"
+},
+"8": {
+&"character": "Blu blu",
+&"id": "8",
+&"next_id": "9",
+&"text": "eu sou o blu blu!",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Blu blu",
+&"id": "9",
+&"next_id": "10",
+&"text": "sempre me confundem com o vaporio",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Sistema Interno: parece só uma parede[next=auto]
+Sistema Interno: não gaste sua energia com isso[next=auto]
+=> Map
+
+~ blublu
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Blu blu: eu sou o blu blu!
+Blu blu: sempre me confundem com o vaporio
+Blu blu: acho que gostaria de não existe...
+Blu blu: pode me fazer um favor?
+- Sim
+	Blu blu: não volte
+- Não tenho tempo
+	=> Map
+=> Map
+
+~ Map
+do Manager.change_state(Manager.GameState.MAP)
+=> END
+
+~ comercio
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Lila: Olá
+Lila: gostaria de comprar alguma coisa?
+- não, obrigado
+	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
+- sim!
+	Lila: bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]
+=> Map
+
+~ bebedouro
+Sistema Interno: o bebedouro começou uma batalha
+"
+metadata/dialogue_manager_version = "3.7.1"

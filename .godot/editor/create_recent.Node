@@ -1,0 +1,14 @@
+Sprite2D
+CharacterBody3D
+MeshInstance3D
+Camera3D
+SubViewport
+SubViewportContainer
+DirectionalLight3D
+AnimatedSprite2D
+EnemiesBase2D
+Marker2D
+PhantomCamera2D
+Camera2D
+PhantomCameraHost
+RichTextLabel

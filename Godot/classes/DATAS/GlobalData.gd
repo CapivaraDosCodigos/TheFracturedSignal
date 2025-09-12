@@ -3,14 +3,14 @@
 ## Usada como container para manter informações persistentes
 ## durante toda a execução, como dados do jogador, configurações
 ## e dados extras (desbloqueios, conquistas etc).
-@icon("res://texture/folder tres/save_png.tres")
+@icon("res://texture/folderTres/save_png.tres")
 class_name GlobalData extends Datas
 
 ## nome que vai aparecer nos saves
 @export var name: String = ""
 
 ## inventario global.
-@export var Inv: InventoryData = preload("res://Godot/classes/itens/começo.tres")
+@export var Inv: Inventory = preload("res://Godot/classes/itens/começo.tres")
 
 ## lista com os dados dos personagens.
 @export var CharDir: Dictionary[String, PlayerData] = {"Zeno": preload("res://Godot/classes/personagens/zeno.tres"), "Niko": preload("res://Godot/classes/personagens/niko.tres")}

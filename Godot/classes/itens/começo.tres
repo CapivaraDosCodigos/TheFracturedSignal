@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=10 format=3 uid="uid://cd53fp8qruq48"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=10 format=3 uid="uid://cd53fp8qruq48"]
 
 [ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="1_1ras7"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="1_ma64n"]
 [ext_resource type="Resource" uid="uid://bohkkwf5y2kmp" path="res://Godot/classes/itens/consumíveis/sandwich.tres" id="2_36n3i"]
-[ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/DATAS/InventoryData.gd" id="3_sahh3"]
+[ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/itens/Inventory.gd" id="5_ma64n"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_qmuw0"]
 [ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/itens/armas/ItemArma.gd" id="6_j0fqg"]
 
@@ -34,7 +34,7 @@ descricao = ""
 metadata/_custom_type_script = "uid://dlf8fsn8nuxag"
 
 [resource]
-script = ExtResource("3_sahh3")
+script = ExtResource("5_ma64n")
 armor = Array[Object]([ExtResource("1_ma64n")])
 weapons = Array[Object]([ExtResource("5_qmuw0"), SubResource("Resource_lpb44")])
 itens = Array[ExtResource("1_1ras7")]([ExtResource("2_36n3i"), SubResource("Resource_6w1f0"), ExtResource("1_ma64n"), ExtResource("5_qmuw0")])

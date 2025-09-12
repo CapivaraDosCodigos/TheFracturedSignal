@@ -1,0 +1,35 @@
+res://Areais/EP 1/começo.tscn
+res://addons/dialogue_manager/dialogue_manager.gd
+res://shader/palette_limiterONE.gdshader
+res://Godot/classes/itens/consumíveis/sandwich.tres
+res://Godot/classes/itens/armaduras/óculos_simples.tres
+res://Godot/classes/itens/armas/Signal_Weapon.tres
+res://Godot/classes/itens/começo.tres
+res://Godot/classes/itens/armaduras/sem_armadura.tres
+res://Godot/classes/personagens/zeno.tres
+res://Godot/classes/personagens/niko.tres
+res://texture/folderTres/materials/fenda.tres
+res://texture/folderTres/texturas/fenda_texture.tres
+res://texture/folderTres/EP1.tres
+res://shader/paletasWOW.gdshader
+res://shader/black and white.gdshader
+res://shader/paletteWOWOWOW.gdshader
+res://addons/phantom_camera/themes/theme.tres
+res://addons/post_processing/shaders/palette_limiter.gdshader
+res://Godot/Godot Scripts/intro.gd
+res://shader/PSX.gdshader
+res://shader/zeno.gdshader
+res://shader/test.gdshader
+res://shader/ScreenNoise.gdshader
+res://shader/VHS.gdshader
+res://shader/SkyShader.gdshader
+res://shader/PSX-Camera.gdshader
+res://shader/shadow.gdshader
+res://shader/color.gdshader
+res://Godot/Godot Cenas/manager.tscn
+res://Godot/Batalha/cenas/BATALHA.tscn
+res://Characters/Players/cenas/zeno.tscn
+res://Characters/enemies/bebedouro/bebedouro.tscn
+res://Areais/EP 1/zenovar.gd
+res://Areais/EP 1/Zenovar.tscn
+res://zenokert.gd

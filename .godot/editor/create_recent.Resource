@@ -1,0 +1,10 @@
+PlayerData
+Shader
+InventoryData
+SpriteFrames
+ItemArma
+ItemArmadura
+ItemConsumivel
+GlobalData
+DataItem
+DialogueResource

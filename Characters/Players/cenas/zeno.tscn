@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://drtftoc47qyxk"]
 
-[ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_vk12c"]
+[ext_resource type="Script" uid="uid://cbj5cdg0gu7pv" path="res://Areais/EP 1/zenovar.gd" id="1_ioib5"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_7ckmp"]
 [ext_resource type="Texture2D" uid="uid://dn2g3gg3t3fmy" path="res://texture/Characters/Zeno's/Zeno.png" id="2_ioib5"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_7k03i"]
@@ -290,7 +290,7 @@ height = 34.0
 [node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
 collision_layer = 9
 collision_mask = 6
-script = ExtResource("1_vk12c")
+script = ExtResource("1_ioib5")
 Nome = "Zeno"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")

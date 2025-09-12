@@ -40,7 +40,10 @@ var maxlife: int; var attack: int
 var defense: int; var resource: int
 var maxdamage: int; var mindamage: int
 
-func update_properties(inv: InventoryData) -> void:
+func update_properties(inv: Inventory) -> void:
+	if not inv is Inventory:
+		return
+	
 	inv.itens_battle = Classe.filtrar_comsumivel(inv.itens)
 	Lv = Classe.calcular_level(Exp, base_sp, multiplier_sp)
 	var extra_life = armorE.extra_life + weaponsE.extra_life

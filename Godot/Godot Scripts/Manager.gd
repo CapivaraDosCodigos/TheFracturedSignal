@@ -10,6 +10,7 @@ enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
 var inimigosA: Array[EnemiesBase] = []; var batalha: DataBatalha = DataBatalha.new()
 var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var Body: Node; var textureD: Texture; var materialD: ShaderMaterial
+var batalha2d := preload("res://Godot/Batalha/cenas/BATALHA.tscn")
 
 func _physics_process(_delta: float) -> void:
 	fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
@@ -62,7 +63,9 @@ func SceneTransition(caminho: String) -> void:
 func StartBatalha(batalhaS: DataBatalha) -> void:
 	batalha = batalhaS
 	inimigosA = batalha.inimigosB
-	SceneTransition("res://Godot/Batalha/cenas/BATALHA.tscn")
+	#
+	#var bat := batalha2d.instantiate()
+	#get_tree().call_deferred("add_child", bat)
 
 func DialogoTexture(texture: String = "", material: String = "") -> void:
 	if texture == "":

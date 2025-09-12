@@ -30,14 +30,14 @@ static func count_item(array: Array, item: DataItem) -> int:
 			count += 1
 	return count
 
-static func equip_armor(inv: InventoryData, chararcter: PlayerData, index: int) -> void:
+static func equip_armor(inv: Inventory, chararcter: PlayerData, index: int) -> void:
 	if index >= 0 and index < inv.armor.size():
 		chararcter.armorE = inv.armor[index]
 		print(chararcter, " equipou armadura: ", chararcter.armorE.nome)
 	else:
 		push_error("Índice de armadura inválido!")
 
-static func equip_weapon(inv: InventoryData, chararcter: PlayerData, index: int) -> void:
+static func equip_weapon(inv: Inventory, chararcter: PlayerData, index: int) -> void:
 	if index >= 0 and index < inv.weapons.size():
 		chararcter.weaponsE = inv.weapons[index]
 		print(chararcter, " equipou arma: ", chararcter.weaponsE.nome)

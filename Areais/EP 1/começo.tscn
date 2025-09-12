@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folderTres/EP1.tres" id="1_nn1m4"]
 [ext_resource type="PackedScene" uid="uid://3x7rgqstg6mq" path="res://Characters/NPCS/merchant.tscn" id="2_bfgb3"]
+[ext_resource type="PackedScene" uid="uid://caq1wgf7ngc4r" path="res://Areais/EP 1/Zenovar.tscn" id="4_ddk66"]
 [ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="4_t34vy"]
-[ext_resource type="PackedScene" uid="uid://drtftoc47qyxk" path="res://Characters/Players/cenas/zeno.tscn" id="5_oq4xn"]
 
 [node name="O Começo" type="Node2D"]
 
@@ -44,4 +44,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_t34vy")
 
-[node name="Zeno" parent="." instance=ExtResource("5_oq4xn")]
+[node name="Zenovar" parent="." instance=ExtResource("4_ddk66")]

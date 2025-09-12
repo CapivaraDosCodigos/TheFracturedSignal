@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="PlayerData" load_steps=10 format=3 uid="uid://d4fwedfk6ggd5"]
 
-[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="1_gssqo"]
 [ext_resource type="Texture2D" uid="uid://eo6pojuwje15" path="res://texture/Characters/Zeno's/Niko.png" id="1_jrjqh"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="2_6yuml"]
 [ext_resource type="Script" uid="uid://jncy8sypkenk" path="res://Godot/classes/ClassePlayer/ClassePlayer.gd" id="2_cmauc"]
-[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="3_d5138"]
+[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_jrjqh"]
 [ext_resource type="PackedScene" uid="uid://uvyb32ag2irr" path="res://Characters/Players/cenas/niko.tscn" id="4_pu4f4"]
+[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="6_cmauc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w5cs"]
 atlas = ExtResource("1_jrjqh")
@@ -32,23 +32,23 @@ Nome = "Niko"
 Classe = SubResource("Resource_7fpc6")
 Anime = SubResource("SpriteFrames_67vr8")
 objectplayer = ExtResource("4_pu4f4")
-Save_position = Vector2(0, 0)
-Lv = 1
-Life = 30
-Bitcoin = 25
-Exp = 0
-base_life = 60
-growth_rate_life = 1.15
-base_defense = 10
-growth_rate_defense = 1.15
-base_resource = 5
-growth_rate_resource = 1.15
-base_attack = 5
-growth_rate_attack = 1.15
-base_sp = 250
-multiplier_sp = 1.5
-armorE = ExtResource("1_gssqo")
-weaponsE = ExtResource("3_d5138")
-armorEN = 0
-weaponsEN = 0
+Save_position = null
+Lv = null
+Life = null
+Bitcoin = null
+Exp = null
+base_life = null
+growth_rate_life = null
+base_defense = null
+growth_rate_defense = null
+base_resource = null
+growth_rate_resource = null
+base_attack = null
+growth_rate_attack = null
+base_sp = null
+multiplier_sp = null
+armorE = ExtResource("3_jrjqh")
+weaponsE = ExtResource("6_cmauc")
+armorEN = null
+weaponsEN = null
 metadata/_custom_type_script = "uid://bj6w76m0cfh2q"
