@@ -287,13 +287,14 @@ _data = {
 radius = 8.0
 height = 34.0
 
-[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "area") groups=["Player"]]
+[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
 collision_layer = 9
 collision_mask = 6
 script = ExtResource("1_vk12c")
 Nome = "Zeno"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
+can = NodePath("PhantomCamera2D")
 area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
 
@@ -322,7 +323,9 @@ libraries = {
 speed_scale = 0.5
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 9)
 texture = ExtResource("2_ioib5")
+offset = Vector2(0, -9)
 hframes = 4
 vframes = 4
 

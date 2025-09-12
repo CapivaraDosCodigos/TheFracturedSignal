@@ -31,7 +31,7 @@ func itemsIvt() -> Dictionary:
 func _unhandled_input(event: InputEvent) -> void:
 	if not item_bool:
 		return
-
+	
 	if event.is_action_pressed("Down"):
 		if list.get_item_count() == 0: return
 		if current_index < list.get_item_count() - 1:
@@ -60,3 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func end() -> void:
 	visible = false
 	item_bool = false
+
+func atualizar_itemlist() -> void:
+	list.clear()
+	for item in Starts.InvData.itens:
+		list.add_item(item.nome, item.icone)

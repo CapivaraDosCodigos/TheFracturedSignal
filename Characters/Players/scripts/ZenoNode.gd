@@ -1,7 +1,8 @@
 extends ObjectPlayer
 
 func _ready() -> void:
-	Manager.tocar_musica_manager("res://sons/music/acid_tunnel.ogg", 90, true)
+	pass
+	#Manager.tocar_musica_manager("res://sons/music/acid_tunnel.ogg", 90, true)
 	#Manager.nova_palette("res://addons/post_processing/assets/green_palette.png", true)
 
 func _process(_delta: float) -> void:

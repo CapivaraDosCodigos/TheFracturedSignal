@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg5uvgn7uowbx"]
+[gd_scene load_steps=15 format=3 uid="uid://dg5uvgn7uowbx"]
 
 [ext_resource type="Script" uid="uid://b68lvmvupdnpn" path="res://Characters/Players/scripts/ZenoNode.gd" id="1_cqotu"]
 [ext_resource type="Texture2D" uid="uid://csy3v52ygrgam" path="res://texture/Characters/inimigos/Arcade.png" id="2_cqotu"]
@@ -387,6 +387,8 @@ _data = {
 radius = 12.0
 height = 38.0
 
+[sub_resource type="Skin" id="Skin_5bx12"]
+
 [node name="Arceus" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
 collision_layer = 9
 collision_mask = 6
@@ -450,6 +452,24 @@ collision_mask = 16
 position = Vector2(0, -2)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_7qrlc")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 16.0
+offset_top = -16.0
+offset_right = 56.0
+offset_bottom = 24.0
+scale = Vector2(0.1, 0.1)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+skin = SubResource("Skin_5bx12")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

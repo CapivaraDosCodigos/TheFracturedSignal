@@ -53,7 +53,7 @@ var trail: Array[Vector2] = []
 func player_physics() -> void:
 	if no_player:
 		return
-#
+	can.priority = 10
 	
 	if Manager.Menu.menu:
 		update_animation(Vector2.ZERO)
@@ -84,7 +84,7 @@ func player_physics() -> void:
 func follower_physics() -> void:
 	if not no_player:
 		return
-	#can.enabled = false
+	can.priority = 0
 	
 	if leader == null:
 		return

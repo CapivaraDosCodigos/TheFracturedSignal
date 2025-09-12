@@ -1,13 +1,14 @@
-[gd_scene load_steps=38 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=36 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
-[ext_resource type="Resource" uid="uid://bwq6iwhy0hgmu" path="res://Godot/classes/Inimigos/bebedouro .tres" id="2_apq3t"]
+[ext_resource type="PackedScene" uid="uid://dhdqurm4hxqt" path="res://Godot/classes/Inimigos/bebedouro.tscn" id="2_y71rf"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_y71rf"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ky1x7"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="5_i08h0"]
 [ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
+[ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Godot/Batalha/scripts/personagens.gd" id="7_ky1x7"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
@@ -152,12 +153,6 @@ _data = {
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2h8af"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hrhgg"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ogxe"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_otx5r"]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig8w"]
 a = Vector2(4, 11.5)
 b = Vector2(140, 11.5)
@@ -204,13 +199,13 @@ region = Rect2(112, 656, 16, 16)
 atlas = ExtResource("12_vuo06")
 region = Rect2(176, 0, 16, 16)
 
-[node name="Batalha" type="Node" node_paths=PackedStringArray("anim")]
+[node name="Batalha" type="Node"]
 script = ExtResource("1_wuibh")
-anim = NodePath("Batalha2D/Anim")
-inimigos = Array[Object]([ExtResource("2_apq3t")])
+inimigos = Array[PackedScene]([ExtResource("2_y71rf")])
 metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Batalha2D" type="Node2D" parent="."]
+visible = false
 
 [node name="Camera" type="Node2D" parent="Batalha2D"]
 script = ExtResource("3_y71rf")
@@ -241,6 +236,7 @@ expand_mode = 1
 
 [node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
 scale = Vector2(4, 4)
+script = ExtResource("7_ky1x7")
 
 [node name="player1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(64, 56)
@@ -254,17 +250,14 @@ sprite_frames = SubResource("SpriteFrames_ejoer")
 position = Vector2(24, 80)
 sprite_frames = SubResource("SpriteFrames_2h8af")
 
-[node name="inimigo1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="inimigo1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(224, 56)
-sprite_frames = SubResource("SpriteFrames_hrhgg")
 
-[node name="inimigo2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="inimigo2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(264, 32)
-sprite_frames = SubResource("SpriteFrames_7ogxe")
 
-[node name="inimigo3" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="inimigo3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(264, 80)
-sprite_frames = SubResource("SpriteFrames_otx5r")
 
 [node name="Control" type="Control" parent="BatalhaCanvas"]
 layout_mode = 3

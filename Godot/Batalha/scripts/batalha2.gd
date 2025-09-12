@@ -1,48 +1,50 @@
 extends Node
+class_name Batalha
 
 #region variables 
 
-@export_group("Nodes")
-@export var anim: AnimationPlayer
 @export_group("Inimigos")
-@export var inimigos: Array[EnemiesBase] = [EnemiesBase.new()]
+@export var inimigos: Array[PackedScene] = [preload("res://Characters/enemies/bebedouro/bebedouro.tscn")]
 
+@onready var anim: AnimationPlayer = $Batalha2D/Anim
+@onready var personagens: Node2D = $BatalhaCanvas/Personagens
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
-@onready var inimigosI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
+@onready var markerI: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
 @onready var playerI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
 @onready var itemMenu: MarginContainer = $BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer
 
 const MAX_ENENINES: int = 3
 
-var last_state = null; var submenu_resultado = null
-var PlayersDIR: Dictionary; var panel_dict: Dictionary; var batalha: DataBatalha
-var panels: Array; var selecoes: Array
+var last_state = null
+var submenu_resultados: Dictionary
+var PlayersDIR: Dictionary
+var panel_dict: Dictionary
+var batalha: DataBatalha
+var panels: Array[Button]
+var selecoes: Array
+var enemies: Array[EnemiesBase2D] = []
 var players: int = 1; var current_index: int = 0; var jogador_atual: int = 0
 var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var submenu_ativo: bool = false
 
 #endregion
 
 func _ready() -> void:
-	batalha = Manager.batalha
-	Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
+	#Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
 	Manager.nova_palette("", false)
 	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
+	batalha = Manager.batalha
 	while inimigos.size() > MAX_ENENINES:
 		inimigos.pop_back()
-	if Starts.Pdir:
-		PlayersDIR = Starts.Pdir
-		players = Starts.Pdir.size()
-		var keys = PlayersDIR.keys()
-		for idx in range(keys.size()):
-			var key = keys[idx]
-			playerI[idx].sprite_frames = PlayersDIR[key].Anime
-			playerI[idx].material = PlayersDIR[key].MaterialP
-			playerI[idx].play("default")
 	
-	for idx in range(inimigos.size()):
-		inimigosI[idx].sprite_frames = inimigos[idx].Anime
-		inimigosI[idx].material = inimigos[idx].MaterialI
-		inimigosI[idx].play("default")
+	PlayersDIR = Starts.Pdir
+	players = PlayersDIR.size()
+	var keys = PlayersDIR.keys()
+	for idx in range(keys.size()):
+		var key = keys[idx]
+		adicionar_jogador(idx, key)
+	
+	for i in range(inimigos.size()):
+		adicionar_inimigo(inimigos[i], markerI[i].position)
 	
 	panels = [ATK, ITM, EXE, DEF, MRC]
 	panel_dict = {"ATK": ATK,"ITM": ITM,"EXE": EXE,"DEF": DEF,"MRC": MRC}
@@ -51,39 +53,30 @@ func _process(_delta: float) -> void:
 	batalha = Manager.batalha
 	var current_state = Manager.current_status
 	if current_state != last_state:
-		match current_state:
-			Manager.GameState.BATTLE:
-				#$"%Ambição".position = $%BATTLE_ARENA.position
-				anim.play("S_panel")
-				_exe_atacar()
-				
-			Manager.GameState.BATTLE_MENU:
-				anim.play("E_panel")
-				_iniciar_selecao()
-	
+		if current_state == Manager.GameState.BATTLE:
+			#$"%Ambição".position = $%BATTLE_ARENA.position
+			anim.play("S_panel")
+			_exe_atacar()
+			
+		elif current_state == Manager.GameState.BATTLE_MENU:
+			anim.play("E_panel")
+			_iniciar_selecao()
+		
 		last_state = current_state
 
-func _exe_atacar():
-	for inimigo in inimigos:
-		inimigo.atacar()
-		await get_tree().create_timer(inimigos.pick_random().time).timeout # probema
-		Manager.change_state(Manager.GameState.BATTLE_MENU)
-
 func _iniciar_selecao():
-	selecao_ativa = true
-	selecao_finalizada = false
-	jogador_atual = 0
-	current_index = 0
+	selecao_ativa = true; selecao_finalizada = false
+	jogador_atual = 0; current_index = 0
 	selecoes = []
 	selecoes.resize(players)
-	_atualizar_itemlist()
+	submenu_resultados = {}
+	itemMenu.atualizar_itemlist()
 	_focus_current_panel()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
 		return
-
-	# Se um submenu está aberto, ele que controla input
+	
 	if submenu_ativo:
 		if event.is_action_pressed("cancel"):
 			_fechar_submenu()
@@ -101,91 +94,120 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	elif event.is_action_pressed("confirm"):
 		_abrir_submenu(panels[current_index])
-
+	
 	elif event.is_action_pressed("cancel"):
 		if players > 1 and jogador_atual > 0 and not selecao_finalizada:
 			jogador_atual -= 1
-			current_index = selecoes[jogador_atual]
+			var acao = selecoes[jogador_atual]
+			if acao in panel_dict:
+				current_index = panels.find(panel_dict[acao])
+			else:
+				current_index = 0
 			_focus_current_panel()
 
 func _abrir_submenu(panel: Control) -> void:
 	current_index = 0
 	for nome in panel_dict:
 		if panel_dict[nome] == panel:
-			match nome:
-				"ATK":
-					_confirmar_acao(nome) # ATK não precisa submenu
-				"DEF":
-					_confirmar_acao(nome) # DEF não precisa submenu
-				"EXE":
-					_confirmar_acao(nome)
-				"ITM":
-					submenu_ativo = true
-					var resultado = await itemMenu.itemsIvt()
-					if resultado == null or resultado["index"] < 0:
-							# Jogador cancelou
-						if players > 1 and jogador_atual > 0 and not selecao_finalizada:
-							jogador_atual -= 1
-							current_index = selecoes[jogador_atual]
-							_focus_current_panel()
-							_fechar_submenu()
-							return
-																											
-					submenu_resultado = resultado
-					_confirmar_acao(nome, submenu_resultado)
+			if nome == "ATK":
+				_confirmar_acao(nome)
+				
+			elif nome == "DEF":
+				_confirmar_acao(nome)
+				
+			elif nome == "EXE":
+				_confirmar_acao(nome)
+				
+			elif nome == "ITM":
+				submenu_ativo = true
+				var resultado = await itemMenu.itemsIvt()
+				if resultado == null or resultado["index"] < 0:
+					_focus_current_panel()
 					_fechar_submenu()
-				"MRC":
-					_confirmar_acao(nome)
-
-func _fechar_submenu() -> void:
-	submenu_ativo = false
-	submenu_resultado = null
-	itemMenu.end()
-	_focus_current_panel()
+					return
+					
+				submenu_resultados[jogador_atual] = resultado
+				_confirmar_acao(nome, resultado)
+				_fechar_submenu()
+				
+			elif nome == "MRC":
+				_confirmar_acao(nome)
 
 func _confirmar_acao(nome: String, _dados_extra = null) -> void:
 	selecoes[jogador_atual] = nome
 	jogador_atual += 1
-
+	
 	if jogador_atual >= players:
 		selecao_ativa = false
 		selecao_finalizada = true
-		print("Todos os jogadores confirmaram:")
 		for i in range(players):
-			await _act(selecoes[i], i)
+			_act(selecoes[i], i)
 		Manager.change_state(Manager.GameState.BATTLE)
 	else:
 		current_index = 0
 		_focus_current_panel()
 
-func _focus_current_panel():
+func _act(act: String, ent: int) -> void:
+	print("- Jogador %d: %s" % [ent + 1, act])
+	
+	if act == "ATK":
+		print("Atacar inimigo")
+		for i in enemies:
+			i.life -= 10
+	
+	elif act == "DEF":
+		print("Defender")
+	
+	elif act == "EXE":
+		print("Executar")
+	
+	elif act == "ITM":
+		if submenu_resultados.has(ent):
+			var resultado = submenu_resultados[ent]
+			print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
+			
+			if resultado["index"] < Starts.InvData.itens.size():
+				Starts.InvData.itens.remove_at(resultado["index"])
+				itemMenu.atualizar_itemlist()
+	
+	elif act == "MRC":
+		print("Mercy")
+	
+	else :
+		print("erro")
+
+func _focus_current_panel() -> void:
 	if selecao_ativa and panels[current_index]:
 		await get_tree().process_frame
 		panels[current_index].grab_focus()
 
-func _act(act: String, ent: int, _enem: int = 0):
-	print("- Jogador %d: %s" % [ent + 1, act])
-	match act:
-		"ATK":
-			print("Atacar inimigo")
-		"DEF":
-			print("Defender")
-		"EXE":
-			print("Executar")
-		"ITM":
-			if submenu_resultado != null:
-				print("Usar item:", submenu_resultado)
-				print("Índice:", submenu_resultado["index"])
-			else:
-				print("Nenhum item selecionado")
-									
-			#Starts.InvData.itens.remove_at(submenu_resultado["index"])
-		"MRC":
-			print("Mercy")
-		_:
-			print("erro")
+func _fechar_submenu() -> void:
+	submenu_ativo = false
+	itemMenu.end()
+	_focus_current_panel()
 
-func _atualizar_itemlist():
-	%ItemList.clear()
-	for item in Starts.InvData.itens:
-		%ItemList.add_item(item.nome, item.icone)
+func _exe_atacar():
+	for inimigo in enemies:
+		inimigo.atacar()
+	await get_tree().create_timer(enemies.pick_random().time).timeout
+	Manager.change_state(Manager.GameState.BATTLE_MENU)
+
+func adicionar_jogador(index: int, key: String) -> void:
+	playerI[index].sprite_frames = PlayersDIR[key].Anime
+	playerI[index].material = PlayersDIR[key].MaterialP
+	playerI[index].play("default")
+
+func adicionar_inimigo(inimigo: PackedScene, pos: Vector2) -> void:
+	var inim = inimigo.instantiate()
+	personagens.add_child(inim)
+	inim.id = enemies.size() - 1
+	inim.rootbatalha = self
+	inim.position = pos
+	enemies.append(inim)
+	inim.play("default")
+
+func remover_jogador(_key: String) -> void:
+	pass
+
+func remover_inimigo(_index: int) -> void:
+	pass
