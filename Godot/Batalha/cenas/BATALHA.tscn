@@ -251,12 +251,15 @@ position = Vector2(24, 80)
 sprite_frames = SubResource("SpriteFrames_2h8af")
 
 [node name="inimigo1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+visible = false
 position = Vector2(224, 56)
 
 [node name="inimigo2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+visible = false
 position = Vector2(264, 32)
 
 [node name="inimigo3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+visible = false
 position = Vector2(264, 80)
 
 [node name="Control" type="Control" parent="BatalhaCanvas"]

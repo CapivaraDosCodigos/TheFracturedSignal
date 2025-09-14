@@ -1,30 +1,31 @@
 extends Node
 
-var Data: GlobalData; var InvData: Inventory = Inventory.new(); var Conf: DataConf; var InfDatas: DataExtras; var Current_player: PlayerData
+var Data: GlobalData; var Conf: DataConf; var InfDatas: DataExtras; var Current_player: PlayerData
 var Pdir: Dictionary[String, PlayerData]
 var Current_scene: PackedScene
+
+var InvData: Inventory = Inventory.new();
 
 var InGame: bool = false
 
 func _ready() -> void:
-	SaveData.Deletar(1, SaveData.TIPO_DATAS.Global)
+	SaveData.Deletar(1)
 	Start_Save(1)
 
 func SAVE(slot: int) -> void:
-	# Atualiza o objeto salvo 
 	Data.Inv = InvData
 	Data.CharDir = Pdir
 	Data.current_player = Current_player
 	Data.Conf = Conf
 	Data.Datas = InfDatas
 	
-	SaveData.Salvar(slot, Data, SaveData.TIPO_DATAS.Global)
+	SaveData.Salvar(slot, Data)
 
 func Start_Save(slot: int) -> void:
 	if not is_inside_tree():
 		await get_tree().process_frame
 	
-	Data = SaveData.Carregar(slot, SaveData.TIPO_DATAS.Global)
+	Data = SaveData.Carregar(slot)
 	InvData = Data.Inv
 	Pdir = Data.CharDir
 	Current_player = Data.current_player
@@ -54,13 +55,15 @@ func Return_To_Title() -> void:
 func Dead() -> void:
 	pass
 
+func InGameIsTrue() -> void:
+	while not InGame:
+		await get_tree().process_frame
+
 func _process(_delta: float) -> void:
-	pass
-	#if InGame:
-		#return
-	#
-	#for personagem in Pdir.values():
-		#personagem.update_properties(InvData)
+	if InGame:
+		return
+	
+	for personagem in Pdir.values():
+		personagem.update_properties(InvData)
 	#Pdir["Zeno"].update_properties(InvData)
 	#Pdir["Niko"].update_properties(InvData)
-	

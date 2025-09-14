@@ -4,6 +4,7 @@ extends MarginContainer
 var current_index: int = 0
 var item_bool: bool = false
 var last_result: Dictionary = {"texto": null, "index": -1}
+var items: Array
 
 func _ready() -> void:
 	list.get_v_scroll_bar().visible = false

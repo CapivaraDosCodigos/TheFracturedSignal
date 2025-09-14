@@ -3,7 +3,6 @@ class_name Database extends Resource
 
 const TOTAL_SLOTS := 3
 const SAVE_PATH := "user://save_slot_%d.tres"
-const PATH_NOT_SAVE := "user://not_save_slot_%d.tres"
 const SAVES_SCENE: Array[PackedScene] = [preload("res://Areais/EP 1/começo.tscn")]
 
 #Armas:

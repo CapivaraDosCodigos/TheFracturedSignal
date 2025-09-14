@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d3daa2nl7m25l"]
-
-[ext_resource type="Texture2D" uid="uid://dey8b0gcttxrf" path="res://texture/Characters/Zeno's/Zeno_Signal.png" id="1_7kd6h"]
-
-[resource]
-atlas = ExtResource("1_7kd6h")
-region = Rect2(0, 0, 21, 32)

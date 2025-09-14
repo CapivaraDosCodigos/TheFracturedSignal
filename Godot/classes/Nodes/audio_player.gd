@@ -1,4 +1,5 @@
 extends AudioStreamPlayer
+class_name AudioPlayer
 
 var volume_local: float = 100.0; var volume_global_anterior: float = -1.0
 var Vmusic: int

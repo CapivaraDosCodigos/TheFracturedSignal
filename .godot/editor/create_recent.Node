@@ -1,4 +1,9 @@
+AudioPlayer
+Marker2D
+MarkerPlayersNew
+Camera2D
 Sprite2D
+CharacterBody2D
 CharacterBody3D
 MeshInstance3D
 Camera3D
@@ -7,8 +12,3 @@ SubViewportContainer
 DirectionalLight3D
 AnimatedSprite2D
 EnemiesBase2D
-Marker2D
-PhantomCamera2D
-Camera2D
-PhantomCameraHost
-RichTextLabel

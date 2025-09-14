@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
-[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/Godot Scripts/audio_player.gd" id="2_cconj"]
+[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="2_cconj"]
 [ext_resource type="Shader" uid="uid://bt5w87kqqgvk0" path="res://shader/paletteWOWOWOW.gdshader" id="3_rsoxv"]
 [ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="4_6ebhy"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="5_i2lsb"]
@@ -124,9 +124,11 @@ script = ExtResource("1_cconj")
 
 [node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_cconj")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 
 [node name="AudioPlayerS" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_cconj")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false

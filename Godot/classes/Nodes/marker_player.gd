@@ -1,5 +1,5 @@
 extends Node2D
-class_name MarkerPlayer
+class_name MarkerPlayers
 
 var markers: Array[Marker2D] = []
 var players: Array = []
@@ -23,7 +23,8 @@ func instaciar() -> void:
 
 	# instancia o Current_player no marker[0]
 	if current_data and markers.size() > 0:
-		var ins = current_data.objectplayer.instantiate()
+		var inz = load(current_data.objectplayer)
+		var ins = inz.instantiate()
 		add_sibling(ins)
 		ins.global_position = markers[0].global_position
 		players.append(ins)
@@ -32,7 +33,8 @@ func instaciar() -> void:
 	var i := 1
 	for player_data in dir.values():
 		if player_data != null and i < markers.size():
-			var ins = player_data.objectplayer.instantiate()
+			var inz = load(player_data.objectplayer)
+			var ins = inz.instantiate()
 			add_sibling(ins)
 			ins.global_position = markers[i].global_position
 			players.append(ins)

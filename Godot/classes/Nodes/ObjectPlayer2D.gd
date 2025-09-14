@@ -1,6 +1,6 @@
 ## Classe responsável por controlar o Player principal e os seguidores no estilo Deltarune.
 ## O mesmo script funciona tanto para o personagem controlado pelo jogador quanto para os "followers".
-class_name ObjectPlayer
+class_name ObjectPlayer2D
 extends CharacterBody2D
 
 ## Velocidade base do personagem.
@@ -28,16 +28,18 @@ extends CharacterBody2D
 ## RayCast usado para detectar colisões à frente.
 @export var RayChat: RayCast2D
 ## Referência ao líder (outro ObjectPlayer) caso este seja um seguidor.
-@export var leader: ObjectPlayer
+@export var leader: ObjectPlayer2D
 ## A camera do jogo em cada personagem.
-@export var can: PhantomCamera2D
+@export var can: Node2D
 ## A área do player.
 @export var area: Area2D
 
 ## Direção atual do movimento.
 var direction: Vector2 = Vector2.ZERO
+
 ## Última direção em que o personagem estava virado (para animações).
 var last_facing: String = "Down"
+
 ## Multiplicador de velocidade atual.
 var running: float = 1.0
 
@@ -46,36 +48,50 @@ var stopped_by_area: bool = false
 
 ## Array que armazena as posições do player para gerar a "trilha" que os seguidores usam.
 var trail: Array[Vector2] = []
+
 ## Quantidade máxima de posições que serão mantidas na trilha.
 @export var trail_length: int = 20
+
+func _ready() -> void:
+	await get_tree().process_frame
+	area.area_entered.connect(_on_area_2d_area_entered)
+	area.area_exited.connect(_on_area_2d_area_exited)
+
+func _process(_delta: float) -> void:
+	if Manager.current_status == Manager.GameState.MAP:
+		if Starts.Current_player != null and Starts.Current_player.has_method("update_properties"):
+			no_player = not (Starts.Current_player.Nome == Nome)
+			
+		player_physics()
+		follower_physics()
+	
+	elif Manager.current_status == Manager.GameState.DIALOGUE:
+		update_animation(Vector2.ZERO)
 
 ## Física do player controlado pelo usuário.
 func player_physics() -> void:
 	if no_player:
 		return
-	can.priority = 10
-	
+		
+	if can.has_method("set_priority"):
+		can.priority = 10
+	#
 	if Manager.Menu.menu:
 		update_animation(Vector2.ZERO)
 		return
 	
-	## Atualiza referência global do RayCast no Manager.
 	Manager.raio = RayChat
 	
-	## Verifica se está correndo (pressionando "cancel").
 	var _is_running := Input.is_action_pressed("cancel")
 	direction = _input_direction()
 	
-	## Ajusta velocidade da animação e multiplicador de movimento.
 	running = speed_running if _is_running else speed_walk
 	anim_player.speed_scale = anim_running if _is_running else anim_walk
 	
-	## Aplica movimento.
 	velocity = direction * speed * running
 	move_and_slide()
 	update_animation(direction)
 	
-	## Grava posição atual na trilha.
 	trail.push_front(global_position)
 	if trail.size() > trail_length:
 		trail.pop_back()
@@ -84,7 +100,9 @@ func player_physics() -> void:
 func follower_physics() -> void:
 	if not no_player:
 		return
-	can.priority = 0
+		
+	if can.has_method("set_priority"):
+		can.priority = 0
 	
 	if leader == null:
 		return

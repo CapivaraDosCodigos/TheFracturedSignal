@@ -17,7 +17,7 @@ const MAX_ENENINES: int = 3
 
 var last_state = null
 var submenu_resultados: Dictionary
-var PlayersDIR: Dictionary
+var PlayersDIR: Dictionary[String, PlayerData]
 var panel_dict: Dictionary
 var batalha: DataBatalha
 var panels: Array[Button]
@@ -29,6 +29,7 @@ var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var subme
 #endregion
 
 func _ready() -> void:
+	await Starts.InGameIsTrue()
 	#Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
 	Manager.nova_palette("", false)
 	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
@@ -193,6 +194,7 @@ func _exe_atacar():
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func adicionar_jogador(index: int, key: String) -> void:
+	print(PlayersDIR[key].Anime)
 	playerI[index].sprite_frames = PlayersDIR[key].Anime
 	playerI[index].material = PlayersDIR[key].MaterialP
 	playerI[index].play("default")

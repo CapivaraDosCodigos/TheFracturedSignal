@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://caq1wgf7ngc4r"]
+[gd_scene load_steps=17 format=3 uid="uid://h5ek2buto4br"]
 
-[ext_resource type="Script" uid="uid://dyc8vnt12wp1c" path="res://zenokert.gd" id="1_oe6lq"]
-[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_xj2qu"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_q3gqr"]
-[ext_resource type="Texture2D" uid="uid://dn2g3gg3t3fmy" path="res://texture/Characters/Zeno's/Zeno.png" id="4_jst8a"]
+[ext_resource type="Script" uid="uid://cbh51thjr5kdp" path="res://Godot/classes/Nodes/ObjectPlayer2D.gd" id="1_quage"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_53k6u"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_fd7kr"]
+[ext_resource type="Texture2D" uid="uid://dn2g3gg3t3fmy" path="res://texture/Characters/Zeno's/Zeno.png" id="4_df7te"]
 
 [sub_resource type="Resource" id="Resource_ioib5"]
-script = ExtResource("3_q3gqr")
+script = ExtResource("3_fd7kr")
 duration = 0.4
 transition = 7
 ease = 1
@@ -287,21 +287,21 @@ _data = {
 radius = 8.0
 height = 34.0
 
-[node name="Zeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
+[node name="ScientistZeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area")]
 collision_layer = 9
 collision_mask = 6
-script = ExtResource("1_oe6lq")
+script = ExtResource("1_quage")
 Nome = "Zeno"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
-can = NodePath("PhantomCamera2D")
+can = NodePath("Camera2D")
 area = NodePath("Area2D")
-metadata/_custom_type_script = "uid://bwqwgv67kfjpd"
+metadata/_custom_type_script = "uid://cbh51thjr5kdp"
 
-[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+[node name="Camera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-script = ExtResource("2_xj2qu")
-priority = 5
+script = ExtResource("2_53k6u")
+priority = 10
 follow_mode = 2
 follow_target = NodePath("..")
 zoom = Vector2(4.8, 4.8)
@@ -324,7 +324,7 @@ speed_scale = 0.5
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 9)
-texture = ExtResource("4_jst8a")
+texture = ExtResource("4_df7te")
 offset = Vector2(0, -9)
 hframes = 4
 vframes = 4
@@ -349,6 +349,3 @@ collision_mask = 16
 [node name="Collision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_7qrlc")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
