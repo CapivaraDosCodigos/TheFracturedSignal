@@ -208,7 +208,6 @@ visible = false
 physics_interpolation_mode = 1
 position = Vector2(215, -73)
 zoom = Vector2(2, 2)
-process_callback = 0
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]

@@ -18,13 +18,17 @@ const MAX_ENENINES: int = 3
 var last_state = null
 var submenu_resultados: Dictionary
 var PlayersDIR: Dictionary[String, PlayerData]
-var panel_dict: Dictionary
+var panel_dict: Dictionary[String, Control]
 var batalha: DataBatalha
-var panels: Array[Button]
-var selecoes: Array
+var panels#: Array[Control]
+var selecoes: Array[String]
 var enemies: Array[EnemiesBase2D] = []
-var players: int = 1; var current_index: int = 0; var jogador_atual: int = 0
-var selecao_ativa: bool = false; var selecao_finalizada: bool = false; var submenu_ativo: bool = false
+var players: int = 1
+var current_index: int = 0
+var jogador_atual: int = 0
+var selecao_ativa: bool = false
+var selecao_finalizada: bool = false
+var submenu_ativo: bool = false
 
 #endregion
 
@@ -37,7 +41,8 @@ func _ready() -> void:
 	while inimigos.size() > MAX_ENENINES:
 		inimigos.pop_back()
 	
-	PlayersDIR = Starts.Pdir
+	PlayersDIR = Starts.PlayersAtuais
+	print(Starts.PlayersAtuais)
 	players = PlayersDIR.size()
 	var keys = PlayersDIR.keys()
 	for idx in range(keys.size()):
@@ -64,15 +69,6 @@ func _process(_delta: float) -> void:
 			_iniciar_selecao()
 		
 		last_state = current_state
-
-func _iniciar_selecao():
-	selecao_ativa = true; selecao_finalizada = false
-	jogador_atual = 0; current_index = 0
-	selecoes = []
-	selecoes.resize(players)
-	submenu_resultados = {}
-	itemMenu.atualizar_itemlist()
-	_focus_current_panel()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
@@ -105,6 +101,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				current_index = 0
 			_focus_current_panel()
+
+func _iniciar_selecao():
+	selecao_ativa = true; selecao_finalizada = false
+	jogador_atual = 0; current_index = 0
+	selecoes = []
+	selecoes.resize(players)
+	submenu_resultados = {}
+	#itemMenu.atualizar_itemlist()
+	_focus_current_panel()
 
 func _abrir_submenu(panel: Control) -> void:
 	current_index = 0
@@ -167,7 +172,7 @@ func _act(act: String, ent: int) -> void:
 			var resultado = submenu_resultados[ent]
 			print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
 			
-			if resultado["index"] < Starts.InvData.itens.size():
+			if resultado["index"] < Starts.CurrentInventory.itens.size():
 				Starts.InvData.itens.remove_at(resultado["index"])
 				itemMenu.atualizar_itemlist()
 	
@@ -194,7 +199,6 @@ func _exe_atacar():
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func adicionar_jogador(index: int, key: String) -> void:
-	print(PlayersDIR[key].Anime)
 	playerI[index].sprite_frames = PlayersDIR[key].Anime
 	playerI[index].material = PlayersDIR[key].MaterialP
 	playerI[index].play("default")

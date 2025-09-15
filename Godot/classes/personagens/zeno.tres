@@ -31,7 +31,6 @@ Nome = "Zeno"
 Classe = SubResource("Resource_aip5c")
 Anime = SubResource("SpriteFrames_4kryh")
 objectplayerpath = "uid://h5ek2buto4br"
-Save_position = Vector2(0, 0)
 Lv = 1
 Life = 30
 Bitcoin = 25

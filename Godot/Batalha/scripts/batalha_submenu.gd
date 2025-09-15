@@ -4,7 +4,6 @@ extends MarginContainer
 var current_index: int = 0
 var item_bool: bool = false
 var last_result: Dictionary = {"texto": null, "index": -1}
-var items: Array
 
 func _ready() -> void:
 	list.get_v_scroll_bar().visible = false
@@ -63,6 +62,11 @@ func end() -> void:
 	item_bool = false
 
 func atualizar_itemlist() -> void:
-	list.clear()
-	for item in Starts.InvData.itens:
-		list.add_item(item.nome, item.icone)
+	var inv : Inventory = Starts.CurrentInventory as Inventory
+	print(typeof(Starts.CurrentInventory))
+	print(Starts.CurrentInventory)
+	if inv.get("itens"):
+		var items = inv.get("itens")
+		list.clear()
+		for item in items:
+			list.add_item(item.nome, item.icone)

@@ -18,6 +18,7 @@ func aplicar_material_e_salvar(caminho_imagem: String, material: Material) -> vo
 	viewport.size = tex.get_size()
 	viewport.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	viewport.transparent_bg = true
 	add_child(viewport)
 	
 	# Sprite com o material aplicado

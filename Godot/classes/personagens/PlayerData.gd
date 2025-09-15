@@ -1,4 +1,4 @@
-#PlayerData.gd
+@icon("res://texture/folderTres/texturas/player_png.tres")
 class_name PlayerData extends Resource
 
 @export_group("GamePLayer")
@@ -7,7 +7,6 @@ class_name PlayerData extends Resource
 @export var Anime: SpriteFrames
 @export var MaterialP: ShaderMaterial
 @export_file var objectplayerpath: String
-@export var Save_position: Vector2
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
@@ -44,7 +43,6 @@ func update_properties(inv: Inventory) -> void:
 	if not inv is Inventory:
 		return
 	
-	inv.itens_battle = Classe.filtrar_comsumivel(inv.itens)
 	Lv = Classe.calcular_level(Exp, base_sp, multiplier_sp)
 	var extra_life = armorE.extra_life + weaponsE.extra_life
 	maxlife = Classe.signal_calculator(base_life, growth_rate_life, Lv, extra_life)
@@ -57,15 +55,15 @@ func update_properties(inv: Inventory) -> void:
 	maxdamage = Classe.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
 	mindamage = Classe.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
-func _set_life(_life: int) -> void:
-	if _life <= 0:
+func _set_life(life: int) -> void:
+	if life <= 0:
 		Starts.Dead()
 	else:
-		Life = _life
+		Life = life
 
-func _set_bitcoin(_bitcoin: int) -> void:
-	if not _bitcoin <= 0:
-		Bitcoin = _bitcoin
+func _set_bitcoin(bitcoin: int) -> void:
+	if not bitcoin <= 0:
+		Bitcoin = bitcoin
 
 func _to_string() -> String:
 	return Nome

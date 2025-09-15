@@ -1,16 +1,16 @@
 res://Godot/Godot Cenas/manager.tscn
 res://addons/dialogue_manager/dialogue_manager.gd
 res://shader/palette_limiterONE.gdshader
-res://Godot/classes/itens/consumíveis/sandwich.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/armas/Signal_Weapon.tres
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres
-res://Godot/classes/itens/armaduras/sem_armadura.tres
-res://Godot/classes/personagens/zeno.tres
 res://texture/folderTres/materials/fenda.tres
 res://texture/folderTres/texturas/fenda_texture.tres
 res://texture/folderTres/EP1.tres
 res://shader/paletasWOW.gdshader
+res://Godot/classes/itens/consumíveis/sandwich.tres
+res://Godot/classes/itens/Inventorys/ZenoInventory.tres
+res://Godot/classes/personagens/zeno.tres
+res://Godot/classes/itens/armaduras/sem_armadura.tres
 res://shader/black and white.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://addons/phantom_camera/themes/theme.tres
@@ -25,10 +25,8 @@ res://shader/SkyShader.gdshader
 res://shader/PSX-Camera.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/Batalha/scripts/batalha2.gd
-res://escopo.txt
-res://Godot/Godot Scripts/GameStarts.gd
+res://Godot/classes/itens/Inventorys/Inventory.gd
 res://Areais/EP 1/começo.tscn
 res://Areais/scientist_zeno.tscn
 res://Godot/Batalha/cenas/BATALHA.tscn
-res://Godot/Batalha/scripts/batalha_submenu.gd
+res://Godot/Godot Scripts/GameStarts.gd

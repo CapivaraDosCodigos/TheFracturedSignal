@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=35 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="PackedScene" uid="uid://dhdqurm4hxqt" path="res://Godot/classes/Inimigos/bebedouro.tscn" id="2_y71rf"]
@@ -12,9 +12,8 @@
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="11_ww2i2"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="12_vuo06"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
+[ext_resource type="Texture2D" uid="uid://dmphbqios0cdq" path="res://texture/objetos/16por6.png" id="13_y71rf"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
 
 [sub_resource type="Resource" id="Resource_s0ely"]
@@ -173,7 +172,7 @@ b = Vector2(-11.4998, 24.0001)
 size = Vector2(139.5, 139)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
-atlas = ExtResource("12_vuo06")
+atlas = ExtResource("13_y71rf")
 region = Rect2(96, 720, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h7tth"]
@@ -184,19 +183,19 @@ outline_size = 8
 outline_color = Color(0.12549, 0.0784314, 0.2, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq6de"]
-atlas = ExtResource("12_vuo06")
+atlas = ExtResource("13_y71rf")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucvin"]
-atlas = ExtResource("12_vuo06")
+atlas = ExtResource("13_y71rf")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otx5r"]
-atlas = ExtResource("12_vuo06")
+atlas = ExtResource("13_y71rf")
 region = Rect2(112, 656, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_74a5d"]
-atlas = ExtResource("12_vuo06")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y71rf"]
+atlas = ExtResource("13_y71rf")
 region = Rect2(176, 0, 16, 16)
 
 [node name="Batalha" type="Node"]
@@ -398,7 +397,6 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
-material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_eohca")
@@ -439,7 +437,6 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
-material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_fq6de")
@@ -479,7 +476,6 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
-material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_ucvin")
@@ -520,7 +516,6 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
-material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_otx5r")
@@ -561,10 +556,9 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
-material = ExtResource("11_ww2i2")
 layout_mode = 2
 size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_74a5d")
+texture = SubResource("AtlasTexture_y71rf")
 expand_mode = 1
 stretch_mode = 5
 

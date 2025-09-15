@@ -30,7 +30,7 @@ extends CharacterBody2D
 ## Referência ao líder (outro ObjectPlayer) caso este seja um seguidor.
 @export var leader: ObjectPlayer2D
 ## A camera do jogo em cada personagem.
-@export var can: Node2D
+@export var can: PhantomCamera2D
 ## A área do player.
 @export var area: Area2D
 
@@ -59,8 +59,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Manager.current_status == Manager.GameState.MAP:
-		if Starts.Current_player != null and Starts.Current_player.has_method("update_properties"):
-			no_player = not (Starts.Current_player.Nome == Nome)
+		if Starts.CurrentPlayer != null and Starts.CurrentPlayer.has_method("update_properties"):
+			no_player = not (Starts.CurrentPlayer.Nome == Nome)
 			
 		player_physics()
 		follower_physics()

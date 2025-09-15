@@ -179,6 +179,10 @@ metadata/_custom_type_script = "uid://rwmxke1xgsn5"
 physics_interpolation_mode = 1
 visible = false
 zoom = Vector2(4.8, 4.8)
+limit_left = -387
+limit_top = -528
+limit_right = 433
+limit_bottom = 288
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]

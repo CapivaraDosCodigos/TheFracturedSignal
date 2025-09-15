@@ -1,23 +1,42 @@
 extends Node
 
-var Data: GlobalData; var Conf: DataConf; var InfDatas: DataExtras; var Current_player: PlayerData
-var Pdir: Dictionary[String, PlayerData]
-var Current_scene: PackedScene
+var Data: GlobalData
+var Conf: DataConf
+var Extras: DataExtras
 
-var InvData: Inventory = Inventory.new();
+var CurrentScene: PackedScene
+var CurrentPlayer: PlayerData
+var CurrentInventory: Inventory
+
+var CurrentPlayerString: String
+var CurrentInventoryString: String
+var PlayersAtuaisString: Array[String]
+
+var PlayersAtuais: Dictionary[String, PlayerData]
+var AllPlayers: Dictionary[String, PlayerData]
+var AllInventory: Dictionary[String, Inventory]
 
 var InGame: bool = false
 
 func _ready() -> void:
-	SaveData.Deletar(1)
 	Start_Save(1)
 
+func _process(_delta: float) -> void:
+	if InGame:
+		return
+		
+	atualisar(true)
+	
 func SAVE(slot: int) -> void:
-	Data.Inv = InvData
-	Data.CharDir = Pdir
-	Data.current_player = Current_player
 	Data.Conf = Conf
-	Data.Datas = InfDatas
+	Data.Extras = Extras
+	Data.CurrentScene = CurrentScene
+	Data.CurrentPlayer = CurrentPlayerString
+	Data.CurrentInventory = CurrentInventoryString
+	Data.PlayersAtuais = PlayersAtuaisString
+	Data.AllInventory = AllInventory
+	Data.AllPlayers = AllPlayers
+	Data.slot = slot
 	
 	SaveData.Salvar(slot, Data)
 
@@ -25,32 +44,48 @@ func Start_Save(slot: int) -> void:
 	if not is_inside_tree():
 		await get_tree().process_frame
 	
-	Data = SaveData.Carregar(slot)
-	InvData = Data.Inv
-	Pdir = Data.CharDir
-	Current_player = Data.current_player
-	Current_scene = Database.SAVES_SCENE[Data.id]
+	Data = SaveData.Carregar_Arquivo("res://Godot/classes/DATAS/test.tres")
 	Conf = Data.Conf
-	InfDatas = Data.DataE
+	Extras = Data.Extras
+	CurrentScene = Data.CurrentScene
+	CurrentPlayerString = Data.CurrentPlayer
+	CurrentInventoryString = Data.CurrentInventory
+	PlayersAtuaisString = Data.PlayersAtuais
+	AllInventory = Data.AllInventory
+	AllPlayers = Data.AllPlayers
+	slot = Data.slot
 	
-	if typeof(Data.id) != TYPE_INT:
-		push_error("❌ ID inválido no save: %s" % str(Data.id))
-		return
-		
-	#get_tree().change_scene_to_packed(SAVES_SCENE[Data.id])
-	print("slot ", slot, " foi iniciado em ", Data.id)
+	atualisar(false)
+	#get_tree().change_scene_to_packed(CurrentScene)
 	InGame = true
 
 func Return_To_Title() -> void:
 	await get_tree().process_frame
 	Data = null
-	InvData = null
-	Pdir.clear()
-	Current_player = null
 	Conf = null
-	InfDatas = null
-	InGame = false
+	Extras = null
+	CurrentScene = null
+	CurrentInventory = null
+	CurrentPlayer = null
+	CurrentPlayerString = ""
+	CurrentInventoryString = ""
+	PlayersAtuais.clear()
+	AllInventory.clear()
+	AllPlayers.clear()
+	
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
+
+func IsCurrentPlayer(player: String) -> void:
+	AdicionarPlayer(player)
+	CurrentPlayerString = player
+
+func AdicionarPlayer(player: String) -> void:
+	if not PlayersAtuais.has(player):
+		PlayersAtuaisString.append(player)
+
+func RemoverPlayer(player: String) -> void:
+	if PlayersAtuais.has(player):
+		PlayersAtuais.erase(player)
 
 func Dead() -> void:
 	pass
@@ -59,11 +94,15 @@ func InGameIsTrue() -> void:
 	while not InGame:
 		await get_tree().process_frame
 
-func _process(_delta: float) -> void:
-	if InGame:
-		return
+func atualisar(booleana: bool):
+	CurrentInventory = AllInventory[CurrentInventoryString]
+	CurrentPlayer = AllPlayers[CurrentPlayerString]
 	
-	for personagem in Pdir.values():
-		personagem.update_properties(InvData)
-	#Pdir["Zeno"].update_properties(InvData)
-	#Pdir["Niko"].update_properties(InvData)
+	print(CurrentInventory.itens, " a")
+	
+	for nome in PlayersAtuaisString:
+		if AllPlayers.has(nome):
+			var personagem = AllPlayers[nome]
+			PlayersAtuais[nome] = AllPlayers[nome]
+			if booleana:
+				personagem.update_properties(CurrentInventory)

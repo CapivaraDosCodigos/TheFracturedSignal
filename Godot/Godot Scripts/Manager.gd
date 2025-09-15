@@ -86,8 +86,8 @@ func DialogoTexture(texture: String = "", material: String = "") -> void:
 	#img.save_png(caminho)
 	#print("Salvo em:", caminho)
 #func _ready() -> void:
-	#var _shader_material := preload("res://texture/folder tres/materials/tile3.tres")
-	#var _path := "res://texture/PNG/funds/Border All 6.png"
+	#var _shader_material := preload("res://texture/folderTres/materials/tile.tres")
+	#var _path := "res://texture/objetos/16x16.png"
 	#var _path2 := "res://texture/PNG/funds/Border All 3.png"
 	#print(Starts.ZenoData.armorE)
 	#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)

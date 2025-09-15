@@ -1,7 +1,5 @@
 class_name SaveData extends Resource
 
-enum TIPO_DATAS { Global, NotSave }
-
 const save_path: String = Database.SAVE_PATH
 const total_slot: int = Database.TOTAL_SLOTS
 

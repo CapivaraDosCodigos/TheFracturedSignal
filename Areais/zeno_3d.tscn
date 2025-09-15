@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://clpjug51tu33b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbsqg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gbsqg"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Zeno3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999945, -0.0104718, 0, 0.0104718, 0.999945, 0.425, 0.128, 1.886)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.7, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_gbsqg")
+skeleton = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_gbsqg")

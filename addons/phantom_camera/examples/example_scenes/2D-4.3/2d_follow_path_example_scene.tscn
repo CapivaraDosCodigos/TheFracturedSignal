@@ -163,7 +163,7 @@ sources/0 = SubResource("TileSetAtlasSource_nivvc")
 
 [sub_resource type="Curve2D" id="Curve2D_usrhf"]
 _data = {
-"points": PackedVector2Array(-96.4111, 42.3785, 0, 0, 222, 0, 0, 0, 0, 0, 1580.53, 0)
+"points": PackedVector2Array(-96.4111, 42.3785, 0, 0, 168, -66, 0, 0, 0, 0, 1580.53, 0)
 }
 point_count = 2
 
@@ -212,9 +212,8 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(374, -190)
+position = Vector2(320, -256)
 zoom = Vector2(1.5, 1.5)
-process_callback = 0
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -248,7 +247,7 @@ text = "[WASD] to move
 [node name="PlayerPhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target", "follow_path")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(374, -190)
+position = Vector2(320, -256)
 script = ExtResource("6_y6hoa")
 priority = 10
 follow_mode = 4

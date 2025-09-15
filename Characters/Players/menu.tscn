@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4isedjlkckn0"]
+[gd_scene load_steps=20 format=3 uid="uid://b4isedjlkckn0"]
 
 [ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/scripts/menu/menu.gd" id="1_iewf1"]
 [ext_resource type="Material" uid="uid://ccsii6wbq0dhs" path="res://texture/folderTres/materials/zenoTest.tres" id="2_37iep"]
 [ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://texture/PNG/funds/Border All 7.png" id="3_yox3o"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="4_33dw1"]
 [ext_resource type="Texture2D" uid="uid://dkpfptdx5dya8" path="res://texture/PNG/funds/Border All 6.png" id="5_hh0x1"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="6_iu7kr"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="7_bmpro"]
+[ext_resource type="Texture2D" uid="uid://dmphbqios0cdq" path="res://texture/objetos/16por6.png" id="6_jm1s2"]
 [ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="8_dbkg0"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="9_04dga"]
 [ext_resource type="Texture2D" uid="uid://c3gupndh6ko5o" path="res://texture/PNG/funds/Deco All 3.png" id="10_x66a5"]
@@ -26,19 +25,19 @@ modulate_color = Color(0.552941, 0.560784, 0.972549, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
-atlas = ExtResource("7_bmpro")
+atlas = ExtResource("6_jm1s2")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
-atlas = ExtResource("7_bmpro")
+atlas = ExtResource("6_jm1s2")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
-atlas = ExtResource("7_bmpro")
+atlas = ExtResource("6_jm1s2")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
-atlas = ExtResource("7_bmpro")
+atlas = ExtResource("6_jm1s2")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
@@ -60,7 +59,6 @@ modulate_color = Color(0.408143, 0.275222, 0.581094, 1)
 script = ExtResource("1_iewf1")
 
 [node name="UI_menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +135,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/MarginContainer"]
-material = ExtResource("6_iu7kr")
 layout_mode = 2
 texture = SubResource("AtlasTexture_og32f")
 stretch_mode = 5
@@ -165,7 +162,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
-material = ExtResource("6_iu7kr")
 layout_mode = 2
 texture = SubResource("AtlasTexture_mm3rk")
 stretch_mode = 5
@@ -193,7 +189,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
-material = ExtResource("6_iu7kr")
 layout_mode = 2
 texture = SubResource("AtlasTexture_rxsed")
 stretch_mode = 5
@@ -221,7 +216,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
-material = ExtResource("6_iu7kr")
 layout_mode = 2
 texture = SubResource("AtlasTexture_uow6m")
 stretch_mode = 5

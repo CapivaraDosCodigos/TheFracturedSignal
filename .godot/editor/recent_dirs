@@ -1,7 +1,9 @@
+res://Godot/classes/personagens
+res://Areais/EP 1
+res://Godot/classes/DATAS/
 res://Areais
 res://texture/folderTres/texturas
 res://texture/objetos
-res://Areais/EP 1
 res://
 res://texture/Characters/Zeno's
 res://texture/folderTres/materials
@@ -11,7 +13,6 @@ res://Godot/classes/Inimigos
 res://texture/PNG/funds
 res://Characters/Players/cenas
 res://Godot/classes/personagens/
-res://Godot/classes/personagens
 res://Godot/Godot Cenas
 res://shader
 res://texture/Characters/dialogos
@@ -19,6 +20,5 @@ res://texture/Characters/npcs/Characters/NPC merchant - with animated items
 res://texture/characters/Zeno's
 res://texture/characters/npcs/bah
 res://texture/characters/inimigos
-res://texture/characters/npcs/Characters/NPC merchant - with animated items
 /storage/emulated/0/Documents
 /storage/emulated/0/Documents/godot 4.4 projects
