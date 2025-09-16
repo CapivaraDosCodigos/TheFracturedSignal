@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=8 format=3 uid="uid://cd53fp8qruq48"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=6 format=3 uid="uid://cd53fp8qruq48"]
 
 [ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="1_1ras7"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="1_ma64n"]
@@ -6,21 +6,9 @@
 [ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/itens/Inventorys/Inventory.gd" id="5_ma64n"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="5_qmuw0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0fqg"]
-region = Rect2(48, 1104, 16, 16)
-
-[sub_resource type="Resource" id="Resource_6w1f0"]
-script = ExtResource("1_1ras7")
-nome = "Papel"
-uid = 0
-preco = 0
-descricao = ""
-icone = SubResource("AtlasTexture_j0fqg")
-metadata/_custom_type_script = "uid://oan0jvd28y7r"
-
 [resource]
 script = ExtResource("5_ma64n")
-itens = Array[ExtResource("1_1ras7")]([ExtResource("2_36n3i"), SubResource("Resource_6w1f0"), ExtResource("1_ma64n"), ExtResource("5_qmuw0")])
-limite = 15
+items = Array[ExtResource("1_1ras7")]([ExtResource("5_qmuw0"), null, null, ExtResource("1_ma64n"), null, ExtResource("2_36n3i"), null])
+limite = 6
 name = "Zeno"
 metadata/_custom_type_script = "uid://cmfwq25tt8fwe"

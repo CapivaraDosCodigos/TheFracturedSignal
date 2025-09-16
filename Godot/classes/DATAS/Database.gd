@@ -4,6 +4,7 @@ class_name Database extends Resource
 const TOTAL_SLOTS := 3
 const SAVE_PATH := "user://save_slot_%d.tres"
 const SAVES_SCENE: Array[PackedScene] = [preload("res://Areais/EP 1/começo.tscn")]
+const PLAYERS_DISPONIVEIS: Array[String] = ["Zeno", "Niko"]
 
 #Armas:
 const SIGNAL_WEAPON: ItemArma = preload("res://Godot/classes/itens/armas/Signal_Weapon.tres")

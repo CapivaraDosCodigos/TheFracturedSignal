@@ -1,3 +1,7 @@
+res://Godot/classes/itens/consumíveis
+res://Godot/classes/itens/armaduras
+res://Godot/classes/itens/armas
+res://Godot/classes/itens/Inventorys
 res://Godot/classes/personagens
 res://Areais/EP 1
 res://Godot/classes/DATAS/
@@ -16,9 +20,5 @@ res://Godot/classes/personagens/
 res://Godot/Godot Cenas
 res://shader
 res://texture/Characters/dialogos
-res://texture/Characters/npcs/Characters/NPC merchant - with animated items
-res://texture/characters/Zeno's
-res://texture/characters/npcs/bah
-res://texture/characters/inimigos
 /storage/emulated/0/Documents
 /storage/emulated/0/Documents/godot 4.4 projects

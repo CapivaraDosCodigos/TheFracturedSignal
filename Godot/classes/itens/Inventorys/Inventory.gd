@@ -1,54 +1,83 @@
 @icon("res://texture/folderTres/texturas/inventory_png.tres")
 class_name Inventory extends Resource
 
-@export var itens: Array[DataItem]: set = set_inventory, get = get_inventory
-@export var limite: int = 15: set = set_limite
+@export var items: Array[DataItem]: set = set_inventory, get = get_inventory
+@export var limite: int = 15: set = set_limite 
 @export var name: String = "New Inventory"
 
-func _init() -> void:
+func _init(_items: Array[DataItem] = [], _limite: int = 15, _name: String = "New Inventory") -> void:
+	items = _items
+	limite = _limite
+	name = _name
 	_atualisar_espaço()
 
+func _to_string() -> String:
+	return name
+
 func _atualisar_espaço() -> void:
-	itens.resize(limite)
+	items.resize(limite)
 
 func _is_slot_valid(slot: int) -> bool:
 	if slot < 0 or slot >= limite:
-		push_error("❌ Slot inválido: %d" % slot)
 		return false
 	return true
 
-func set_inventory(itensArray: Array[DataItem]) -> void:
-	itens = itensArray
+func set_inventory(itemsArray: Array[DataItem]) -> void:
+	items = itemsArray
 	_atualisar_espaço()
 
 func get_inventory() -> Array[DataItem]:
-	return itens
+	return items
 
 func set_limite(limites: int) -> void:
 	limite = limites
 	_atualisar_espaço()
 
+func get_free_slot() -> int:
+	for i in range(limite):
+		if items[i] == null:
+			return i
+	return -1
+
 func add_item(item: DataItem, slot: int = -1) -> void:
 	if slot == -1:
-		for i in range(limite):
-			if itens[i] == null:
-				itens[i] = item
-				return
-	else:
-		if not _is_slot_valid(slot): 
+		slot = get_free_slot()
+		if slot == -1:
 			return
-		if itens[slot] == null:
-			itens[slot] = item
+	if not _is_slot_valid(slot): 
+		return
+	if items[slot] == null:
+		items[slot] = item
 	_atualisar_espaço()
 
 func set_item(item: DataItem, slot: int) -> void:
 	if not _is_slot_valid(slot): 
 		return
-	itens[slot] = item
+	items[slot] = item
 	_atualisar_espaço()
 
 func remove_item(slot: int) -> void:
 	if not _is_slot_valid(slot): 
 		return
-	itens[slot] = null
+	items[slot] = null
 	_atualisar_espaço()
+
+func remove_item_in_batalha(index: int) -> void:
+	var new_items: Array[DataItem] = []
+	
+	for item in items:
+		if item != null:
+			new_items.append(item)
+	
+	if index >= 0 and index < new_items.size():
+		remove_for_item(new_items[index])
+
+func remove_for_item(item: DataItem) -> void:
+	if item == null:
+		return
+	
+	for iten in range(limite):
+		if items[iten] == item:
+			items[iten] = null
+			_atualisar_espaço()
+			return

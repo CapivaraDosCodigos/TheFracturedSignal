@@ -34,6 +34,7 @@ var submenu_ativo: bool = false
 
 func _ready() -> void:
 	await Starts.InGameIsTrue()
+	print(Starts.CurrentInventory.items)
 	#Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
 	Manager.nova_palette("", false)
 	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
@@ -108,7 +109,7 @@ func _iniciar_selecao():
 	selecoes = []
 	selecoes.resize(players)
 	submenu_resultados = {}
-	#itemMenu.atualizar_itemlist()
+	itemMenu.atualizar_itemlist()
 	_focus_current_panel()
 
 func _abrir_submenu(panel: Control) -> void:
@@ -172,8 +173,8 @@ func _act(act: String, ent: int) -> void:
 			var resultado = submenu_resultados[ent]
 			print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
 			
-			if resultado["index"] < Starts.CurrentInventory.itens.size():
-				Starts.InvData.itens.remove_at(resultado["index"])
+			if resultado["index"] < Starts.CurrentInventory.items.size():
+				Starts.CurrentInventory.remove_item_in_batalha(resultado["index"])
 				itemMenu.atualizar_itemlist()
 	
 	elif act == "MRC":

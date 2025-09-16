@@ -8,10 +8,8 @@ region = Rect2(160, 528, 16, 16)
 [resource]
 script = ExtResource("2_7ur3f")
 cura = 25
-efeito = "Cura HP"
 nome = "sandwich"
 uid = 3
 preco = 30
-descricao = ""
 icone = SubResource("AtlasTexture_dqt6t")
 metadata/_custom_type_script = "uid://4uoggiynaxiu"

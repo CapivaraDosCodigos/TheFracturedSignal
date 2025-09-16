@@ -7,15 +7,7 @@ region = Rect2(64, 784, 16, 16)
 
 [resource]
 script = ExtResource("1_qkvb7")
-uid_armor = 0
-defesa = 10
-extra_life = 0
-extra_damage = 0
-extra_resource = 0
-extra_strength = 0
 nome = "óculos simples"
-uid = 0
 preco = 5
-descricao = ""
 icone = SubResource("AtlasTexture_4w0ye")
 metadata/_custom_type_script = "uid://dkcvsotc2mgdk"

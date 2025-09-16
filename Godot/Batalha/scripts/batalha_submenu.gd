@@ -46,8 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			list.select(current_index, true)
 			list.ensure_current_is_visible()
 
-	elif event.is_action_pressed("confirm"):
-		# define resultado e fecha
+	elif event.is_action_pressed("confirm") and list.get_item_count() != 0:
 		var texto = list.get_item_text(current_index)
 		last_result = {"texto": texto, "index": current_index}
 		end()
@@ -63,10 +62,8 @@ func end() -> void:
 
 func atualizar_itemlist() -> void:
 	var inv : Inventory = Starts.CurrentInventory as Inventory
-	print(typeof(Starts.CurrentInventory))
-	print(Starts.CurrentInventory)
-	if inv.get("itens"):
-		var items = inv.get("itens")
-		list.clear()
-		for item in items:
+	var items = inv.items
+	list.clear()
+	for item in items:
+		if not item == null:
 			list.add_item(item.nome, item.icone)

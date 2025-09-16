@@ -57,7 +57,7 @@ func _ready() -> void:
 	area.area_entered.connect(_on_area_2d_area_entered)
 	area.area_exited.connect(_on_area_2d_area_exited)
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Manager.current_status == Manager.GameState.MAP:
 		if Starts.CurrentPlayer != null and Starts.CurrentPlayer.has_method("update_properties"):
 			no_player = not (Starts.CurrentPlayer.Nome == Nome)

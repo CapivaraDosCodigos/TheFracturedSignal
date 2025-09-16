@@ -97,9 +97,7 @@ func InGameIsTrue() -> void:
 func atualisar(booleana: bool):
 	CurrentInventory = AllInventory[CurrentInventoryString]
 	CurrentPlayer = AllPlayers[CurrentPlayerString]
-	
-	print(CurrentInventory.itens, " a")
-	
+
 	for nome in PlayersAtuaisString:
 		if AllPlayers.has(nome):
 			var personagem = AllPlayers[nome]
