@@ -25,9 +25,11 @@ static func Carregar_Arquivo(caminho: String) -> GlobalData:
 
 static func Salvar(slot: int, origem: GlobalData) -> void:
 	if not _is_slot_valid(slot): return
-
+	
+	var new_origem := origem
+	new_origem.TimeSave = Time.get_time_string_from_system().replace(":", "-")
 	var path := save_path % slot
-	var err := ResourceSaver.save(origem, path)
+	var err := ResourceSaver.save(new_origem, path)
 	if err != OK:
 		push_error("❌ Falha ao salvar slot %d. Código de erro: %s" % [slot, err])
 	else:

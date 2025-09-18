@@ -11,7 +11,6 @@ func _ready() -> void:
 	visible = false
 	current_index = 0
 
-# Chamado por quem quer abrir o menu: "await itemMenu.itemsIvt()"
 func itemsIvt() -> Dictionary:
 	item_bool = true
 	visible = true
@@ -19,11 +18,9 @@ func itemsIvt() -> Dictionary:
 	if list.get_item_count() > 0:
 		list.select(current_index, true)
 
-	# espera até o jogador confirmar (ou cancelar)
 	while item_bool:
 		await get_tree().process_frame
 
-	# copia resultado e reseta
 	var res := last_result.duplicate()
 	last_result = {"texto": null, "index": -1}
 	return res

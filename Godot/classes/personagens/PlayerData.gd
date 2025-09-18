@@ -6,7 +6,7 @@ class_name PlayerData extends Resource
 @export var Classe: ClassePlayer = ClassePlayer.new()
 @export var Anime: SpriteFrames
 @export var MaterialP: ShaderMaterial
-@export_file var objectplayerpath: String
+@export_file("*.*tscn") var objectplayerpath: String
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1

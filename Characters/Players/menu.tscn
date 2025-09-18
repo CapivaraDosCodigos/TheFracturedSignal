@@ -40,9 +40,9 @@ region = Rect2(176, 0, 16, 16)
 atlas = ExtResource("6_jm1s2")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5mvp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5mvp"]
 texture = ExtResource("10_x66a5")
@@ -59,6 +59,7 @@ modulate_color = Color(0.408143, 0.275222, 0.581094, 1)
 script = ExtResource("1_iewf1")
 
 [node name="UI_menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,8 +118,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/focus = ExtResource("4_33dw1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+theme_override_styles/focus = ExtResource("4_33dw1")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
@@ -144,8 +145,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/focus = ExtResource("4_33dw1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+theme_override_styles/focus = ExtResource("4_33dw1")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
@@ -171,8 +172,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/focus = ExtResource("4_33dw1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+theme_override_styles/focus = ExtResource("4_33dw1")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
@@ -198,8 +199,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/focus = ExtResource("4_33dw1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_44t6t")
+theme_override_styles/focus = ExtResource("4_33dw1")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
@@ -281,18 +282,18 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
-theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
-theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
-theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
 theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
-theme_override_constants/outline_size = 12
-theme_override_constants/v_separation = 32
-theme_override_constants/icon_margin = 8
+theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
+theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
 theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+theme_override_constants/outline_size = 12
+theme_override_constants/icon_margin = 8
 theme_override_fonts/font = ExtResource("9_04dga")
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rxsed")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k5mvp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rxsed")
 theme_override_styles/selected = SubResource("StyleBoxTexture_k5mvp")
 max_columns = 3
 same_column_width = true

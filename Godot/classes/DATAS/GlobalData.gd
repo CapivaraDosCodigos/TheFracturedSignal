@@ -14,3 +14,5 @@ class_name GlobalData extends Resource
 
 @export var Conf: DataConf
 @export var Extras: DataExtras
+
+@export var TimeSave: String = "00-00-00"

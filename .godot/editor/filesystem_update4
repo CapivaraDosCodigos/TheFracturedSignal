@@ -1,7 +1,7 @@
-res://Godot/Batalha/cenas/BATALHA.tscn
-res://shader/palette_limiterONE.gdshader
+res://Areais/EP 1/começo.tscn
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/armas/Signal_Weapon.tres
+res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/materials/fenda.tres
 res://texture/folderTres/texturas/fenda_texture.tres
 res://texture/folderTres/EP1.tres
@@ -20,10 +20,14 @@ res://shader/SkyShader.gdshader
 res://shader/PSX-Camera.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
+res://Godot/classes/Inimigos/bebedouro.tres
 res://Godot/Batalha/scripts/batalha2.gd
-res://Godot/Batalha/scripts/batalha_submenu.gd
-res://Godot/classes/personagens/zeno.tres
-res://Godot/classes/DATAS/test.tres
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres
-res://Godot/classes/itens/DataItem.gd
-res://Godot/classes/itens/Inventorys/Inventory.gd
+res://Godot/Godot Scripts/Manager.gd
+res://Godot/classes/DATAS/DataBatalha.gd
+res://Characters/enemies/bebedouro/bebedouro.tscn
+res://Characters/enemies/bebedouro/bebedouro.gd
+res://texture/folderTres/materials/BATALHA.tres
+res://Areais/Dungeons2D.gd
+res://Godot/classes/DATAS/GlobalData.gd
+res://Godot/classes/DATAS/SaveData.gd
+res://Godot/classes/Nodes/audio_player.gd

@@ -1,30 +1,12 @@
-[gd_resource type="Resource" script_class="EnemiesBase" load_steps=5 format=3 uid="uid://bwq6iwhy0hgmu"]
+[gd_resource type="Resource" script_class="DataBatalha" load_steps=3 format=3 uid="uid://qs0gp3vem5db"]
 
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/Characters/inimigos/bebedouro.png" id="1_51ct3"]
-[ext_resource type="Script" uid="uid://d3e8walkx38as" path="res://Godot/classes/Inimigos/EnemiesBase.gd" id="2_rkbil"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sm6gh"]
-atlas = ExtResource("1_51ct3")
-region = Rect2(0, 0, 27, 43)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_06wve"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sm6gh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://dhdqurm4hxqt" path="res://Godot/classes/Inimigos/bebedouro.tscn" id="1_hb7br"]
+[ext_resource type="Script" uid="uid://bbe4ekg3rff07" path="res://Godot/classes/DATAS/DataBatalha.gd" id="2_6aulr"]
 
 [resource]
-script = ExtResource("2_rkbil")
-nome = "Bebedouro"
-Anime = SubResource("SpriteFrames_06wve")
-life = 30
-maxlife = 30
-strength = 1
-defense = 1
-time = 10.0
-metadata/_custom_type_script = "uid://d3e8walkx38as"
+script = ExtResource("2_6aulr")
+inimigos = Array[PackedScene]([ExtResource("1_hb7br")])
+dialogo = "uid://b8s8ct3smhv3e"
+start_dialogo = "bebedouro"
+caminho = "uid://dix6um187yv5o"
+metadata/_custom_type_script = "uid://bbe4ekg3rff07"

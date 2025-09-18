@@ -1,12 +1,12 @@
-extends Node
-class_name Batalha
-
+extends Node2D
+class_name Batalha2D
+# NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE
 #region variables 
 
-@export_group("Inimigos")
-@export var inimigos: Array[PackedScene] = [preload("res://Characters/enemies/bebedouro/bebedouro.tscn")]
+#@export_group("Inimigos")
+#@export var inimigos: Array[PackedScene] = [preload("res://Characters/enemies/bebedouro/bebedouro.tscn")]
 
-@onready var anim: AnimationPlayer = $Batalha2D/Anim
+@onready var anim: AnimationPlayer = $Anim
 @onready var personagens: Node2D = $BatalhaCanvas/Personagens
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
 @onready var markerI: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
@@ -20,7 +20,7 @@ var submenu_resultados: Dictionary
 var PlayersDIR: Dictionary[String, PlayerData]
 var panel_dict: Dictionary[String, Control]
 var batalha: DataBatalha
-var panels#: Array[Control]
+var panels: Array[Control]
 var selecoes: Array[String]
 var enemies: Array[EnemiesBase2D] = []
 var players: int = 1
@@ -33,31 +33,29 @@ var submenu_ativo: bool = false
 #endregion
 
 func _ready() -> void:
-	await Starts.InGameIsTrue()
-	print(Starts.CurrentInventory.items)
-	#Manager.tocar_musica_manager("res://sons/music/battle_vapor.ogg", 90, true, 0.0)
 	Manager.nova_palette("", false)
-	DialogueManager.show_example_dialogue_balloon(load("res://Godot/Diálogos/bebedouro.dialogue"), "bebedouro")
-	batalha = Manager.batalha
-	while inimigos.size() > MAX_ENENINES:
-		inimigos.pop_back()
+	while batalha.inimigos.size() > MAX_ENENINES:
+		batalha.inimigos.pop_back()
 	
 	PlayersDIR = Starts.PlayersAtuais
-	print(Starts.PlayersAtuais)
 	players = PlayersDIR.size()
 	var keys = PlayersDIR.keys()
 	for idx in range(keys.size()):
 		var key = keys[idx]
 		adicionar_jogador(idx, key)
 	
-	for i in range(inimigos.size()):
-		adicionar_inimigo(inimigos[i], markerI[i].position)
+	for i in range(batalha.inimigos.size()):
+		adicionar_inimigo(batalha.inimigos[i], markerI[i].position)
 	
 	panels = [ATK, ITM, EXE, DEF, MRC]
 	panel_dict = {"ATK": ATK,"ITM": ITM,"EXE": EXE,"DEF": DEF,"MRC": MRC}
+	
+	await get_tree().create_timer(1.5).timeout
+	
+	DialogueManager.show_example_dialogue_balloon(load(batalha.dialogo), batalha.start_dialogo)
+	Manager.tocar_musica_manager(batalha.caminho, batalha.volume, batalha.loop)
 
 func _process(_delta: float) -> void:
-	batalha = Manager.batalha
 	var current_state = Manager.current_status
 	if current_state != last_state:
 		if current_state == Manager.GameState.BATTLE:
@@ -104,6 +102,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_focus_current_panel()
 
 func _iniciar_selecao():
+	print(enemies.size())
 	selecao_ativa = true; selecao_finalizada = false
 	jogador_atual = 0; current_index = 0
 	selecoes = []
@@ -158,9 +157,9 @@ func _act(act: String, ent: int) -> void:
 	print("- Jogador %d: %s" % [ent + 1, act])
 	
 	if act == "ATK":
-		print("Atacar inimigo")
 		for i in enemies:
 			i.life -= 10
+			print("Atacar inimigo, vida: %d" % i.life)
 	
 	elif act == "DEF":
 		print("Defender")
@@ -182,6 +181,10 @@ func _act(act: String, ent: int) -> void:
 	
 	else :
 		print("erro")
+		
+	if enemies.size() == 0:
+		end_batalha()
+		return
 
 func _focus_current_panel() -> void:
 	if selecao_ativa and panels[current_index]:
@@ -198,6 +201,11 @@ func _exe_atacar():
 		inimigo.atacar()
 	await get_tree().create_timer(enemies.pick_random().time).timeout
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
+
+func end_batalha() -> void:
+	batalha.dungeons2D.terminar_batalha()
+	Manager.tocar_musica_manager("")
+	queue_free()
 
 func adicionar_jogador(index: int, key: String) -> void:
 	playerI[index].sprite_frames = PlayersDIR[key].Anime
@@ -216,5 +224,5 @@ func adicionar_inimigo(inimigo: PackedScene, pos: Vector2) -> void:
 func remover_jogador(_key: String) -> void:
 	pass
 
-func remover_inimigo(_index: int) -> void:
-	pass
+func remover_inimigo(index: int) -> void:
+	enemies.remove_at(index)

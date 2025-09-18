@@ -12,8 +12,11 @@ func _process(_delta: float) -> void:
 			_atualizar_volume()
 			volume_global_anterior = vol_global
 
-func tocar_musica(caminho: String, volume: float = 100.0, loop: bool = false, atraso: float = 0.0) -> void:
+func tocar_musica(caminho: String = "", volume: float = 100.0, loop: bool = false, atraso: float = 0.0) -> void:
 	stop()
+	
+	if caminho == "":
+		return
 	
 	if not ResourceLoader.exists(caminho):
 		push_warning("⚠️ Caminho inválido: " + caminho)

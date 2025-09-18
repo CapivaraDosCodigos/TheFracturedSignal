@@ -25,8 +25,8 @@ func _process(_delta: float) -> void:
 	if InGame:
 		return
 		
-	atualisar(true)
-	
+	_atualisar_propriedades(true)
+
 func SAVE(slot: int) -> void:
 	Data.Conf = Conf
 	Data.Extras = Extras
@@ -55,7 +55,7 @@ func Start_Save(slot: int) -> void:
 	AllPlayers = Data.AllPlayers
 	slot = Data.slot
 	
-	atualisar(false)
+	_atualisar_propriedades(false)
 	#get_tree().change_scene_to_packed(CurrentScene)
 	InGame = true
 
@@ -94,7 +94,7 @@ func InGameIsTrue() -> void:
 	while not InGame:
 		await get_tree().process_frame
 
-func atualisar(booleana: bool):
+func _atualisar_propriedades(booleana: bool):
 	CurrentInventory = AllInventory[CurrentInventoryString]
 	CurrentPlayer = AllPlayers[CurrentPlayerString]
 

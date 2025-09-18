@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=4 uid="uid://cwod1ylh8y1cj"]
+[gd_scene load_steps=7 format=4 uid="uid://cwod1ylh8y1cj"]
 
+[ext_resource type="Script" uid="uid://botiuinj2k2g7" path="res://Areais/Dungeons2D.gd" id="1_ddk66"]
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folderTres/EP1.tres" id="1_nn1m4"]
 [ext_resource type="PackedScene" uid="uid://3x7rgqstg6mq" path="res://Characters/NPCS/merchant.tscn" id="2_bfgb3"]
+[ext_resource type="PackedScene" uid="uid://bgs8qnmsvgs1g" path="res://Characters/enemies/bebedouro/bebedouro.tscn" id="3_oq4xn"]
 [ext_resource type="PackedScene" uid="uid://h5ek2buto4br" path="res://Areais/scientist_zeno.tscn" id="4_ddk66"]
 [ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="4_t34vy"]
 
-[node name="O Começo" type="Node2D"]
+[node name="O Começo" type="Node2D" node_paths=PackedStringArray("players", "inimigos")]
+script = ExtResource("1_ddk66")
+players = NodePath("players")
+inimigos = NodePath("inimigos")
+metadata/_custom_type_script = "uid://botiuinj2k2g7"
 
-[node name="TileMap" type="Node2D" parent="."]
+[node name="TileMap" type="Node" parent="."]
 
 [node name="Layer0" type="TileMapLayer" parent="TileMap"]
 z_index = -10
@@ -44,5 +50,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_t34vy")
 
-[node name="ScientistZeno" parent="." instance=ExtResource("4_ddk66")]
+[node name="players" type="Node2D" parent="."]
+
+[node name="ScientistZeno" parent="players" instance=ExtResource("4_ddk66")]
 position = Vector2(-64, 2)
+
+[node name="inimigos" type="Node2D" parent="."]
+
+[node name="bebedouro" parent="inimigos" node_paths=PackedStringArray("dungeons2D") instance=ExtResource("3_oq4xn")]
+dungeons2D = NodePath("../..")

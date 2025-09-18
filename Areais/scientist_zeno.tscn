@@ -287,7 +287,7 @@ _data = {
 radius = 8.0
 height = 34.0
 
-[node name="ScientistZeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area")]
+[node name="ScientistZeno" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
 collision_layer = 9
 collision_mask = 6
 script = ExtResource("1_quage")

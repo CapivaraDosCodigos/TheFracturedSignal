@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dwc0h6lg6y3kf"]
+
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/Characters/inimigos/bebedouro.png" id="1_ny8vk"]
+
+[resource]
+atlas = ExtResource("1_ny8vk")
+region = Rect2(0, 0, 27, 43)

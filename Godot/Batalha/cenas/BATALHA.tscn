@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=34 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
-[ext_resource type="PackedScene" uid="uid://dhdqurm4hxqt" path="res://Godot/classes/Inimigos/bebedouro.tscn" id="2_y71rf"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_y71rf"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
@@ -94,7 +93,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 404)]
+"values": [Vector2(0, 540)]
 }
 
 [sub_resource type="Animation" id="Animation_fq6de"]
@@ -195,23 +194,21 @@ region = Rect2(112, 656, 16, 16)
 atlas = ExtResource("13_y71rf")
 region = Rect2(176, 0, 16, 16)
 
-[node name="Batalha" type="Node"]
+[node name="Batalha2D" type="Node2D"]
+editor_description = "NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE "
 script = ExtResource("1_wuibh")
-inimigos = Array[PackedScene]([ExtResource("2_y71rf")])
 metadata/_edit_vertical_guides_ = [-112.0]
 
-[node name="Batalha2D" type="Node2D" parent="."]
+[node name="Camera" type="Node2D" parent="."]
 visible = false
-
-[node name="Camera" type="Node2D" parent="Batalha2D"]
 script = ExtResource("3_y71rf")
 priority = 5
 tween_resource = SubResource("Resource_s0ely")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Anim" type="AnimationPlayer" parent="Batalha2D"]
-root_node = NodePath("../../BatalhaCanvas")
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../BatalhaCanvas")
 libraries = {
 &"": SubResource("AnimationLibrary_nt1gt")
 }
@@ -220,7 +217,7 @@ libraries = {
 layer = 0
 metadata/_edit_vertical_guides_ = [256.0]
 
-[node name="TextureRect" type="TextureRect" parent="BatalhaCanvas"]
+[node name="FundoRect" type="TextureRect" parent="BatalhaCanvas"]
 material = ExtResource("3_lwg78")
 anchors_preset = 15
 anchor_right = 1.0
@@ -349,9 +346,9 @@ debug_color = Color(0.834632, 0.367256, 0.347572, 0.42)
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
-offset_top = 404.0
+offset_top = 540.0
 offset_right = 1152.0
-offset_bottom = 540.0
+offset_bottom = 675.99994
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16

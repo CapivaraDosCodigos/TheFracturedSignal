@@ -7,7 +7,6 @@ extends Node
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
 
-var inimigosA: Array[EnemiesBase] = []; var batalha: DataBatalha = DataBatalha.new()
 var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var Body: Node; var textureD: Texture; var materialD: ShaderMaterial
 var batalha2d := preload("res://Godot/Batalha/cenas/BATALHA.tscn")
@@ -41,7 +40,7 @@ func nova_palette(caminho: String, ligado: bool = true) -> void:
 	
 	cfg.PalettePalette = textureload
 
-func tocar_musica_manager(caminho: String, volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1) -> void:
+func tocar_musica_manager(caminho: String = "", volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1) -> void:
 	if canal == 1:
 		audio.tocar_musica(caminho, volume, loop, atraso)
 	elif canal == 2:
@@ -60,12 +59,14 @@ func SceneTransition(caminho: String) -> void:
 	await get_tree().create_timer(0.1).timeout
 	$%fundo.visible = true
 
-func StartBatalha(batalhaS: DataBatalha) -> void:
-	batalha = batalhaS
-	inimigosA = batalha.inimigosB
-	#
-	#var bat := batalha2d.instantiate()
-	#get_tree().call_deferred("add_child", bat)
+func StartBatalha(batalha: DataBatalha, pos: Vector2 = Vector2.ZERO) -> void:
+	var batalhaInstantiante := batalha2d.instantiate()
+	Manager.tocar_musica_manager("res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3", 100, false, 0.0, 2)
+	batalha.dungeons2D.iniciar_batalha()
+	batalhaInstantiante.batalha = batalha
+	batalhaInstantiante.global_position = pos
+	add_sibling(batalhaInstantiante)
+	
 
 func DialogoTexture(texture: String = "", material: String = "") -> void:
 	if texture == "":
@@ -78,13 +79,6 @@ func DialogoTexture(texture: String = "", material: String = "") -> void:
 	else:
 		materialD = load(material)
 
-#func _salvar_print_visivel():
-	#var img = get_viewport().get_texture().get_image()
-	#var dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
-	#var nome = "screenshot_" + Time.get_time_string_from_system().replace(":", "-") + ".png"
-	#var caminho = dir + "/" + nome
-	#img.save_png(caminho)
-	#print("Salvo em:", caminho)
 #func _ready() -> void:
 	#var _shader_material := preload("res://texture/folderTres/materials/tile.tres")
 	#var _path := "res://texture/objetos/16x16.png"

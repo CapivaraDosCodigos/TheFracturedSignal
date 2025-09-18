@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://k4w23p5s4wpn"]
 
 [ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="1_15etb"]
-[ext_resource type="Texture2D" uid="uid://co6qn46s58rns" path="res://textures/paleta/P2.png" id="2_338ob"]
+[ext_resource type="Texture2D" uid="uid://co6qn46s58rns" path="res://texture/paleta/P2.png" id="2_338ob"]
 
 [resource]
 shader = ExtResource("1_15etb")
