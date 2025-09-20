@@ -194,9 +194,13 @@ region = Rect2(112, 656, 16, 16)
 atlas = ExtResource("13_y71rf")
 region = Rect2(176, 0, 16, 16)
 
-[node name="Batalha2D" type="Node2D"]
+[node name="Batalha2D" type="Node2D" node_paths=PackedStringArray("anim", "personagens", "itemMenu")]
 editor_description = "NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE "
 script = ExtResource("1_wuibh")
+anim = NodePath("Anim")
+personagens = NodePath("BatalhaCanvas/Personagens")
+itemMenu = NodePath("BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer")
+metadata/_custom_type_script = "uid://0hjngdsxlm2y"
 metadata/_edit_vertical_guides_ = [-112.0]
 
 [node name="Camera" type="Node2D" parent="."]

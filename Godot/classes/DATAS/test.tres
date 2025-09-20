@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/zeno.tres" id="4_qfcnc"]
 [ext_resource type="Script" uid="uid://dkyo4gl4kpktb" path="res://Godot/classes/DATAS/GlobalData.gd" id="5_05teq"]
 [ext_resource type="Script" uid="uid://dyn3lff021pw6" path="res://Godot/classes/DATAS/DataConf.gd" id="5_qfcnc"]
-[ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/EP 1/começo.tscn" id="6_05teq"]
+[ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/CAPITULO 1/começo.tscn" id="6_05teq"]
 [ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="7_s7mfr"]
 
 [sub_resource type="Resource" id="Resource_ffvbp"]

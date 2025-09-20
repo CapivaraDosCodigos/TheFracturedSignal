@@ -323,9 +323,9 @@ libraries = {
 speed_scale = 0.5
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(0, 20)
 texture = ExtResource("4_df7te")
-offset = Vector2(0, -9)
+offset = Vector2(0, -20)
 hframes = 4
 vframes = 4
 

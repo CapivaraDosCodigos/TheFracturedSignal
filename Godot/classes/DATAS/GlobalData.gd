@@ -1,4 +1,4 @@
-@icon("res://texture/folderTres/save_png.tres")
+@icon("res://texture/folderTres/texturas/globalsave.tres")
 class_name GlobalData extends Resource
 
 @export var slot: int = 0

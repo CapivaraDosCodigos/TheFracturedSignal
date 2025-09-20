@@ -1,4 +1,4 @@
-# DataItem.gd
+@icon("res://texture/folderTres/texturas/item.tres")
 class_name DataItem extends Resource
 
 @export var nome: String = "Item Genérico"

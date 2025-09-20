@@ -1,4 +1,4 @@
-#ItemArmadura.gd
+@icon("res://texture/folderTres/texturas/armadura.tres")
 class_name ItemArmadura extends DataItem
 
 @export var uid_armor: int = 0

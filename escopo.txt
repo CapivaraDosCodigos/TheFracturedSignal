@@ -1,2 +1,7 @@
-- ESCOPO DO GAME DESINER
-	* 
+* ESCOPO DO PRIMEIRO CAPITULO *
+
+- Sinopse:
+	Tres cientistas acabam se encontrando em planeta que era usando como prisao
+	para criminosos que acabam por formar um sociedade caotica, o objetivo deles
+	conseguir pegar e neutralisar uma "Fenda Espacial" que reside nesse planeta
+	mas os habitantes nao vao querer ajudar.

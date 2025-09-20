@@ -9,7 +9,7 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 @export var strength: int = 1
 @export var defense: int = 1
 @export_range(0, 100, 1) var merce: float = 0
-@export_range(5.0, 30.0, 0.1) var time: float = 5.0
+@export_range(0.0, 30.0, 0.1) var time: float = 5.0
 @export var poupavel: bool = true
 
 var rootbatalha: Batalha2D
@@ -33,7 +33,8 @@ func _poupado() -> void:
 	queue_free()
 
 func atacar():
-	print(nome + " preguisa")
+	#print(nome + " com preguisa")
+	pass
 
 func _on_animation_finished():
 	if animation == "dead" and animation == "dead":

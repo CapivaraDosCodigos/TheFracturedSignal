@@ -3,7 +3,6 @@ class_name Database extends Resource
 
 const TOTAL_SLOTS := 3
 const SAVE_PATH := "user://save_slot_%d.tres"
-const SAVES_SCENE: Array[PackedScene] = [preload("res://Areais/EP 1/começo.tscn")]
 const PLAYERS_DISPONIVEIS: Array[String] = ["Zeno", "Niko"]
 
 #Armas:
@@ -29,28 +28,6 @@ static func count_item(array: Array, item: DataItem) -> int:
 		if i == item:
 			count += 1
 	return count
-
-static func equip_armor(inv: Inventory, chararcter: PlayerData, index: int) -> void:
-	if index >= 0 and index < inv.armor.size():
-		chararcter.armorE = inv.armor[index]
-		print(chararcter, " equipou armadura: ", chararcter.armorE.nome)
-	else:
-		push_error("Índice de armadura inválido!")
-
-static func equip_weapon(inv: Inventory, chararcter: PlayerData, index: int) -> void:
-	if index >= 0 and index < inv.weapons.size():
-		chararcter.weaponsE = inv.weapons[index]
-		print(chararcter, " equipou arma: ", chararcter.weaponsE.nome)
-	else:
-		push_error("Índice de arma inválido!")
-
-static func unequip_armor(chararcter: PlayerData) -> void:
-	chararcter.armorE = ARMORNULL
-	print(chararcter, " removeu a armadura.")
-
-static func unequip_weapon(chararcter: PlayerData) -> void:
-	chararcter.weaponsE = WEAPONNULL
-	print(chararcter, " removeu a arma.")
 
 static func apply_damage(dano_base: int, defesa: int) -> int:
 	var reducao = defesa / (defesa + 1.0)

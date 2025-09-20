@@ -1,17 +1,17 @@
-extends Node2D
-class_name Batalha2D
+@icon("res://texture/folderTres/texturas/batalha.tres")
+class_name Batalha2D extends Node2D
+
 # NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE
+
 #region variables 
 
-#@export_group("Inimigos")
-#@export var inimigos: Array[PackedScene] = [preload("res://Characters/enemies/bebedouro/bebedouro.tscn")]
+@export var anim: AnimationPlayer
+@export var personagens: Node2D 
+@export var itemMenu: MarginContainer
 
-@onready var anim: AnimationPlayer = $Anim
-@onready var personagens: Node2D = $BatalhaCanvas/Personagens
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
 @onready var markerI: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
 @onready var playerI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
-@onready var itemMenu: MarginContainer = $BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer
 
 const MAX_ENENINES: int = 3
 
@@ -61,10 +61,12 @@ func _process(_delta: float) -> void:
 		if current_state == Manager.GameState.BATTLE:
 			#$"%Ambição".position = $%BATTLE_ARENA.position
 			anim.play("S_panel")
+			print("battle")
 			_exe_atacar()
 			
 		elif current_state == Manager.GameState.BATTLE_MENU:
 			anim.play("E_panel")
+			print("menu_battle")
 			_iniciar_selecao()
 		
 		last_state = current_state
@@ -154,37 +156,36 @@ func _confirmar_acao(nome: String, _dados_extra = null) -> void:
 		_focus_current_panel()
 
 func _act(act: String, ent: int) -> void:
-	print("- Jogador %d: %s" % [ent + 1, act])
+	#print("- Jogador %d: %s" % [ent + 1, act])
 	
 	if act == "ATK":
 		for i in enemies:
 			i.life -= 10
-			print("Atacar inimigo, vida: %d" % i.life)
+			#print("Atacar inimigo, vida: %d" % i.life)
 	
 	elif act == "DEF":
-		print("Defender")
+		#print("Defender")
+		pass
 	
 	elif act == "EXE":
-		print("Executar")
+		#print("Executar")
+		pass
 	
 	elif act == "ITM":
 		if submenu_resultados.has(ent):
 			var resultado = submenu_resultados[ent]
-			print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
+			#print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
 			
 			if resultado["index"] < Starts.CurrentInventory.items.size():
 				Starts.CurrentInventory.remove_item_in_batalha(resultado["index"])
 				itemMenu.atualizar_itemlist()
 	
 	elif act == "MRC":
-		print("Mercy")
+		#print("Mercy")
+		pass
 	
 	else :
-		print("erro")
-		
-	if enemies.size() == 0:
-		end_batalha()
-		return
+		printerr("erro")
 
 func _focus_current_panel() -> void:
 	if selecao_ativa and panels[current_index]:
@@ -203,8 +204,11 @@ func _exe_atacar():
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func end_batalha() -> void:
-	batalha.dungeons2D.terminar_batalha()
-	Manager.tocar_musica_manager("")
+	if enemies.size() > 0:
+		return
+		
+	batalha.dungeons2D.end_batalha.emit()
+	Manager.tocar_musica_manager()
 	queue_free()
 
 func adicionar_jogador(index: int, key: String) -> void:

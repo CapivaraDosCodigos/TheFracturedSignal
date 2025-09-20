@@ -12,7 +12,7 @@ config_version=5
 
 config/name="the fractured signal"
 config/version="alfa 2.0"
-run/main_scene="uid://7l6llr54uorr"
+run/main_scene="uid://cwod1ylh8y1cj"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -43,6 +43,10 @@ window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/handheld/orientation=4
 window/custom_image="uid://4t63sbm15mlv"
+
+[editor]
+
+movie_writer/size/initial_position_type=0
 
 [editor_plugins]
 

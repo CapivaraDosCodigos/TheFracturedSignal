@@ -97,10 +97,10 @@ func InGameIsTrue() -> void:
 func _atualisar_propriedades(booleana: bool):
 	CurrentInventory = AllInventory[CurrentInventoryString]
 	CurrentPlayer = AllPlayers[CurrentPlayerString]
-
+	
 	for nome in PlayersAtuaisString:
 		if AllPlayers.has(nome):
 			var personagem = AllPlayers[nome]
 			PlayersAtuais[nome] = AllPlayers[nome]
 			if booleana:
-				personagem.update_properties(CurrentInventory)
+				personagem.update_properties()

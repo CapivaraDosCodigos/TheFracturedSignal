@@ -6,13 +6,20 @@ extends Node
 @onready var audio := $AudioPlayerZ; @onready var audio2 := $AudioPlayerS
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
+const GameStateString: Array[String] = ["MAP", "BATTLE", "CUTSCENES", "DIALOGUE", "BATTLE_MENU", "NOT_IN_THE_GAME"]
+const batalha2d: PackedScene = preload("res://Godot/Batalha/cenas/BATALHA.tscn")
 
 var current_status: GameState = GameState.MAP: set = change_state
-var raio: RayCast2D; var Body: Node; var textureD: Texture; var materialD: ShaderMaterial
-var batalha2d := preload("res://Godot/Batalha/cenas/BATALHA.tscn")
+var raio: RayCast2D; var Body: Node; var ObjectPlayer: ObjectPlayer2D
+var textureD: Texture; var materialD: ShaderMaterial
 
-func _physics_process(_delta: float) -> void:
-	fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
+func _ready():
+	var path = "res://escopo.txt"
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var conteudo = file.get_as_text()
+		file.close()
+		print(conteudo)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and raio != null:
@@ -20,6 +27,12 @@ func _process(_delta: float) -> void:
 			Body = raio.get_collider()
 	else:
 		Body = null
+	
+	var pos: Vector2 = Vector2.ZERO
+	if ObjectPlayer != null:
+		pos = ObjectPlayer.global_position
+		
+	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()) + ", CurrentStatus: " + GameStateString[current_status] + ", pos: " + str(pos)
 
 func change_state(estado: GameState) -> void:
 	current_status = estado
@@ -66,7 +79,6 @@ func StartBatalha(batalha: DataBatalha, pos: Vector2 = Vector2.ZERO) -> void:
 	batalhaInstantiante.batalha = batalha
 	batalhaInstantiante.global_position = pos
 	add_sibling(batalhaInstantiante)
-	
 
 func DialogoTexture(texture: String = "", material: String = "") -> void:
 	if texture == "":
