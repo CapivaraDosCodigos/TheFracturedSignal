@@ -59,8 +59,7 @@ func end() -> void:
 
 func atualizar_itemlist() -> void:
 	var inv : Inventory = Starts.CurrentInventory as Inventory
-	var items = inv.items
+	var items = inv.get_in_items_batalha()
 	list.clear()
 	for item in items:
-		if not item == null:
 			list.add_item(item.nome, item.icone)

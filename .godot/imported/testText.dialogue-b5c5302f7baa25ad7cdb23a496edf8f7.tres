@@ -12,11 +12,12 @@ titles = {
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
 "DialogueResource/Map": "-14",
+"Roberto": "35",
 "blublu": "10",
 "comercio": "22",
 "start": "4"
 }
-character_names = PackedStringArray("Sistema Interno", "Blu blu", "Lila")
+character_names = PackedStringArray("Sistema Interno", "Blu blu", "Lila", "Roberto", "Zeno")
 first_title = "3"
 lines = {
 "-1": {
@@ -509,15 +510,83 @@ lines = {
 &"next_id_after": "",
 &"type": "goto"
 },
+"33": {
+&"id": "33",
+&"next_id": "34",
+&"type": ""
+},
 "34": {
 &"id": "34",
 &"next_id": "35",
-&"type": ""
+&"type": "title"
 },
 "35": {
 &"id": "35",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 31,
+&"type": &"dot"
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "GameState"
+}, {
+&"i": 41,
+&"type": &"dot"
+}, {
+&"i": 42,
+&"type": &"variable",
+&"value": "DIALOGUE"
+}, {
+&"i": 50,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "36",
+&"type": "mutation"
+},
+"36": {
+&"character": "Roberto",
+&"id": "36",
+&"next_id": "37",
+&"text": "você sabe pq tu sou modelo 3d?",
+&"type": "dialogue"
+},
+"37": {
+&"character": "Roberto",
+&"id": "37",
+&"next_id": "38",
+&"text": "isso nem faz sentido",
+&"type": "dialogue"
+},
+"38": {
+&"character": "Zeno",
+&"id": "38",
+&"next_id": "39",
+&"text": "complicado isso aí",
+&"type": "dialogue"
+},
+"39": {
+&"id": "39",
 &"is_snippet": false,
-&"next_id": "end",
+&"next_id": "-14",
 &"next_id_after": "",
 &"type": "goto"
 },
@@ -562,6 +631,13 @@ lines = {
 },
 &"next_id": "5",
 &"type": "mutation"
+},
+"40": {
+&"id": "40",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "5": {
 &"character": "Sistema Interno",
@@ -629,5 +705,10 @@ do Starts.Current_player = load(\"res://Godot/classes/personagens/niko.tres\")
 do Manager.DialogoTexture()
 => DialogueResource/Map
 
-"
+~ Roberto
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Roberto: você sabe pq tu sou modelo 3d?
+Roberto: isso nem faz sentido
+Zeno: complicado isso aí
+=> DialogueResource/Map"
 metadata/dialogue_manager_version = "3.7.1"

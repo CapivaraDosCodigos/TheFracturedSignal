@@ -105,6 +105,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _iniciar_selecao():
 	print(enemies.size())
+	end_batalha()
 	selecao_ativa = true; selecao_finalizada = false
 	jogador_atual = 0; current_index = 0
 	selecoes = []

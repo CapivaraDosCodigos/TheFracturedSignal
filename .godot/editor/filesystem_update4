@@ -3,13 +3,14 @@ res://Godot/classes/itens/armas/Signal_Weapon.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/consumíveis/sandwich.tres
 res://shader/black and white.gdshader
-res://shader/paletteWOWOWOW.gdshader
 res://shader/paletasWOW.gdshader
 res://addons/phantom_camera/themes/theme.tres
 res://shader/palette_limiterONE.gdshader
-res://texture/folderTres/materials/fenda.tres
 res://texture/folderTres/texturas/fenda_texture.tres
-res://texture/folderTres/EP1.tres
+res://texture/folderTres/C1A.tres
+res://Characters/NPCS/merchant.tres
+res://texture/folderTres/C1B.tres
+res://texture/folderTres/C1C.tres
 res://addons/post_processing/shaders/palette_limiter.gdshader
 res://shader/PSX.gdshader
 res://shader/zeno.gdshader
@@ -18,9 +19,7 @@ res://shader/ScreenNoise.gdshader
 res://shader/VHS.gdshader
 res://shader/SkyShader.gdshader
 res://shader/PSX-Camera.gdshader
+res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/Godot Cenas/manager.tscn
-res://Characters/Players/scripts/menu/inventory_menu.gd
-res://Characters/Players/menu.tscn
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres
+res://Godot/classes/itens/Inventorys/Inventory.gd

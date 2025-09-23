@@ -32,3 +32,9 @@ do Starts.Current_player = load("res://Godot/classes/personagens/niko.tres")
 do Manager.DialogoTexture()
 => DialogueResource/Map
 
+~ Roberto
+do Manager.change_state(Manager.GameState.DIALOGUE)
+Roberto: você sabe pq tu sou modelo 3d?
+Roberto: isso nem faz sentido
+Zeno: complicado isso aí
+=> DialogueResource/Map

@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://tkftlxtoee6j"]
+
+[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/Characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="1_oe8jh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goviq"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(0, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fccn2"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(110, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi15x"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(220, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0dhq"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(330, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4mot"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(440, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucd4l"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(550, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe5ye"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(660, 0, 110, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8jey"]
+atlas = ExtResource("1_oe8jh")
+region = Rect2(770, 0, 110, 110)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goviq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fccn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi15x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0dhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4mot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucd4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe5ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8jey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -28,11 +28,11 @@ func _process(_delta: float) -> void:
 	else:
 		Body = null
 	
-	var pos: Vector2 = Vector2.ZERO
+	var camada: int
 	if ObjectPlayer != null:
-		pos = ObjectPlayer.global_position
+		camada = ObjectPlayer.camada
 		
-	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()) + ", CurrentStatus: " + GameStateString[current_status] + ", pos: " + str(pos)
+	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()) + ", CurrentStatus: " + GameStateString[current_status] + ", camada: " + str(camada)
 
 func change_state(estado: GameState) -> void:
 	current_status = estado

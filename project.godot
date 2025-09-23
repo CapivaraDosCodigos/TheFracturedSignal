@@ -90,6 +90,8 @@ folder_colors={
 [global_group]
 
 Player=""
+Enemie=""
+NPC=""
 
 [gui]
 
@@ -150,6 +152,14 @@ pointing/emulate_touch_from_mouse=true
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.dialogue", "res://Godot/Diálogos/bebedouro.dialogue", "res://Godot/Diálogos/Symptoms.dialogue")
+
+[layer_names]
+
+2d_physics/layer_1="Players"
+2d_physics/layer_2="NPCs e Inimigos"
+2d_physics/layer_3="Cenario 1"
+2d_physics/layer_4="Cenario 2"
+2d_physics/layer_5="Cenario 1"
 
 [rendering]
 
