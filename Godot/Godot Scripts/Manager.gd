@@ -13,13 +13,13 @@ var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var Body: Node; var ObjectPlayer: ObjectPlayer2D
 var textureD: Texture; var materialD: ShaderMaterial
 
-func _ready():
-	var path = "res://escopo.txt"
-	if FileAccess.file_exists(path):
-		var file = FileAccess.open(path, FileAccess.READ)
-		var conteudo = file.get_as_text()
-		file.close()
-		print(conteudo)
+#func _ready():
+	#var path = "res://escopo.txt"
+	#if FileAccess.file_exists(path):
+		#var file = FileAccess.open(path, FileAccess.READ)
+		#var conteudo = file.get_as_text()
+		#file.close()
+		#print(conteudo)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and raio != null:

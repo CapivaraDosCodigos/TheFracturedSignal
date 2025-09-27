@@ -10,8 +10,7 @@ class_name PlayerData extends Resource
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
-@export var Life: int = 30:
-	set = _set_life
+@export var Life: int = 30
 @export var Bitcoin: int = 25:
 	set = _set_bitcoin
 @export var Exp: int = 0
@@ -96,9 +95,10 @@ func unequip_weapon(inv: Inventory) -> void:
 	inv.set_item(weaponsE, free_slot)
 	weaponsE = null
 
-func _set_life(life: int) -> void:
-	if not life <= 0:
-		Life = life
+func apply_damage(dano_base: int) -> void:
+	var reducao = defense / (defense + 1.0)
+	var dano_final = int(dano_base * (1.0 - reducao))
+	Life -= dano_final
 
 func _set_bitcoin(bitcoin: int) -> void:
 	if not bitcoin <= 0:

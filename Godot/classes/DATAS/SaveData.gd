@@ -3,19 +3,19 @@ class_name SaveData extends Resource
 const save_path: String = Database.SAVE_PATH
 const total_slot: int = Database.TOTAL_SLOTS
 
-static func Carregar(slot: int) -> GlobalData:
+static func Carregar(slot: int) -> SeasonResource:
 	if not _is_slot_valid(slot):
 		push_warning("erro slot invalido")
 		return null
 	
 	var path := save_path % slot
 	if not ResourceLoader.exists(path):
-		return GlobalData.new()
+		return SeasonResource.new()
 	
 	var loaded_data = ResourceLoader.load(path)
 	return loaded_data
 
-static func Carregar_Arquivo(caminho: String) -> GlobalData:
+static func Carregar_Arquivo(caminho: String) -> SeasonResource:
 	if not ResourceLoader.exists(caminho):
 		push_warning("📂 Arquivo não encontrado: " + caminho)
 		return null
@@ -23,7 +23,7 @@ static func Carregar_Arquivo(caminho: String) -> GlobalData:
 	var loaded_data = ResourceLoader.load(caminho)
 	return loaded_data
 
-static func Salvar(slot: int, origem: GlobalData) -> void:
+static func Salvar(slot: int, origem: SeasonResource) -> void:
 	if not _is_slot_valid(slot): return
 	
 	var new_origem := origem

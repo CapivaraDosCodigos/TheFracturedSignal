@@ -104,8 +104,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			_focus_current_panel()
 
 func _iniciar_selecao():
-	print(enemies.size())
-	end_batalha()
 	selecao_ativa = true; selecao_finalizada = false
 	jogador_atual = 0; current_index = 0
 	selecoes = []
@@ -160,8 +158,8 @@ func _act(act: String, ent: int) -> void:
 	#print("- Jogador %d: %s" % [ent + 1, act])
 	
 	if act == "ATK":
-		for i in enemies:
-			i.life -= 10
+		for enemie in enemies:
+			enemie.apply_damage(20)
 			#print("Atacar inimigo, vida: %d" % i.life)
 	
 	elif act == "DEF":
@@ -205,6 +203,8 @@ func _exe_atacar():
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func end_batalha() -> void:
+	print(enemies.size())
+	
 	if enemies.size() > 0:
 		return
 		

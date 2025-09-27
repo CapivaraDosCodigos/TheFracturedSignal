@@ -82,9 +82,8 @@ func remove_item_in_batalha(index: int) -> void:
 		remove_for_item(new_items[index])
 
 func get_in_items_batalha() -> Array[DataItem]:
-	var get_itens: Array[DataItem]
+	var get_itens: Array[DataItem] = []
 	for item in items:
 		if item != null and item.inbatalha:
-			get_itens.append(items)
-	
+			get_itens.append(item)
 	return get_itens

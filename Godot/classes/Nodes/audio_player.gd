@@ -2,15 +2,15 @@ extends AudioStreamPlayer
 class_name AudioPlayer
 
 var volume_local: float = 100.0; var volume_global_anterior: float = -1.0
-var Vmusic: int
+var Vmusic: int = 100
 
-func _process(_delta: float) -> void:
-	if Starts.Conf != null:
-		Vmusic = Starts.Conf.music
-		var vol_global = clamp(Vmusic, 0.0, 100.0)
-		if vol_global != volume_global_anterior:
-			_atualizar_volume()
-			volume_global_anterior = vol_global
+#func _process(_delta: float) -> void:
+	#if Starts.Conf != null:
+		#Vmusic = Starts.Conf.music
+		#var vol_global = clamp(Vmusic, 0.0, 100.0)
+		#if vol_global != volume_global_anterior:
+			#_atualizar_volume()
+			#volume_global_anterior = vol_global
 
 func tocar_musica(caminho: String = "", volume: float = 100.0, loop: bool = false, atraso: float = 0.0) -> void:
 	stop()

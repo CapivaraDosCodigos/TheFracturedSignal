@@ -1,4 +1,7 @@
 res://texture/folderTres/materials
+res://texture/folderTres
+res://Godot/classes/personagens
+res://Godot/classes/itens/Inventorys
 res://texture/tiles top down/texture3
 res://texture/PNG/Sprites/Style A/Large (2×)
 res://texture/PNG/Sprites/Icons/Large (2×)
@@ -7,18 +10,15 @@ res://texture/folderTres/texturas
 res://texture/PNG
 res://Characters/NPCS
 res://texture/objetos
-res://Areais/CAPITULO 1
 res://
 res://Godot/Godot Cenas
 res://Godot/Godot Scripts
 res://Godot/classes/itens/armas
 res://Godot/classes/itens/armaduras
-res://Godot/classes/itens/Inventorys
 res://texture/folderTres/texturas/
 res://sons/music
 res://Godot/Diálogos
 res://Godot/classes/Inimigos
 res://Areais
-res://shader
 /storage/emulated/0/Documents
 /storage/emulated/0/Documents/godot 4.4 projects

@@ -1,4 +1,4 @@
-res://Areais/CAPITULO 1/começo.tscn
+res://Areais/TEMPORADA 1/começo.tscn
 res://Godot/classes/itens/armas/Signal_Weapon.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/consumíveis/sandwich.tres
@@ -9,8 +9,7 @@ res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/fenda_texture.tres
 res://texture/folderTres/C1A.tres
 res://Characters/NPCS/merchant.tres
-res://texture/folderTres/C1B.tres
-res://texture/folderTres/C1C.tres
+res://texture/folderTres/T1B.tres
 res://addons/post_processing/shaders/palette_limiter.gdshader
 res://shader/PSX.gdshader
 res://shader/zeno.gdshader
@@ -22,4 +21,6 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/classes/itens/Inventorys/Inventory.gd
+res://Godot/classes/itens/Inventorys/ZenoInventory.tres
+res://Godot/classes/personagens/zeno.tres
+res://Godot/classes/DATAS/test.tres

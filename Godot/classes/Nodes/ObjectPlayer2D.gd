@@ -147,19 +147,19 @@ func _update_camada() -> void:
 		set_collision_mask_value(3, true)
 		set_collision_layer_value(3, true)
 		z_index = -1
-		modulate = Color(0, 1, 0)
+		#modulate = Color(0, 1, 0)
 		
 	elif 2 == camada:
 		set_collision_mask_value(4, true)
 		set_collision_layer_value(4, true)
 		z_index = 1
-		modulate = Color(1, 1, 0)
+		#modulate = Color(1, 1, 0)
 		
 	elif 3 == camada:
 		set_collision_mask_value(5, true)
 		set_collision_layer_value(5, true)
 		z_index = 3
-		modulate = Color(1, 0, 0)
+		#modulate = Color(1, 0, 0)
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if not leader == null:

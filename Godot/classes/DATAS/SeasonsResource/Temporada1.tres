@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SeasonResource" load_steps=8 format=3 uid="uid://bssdj03dl2g86"]
+
+[ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/classes/itens/Inventorys/ZenoInventory.tres" id="1_oblxm"]
+[ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/TEMPORADA 1/começo.tscn" id="2_jiufa"]
+[ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="3_4rbso"]
+[ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="4_pyvuc"]
+[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/zeno.tres" id="5_xd78i"]
+[ext_resource type="Script" uid="uid://dkyo4gl4kpktb" path="res://Godot/classes/DATAS/SeasonResource.gd" id="6_wvp6x"]
+
+[sub_resource type="Resource" id="Resource_apewl"]
+script = ExtResource("3_4rbso")
+metadata/_custom_type_script = "uid://uvwqo1wkbayg"
+
+[resource]
+script = ExtResource("6_wvp6x")
+name = "Prison Of Nightmares"
+CurrentScene = ExtResource("2_jiufa")
+CurrentInventory = ExtResource("1_oblxm")
+PlayersAtuais = Dictionary[String, ExtResource("4_pyvuc")]({
+"Zeno": ExtResource("5_xd78i")
+})
+CurrentPlayer = "Zeno"
+Extras = SubResource("Resource_apewl")
+metadata/_custom_type_script = "uid://dkyo4gl4kpktb"

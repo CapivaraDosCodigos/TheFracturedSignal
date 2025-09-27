@@ -1,9 +1,11 @@
 #ItemDatabase.gd
 class_name Database extends Resource
 
-const TOTAL_SLOTS := 3
+const TOTAL_SLOTS := 5
 const SAVE_PATH := "user://save_slot_%d.tres"
-const PLAYERS_DISPONIVEIS: Array[String] = ["Zeno", "Niko"]
+const PLAYERS_DISPONIVEIS_STRING: Array[String] = ["Zeno", "Niko"]
+
+enum PLAYERS_DISPONIVEIS {Zeno, Niko}
 
 #Armas:
 const SIGNAL_WEAPON: ItemArma = preload("res://Godot/classes/itens/armas/Signal_Weapon.tres")
