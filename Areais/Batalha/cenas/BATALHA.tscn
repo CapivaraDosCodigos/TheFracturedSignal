@@ -1,17 +1,16 @@
-[gd_scene load_steps=34 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=25 format=3 uid="uid://76pvbuk718a4"]
 
-[ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Godot/Batalha/scripts/batalha2.gd" id="1_wuibh"]
+[ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Areais/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_y71rf"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ky1x7"]
-[ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="5_i08h0"]
-[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="6_h4uln"]
-[ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Godot/Batalha/scripts/personagens.gd" id="7_ky1x7"]
+[ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Areais/Batalha/scripts/personagens.gd" id="7_ky1x7"]
+[ext_resource type="PackedScene" uid="uid://by72qrtpqld7j" path="res://Areais/Batalha/cenas/battle_arena.tscn" id="7_n8fcj"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
-[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Godot/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
+[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
 [ext_resource type="Texture2D" uid="uid://dmphbqios0cdq" path="res://texture/objetos/16por6.png" id="13_y71rf"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
 
@@ -142,31 +141,6 @@ _data = {
 &"S_panel": SubResource("Animation_fq6de")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6mvwj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ejoer"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2h8af"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig8w"]
-a = Vector2(4, 11.5)
-b = Vector2(140, 11.5)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_py3aq"]
-a = Vector2(131, 10)
-b = Vector2(-4.5, 10)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_fq6de"]
-a = Vector2(121, 7.99924)
-b = Vector2(-12.9999, 8.00008)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_h7tth"]
-a = Vector2(124, 23.9992)
-b = Vector2(-11.4998, 24.0001)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ig8w"]
-size = Vector2(139.5, 139)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
 atlas = ExtResource("13_y71rf")
 region = Rect2(96, 720, 16, 16)
@@ -235,28 +209,22 @@ expand_mode = 1
 scale = Vector2(4, 4)
 script = ExtResource("7_ky1x7")
 
-[node name="player1" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="player1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(64, 56)
-sprite_frames = SubResource("SpriteFrames_6mvwj")
 
-[node name="player2" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="player2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(24, 32)
-sprite_frames = SubResource("SpriteFrames_ejoer")
 
-[node name="player3" type="AnimatedSprite2D" parent="BatalhaCanvas/Personagens"]
+[node name="player3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(24, 80)
-sprite_frames = SubResource("SpriteFrames_2h8af")
 
 [node name="inimigo1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
-visible = false
 position = Vector2(224, 56)
 
 [node name="inimigo2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
-visible = false
 position = Vector2(264, 32)
 
 [node name="inimigo3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
-visible = false
 position = Vector2(264, 80)
 
 [node name="Control" type="Control" parent="BatalhaCanvas"]
@@ -267,85 +235,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BATTLE_ARENA" type="NinePatchRect" parent="BatalhaCanvas/Control"]
+[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" instance=ExtResource("7_n8fcj")]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
-self_modulate = Color(0.454902, 0.662745, 0.960784, 1)
-z_index = 4
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.375
-anchor_top = 0.207
-anchor_right = 0.625
-anchor_bottom = 0.739
-offset_left = -3.05176e-05
-offset_top = -0.780006
-offset_right = -144.0
-offset_bottom = -144.06
-scale = Vector2(2, 2)
-texture = ExtResource("6_h4uln")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-axis_stretch_horizontal = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
-z_index = -4
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="ColorRect" type="ColorRect" parent="BatalhaCanvas/Control/BATTLE_ARENA/MarginContainer"]
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Ambição" parent="BatalhaCanvas/Control/BATTLE_ARENA" instance=ExtResource("5_i08h0")]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(72, 64.5)
-scale = Vector2(1, 1)
-
-[node name="Static2D" type="StaticBody2D" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
-visible = false
-collision_layer = 2
-collision_mask = 3
-
-[node name="Shape2D" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
-position = Vector2(0, -7)
-shape = SubResource("SegmentShape2D_7ig8w")
-
-[node name="Shape2D2" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
-position = Vector2(9, 129.5)
-shape = SubResource("SegmentShape2D_py3aq")
-
-[node name="Shape2D3" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
-position = Vector2(-3.5, 126)
-rotation = -1.57079
-shape = SubResource("SegmentShape2D_fq6de")
-
-[node name="Shape2D4" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Static2D"]
-position = Vector2(115.5, 128)
-rotation = -1.57079
-shape = SubResource("SegmentShape2D_h7tth")
-
-[node name="Area2D" type="Area2D" parent="BatalhaCanvas/Control/BATTLE_ARENA"]
-visible = false
-collision_layer = 128
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BatalhaCanvas/Control/BATTLE_ARENA/Area2D"]
-position = Vector2(72.25, 72)
-shape = SubResource("RectangleShape2D_7ig8w")
-debug_color = Color(0.834632, 0.367256, 0.347572, 0.42)
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 custom_minimum_size = Vector2(0, 100)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc6gnjvpvkwsn"]
+
+[ext_resource type="Script" uid="uid://dxjfylq40nfs1" path="res://Godot/classes/Nodes/PlayerBase2D.gd" id="1_lxsey"]
+[ext_resource type="Texture2D" uid="uid://caoyldwqkvthe" path="res://texture/Characters/Zeno's/ZenoSim.png" id="1_tl63f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeip0"]
+atlas = ExtResource("1_tl63f")
+region = Rect2(19, 0, 19, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_es7ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeip0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ZenoBatalha" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_es7ui")
+script = ExtResource("1_lxsey")
+metadata/_custom_type_script = "uid://dxjfylq40nfs1"

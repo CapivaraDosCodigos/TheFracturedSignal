@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnmoocavdqgms"
-path="res://.godot/imported/prototype_character.png-d48a9db9e20f1a61f8949f261ea844a9.ctex"
+path="res://.godot/imported/prototype_character.png-4c8514df41fb29c303420c30d1a3efd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/Characters/Assets/Prototype_Character/prototype_character.png"
-dest_files=["res://.godot/imported/prototype_character.png-d48a9db9e20f1a61f8949f261ea844a9.ctex"]
+source_file="res://texture/characters/Assets/Prototype_Character/prototype_character.png"
+dest_files=["res://.godot/imported/prototype_character.png-4c8514df41fb29c303420c30d1a3efd7.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

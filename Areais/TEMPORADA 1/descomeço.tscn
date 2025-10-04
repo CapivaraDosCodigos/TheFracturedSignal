@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folderTres/C1A.tres" id="2_uvy2k"]
 [ext_resource type="Script" uid="uid://bdro6kmv5j603" path="res://Godot/classes/Nodes/AreaCamada2D.gd" id="3_on2dv"]
 [ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="4_cjrqm"]
-[ext_resource type="PackedScene" uid="uid://h5ek2buto4br" path="res://Areais/TEMPORADA 1/scientist_zeno.tscn" id="5_2hsuv"]
+[ext_resource type="PackedScene" uid="uid://h5ek2buto4br" path="res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn" id="5_2hsuv"]
 [ext_resource type="PackedScene" uid="uid://bgs8qnmsvgs1g" path="res://Characters/enemies/bebedouro/bebedouro.tscn" id="6_6fjhx"]
 [ext_resource type="PackedScene" uid="uid://3x7rgqstg6mq" path="res://Characters/NPCS/merchant.tscn" id="7_7yfv6"]
 

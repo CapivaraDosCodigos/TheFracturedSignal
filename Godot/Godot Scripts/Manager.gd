@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 @onready var fps_label: Label = %fps_label
@@ -7,11 +8,14 @@ extends Node
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME}
 const GameStateString: Array[String] = ["MAP", "BATTLE", "CUTSCENES", "DIALOGUE", "BATTLE_MENU", "NOT_IN_THE_GAME"]
-const batalha2d: PackedScene = preload("res://Godot/Batalha/cenas/BATALHA.tscn")
+const batalha2d: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn")
 
-var current_status: GameState = GameState.MAP: set = change_state
+@export var current_status: GameState = GameState.MAP: set = change_state
 var raio: RayCast2D; var Body: Node; var ObjectPlayer: ObjectPlayer2D
 var textureD: Texture; var materialD: ShaderMaterial
+var naoesperardialogo: bool = true
+
+#signal SignalDialogue(dict: Dictionary)
 
 #func _ready():
 	#var path = "res://escopo.txt"
@@ -22,17 +26,28 @@ var textureD: Texture; var materialD: ShaderMaterial
 		#print(conteudo)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("confirm") and raio != null:
-		if raio.is_colliding():
-			Body = raio.get_collider()
-	else:
-		Body = null
+	if Engine.is_editor_hint():
+		return
 	
 	var camada: int
 	if ObjectPlayer != null:
 		camada = ObjectPlayer.camada
 		
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()) + ", CurrentStatus: " + GameStateString[current_status] + ", camada: " + str(camada)
+	
+	if raio != null or not naoesperardialogo:
+		if Input.is_action_just_pressed("confirm"):
+			if raio.is_colliding():
+				Body = raio.get_collider()
+		else:
+			Body = null
+	else:
+		Body = null
+
+func esperardialogo() -> void:
+	await get_tree().create_timer(0.5).timeout
+	change_state(Manager.GameState.MAP)
+	#naoesperardialogo = true
 
 func change_state(estado: GameState) -> void:
 	current_status = estado

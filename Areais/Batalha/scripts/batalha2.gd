@@ -10,8 +10,8 @@ class_name Batalha2D extends Node2D
 @export var itemMenu: MarginContainer
 
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
-@onready var markerI: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
-@onready var playerI: Array[AnimatedSprite2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
+@onready var markerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
+@onready var playerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
 
 const MAX_ENENINES: int = 3
 
@@ -22,10 +22,14 @@ var panel_dict: Dictionary[String, Control]
 var batalha: DataBatalha
 var panels: Array[Control]
 var selecoes: Array[String]
-var enemies: Array[EnemiesBase2D] = []
+
+var enemiesNodes: Array[EnemiesBase2D] = []
+var playersNodes: Array[PlayerBase2D] = []
+
 var players: int = 1
 var current_index: int = 0
 var jogador_atual: int = 0
+
 var selecao_ativa: bool = false
 var selecao_finalizada: bool = false
 var submenu_ativo: bool = false
@@ -45,7 +49,7 @@ func _ready() -> void:
 		adicionar_jogador(idx, key)
 	
 	for i in range(batalha.inimigos.size()):
-		adicionar_inimigo(batalha.inimigos[i], markerI[i].position)
+		adicionar_inimigo(batalha.inimigos[i], markerMarker2D[i].position)
 	
 	panels = [ATK, ITM, EXE, DEF, MRC]
 	panel_dict = {"ATK": ATK,"ITM": ITM,"EXE": EXE,"DEF": DEF,"MRC": MRC}
@@ -158,7 +162,7 @@ func _act(act: String, ent: int) -> void:
 	#print("- Jogador %d: %s" % [ent + 1, act])
 	
 	if act == "ATK":
-		for enemie in enemies:
+		for enemie in enemiesNodes:
 			enemie.apply_damage(20)
 			#print("Atacar inimigo, vida: %d" % i.life)
 	
@@ -197,15 +201,15 @@ func _fechar_submenu() -> void:
 	_focus_current_panel()
 
 func _exe_atacar():
-	for inimigo in enemies:
+	for inimigo in enemiesNodes:
 		inimigo.atacar()
-	await get_tree().create_timer(enemies.pick_random().time).timeout
+	await get_tree().create_timer(enemiesNodes.pick_random().time).timeout
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func end_batalha() -> void:
-	print(enemies.size())
+	print(enemiesNodes.size())
 	
-	if enemies.size() > 0:
+	if enemiesNodes.size() > 0:
 		return
 		
 	batalha.dungeons2D.end_batalha.emit()
@@ -213,21 +217,26 @@ func end_batalha() -> void:
 	queue_free()
 
 func adicionar_jogador(index: int, key: String) -> void:
-	playerI[index].sprite_frames = PlayersDIR[key].Anime
-	playerI[index].material = PlayersDIR[key].MaterialP
-	playerI[index].play("default")
+	var playerload = load(PlayersDIR[key].PlayerBatalhaPath)
+	var playerinstaciente = playerload.instantiate()
+	playersNodes.append(playerinstaciente)
+	playerinstaciente.id = playersNodes.size() - 1
+	playerinstaciente.rootbatalha = self
+	playerinstaciente.player = PlayersDIR[key]
+	playerinstaciente.position = playerMarker2D[index].position
+	personagens.add_child(playerinstaciente)
 
 func adicionar_inimigo(inimigo: PackedScene, pos: Vector2) -> void:
 	var inim = inimigo.instantiate()
-	personagens.add_child(inim)
-	inim.id = enemies.size() - 1
+	enemiesNodes.append(inim)
+	inim.id = enemiesNodes.size() - 1
 	inim.rootbatalha = self
 	inim.position = pos
-	enemies.append(inim)
+	personagens.add_child(inim)
 	inim.play("default")
 
 func remover_jogador(_key: String) -> void:
 	pass
 
 func remover_inimigo(index: int) -> void:
-	enemies.remove_at(index)
+	enemiesNodes.remove_at(index)

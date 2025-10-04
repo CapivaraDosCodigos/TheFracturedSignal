@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf852av8ffybs"
-path="res://.godot/imported/triângulo.png-fc99faf4508c28c1074f9c27c458866d.ctex"
+path="res://.godot/imported/triângulo.png-321f008b57e2b5feef9b5d87b442ee13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/Characters/Assets/Extra/triângulo.png"
-dest_files=["res://.godot/imported/triângulo.png-fc99faf4508c28c1074f9c27c458866d.ctex"]
+source_file="res://texture/characters/Assets/Extra/triângulo.png"
+dest_files=["res://.godot/imported/triângulo.png-321f008b57e2b5feef9b5d87b442ee13.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

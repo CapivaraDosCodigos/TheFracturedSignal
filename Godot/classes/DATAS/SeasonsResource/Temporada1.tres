@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/TEMPORADA 1/começo.tscn" id="2_jiufa"]
 [ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="3_4rbso"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="4_pyvuc"]
-[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/zeno.tres" id="5_xd78i"]
+[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/Zeno T1/zeno.tres" id="5_xd78i"]
 [ext_resource type="Script" uid="uid://dkyo4gl4kpktb" path="res://Godot/classes/DATAS/SeasonResource.gd" id="6_wvp6x"]
 
 [sub_resource type="Resource" id="Resource_apewl"]

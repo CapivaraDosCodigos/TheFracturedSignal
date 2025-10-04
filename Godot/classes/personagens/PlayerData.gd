@@ -4,15 +4,13 @@ class_name PlayerData extends Resource
 @export_group("GamePLayer")
 @export var Nome: String = "Player"
 @export var Classe: ClassePlayer = ClassePlayer.new()
-@export var Anime: SpriteFrames
-@export var MaterialP: ShaderMaterial
-@export_file("*.*tscn") var objectplayerpath: String
+@export_file("*.*tscn") var PlayerBatalhaPath: String
+@export_file("*.*tscn") var ObjectPlayerPath: String
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
 @export var Life: int = 30
-@export var Bitcoin: int = 25:
-	set = _set_bitcoin
+@export var Bitcoin: int = 25
 @export var Exp: int = 0
 
 @export_group("Dados das Propriedades")
@@ -99,10 +97,6 @@ func apply_damage(dano_base: int) -> void:
 	var reducao = defense / (defense + 1.0)
 	var dano_final = int(dano_base * (1.0 - reducao))
 	Life -= dano_final
-
-func _set_bitcoin(bitcoin: int) -> void:
-	if not bitcoin <= 0:
-		Bitcoin = bitcoin
 
 func _to_string() -> String:
 	return Nome

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/classes/itens/Inventorys/ZenoInventory.tres" id="2_ffvbp"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="3_v2trg"]
-[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/zeno.tres" id="4_qfcnc"]
+[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/classes/personagens/Zeno T1/zeno.tres" id="4_qfcnc"]
 [ext_resource type="Script" uid="uid://dkyo4gl4kpktb" path="res://Godot/classes/DATAS/SeasonResource.gd" id="5_05teq"]
 [ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/TEMPORADA 1/começo.tscn" id="6_05teq"]
 [ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="7_s7mfr"]

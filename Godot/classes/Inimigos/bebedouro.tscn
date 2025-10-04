@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhdqurm4hxqt"]
 
 [ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="1_sc6bt"]
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/Characters/inimigos/bebedouro.png" id="1_y5qht"]
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
 atlas = ExtResource("1_y5qht")
@@ -23,5 +23,5 @@ sprite_frames = SubResource("SpriteFrames_adxu8")
 frame_progress = 0.556025
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
-time = 1.0
+time = 10.0
 metadata/_custom_type_script = "uid://kjhutov44bdn"

@@ -1,16 +1,8 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
 config_version=5
 
 [application]
 
-config/name="the fractured signal"
+config/name="The Fractured Signal"
 config/version="alfa 2.0"
 run/main_scene="uid://cwod1ylh8y1cj"
 config/auto_accept_quit=false
@@ -55,12 +47,12 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 [file_customization]
 
 folder_colors={
+"res://Areais/Batalha/": "gray",
 "res://Characters/": "purple",
 "res://Characters/Players/": "purple",
 "res://Characters/enemies/": "red",
 "res://Characters/enemies/bebedouro/": "blue",
 "res://Godot/": "green",
-"res://Godot/Batalha/": "gray",
 "res://Godot/Diálogos/": "teal",
 "res://Godot/Godot Cenas/": "blue",
 "res://Godot/classes/": "orange",

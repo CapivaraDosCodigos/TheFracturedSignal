@@ -1,2 +1,0 @@
-extends PlayerData
-class_name ZenoPlayer

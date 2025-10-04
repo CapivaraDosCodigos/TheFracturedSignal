@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://tkftlxtoee6j"]
 
-[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/Characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="1_oe8jh"]
+[ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="1_oe8jh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_goviq"]
 atlas = ExtResource("1_oe8jh")

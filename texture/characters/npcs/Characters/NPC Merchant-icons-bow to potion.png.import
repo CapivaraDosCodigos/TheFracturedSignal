@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bddf865qi8txf"
-path="res://.godot/imported/NPC Merchant-icons-bow to potion.png-6eaf60ba0020631929d893d631f1b470.ctex"
+path="res://.godot/imported/NPC Merchant-icons-bow to potion.png-79f7697e961ace35b18ea41221f9d3b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/Characters/npcs/Characters/NPC Merchant-icons-bow to potion.png"
-dest_files=["res://.godot/imported/NPC Merchant-icons-bow to potion.png-6eaf60ba0020631929d893d631f1b470.ctex"]
+source_file="res://texture/characters/npcs/Characters/NPC Merchant-icons-bow to potion.png"
+dest_files=["res://.godot/imported/NPC Merchant-icons-bow to potion.png-79f7697e961ace35b18ea41221f9d3b6.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
