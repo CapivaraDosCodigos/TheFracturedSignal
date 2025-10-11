@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://0g8jt3rkrkry"]
+
+[ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="1_2kmue"]
+[ext_resource type="Texture2D" uid="uid://b3gas60ua6l2t" path="res://texture/folderTres/texturas/Niko.tres" id="2_kmjdt"]
+
+[resource]
+shader = ExtResource("1_2kmue")
+shader_parameter/palette_tex = ExtResource("2_kmjdt")
+shader_parameter/palette_size = 128
+shader_parameter/offset_y = 0.0

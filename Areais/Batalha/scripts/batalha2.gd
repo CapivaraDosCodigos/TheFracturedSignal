@@ -3,7 +3,7 @@ class_name Batalha2D extends Node2D
 
 # NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE
 
-#region variables 
+#region variables
 
 @export var anim: AnimationPlayer
 @export var personagens: Node2D 
@@ -37,11 +37,10 @@ var submenu_ativo: bool = false
 #endregion
 
 func _ready() -> void:
-	Manager.nova_palette("", false)
 	while batalha.inimigos.size() > MAX_ENENINES:
 		batalha.inimigos.pop_back()
 	
-	PlayersDIR = Starts.PlayersAtuais
+	PlayersDIR = Manager.PlayersAtuais
 	players = PlayersDIR.size()
 	var keys = PlayersDIR.keys()
 	for idx in range(keys.size()):
@@ -57,7 +56,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1.5).timeout
 	
 	DialogueManager.show_example_dialogue_balloon(load(batalha.dialogo), batalha.start_dialogo)
-	Manager.tocar_musica_manager(batalha.caminho, batalha.volume, batalha.loop)
+	Manager.tocar_musica(batalha.caminho, batalha.volume, batalha.loop)
 
 func _process(_delta: float) -> void:
 	var current_state = Manager.current_status
@@ -65,12 +64,10 @@ func _process(_delta: float) -> void:
 		if current_state == Manager.GameState.BATTLE:
 			#$"%Ambição".position = $%BATTLE_ARENA.position
 			anim.play("S_panel")
-			print("battle")
 			_exe_atacar()
 			
 		elif current_state == Manager.GameState.BATTLE_MENU:
 			anim.play("E_panel")
-			print("menu_battle")
 			_iniciar_selecao()
 		
 		last_state = current_state
@@ -179,8 +176,8 @@ func _act(act: String, ent: int) -> void:
 			var resultado = submenu_resultados[ent]
 			#print("Jogador ", ent + 1, " usou: ", resultado["texto"], " (índice:", resultado["index"], ")")
 			
-			if resultado["index"] < Starts.CurrentInventory.items.size():
-				Starts.CurrentInventory.remove_item_in_batalha(resultado["index"])
+			if resultado["index"] < Manager.CurrentInventory.items.size():
+				Manager.CurrentInventory.remove_item_in_batalha(resultado["index"])
 				itemMenu.atualizar_itemlist()
 	
 	elif act == "MRC":
@@ -211,9 +208,10 @@ func end_batalha() -> void:
 	
 	if enemiesNodes.size() > 0:
 		return
-		
+	
+	await get_tree().create_timer(2.0).timeout
 	batalha.dungeons2D.end_batalha.emit()
-	Manager.tocar_musica_manager()
+	Manager.tocar_musica()
 	queue_free()
 
 func adicionar_jogador(index: int, key: String) -> void:

@@ -11,13 +11,13 @@ titles = {
 "279096504/Map": "-13",
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
-"DialogueResource/Map": "-14",
-"Roberto": "35",
+"DialogueResource/Map": "-15",
+"Roberto": "37",
 "blublu": "10",
-"comercio": "22",
+"comercio": "24",
 "start": "4"
 }
-character_names = PackedStringArray("Sistema Interno", "Blu blu", "Lila", "Roberto", "Zeno")
+character_names = PackedStringArray("Sistema Interno", "Desconhecido", "Blu blu", "Lila", "Roberto", "Zeno")
 first_title = "3"
 lines = {
 "-1": {
@@ -53,29 +53,11 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "change_state",
+&"function": "esperardialogo",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
-&"value": "MAP"
-}, {
-&"i": 45,
+&"i": 26,
 &"type": &"parens_close"
 }])])
 }]),
@@ -86,6 +68,11 @@ lines = {
 },
 "-14": {
 &"id": "-14",
+&"next_id": "-13",
+&"type": ""
+},
+"-15": {
+&"id": "-15",
 &"next_id": "-13",
 &"type": "title"
 },
@@ -247,66 +234,66 @@ lines = {
 &"type": "mutation"
 },
 "11": {
-&"character": "Blu blu",
+&"character": "Desconhecido",
 &"id": "11",
 &"next_id": "12",
-&"text": "eu sou o blu blu!",
+&"text": "Ola, eu me chamo Blu Blu!",
 &"type": "dialogue"
 },
 "12": {
 &"character": "Blu blu",
 &"id": "12",
 &"next_id": "13",
-&"text": "sempre me confundem com o vaporio",
+&"text": "Seja bem vindo ou bem vinda ao reservatorio TAPAJOES!",
 &"type": "dialogue"
 },
 "13": {
 &"character": "Blu blu",
 &"id": "13",
 &"next_id": "14",
-&"text": "acho que gostaria de não existe...",
+&"text": "Temos o melhor amazenamento de agua desse destrito!",
 &"type": "dialogue"
 },
 "14": {
 &"character": "Blu blu",
 &"id": "14",
 &"next_id": "15",
-&"text": "pode me fazer um favor?",
+&"text": "Ou pelos menos era...[wait=1] Esse lugar estar abondonado",
 &"type": "dialogue"
 },
 "15": {
+&"character": "Blu blu",
 &"id": "15",
 &"next_id": "16",
-&"responses": PackedStringArray("15", "17"),
-&"text": "Sim",
-&"type": "response"
+&"text": "E Eu? [wait=1]Eu sou uma sombra dos funcionários normais daqui",
+&"type": "dialogue"
 },
 "16": {
 &"character": "Blu blu",
 &"id": "16",
-&"next_id": "19",
-&"text": "não volte",
+&"next_id": "17",
+&"text": "Quer me fazer um favor?",
 &"type": "dialogue"
 },
 "17": {
 &"id": "17",
 &"next_id": "18",
-&"text": "Não tenho tempo",
+&"responses": PackedStringArray("17", "19"),
+&"text": "Sim, pode falar",
 &"type": "response"
 },
 "18": {
+&"character": "Blu blu",
 &"id": "18",
-&"is_snippet": false,
-&"next_id": "-14",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "21",
+&"text": "saia imediatamente desse planeta...",
+&"type": "dialogue"
 },
 "19": {
 &"id": "19",
-&"is_snippet": false,
-&"next_id": "-14",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "20",
+&"text": "Não tenho tempo",
+&"type": "response"
 },
 "2": {
 &"id": "2",
@@ -314,17 +301,31 @@ lines = {
 &"type": ""
 },
 "20": {
+&"character": "Blu blu",
 &"id": "20",
 &"next_id": "21",
-&"type": ""
+&"text": "voce não eh muito de ouvir, ne?",
+&"type": "dialogue"
 },
 "21": {
 &"id": "21",
-&"next_id": "22",
-&"type": "title"
+&"is_snippet": false,
+&"next_id": "-15",
+&"next_id_after": "",
+&"type": "goto"
 },
 "22": {
 &"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"type": "title"
+},
+"24": {
+&"id": "24",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -362,11 +363,11 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "23",
+&"next_id": "25",
 &"type": "mutation"
 },
-"23": {
-&"id": "23",
+"25": {
+&"id": "25",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -394,48 +395,35 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "24",
+&"next_id": "26",
 &"type": "mutation"
 },
-"24": {
-&"character": "Lila",
-&"id": "24",
-&"next_id": "25",
-&"text": "Olá",
-&"type": "dialogue"
-},
-"25": {
-&"character": "Lila",
-&"id": "25",
-&"next_id": "26",
-&"text": "gostaria de comprar alguma coisa?",
-&"type": "dialogue"
-},
 "26": {
+&"character": "Lila",
 &"id": "26",
 &"next_id": "27",
-&"responses": PackedStringArray("26", "28"),
-&"text": "não, obrigado",
-&"type": "response"
+&"text": "Olá",
+&"type": "dialogue"
 },
 "27": {
 &"character": "Lila",
 &"id": "27",
-&"next_id": "30",
-&"text": "certo, mas quando quiser comprar, já sabe [next=auto]",
+&"next_id": "28",
+&"text": "gostaria de comprar alguma coisa?",
 &"type": "dialogue"
 },
 "28": {
 &"id": "28",
 &"next_id": "29",
-&"text": "sim!",
+&"responses": PackedStringArray("28", "30"),
+&"text": "não, obrigado",
 &"type": "response"
 },
 "29": {
 &"character": "Lila",
 &"id": "29",
-&"next_id": "30",
-&"text": "bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]",
+&"next_id": "32",
+&"text": "certo, mas quando quiser comprar, já sabe [next=auto]",
 &"type": "dialogue"
 },
 "3": {
@@ -445,6 +433,19 @@ lines = {
 },
 "30": {
 &"id": "30",
+&"next_id": "31",
+&"text": "sim!",
+&"type": "response"
+},
+"31": {
+&"character": "Lila",
+&"id": "31",
+&"next_id": "32",
+&"text": "bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]",
+&"type": "dialogue"
+},
+"32": {
+&"id": "32",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -476,11 +477,11 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "31",
+&"next_id": "33",
 &"type": "mutation"
 },
-"31": {
-&"id": "31",
+"33": {
+&"id": "33",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -500,28 +501,28 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "32",
-&"type": "mutation"
-},
-"32": {
-&"id": "32",
-&"is_snippet": false,
-&"next_id": "-14",
-&"next_id_after": "",
-&"type": "goto"
-},
-"33": {
-&"id": "33",
 &"next_id": "34",
-&"type": ""
+&"type": "mutation"
 },
 "34": {
 &"id": "34",
-&"next_id": "35",
-&"type": "title"
+&"is_snippet": false,
+&"next_id": "-15",
+&"next_id_after": "",
+&"type": "goto"
 },
 "35": {
 &"id": "35",
+&"next_id": "36",
+&"type": ""
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": "title"
+},
+"37": {
+&"id": "37",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -559,36 +560,22 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "36",
+&"next_id": "38",
 &"type": "mutation"
 },
-"36": {
+"38": {
 &"character": "Roberto",
-&"id": "36",
-&"next_id": "37",
+&"id": "38",
+&"next_id": "39",
 &"text": "você sabe pq tu sou modelo 3d?",
 &"type": "dialogue"
 },
-"37": {
+"39": {
 &"character": "Roberto",
-&"id": "37",
-&"next_id": "38",
+&"id": "39",
+&"next_id": "40",
 &"text": "isso nem faz sentido",
 &"type": "dialogue"
-},
-"38": {
-&"character": "Zeno",
-&"id": "38",
-&"next_id": "39",
-&"text": "complicado isso aí",
-&"type": "dialogue"
-},
-"39": {
-&"id": "39",
-&"is_snippet": false,
-&"next_id": "-14",
-&"next_id_after": "",
-&"type": "goto"
 },
 "4": {
 &"id": "4",
@@ -633,7 +620,21 @@ lines = {
 &"type": "mutation"
 },
 "40": {
+&"character": "Zeno",
 &"id": "40",
+&"next_id": "41",
+&"text": "complicado isso aí",
+&"type": "dialogue"
+},
+"41": {
+&"id": "41",
+&"is_snippet": false,
+&"next_id": "-15",
+&"next_id_after": "",
+&"type": "goto"
+},
+"42": {
+&"id": "42",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
@@ -656,7 +657,7 @@ lines = {
 "7": {
 &"id": "7",
 &"is_snippet": false,
-&"next_id": "-14",
+&"next_id": "-15",
 &"next_id_after": "",
 &"type": "goto"
 },
@@ -682,14 +683,16 @@ Sistema Interno: não gaste sua energia com isso[next=auto]
 
 ~ blublu
 do Manager.change_state(Manager.GameState.DIALOGUE)
-Blu blu: eu sou o blu blu!
-Blu blu: sempre me confundem com o vaporio
-Blu blu: acho que gostaria de não existe...
-Blu blu: pode me fazer um favor?
-- Sim
-	Blu blu: não volte
+Desconhecido: Ola, eu me chamo Blu Blu!
+Blu blu: Seja bem vindo ou bem vinda ao reservatorio TAPAJOES!
+Blu blu: Temos o melhor amazenamento de agua desse destrito!
+Blu blu: Ou pelos menos era...[wait=1] Esse lugar estar abondonado
+Blu blu: E Eu? [wait=1]Eu sou uma sombra dos funcionários normais daqui
+Blu blu: Quer me fazer um favor?
+- Sim, pode falar
+	Blu blu: saia imediatamente desse planeta...
 - Não tenho tempo
-	=> DialogueResource/Map
+	Blu blu: voce não eh muito de ouvir, ne?
 => DialogueResource/Map
 
 ~ comercio

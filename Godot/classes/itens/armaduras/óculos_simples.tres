@@ -9,6 +9,7 @@ region = Rect2(64, 784, 16, 16)
 
 [resource]
 script = ExtResource("1_qkvb7")
+defesa = 1
 nome = "óculos simples"
 preco = 5
 icone = SubResource("AtlasTexture_4w0ye")

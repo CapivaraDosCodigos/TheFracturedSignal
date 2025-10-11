@@ -94,9 +94,17 @@ func unequip_weapon(inv: Inventory) -> void:
 	weaponsE = null
 
 func apply_damage(dano_base: int) -> void:
-	var reducao = defense / (defense + 1.0)
+	#var reducao = defense / (defense + 10.0)
+	#var dano_final = int(dano_base * (1.0 - reducao))
+	
+	#var reducao = defense * 0.05
+	#reducao = clamp(reducao, 0.0, 0.5)
+	#var dano_final = int(dano_base * (1.0 - reducao))
+	
+	var reducao = log(defense + 1.0) / 10.0
 	var dano_final = int(dano_base * (1.0 - reducao))
 	Life -= dano_final
+	print(Life, " ", dano_final)
 
 func _to_string() -> String:
 	return Nome

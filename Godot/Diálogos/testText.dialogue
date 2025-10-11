@@ -9,14 +9,16 @@ Sistema Interno: não gaste sua energia com isso[next=auto]
 
 ~ blublu
 do Manager.change_state(Manager.GameState.DIALOGUE)
-Blu blu: eu sou o blu blu!
-Blu blu: sempre me confundem com o vaporio
-Blu blu: acho que gostaria de não existe...
-Blu blu: pode me fazer um favor?
-- Sim
-	Blu blu: não volte
+Desconhecido: Ola, eu me chamo Blu Blu!
+Blu blu: Seja bem vindo ou bem vinda ao reservatorio TAPAJOES!
+Blu blu: Temos o melhor amazenamento de agua desse destrito!
+Blu blu: Ou pelos menos era...[wait=1] Esse lugar estar abondonado
+Blu blu: E Eu? [wait=1]Eu sou uma sombra dos funcionários normais daqui
+Blu blu: Quer me fazer um favor?
+- Sim, pode falar
+	Blu blu: saia imediatamente desse planeta...
 - Não tenho tempo
-	=> DialogueResource/Map
+	Blu blu: voce não eh muito de ouvir, ne?
 => DialogueResource/Map
 
 ~ comercio

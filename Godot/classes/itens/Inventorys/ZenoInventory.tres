@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://oan0jvd28y7r"
 
 [resource]
 script = ExtResource("5_ma64n")
-items = Array[ExtResource("1_1ras7")]([ExtResource("5_qmuw0"), null, SubResource("Resource_s3evo"), ExtResource("1_ma64n"), null, ExtResource("2_36n3i"), null])
-limite = 6
+items = Array[ExtResource("1_1ras7")]([ExtResource("5_qmuw0"), null, SubResource("Resource_s3evo"), ExtResource("1_ma64n"), ExtResource("2_36n3i"), ExtResource("2_36n3i"), null])
+limite = 10
 name = "Zeno"
 metadata/_custom_type_script = "uid://cmfwq25tt8fwe"

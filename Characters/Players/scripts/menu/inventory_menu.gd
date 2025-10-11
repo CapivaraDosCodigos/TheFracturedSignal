@@ -36,7 +36,7 @@ func _on_opened() -> void:
 	lista.select(current_index)
 	
 func _atualizar_itemlist():
-	var items = Starts.CurrentInventory.items
+	var items = Manager.CurrentInventory.items
 	lista.clear()
 	for item in items:
 		if item != null:

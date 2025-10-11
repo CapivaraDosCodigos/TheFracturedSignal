@@ -12,6 +12,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _trocar_para_batalha(pos: Vector2) -> void:
 	databatalha.dungeons2D = dungeons2D
 	var set_pos = (pos + global_position) / 2
-	Manager.tocar_musica_manager()
+	Manager.tocar_musica()
 	Manager.StartBatalha(databatalha, set_pos)
 	queue_free()

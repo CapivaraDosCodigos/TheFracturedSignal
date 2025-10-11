@@ -10,8 +10,8 @@
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
+[ext_resource type="Texture2D" uid="uid://ce5r0b54upoew" path="res://texture/objetos/ITEMS.png" id="11_n8fcj"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
-[ext_resource type="Texture2D" uid="uid://dmphbqios0cdq" path="res://texture/objetos/16por6.png" id="13_y71rf"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
 
 [sub_resource type="Resource" id="Resource_s0ely"]
@@ -22,26 +22,26 @@ resource_name = "E_panel"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.2, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -61,26 +61,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -100,26 +100,26 @@ resource_name = "S_panel"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/BATTLE_ARENA:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -142,7 +142,7 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
-atlas = ExtResource("13_y71rf")
+atlas = ExtResource("11_n8fcj")
 region = Rect2(96, 720, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h7tth"]
@@ -153,25 +153,25 @@ outline_size = 8
 outline_color = Color(0.12549, 0.0784314, 0.2, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq6de"]
-atlas = ExtResource("13_y71rf")
+atlas = ExtResource("11_n8fcj")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucvin"]
-atlas = ExtResource("13_y71rf")
+atlas = ExtResource("11_n8fcj")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otx5r"]
-atlas = ExtResource("13_y71rf")
+atlas = ExtResource("11_n8fcj")
 region = Rect2(112, 656, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y71rf"]
-atlas = ExtResource("13_y71rf")
+atlas = ExtResource("11_n8fcj")
 region = Rect2(176, 0, 16, 16)
 
 [node name="Batalha2D" type="Node2D" node_paths=PackedStringArray("anim", "personagens", "itemMenu")]
 editor_description = "NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE "
 script = ExtResource("1_wuibh")
-anim = NodePath("Anim")
+anim = NodePath("AnimationPanel")
 personagens = NodePath("BatalhaCanvas/Personagens")
 itemMenu = NodePath("BatalhaCanvas/Control/VBoxContainer/HBoxContainer/MarginContainer")
 metadata/_custom_type_script = "uid://0hjngdsxlm2y"
@@ -185,7 +185,7 @@ tween_resource = SubResource("Resource_s0ely")
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Anim" type="AnimationPlayer" parent="."]
+[node name="AnimationPanel" type="AnimationPlayer" parent="."]
 root_node = NodePath("../BatalhaCanvas")
 libraries = {
 &"": SubResource("AnimationLibrary_nt1gt")
@@ -245,17 +245,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 432.0
+offset_top = 111.0
+offset_right = 576.0
+offset_bottom = 255.0
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
 offset_top = 540.0
 offset_right = 1152.0
-offset_bottom = 675.99994
+offset_bottom = 676.0001
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16

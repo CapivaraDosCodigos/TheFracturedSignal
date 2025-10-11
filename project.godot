@@ -1,3 +1,11 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
@@ -16,10 +24,10 @@ run/translations/default_csv_locale="en"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Manager="*res://Godot/Godot Cenas/manager.tscn"
-Starts="*res://Godot/Godot Scripts/GameStarts.gd"
+Global="*res://Godot/Godot Scripts/Global.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+Manager="*res://Godot/Godot Cenas/manager.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
@@ -42,7 +50,7 @@ movie_writer/size/initial_position_type=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/post_processing/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [file_customization]
 
@@ -67,6 +75,7 @@ folder_colors={
 "res://texture/": "teal",
 "res://texture/Characters/": "blue",
 "res://texture/Characters/dialogos/": "teal",
+"res://texture/characters/Zeno's/": "blue",
 "res://texture/folderTres/": "orange",
 "res://texture/objetos/": "gray",
 "res://textures/": "teal",

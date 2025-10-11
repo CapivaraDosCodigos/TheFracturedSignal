@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cwod1ylh8y1cj"]
+[gd_scene load_steps=32 format=4 uid="uid://cwod1ylh8y1cj"]
 
 [ext_resource type="Script" uid="uid://botiuinj2k2g7" path="res://Areais/Dungeons2D.gd" id="1_ddk66"]
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folderTres/C1A.tres" id="1_nn1m4"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://5bswcxnd4p4t" path="res://texture/tiles top down/texture3/murrosTop.png" id="9_c37eu"]
 [ext_resource type="Texture2D" uid="uid://di26a35agfcox" path="res://texture/tiles top down/texture3/objetos.png" id="10_q2rav"]
 [ext_resource type="Texture2D" uid="uid://cx0gouswnba3i" path="res://texture/tiles top down/texture3/árvores.png" id="11_dbfj5"]
+[ext_resource type="PackedScene" uid="uid://coj7eysane340" path="res://Areais/SAVE.tscn" id="17_gx5mq"]
 [ext_resource type="PackedScene" uid="uid://dygph1mmtcdv8" path="res://Characters/NPCS/blu_blu.tscn" id="17_mq3an"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h7q"]
@@ -2226,23 +2227,26 @@ size_flags_vertical = 3
 texture = ExtResource("4_t34vy")
 metadata/_edit_use_anchors_ = true
 
-[node name="players" type="Node2D" parent="."]
-
-[node name="ScientistZeno" parent="players" instance=ExtResource("4_ddk66")]
-modulate = Color(0.99215686, 0.99215686, 0.99215686, 1)
-z_index = -2
-position = Vector2(-25, 152)
-
 [node name="inimigos" type="Node2D" parent="."]
 
 [node name="bebedouro" parent="inimigos" node_paths=PackedStringArray("dungeons2D") groups=["Enemie"] instance=ExtResource("3_oq4xn")]
-position = Vector2(31, 152)
+position = Vector2(31, 123)
 dungeons2D = NodePath("../..")
 
 [node name="npcs" type="Node2D" parent="."]
 
 [node name="merchant" parent="npcs" instance=ExtResource("2_bfgb3")]
+z_index = -2
 position = Vector2(-80, -48)
 
 [node name="blu blu" parent="npcs" instance=ExtResource("17_mq3an")]
 position = Vector2(-24, -240)
+
+[node name="SAVE" parent="npcs" instance=ExtResource("17_gx5mq")]
+position = Vector2(35, -40)
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="ScientistZeno" parent="players" instance=ExtResource("4_ddk66")]
+modulate = Color(0.99215686, 0.99215686, 0.99215686, 1)
+position = Vector2(-25, 152)

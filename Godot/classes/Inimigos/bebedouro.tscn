@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhdqurm4hxqt"]
+[gd_scene load_steps=12 format=3 uid="uid://dhdqurm4hxqt"]
 
 [ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="1_sc6bt"]
 [ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="4_tyq3r"]
+[ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/objetos/attack 1 .png" id="5_rsb1r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
 atlas = ExtResource("1_y5qht")
@@ -18,10 +20,55 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tahm4"]
+atlas = ExtResource("5_rsb1r")
+region = Rect2(0, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_080wo"]
+atlas = ExtResource("5_rsb1r")
+region = Rect2(41, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxoew"]
+atlas = ExtResource("5_rsb1r")
+region = Rect2(82, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiolp"]
+atlas = ExtResource("5_rsb1r")
+region = Rect2(123, 0, 41, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32i2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tahm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_080wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxoew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiolp")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Bebedouro" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_adxu8")
 frame_progress = 0.556025
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
-time = 10.0
+time = 2.0
 metadata/_custom_type_script = "uid://kjhutov44bdn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("4_tyq3r")
+sprite_frames = SubResource("SpriteFrames_32i2b")
+frame = 4
+frame_progress = 1.0

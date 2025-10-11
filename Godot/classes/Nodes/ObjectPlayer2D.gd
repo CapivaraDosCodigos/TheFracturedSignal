@@ -43,8 +43,8 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	if Manager.current_status == Manager.GameState.MAP:
-		if Starts.CurrentPlayer != null and Starts.CurrentPlayer.has_method("update_properties"):
-			no_player = not (Starts.CurrentPlayer.Nome == Nome)
+		if Manager.CurrentPlayer != null and Manager.CurrentPlayer.has_method("update_properties"):
+			no_player = not (Manager.CurrentPlayer.Nome == Nome)
 			
 		_player_physics()
 		_follower_physics()
@@ -146,7 +146,7 @@ func _update_camada() -> void:
 	if 1 == camada:
 		set_collision_mask_value(3, true)
 		set_collision_layer_value(3, true)
-		z_index = -1
+		z_index = -2
 		#modulate = Color(0, 1, 0)
 		
 	elif 2 == camada:

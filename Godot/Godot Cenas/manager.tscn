@@ -1,22 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://qd88j5u4y4ji"]
+[gd_scene load_steps=7 format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="2_cconj"]
-[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="5_i2lsb"]
-[ext_resource type="Script" uid="uid://rwmxke1xgsn5" path="res://addons/post_processing/node/post_process.gd" id="6_55auu"]
+[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="3_lxjte"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_2jxmm"]
 [ext_resource type="PackedScene" uid="uid://b4isedjlkckn0" path="res://Characters/Players/menu.tscn" id="6_pvfw1"]
-[ext_resource type="Script" uid="uid://cw3nr8nnejgjg" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="7_o5s8j"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="10_rsoxv"]
-
-[sub_resource type="Resource" id="Resource_hwlqp"]
-resource_local_to_scene = true
-script = ExtResource("7_o5s8j")
-VignetteIntensity = 0.7
-metadata/_custom_type_script = "uid://cw3nr8nnejgjg"
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_cconj")
+volumedebug = 0
 
 [node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_cconj")
@@ -29,8 +22,6 @@ metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 [node name="CanvasL" type="CanvasLayer" parent="."]
 layer = 98
 
-[node name="Node" parent="CanvasL" instance=ExtResource("5_i2lsb")]
-
 [node name="fps_label" type="Label" parent="CanvasL"]
 unique_name_in_owner = true
 anchors_preset = 15
@@ -40,13 +31,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 
-[node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
+[node name="Node" parent="CanvasL" instance=ExtResource("3_lxjte")]
 
-[node name="PostProcess" type="CanvasLayer" parent="."]
-layer = 128
-script = ExtResource("6_55auu")
-configuration = SubResource("Resource_hwlqp")
-metadata/_custom_type_script = "uid://rwmxke1xgsn5"
+[node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
 
 [node name="time" parent="." instance=ExtResource("8_oug2w")]
 
@@ -63,5 +50,5 @@ editor_draw_limits = true
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
 process_physics_priority = 300
-script = ExtResource("10_rsoxv")
-host_layers = 31
+script = ExtResource("6_2jxmm")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"

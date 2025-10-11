@@ -39,7 +39,9 @@ axis_stretch_vertical = 1
 region_rect = Rect2(384, 128, 64, 64)
 modulate_color = Color(0.588235, 0.784314, 0.972549, 1)
 
-[node name="Control" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f3g2h")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Control"]
 material = ExtResource("1_ayt76")
 layout_mode = 1
 anchors_preset = 15
@@ -59,7 +61,7 @@ grow_vertical = 2
 texture = ExtResource("2_7a8ye")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,24 +69,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 32
 
-[node name="Panel" type="Panel" parent="Control/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/Control/MarginContainer"]
 material = ExtResource("3_t21t7")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u2rf6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,77 +94,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 24
 
-[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer/MarginContainer"]
 layout_mode = 2
 text = "The Fractured Signal"
 label_settings = SubResource("LabelSettings_0a7ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 256
+theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 256
+theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 8
 
-[node name="inicia1" type="Button" parent="Control/VBoxContainer/MarginContainer2"]
+[node name="inicia1" type="Button" parent="Control/Control/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+focus_mode = 1
+mouse_filter = 2
+mouse_behavior_recursive = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
 theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
 theme_override_fonts/font = ExtResource("6_1whp7")
 theme_override_font_sizes/font_size = 48
 theme_override_icons/icon = ExtResource("7_f3g2h")
-theme_override_styles/focus = ExtResource("6_idj55")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bqs7j")
+theme_override_styles/focus = ExtResource("6_idj55")
 text = "Iniciar Sistema 1*"
 expand_icon = true
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 256
+theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 256
+theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 8
 
-[node name="inicia2" type="Button" parent="Control/VBoxContainer/MarginContainer3"]
+[node name="inicia2" type="Button" parent="Control/Control/VBoxContainer/MarginContainer3"]
 layout_mode = 2
+focus_mode = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
 theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
 theme_override_fonts/font = ExtResource("6_1whp7")
 theme_override_font_sizes/font_size = 48
 theme_override_icons/icon = ExtResource("7_f3g2h")
-theme_override_styles/focus = ExtResource("6_idj55")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bqs7j")
+theme_override_styles/focus = ExtResource("6_idj55")
 text = "Iniciar Sistema 2*"
 expand_icon = true
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 256
+theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 256
+theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 8
 
-[node name="inicia3" type="Button" parent="Control/VBoxContainer/MarginContainer4"]
+[node name="inicia3" type="Button" parent="Control/Control/VBoxContainer/MarginContainer4"]
 layout_mode = 2
+focus_mode = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
 theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
 theme_override_fonts/font = ExtResource("6_1whp7")
 theme_override_font_sizes/font_size = 48
 theme_override_icons/icon = ExtResource("7_f3g2h")
-theme_override_styles/focus = ExtResource("6_idj55")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bqs7j")
+theme_override_styles/focus = ExtResource("6_idj55")
 text = "Iniciar Sistema 3*"
 expand_icon = true
 
-[connection signal="pressed" from="Control/VBoxContainer/MarginContainer2/inicia1" to="." method="_on_inicia_1_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/MarginContainer3/inicia2" to="." method="_on_inicia_2_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/MarginContainer4/inicia3" to="." method="_on_inicia_3_pressed"]
+[connection signal="pressed" from="Control/Control/VBoxContainer/MarginContainer2/inicia1" to="Control" method="_on_inicia_1_pressed"]
+[connection signal="pressed" from="Control/Control/VBoxContainer/MarginContainer3/inicia2" to="Control" method="_on_inicia_2_pressed"]
+[connection signal="pressed" from="Control/Control/VBoxContainer/MarginContainer4/inicia3" to="Control" method="_on_inicia_3_pressed"]

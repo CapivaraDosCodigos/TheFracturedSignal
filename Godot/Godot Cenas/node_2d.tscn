@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk712srpbnfa8"]
-
-[ext_resource type="Script" uid="uid://boh4gjck4d1br" path="res://Godot/Godot Scripts/test.gd" id="1_inm4e"]
-[ext_resource type="Texture2D" uid="uid://dxqofff42ffwr" path="res://icon.svg" id="1_wcdrt"]
-
-[node name="Node2D" type="Sprite2D"]
-texture = ExtResource("1_wcdrt")
-script = ExtResource("1_inm4e")

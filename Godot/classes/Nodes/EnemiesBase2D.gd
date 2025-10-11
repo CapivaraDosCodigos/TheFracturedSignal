@@ -28,7 +28,8 @@ func _ready() -> void:
 func _dead() -> void:
 	rootbatalha.remover_inimigo(id)
 	rootbatalha.end_batalha()
-	#play("dead")
+	$AnimatedSprite2D.play("default")
+	await get_tree().create_timer(0.4).timeout
 	queue_free()
 
 func poupado() -> void:

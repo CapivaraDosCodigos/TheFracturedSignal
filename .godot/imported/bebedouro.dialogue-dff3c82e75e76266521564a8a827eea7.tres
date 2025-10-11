@@ -11,7 +11,7 @@ titles = {
 "279096504/Map": "-13",
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
-"DialogueResource/Map": "-14",
+"DialogueResource/Map": "-15",
 "bebedouro": "3"
 }
 character_names = PackedStringArray("Bebedouro")
@@ -50,29 +50,11 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "change_state",
+&"function": "esperardialogo",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
-&"value": "MAP"
-}, {
-&"i": 45,
+&"i": 26,
 &"type": &"parens_close"
 }])])
 }]),
@@ -83,6 +65,11 @@ lines = {
 },
 "-14": {
 &"id": "-14",
+&"next_id": "-13",
+&"type": ""
+},
+"-15": {
+&"id": "-15",
 &"next_id": "-13",
 &"type": "title"
 },

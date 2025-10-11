@@ -1,18 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4isedjlkckn0"]
+[gd_scene load_steps=21 format=3 uid="uid://b4isedjlkckn0"]
 
 [ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/scripts/menu/menu.gd" id="1_iewf1"]
 [ext_resource type="Material" uid="uid://ccsii6wbq0dhs" path="res://texture/folderTres/materials/zenoTest.tres" id="2_37iep"]
+[ext_resource type="Texture2D" uid="uid://b81rxu4vcu7ly" path="res://texture/PNG/funds/FundosSAVE.png" id="2_jm1s2"]
+[ext_resource type="Material" uid="uid://clfr2oy780nku" path="res://texture/folderTres/materials/wow.tres" id="2_ru2aa"]
 [ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://texture/PNG/funds/Border All 7.png" id="3_yox3o"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="4_33dw1"]
-[ext_resource type="Texture2D" uid="uid://dkpfptdx5dya8" path="res://texture/PNG/funds/Border All 6.png" id="5_hh0x1"]
-[ext_resource type="Texture2D" uid="uid://dmphbqios0cdq" path="res://texture/objetos/16por6.png" id="6_jm1s2"]
+[ext_resource type="Texture2D" uid="uid://ce5r0b54upoew" path="res://texture/objetos/ITEMS.png" id="5_eahv2"]
 [ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="8_dbkg0"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="9_04dga"]
 [ext_resource type="Texture2D" uid="uid://c3gupndh6ko5o" path="res://texture/PNG/funds/Deco All 3.png" id="10_x66a5"]
 [ext_resource type="Script" uid="uid://b1uvtvif0pg8j" path="res://Characters/Players/SubMenuBase.gd" id="11_53yni"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44t6t"]
-texture = ExtResource("5_hh0x1")
+texture = ExtResource("2_jm1s2")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -25,19 +26,19 @@ modulate_color = Color(0.552941, 0.560784, 0.972549, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
-atlas = ExtResource("6_jm1s2")
+atlas = ExtResource("5_eahv2")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
-atlas = ExtResource("6_jm1s2")
+atlas = ExtResource("5_eahv2")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
-atlas = ExtResource("6_jm1s2")
+atlas = ExtResource("5_eahv2")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
-atlas = ExtResource("6_jm1s2")
+atlas = ExtResource("5_eahv2")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5mvp"]
@@ -83,12 +84,11 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI_menu/VBoxContainer/MarginContainer"]
-self_modulate = Color(0, 0, 0, 1)
 clip_children = 2
-material = ExtResource("2_37iep")
+material = ExtResource("2_ru2aa")
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_yox3o")
+texture = ExtResource("2_jm1s2")
 region_rect = Rect2(256, 448, 64, 64)
 patch_margin_left = 16
 patch_margin_top = 16

@@ -15,7 +15,7 @@ signal end_batalha
 
 func _ready() -> void:
 	end_batalha.connect(terminar_batalha)
-	Manager.tocar_musica_manager(caminho_audio, volume, loop, atraso)
+	Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 
 func iniciar_batalha() -> void:
 	Manager.change_state(Manager.GameState.DIALOGUE)
@@ -25,6 +25,6 @@ func iniciar_batalha() -> void:
 func terminar_batalha() -> void:
 	players.visible = true
 	inimigos.visible = true
-	Manager.tocar_musica_manager(caminho_audio, volume, loop, atraso)
+	Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 	await get_tree().process_frame
 	Manager.change_state(Manager.GameState.MAP)

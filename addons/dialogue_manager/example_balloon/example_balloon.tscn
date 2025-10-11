@@ -76,6 +76,7 @@ shader_parameter/color_match_strength = 1.0
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 95
 script = ExtResource("1_36de5")
+next_action = &"confirm"
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -166,7 +167,7 @@ theme_override_constants/separation = 4
 alignment = 1
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
-next_action = &"cancel"
+next_action = &"confirm"
 
 [node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu"]
 layout_mode = 2

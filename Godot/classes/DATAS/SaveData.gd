@@ -1,6 +1,5 @@
 class_name SaveData extends Resource
 
-const save_path: String = Database.SAVE_PATH
 const total_slot: int = Database.TOTAL_SLOTS
 
 static func Carregar(slot: int) -> SeasonResource:
@@ -8,12 +7,24 @@ static func Carregar(slot: int) -> SeasonResource:
 		push_warning("erro slot invalido")
 		return null
 	
-	var path := save_path % slot
+	var path := Database.SAVE_PATH % slot
 	if not ResourceLoader.exists(path):
 		return SeasonResource.new()
 	
 	var loaded_data = ResourceLoader.load(path)
 	return loaded_data
+
+static func CarregarTime(slot: int) -> String:
+	if not _is_slot_valid(slot):
+		push_warning("erro slot invalido")
+		return ""
+	
+	var path := Database.SAVE_PATH % slot
+	if not ResourceLoader.exists(path):
+		return ""
+	
+	var loaded_data: SeasonResource = ResourceLoader.load(path)
+	return loaded_data.TimeSave
 
 static func Carregar_Arquivo(caminho: String) -> SeasonResource:
 	if not ResourceLoader.exists(caminho):
@@ -26,10 +37,9 @@ static func Carregar_Arquivo(caminho: String) -> SeasonResource:
 static func Salvar(slot: int, origem: SeasonResource) -> void:
 	if not _is_slot_valid(slot): return
 	
-	var new_origem := origem
-	new_origem.TimeSave = Time.get_time_string_from_system().replace(":", "-")
-	var path := save_path % slot
-	var err := ResourceSaver.save(new_origem, path)
+	origem.TimeSave = TimeGame.get_time()
+	var path := Database.SAVE_PATH % slot
+	var err := ResourceSaver.save(origem, path)
 	if err != OK:
 		push_error("❌ Falha ao salvar slot %d. Código de erro: %s" % [slot, err])
 	else:
@@ -38,7 +48,7 @@ static func Salvar(slot: int, origem: SeasonResource) -> void:
 static func Deletar(slot: int) -> void:
 	if not _is_slot_valid(slot): return
 	
-	var path := save_path % slot
+	var path := Database.SAVE_PATH % slot
 	if FileAccess.file_exists(path):
 		OS.move_to_trash(ProjectSettings.globalize_path(path))
 

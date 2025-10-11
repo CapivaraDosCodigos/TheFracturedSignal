@@ -33,4 +33,13 @@
 	#if weaponsEN >= 0 and weaponsEN < inv.weapons.size():
 		#weaponsE = inv.weapons[weaponsEN]
 
-[] {} @ = < >
+#func _ready() -> void:
+	#var _shader_material := preload("res://texture/folderTres/materials/tile.tres")
+	#var _path := "res://texture/objetos/16x16.png"
+	#var _path2 := "res://texture/PNG/funds/Border All 3.png"
+	#print(Starts.ZenoData.armorE)
+	#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
+	#print(Starts.ZenoData.armorE)
+	#salvar_print_visivel()
+	#$time.aplicar_material_e_salvar(_path, _shader_material)
+	#$time.aplicar_material_e_salvar(_path2, _shader_material)

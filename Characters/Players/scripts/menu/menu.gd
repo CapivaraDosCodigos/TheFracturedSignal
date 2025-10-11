@@ -76,8 +76,12 @@ func _abrir_submenu(button: Button) -> void:
 			submenu_atual = %StatusMenu
 			
 		"settings":
-			print("Abrindo Configurações")
-			submenu_atual = %SettingsMenu
+			Manager.Return_To_Title()
+			menu = false
+			$UI_menu.visible = false
+			return
+			#print("Abrindo Configurações")
+			#submenu_atual = %SettingsMenu
 		
 	submenu_atual.abrir()
 

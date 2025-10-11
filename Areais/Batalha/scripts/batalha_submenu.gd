@@ -58,7 +58,7 @@ func end() -> void:
 	item_bool = false
 
 func atualizar_itemlist() -> void:
-	var inv : Inventory = Starts.CurrentInventory as Inventory
+	var inv : Inventory = Manager.CurrentInventory as Inventory
 	var items = inv.get_in_items_batalha()
 	list.clear()
 	for item in items:

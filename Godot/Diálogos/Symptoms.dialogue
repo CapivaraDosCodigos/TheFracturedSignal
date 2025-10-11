@@ -1,5 +1,6 @@
 ~ Map
-do Manager.change_state(Manager.GameState.MAP)
+#do Manager.change_state(Manager.GameState.MAP)
+do Manager.esperardialogo()
 => END
 
 ~ Batalha

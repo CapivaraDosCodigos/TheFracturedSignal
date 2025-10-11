@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://3x7rgqstg6mq"]
 
 [ext_resource type="Script" uid="uid://c7vi5togrxhkg" path="res://Godot/classes/Nodes/NPC2D.gd" id="1_d78ku"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="1_qhk00"]
 [ext_resource type="Resource" uid="uid://b3lf3a0e0in8w" path="res://Godot/Diálogos/testText.dialogue" id="2_tb114"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="3_dg8i4"]
 [ext_resource type="SpriteFrames" uid="uid://tkftlxtoee6j" path="res://Characters/NPCS/merchant.tres" id="3_tb114"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8i7l"]
@@ -26,7 +26,7 @@ start_dialogo = "comercio"
 metadata/_custom_type_script = "uid://c7vi5togrxhkg"
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-material = ExtResource("1_qhk00")
+material = ExtResource("3_dg8i4")
 position = Vector2(0, -36)
 sprite_frames = ExtResource("3_tb114")
 autoplay = "default"

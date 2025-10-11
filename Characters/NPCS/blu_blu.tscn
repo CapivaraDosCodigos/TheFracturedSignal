@@ -1,19 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dygph1mmtcdv8"]
+[gd_scene load_steps=18 format=3 uid="uid://dygph1mmtcdv8"]
 
+[ext_resource type="Script" uid="uid://c7vi5togrxhkg" path="res://Godot/classes/Nodes/NPC2D.gd" id="1_ar5p6"]
 [ext_resource type="Shader" uid="uid://84wmppkbbltb" path="res://shader/black and white.gdshader" id="1_mih8j"]
-[ext_resource type="Texture2D" uid="uid://dfpwtsokcjsu4" path="res://texture/Characters/Assets/Extra/static_shadow.png" id="2_ipxyf"]
+[ext_resource type="Texture2D" uid="uid://dfpwtsokcjsu4" path="res://texture/characters/Assets/Extra/static_shadow.png" id="2_ipxyf"]
+[ext_resource type="Resource" uid="uid://b3lf3a0e0in8w" path="res://Godot/Diálogos/testText.dialogue" id="2_w0bil"]
 [ext_resource type="Shader" uid="uid://dlyi66hgpuhee" path="res://shader/paletasWOW.gdshader" id="3_h7yws"]
-[ext_resource type="Texture2D" uid="uid://cu1d6yh71q1eh" path="res://texture/Characters/npcs/bah/blu blu.png" id="4_ensn7"]
-
-[sub_resource type="GDScript" id="GDScript_anah5"]
-resource_name = "blu blu"
-script/source = "extends StaticBody2D
-
-func _process(_delta: float) -> void:
-	if Manager.Body == self and Manager.current_status == Manager.GameState.MAP:
-		DialogueManager.show_example_dialogue_balloon(load(\"res://Godot/testText.dialogue\"), \"blublu\")
-															
-"
+[ext_resource type="Texture2D" uid="uid://cu1d6yh71q1eh" path="res://texture/characters/npcs/bah/blu blu.png" id="4_ensn7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s20o0"]
 shader = ExtResource("1_mih8j")
@@ -22,6 +14,7 @@ shader_parameter/vertical_oscillation = 0.01
 shader_parameter/scanline_wave_frequency = 10.0
 shader_parameter/scanline_wave_speed = 1.0
 shader_parameter/alternate_direction = false
+shader_parameter/transparency = 1.0
 shader_parameter/viewport_size = Vector2(1, 0)
 
 [sub_resource type="Gradient" id="Gradient_2cfip"]
@@ -152,10 +145,13 @@ _data = {
 &"new_animation": SubResource("Animation_2cfip")
 }
 
-[node name="blu blu" type="StaticBody2D"]
+[node name="blu blu" type="AnimatableBody2D"]
 collision_layer = 2
 collision_mask = 3
-script = SubResource("GDScript_anah5")
+script = ExtResource("1_ar5p6")
+dialogue = ExtResource("2_w0bil")
+start_dialogo = "blublu"
+metadata/_custom_type_script = "uid://c7vi5togrxhkg"
 
 [node name="shadow" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_s20o0")
@@ -167,7 +163,7 @@ texture = ExtResource("2_ipxyf")
 material = SubResource("ShaderMaterial_c81vo")
 sprite_frames = SubResource("SpriteFrames_sqirv")
 autoplay = "default"
-frame_progress = 0.246693
+frame_progress = 0.45180213
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
