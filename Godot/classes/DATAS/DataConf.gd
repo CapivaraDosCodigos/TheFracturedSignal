@@ -15,3 +15,13 @@ class_name DataConf extends Resource
 
 ## Idioma selecionado no jogo (por padrão "pt").
 @export var idioma: String = "pt"
+
+@export var slot_1: String = ""
+
+@export var slot_2: String = ""
+
+@export var slot_3: String = ""
+
+@export var slot_4: String = ""
+
+@export var slot_5: String = ""

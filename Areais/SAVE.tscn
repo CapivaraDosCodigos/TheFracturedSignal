@@ -71,4 +71,3 @@ material = ExtResource("2_3o11t")
 sprite_frames = SubResource("SpriteFrames_ba88h")
 autoplay = "default"
 frame_progress = 0.48969665
-speed_scale = 1.5

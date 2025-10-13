@@ -3,7 +3,7 @@ class_name SeasonResource extends Resource
 
 @export_range(0, 5) var slot: int = 0
 
-@export var name: String = "Season"
+@export var nome: String = "Season"
 
 @export var StartScene: PackedScene
 
@@ -17,4 +17,4 @@ class_name SeasonResource extends Resource
 
 @export var Extras: DataExtras
 
-@export var TimeSave: String = "00-00-00"
+@export var TimeSave: String = "00/00/0000 00h00"

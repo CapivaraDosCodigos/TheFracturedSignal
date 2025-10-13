@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://uvwqo1wkbayg"
 
 [resource]
 script = ExtResource("6_wvp6x")
-name = "Prison Of Nightmares"
+nome = "Prison Of Nightmares"
 StartScene = ExtResource("2_jiufa")
 CurrentScene = ExtResource("2_jiufa")
 CurrentInventory = ExtResource("1_oblxm")

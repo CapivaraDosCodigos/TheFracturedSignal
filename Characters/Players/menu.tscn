@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4isedjlkckn0"]
+[gd_scene load_steps=20 format=3 uid="uid://b4isedjlkckn0"]
 
 [ext_resource type="Script" uid="uid://blqns7kf3shjm" path="res://Characters/Players/scripts/menu/menu.gd" id="1_iewf1"]
 [ext_resource type="Material" uid="uid://ccsii6wbq0dhs" path="res://texture/folderTres/materials/zenoTest.tres" id="2_37iep"]
 [ext_resource type="Texture2D" uid="uid://b81rxu4vcu7ly" path="res://texture/PNG/funds/FundosSAVE.png" id="2_jm1s2"]
 [ext_resource type="Material" uid="uid://clfr2oy780nku" path="res://texture/folderTres/materials/wow.tres" id="2_ru2aa"]
-[ext_resource type="Texture2D" uid="uid://dcv5tnyvctthl" path="res://texture/PNG/funds/Border All 7.png" id="3_yox3o"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="4_33dw1"]
 [ext_resource type="Texture2D" uid="uid://ce5r0b54upoew" path="res://texture/objetos/ITEMS.png" id="5_eahv2"]
 [ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="8_dbkg0"]
@@ -253,7 +252,7 @@ clip_children = 2
 material = ExtResource("2_37iep")
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_yox3o")
+texture = ExtResource("2_jm1s2")
 region_rect = Rect2(256, 448, 64, 64)
 patch_margin_left = 16
 patch_margin_top = 16

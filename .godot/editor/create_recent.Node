@@ -1,3 +1,7 @@
+Control
+VBoxContainer
+HBoxContainer
+Button
 AnimatedSprite2D
 Sprite2D
 CanvasLayer
@@ -8,7 +12,3 @@ Marker2D
 Area2D
 Bala2D
 npc2D
-PhantomCameraHost
-Node2D
-AreaCamada2D
-CollisionPolygon2D

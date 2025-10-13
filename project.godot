@@ -12,7 +12,7 @@ config_version=5
 
 config/name="The Fractured Signal"
 config/version="alfa 2.0"
-run/main_scene="uid://cwod1ylh8y1cj"
+run/main_scene="uid://7l6llr54uorr"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -148,7 +148,7 @@ Left={
 
 [input_devices]
 
-pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [internationalization]
 

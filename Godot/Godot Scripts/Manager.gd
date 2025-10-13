@@ -73,17 +73,16 @@ func SAVE(slot: int) -> void:
 	
 	SaveData.Salvar(slot, Data)
 
-func Start_Save(slot: int, debug: bool = false) -> void:
-	if not is_inside_tree():
-		await get_tree().process_frame
+func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
+	if not is_inside_tree(): await get_tree().process_frame
 	
-	Data = SaveData.Carregar_Arquivo("res://Godot/classes/DATAS/test.tres")
+	Data = SaveData.Carregar(slot, temporada)
 	Extras = Data.Extras
 	CurrentScene = Data.CurrentScene
 	CurrentPlayerString = Data.CurrentPlayer
 	CurrentInventory = Data.CurrentInventory
 	PlayersAtuais = Data.PlayersAtuais
-	slot = Data.slot
+	Data.slot = slot
 	
 	_atualisar_propriedades()
 	
@@ -101,7 +100,7 @@ func Return_To_Title() -> void:
 	CurrentPlayer = null
 	CurrentPlayerString = ""
 	CurrentInventory = null
-	PlayersAtuais.clear()
+	PlayersAtuais = {}
 	
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
 
@@ -130,8 +129,7 @@ func _process(_delta: float) -> void:
 	if ObjectPlayer != null:
 		camada = ObjectPlayer.camada
 	
-	if Global.configures != null:
-		Global.configures.music = volumedebug
+	Global.configures.music = volumedebug
 	
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second()) + ", CurrentStatus: " + GameStateString[current_status] + ", camada: " + str(camada)
 	
@@ -159,11 +157,12 @@ func _ready() -> void:
 #func _process(_delta: float) -> void:
 	#if InGame:
 		#return
-	#
+	
 	#_atualisar_propriedades()
 
 func _atualisar_propriedades():
-	#CurrentPlayer = PlayersAtuais[CurrentPlayerString]
+	print(PlayersAtuais)
+	
 	if PlayersAtuais.has(CurrentPlayerString):
 		CurrentPlayer = PlayersAtuais[CurrentPlayerString]
 	else:
