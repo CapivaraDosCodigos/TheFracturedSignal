@@ -25,6 +25,7 @@ var CurrentPlayer: PlayerData; var CurrentInventory: Inventory
 var PlayersAtuais: Dictionary[String, PlayerData]; var CurrentPlayerString: String
 
 var InGame: bool = false
+var podecima: bool = true
 
 #endregion
 
@@ -122,6 +123,9 @@ func Dead() -> void:
 func InGameIsTrue() -> void:
 	while not InGame:
 		await get_tree().process_frame
+
+func _unhandled_input(event: InputEvent) -> void:
+	pass
 
 func _process(_delta: float) -> void:
 	var camada: int

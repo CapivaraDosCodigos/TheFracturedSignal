@@ -4,3 +4,4 @@ CollisionShape2D
 CharacterBody2D
 Sprite2D
 TextureRect
+GuiTransition

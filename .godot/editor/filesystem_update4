@@ -1,4 +1,4 @@
-res://Godot/Godot Cenas/intro.tscn
+res://Areais/TEMPORADA 1/começo.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
@@ -24,4 +24,3 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/Godot Scripts/intro.gd

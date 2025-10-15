@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://ctppp385maids" path="res://texture/PNG/Default/Panel/panel-020.png" id="10_oaeeq"]
 [ext_resource type="Texture2D" uid="uid://cxn4r53tyc6r1" path="res://texture/PNG/Default/Border/panel-border-020.png" id="11_ey15c"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vj6wd"]
-atlas = ExtResource("5_cmsyx")
-region = Rect2(176, 48, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylfkn"]
 atlas = ExtResource("5_cmsyx")
 region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj6wd"]
+atlas = ExtResource("5_cmsyx")
+region = Rect2(176, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wuym2"]
 atlas = ExtResource("5_cmsyx")
@@ -41,23 +41,6 @@ region = Rect2(176, 0, 16, 16)
 [node name="Node" type="Node2D"]
 modulate = Color(0.796078, 0.913725, 1, 0.188235)
 
-[node name="down" type="TouchScreenButton" parent="."]
-use_parent_material = true
-position = Vector2(96, 432)
-scale = Vector2(1.66667, 1.66667)
-texture_normal = ExtResource("3_436f3")
-texture_pressed = ExtResource("4_bcos8")
-passby_press = true
-action = "Down"
-
-[node name="TextureRect" type="TextureRect" parent="down"]
-use_parent_material = true
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 38.0
-offset_bottom = 38.0
-texture = SubResource("AtlasTexture_vj6wd")
-
 [node name="up" type="TouchScreenButton" parent="."]
 use_parent_material = true
 position = Vector2(96, 272)
@@ -74,6 +57,23 @@ offset_top = 10.0
 offset_right = 38.0
 offset_bottom = 38.0
 texture = SubResource("AtlasTexture_ylfkn")
+
+[node name="down" type="TouchScreenButton" parent="."]
+use_parent_material = true
+position = Vector2(96, 432)
+scale = Vector2(1.66667, 1.66667)
+texture_normal = ExtResource("3_436f3")
+texture_pressed = ExtResource("4_bcos8")
+passby_press = true
+action = "Down"
+
+[node name="TextureRect" type="TextureRect" parent="down"]
+use_parent_material = true
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 38.0
+offset_bottom = 38.0
+texture = SubResource("AtlasTexture_vj6wd")
 
 [node name="left" type="TouchScreenButton" parent="."]
 use_parent_material = true

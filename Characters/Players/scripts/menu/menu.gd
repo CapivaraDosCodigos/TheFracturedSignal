@@ -28,21 +28,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			_fechar_submenu()
 		return
 
-	# Navegação lateral
-	if event.is_action_pressed("Right"):
-		if current_index < buttons.size() - 1:
-			current_index = (current_index + 1) % buttons.size()
-			_focus_current_panel()
-
-	elif event.is_action_pressed("Left"):
-		if current_index > 0:
-			current_index = (current_index - 1 + buttons.size()) % buttons.size()
-			_focus_current_panel()
-
-	# Confirmar opção
-	elif event.is_action_pressed("confirm"):
-		_abrir_submenu(buttons[current_index])
-
 	# Cancelar -> fecha o menu principal
 	elif event.is_action_pressed("cancel"):
 		menu = false
@@ -60,9 +45,9 @@ func _focus_current_panel():
 		await get_tree().process_frame
 		buttons[current_index].grab_focus()
 
-func _abrir_submenu(button: Button) -> void:
+func _abrir_submenu(button: String) -> void:
 	submenu_ativo = true
-	match button.name:
+	match button:
 		"inventory":
 			print("Abrindo Inventário")
 			submenu_atual = %InventoryMenu
@@ -84,6 +69,9 @@ func _abrir_submenu(button: Button) -> void:
 			#submenu_atual = %SettingsMenu
 		
 	submenu_atual.abrir()
+	await get_tree().process_frame
+			
+	submenu_atual.grab_focus()
 
 func _fechar_submenu() -> void:
 	if submenu_atual:
@@ -91,3 +79,15 @@ func _fechar_submenu() -> void:
 	submenu_ativo = false
 	submenu_atual = null
 	_focus_current_panel()
+
+func _on_inventory_pressed() -> void:
+	_abrir_submenu("inventory")
+
+func _on_equipment_pressed() -> void:
+	_abrir_submenu("equipment")
+
+func _on_status_pressed() -> void:
+	_abrir_submenu("status")
+
+func _on_settings_pressed() -> void:
+	_abrir_submenu("settings")

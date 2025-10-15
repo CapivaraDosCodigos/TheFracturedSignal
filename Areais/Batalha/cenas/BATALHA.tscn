@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=24 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Areais/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_y71rf"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="4_62nk7"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ky1x7"]
-[ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Areais/Batalha/scripts/personagens.gd" id="7_ky1x7"]
 [ext_resource type="PackedScene" uid="uid://by72qrtpqld7j" path="res://Areais/Batalha/cenas/battle_arena.tscn" id="7_n8fcj"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
@@ -207,7 +206,6 @@ expand_mode = 1
 
 [node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
 scale = Vector2(4, 4)
-script = ExtResource("7_ky1x7")
 
 [node name="player1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
 position = Vector2(64, 56)

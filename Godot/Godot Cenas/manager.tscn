@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="2_cconj"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="3_lxjte"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_2jxmm"]
-[ext_resource type="PackedScene" uid="uid://b4isedjlkckn0" path="res://Characters/Players/menu.tscn" id="6_pvfw1"]
+[ext_resource type="PackedScene" uid="uid://bu38qgxh4wq1i" path="res://Characters/Players/menu.tscn" id="6_pvfw1"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
 
 [node name="Manager" type="Node"]

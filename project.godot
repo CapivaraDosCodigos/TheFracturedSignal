@@ -12,7 +12,7 @@ config_version=5
 
 config/name="The Fractured Signal"
 config/version="alfa 2.0"
-run/main_scene="uid://7l6llr54uorr"
+run/main_scene="uid://cwcyxp7jea15x"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -28,6 +28,7 @@ Global="*res://Godot/Godot Scripts/Global.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Manager="*res://Godot/Godot Cenas/manager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 
 [dialogue_manager]
 
@@ -46,11 +47,12 @@ window/custom_image="uid://4t63sbm15mlv"
 
 [editor]
 
+movie_writer/movie_file="/storage/emulated/0/Documents/TheFracturedSignal/sons/test.mp4.avi"
 movie_writer/size/initial_position_type=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 
@@ -97,6 +99,18 @@ NPC=""
 [gui]
 
 theme/custom_font="uid://b056rcdsyltht"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
 
 [input]
 

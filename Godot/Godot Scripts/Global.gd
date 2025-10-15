@@ -4,6 +4,8 @@ const GLOBAl_PATH: String = "user://configures.tres"
 
 var configures: DataConf = DataConf.new()
 
+var bugcima: bool = true
+
 func _ready() -> void:
 	Carregar_Arquivo()
 	

@@ -9,7 +9,7 @@ var botaodelete: bool = false
 var botao_index: int = 0
 
 func _ready() -> void:
-	Manager.tocar_musica(PATH_MUSIC, 80)
+	Manager.tocar_musica(PATH_MUSIC, 90)
 	#Manager.change_state(Manager.GameState.NOT_IN_THE_GAME)
 	_atulizar()
 	botoes[botao_index].grab_focus()

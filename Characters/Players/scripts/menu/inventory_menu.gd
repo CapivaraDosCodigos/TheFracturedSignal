@@ -6,6 +6,9 @@ var current_index: int = 0
 func _unhandled_input(event: InputEvent) -> void:
 	if not ativo:
 		return
+		
+	#if not has_focus():
+		#return
 	
 	if event.is_action_pressed("Right"):
 		if current_index < lista.get_item_count() - 1:
