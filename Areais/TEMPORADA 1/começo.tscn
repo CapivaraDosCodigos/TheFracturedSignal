@@ -2096,39 +2096,41 @@ tile_set = ExtResource("1_nn1m4")
 use_parent_material = true
 tile_set = ExtResource("1_nn1m4")
 
-[node name="AreaCamada2D" type="Area2D" parent="tiles/TileMapLayer0"]
+[node name="areas" type="Node2D" parent="tiles/TileMapLayer0"]
+
+[node name="AreaCamada2D" type="Area2D" parent="tiles/TileMapLayer0/areas"]
 position = Vector2(-16, -32)
 script = ExtResource("3_gnciw")
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/AreaCamada2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/areas/AreaCamada2D"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_m0h7q")
 
-[node name="AreaCamada2D2" type="Area2D" parent="tiles/TileMapLayer0"]
+[node name="AreaCamada2D2" type="Area2D" parent="tiles/TileMapLayer0/areas"]
 position = Vector2(-272, 352)
 script = ExtResource("3_gnciw")
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/AreaCamada2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/areas/AreaCamada2D2"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_m0h7q")
 
-[node name="AreaCamada2D4" type="Area2D" parent="tiles/TileMapLayer0"]
+[node name="AreaCamada2D4" type="Area2D" parent="tiles/TileMapLayer0/areas"]
 position = Vector2(208, 123)
 script = ExtResource("3_gnciw")
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/AreaCamada2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/areas/AreaCamada2D4"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_m0h7q")
 
-[node name="AreaCamada2D3" type="Area2D" parent="tiles/TileMapLayer0"]
+[node name="AreaCamada2D3" type="Area2D" parent="tiles/TileMapLayer0/areas"]
 position = Vector2(-388.79898, -57.708443)
 script = ExtResource("3_gnciw")
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/AreaCamada2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer0/areas/AreaCamada2D3"]
 position = Vector2(-6.6004944, 1.7084427)
 shape = SubResource("RectangleShape2D_3gyo0")
 
@@ -2150,47 +2152,49 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD///P/BAASABMAAAA=")
 tile_set = ExtResource("4_3gyo0")
 
-[node name="AreaCamada2D" type="Area2D" parent="tiles/TileMapLayer1"]
+[node name="areas" type="Node2D" parent="tiles/TileMapLayer1"]
+
+[node name="AreaCamada2D2" type="Area2D" parent="tiles/TileMapLayer1/areas"]
 visible = false
 position = Vector2(-16, -103)
 script = ExtResource("3_gnciw")
 camada = 2
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/AreaCamada2D"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_m0h7q")
-
-[node name="AreaCamada2D2" type="Area2D" parent="tiles/TileMapLayer1"]
-visible = false
-position = Vector2(-16, -103)
-script = ExtResource("3_gnciw")
-camada = 2
-metadata/_custom_type_script = "uid://bdro6kmv5j603"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/AreaCamada2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/areas/AreaCamada2D2"]
 position = Vector2(-256, 391)
 shape = SubResource("RectangleShape2D_m0h7q")
 
-[node name="AreaCamada2D4" type="Area2D" parent="tiles/TileMapLayer1"]
+[node name="AreaCamada2D" type="Area2D" parent="tiles/TileMapLayer1/areas"]
+visible = false
+position = Vector2(-16, -103)
+script = ExtResource("3_gnciw")
+camada = 2
+metadata/_custom_type_script = "uid://bdro6kmv5j603"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/areas/AreaCamada2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_m0h7q")
+
+[node name="AreaCamada2D4" type="Area2D" parent="tiles/TileMapLayer1/areas"]
 visible = false
 position = Vector2(205.24527, 53.65538)
 script = ExtResource("3_gnciw")
 camada = 2
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/AreaCamada2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/areas/AreaCamada2D4"]
 position = Vector2(2.7547302, 2.3446198)
 shape = SubResource("RectangleShape2D_m0h7q")
 
-[node name="AreaCamada2D3" type="Area2D" parent="tiles/TileMapLayer1"]
+[node name="AreaCamada2D3" type="Area2D" parent="tiles/TileMapLayer1/areas"]
 visible = false
 position = Vector2(-348.57263, -90.922264)
 script = ExtResource("3_gnciw")
 camada = 2
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/AreaCamada2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tiles/TileMapLayer1/areas/AreaCamada2D3"]
 position = Vector2(0.57263184, 12.461128)
 shape = SubResource("RectangleShape2D_mq3an")
 
@@ -2231,6 +2235,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="bebedouro" parent="inimigos" node_paths=PackedStringArray("dungeons2D") groups=["Enemie"] instance=ExtResource("3_oq4xn")]
 position = Vector2(31, 123)
+dungeons2D = NodePath("../..")
+
+[node name="bebedouro2" parent="inimigos" node_paths=PackedStringArray("dungeons2D") groups=["Enemie"] instance=ExtResource("3_oq4xn")]
+position = Vector2(-208, 40)
 dungeons2D = NodePath("../..")
 
 [node name="npcs" type="Node2D" parent="."]

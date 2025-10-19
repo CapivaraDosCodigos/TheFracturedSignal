@@ -6,6 +6,7 @@ class_name Inventory extends Resource
 	get = _get_items
 @export var limite: int = 15:
 	set = _set_limite 
+@export var Bitcoin: int = 25
 @export var name: String = "New Inventory"
 
 func _init(_items: Array[DataItem] = [], _limite: int = 15, _name: String = "New Inventory") -> void:

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b47uqjy5sunba"]
+
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="1_qnv6k"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="2_hhcvj"]
+[ext_resource type="Script" uid="uid://tv0jrm3ipvpe" path="res://Areais/Batalha/scripts/panel_player.gd" id="2_lprbh"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="3_lprbh"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="4_lsi47"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6ohf0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjm6l"]
+atlas = ExtResource("3_lprbh")
+region = Rect2(0, 0, 96, 96)
+
+[node name="PanelPlayer" type="Panel"]
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_qnv6k")
+script = ExtResource("2_lprbh")
+player = "Zeno"
+metadata/_custom_type_script = "uid://tv0jrm3ipvpe"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+material = ExtResource("2_hhcvj")
+layout_mode = 2
+texture = SubResource("CanvasTexture_6ohf0")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Texture" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureRect"]
+unique_name_in_owner = true
+material = ExtResource("2_hhcvj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bjm6l")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="life" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_lsi47")
+theme_override_font_sizes/font_size = 32
+text = "100/100"

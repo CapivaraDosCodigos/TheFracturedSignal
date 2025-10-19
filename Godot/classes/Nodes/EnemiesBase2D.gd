@@ -12,6 +12,10 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 @export_range(0.0, 30.0, 0.1) var time: float = 5.0
 @export var poupavel: bool = true
 
+@export_group("nodes")
+@export var spawns: Array[SpawnProjeteis]
+
+var rootobjeto: Node2D
 var rootbatalha: Batalha2D
 var id: int = 0
 
@@ -39,8 +43,7 @@ func poupado() -> void:
 	queue_free()
 
 func atacar() -> void:
-	#print(nome + " com preguisa")
-	pass
+	spawns.pick_random().spawn(rootobjeto, time)
 
 func _on_animation_finished() -> void:
 	if animation == "dead" and animation == "dead":

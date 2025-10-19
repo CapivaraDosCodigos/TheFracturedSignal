@@ -124,9 +124,6 @@ func InGameIsTrue() -> void:
 	while not InGame:
 		await get_tree().process_frame
 
-func _unhandled_input(event: InputEvent) -> void:
-	pass
-
 func _process(_delta: float) -> void:
 	var camada: int
 	

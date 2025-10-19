@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgs8qnmsvgs1g"]
 
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/Characters/inimigos/bebedouro.png" id="1_jeaxr"]
+[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_jeaxr"]
 [ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Characters/enemies/bebedouro/bebedouro.gd" id="1_s6x8t"]
-[ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/classes/Inimigos/bebedouro.tres" id="2_ou5q7"]
+[ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/classes/Inimigos/bebedouro/bebedouro.tres" id="2_ou5q7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]
 size = Vector2(14, 22)

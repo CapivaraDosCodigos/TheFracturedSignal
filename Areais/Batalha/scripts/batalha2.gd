@@ -12,6 +12,7 @@ class_name Batalha2D extends Node2D
 @onready var ATK := %panel1; @onready var ITM := %panel2; @onready var EXE := %panel3; @onready var DEF := %panel4; @onready var MRC := %panel5
 @onready var markerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
 @onready var playerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
+@onready var battle_arena: NinePatchRect = %BATTLE_ARENA
 
 const MAX_ENENINES: int = 3
 
@@ -62,7 +63,6 @@ func _process(_delta: float) -> void:
 	var current_state = Manager.current_status
 	if current_state != last_state:
 		if current_state == Manager.GameState.BATTLE:
-			#$"%Ambição".position = $%BATTLE_ARENA.position
 			anim.play("S_panel")
 			_exe_atacar()
 			
@@ -198,14 +198,16 @@ func _fechar_submenu() -> void:
 	_focus_current_panel()
 
 func _exe_atacar():
+	if enemiesNodes.size() <= 0:
+		return
+	
 	for inimigo in enemiesNodes:
 		inimigo.atacar()
+	
 	await get_tree().create_timer(enemiesNodes.pick_random().time).timeout
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
 
 func end_batalha() -> void:
-	print(enemiesNodes.size())
-	
 	if enemiesNodes.size() > 0:
 		return
 	
@@ -225,10 +227,11 @@ func adicionar_jogador(index: int, key: String) -> void:
 	personagens.add_child(playerinstaciente)
 
 func adicionar_inimigo(inimigo: PackedScene, pos: Vector2) -> void:
-	var inim = inimigo.instantiate()
+	var inim: EnemiesBase2D = inimigo.instantiate()
 	enemiesNodes.append(inim)
 	inim.id = enemiesNodes.size() - 1
 	inim.rootbatalha = self
+	inim.rootobjeto = battle_arena.objetos
 	inim.position = pos
 	personagens.add_child(inim)
 	inim.play("default")
@@ -237,4 +240,5 @@ func remover_jogador(_key: String) -> void:
 	pass
 
 func remover_inimigo(index: int) -> void:
-	enemiesNodes.remove_at(index)
+	if enemiesNodes.size() > 0:
+		enemiesNodes.remove_at(index)

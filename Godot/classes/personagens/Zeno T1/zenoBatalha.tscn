@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dc6gnjvpvkwsn"]
 
 [ext_resource type="Script" uid="uid://dxjfylq40nfs1" path="res://Godot/classes/Nodes/PlayerBase2D.gd" id="1_lxsey"]
-[ext_resource type="Texture2D" uid="uid://caoyldwqkvthe" path="res://texture/Characters/Zeno's/ZenoSim.png" id="1_tl63f"]
+[ext_resource type="Texture2D" uid="uid://dtk8p4pvk17pj" path="res://texture/characters/Zeno's/Zenovar.png" id="1_tl63f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oeip0"]
 atlas = ExtResource("1_tl63f")

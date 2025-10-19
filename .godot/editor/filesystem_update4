@@ -1,4 +1,4 @@
-res://Areais/TEMPORADA 1/começo.tscn
+res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
@@ -24,3 +24,6 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
+res://Godot/classes/Nodes/EnemiesBase2D.gd
+res://Godot/classes/Inimigos/SpawnProjeteis.gd
+res://Areais/save.gd

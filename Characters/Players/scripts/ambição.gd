@@ -29,6 +29,3 @@ func _apply_damage(body: Node2D) -> void:
 		print(Manager.PlayersAtuais[key].Life)
 		
 	body.queue_free()
-	
-		
-		

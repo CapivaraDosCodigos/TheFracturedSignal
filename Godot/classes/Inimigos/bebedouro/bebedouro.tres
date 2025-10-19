@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DataBatalha" load_steps=3 format=3 uid="uid://qs0gp3vem5db"]
+
+[ext_resource type="PackedScene" uid="uid://dhdqurm4hxqt" path="res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn" id="1_cf5rl"]
+[ext_resource type="Script" uid="uid://bbe4ekg3rff07" path="res://Godot/classes/DATAS/DataBatalha.gd" id="2_pt70x"]
+
+[resource]
+script = ExtResource("2_pt70x")
+inimigos = Array[PackedScene]([ExtResource("1_cf5rl")])
+dialogo = "uid://b8s8ct3smhv3e"
+start_dialogo = "bebedouro"
+caminho = "uid://dix6um187yv5o"
+metadata/_custom_type_script = "uid://bbe4ekg3rff07"

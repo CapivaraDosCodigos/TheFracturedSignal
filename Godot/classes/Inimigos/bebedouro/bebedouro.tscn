@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhdqurm4hxqt"]
+[gd_scene load_steps=14 format=3 uid="uid://dhdqurm4hxqt"]
 
 [ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="1_sc6bt"]
 [ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
 [ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="4_tyq3r"]
+[ext_resource type="Script" uid="uid://cdr1vpvtwnywr" path="res://Godot/classes/Inimigos/SpawnProjeteis.gd" id="5_k5ax6"]
 [ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/objetos/attack 1 .png" id="5_rsb1r"]
+[ext_resource type="PackedScene" uid="uid://bic33s886bpyf" path="res://Areais/Batalha/cenas/balabebedouro1.tscn" id="6_htrfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
 atlas = ExtResource("1_y5qht")
@@ -59,12 +61,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bebedouro" type="AnimatedSprite2D"]
+[node name="Bebedouro" type="AnimatedSprite2D" node_paths=PackedStringArray("spawns")]
 sprite_frames = SubResource("SpriteFrames_adxu8")
 frame_progress = 0.556025
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
-time = 2.0
+time = 20.0
+spawns = [NodePath("SpawnProjeteis")]
 metadata/_custom_type_script = "uid://kjhutov44bdn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -72,3 +75,11 @@ material = ExtResource("4_tyq3r")
 sprite_frames = SubResource("SpriteFrames_32i2b")
 frame = 4
 frame_progress = 1.0
+
+[node name="SpawnProjeteis" type="Node" parent="."]
+script = ExtResource("5_k5ax6")
+bala = ExtResource("6_htrfx")
+makers = Array[Vector2]([Vector2(16, -60), Vector2(38, -60), Vector2(60, -60), Vector2(84, -60), Vector2(106, -60), Vector2(128, -60)])
+numero_de_balas = 36
+espera = 0.5
+metadata/_custom_type_script = "uid://cdr1vpvtwnywr"

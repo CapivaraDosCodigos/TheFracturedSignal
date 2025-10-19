@@ -2,6 +2,7 @@ extends NinePatchRect
 
 @onready var ambicao: CharacterBody2D = %"Ambição"
 @onready var ambicao_make: Marker2D = %AmbiçãoMake
+@onready var objetos: Node2D = $objetos
 
 var last_state = null
 

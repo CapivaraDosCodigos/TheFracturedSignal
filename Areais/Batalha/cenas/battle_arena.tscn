@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://by72qrtpqld7j"]
+[gd_scene load_steps=9 format=3 uid="uid://by72qrtpqld7j"]
 
 [ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="1_8an7m"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="2_2iyuh"]
 [ext_resource type="Script" uid="uid://4v1xm7lpqc5j" path="res://Areais/Batalha/scripts/battle_arena.gd" id="2_ygc8i"]
-[ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="3_yrtuk"]
-[ext_resource type="Texture2D" uid="uid://dxqofff42ffwr" path="res://icon.svg" id="4_adoci"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygc8i"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ig8w"]
 a = Vector2(4, 11.5)
@@ -60,36 +56,6 @@ scale = Vector2(1, 1)
 unique_name_in_owner = true
 z_index = 1
 position = Vector2(72.000015, 72)
-
-[node name="Bala2D" type="CharacterBody2D" parent="objetos"]
-visible = false
-position = Vector2(104.000015, 32.500004)
-collision_layer = 2
-script = ExtResource("3_yrtuk")
-dano = 30
-metadata/_custom_type_script = "uid://qnklpnihflc2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="objetos/Bala2D"]
-shape = SubResource("RectangleShape2D_ygc8i")
-
-[node name="Sprite2D" type="Sprite2D" parent="objetos/Bala2D"]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_adoci")
-
-[node name="Bala2D2" type="CharacterBody2D" parent="objetos"]
-visible = false
-position = Vector2(56.000015, 32.500004)
-collision_layer = 2
-script = ExtResource("3_yrtuk")
-dano = 30
-metadata/_custom_type_script = "uid://qnklpnihflc2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="objetos/Bala2D2"]
-shape = SubResource("RectangleShape2D_ygc8i")
-
-[node name="Sprite2D" type="Sprite2D" parent="objetos/Bala2D2"]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_adoci")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 z_index = -4

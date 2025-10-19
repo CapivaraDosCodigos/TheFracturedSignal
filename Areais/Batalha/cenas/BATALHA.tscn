@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://76pvbuk718a4"]
+[gd_scene load_steps=26 format=3 uid="uid://76pvbuk718a4"]
 
 [ext_resource type="Script" uid="uid://0hjngdsxlm2y" path="res://Areais/Batalha/scripts/batalha2.gd" id="1_wuibh"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="3_lwg78"]
@@ -9,7 +9,9 @@
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_4jxlp"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
+[ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://texture/folderTres/BoxTexture/intro.tres" id="11_1glvl"]
 [ext_resource type="Texture2D" uid="uid://ce5r0b54upoew" path="res://texture/objetos/ITEMS.png" id="11_n8fcj"]
+[ext_resource type="PackedScene" uid="uid://b47uqjy5sunba" path="res://Areais/Batalha/cenas/panel_player.tscn" id="12_1glvl"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
 
@@ -248,12 +250,70 @@ offset_top = 111.0
 offset_right = 576.0
 offset_bottom = 255.0
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="BatalhaCanvas/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_1glvl")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="PanelPlayer1" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelPlayer2" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelPlayer3" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelPlayer4" parent="BatalhaCanvas/Control/VBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
 offset_top = 540.0
 offset_right = 1152.0
-offset_bottom = 676.0001
+offset_bottom = 676.00024
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16

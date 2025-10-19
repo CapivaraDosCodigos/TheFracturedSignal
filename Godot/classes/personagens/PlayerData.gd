@@ -10,7 +10,6 @@ class_name PlayerData extends Resource
 @export_group("PlayerStarts")
 @export var Lv: int = 1
 @export var Life: int = 30
-@export var Bitcoin: int = 25
 @export var Exp: int = 0
 
 @export_group("Dados das Propriedades")
@@ -104,7 +103,7 @@ func apply_damage(dano_base: int) -> void:
 	var reducao = log(defense + 1.0) / 10.0
 	var dano_final = int(dano_base * (1.0 - reducao))
 	Life -= dano_final
-	print(Life, " ", dano_final)
+	#print(Life, " ", dano_final)
 
 func _to_string() -> String:
 	return Nome
