@@ -9,3 +9,6 @@ class_name DataItem extends Resource
 
 func _to_string() -> String:
 	return nome
+
+func usar(_null) -> void:
+	pass

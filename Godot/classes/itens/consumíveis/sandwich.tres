@@ -9,7 +9,7 @@ region = Rect2(160, 528, 16, 16)
 
 [resource]
 script = ExtResource("2_7ur3f")
-cura = 25
+cura = 100
 nome = "sandwich"
 preco = 30
 icone = SubResource("AtlasTexture_dqt6t")

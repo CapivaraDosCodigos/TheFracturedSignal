@@ -1,3 +1,4 @@
+Batalha2D
 PanelPlayer
 Panel
 Label
@@ -11,5 +12,3 @@ Timer
 VisibleOnScreenEnabler2D
 SpawnProjeteis
 Node2D
-GuiTransition
-MenuButton
