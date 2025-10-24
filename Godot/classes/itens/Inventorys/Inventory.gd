@@ -82,6 +82,12 @@ func remove_item_in_batalha(index: int) -> void:
 	if index >= 0 and index < new_items.size():
 		remove_for_item(new_items[index])
 
+func use_item_in_batalha(index: int, player: String) -> void:
+	var new_items: Array[DataItem] = get_in_items_batalha()
+	
+	if index >= 0 and index < new_items.size():
+		new_items[index].usar(player)
+
 func get_in_items_batalha() -> Array[DataItem]:
 	var get_itens: Array[DataItem] = []
 	for item in items:

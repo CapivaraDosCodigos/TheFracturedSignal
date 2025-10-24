@@ -26,6 +26,5 @@ func _apply_damage(body: Node2D) -> void:
 	for idx in range(keys.size()):
 		var key = keys[idx]
 		Manager.PlayersAtuais[key].apply_damage(body.dano)
-		print(Manager.PlayersAtuais[key].Life)
 		
 	body.queue_free()

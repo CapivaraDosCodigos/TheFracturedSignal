@@ -1,6 +1,5 @@
-AtlasTexture
-GlobalData
 PlayerData
+AtlasTexture
 Shader
 SpriteFrames
 ItemArma

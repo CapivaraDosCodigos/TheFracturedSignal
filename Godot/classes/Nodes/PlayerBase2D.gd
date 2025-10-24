@@ -1,27 +1,31 @@
 class_name PlayerBase2D extends AnimatedSprite2D
 
-@export var player: PlayerData = PlayerData.new()
+@export var player: String
+@export var fallen: bool = false
+@export var size_marker: float = 20
 
 var rootbatalha: Batalha2D
 var id: int = 0
 
 func _process(_delta: float) -> void:
-	if player.Life <= 0:
+	if Manager.PlayersAtuais[player].Life <= 0:
 		_dead()
+	
+	if Manager.PlayersAtuais[player].Life > 0:
+		fallen = false
 
 func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
 
 func _dead() -> void:
-	pass
+	fallen = true
 
 func act_in_player(_act: String) -> void:
 	#print(nome + " com preguisa")
 	pass
 
 func _on_animation_finished() -> void:
-	if animation == "dead" and animation == "dead":
-		queue_free()
+	pass
 
 func _to_string() -> String:
-	return player.Nome
+	return player

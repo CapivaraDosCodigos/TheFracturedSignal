@@ -11,7 +11,10 @@ func _physics_process(_delta: float) -> void:
 	
 	if Manager.current_status == Manager.GameState.BATTLE:
 		velocity = diretion * speed
-		move_and_slide()
-
+	else:
+		velocity = Vector2.ZERO
+		
+	move_and_slide()
+	
 func _on_visible_screen_exited() -> void:
 	queue_free()

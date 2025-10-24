@@ -2,6 +2,7 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 
 @export_group("GameEnemies")
 @export var nome: String = "Enemie"
+@export var size_marker: float = -20
 
 @export_group("EnemiesStarts")
 @export var life: int = 30

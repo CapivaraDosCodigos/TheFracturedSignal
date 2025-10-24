@@ -4,16 +4,14 @@ class_name Batalha2D extends Node2D
 #region variables
 
 @export var anim: AnimationPlayer
-@export var personagens: Node2D 
+@export var personagens: PersonagensBatalha2D
 @export var itemMenu: MarginContainer
 
-@onready var ATK := %panel1
-@onready var ITM := %panel2
-@onready var EXE := %panel3
-@onready var DEF := %panel4
-@onready var MRC := %panel5
-@onready var markerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/inimigo1, $BatalhaCanvas/Personagens/inimigo2, $BatalhaCanvas/Personagens/inimigo3 ]
-@onready var playerMarker2D: Array[Marker2D] = [ $BatalhaCanvas/Personagens/player1, $BatalhaCanvas/Personagens/player2, $BatalhaCanvas/Personagens/player3 ]
+@onready var ATK: Control = %panel1
+@onready var ITM: Control = %panel2
+@onready var EXE: Control = %panel3
+@onready var DEF: Control = %panel4
+@onready var MRC: Control = %panel5
 @onready var battle_arena: NinePatchRect = %BATTLE_ARENA
 
 const MAX_ENENINES: int = 3
@@ -52,7 +50,7 @@ func _ready() -> void:
 		adicionar_jogador(idx, player_keys[idx])
 	
 	for i in range(batalha.inimigos.size()):
-		adicionar_inimigo(batalha.inimigos[i], markerMarker2D[i].position)
+		adicionar_inimigo(batalha.inimigos[i], i)
 	
 	panels = [ATK, ITM, EXE, DEF, MRC]
 	panel_dict = {"ATK": ATK, "ITM": ITM, "EXE": EXE, "DEF": DEF, "MRC": MRC}
@@ -71,6 +69,9 @@ func _process(_delta: float) -> void:
 			anim.play("E_panel")
 			_iniciar_selecao()
 		last_state = current_state
+		
+	if _verificar_dead():
+		dead_batalha()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
@@ -112,15 +113,27 @@ func _abrir_submenu(panel: Control) -> void:
 	for nome in panel_dict:
 		if panel_dict[nome] == panel:
 			match nome:
-				"ATK", "DEF", "EXE", "MRC":
+				"DEF", "EXE", "MRC":
 					_confirmar_acao(nome)
-				"ITM":
+				"ATK":
 					submenu_ativo = true
-					var resultado = await itemMenu.itemsIvt()
-					if resultado == null or resultado["index"] < 0:
+					var resultado = await personagens.menuPersonagens(true)
+					if resultado < 0:
 						_focus_current_panel()
 						_fechar_submenu()
 						return
+						
+					submenu_resultados[jogador_atual] = resultado
+					_confirmar_acao(nome, resultado)
+					_fechar_submenu()
+				"ITM":
+					submenu_ativo = true
+					var resultado = await itemMenu.itemsIvt()
+					if resultado < 0:
+						_focus_current_panel()
+						_fechar_submenu()
+						return
+						
 					submenu_resultados[jogador_atual] = resultado
 					_confirmar_acao(nome, resultado)
 					_fechar_submenu()
@@ -144,22 +157,37 @@ func _confirmar_acao(nome: String, _dados_extra = null) -> void:
 
 func _act(act: String, key: String) -> void:
 	if act == "ATK":
-		for enemie in enemiesNodes:
-			enemie.apply_damage(randi_range(Manager.PlayersAtuais[key].maxdamage, Manager.PlayersAtuais[key].mindamage))
+		if not submenu_resultados.has(key):
+			return
+			
+		var resultado = submenu_resultados[key]
+		enemiesNodes[resultado].apply_damage(Manager.PlayersAtuais[key].maxdamage)
+		
+		#for enemie in enemiesNodes:
+			#enemie.apply_damage(randi_range(Manager.PlayersAtuais[key].maxdamage, Manager.PlayersAtuais[key].mindamage))
+			#enemie.apply_damage(Manager.PlayersAtuais[key].maxdamage)
+	
 	elif act == "DEF":
 		pass
+	
 	elif act == "EXE":
 		pass
+	
 	elif act == "ITM":
-		if submenu_resultados.has(key):
-			var resultado = submenu_resultados[key]
-			if resultado["index"] < Manager.CurrentInventory.get_in_items_batalha().size():
-				for p in Manager.PlayersAtuais.keys():
-					Manager.CurrentInventory.items[resultado["index"]].usar(p)
-				Manager.CurrentInventory.remove_item_in_batalha(resultado["index"])
-				itemMenu.atualizar_itemlist()
+		if not submenu_resultados.has(key):
+			return
+			
+		var resultado = submenu_resultados[key]
+		#if resultado["index"] < Manager.CurrentInventory.get_in_items_batalha().size():
+		for player in Manager.PlayersAtuais.keys():
+			Manager.CurrentInventory.use_item_in_batalha(resultado, player)
+			
+		Manager.CurrentInventory.remove_item_in_batalha(resultado)
+		itemMenu.atualizar_itemlist()
+	
 	elif act == "MRC":
 		pass
+	
 	else:
 		printerr("erro")
 
@@ -184,28 +212,37 @@ func _exe_atacar():
 func end_batalha() -> void:
 	if enemiesNodes.size() > 0:
 		return
+	
 	await get_tree().create_timer(2.0).timeout
-	batalha.dungeons2D.end_batalha.emit()
 	Manager.tocar_musica()
+	batalha.dungeons2D.end_batalha.emit()
+	queue_free()
+
+func dead_batalha() -> void:
+	await get_tree().create_timer(0.0).timeout
+	Manager.tocar_musica()
+	Manager.Game_Over()
 	queue_free()
 
 func adicionar_jogador(index: int, key: String) -> void:
 	var playerload = load(PlayersDIR[key].PlayerBatalhaPath)
-	var playerinst = playerload.instantiate()
+	var playerinst: PlayerBase2D = playerload.instantiate()
 	playersNodes.append(playerinst)
 	playerinst.id = playersNodes.size() - 1
 	playerinst.rootbatalha = self
-	playerinst.player = PlayersDIR[key]
-	playerinst.position = playerMarker2D[index].position
+	playerinst.player = key
+	playerinst.position = personagens.playerMarker2D[index].position
+	personagens.spritesP[index].position.x = playerinst.size_marker
 	personagens.add_child(playerinst)
 
-func adicionar_inimigo(inimigo: PackedScene, pos: Vector2) -> void:
+func adicionar_inimigo(inimigo: PackedScene, intex: int) -> void:
 	var inim: EnemiesBase2D = inimigo.instantiate()
 	enemiesNodes.append(inim)
 	inim.id = enemiesNodes.size() - 1
 	inim.rootbatalha = self
 	inim.rootobjeto = battle_arena.objetos
-	inim.position = pos
+	inim.position = personagens.inimigoMarker2D[intex].position
+	personagens.spritesI[intex].position.x = inim.size_marker
 	personagens.add_child(inim)
 	inim.play("default")
 
@@ -215,3 +252,12 @@ func remover_jogador(_key: String) -> void:
 func remover_inimigo(index: int) -> void:
 	if enemiesNodes.size() > 0:
 		enemiesNodes.remove_at(index)
+
+func _verificar_dead() -> bool:
+	var play: int = 0
+	for i in playersNodes:
+		if i.fallen:
+			play += 1
+	if play == playersNodes.size():
+		return true
+	return false

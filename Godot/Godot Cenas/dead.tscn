@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://dswv3bqy0f5dn"]
+
+[ext_resource type="Script" uid="uid://b3satd47d8ggd" path="res://Godot/Godot Scripts/dead.gd" id="1_6m4gm"]
+[ext_resource type="Script" uid="uid://b5pydke1gg5le" path="res://Godot/classes/Nodes/ButtonUI.gd" id="2_sq3fj"]
+
+[sub_resource type="Animation" id="Animation_sq3fj"]
+resource_name = "start"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytav2"]
+_data = {
+&"start": SubResource("Animation_sq3fj")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_6m4gm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="game" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="morte" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ainda não é seu momento, volte meu filho"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ButtonUI1" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("control_bottom")]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Retornar"
+flat = true
+script = ExtResource("2_sq3fj")
+control_bottom = NodePath("../../MarginContainer2/ButtonUI2")
+metadata/_custom_type_script = "uid://b5pydke1gg5le"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ButtonUI2" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer/MarginContainer2" node_paths=PackedStringArray("control_top")]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Voltar ao Titulo"
+flat = true
+script = ExtResource("2_sq3fj")
+control_top = NodePath("../../MarginContainer/ButtonUI1")
+metadata/_custom_type_script = "uid://b5pydke1gg5le"
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ytav2")
+}
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer/MarginContainer/ButtonUI1" to="ColorRect" method="_on_button_ui_1_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer/MarginContainer2/ButtonUI2" to="ColorRect" method="_on_button_ui_2_pressed"]

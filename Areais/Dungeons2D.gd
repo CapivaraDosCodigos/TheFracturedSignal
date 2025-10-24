@@ -15,6 +15,7 @@ signal end_batalha
 
 func _ready() -> void:
 	end_batalha.connect(terminar_batalha)
+	Manager.change_state(Manager.GameState.MAP)
 	Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 
 func iniciar_batalha() -> void:

@@ -23,7 +23,6 @@ Nome = "Zeno"
 Classe = SubResource("Resource_aip5c")
 PlayerBatalhaPath = "uid://dc6gnjvpvkwsn"
 ObjectPlayerPath = "uid://h5ek2buto4br"
-Life = 100
 base_life = 100
 inventory_pessoal = SubResource("Resource_p6llb")
 armorE = ExtResource("3_bmyga")

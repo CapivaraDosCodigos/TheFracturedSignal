@@ -23,9 +23,8 @@ var textureD: Texture = null; var materialD: ShaderMaterial = null
 var Data: SeasonResource; var Extras: DataExtras; var CurrentScene: PackedScene
 var CurrentPlayer: PlayerData; var CurrentInventory: Inventory
 var PlayersAtuais: Dictionary[String, PlayerData]; var CurrentPlayerString: String
-
+var CurrentSlot: int; var CurrentTemporada: int
 var InGame: bool = false
-var podecima: bool = true
 
 #endregion
 
@@ -70,12 +69,12 @@ func SAVE(slot: int) -> void:
 	Data.CurrentPlayer = CurrentPlayerString
 	Data.CurrentInventory = CurrentInventory
 	Data.PlayersAtuais = PlayersAtuais
-	Data.slot = slot
 	
 	SaveData.Salvar(slot, Data)
 
 func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
 	if not is_inside_tree(): await get_tree().process_frame
+	_clear()
 	
 	Data = SaveData.Carregar(slot, temporada)
 	Extras = Data.Extras
@@ -84,6 +83,8 @@ func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
 	CurrentInventory = Data.CurrentInventory
 	PlayersAtuais = Data.PlayersAtuais
 	Data.slot = slot
+	CurrentSlot = slot
+	CurrentTemporada = temporada
 	
 	_atualisar_propriedades()
 	
@@ -94,16 +95,13 @@ func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
 
 func Return_To_Title() -> void:
 	await get_tree().process_frame
-	Data = null
-	Extras = null
-	CurrentScene = null
-	CurrentInventory = null
-	CurrentPlayer = null
-	CurrentPlayerString = ""
-	CurrentInventory = null
-	PlayersAtuais = {}
-	
+	_clear()
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
+
+func Game_Over() -> void:
+	await get_tree().process_frame
+	_clear(true)
+	get_tree().change_scene_to_file("res://Godot/Godot Cenas/dead.tscn")
 
 func IsCurrentPlayer(player: PlayerData) -> void:
 	AdicionarPlayer(player)
@@ -116,9 +114,6 @@ func AdicionarPlayer(player: PlayerData) -> void:
 func RemoverPlayer(player: String) -> void:
 	if PlayersAtuais.has(player):
 		PlayersAtuais.erase(player)
-
-func Dead() -> void:
-	pass
 
 func InGameIsTrue() -> void:
 	while not InGame:
@@ -161,6 +156,23 @@ func _ready() -> void:
 	
 	#_atualisar_propriedades()
 
+func _clear(slotON: bool = false) -> void:
+	Data = null
+	Extras = null
+	CurrentScene = null
+	CurrentInventory = null
+	CurrentPlayer = null
+	CurrentPlayerString = ""
+	CurrentInventory = null
+	
+	for test in PlayersAtuais.keys():
+		PlayersAtuais[test].Life = PlayersAtuais[test].maxlife
+	
+	PlayersAtuais.clear()
+	if not slotON:
+		CurrentSlot = 0
+		CurrentTemporada = 0
+
 func _atualisar_propriedades():
 	print(PlayersAtuais)
 	
@@ -171,3 +183,4 @@ func _atualisar_propriedades():
 	
 	for key in PlayersAtuais.keys():
 		PlayersAtuais[key].update_properties()
+		print(PlayersAtuais[key].Life)

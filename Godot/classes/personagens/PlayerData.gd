@@ -9,7 +9,7 @@ class_name PlayerData extends Resource
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
-@export var Life: int = 30
+@export var Life: int = 100
 @export var Exp: int = 0
 
 @export_group("Dados das Propriedades")

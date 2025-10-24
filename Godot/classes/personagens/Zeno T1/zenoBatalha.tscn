@@ -21,4 +21,5 @@ animations = [{
 [node name="ZenoBatalha" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_es7ui")
 script = ExtResource("1_lxsey")
+player = "Zeno"
 metadata/_custom_type_script = "uid://dxjfylq40nfs1"
