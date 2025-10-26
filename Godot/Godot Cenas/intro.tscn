@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwcyxp7jea15x"]
+[gd_scene load_steps=15 format=3 uid="uid://cwcyxp7jea15x"]
 
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="1_ry48r"]
 [ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="2_nyooo"]
 [ext_resource type="FontFile" uid="uid://d300w44j3djpe" path="res://texture/font/m5x7.ttf" id="3_r86ht"]
 [ext_resource type="Script" uid="uid://bcabr674wkilu" path="res://Godot/Godot Scripts/intro2.gd" id="4_ry48r"]
-[ext_resource type="Material" uid="uid://dmph4vbnd6qcj" path="res://texture/folderTres/materials/tile.tres" id="5_nb4pc"]
-[ext_resource type="Texture2D" uid="uid://doi7ecbrooaxt" path="res://texture/PNG/fundos.png" id="6_ul0ey"]
+[ext_resource type="Texture2D" uid="uid://cmesx6notnna4" path="res://texture/PNG/bordas UI/fundoprovisório.png" id="5_bqs7j"]
+[ext_resource type="Texture2D" uid="uid://ekh2ult7cdhj" path="res://texture/folderTres/texturas/intro.tres" id="7_bqs7j"]
 [ext_resource type="FontFile" uid="uid://cf6tfynp8qcsu" path="res://texture/font/at01.ttf" id="7_nx36f"]
-[ext_resource type="Texture2D" uid="uid://dvkycf6e8bp1d" path="res://texture/font/alma tv show.png" id="8_a7avr"]
 [ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://texture/folderTres/BoxTexture/intro.tres" id="9_4n26g"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_cy7ck"]
-[ext_resource type="Texture2D" uid="uid://ce5r0b54upoew" path="res://texture/objetos/ITEMS.png" id="11_2mcau"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="11_7k7oo"]
 [ext_resource type="Script" uid="uid://b5pydke1gg5le" path="res://Godot/classes/Nodes/ButtonUI.gd" id="11_nyooo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0a7ni"]
@@ -21,7 +20,7 @@ outline_size = 16
 outline_color = Color(0.101961, 0.054902, 0.164706, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2rf6"]
-texture = ExtResource("6_ul0ey")
+texture = ExtResource("5_bqs7j")
 texture_margin_left = 32.0
 texture_margin_top = 32.0
 texture_margin_right = 32.0
@@ -31,7 +30,7 @@ axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4n26g"]
-atlas = ExtResource("11_2mcau")
+atlas = ExtResource("11_7k7oo")
 region = Rect2(160, 0, 16, 16)
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -85,7 +84,6 @@ theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 32
 
 [node name="Panel" type="Panel" parent="menu_de_salves/MarginContainer"]
-material = ExtResource("5_nb4pc")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u2rf6")
 
@@ -115,11 +113,10 @@ size_flags_horizontal = 3
 focus_mode = 3
 mouse_filter = 2
 mouse_behavior_recursive = 1
-theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
-theme_override_colors/font_focus_color = Color(0.13725491, 0.1882353, 0.44313726, 1)
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
-theme_override_icons/icon = ExtResource("8_a7avr")
+theme_override_icons/icon = ExtResource("7_bqs7j")
 theme_override_styles/normal = ExtResource("9_4n26g")
 theme_override_styles/focus = ExtResource("10_cy7ck")
 text = "Iniciar Sistema 1*"
@@ -168,11 +165,10 @@ custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 3
-theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
-theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
-theme_override_icons/icon = ExtResource("8_a7avr")
+theme_override_icons/icon = ExtResource("7_bqs7j")
 theme_override_styles/normal = ExtResource("9_4n26g")
 theme_override_styles/focus = ExtResource("10_cy7ck")
 text = "Iniciar Sistema 2*"
@@ -223,11 +219,10 @@ custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 3
-theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
-theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
-theme_override_icons/icon = ExtResource("8_a7avr")
+theme_override_icons/icon = ExtResource("7_bqs7j")
 theme_override_styles/normal = ExtResource("9_4n26g")
 theme_override_styles/focus = ExtResource("10_cy7ck")
 text = "Iniciar Sistema 3*"
@@ -278,11 +273,10 @@ custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 3
-theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
-theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
-theme_override_icons/icon = ExtResource("8_a7avr")
+theme_override_icons/icon = ExtResource("7_bqs7j")
 theme_override_styles/normal = ExtResource("9_4n26g")
 theme_override_styles/focus = ExtResource("10_cy7ck")
 text = "Iniciar Sistema 4*"
@@ -332,11 +326,10 @@ custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 3
-theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
-theme_override_colors/font_focus_color = Color(0.196078, 0.247059, 0.482353, 1)
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
-theme_override_icons/icon = ExtResource("8_a7avr")
+theme_override_icons/icon = ExtResource("7_bqs7j")
 theme_override_styles/normal = ExtResource("9_4n26g")
 theme_override_styles/focus = ExtResource("10_cy7ck")
 text = "Iniciar Sistema 5*"

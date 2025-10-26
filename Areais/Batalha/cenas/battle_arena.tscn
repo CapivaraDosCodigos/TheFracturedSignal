@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://by72qrtpqld7j"]
 
-[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/Default/Border/panel-border-014.png" id="1_8an7m"]
+[ext_resource type="Texture2D" uid="uid://d0bca2weroo3r" path="res://texture/PNG/bordas UI/Default/Border/panel-border-014.png" id="1_8an7m"]
 [ext_resource type="PackedScene" uid="uid://8sgdpebe3e0a" path="res://Characters/Players/cenas/ambição.tscn" id="2_2iyuh"]
 [ext_resource type="Script" uid="uid://4v1xm7lpqc5j" path="res://Areais/Batalha/scripts/battle_arena.gd" id="2_ygc8i"]
 
@@ -24,7 +24,6 @@ b = Vector2(-11.4998, 24.0001)
 size = Vector2(139.5, 139)
 
 [node name="BATTLE_ARENA" type="NinePatchRect"]
-self_modulate = Color(0.454902, 0.662745, 0.960784, 1)
 z_index = 4
 anchors_preset = -1
 anchor_left = 0.375

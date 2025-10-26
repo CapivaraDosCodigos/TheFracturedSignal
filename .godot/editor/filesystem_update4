@@ -2,6 +2,7 @@ res://Areais/Batalha/cenas/BATALHA.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
+res://texture/folderTres/materials/preto_&_branco.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/consumíveis/sandwich.tres
 res://Godot/classes/itens/armas/Signal_Weapon.tres
@@ -25,3 +26,15 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
+res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn
+res://Areais/Batalha/cenas/battle_arena.tscn
+res://Godot/classes/personagens/PlayerData.gd
+res://Godot/classes/Inimigos/SpawnProjeteis.gd
+res://Areais/Batalha/cenas/balabebedouro1.tscn
+res://Godot/Godot Scripts/Global.gd
+res://Godot/Godot Scripts/Manager.gd
+res://Godot/classes/DATAS/SaveData.gd
+res://Godot/classes/Nodes/audio_player.gd
+res://Godot/Godot Scripts/intro2.gd
+res://Godot/Godot Cenas/manager.tscn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn

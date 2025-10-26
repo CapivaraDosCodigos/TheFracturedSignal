@@ -22,7 +22,7 @@ func _atulizar() -> void:
 		else:
 			#botoes[i].text = "Volta Sistema " + str(i + 1) + "* " + SaveData.CarregarTime(i + 1)
 			botoesDelete[i].visible = true
-			botoes[i].text = SaveData.CarregarTemporada(i + 1) + " " + SaveData.CarregarTime(i + 1)
+			botoes[i].text = SaveData.CarregarCampo(i + 1, "nome") + " " + SaveData.CarregarCampo(i + 1, "TimeSave")
 
 func _on_inicia_1_pressed() -> void:
 	_start(1)

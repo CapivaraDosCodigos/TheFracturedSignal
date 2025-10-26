@@ -1,0 +1,7 @@
+[background arg="res://texture/tiles top down/Texture/TX Tileset Grass.png" fade="0.0"]
+join zeno left [mirrored="true"]
+zeno: oi, comoi vai
+- mal
+	zeno: ata
+- bem
+	zeno: ata 2

@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://bic33s886bpyf"]
 
 [ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_758y1"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="2_758y1"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="2_wqqmq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr1u4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px5ev"]
-atlas = ExtResource("2_758y1")
+atlas = ExtResource("2_wqqmq")
 region = Rect2(240, 816, 16, 16)
 
 [node name="Bala2D" type="CharacterBody2D"]

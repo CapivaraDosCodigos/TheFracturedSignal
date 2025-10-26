@@ -9,7 +9,11 @@ class_name PlayerData extends Resource
 
 @export_group("PlayerStarts")
 @export var Lv: int = 1
-@export var Life: int = 100
+@export var Life: int = 100:
+	set(value):
+		Life = value
+		if Life < 0:
+			Life = 0
 @export var Exp: int = 0
 
 @export_group("Dados das Propriedades")
@@ -104,6 +108,9 @@ func apply_damage(dano_base: int) -> void:
 	var dano_final = int(dano_base * (1.0 - reducao))
 	Life -= dano_final
 	#print(Life, " ", dano_final)
+
+func reset() -> void:
+	Life = maxlife
 
 func _to_string() -> String:
 	return Nome

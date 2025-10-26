@@ -7,5 +7,7 @@ class_name PanelPlayer
 @onready var life: Label = %life
 
 func _process(_delta: float) -> void:
-	var playerNew: PlayerData = Manager.PlayersAtuais[player]
-	life.text = str(playerNew.Life) + "/" + str(playerNew.maxlife)
+	if Manager.PlayersAtuais.has(player):
+		var playerNew: PlayerData = Manager.PlayersAtuais[player]
+		life.text = str(playerNew.Life) + "/" + str(playerNew.maxlife)
+	

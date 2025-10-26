@@ -7,7 +7,6 @@ class_name SpawnProjeteis
 @export var espera: float = 1.0
 
 func spawn(root: Node, time: int) -> void:
-	print(int(time / espera))
 	for i in range(1, int(time / espera)):
 		await get_tree().create_timer(espera).timeout
 		var balanew = bala.instantiate()

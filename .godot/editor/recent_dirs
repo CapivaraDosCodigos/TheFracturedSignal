@@ -1,5 +1,18 @@
-res://Areais/Batalha/scripts
+res://texture/objetos/items
+res://texture/PNG/funds
+res://texture/folderTres/BoxTexture
 res://texture/folderTres/texturas
+res://texture/PNG/icon
+res://
+res://texture/PNG/bordas UI
+res://texture/folderTres/materials
+res://shader
+res://texture/tiles top down/Texture
+res://texture/characters/dialogos
+res://texture/characters
+res://Godot/characters
+res://texture/PNG/bordas UI/Default/Border
+res://Areais/Batalha/scripts
 res://texture/PNG
 res://Godot/classes/personagens/niko
 res://Godot/classes/itens/armas
@@ -7,16 +20,4 @@ res://Godot/classes/itens/armaduras
 res://Godot/classes/itens/Inventorys
 res://texture/characters/Zeno's
 res://Godot/classes/personagens/niko/
-res://Godot/classes/itens/consumíveis
-res://Godot/Godot Scripts
-res://texture/paleta
-res://texture/folderTres/materials
-res://Godot/Godot Cenas
-res://Areais/Batalha/cenas
-res://texture/characters
-res://texture/font
-res://
-res://texture/folderTres/BoxTexture
-res://texture/objetos
 /storage/emulated/0/Documents/TheFracturedSignal/sons
-res://Characters/Players/scripts/menu

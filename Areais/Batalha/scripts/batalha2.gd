@@ -13,6 +13,7 @@ class_name Batalha2D extends Node2D
 @onready var DEF: Control = %panel4
 @onready var MRC: Control = %panel5
 @onready var battle_arena: NinePatchRect = %BATTLE_ARENA
+@onready var paneis_players: Array[PanelPlayer] = [ %PanelPlayer1, %PanelPlayer2, %PanelPlayer3, %PanelPlayer4 ]
 
 const MAX_ENENINES: int = 3
 
@@ -232,6 +233,8 @@ func adicionar_jogador(index: int, key: String) -> void:
 	playerinst.rootbatalha = self
 	playerinst.player = key
 	playerinst.position = personagens.playerMarker2D[index].position
+	paneis_players[index].player = key
+	paneis_players[index].visible = true
 	personagens.spritesP[index].position.x = playerinst.size_marker
 	personagens.add_child(playerinst)
 

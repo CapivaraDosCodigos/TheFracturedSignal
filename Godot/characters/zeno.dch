@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.13725491, 0.1882353, 0.44313726, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "normal",
+&"description": "cara",
+&"display_name": "Zeno",
+&"mirror": false,
+&"nicknames": ["Dr Zeno"],
+&"offset": Vector2(0, -1),
+&"portraits": {
+"normal": {
+"export_overrides": {
+"image": "\"res://texture/characters/nikotest.tres\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

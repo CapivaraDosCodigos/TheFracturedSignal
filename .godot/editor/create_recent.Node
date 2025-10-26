@@ -1,14 +1,14 @@
+VBoxContainer
+MarginContainer
+Sprite2D
 PersonagensBatalha2D
 NinePatchRect
-Sprite2D
 GuiTransition
 AnimationPlayer
 Label
 CanvasLayer
 Control
-MarginContainer
 ButtonUI
-VBoxContainer
 TextureRect
 ColorRect
 CPUParticles2D

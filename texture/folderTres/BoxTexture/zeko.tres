@@ -1,9 +1,9 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cflugrgbnk4cx"]
 
-[ext_resource type="Texture2D" uid="uid://bh3ncbh415jdm" path="res://texture/PNG/funds/fundoDiverso.png" id="1_bggm4"]
+[ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="1_2mwk8"]
 
 [resource]
-texture = ExtResource("1_bggm4")
+texture = ExtResource("1_2mwk8")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0

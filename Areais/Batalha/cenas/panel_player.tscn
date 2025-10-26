@@ -16,7 +16,6 @@ region = Rect2(0, 0, 96, 96)
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_qnv6k")
 script = ExtResource("2_lprbh")
-player = "Zeno"
 metadata/_custom_type_script = "uid://tv0jrm3ipvpe"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

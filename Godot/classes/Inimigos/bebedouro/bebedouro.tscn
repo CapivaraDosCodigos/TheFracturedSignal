@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
 [ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="4_tyq3r"]
 [ext_resource type="Script" uid="uid://cdr1vpvtwnywr" path="res://Godot/classes/Inimigos/SpawnProjeteis.gd" id="5_k5ax6"]
-[ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/objetos/attack 1 .png" id="5_rsb1r"]
+[ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/effects/attack 1 .png" id="5_rsb1r"]
 [ext_resource type="PackedScene" uid="uid://bic33s886bpyf" path="res://Areais/Batalha/cenas/balabebedouro1.tscn" id="6_htrfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
@@ -66,6 +66,7 @@ sprite_frames = SubResource("SpriteFrames_adxu8")
 frame_progress = 0.556025
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
+time = 10.0
 spawns = [NodePath("SpawnProjeteis")]
 metadata/_custom_type_script = "uid://kjhutov44bdn"
 

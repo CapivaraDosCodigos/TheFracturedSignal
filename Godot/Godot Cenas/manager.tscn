@@ -31,6 +31,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 
 [node name="Node" parent="CanvasL" instance=ExtResource("3_lxjte")]
+modulate = Color(0.79607844, 0.9137255, 1, 0.047058824)
 
 [node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://8sgdpebe3e0a"]
 
 [ext_resource type="Script" uid="uid://b87x0fkq7trfu" path="res://Characters/Players/scripts/ambição.gd" id="1_3xyvn"]
-[ext_resource type="Texture2D" uid="uid://cwryjra5dwabw" path="res://texture/font/alma.png" id="2_3xyvn"]
+[ext_resource type="Texture2D" uid="uid://cwryjra5dwabw" path="res://texture/PNG/icon/alma.png" id="2_3xyvn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
-radius = 9.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_frmhu"]
 

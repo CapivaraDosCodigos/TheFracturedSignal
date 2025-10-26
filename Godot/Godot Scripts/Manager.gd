@@ -3,7 +3,7 @@ extends Node
 #region variables
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME, SAVE_MENU}
-const GameStateString: Array[String] = ["MAP", "BATTLE", "CUTSCENES", "DIALOGUE", "BATTLE_MENU", "NOT_IN_THE_GAME", "SAVE_MENU"]
+var GameStateString := GameState.keys()
 const batalha2d: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn")
 
 @onready var fps_label: Label = %fps_label
@@ -11,8 +11,7 @@ const batalha2d: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn"
 @onready var audio: AudioPlayer = $AudioPlayerZ
 @onready var audio2: AudioPlayer = $AudioPlayerS
 
-@export var current_status: GameState = GameState.MAP:
-	set = change_state
+@export var current_status: GameState = GameState.MAP
 
 @export_range(0, 100) var volumedebug: int = 100
 
@@ -36,13 +35,11 @@ func change_state(estado: GameState) -> void:
 	current_status = estado
 
 func tocar_musica(caminho: String = "", volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1) -> void:
-	if canal == 1:
-		audio.tocar_musica(caminho, volume, loop, atraso)
-	elif canal == 2:
-		audio2.tocar_musica(caminho, volume, loop, atraso)
+	var canais = {1: audio, 2: audio2}
+	if canais.has(canal):
+		canais[canal].tocar_musica(caminho, volume, loop, atraso)
 	else:
-		push_warning("⚠️ Não existe canal" + str(canal))
-		return
+		push_warning("Canal %s inexistente!" % canal)
 
 func StartBatalha(batalha: DataBatalha, pos: Vector2 = Vector2.ZERO) -> void:
 	var batalhaInstantiante := batalha2d.instantiate()
@@ -50,7 +47,7 @@ func StartBatalha(batalha: DataBatalha, pos: Vector2 = Vector2.ZERO) -> void:
 	batalha.dungeons2D.iniciar_batalha()
 	batalhaInstantiante.batalha = batalha
 	batalhaInstantiante.global_position = pos
-	add_sibling(batalhaInstantiante)
+	get_tree().root.add_child(batalhaInstantiante)
 
 func DialogoTexture(texture: String = "", material: String = "") -> void:
 	if texture == "":
@@ -67,13 +64,13 @@ func SAVE(slot: int) -> void:
 	Data.Extras = Extras
 	Data.CurrentScene = CurrentScene
 	Data.CurrentPlayer = CurrentPlayerString
-	Data.CurrentInventory = CurrentInventory
-	Data.PlayersAtuais = PlayersAtuais
+	Data.CurrentInventory = CurrentInventory.duplicate(true)
+	Data.PlayersAtuais = PlayersAtuais.duplicate(true)
 	
 	SaveData.Salvar(slot, Data)
 
 func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
-	if not is_inside_tree(): await get_tree().process_frame
+	await get_tree().process_frame
 	_clear()
 	
 	Data = SaveData.Carregar(slot, temporada)
@@ -95,7 +92,7 @@ func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
 
 func Return_To_Title() -> void:
 	await get_tree().process_frame
-	_clear()
+	_clear(true)
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
 
 func Game_Over() -> void:
@@ -140,8 +137,8 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	#Start_Save(1, true)
-	var _shader_material := preload("res://texture/folderTres/materials/SAVE.tres")
-	var _path := "res://texture/objetos/16por6.png"
+	var _shader_material := preload("res://texture/folderTres/materials/preto_&_branco.tres")
+	var _path := "res://texture/PNG/icon/icon_sheet_32x32.png"
 	#var _path2 := "res://texture/PNG/funds/Border All 3.png"
 	#print(Starts.ZenoData.armorE)
 	#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)
@@ -165,10 +162,10 @@ func _clear(slotON: bool = false) -> void:
 	CurrentPlayerString = ""
 	CurrentInventory = null
 	
-	for test in PlayersAtuais.keys():
-		PlayersAtuais[test].Life = PlayersAtuais[test].maxlife
-	
+	for key in PlayersAtuais.keys():
+		PlayersAtuais[key].reset()
 	PlayersAtuais.clear()
+	
 	if not slotON:
 		CurrentSlot = 0
 		CurrentTemporada = 0
@@ -176,10 +173,9 @@ func _clear(slotON: bool = false) -> void:
 func _atualisar_propriedades():
 	print(PlayersAtuais)
 	
-	if PlayersAtuais.has(CurrentPlayerString):
-		CurrentPlayer = PlayersAtuais[CurrentPlayerString]
-	else:
-		push_error("Chave '%s' não existe em PlayersAtuais" % CurrentPlayerString)
+	CurrentPlayer = PlayersAtuais.get(CurrentPlayerString, null)
+	if CurrentPlayer == null:
+		push_warning("CurrentPlayerString inválido: %s" % CurrentPlayerString)
 	
 	for key in PlayersAtuais.keys():
 		PlayersAtuais[key].update_properties()
