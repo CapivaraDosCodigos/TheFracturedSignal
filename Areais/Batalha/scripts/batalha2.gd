@@ -3,41 +3,41 @@ class_name Batalha2D extends Node2D
 
 #region variables
 
-@export var anim: AnimationPlayer
-@export var personagens: PersonagensBatalha2D
-@export var itemMenu: MarginContainer
-
-@onready var ATK: Control = %panel1
-@onready var ITM: Control = %panel2
-@onready var EXE: Control = %panel3
-@onready var DEF: Control = %panel4
-@onready var MRC: Control = %panel5
-@onready var battle_arena: NinePatchRect = %BATTLE_ARENA
-@onready var paneis_players: Array[PanelPlayer] = [ %PanelPlayer1, %PanelPlayer2, %PanelPlayer3, %PanelPlayer4 ]
-
 const MAX_ENENINES: int = 3
 
-var last_state = null
-var submenu_resultados: Dictionary
-var PlayersDIR: Dictionary[String, PlayerData]
-var panel_dict: Dictionary[String, Control]
-var batalha: DataBatalha
-var panels: Array[Control]
-var selecoes: Dictionary[String, String] = {}
+@onready var panel_dict: Dictionary[String, Control] = { "ATK": %ATK, "ITM": %ITM, "EXE": %EXE, "DEF": %DEF, "MRC": %MRC }
+@onready var paneis_players: Array[PanelPlayer] = [ %PanelPlayer1, %PanelPlayer2, %PanelPlayer3, %PanelPlayer4 ]
+@onready var inimigosMenu: batalha_submenu_enemies = $BatalhaCanvas/Control/ControlBASE/inimigos
+@onready var itemMenu: batalha_submenu_itens = $BatalhaCanvas/Control/ControlBASE/itens
+@onready var panels: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %MRC ]
+@onready var personagens: PersonagensBatalha2D = $BatalhaCanvas/Personagens
+@onready var battle_arena: NinePatchRect = %BATTLE_ARENA
+@onready var anim: AnimationPlayer = $AnimationPanel
 
-var enemiesNodes: Array[EnemiesBase2D] = []
 var playersNodes: Array[PlayerBase2D] = []
-
-var players: int = 1
-var current_index: int = 0
-var jogador_atual: String = ""
+var itens_locais: Array[DataItem] = []
 var player_keys: Array[String] = []
 
-var selecao_ativa: bool = false
+var itens_usados_temp: Dictionary[String, DataItem] = {}
+var enemiesNodes: Dictionary[int, EnemiesBase2D] = {}
+var PlayersDIR: Dictionary[String, PlayerData] = {}
+var selecoes: Dictionary[String, String] = {}
+var submenu_resultados: Dictionary = {}
+
+var batalha: DataBatalha = null
+var last_state = null
+
+var jogador_atual: String = ""
+
+var current_index: int = 0
+var players: int = 0
+
 var selecao_finalizada: bool = false
+var selecao_ativa: bool = false
 var submenu_ativo: bool = false
 
 #endregion
+
 
 func _ready() -> void:
 	while batalha.inimigos.size() > MAX_ENENINES:
@@ -53,9 +53,6 @@ func _ready() -> void:
 	for i in range(batalha.inimigos.size()):
 		adicionar_inimigo(batalha.inimigos[i], i)
 	
-	panels = [ATK, ITM, EXE, DEF, MRC]
-	panel_dict = {"ATK": ATK, "ITM": ITM, "EXE": EXE, "DEF": DEF, "MRC": MRC}
-
 	await get_tree().create_timer(1.5).timeout
 	DialogueManager.show_example_dialogue_balloon(load(batalha.dialogo), batalha.start_dialogo)
 	Manager.tocar_musica(batalha.caminho, batalha.volume, batalha.loop)
@@ -66,6 +63,7 @@ func _process(_delta: float) -> void:
 		if current_state == Manager.GameState.BATTLE:
 			anim.play("S_panel")
 			_exe_atacar()
+			
 		elif current_state == Manager.GameState.BATTLE_MENU:
 			anim.play("E_panel")
 			_iniciar_selecao()
@@ -86,15 +84,32 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Right"):
 		current_index = min(current_index + 1, panels.size() - 1)
 		_focus_current_panel()
+		
 	elif event.is_action_pressed("Left"):
 		current_index = max(current_index - 1, 0)
 		_focus_current_panel()
+		
 	elif event.is_action_pressed("confirm"):
 		_abrir_submenu(panels[current_index])
+		
 	elif event.is_action_pressed("cancel"):
 		var idx = player_keys.find(jogador_atual)
 		if idx > 0 and not selecao_finalizada:
-			jogador_atual = player_keys[idx - 1]
+			var jogador_cancelado = player_keys[idx - 1]
+
+			if itens_usados_temp.has(jogador_cancelado):
+				var item_cancelado: DataItem = itens_usados_temp[jogador_cancelado]
+				itens_locais.append(item_cancelado)
+				itens_usados_temp.erase(jogador_cancelado)
+				itemMenu.atualizar_itemlist(itens_locais)
+	
+			if submenu_resultados.has(jogador_cancelado):
+				submenu_resultados.erase(jogador_cancelado)
+				
+			if selecoes.has(jogador_cancelado):
+				selecoes.erase(jogador_cancelado)
+	
+			jogador_atual = jogador_cancelado
 			var acao = selecoes.get(jogador_atual, "")
 			current_index = panels.find(panel_dict.get(acao, panels[0]))
 			_focus_current_panel()
@@ -103,10 +118,16 @@ func _iniciar_selecao():
 	selecao_ativa = true
 	selecao_finalizada = false
 	current_index = 0
-	jogador_atual = player_keys[0] if player_keys.size() > 0 else ""
 	selecoes.clear()
 	submenu_resultados.clear()
-	itemMenu.atualizar_itemlist()
+	itens_usados_temp.clear()
+
+	for i in Manager.PlayersAtuais.keys():
+		Manager.PlayersAtuais[i].isDefesa = false
+
+	itens_locais = Manager.CurrentInventory.get_in_items_batalha().duplicate(true)
+	itemMenu.atualizar_itemlist(itens_locais)
+	jogador_atual = _proximo_jogador_valido(0)
 	_focus_current_panel()
 
 func _abrir_submenu(panel: Control) -> void:
@@ -118,33 +139,49 @@ func _abrir_submenu(panel: Control) -> void:
 					_confirmar_acao(nome)
 				"ATK":
 					submenu_ativo = true
-					var resultado = await personagens.menuPersonagens(true)
+					var resultado = await inimigosMenu.get_inimigo(enemiesNodes)
 					if resultado < 0:
 						_focus_current_panel()
 						_fechar_submenu()
 						return
-						
+	
 					submenu_resultados[jogador_atual] = resultado
 					_confirmar_acao(nome, resultado)
 					_fechar_submenu()
 				"ITM":
 					submenu_ativo = true
-					var resultado = await itemMenu.itemsIvt()
-					if resultado < 0:
+	
+					if itens_locais.is_empty():
 						_focus_current_panel()
 						_fechar_submenu()
 						return
-						
-					submenu_resultados[jogador_atual] = resultado
-					_confirmar_acao(nome, resultado)
+	
+					itemMenu.atualizar_itemlist(itens_locais)
+					var resultado = await itemMenu.itemsIvt()
+	
+					if resultado < 0 or resultado >= itens_locais.size():
+						_focus_current_panel()
+						_fechar_submenu()
+						return
+	
+					var item_escolhido: DataItem = itens_locais[resultado]
+					submenu_resultados[jogador_atual] = item_escolhido
+					itens_usados_temp[jogador_atual] = item_escolhido
+	
+					itens_locais.erase(item_escolhido)
+					itemMenu.atualizar_itemlist(itens_locais)
+	
+					_confirmar_acao(nome)
 					_fechar_submenu()
 
 func _confirmar_acao(nome: String, _dados_extra = null) -> void:
 	selecoes[jogador_atual] = nome
 	var idx = player_keys.find(jogador_atual)
 	
-	if idx >= 0 and idx < player_keys.size() - 1:
-		jogador_atual = player_keys[idx + 1]
+	var proximo_idx = idx + 1
+	jogador_atual = _proximo_jogador_valido(proximo_idx)
+
+	if jogador_atual != "":
 		current_index = 0
 		_focus_current_panel()
 	else:
@@ -163,13 +200,9 @@ func _act(act: String, key: String) -> void:
 			
 		var resultado = submenu_resultados[key]
 		enemiesNodes[resultado].apply_damage(Manager.PlayersAtuais[key].maxdamage)
-		
-		#for enemie in enemiesNodes:
-			#enemie.apply_damage(randi_range(Manager.PlayersAtuais[key].maxdamage, Manager.PlayersAtuais[key].mindamage))
-			#enemie.apply_damage(Manager.PlayersAtuais[key].maxdamage)
 	
 	elif act == "DEF":
-		pass
+		Manager.PlayersAtuais[key].isDefesa = true
 	
 	elif act == "EXE":
 		pass
@@ -177,13 +210,16 @@ func _act(act: String, key: String) -> void:
 	elif act == "ITM":
 		if not submenu_resultados.has(key):
 			return
-			
-		var resultado = submenu_resultados[key]
-		#if resultado["index"] < Manager.CurrentInventory.get_in_items_batalha().size():
+	
+		var item_usado: DataItem = submenu_resultados[key]
+		if item_usado == null:
+			return
+	
 		for player in Manager.PlayersAtuais.keys():
-			Manager.CurrentInventory.use_item_in_batalha(resultado, player)
-			
-		Manager.CurrentInventory.remove_item_in_batalha(resultado)
+			if item_usado.has_method("usar"):
+				item_usado.usar(player)
+	
+		Manager.CurrentInventory.remove_for_item(item_usado)
 		itemMenu.atualizar_itemlist()
 	
 	elif act == "MRC":
@@ -205,10 +241,25 @@ func _fechar_submenu() -> void:
 func _exe_atacar():
 	if enemiesNodes.is_empty():
 		return
-	for inimigo in enemiesNodes:
-		inimigo.atacar()
-	await get_tree().create_timer(enemiesNodes.pick_random().time).timeout
+	for i in enemiesNodes.keys():
+		enemiesNodes[i].atacar()
+		
+	await get_tree().create_timer(enemiesNodes.values().pick_random().time).timeout
 	Manager.change_state(Manager.GameState.BATTLE_MENU)
+
+func _verificar_dead() -> bool:
+	return playersNodes.all(func(p): return p.fallen)
+
+func _proximo_jogador_valido(inicio: int) -> String:
+	for i in range(inicio, player_keys.size()):
+		var key = player_keys[i]
+		var player_data: PlayerData = Manager.PlayersAtuais[key]
+		
+		if not player_data.fallen and not player_data.skip_turn:
+			return key
+	
+	return ""
+
 
 func end_batalha() -> void:
 	if enemiesNodes.size() > 0:
@@ -216,12 +267,14 @@ func end_batalha() -> void:
 	
 	await get_tree().create_timer(2.0).timeout
 	Manager.tocar_musica()
+	set_process(false)
 	batalha.dungeons2D.end_batalha.emit()
 	queue_free()
 
 func dead_batalha() -> void:
 	await get_tree().create_timer(0.0).timeout
 	Manager.tocar_musica()
+	set_process(false)
 	Manager.Game_Over()
 	queue_free()
 
@@ -240,27 +293,23 @@ func adicionar_jogador(index: int, key: String) -> void:
 
 func adicionar_inimigo(inimigo: PackedScene, intex: int) -> void:
 	var inim: EnemiesBase2D = inimigo.instantiate()
-	enemiesNodes.append(inim)
-	inim.id = enemiesNodes.size() - 1
+	var chave: int = intex
+	
+	while enemiesNodes.has(chave):
+		chave += 1
+		
+	inim.id = chave
 	inim.rootbatalha = self
 	inim.rootobjeto = battle_arena.objetos
 	inim.position = personagens.inimigoMarker2D[intex].position
 	personagens.spritesI[intex].position.x = inim.size_marker
 	personagens.add_child(inim)
+	enemiesNodes[chave] = inim
 	inim.play("default")
 
 func remover_jogador(_key: String) -> void:
-	pass
+	players -= 1
 
 func remover_inimigo(index: int) -> void:
-	if enemiesNodes.size() > 0:
-		enemiesNodes.remove_at(index)
-
-func _verificar_dead() -> bool:
-	var play: int = 0
-	for i in playersNodes:
-		if i.fallen:
-			play += 1
-	if play == playersNodes.size():
-		return true
-	return false
+	if enemiesNodes.has(index):
+		enemiesNodes.erase(index)

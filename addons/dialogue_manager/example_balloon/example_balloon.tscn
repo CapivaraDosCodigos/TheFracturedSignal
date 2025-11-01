@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bs4msvygwgrdh"]
+[gd_scene load_steps=19 format=3 uid="uid://bs4msvygwgrdh"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -11,7 +11,8 @@
 [ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folderTres/BoxTexture/example_balloon.tres" id="8_wqs7j"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="9_wbrl0"]
 [ext_resource type="Material" uid="uid://c0q1ahwqu3qem" path="res://texture/folderTres/materials/preto_&_branco.tres" id="10_83g4i"]
-[ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="11_icj72"]
+[ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="11_wbrl0"]
+[ext_resource type="Texture2D" uid="uid://dwc0h6lg6y3kf" path="res://texture/characters/dialogos/bebedouro.tres" id="13_wbrl0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v42gu"]
 texture = ExtResource("8_v42gu")
@@ -171,12 +172,12 @@ button_mask = 0
 text = "Response example"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
-visible = false
 z_index = 1
+material = ExtResource("10_83g4i")
 custom_minimum_size = Vector2(116, 116)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("11_icj72")
+texture = ExtResource("11_wbrl0")
 region_rect = Rect2(320, 192, 64, 64)
 patch_margin_left = 16
 patch_margin_top = 16
@@ -196,6 +197,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("13_wbrl0")
 expand_mode = 1
 stretch_mode = 5
 

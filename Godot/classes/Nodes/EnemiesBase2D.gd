@@ -16,8 +16,8 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 @export_group("nodes")
 @export var spawns: Array[SpawnProjeteis]
 
-var rootobjeto: Node2D
-var rootbatalha: Batalha2D
+var rootobjeto: Node2D = null
+var rootbatalha: Batalha2D = null
 var id: int = 0
 
 func _process(_delta: float) -> void:

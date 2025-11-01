@@ -30,7 +30,6 @@ Lila: gostaria de comprar alguma coisa?
 	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
 - sim!
 	Lila: bom...[wait=1] eu ainda não vendo nada, ainda [next=auto]
-do Starts.Current_player = load("res://Godot/classes/personagens/niko.tres")
 do Manager.DialogoTexture()
 => DialogueResource/Map
 

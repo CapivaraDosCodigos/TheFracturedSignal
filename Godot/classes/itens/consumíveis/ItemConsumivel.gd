@@ -11,6 +11,5 @@ enum Tipo { CuraHP, AumentaSP }
 
 func usar(player: String) -> void:
 	if efeito == Tipo.CuraHP:
-		print(player)
 		Manager.PlayersAtuais[player].Life += cura
 		

@@ -3,7 +3,6 @@ class_name PlayerData extends Resource
 
 @export_group("GamePLayer")
 @export var Nome: String = "Player"
-@export var Classe: ClassePlayer = ClassePlayer.new()
 @export_file("*.*tscn") var PlayerBatalhaPath: String
 @export_file("*.*tscn") var ObjectPlayerPath: String
 
@@ -36,19 +35,22 @@ class_name PlayerData extends Resource
 var maxlife: int; var attack: int
 var defense: int; var resource: int
 var maxdamage: int; var mindamage: int
+var isDefesa: bool = false
+var skip_turn: bool = false
+var fallen: bool = false
 
 func update_properties() -> void:
-	Lv = Classe.calcular_level(Exp, base_sp, multiplier_sp)
+	Lv = CalculatePlayer.calcular_level(Exp, base_sp, multiplier_sp)
 	var extra_life = armorE.extra_life + weaponsE.extra_life
-	maxlife = Classe.signal_calculator(base_life, growth_rate_life, Lv, extra_life)
+	maxlife = CalculatePlayer.signal_calculator(base_life, growth_rate_life, Lv, extra_life)
 	var extra_defense = armorE.defesa + weaponsE.extra_defense
-	defense = Classe.signal_calculator(base_defense, growth_rate_defense, Lv, extra_defense)
+	defense = CalculatePlayer.signal_calculator(base_defense, growth_rate_defense, Lv, extra_defense)
 	var extra_resource = armorE.extra_resource + weaponsE.extra_resource
-	resource = Classe.signal_calculator(base_resource, growth_rate_resource, Lv, extra_resource)
+	resource = CalculatePlayer.signal_calculator(base_resource, growth_rate_resource, Lv, extra_resource)
 	var extra_attack = armorE.extra_strength + weaponsE.extra_strength
-	attack = Classe.signal_calculator(base_attack, growth_rate_attack, Lv, extra_attack)
-	maxdamage = Classe.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
-	mindamage = Classe.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
+	attack = CalculatePlayer.signal_calculator(base_attack, growth_rate_attack, Lv, extra_attack)
+	maxdamage = CalculatePlayer.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
+	mindamage = CalculatePlayer.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
 func equip_armor(inv: Inventory, slot: int) -> void:
 	if not inv._is_slot_valid(slot):
@@ -97,17 +99,19 @@ func unequip_weapon(inv: Inventory) -> void:
 	weaponsE = null
 
 func apply_damage(dano_base: int) -> void:
+	var reducao = log(defense + 1.0) / 10.0
+	var dano_final = int(dano_base * (1.0 - reducao))
+	
+	if isDefesa:
+		dano_final = int(dano_final * 0.5)
+	
+	Life -= dano_final
+	
 	#var reducao = defense / (defense + 10.0)
 	#var dano_final = int(dano_base * (1.0 - reducao))
-	
 	#var reducao = defense * 0.05
 	#reducao = clamp(reducao, 0.0, 0.5)
 	#var dano_final = int(dano_base * (1.0 - reducao))
-	
-	var reducao = log(defense + 1.0) / 10.0
-	var dano_final = int(dano_base * (1.0 - reducao))
-	Life -= dano_final
-	#print(Life, " ", dano_final)
 
 func reset() -> void:
 	Life = maxlife

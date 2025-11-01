@@ -9,6 +9,7 @@
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_cconj")
+current_status = 5
 
 [node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_cconj")

@@ -11,9 +11,10 @@ func _process(_delta: float) -> void:
 	if current_state != last_state:
 		if current_state == Manager.GameState.BATTLE:
 			ambicao.position = ambicao_make.position
-			ambicao.visible = true
+			#ambicao.visible = true
 			
 		elif current_state == Manager.GameState.BATTLE_MENU:
-			ambicao.visible = false
+			pass
+			#ambicao.visible = false
 			
 		last_state = current_state

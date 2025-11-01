@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Fractured Signal"
-config/version="alfa 2.0"
+config/version="alfa 3.0"
 run/main_scene="uid://cwcyxp7jea15x"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.5", "GL Compatibility")

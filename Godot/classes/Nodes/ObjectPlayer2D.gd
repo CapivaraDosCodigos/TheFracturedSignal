@@ -140,24 +140,24 @@ func _input_direction() -> Vector2:
 
 func _update_camada() -> void:
 	for i in [3, 4, 5]:
-		set_collision_layer_value(i, false)
+		#set_collision_layer_value(i, false)
 		set_collision_mask_value(i, false)
 	
 	if 1 == camada:
 		set_collision_mask_value(3, true)
-		set_collision_layer_value(3, true)
+		#set_collision_layer_value(3, true)
 		z_index = -2
 		#modulate = Color(0, 1, 0)
 		
 	elif 2 == camada:
 		set_collision_mask_value(4, true)
-		set_collision_layer_value(4, true)
+		#set_collision_layer_value(4, true)
 		z_index = 1
 		#modulate = Color(1, 1, 0)
 		
 	elif 3 == camada:
 		set_collision_mask_value(5, true)
-		set_collision_layer_value(5, true)
+		#set_collision_layer_value(5, true)
 		z_index = 3
 		#modulate = Color(1, 0, 0)
 

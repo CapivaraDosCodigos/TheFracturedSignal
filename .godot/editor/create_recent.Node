@@ -1,5 +1,11 @@
-VBoxContainer
+batalha_submenu_enemies
+VSlider
+HScrollBar
+VScrollBar
+batalha_submenu_itens
 MarginContainer
+Control
+VBoxContainer
 Sprite2D
 PersonagensBatalha2D
 NinePatchRect
@@ -7,8 +13,3 @@ GuiTransition
 AnimationPlayer
 Label
 CanvasLayer
-Control
-ButtonUI
-TextureRect
-ColorRect
-CPUParticles2D

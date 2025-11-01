@@ -13,12 +13,14 @@ func _process(_delta: float) -> void:
 	
 	if Manager.PlayersAtuais[player].Life > 0:
 		fallen = false
+		Manager.PlayersAtuais[player].fallen = false
 
 func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
 
 func _dead() -> void:
 	fallen = true
+	Manager.PlayersAtuais[player].fallen = true
 
 func act_in_player(_act: String) -> void:
 	#print(nome + " com preguisa")

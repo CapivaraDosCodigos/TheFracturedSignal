@@ -70,11 +70,10 @@ func remove_for_item(item: DataItem) -> void:
 	if item == null:
 		return
 	
-	for iten in range(limite):
-		if items[iten] == item:
-			items[iten] = null
-			_atualisar_espaço()
-			return
+	var index := items.find(item)
+	if index != -1:
+		items[index] = null
+		_atualisar_espaço()
 
 func remove_item_in_batalha(index: int) -> void:
 	var new_items: Array[DataItem] = get_in_items_batalha()

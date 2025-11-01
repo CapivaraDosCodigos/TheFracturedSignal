@@ -26,15 +26,6 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn
-res://Areais/Batalha/cenas/battle_arena.tscn
-res://Godot/classes/personagens/PlayerData.gd
-res://Godot/classes/Inimigos/SpawnProjeteis.gd
-res://Areais/Batalha/cenas/balabebedouro1.tscn
-res://Godot/Godot Scripts/Global.gd
-res://Godot/Godot Scripts/Manager.gd
-res://Godot/classes/DATAS/SaveData.gd
-res://Godot/classes/Nodes/audio_player.gd
-res://Godot/Godot Scripts/intro2.gd
-res://Godot/Godot Cenas/manager.tscn
-res://addons/dialogue_manager/example_balloon/example_balloon.tscn
+res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
+res://Areais/Batalha/scripts/batalha2.gd
+res://Areais/Batalha/scripts/batalha_submenu_itens.gd

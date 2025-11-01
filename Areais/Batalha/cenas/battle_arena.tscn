@@ -74,6 +74,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Static2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 9
 

@@ -179,4 +179,3 @@ func _atualisar_propriedades():
 	
 	for key in PlayersAtuais.keys():
 		PlayersAtuais[key].update_properties()
-		print(PlayersAtuais[key].Life)

@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cwryjra5dwabw" path="res://texture/PNG/icon/alma.png" id="2_3xyvn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
-radius = 8.0
+radius = 9.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_frmhu"]
+radius = 10.5
 
 [node name="Ambição" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -14,6 +15,7 @@ collision_mask = 9
 script = ExtResource("1_3xyvn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_uryig")
 
@@ -24,7 +26,9 @@ texture = ExtResource("2_3xyvn")
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_frmhu")
+debug_color = Color(0.0043103276, 0.06785011, 0.70196074, 0.41960785)
 
 [connection signal="body_entered" from="Area2D" to="." method="_apply_damage"]

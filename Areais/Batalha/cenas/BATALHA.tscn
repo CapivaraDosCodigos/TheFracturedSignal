@@ -12,10 +12,11 @@
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="9_6s2d6"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_pblfg"]
 [ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://texture/folderTres/BoxTexture/intro.tres" id="11_1glvl"]
+[ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://texture/folderTres/theme_BATALHA.tres" id="11_ehcem"]
 [ext_resource type="PackedScene" uid="uid://b47uqjy5sunba" path="res://Areais/Batalha/cenas/panel_player.tscn" id="12_1glvl"]
-[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu.gd" id="13_rkhsf"]
+[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu_itens.gd" id="13_rkhsf"]
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="14_6ohf0"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="14_i253q"]
+[ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/cenas/batalha_submenu_enemies.gd" id="17_ehcem"]
 
 [sub_resource type="Resource" id="Resource_s0ely"]
 script = ExtResource("4_ky1x7")
@@ -49,14 +50,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/path = NodePath("Control/ControlBASE/MarginContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 464), Vector2(0, 352)]
+"values": [Vector2(0, 467), Vector2(0, 352)]
 }
 
 [sub_resource type="Animation" id="Animation_h7tth"]
@@ -88,7 +89,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/path = NodePath("Control/ControlBASE/MarginContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -127,14 +128,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/path = NodePath("Control/ControlBASE/MarginContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 352), Vector2(0, 464)]
+"values": [Vector2(0, 352), Vector2(0, 467)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nt1gt"]
@@ -147,12 +148,6 @@ _data = {
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
 atlas = ExtResource("14_6ohf0")
 region = Rect2(96, 720, 16, 16)
-
-[sub_resource type="LabelSettings" id="LabelSettings_h7tth"]
-font = ExtResource("8_4jxlp")
-font_size = 64
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq6de"]
 atlas = ExtResource("14_6ohf0")
@@ -170,12 +165,9 @@ region = Rect2(112, 656, 16, 16)
 atlas = ExtResource("14_6ohf0")
 region = Rect2(176, 0, 16, 16)
 
-[node name="Batalha2D" type="Node2D" node_paths=PackedStringArray("anim", "personagens", "itemMenu")]
+[node name="Batalha2D" type="Node2D"]
 editor_description = "NÃO ABRIR ESSE NEGÓCIO DIRETAMENTE "
 script = ExtResource("1_wuibh")
-anim = NodePath("AnimationPanel")
-personagens = NodePath("BatalhaCanvas/Personagens")
-itemMenu = NodePath("BatalhaCanvas/Control/VBoxContainer/HBoxContainer/itens")
 metadata/_custom_type_script = "uid://0hjngdsxlm2y"
 metadata/_edit_vertical_guides_ = [-112.0]
 
@@ -283,336 +275,218 @@ offset_top = 111.0
 offset_right = 576.0
 offset_bottom = 255.0
 
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
-z_index = 5
-custom_minimum_size = Vector2(0, 100)
+[node name="ControlBASE" type="Control" parent="BatalhaCanvas/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="itens" type="PanelContainer" parent="BatalhaCanvas/Control/ControlBASE"]
+visible = false
+z_index = 9
 layout_mode = 0
-offset_top = 540.0
-offset_right = 1152.0
-offset_bottom = 727.99963
-size_flags_vertical = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BatalhaCanvas/Control/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Panel" type="Panel" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("11_1glvl")
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer/MarginContainer"]
-z_index = 3
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-alignment = 1
-
-[node name="PanelPlayer1" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="PanelPlayer2" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="PanelPlayer3" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="PanelPlayer4" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 10
-theme_override_constants/separation = 4
-
-[node name="panel1" type="Button" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-mouse_filter = 2
-theme_override_fonts/font = ExtResource("8_4jxlp")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = ExtResource("10_pblfg")
-theme_override_styles/focus = ExtResource("9_6s2d6")
-button_mask = 0
-expand_icon = true
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel1/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_eohca")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel1/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "ATK"
-label_settings = SubResource("LabelSettings_h7tth")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="panel2" type="Button" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-mouse_filter = 2
-theme_override_styles/normal = ExtResource("10_pblfg")
-theme_override_styles/focus = ExtResource("9_6s2d6")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel2/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_fq6de")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "ITM"
-label_settings = SubResource("LabelSettings_h7tth")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="panel3" type="Button" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-theme_override_styles/normal = ExtResource("10_pblfg")
-theme_override_styles/focus = ExtResource("9_6s2d6")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel3/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_ucvin")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel3/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "EXE"
-label_settings = SubResource("LabelSettings_h7tth")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="panel4" type="Button" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-mouse_filter = 2
-theme_override_styles/normal = ExtResource("10_pblfg")
-theme_override_styles/focus = ExtResource("9_6s2d6")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel4/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_otx5r")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel4/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "DEF"
-label_settings = SubResource("LabelSettings_h7tth")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="panel5" type="Button" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 1
-mouse_filter = 2
-theme_override_styles/normal = ExtResource("10_pblfg")
-theme_override_styles/focus = ExtResource("9_6s2d6")
-button_mask = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel5/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="icone" type="TextureRect" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("AtlasTexture_y71rf")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/MarginContainer/VBoxContainer/HBoxContainer/panel5/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "MRC"
-label_settings = SubResource("LabelSettings_h7tth")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BatalhaCanvas/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/VBoxContainer"]
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="itens" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-script = ExtResource("13_rkhsf")
-
-[node name="PanelContainer" type="PanelContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/itens"]
-layout_mode = 2
+offset_left = 16.0
+offset_top = 354.0
+offset_right = 1136.0
+offset_bottom = 536.0
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("10_pblfg")
+script = ExtResource("13_rkhsf")
+metadata/_custom_type_script = "uid://c2dkrc2m800uw"
 
-[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/itens/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/ControlBASE/itens"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer/itens/PanelContainer/MarginContainer"]
-unique_name_in_owner = true
+[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/ControlBASE/itens/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
-theme_override_colors/font_color = Color(0.262745, 0.52549, 0.894118, 1)
-theme_override_colors/font_selected_color = Color(0.466667, 0.886275, 0.827451, 1)
-theme_override_colors/font_outline_color = Color(0.137255, 0.188235, 0.443137, 1)
-theme_override_colors/guide_color = Color(0.0823529, 0.113725, 0.266667, 1)
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 32
-theme_override_constants/outline_size = 16
-theme_override_constants/icon_margin = 16
-theme_override_fonts/font = ExtResource("8_4jxlp")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/selected = ExtResource("14_i253q")
-theme_override_styles/selected_focus = ExtResource("14_i253q")
+theme = ExtResource("11_ehcem")
+max_columns = 4
+same_column_width = true
+fixed_column_width = 260
 icon_scale = 1.6
-fixed_icon_size = Vector2i(16, 16)
+fixed_icon_size = Vector2i(32, 32)
 
-[node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/ControlBASE"]
+z_index = 5
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_top = 540.0
+offset_right = 1152.0
+offset_bottom = 732.0005
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="BatalhaCanvas/Control/VBoxContainer"]
+[node name="Panel" type="Panel" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("11_1glvl")
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel/MarginContainer"]
+z_index = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="PanelPlayer1" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelPlayer2" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelPlayer3" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelPlayer4" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("12_1glvl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="ATK" type="Button" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
+theme_override_colors/font_focus_color = Color(0.6295736, 0.6295736, 0.6295736, 1)
+theme_override_fonts/font = ExtResource("8_4jxlp")
+theme_override_font_sizes/font_size = 64
+theme_override_icons/icon = SubResource("AtlasTexture_eohca")
+theme_override_styles/normal = ExtResource("10_pblfg")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+button_mask = 0
+text = "ATK"
+expand_icon = true
+
+[node name="ITM" type="Button" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
+theme_override_colors/font_focus_color = Color(0.6295736, 0.6295736, 0.6295736, 1)
+theme_override_fonts/font = ExtResource("8_4jxlp")
+theme_override_font_sizes/font_size = 64
+theme_override_icons/icon = SubResource("AtlasTexture_fq6de")
+theme_override_styles/normal = ExtResource("10_pblfg")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+button_mask = 0
+text = "ITM"
+expand_icon = true
+
+[node name="EXE" type="Button" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_colors/font_focus_color = Color(0.6295736, 0.6295736, 0.6295736, 1)
+theme_override_fonts/font = ExtResource("8_4jxlp")
+theme_override_font_sizes/font_size = 64
+theme_override_icons/icon = SubResource("AtlasTexture_ucvin")
+theme_override_styles/normal = ExtResource("10_pblfg")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+button_mask = 0
+text = "EXE"
+expand_icon = true
+
+[node name="DEF" type="Button" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
+theme_override_colors/font_focus_color = Color(0.6295736, 0.6295736, 0.6295736, 1)
+theme_override_fonts/font = ExtResource("8_4jxlp")
+theme_override_font_sizes/font_size = 64
+theme_override_icons/icon = SubResource("AtlasTexture_otx5r")
+theme_override_styles/normal = ExtResource("10_pblfg")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+button_mask = 0
+text = "DEF"
+expand_icon = true
+
+[node name="MRC" type="Button" parent="BatalhaCanvas/Control/ControlBASE/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+mouse_filter = 2
+theme_override_colors/font_focus_color = Color(0.6295736, 0.6295736, 0.6295736, 1)
+theme_override_fonts/font = ExtResource("8_4jxlp")
+theme_override_font_sizes/font_size = 64
+theme_override_icons/icon = SubResource("AtlasTexture_y71rf")
+theme_override_styles/normal = ExtResource("10_pblfg")
+theme_override_styles/focus = ExtResource("9_6s2d6")
+button_mask = 0
+text = "MRC"
+expand_icon = true
+
+[node name="inimigos" type="PanelContainer" parent="BatalhaCanvas/Control/ControlBASE"]
+visible = false
+z_index = 9
+layout_mode = 0
+offset_left = 16.0
+offset_top = 424.0
+offset_right = 236.0
+offset_bottom = 536.0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("10_pblfg")
+script = ExtResource("17_ehcem")
+metadata/_custom_type_script = "uid://dibssswvswx5c"
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/ControlBASE/inimigos"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="BatalhaCanvas/Control/ControlBASE/inimigos/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme = ExtResource("11_ehcem")
+theme_override_constants/v_separation = 16
+max_columns = 4
+same_column_width = true
+fixed_column_width = 256
+icon_scale = 1.6
+fixed_icon_size = Vector2i(32, 32)
