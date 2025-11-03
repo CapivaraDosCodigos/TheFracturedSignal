@@ -4,7 +4,7 @@ extends Node
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME, SAVE_MENU}
 var GameStateString := GameState.keys()
-const batalha2d: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn")
+const batalha2d: PackedScene = preload("res://Areais/Batalha/cenas/SIMPLES_BATALHA.tscn")
 
 @onready var fps_label: Label = %fps_label
 @onready var Menu: CanvasLayer = $MENU
@@ -136,9 +136,10 @@ func _process(_delta: float) -> void:
 		Body = null
 
 func _ready() -> void:
-	#Start_Save(1, true)
-	var _shader_material := preload("res://texture/folderTres/materials/preto_&_branco.tres")
-	var _path := "res://texture/PNG/icon/icon_sheet_32x32.png"
+	pass
+	#Start_Save(1, 1, true)
+	#var _shader_material := preload("res://texture/folderTres/materials/preto_&_branco.tres")
+	#var _path := "res://texture/PNG/icon/icon_sheet_32x32.png"
 	#var _path2 := "res://texture/PNG/funds/Border All 3.png"
 	#print(Starts.ZenoData.armorE)
 	#Database.equip_armor(Starts.InvData, Starts.ZenoData, 2)

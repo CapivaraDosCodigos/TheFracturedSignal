@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bdro6kmv5j603" path="res://Godot/classes/Nodes/AreaCamada2D.gd" id="3_gnciw"]
 [ext_resource type="PackedScene" uid="uid://bgs8qnmsvgs1g" path="res://Characters/enemies/bebedouro/bebedouro.tscn" id="3_oq4xn"]
 [ext_resource type="TileSet" uid="uid://b371rfq2683pb" path="res://texture/folderTres/T1B.tres" id="4_3gyo0"]
-[ext_resource type="PackedScene" uid="uid://h5ek2buto4br" path="res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn" id="4_ddk66"]
 [ext_resource type="Texture2D" uid="uid://bpems8kj61h0w" path="res://texture/tiles top down/texture3/chão.png" id="4_t2i34"]
 [ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="4_t34vy"]
 [ext_resource type="Texture2D" uid="uid://bgx0cr6tpq1mn" path="res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png" id="5_3gyo0"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cx0gouswnba3i" path="res://texture/tiles top down/texture3/árvores.png" id="11_dbfj5"]
 [ext_resource type="PackedScene" uid="uid://coj7eysane340" path="res://Areais/SAVE.tscn" id="17_gx5mq"]
 [ext_resource type="PackedScene" uid="uid://dygph1mmtcdv8" path="res://Characters/NPCS/blu_blu.tscn" id="17_mq3an"]
+[ext_resource type="PackedScene" uid="uid://c4h5fgwajoojy" path="res://Areais/TEMPORADA 1/testpalyers.tscn" id="18_gx5mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h7q"]
 size = Vector2(48, 8)
@@ -2069,7 +2069,7 @@ sources/3 = SubResource("TileSetAtlasSource_xrmo8")
 
 [node name="O Começo" type="Node2D" node_paths=PackedStringArray("players", "inimigos")]
 script = ExtResource("1_ddk66")
-players = NodePath("players")
+players = NodePath("testpalyers")
 inimigos = NodePath("inimigos")
 caminho_audio = "uid://btumifkni1d13"
 volume = 65.0
@@ -2254,8 +2254,4 @@ position = Vector2(-24, -240)
 [node name="SAVE" parent="npcs" instance=ExtResource("17_gx5mq")]
 position = Vector2(35, -40)
 
-[node name="players" type="Node2D" parent="."]
-
-[node name="ScientistZeno" parent="players" instance=ExtResource("4_ddk66")]
-modulate = Color(0.99215686, 0.99215686, 0.99215686, 1)
-position = Vector2(-25, 152)
+[node name="testpalyers" parent="." instance=ExtResource("18_gx5mq")]

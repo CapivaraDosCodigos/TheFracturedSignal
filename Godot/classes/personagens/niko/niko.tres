@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://cmfwq25tt8fwe"
 script = ExtResource("1_1i2qe")
 Nome = "Niko"
 PlayerBatalhaPath = "uid://bxytmso8hirup"
+ObjectPlayerPath = "uid://neeruowotbdj"
 Life = 60
 inventory_pessoal = SubResource("Resource_qhnxs")
 armorE = ExtResource("2_v1kb6")

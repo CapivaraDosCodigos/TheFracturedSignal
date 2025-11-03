@@ -43,7 +43,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	if Manager.current_status == Manager.GameState.MAP:
-		if Manager.CurrentPlayer != null and Manager.CurrentPlayer.has_method("update_properties"):
+		if Manager.CurrentPlayer != null:
 			no_player = not (Manager.CurrentPlayer.Nome == Nome)
 			
 		_player_physics()

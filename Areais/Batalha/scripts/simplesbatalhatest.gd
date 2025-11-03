@@ -1,15 +1,15 @@
 @icon("res://texture/folderTres/texturas/batalha.tres")
-class_name Batalha2D extends Node2D
+extends Node2D
 
 #region variables
 
 const MAX_ENENINES: int = 3
 
-@onready var panel_dict: Dictionary[String, Control] = { "ATK": %ATK, "ITM": %ITM, "EXE": %EXE, "DEF": %DEF, "MRC": %MRC }
-@onready var paneis_players: Array[PanelPlayer] = [ %PanelPlayer1, %PanelPlayer2, %PanelPlayer3, %PanelPlayer4 ]
+@onready var panel_dict: Dictionary[String, Control] = { "ATK": %ATK, "ITM": %ITM, "EXE": %EXE, "DEF": %DEF, "MRC": %MRC } #nao vou usar mais isso
+@onready var containers_players: Array[VContainerPlayerSimples] = [ %VContainerPlayer1, %VContainerPlayer2, %VContainerPlayer3, %VContainerPlayer4, %VContainerPlayer5 ]
 @onready var inimigosMenu: batalha_submenu_enemies = $BatalhaCanvas/Control/ControlBASE/inimigos
 @onready var itemMenu: batalha_submenu_itens = $BatalhaCanvas/Control/ControlBASE/itens
-@onready var panels: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %MRC ]
+@onready var panels: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %MRC ] #nao vou usar mais isso
 @onready var personagens: PersonagensBatalha2D = $BatalhaCanvas/Personagens
 @onready var battle_arena: NinePatchRect = %BATTLE_ARENA
 @onready var anim: AnimationPlayer = $AnimationPanel
@@ -37,7 +37,6 @@ var selecao_ativa: bool = false
 var submenu_ativo: bool = false
 
 #endregion
-
 
 func _ready() -> void:
 	while batalha.inimigos.size() > MAX_ENENINES:
@@ -261,7 +260,6 @@ func _proximo_jogador_valido(inicio: int) -> String:
 	
 	return ""
 
-
 func end_batalha() -> void:
 	if enemiesNodes.size() > 0:
 		return
@@ -284,11 +282,11 @@ func adicionar_jogador(index: int, key: String) -> void:
 	var playerinst: PlayerBase2D = playerload.instantiate()
 	playersNodes.append(playerinst)
 	playerinst.id = playersNodes.size() - 1
-	playerinst.rootbatalha = self
+	#playerinst.rootbatalha = self
 	playerinst.player = key
 	playerinst.position = personagens.playerMarker2D[index].position
-	paneis_players[index].player = key
-	paneis_players[index].visible = true
+	containers_players[index].player = key
+	containers_players[index].visible = true
 	personagens.spritesP[index].position.x = playerinst.size_marker
 	personagens.add_child(playerinst)
 
@@ -300,7 +298,7 @@ func adicionar_inimigo(inimigo: PackedScene, intex: int) -> void:
 		chave += 1
 		
 	inim.id = chave
-	inim.rootbatalha = self
+	#inim.rootbatalha = self
 	inim.rootobjeto = battle_arena.objetos
 	inim.position = personagens.inimigoMarker2D[intex].position
 	personagens.add_child(inim)

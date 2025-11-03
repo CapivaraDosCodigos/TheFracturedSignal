@@ -11,8 +11,8 @@ class_name PlayerData extends Resource
 @export var Life: int = 100:
 	set(value):
 		Life = value
-		if Life < 0:
-			Life = 0
+		if Life < -999:
+			Life = -999
 @export var Exp: int = 0
 
 @export_group("Dados das Propriedades")

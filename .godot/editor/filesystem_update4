@@ -1,4 +1,4 @@
-res://Areais/Batalha/cenas/BATALHA.tscn
+res://Areais/Batalha/cenas/SIMPLES_BATALHA.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
@@ -26,6 +26,8 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
+res://Godot/Godot Scripts/Manager.gd
+res://Areais/Batalha/scripts/simplesbatalha.gd
 res://Areais/Batalha/scripts/batalha2.gd
-res://Areais/Batalha/scripts/batalha_submenu_itens.gd
+res://Godot/classes/Nodes/EnemiesBase2D.gd
+res://Godot/classes/Nodes/PlayerBase2D.gd

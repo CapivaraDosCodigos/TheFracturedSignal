@@ -9,5 +9,5 @@ shader_parameter/vertical_oscillation = 0.02
 shader_parameter/scanline_wave_frequency = 20.0
 shader_parameter/scanline_wave_speed = 2.0
 shader_parameter/alternate_direction = true
-shader_parameter/transparency = 0.249999994412
+shader_parameter/transparency = 0.3499999921768
 shader_parameter/viewport_size = Vector2(700, 400)
