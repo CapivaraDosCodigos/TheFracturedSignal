@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qd88j5u4y4ji"]
+[gd_scene load_steps=6 format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="2_cconj"]
-[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="3_lxjte"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_2jxmm"]
 [ext_resource type="PackedScene" uid="uid://bu38qgxh4wq1i" path="res://Characters/Players/menu.tscn" id="6_pvfw1"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
@@ -30,9 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-
-[node name="Node" parent="CanvasL" instance=ExtResource("3_lxjte")]
-modulate = Color(0.79607844, 0.9137255, 1, 0.047058824)
 
 [node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
 

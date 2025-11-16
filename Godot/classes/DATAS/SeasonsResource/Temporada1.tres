@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="SeasonResource" load_steps=9 format=3 uid="uid://bssdj03dl2g86"]
+[gd_resource type="Resource" script_class="SeasonResource" load_steps=8 format=3 uid="uid://bssdj03dl2g86"]
 
-[ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/classes/itens/Inventorys/ZenoInventory.tres" id="1_oblxm"]
 [ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/TEMPORADA 1/começo.tscn" id="2_jiufa"]
 [ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="3_4rbso"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="4_pyvuc"]
@@ -17,7 +16,6 @@ script = ExtResource("6_wvp6x")
 nome = "Prison Of Nightmares"
 StartScene = ExtResource("2_jiufa")
 CurrentScene = ExtResource("2_jiufa")
-CurrentInventory = ExtResource("1_oblxm")
 PlayersAtuais = Dictionary[String, ExtResource("4_pyvuc")]({
 "Niko": ExtResource("6_6q6tk"),
 "Zeno": ExtResource("5_xd78i")

@@ -26,6 +26,7 @@ do Manager.change_state(Manager.GameState.DIALOGUE)
 do Manager.DialogoTexture("res://texture/Characters/dialogos/comecio.tres", "res://texture/folderTres/materials/tile.tres")
 Lila: Olá
 Lila: gostaria de comprar alguma coisa?
+do Manager.test()
 - não, obrigado
 	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
 - sim!

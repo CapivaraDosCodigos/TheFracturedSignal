@@ -33,8 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if list.get_item_count() == 0:
 			return
 			
-		if current_index - 4 >= 0:
-			current_index -= 4
+		if current_index - 1 >= 0:
+			current_index -= 1
 			list.select(current_index, true)
 			list.ensure_current_is_visible()
 	
@@ -42,24 +42,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if list.get_item_count() == 0:
 			return
 			
-		if current_index + 4 < list.get_item_count():
-			current_index += 4
-			list.select(current_index, true)
-			list.ensure_current_is_visible()
-	
-	if event.is_action_pressed("Right"):
-		if list.get_item_count() == 0:
-			return
-		if current_index < list.get_item_count() - 1:
+		if current_index + 1 < list.get_item_count():
 			current_index += 1
-			list.select(current_index, true)
-			list.ensure_current_is_visible()
-	
-	elif event.is_action_pressed("Left"):
-		if list.get_item_count() == 0:
-			return
-		if current_index > 0:
-			current_index -= 1
 			list.select(current_index, true)
 			list.ensure_current_is_visible()
 	
@@ -77,6 +61,6 @@ func end() -> void:
 
 func atualizar_itemlist(custom_items: Array = []) -> void:
 	list.clear()
-	var items = custom_items if not custom_items.is_empty() else Manager.CurrentInventory.get_in_items_batalha()
+	var items = custom_items if not custom_items.is_empty() else Manager.get_Inventory().get_in_items_batalha()
 	for item in items:
 		list.add_item(item.nome, item.icone)

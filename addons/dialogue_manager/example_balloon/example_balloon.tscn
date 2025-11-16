@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bs4msvygwgrdh"]
+[gd_scene load_steps=22 format=3 uid="uid://bs4msvygwgrdh"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -9,10 +9,10 @@
 [ext_resource type="Script" uid="uid://sxqj8grp2l78" path="res://addons/dialogue_manager/example_balloon/texture_rect.gd" id="7_83g4i"]
 [ext_resource type="Texture2D" uid="uid://bjc7fwmqhjoko" path="res://texture/PNG/bordas UI/Default/Transparent border/panel-transparent-border-001.png" id="8_v42gu"]
 [ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folderTres/BoxTexture/example_balloon.tres" id="8_wqs7j"]
-[ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="9_wbrl0"]
+[ext_resource type="Script" uid="uid://b0qugynm4r7l2" path="res://addons/dialogue_manager/example_balloon/Container_Response.gd" id="9_wbrl0"]
 [ext_resource type="Material" uid="uid://c0q1ahwqu3qem" path="res://texture/folderTres/materials/preto_&_branco.tres" id="10_83g4i"]
+[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="10_wbrl0"]
 [ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="11_wbrl0"]
-[ext_resource type="Texture2D" uid="uid://dwc0h6lg6y3kf" path="res://texture/characters/dialogos/bebedouro.tres" id="13_wbrl0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v42gu"]
 texture = ExtResource("8_v42gu")
@@ -64,6 +64,20 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbrl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icj72"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83g4i"]
+texture = ExtResource("11_wbrl0")
+texture_margin_left = 16.0
+texture_margin_top = 48.0
+texture_margin_right = 16.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(320, 192, 64, 64)
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 95
@@ -150,13 +164,29 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-theme_override_constants/separation = 4
+theme_override_constants/separation = 32
 alignment = 1
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 next_action = &"confirm"
 
-[node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu"]
+[node name="ResponseExample" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" node_paths=PackedStringArray("texture_rect", "response_example")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -4
+script = ExtResource("9_wbrl0")
+texture_rect = NodePath("TextureRect")
+response_example = NodePath("ResponseExample")
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_wbrl0")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample"]
 material = ExtResource("10_83g4i")
 layout_mode = 2
 size_flags_horizontal = 4
@@ -167,38 +197,37 @@ mouse_force_pass_scroll_events = false
 theme_override_fonts/font = ExtResource("5_v42gu")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = ExtResource("8_wqs7j")
-theme_override_styles/focus = ExtResource("9_wbrl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wbrl0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_icj72")
 button_mask = 0
 text = "Response example"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+visible = false
 z_index = 1
 material = ExtResource("10_83g4i")
 custom_minimum_size = Vector2(116, 116)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("11_wbrl0")
-region_rect = Rect2(320, 192, 64, 64)
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_83g4i")
 script = ExtResource("7_83g4i")
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/NinePatchRect"]
-z_index = -1
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel"]
 use_parent_material = true
-custom_minimum_size = Vector2(108, 108)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_wbrl0")
-expand_mode = 1
+theme_override_constants/margin_right = 30
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel/MarginContainer"]
+z_index = -1
+use_parent_material = true
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+expand_mode = 5
 stretch_mode = 5
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

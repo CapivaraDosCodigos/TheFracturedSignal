@@ -1,7 +1,7 @@
 1a8f455bd3787f459dff7cb69d924eb2
-::res://::1762084261
-escopo.txt::TextFile::-1::1761933738::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1762081886::0::1::::<><><>0<>0<><>::
+::res://::1762975495
+escopo.txt::TextFile::-1::1762686340::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1762686340::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::8807494737381943625::1759589936::1759589936::1::::<><><>0<>0<>5b9efec3244fe198d958a7d04a981645<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 usar depois.txt::TextFile::-1::1759868197::0::1::::<><><>0<>0<><>::
 ::res://addons/::1761393240
@@ -128,40 +128,40 @@ icon_bg.png::CompressedTexture2D::6272275887492997861::1761393245::1761408743::1
 tips.txt::TextFile::-1::1761393245::0::1::::<><><>0<>0<><>::
 ::res://addons/dialogic/Editor/Images/::1761675160
 dialogic-logo.svg::CompressedTexture2D::3790104562841938052::1761393246::1761408744::1::::<><><>0<>0<>e79cfc2d598828d337ee8ec7389082a7<>res://.godot/imported/dialogic-logo.svg-e43201cabc9573eeb3f78fd91ea9d909.ctex::
-plugin-icon.svg::CompressedTexture2D::8846273605144170474::1761393246::1761675160::1::::<><><>0<>0<>e4eed80df45ee68970150622d4b706b2<>res://.godot/imported/plugin-icon.svg-aa6701e8ed73f5fe5d177dfddce3a0e3.ctex::
+plugin-icon.svg::CompressedTexture2D::8846273605144170474::1761393246::1762686339::1::::<><><>0<>0<>e4eed80df45ee68970150622d4b706b2<>res://.godot/imported/plugin-icon.svg-aa6701e8ed73f5fe5d177dfddce3a0e3.ctex::
 preview_character.png::CompressedTexture2D::2091084072335210920::1761393246::1761408744::1::::<><><>0<>0<>2bdd906bf6d5bcf8cef7d85d31f95e13<>res://.godot/imported/preview_character.png-54f0625ad8281c635fea35a4930d95b6.ctex::
 preview_character_speaker.png::CompressedTexture2D::8278972532691820378::1761393246::1761408744::1::::<><><>0<>0<>b6f7b1cc83f241f40810d93f814c152e<>res://.godot/imported/preview_character_speaker.png-c0667c648e2901adcbe8bf93ddda7f06.ctex::
 Unknown.png::CompressedTexture2D::2468576728646207283::1761393246::1761408744::1::::<><><>0<>0<>d2066d0eea57c324357c473f7098ac67<>res://.godot/imported/Unknown.png-1cc7645f56036e8d378a70ac1dd772bb.ctex::
 ::res://addons/dialogic/Editor/Images/Dropdown/::1761675159
-default.svg::CompressedTexture2D::3699310598590037939::1761393245::1761675158::1::::<><><>0<>0<>259207eeda23df429b2856d5f3220456<>res://.godot/imported/default.svg-3f34de5e45bef5de4d9c15ef78c00c6c.ctex::
-divide.svg::CompressedTexture2D::6901258230860890461::1761393245::1761675158::1::::<><><>0<>0<>d53ae74a790bdf37ced879d046694eec<>res://.godot/imported/divide.svg-4928f878a07ba93ebc44d8ae73ad4c1f.ctex::
-join.svg::CompressedTexture2D::4652731984810704514::1761393245::1761675158::1::::<><><>0<>0<>f7cf43cd23e7a97eea36ca5774bea3fd<>res://.godot/imported/join.svg-2f0d7b9e8e01cf0e62b8c3a85aff6213.ctex::
-leave.svg::CompressedTexture2D::6067796671459232581::1761393245::1761675158::1::::<><><>0<>0<>4fbd9613703c5d02d50eb856412278c7<>res://.godot/imported/leave.svg-c936f6e3d601b8c12c23f205a765084e.ctex::
-minus.svg::CompressedTexture2D::257488028651337897::1761393245::1761675158::1::::<><><>0<>0<>1135a4dbb133e76535e29b9ba71d1b91<>res://.godot/imported/minus.svg-29f22d1aa24635bae2c03057c07be8bc.ctex::
-multiply.svg::CompressedTexture2D::7394628180941628304::1761393245::1761675158::1::::<><><>0<>0<>b54b96bfa6421ce235ac9c15464539ee<>res://.godot/imported/multiply.svg-0e9db99aafb66d43ee14adcca26c5b47.ctex::
-plus.svg::CompressedTexture2D::5930089714513836210::1761393245::1761675159::1::::<><><>0<>0<>79df0b1772ddd24351002eea1a990373<>res://.godot/imported/plus.svg-e094b0b8505b5d910717883d06553532.ctex::
-set.svg::CompressedTexture2D::7374282244844152748::1761393245::1761675159::1::::<><><>0<>0<>16822c261ee32b22f5054e3d69580b0f<>res://.godot/imported/set.svg-f100fad003be2285d5d0da5c58417203.ctex::
-update.svg::CompressedTexture2D::1388319587067716478::1761393245::1761675159::1::::<><><>0<>0<>42472d05f5e2abb027b7fb6fedbbf858<>res://.godot/imported/update.svg-cefa0fe6bfa50911bb9a77982288e485.ctex::
+default.svg::CompressedTexture2D::3699310598590037939::1761393245::1762686339::1::::<><><>0<>0<>259207eeda23df429b2856d5f3220456<>res://.godot/imported/default.svg-3f34de5e45bef5de4d9c15ef78c00c6c.ctex::
+divide.svg::CompressedTexture2D::6901258230860890461::1761393245::1762686339::1::::<><><>0<>0<>d53ae74a790bdf37ced879d046694eec<>res://.godot/imported/divide.svg-4928f878a07ba93ebc44d8ae73ad4c1f.ctex::
+join.svg::CompressedTexture2D::4652731984810704514::1761393245::1762686339::1::::<><><>0<>0<>f7cf43cd23e7a97eea36ca5774bea3fd<>res://.godot/imported/join.svg-2f0d7b9e8e01cf0e62b8c3a85aff6213.ctex::
+leave.svg::CompressedTexture2D::6067796671459232581::1761393245::1762686339::1::::<><><>0<>0<>4fbd9613703c5d02d50eb856412278c7<>res://.godot/imported/leave.svg-c936f6e3d601b8c12c23f205a765084e.ctex::
+minus.svg::CompressedTexture2D::257488028651337897::1761393245::1762686339::1::::<><><>0<>0<>1135a4dbb133e76535e29b9ba71d1b91<>res://.godot/imported/minus.svg-29f22d1aa24635bae2c03057c07be8bc.ctex::
+multiply.svg::CompressedTexture2D::7394628180941628304::1761393245::1762686339::1::::<><><>0<>0<>b54b96bfa6421ce235ac9c15464539ee<>res://.godot/imported/multiply.svg-0e9db99aafb66d43ee14adcca26c5b47.ctex::
+plus.svg::CompressedTexture2D::5930089714513836210::1761393245::1762686339::1::::<><><>0<>0<>79df0b1772ddd24351002eea1a990373<>res://.godot/imported/plus.svg-e094b0b8505b5d910717883d06553532.ctex::
+set.svg::CompressedTexture2D::7374282244844152748::1761393245::1762686339::1::::<><><>0<>0<>16822c261ee32b22f5054e3d69580b0f<>res://.godot/imported/set.svg-f100fad003be2285d5d0da5c58417203.ctex::
+update.svg::CompressedTexture2D::1388319587067716478::1761393245::1762686339::1::::<><><>0<>0<>42472d05f5e2abb027b7fb6fedbbf858<>res://.godot/imported/update.svg-cefa0fe6bfa50911bb9a77982288e485.ctex::
 ::res://addons/dialogic/Editor/Images/Interactable/::1761675159
-decrement_icon.svg::CompressedTexture2D::3598714787571246953::1761393245::1761675159::1::::<><><>0<>0<>d781d4a8bb312274b69c7d669b2c9975<>res://.godot/imported/decrement_icon.svg-9556cf56db91e200fb946372e010fd5e.ctex::
-increment_icon.svg::CompressedTexture2D::7705718629669986091::1761393245::1761675159::1::::<><><>0<>0<>295907d5b118ad7b58118388fa09d3fa<>res://.godot/imported/increment_icon.svg-081e6509e76349f0628c55a41e85fd65.ctex::
+decrement_icon.svg::CompressedTexture2D::3598714787571246953::1761393245::1762686339::1::::<><><>0<>0<>d781d4a8bb312274b69c7d669b2c9975<>res://.godot/imported/decrement_icon.svg-9556cf56db91e200fb946372e010fd5e.ctex::
+increment_icon.svg::CompressedTexture2D::7705718629669986091::1761393245::1762686339::1::::<><><>0<>0<>295907d5b118ad7b58118388fa09d3fa<>res://.godot/imported/increment_icon.svg-081e6509e76349f0628c55a41e85fd65.ctex::
 ::res://addons/dialogic/Editor/Images/Pieces/::1761675160
-add-folder.svg::CompressedTexture2D::70289101131231738::1761393246::1761675159::1::::<><><>0<>0<>4aa4ee68b1a282caab03d02198ed6955<>res://.godot/imported/add-folder.svg-41a970370f904038e63c13bddbdb6450.ctex::
-close-icon.svg::CompressedTexture2D::2749622853586476313::1761393246::1761675159::1::::<><><>0<>0<>f4033a1c56feba113dbcfb0d04e1b822<>res://.godot/imported/close-icon.svg-c630c93ada599b08938f4854f5376f2f.ctex::
-closed-icon.svg::CompressedTexture2D::8832306723559159287::1761393246::1761675159::1::::<><><>0<>0<>237d15ab0893adf2352bfbc5a5b20c61<>res://.godot/imported/closed-icon.svg-b4f16653b91d6792313a130565319b2f.ctex::
-expand-icon.svg::CompressedTexture2D::5598266563617168116::1761393246::1761675160::1::::<><><>0<>0<>12d4e8bda85ea50511afef565ac4d0b3<>res://.godot/imported/expand-icon.svg-26099b197ab0f314e2253848fcc22962.ctex::
-open-icon.svg::CompressedTexture2D::848339285911761348::1761393246::1761675160::1::::<><><>0<>0<>0628aa71ca9dd1a757841a2c82710106<>res://.godot/imported/open-icon.svg-1a2ae6d0121a79b624c0fb87cc9ceea2.ctex::
-variable.svg::CompressedTexture2D::7736806399882628569::1761393246::1761675160::1::::<><><>0<>0<>bdda2146c3b52e9bf0068c6a20a66722<>res://.godot/imported/variable.svg-50a50248b9d47e5556571e4111e8d5b4.ctex::
+add-folder.svg::CompressedTexture2D::70289101131231738::1761393246::1762686339::1::::<><><>0<>0<>4aa4ee68b1a282caab03d02198ed6955<>res://.godot/imported/add-folder.svg-41a970370f904038e63c13bddbdb6450.ctex::
+close-icon.svg::CompressedTexture2D::2749622853586476313::1761393246::1762686339::1::::<><><>0<>0<>f4033a1c56feba113dbcfb0d04e1b822<>res://.godot/imported/close-icon.svg-c630c93ada599b08938f4854f5376f2f.ctex::
+closed-icon.svg::CompressedTexture2D::8832306723559159287::1761393246::1762686339::1::::<><><>0<>0<>237d15ab0893adf2352bfbc5a5b20c61<>res://.godot/imported/closed-icon.svg-b4f16653b91d6792313a130565319b2f.ctex::
+expand-icon.svg::CompressedTexture2D::5598266563617168116::1761393246::1762686339::1::::<><><>0<>0<>12d4e8bda85ea50511afef565ac4d0b3<>res://.godot/imported/expand-icon.svg-26099b197ab0f314e2253848fcc22962.ctex::
+open-icon.svg::CompressedTexture2D::848339285911761348::1761393246::1762686339::1::::<><><>0<>0<>0628aa71ca9dd1a757841a2c82710106<>res://.godot/imported/open-icon.svg-1a2ae6d0121a79b624c0fb87cc9ceea2.ctex::
+variable.svg::CompressedTexture2D::7736806399882628569::1761393246::1762686339::1::::<><><>0<>0<>bdda2146c3b52e9bf0068c6a20a66722<>res://.godot/imported/variable.svg-50a50248b9d47e5556571e4111e8d5b4.ctex::
 variable_icon.png::CompressedTexture2D::582349284127075295::1761393246::1761408743::1::::<><><>0<>0<>cca89961e6752899fca991033f9012fc<>res://.godot/imported/variable_icon.png-df9d711980209a7752dc8762037e39ad.ctex::
-warning.svg::CompressedTexture2D::9223293116452544095::1761393246::1761675160::1::::<><><>0<>0<>59cd198c1ca0f6b36f7d633769dfdd6e<>res://.godot/imported/warning.svg-a48ae93c4663637f2aca88d055604495.ctex::
+warning.svg::CompressedTexture2D::9223293116452544095::1761393246::1762686339::1::::<><><>0<>0<>59cd198c1ca0f6b36f7d633769dfdd6e<>res://.godot/imported/warning.svg-a48ae93c4663637f2aca88d055604495.ctex::
 ::res://addons/dialogic/Editor/Images/Resources/::1761675160
-character.svg::CompressedTexture2D::2464911902091785916::1761393246::1761675160::1::::<><><>0<>0<>78287aea40c88940d3eb298f48ce9f2f<>res://.godot/imported/character.svg-48bc1c93fa13733a935ca2c669d933a7.ctex::
+character.svg::CompressedTexture2D::2464911902091785916::1761393246::1762686339::1::::<><><>0<>0<>78287aea40c88940d3eb298f48ce9f2f<>res://.godot/imported/character.svg-48bc1c93fa13733a935ca2c669d933a7.ctex::
 icon_character.png::CompressedTexture2D::3275168337811362221::1761393246::1761408743::1::::<><><>0<>0<>2a44743bc6951d101732f446a4c552e4<>res://.godot/imported/icon_character.png-97a1851bbafe2b302ea88c25a87ee2c1.ctex::
-portrait.svg::CompressedTexture2D::7528673539557211468::1761393246::1761675160::1::::<><><>0<>0<>a9fcf7f72ac5a45f569e7e69704e7b2a<>res://.godot/imported/portrait.svg-7d29c7cfe3e086d65dce33c3d66c48cd.ctex::
+portrait.svg::CompressedTexture2D::7528673539557211468::1761393246::1762686339::1::::<><><>0<>0<>a9fcf7f72ac5a45f569e7e69704e7b2a<>res://.godot/imported/portrait.svg-7d29c7cfe3e086d65dce33c3d66c48cd.ctex::
 timeline.svg::CompressedTexture2D::699239680760781540::1761393246::1761408743::1::::<><><>0<>0<>7c6e5f125674a270cec6a637af2804c3<>res://.godot/imported/timeline.svg-4b0b3233c6ce249f8277502cd9b13eaf.ctex::
 ::res://addons/dialogic/Editor/Images/Toolbar/::1761675160
-add-character.svg::CompressedTexture2D::893739393082554513::1761393246::1761675160::1::::<><><>0<>0<>89136c34af796b2a21aa0a924ebb1d3e<>res://.godot/imported/add-character.svg-a658b65c1225b02657a50d5c965e0d5e.ctex::
-add-timeline.svg::CompressedTexture2D::4096396075137893428::1761393246::1761675160::1::::<><><>0<>0<>70673b60780406e532cef900f2544ba2<>res://.godot/imported/add-timeline.svg-86961b528ebdf01f585931a15fea1755.ctex::
+add-character.svg::CompressedTexture2D::893739393082554513::1761393246::1762686339::1::::<><><>0<>0<>89136c34af796b2a21aa0a924ebb1d3e<>res://.godot/imported/add-character.svg-a658b65c1225b02657a50d5c965e0d5e.ctex::
+add-timeline.svg::CompressedTexture2D::4096396075137893428::1761393246::1762686339::1::::<><><>0<>0<>70673b60780406e532cef900f2544ba2<>res://.godot/imported/add-timeline.svg-86961b528ebdf01f585931a15fea1755.ctex::
 ::res://addons/dialogic/Editor/Inspector/::1761393246
 inspector_plugin.gd::GDScript::3391303239306162454::1761393246::0::1::::<>EditorInspectorPlugin<><>0<>1<><>::
 timeline_inspector_field.gd::GDScript::2175225024752372158::1761393246::0::1::::<>EditorProperty<><>0<>1<><>::
@@ -289,9 +289,9 @@ subsystem_backgrounds.gd::GDScript::2148291124180884631::1761393247::0::1::::<>D
 ::res://addons/dialogic/Modules/Background/DefaultBackgroundScene/::1761393246
 default_background.gd::GDScript::5401559425333649390::1761393246::0::1::::<>DialogicBackground<><>0<>0<><>::
 default_background.tscn::PackedScene::5609335298910205153::1761393246::0::1::::<><><>0<>0<><>::uid://ci7s5odxo7543::::res://addons/dialogic/Modules/Background/DefaultBackgroundScene/default_background.gd
-::res://addons/dialogic/Modules/Background/Transitions/::1761393247
+::res://addons/dialogic/Modules/Background/Transitions/::1763293241
 class_dialogic_background_transition.gd::GDScript::5185596003460166582::1761393247::0::1::::DialogicBackgroundTransition<>Node<><>0<>0<><>::
-default_transition_shader.gdshader::Shader::5544997065938995453::1761393247::0::1::::<><><>0<>0<><>::
+default_transition_shader.gdshader::Shader::5544997065938995453::1763293241::0::1::::<><><>0<>0<><>::
 push_transition_shader.gdshader::Shader::6196818314243087368::1761393247::0::1::::<><><>0<>0<><>::
 simple_push_transitions.gd::GDScript::3800060778759560386::1761393247::0::1::::<>DialogicBackgroundTransition<><>0<>0<><>::
 simple_swipe_gradient.tres::GradientTexture2D::6325365462525035453::1761393247::0::1::::<><><>0<>0<><>::
@@ -319,22 +319,22 @@ default_portrait_thumbnail.png::CompressedTexture2D::4149917735518576925::176139
 DialogicPortraitAnimationsUtil.gd::GDScript::688096036633683090::1761393247::0::1::::DialogicPortraitAnimationUtil<>RefCounted<><>0<>1<><>::
 dialogic_portrait.gd::GDScript::7793450204399549066::1761393247::0::1::::DialogicPortrait<>Node<><>0<>0<><>::
 event_character.gd::GDScript::4772292345823500926::1761393247::0::1::::DialogicCharacterEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::1187685797109235607::1761393247::1761675161::1::::<><><>0<>0<>d2161b22f11f9c0a177be9827401c28a<>res://.godot/imported/icon.svg-4f340f6efbb83004dbd5c761dd1dc448.ctex::
+icon.svg::CompressedTexture2D::1187685797109235607::1761393247::1762686339::1::::<><><>0<>0<>d2161b22f11f9c0a177be9827401c28a<>res://.godot/imported/icon.svg-4f340f6efbb83004dbd5c761dd1dc448.ctex::
 icon_position.png::CompressedTexture2D::6240753079284806829::1761393247::1761408744::1::::<><><>0<>0<>0a737857ac33c1dd2f2a870391e37197<>res://.godot/imported/icon_position.png-221b7c348ec45b22fd4df49fdb92a7aa.ctex::
 index.gd::GDScript::2075963725075832992::1761393247::0::1::::<>DialogicIndexer<><>0<>1<><>::
 node_portrait_container.gd::GDScript::8946131689167411849::1761393247::0::1::::DialogicNode_PortraitContainer<>Control<><>0<>1<><>::
-portrait_position.svg::CompressedTexture2D::3357497812767945100::1761393247::1761675161::1::::<><><>0<>0<>57369769c3cec2053b77048073cc24dd<>res://.godot/imported/portrait_position.svg-f025767e40032b9ebdeab1f9e882467a.ctex::
+portrait_position.svg::CompressedTexture2D::3357497812767945100::1761393247::1762686339::1::::<><><>0<>0<>57369769c3cec2053b77048073cc24dd<>res://.godot/imported/portrait_position.svg-f025767e40032b9ebdeab1f9e882467a.ctex::
 preview_character.tres::Resource/DialogicCharacter::8864788605870491990::1761393247::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::uid://don4ds5f38byo::::res://addons/dialogic/Resources/character.gd
 settings_portraits.gd::GDScript::6752804783309176286::1761393247::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
 settings_portraits.tscn::PackedScene::5887474122682821078::1761393247::0::1::::<><><>0<>0<><>::uid://c3hdycwp0hrdm::::res://addons/dialogic/Modules/Character/settings_portraits.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn<>uid://dpwhshre1n4t6::::res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn<>uid://7mvxuaulctcq::::res://addons/dialogic/Editor/Events/Fields/field_file.tscn
 simple_image_portrait_thumbnail.png::CompressedTexture2D::1139979017741368080::1761393247::1761408744::1::::<><><>0<>0<>8846e0a5b0758071edfd3fcc4846e769<>res://.godot/imported/simple_image_portrait_thumbnail.png-3d6c6de8187fd7911017e2ef9d3c40a4.ctex::
 subsystem_containers.gd::GDScript::6885361458590830657::1761393247::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 subsystem_portraits.gd::GDScript::400924310391042035::1761393247::0::1::::<>DialogicSubsystem<><>0<>0<><>::
-update_mirror.svg::CompressedTexture2D::7078541585566576810::1761393247::1761675161::1::::<><><>0<>0<>e3eb98e1f3ba6d2b8a3e42b91025f97a<>res://.godot/imported/update_mirror.svg-d6fa4832a7758cad02a7f32282433230.ctex::
-update_portrait.svg::CompressedTexture2D::1172326194480601119::1761393247::1761675161::1::::<><><>0<>0<>bc138f0d897ac0dce892dab46fb2c817<>res://.godot/imported/update_portrait.svg-b90fa6163d3720d34df8578ce2aa35e1.ctex::
-update_position.svg::CompressedTexture2D::1231062389803775804::1761393247::1761675161::1::::<><><>0<>0<>0e55b1b5d63b9c99b404da4f538d66a9<>res://.godot/imported/update_position.svg-4be50608dc0768e715ff659ca62cf187.ctex::
-update_position.svg.2023_09_23_08_37_47.0.svg::CompressedTexture2D::7482897620836371334::1761393247::1761675161::1::::<><><>0<>0<>86d87dc8bde0411e73ceafbe6992859e<>res://.godot/imported/update_position.svg.2023_09_23_08_37_47.0.svg-d66e70a05e9de92a595b70fa88fca0d4.ctex::
-update_z_index.svg::CompressedTexture2D::6926037834983513426::1761393247::1761675161::1::::<><><>0<>0<>11280e898a9ea934314c0e3e26bc3c84<>res://.godot/imported/update_z_index.svg-204064db9241de79bf8dfd23af57c6c6.ctex::
+update_mirror.svg::CompressedTexture2D::7078541585566576810::1761393247::1762686339::1::::<><><>0<>0<>e3eb98e1f3ba6d2b8a3e42b91025f97a<>res://.godot/imported/update_mirror.svg-d6fa4832a7758cad02a7f32282433230.ctex::
+update_portrait.svg::CompressedTexture2D::1172326194480601119::1761393247::1762686339::1::::<><><>0<>0<>bc138f0d897ac0dce892dab46fb2c817<>res://.godot/imported/update_portrait.svg-b90fa6163d3720d34df8578ce2aa35e1.ctex::
+update_position.svg::CompressedTexture2D::1231062389803775804::1761393247::1762686339::1::::<><><>0<>0<>0e55b1b5d63b9c99b404da4f538d66a9<>res://.godot/imported/update_position.svg-4be50608dc0768e715ff659ca62cf187.ctex::
+update_position.svg.2023_09_23_08_37_47.0.svg::CompressedTexture2D::7482897620836371334::1761393247::1762686339::1::::<><><>0<>0<>86d87dc8bde0411e73ceafbe6992859e<>res://.godot/imported/update_position.svg.2023_09_23_08_37_47.0.svg-d66e70a05e9de92a595b70fa88fca0d4.ctex::
+update_z_index.svg::CompressedTexture2D::6926037834983513426::1761393247::1762686339::1::::<><><>0<>0<>11280e898a9ea934314c0e3e26bc3c84<>res://.godot/imported/update_z_index.svg-204064db9241de79bf8dfd23af57c6c6.ctex::
 ::res://addons/dialogic/Modules/Character/DefaultAnimations/::1761393247
 bounce.gd::GDScript::1159372393342125168::1761393247::0::1::::<>DialogicAnimation<><>0<>0<><>::
 bounce_in_out.gd::GDScript::1203938328328119382::1761393247::0::1::::<>DialogicAnimation<><>0<>0<><>::
@@ -354,7 +354,7 @@ zoom_center_in_out.gd::GDScript::5450142534944058802::1761393247::0::1::::<>Dial
 zoom_in_out.gd::GDScript::3221528362785205497::1761393247::0::1::::<>DialogicAnimation<><>0<>0<><>::
 ::res://addons/dialogic/Modules/Choice/::1761675161
 event_choice.gd::GDScript::5585403630727550799::1761393247::0::1::::DialogicChoiceEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::1552118133808780732::1761393247::1761675161::1::::<><><>0<>0<>66ae6c4d97a6bb096bdc015a27652a56<>res://.godot/imported/icon.svg-372a9bfce8bea67fff1988d7acf09a9a.ctex::
+icon.svg::CompressedTexture2D::1552118133808780732::1761393247::1762686339::1::::<><><>0<>0<>66ae6c4d97a6bb096bdc015a27652a56<>res://.godot/imported/icon.svg-372a9bfce8bea67fff1988d7acf09a9a.ctex::
 index.gd::GDScript::100614291890798423::1761393247::0::1::::<>DialogicIndexer<><>0<>1<><>::
 node_button_sound.gd::GDScript::4249660653446742456::1761393247::0::1::::DialogicNode_ButtonSound<>AudioStreamPlayer<><>0<>0<><>::
 node_choice_button.gd::GDScript::3165903090525470961::1761393247::0::1::::DialogicNode_ChoiceButton<>Button<><>0<>0<><>::
@@ -364,12 +364,12 @@ subsystem_choices.gd::GDScript::5100340098253952414::1761393247::0::1::::<>Dialo
 ui_choice_end.gd::GDScript::9123939341717603489::1761393247::0::1::::<>HBoxContainer<><>0<>1<><>::
 ui_choice_end.tscn::PackedScene::5738243432914111361::1761393247::0::1::::<><><>0<>0<><>::uid://d28x7h2ufh3dd::::res://addons/dialogic/Modules/Choice/ui_choice_end.gd
 ::res://addons/dialogic/Modules/Clear/::1761675155
-clear_background.svg::CompressedTexture2D::3585755572244796303::1761393247::1761675155::1::::<><><>0<>0<>42b64b2357700aeec655d73cecbf522d<>res://.godot/imported/clear_background.svg-32f657ae646e5867a8ceb0543ae207de.ctex::
-clear_characters.svg::CompressedTexture2D::9128672524072404421::1761393247::1761675154::1::::<><><>0<>0<>92fc57ac4eaac3f17c607c4e9c495d82<>res://.godot/imported/clear_characters.svg-58481eec0869d46b2d90f2102edd1687.ctex::
-clear_music.svg::CompressedTexture2D::7071655307651287836::1761393247::1761675154::1::::<><><>0<>0<>3549027139af7d2622272d7bb54fd69d<>res://.godot/imported/clear_music.svg-ab19a5f3dc85de8ba17b7c720b838a73.ctex::
-clear_positions.svg::CompressedTexture2D::1232367920594935402::1761393247::1761675155::1::::<><><>0<>0<>b4f4d560194a93a8fba2e443b363b2c2<>res://.godot/imported/clear_positions.svg-9c6ef9c2e28a63b87a3c7d0ed63620d8.ctex::
-clear_style.svg::CompressedTexture2D::5577303045295427718::1761393247::1761675154::1::::<><><>0<>0<>cc56264adec06741c2ebe5a821b2642f<>res://.godot/imported/clear_style.svg-ab3288e6e47f45c4e12ce1862403a99c.ctex::
-clear_textbox.svg::CompressedTexture2D::5824819402049082983::1761393247::1761675155::1::::<><><>0<>0<>b0710bc42bca904bc98f2975def42f3d<>res://.godot/imported/clear_textbox.svg-04935e3d82350d24a197adcb47df6f57.ctex::
+clear_background.svg::CompressedTexture2D::3585755572244796303::1761393247::1762686339::1::::<><><>0<>0<>42b64b2357700aeec655d73cecbf522d<>res://.godot/imported/clear_background.svg-32f657ae646e5867a8ceb0543ae207de.ctex::
+clear_characters.svg::CompressedTexture2D::9128672524072404421::1761393247::1762686339::1::::<><><>0<>0<>92fc57ac4eaac3f17c607c4e9c495d82<>res://.godot/imported/clear_characters.svg-58481eec0869d46b2d90f2102edd1687.ctex::
+clear_music.svg::CompressedTexture2D::7071655307651287836::1761393247::1762686340::1::::<><><>0<>0<>3549027139af7d2622272d7bb54fd69d<>res://.godot/imported/clear_music.svg-ab19a5f3dc85de8ba17b7c720b838a73.ctex::
+clear_positions.svg::CompressedTexture2D::1232367920594935402::1761393247::1762686340::1::::<><><>0<>0<>b4f4d560194a93a8fba2e443b363b2c2<>res://.godot/imported/clear_positions.svg-9c6ef9c2e28a63b87a3c7d0ed63620d8.ctex::
+clear_style.svg::CompressedTexture2D::5577303045295427718::1761393247::1762686340::1::::<><><>0<>0<>cc56264adec06741c2ebe5a821b2642f<>res://.godot/imported/clear_style.svg-ab3288e6e47f45c4e12ce1862403a99c.ctex::
+clear_textbox.svg::CompressedTexture2D::5824819402049082983::1761393247::1762686340::1::::<><><>0<>0<>b0710bc42bca904bc98f2975def42f3d<>res://.godot/imported/clear_textbox.svg-04935e3d82350d24a197adcb47df6f57.ctex::
 event_clear.gd::GDScript::2246547016436058458::1761393247::0::1::::DialogicClearEvent<>DialogicEvent<><>0<>1<><>::
 icon.png::CompressedTexture2D::1106712064180300186::1761393247::1761408744::1::::<><><>0<>0<>2089bb1e0b8ab86ee8e94c0def043ca1<>res://.godot/imported/icon.png-b4986c88bf1e20891dc480c8f4703ca4.ctex::
 index.gd::GDScript::6468875189693534397::1761393247::0::1::::<>DialogicIndexer<><>0<>1<><>::
@@ -379,7 +379,7 @@ icon.png::CompressedTexture2D::494830544991740231::1761393247::1761408744::1::::
 index.gd::GDScript::4348465768631660427::1761393247::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ::res://addons/dialogic/Modules/Condition/::1761675155
 event_condition.gd::GDScript::489622592717509977::1761393247::0::1::::DialogicConditionEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::2557495755310811754::1761393247::1761675155::1::::<><><>0<>0<>507bc95a631d700a200d808935daaaf7<>res://.godot/imported/icon.svg-502d45c064cc30f576b7b105a01357ce.ctex::
+icon.svg::CompressedTexture2D::2557495755310811754::1761393247::1762686340::1::::<><><>0<>0<>507bc95a631d700a200d808935daaaf7<>res://.godot/imported/icon.svg-502d45c064cc30f576b7b105a01357ce.ctex::
 index.gd::GDScript::3678300865650778664::1761393247::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ui_condition_end.gd::GDScript::507850684504983884::1761393247::0::1::::<>HBoxContainer<><>0<>1<><>::
 ui_condition_end.tscn::PackedScene::8253210200994885742::1761393247::0::1::::<><><>0<>0<><>::uid://hiahx6lrlm17::::res://addons/dialogic/Modules/Condition/ui_condition_end.gd
@@ -401,7 +401,7 @@ part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
 text_bubble_base.gd::GDScript::1542491300650441718::1761393247::0::1::::<>DialogicLayoutBase<><>0<>1<><>::
 text_bubble_base.tscn::PackedScene::1313567352675269338::1761393247::0::1::::<><><>0<>0<><>::uid://v8guu7n6gv8a::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.gd
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/::1761675155
-background_layer_icon.svg::CompressedTexture2D::5684618338398076797::1761393247::1761675155::1::::<><><>0<>0<>1a89ffba6272782d5376c7aea7e7e9fb<>res://.godot/imported/background_layer_icon.svg-021cd7ab7c646ee621f9b89b8dfc9d60.ctex::
+background_layer_icon.svg::CompressedTexture2D::5684618338398076797::1761393247::1762686340::1::::<><><>0<>0<>1a89ffba6272782d5376c7aea7e7e9fb<>res://.godot/imported/background_layer_icon.svg-021cd7ab7c646ee621f9b89b8dfc9d60.ctex::
 full_background_layer.gd::GDScript::3517112264591053323::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 full_background_layer.tscn::PackedScene::6620239367191024367::1761393247::0::1::::<><><>0<>0<><>::uid://bqdylb4maacf0::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.gd<>uid://oxcjhq2817c7::::res://addons/dialogic/Modules/Background/node_background_holder.gd
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
@@ -410,12 +410,12 @@ preview.png::CompressedTexture2D::6752591039733634668::1761393247::1761408744::1
 glossary_popup_layer.gd::GDScript::1038527132897895289::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 glossary_popup_layer.tscn::PackedScene::8426085437997601224::1761393247::0::1::::<><><>0<>0<><>::uid://o2cnjam8bomr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.gd
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
-popup_glossary_layer_icon.svg::CompressedTexture2D::6773218685446495568::1761393247::1761675155::1::::<><><>0<>0<>32777a32789c884adda3d31f7a31516a<>res://.godot/imported/popup_glossary_layer_icon.svg-4af96bdb70714a5289a4ffe42cf8f357.ctex::
+popup_glossary_layer_icon.svg::CompressedTexture2D::6773218685446495568::1761393247::1762686340::1::::<><><>0<>0<>32777a32789c884adda3d31f7a31516a<>res://.godot/imported/popup_glossary_layer_icon.svg-4af96bdb70714a5289a4ffe42cf8f357.ctex::
 preview.png::CompressedTexture2D::8851309275982362647::1761393247::1761408744::1::::<><><>0<>0<>0d4f7ef7f17faa4968bb1058278361a0<>res://.godot/imported/preview.png-573567ffd6162e40c78fe5aca0af73c9.ctex::
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/::1761675155
 example_history_item.gd::GDScript::2243124038726582318::1761393247::0::1::::<>Container<><>0<>0<><>::
 example_history_item.tscn::PackedScene::6207016936388778734::1761393247::0::1::::<><><>0<>0<><>::uid://67t6pr2eatac::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.gd
-history_icon.svg::CompressedTexture2D::6281808712891090691::1761393247::1761675155::1::::<><><>0<>0<>bfe51c3bee3133e7821abdb8452c4eda<>res://.godot/imported/history_icon.svg-0be9d23e65368ea3983968e4ce0e43d3.ctex::
+history_icon.svg::CompressedTexture2D::6281808712891090691::1761393247::1762686340::1::::<><><>0<>0<>bfe51c3bee3133e7821abdb8452c4eda<>res://.godot/imported/history_icon.svg-0be9d23e65368ea3983968e4ce0e43d3.ctex::
 history_layer.gd::GDScript::466510927298339214::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 history_layer.tscn::PackedScene::24154399605827450::1761393247::0::1::::<><><>0<>0<><>::uid://gv8mqbjor5nu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.gd<>uid://cuoywrmvda1yg::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
@@ -423,14 +423,14 @@ preview.png::CompressedTexture2D::4641689977736716692::1761393247::1761408744::1
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/::1761675155
 full_advance_input_layer.gd::GDScript::8728915743937490605::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 full_advance_input_layer.tscn::PackedScene::5751287062166832928::1761393247::0::1::::<><><>0<>0<><>::uid://dwml743wmb7mn::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.gd<>uid://ctog34kdg222q::::res://addons/dialogic/Modules/Text/node_input.gd
-input_layer_icon.svg::CompressedTexture2D::3920242578168397878::1761393247::1761675155::1::::<><><>0<>0<>7a3bbd0cb21dc92669b4356ad393197b<>res://.godot/imported/input_layer_icon.svg-3f439e08e8c66cbf3522ce60714f7588.ctex::
+input_layer_icon.svg::CompressedTexture2D::3920242578168397878::1761393247::1762686340::1::::<><><>0<>0<>7a3bbd0cb21dc92669b4356ad393197b<>res://.godot/imported/input_layer_icon.svg-3f439e08e8c66cbf3522ce60714f7588.ctex::
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
 preview.png::CompressedTexture2D::4608186578602512888::1761393247::1761408744::1::::<><><>0<>0<>7c4fcad6e2e78db0cd2fffdb2f5cdafe<>res://.godot/imported/preview.png-c20c74f5253522c0ea9ec9a21fcd804d.ctex::
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/::1761675155
 default_stylebox.tres::StyleBoxFlat::5646424049282425802::1761393247::0::1::::<><><>0<>0<><>::
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
 preview.png::CompressedTexture2D::1326475808619160445::1761393247::1761408744::1::::<><><>0<>0<>349901d88930d49ae91547fe05c07318<>res://.godot/imported/preview.png-dcc8befd9aebdd8b4c988971a734c72f.ctex::
-speaker-textbox-icon.svg::CompressedTexture2D::6572615020867580224::1761393247::1761675155::1::::<><><>0<>0<>ea39c0b849c7e83603feb1423c94bc29<>res://.godot/imported/speaker-textbox-icon.svg-e67964032c31cfdc4bf5a376d48a985e.ctex::
+speaker-textbox-icon.svg::CompressedTexture2D::6572615020867580224::1761393247::1762686340::1::::<><><>0<>0<>ea39c0b849c7e83603feb1423c94bc29<>res://.godot/imported/speaker-textbox-icon.svg-e67964032c31cfdc4bf5a376d48a985e.ctex::
 speaker_portrait_textbox_layer.gd::GDScript::3158226406090215546::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 textbox_with_speaker_portrait.tscn::PackedScene::4136285383422450981::1761393247::0::1::::<><><>0<>0<><>::uid://d0ptqnbudhkyj::::res://addons/dialogic/Modules/Character/node_portrait_container.gd<>uid://bk84r61kckpxa::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd<>uid://bak74s0kcr0ao::::res://addons/dialogic/Modules/Text/node_name_label.gd<>uid://drhfq6rmdeuri::::res://addons/dialogic/Modules/Text/node_dialog_text.gd<>uid://dpv2dfiv5dhmr::::res://addons/dialogic/Modules/Text/node_type_sound.gd
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/::1761675156
@@ -442,15 +442,15 @@ text_bubble.gdshader::Shader::4108745790483627497::1761393248::0::1::::<><><>0<>
 text_bubble.tscn::PackedScene::7980779173428697354::1761393248::0::1::::<><><>0<>0<><>::uid://bminl7x3r40vc::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble.gd<>uid://byskpb7ypvuab::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble.gdshader<>uid://drhfq6rmdeuri::::res://addons/dialogic/Modules/Text/node_dialog_text.gd<>uid://dpv2dfiv5dhmr::::res://addons/dialogic/Modules/Text/node_type_sound.gd<>uid://bak74s0kcr0ao::::res://addons/dialogic/Modules/Text/node_name_label.gd
 text_bubble_layer.gd::GDScript::7299938676909868101::1761393248::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 text_bubble_layer.tscn::PackedScene::9072075339465482549::1761393248::0::1::::<><><>0<>0<><>::uid://dcae6nsh8fgtp::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.gd
-text_bubble_layer_icon.svg::CompressedTexture2D::7612818198478101362::1761393248::1761675156::1::::<><><>0<>0<>069823444eaf8f994992d1168286a8b0<>res://.godot/imported/text_bubble_layer_icon.svg-d46d5806bbf83c1dc50f8d7fc8dac67d.ctex::
+text_bubble_layer_icon.svg::CompressedTexture2D::7612818198478101362::1761393248::1762686340::1::::<><><>0<>0<>069823444eaf8f994992d1168286a8b0<>res://.godot/imported/text_bubble_layer_icon.svg-d46d5806bbf83c1dc50f8d7fc8dac67d.ctex::
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/::1761675156
 part_config.cfg::TextFile::-1::1761393247::0::1::::<><><>0<>0<><>::
 preview.png::CompressedTexture2D::3354729633291840074::1761393247::1761408744::1::::<><><>0<>0<>4c2add19182f9f0d761115719d53ed02<>res://.godot/imported/preview.png-bcceb5d2b7f92c1d0f818071294dc895.ctex::
 text_input_layer.gd::GDScript::5412026392586618337::1761393247::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 text_input_layer.tscn::PackedScene::6259548876513588080::1761393247::0::1::::<><><>0<>0<><>::uid://cjdvjwjrj86sj::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.gd<>uid://biqpjv0qyefvf::::res://addons/dialogic/Modules/TextInput/node_text_input.gd
-text_input_layer_icon.svg::CompressedTexture2D::9001753205476851513::1761393247::1761675156::1::::<><><>0<>0<>5058a6c260e3c32890e58760b8ac28c1<>res://.godot/imported/text_input_layer_icon.svg-5a1e8bca317bf45f6805d82812407215.ctex::
+text_input_layer_icon.svg::CompressedTexture2D::9001753205476851513::1761393247::1762686340::1::::<><><>0<>0<>5058a6c260e3c32890e58760b8ac28c1<>res://.godot/imported/text_input_layer_icon.svg-5a1e8bca317bf45f6805d82812407215.ctex::
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/::1761675156
-choices_layer_icon.svg::CompressedTexture2D::1619877049926111804::1761393248::1761675156::1::::<><><>0<>0<>303491ed014ba889aa0db412fc7c0c5b<>res://.godot/imported/choices_layer_icon.svg-2f676308da08dddba733cb2bfba8fc69.ctex::
+choices_layer_icon.svg::CompressedTexture2D::1619877049926111804::1761393248::1762686340::1::::<><><>0<>0<>303491ed014ba889aa0db412fc7c0c5b<>res://.godot/imported/choices_layer_icon.svg-2f676308da08dddba733cb2bfba8fc69.ctex::
 choice_panel_focus.tres::StyleBoxFlat::3842993240234113681::1761393248::0::1::::<><><>0<>0<><>::
 choice_panel_hover.tres::StyleBoxFlat::1653175341677166036::1761393248::0::1::::<><><>0<>0<><>::
 choice_panel_normal.tres::StyleBoxFlat::1580218980019447892::1761393248::0::1::::<><><>0<>0<><>::
@@ -460,7 +460,7 @@ vn_choice_layer.gd::GDScript::581637318614735199::1761393248::0::1::::<>Dialogic
 vn_choice_layer.tscn::PackedScene::225680225514622240::1761393248::0::1::::<><><>0<>0<><>::uid://ij0qm2ew6plv::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd<>uid://bldt7xlfum7ov::::res://addons/dialogic/Modules/Choice/node_choice_button.gd<>uid://b1stj4ljd2vo7::::res://addons/dialogic/Modules/Choice/node_button_sound.gd<>uid://b6c1p14bc20p1::::res://addons/dialogic/Example Assets/sound-effects/typing1.wav<>uid://c2viukvbub6v6::::res://addons/dialogic/Example Assets/sound-effects/typing4.wav
 ::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/::1761675156
 part_config.cfg::TextFile::-1::1761393248::0::1::::<><><>0<>0<><>::
-portrait_layer_icon.svg::CompressedTexture2D::396903176641995005::1761393248::1761675156::1::::<><><>0<>0<>82cca290296a85b49f679eb92e21ab67<>res://.godot/imported/portrait_layer_icon.svg-4bc8b0ebd4dd0977a12c09f30758d7e1.ctex::
+portrait_layer_icon.svg::CompressedTexture2D::396903176641995005::1761393248::1762686340::1::::<><><>0<>0<>82cca290296a85b49f679eb92e21ab67<>res://.godot/imported/portrait_layer_icon.svg-4bc8b0ebd4dd0977a12c09f30758d7e1.ctex::
 preview.png::CompressedTexture2D::1716235565247592445::1761393248::1761408744::1::::<><><>0<>0<>c2729cd46c613f803f222a0e4784f61b<>res://.godot/imported/preview.png-8a6dae1a8e205382d354326ea6961ed2.ctex::
 vn_portrait_layer.gd::GDScript::6441397668861425393::1761393248::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 vn_portrait_layer.tscn::PackedScene::6512552610928516099::1761393248::0::1::::<><><>0<>0<><>::uid://cx1i44s2olq2d::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.gd<>uid://d0ptqnbudhkyj::::res://addons/dialogic/Modules/Character/node_portrait_container.gd
@@ -470,7 +470,7 @@ autoadvance_indicator.gd::GDScript::3111754778462103162::1761393248::0::1::::<>R
 next.svg::CompressedTexture2D::4177175797267068132::1761393248::1761408744::1::::<><><>0<>0<>a868054b795c215c85d2111d1fd489d2<>res://.godot/imported/next.svg-689f85597f487815b8ddefa23d22bf6f.ctex::
 part_config.cfg::TextFile::-1::1761393248::0::1::::<><><>0<>0<><>::
 preview.png::CompressedTexture2D::7430644767600345417::1761393248::1761408744::1::::<><><>0<>0<>4780ab0344e2f0c0b0ef9aa0f1e3b70d<>res://.godot/imported/preview.png-38205c265cdc5033fdb5a79a6f5d3394.ctex::
-textbox_layer_icon.svg::CompressedTexture2D::5242980695374584833::1761393248::1761675156::1::::<><><>0<>0<>55343abe3cd233f543d8d97bc96f7158<>res://.godot/imported/textbox_layer_icon.svg-d6678fedd53dcb59cc32e1c443754ad5.ctex::
+textbox_layer_icon.svg::CompressedTexture2D::5242980695374584833::1761393248::1762686340::1::::<><><>0<>0<>55343abe3cd233f543d8d97bc96f7158<>res://.godot/imported/textbox_layer_icon.svg-d6678fedd53dcb59cc32e1c443754ad5.ctex::
 vn_textbox_default_panel.tres::StyleBoxFlat::232532601972438331::1761393248::0::1::::<><><>0<>0<><>::
 vn_textbox_layer.gd::GDScript::3220088025365174792::1761393248::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 vn_textbox_layer.tscn::PackedScene::3551277938196629571::1761393248::0::1::::<><><>0<>0<><>::uid://bl43m5qw8pso3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd<>uid://bfc03rn8slceu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd<>uid://drhfq6rmdeuri::::res://addons/dialogic/Modules/Text/node_dialog_text.gd<>uid://dpv2dfiv5dhmr::::res://addons/dialogic/Modules/Text/node_type_sound.gd<>uid://dve1vwse2peji::::res://addons/dialogic/Modules/Text/node_next_indicator.gd<>uid://bklme8oymw6h7::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd<>uid://dkv1pl1c1dq6::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres<>uid://b0rpqfg4fhebk::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg<>uid://bak74s0kcr0ao::::res://addons/dialogic/Modules/Text/node_name_label.gd<>uid://m7gyepkysu83::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres
@@ -492,12 +492,12 @@ event_end.gd::GDScript::471156762936849406::1761393248::0::1::::DialogicEndTimel
 icon.png::CompressedTexture2D::6076849027047342294::1761393248::1761408744::1::::<><><>0<>0<>164c44d4d1c99b75c1531f883fdc9f1b<>res://.godot/imported/icon.png-8e345f81e023043fdbb4f75b1b0e9bb0.ctex::
 index.gd::GDScript::1237708916941675430::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ::res://addons/dialogic/Modules/Glossary/::1761675156
-add-glossary.svg::CompressedTexture2D::5081683421271977615::1761393248::1761675156::1::::<><><>0<>0<>b4d41f5f5ed8a0e16dff64cd8c000d06<>res://.godot/imported/add-glossary.svg-1cde77c043d3874d9bc84cc14d0ec9dc.ctex::
+add-glossary.svg::CompressedTexture2D::5081683421271977615::1761393248::1762686340::1::::<><><>0<>0<>b4d41f5f5ed8a0e16dff64cd8c000d06<>res://.godot/imported/add-glossary.svg-1cde77c043d3874d9bc84cc14d0ec9dc.ctex::
 event_glossary.gd::GDScript::1019738922767824547::1761393248::0::1::::DialogicGlossaryEvent<>DialogicEvent<><>0<>1<><>::
 glossary_editor.gd::GDScript::3552790265496218506::1761393248::0::1::::<>DialogicEditor<><>0<>1<><>::
 glossary_editor.tscn::PackedScene::8573116271537495193::1761393248::0::1::::<><><>0<>0<><>::uid://bqu863yjcjc8y::::res://addons/dialogic/Modules/Glossary/glossary_editor.gd<>uid://cenut3sc5cul0::::res://addons/dialogic/Modules/Glossary/add-glossary.svg
 glossary_resource.gd::GDScript::2368103922453568519::1761393248::0::1::::DialogicGlossary<>Resource<><>0<>1<><>::
-icon.svg::CompressedTexture2D::4540926883099757451::1761393248::1761675156::1::::<><><>0<>0<>6b8ec01f62a7446dc2d27372c86df6d5<>res://.godot/imported/icon.svg-4fc0c12c53379638e37d654e7bbaea1a.ctex::
+icon.svg::CompressedTexture2D::4540926883099757451::1761393248::1762686340::1::::<><><>0<>0<>6b8ec01f62a7446dc2d27372c86df6d5<>res://.godot/imported/icon.svg-4fc0c12c53379638e37d654e7bbaea1a.ctex::
 index.gd::GDScript::2316144666851169784::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 subsystem_glossary.gd::GDScript::247026517945896814::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/HighlightPortrait/::1761393305
@@ -506,9 +506,9 @@ index.gd::GDScript::1231353638722720319::1761393248::0::1::::<>DialogicIndexer<>
 simple_highlight_portrait.gd::GDScript::1955332441313060564::1761393248::0::1::::<>DialogicPortrait<><>0<>1<><>::
 simple_highlight_portrait.tscn::PackedScene::3635328490225322467::1761393248::0::1::::<><><>0<>0<><>::uid://24gbl2wbl1d5::::res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.gd
 ::res://addons/dialogic/Modules/History/::1761675156
-definition.svg::CompressedTexture2D::7977914867733989258::1761393248::1761675156::1::::<><><>0<>0<>540cbf62bf4155ce72cee9f327d7ae48<>res://.godot/imported/definition.svg-dbaabe55d84e4ad95047a50fc6c13843.ctex::
+definition.svg::CompressedTexture2D::7977914867733989258::1761393248::1762686340::1::::<><><>0<>0<>540cbf62bf4155ce72cee9f327d7ae48<>res://.godot/imported/definition.svg-dbaabe55d84e4ad95047a50fc6c13843.ctex::
 event_history.gd::GDScript::8009990755402243851::1761393248::0::1::::DialogicHistoryEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::1853570986969252340::1761393248::1761675156::1::::<><><>0<>0<>d22f54bcc12a933ea9f7f019ab175854<>res://.godot/imported/icon.svg-82841efe3f86e947d4f66fd24dc8f52c.ctex::
+icon.svg::CompressedTexture2D::1853570986969252340::1761393248::1762686340::1::::<><><>0<>0<>d22f54bcc12a933ea9f7f019ab175854<>res://.godot/imported/icon.svg-82841efe3f86e947d4f66fd24dc8f52c.ctex::
 index.gd::GDScript::3443788134316264161::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 settings_history.gd::GDScript::5906923319364309455::1761393248::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
 settings_history.tscn::PackedScene::4542659110630949498::1761393248::0::1::::<><><>0<>0<><>::uid://cqfmftweedlvb::::res://addons/dialogic/Modules/History/settings_history.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn
@@ -519,7 +519,7 @@ event_label.gd::GDScript::7155405246804959841::1761393248::0::1::::DialogicLabel
 event_return.gd::GDScript::8288424451761164950::1761393248::0::1::::DialogicReturnEvent<>DialogicEvent<><>0<>1<><>::
 icon_jump.png::CompressedTexture2D::5087234462586838850::1761393248::1761408744::1::::<><><>0<>0<>9cf89339d35a6305bf7376fa39d06dbb<>res://.godot/imported/icon_jump.png-50f6cdd715fcbdbed16b43c5beb6b851.ctex::
 icon_label.png::CompressedTexture2D::204052454782202907::1761393248::1761408744::1::::<><><>0<>0<>7060caa82197b4445bb1a38e92217a0a<>res://.godot/imported/icon_label.png-3923bd1131990c8869923c838ffdb9ae.ctex::
-icon_return.svg::CompressedTexture2D::747971600453106621::1761393248::1761675157::1::::<><><>0<>0<>92ce2b972ae7e1408d9f46b970e0c7bc<>res://.godot/imported/icon_return.svg-dc7fb704ff391638f73cbbc2b30b32fa.ctex::
+icon_return.svg::CompressedTexture2D::747971600453106621::1761393248::1762686340::1::::<><><>0<>0<>92ce2b972ae7e1408d9f46b970e0c7bc<>res://.godot/imported/icon_return.svg-dc7fb704ff391638f73cbbc2b30b32fa.ctex::
 index.gd::GDScript::2097830043245355192::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 subsystem_jump.gd::GDScript::1606838518209006275::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/LayeredPortrait/::1761393302
@@ -530,14 +530,14 @@ layered_portrait.tscn::PackedScene::631873056539099996::1761393248::0::1::::<><>
 layered_portrait_thumbnail.png::CompressedTexture2D::4101738307074758458::1761393248::1761408744::1::::<><><>0<>0<>0b5ec03cfed604454ba5f9b5c2584fdd<>res://.godot/imported/layered_portrait_thumbnail.png-107af8817a839c595823f628d8fb18dd.ctex::
 ::res://addons/dialogic/Modules/Save/::1761675157
 event_save.gd::GDScript::689742205646177016::1761393248::0::1::::DialogicSaveEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::9161839171657716917::1761393248::1761675157::1::::<><><>0<>0<>a5c2b459178f99a7460ee739babbd5e0<>res://.godot/imported/icon.svg-aad0408eebe298e9d92c76d6f2c79cf6.ctex::
+icon.svg::CompressedTexture2D::9161839171657716917::1761393248::1762686340::1::::<><><>0<>0<>a5c2b459178f99a7460ee739babbd5e0<>res://.godot/imported/icon.svg-aad0408eebe298e9d92c76d6f2c79cf6.ctex::
 index.gd::GDScript::471156570188703261::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 settings_save.gd::GDScript::4013864705785991954::1761393248::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
 settings_save.tscn::PackedScene::5043017118059958494::1761393248::0::1::::<><><>0<>0<><>::uid://bxgl1awhvasa1::::res://addons/dialogic/Modules/Save/settings_save.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn
 subsystem_save.gd::GDScript::2040175623983010523::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/Settings/::1761675157
 event_setting.gd::GDScript::6634626495783055098::1761393248::0::1::::DialogicSettingEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::5623309547840460913::1761393248::1761675157::1::::<><><>0<>0<>18ff83dc33e77d16e67820b5f22b7ef8<>res://.godot/imported/icon.svg-d4407cb145fa5c1d965de3d2bd63ce5f.ctex::
+icon.svg::CompressedTexture2D::5623309547840460913::1761393248::1762686340::1::::<><><>0<>0<>18ff83dc33e77d16e67820b5f22b7ef8<>res://.godot/imported/icon.svg-d4407cb145fa5c1d965de3d2bd63ce5f.ctex::
 index.gd::GDScript::8610331936500499628::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 subsystem_settings.gd::GDScript::569295372753923001::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/Signal/::1761393302
@@ -555,7 +555,7 @@ node_style.gd::GDScript::7966861427741879241::1761393248::0::1::::DialogicNode_S
 subsystem_styles.gd::GDScript::6165295134977889351::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/StyleEditor/::1761675157
 index.gd::GDScript::2276358849453137106::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
-styles_icon.svg::CompressedTexture2D::1849808737952588208::1761393248::1761675157::1::::<><><>0<>0<>9f748e00cc02986269e5bbc9fdc6c5cc<>res://.godot/imported/styles_icon.svg-c55f9f7d15c3512c8b20dbf30eed7047.ctex::
+styles_icon.svg::CompressedTexture2D::1849808737952588208::1761393248::1762686340::1::::<><><>0<>0<>9f748e00cc02986269e5bbc9fdc6c5cc<>res://.godot/imported/styles_icon.svg-c55f9f7d15c3512c8b20dbf30eed7047.ctex::
 style_editor.gd::GDScript::979138671214029290::1761393248::0::1::::<>DialogicEditor<><>0<>1<><>::
 style_editor.tscn::PackedScene::6451656504138867178::1761393248::0::1::::<><><>0<>0<><>::uid://n7kjhd6h41ec::::res://addons/dialogic/Modules/StyleEditor/style_editor.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn<>uid://5j2ryc3uk1x3::::res://addons/dialogic/Modules/StyleEditor/style_layer_editor.gd<>uid://orsplfberna::::res://addons/dialogic/Modules/StyleEditor/Components/style_layer_tree.gd<>uid://i2qxk6l78uax::::res://addons/dialogic/Modules/StyleEditor/Components/style_browser_window.gd<>uid://cs381i3h7sveq::::res://addons/dialogic/Modules/StyleEditor/Components/style_browser.tscn
 style_layer_editor.gd::GDScript::2125915691177942050::1761393248::0::1::::<>HSplitContainer<><>0<>1<><>::
@@ -568,7 +568,7 @@ style_layer_tree.gd::GDScript::29966426795946382::1761393248::0::1::::<>Tree<><>
 auto_advance.gd::GDScript::5466054780940415268::1761393248::0::1::::DialogicAutoAdvance<>RefCounted<><>0<>0<><>::
 auto_skip.gd::GDScript::1429349321881129789::1761393248::0::1::::DialogicAutoSkip<>RefCounted<><>0<>0<><>::
 event_text.gd::GDScript::7199229198122971661::1761393248::0::1::::DialogicTextEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::9151163472776694991::1761393248::1761675157::1::::<><><>0<>0<>0fe1b3b3cf3733ead1d66ddc5726114c<>res://.godot/imported/icon.svg-e2501ddcdef01c7f2c3538940f5abfc1.ctex::
+icon.svg::CompressedTexture2D::9151163472776694991::1761393248::1762686340::1::::<><><>0<>0<>0fe1b3b3cf3733ead1d66ddc5726114c<>res://.godot/imported/icon.svg-e2501ddcdef01c7f2c3538940f5abfc1.ctex::
 index.gd::GDScript::3735692247776249690::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 manual_advance.gd::GDScript::7278833021501408885::1761393248::0::1::::DialogicManualAdvance<>RefCounted<><>0<>0<><>::
 node_dialog_text.gd::GDScript::8367256849905527338::1761393248::0::1::::DialogicNode_DialogText<>RichTextLabel<>res://addons/dialogic/Modules/Text/node_dialog_text_icon.svg<>0<>0<><>::
@@ -577,7 +577,7 @@ node_input.gd::GDScript::6135746528022206122::1761393248::0::1::::DialogicNode_I
 node_name_label.gd::GDScript::2409060177523604634::1761393248::0::1::::DialogicNode_NameLabel<>Label<>res://addons/dialogic/Modules/Text/node_name_label_icon.svg<>0<>0<><>::
 node_name_label_icon.svg::CompressedTexture2D::753910208124862534::1761393248::1761408744::1::::<><><>0<>0<>a4c8bf4be7c45d309f0f460f60daff16<>res://.godot/imported/node_name_label_icon.svg-d482939b74b41ec2da6edc97e41c8bf8.ctex::
 node_next_indicator.gd::GDScript::8643102605516753138::1761393248::0::1::::DialogicNode_NextIndicator<>Control<>res://addons/dialogic/Modules/Text/node_next_indicator_icon.svg<>0<>0<><>::
-node_next_indicator_icon.svg::CompressedTexture2D::302873534409359568::1761393248::1761675157::1::::<><><>0<>0<>b19c8f494620393de69e28f29117e8d0<>res://.godot/imported/node_next_indicator_icon.svg-06167a3b3e290941c1c34386ebd60af8.ctex::
+node_next_indicator_icon.svg::CompressedTexture2D::302873534409359568::1761393248::1762686340::1::::<><><>0<>0<>b19c8f494620393de69e28f29117e8d0<>res://.godot/imported/node_next_indicator_icon.svg-06167a3b3e290941c1c34386ebd60af8.ctex::
 node_type_sound.gd::GDScript::8257091630640999901::1761393248::0::1::::DialogicNode_TypeSounds<>AudioStreamPlayer<><>0<>1<><>::
 settings_text.gd::GDScript::5031029662621467051::1761393248::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
 settings_text.tscn::PackedScene::5182578482178389069::1761393248::0::1::::<><><>0<>0<><>::uid://cdxck874xobqh::::res://addons/dialogic/Modules/Text/settings_text.gd<>uid://dpwhshre1n4t6::::res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn
@@ -594,12 +594,12 @@ index.gd::GDScript::27167336643688685::1761393248::0::1::::<>DialogicIndexer<><>
 node_text_input.gd::GDScript::2981889446268623555::1761393248::0::1::::DialogicNode_TextInput<>Control<><>0<>0<><>::
 subsystem_text_input.gd::GDScript::1935382475641866053::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/Variable/::1761675158
-add-variable.svg::CompressedTexture2D::1138705662028104178::1761393248::1761675158::1::::<><><>0<>0<>9d630fcd8ddcb95c0ca3169d3c21d3af<>res://.godot/imported/add-variable.svg-26eb3bd7fac746c574d054e8416d3aac.ctex::
+add-variable.svg::CompressedTexture2D::1138705662028104178::1761393248::1762686340::1::::<><><>0<>0<>9d630fcd8ddcb95c0ca3169d3c21d3af<>res://.godot/imported/add-variable.svg-26eb3bd7fac746c574d054e8416d3aac.ctex::
 event_variable.gd::GDScript::3119550229362804886::1761393248::0::1::::DialogicVariableEvent<>DialogicEvent<><>0<>1<><>::
 icon.png::CompressedTexture2D::1655383244634406440::1761393248::1761408744::1::::<><><>0<>0<>6a015eb247c8daefff4fbcff1a8e47ec<>res://.godot/imported/icon.png-99064bb3920f49262c581fccbfcfc353.ctex::
 index.gd::GDScript::3226971908949486576::1761393248::0::1::::<>DialogicIndexer<><>0<>1<><>::
 subsystem_variables.gd::GDScript::5258690420906044270::1761393248::0::1::::<>DialogicSubsystem<><>0<>0<><>::
-variable.svg::CompressedTexture2D::5491954923084748079::1761393248::1761675158::1::::<><><>0<>0<>ebff9dd9fafad26993c1a5c01908c24b<>res://.godot/imported/variable.svg-52aeb47fe1705a3f04d919f8dcd5d319.ctex::
+variable.svg::CompressedTexture2D::5491954923084748079::1761393248::1762686340::1::::<><><>0<>0<>ebff9dd9fafad26993c1a5c01908c24b<>res://.godot/imported/variable.svg-52aeb47fe1705a3f04d919f8dcd5d319.ctex::
 ::res://addons/dialogic/Modules/Variable/variables_editor/::1761393248
 variables_editor.gd::GDScript::9034610484529730203::1761393249::0::1::::<>DialogicEditor<><>0<>1<><>::
 variables_editor.tscn::PackedScene::2215279380841241914::1761393249::0::1::::<><><>0<>0<><>::uid://d1yoykg323a5p::::res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.gd<>uid://deduielq1r0r::::res://addons/dialogic/Modules/Variable/variables_editor/variable_tree.gd
@@ -611,11 +611,11 @@ index.gd::GDScript::4863832543612666050::1761393249::0::1::::<>DialogicIndexer<>
 subsystem_voice.gd::GDScript::1692387744689224104::1761393249::0::1::::<>DialogicSubsystem<><>0<>0<><>::
 ::res://addons/dialogic/Modules/Wait/::1761675158
 event_wait.gd::GDScript::6097814815086445062::1761393249::0::1::::DialogicWaitEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::5022412015422553386::1761393249::1761675158::1::::<><><>0<>0<>2acee62fc797212a94de7d59ccb9b5cf<>res://.godot/imported/icon.svg-7e9f52b17ae6e5e1f284e12048cb8f05.ctex::
+icon.svg::CompressedTexture2D::5022412015422553386::1761393249::1762686340::1::::<><><>0<>0<>2acee62fc797212a94de7d59ccb9b5cf<>res://.godot/imported/icon.svg-7e9f52b17ae6e5e1f284e12048cb8f05.ctex::
 index.gd::GDScript::2740445217362073721::1761393249::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ::res://addons/dialogic/Modules/WaitInput/::1761675158
 event_wait_input.gd::GDScript::2473881298755643258::1761393249::0::1::::DialogicWaitInputEvent<>DialogicEvent<><>0<>1<><>::
-icon.svg::CompressedTexture2D::2766149336681406939::1761393249::1761675158::1::::<><><>0<>0<>35002bf1f4e75410313770867b7720c7<>res://.godot/imported/icon.svg-cb8e50b081a310c64183b12c6d12fcf2.ctex::
+icon.svg::CompressedTexture2D::2766149336681406939::1761393249::1762686340::1::::<><><>0<>0<>35002bf1f4e75410313770867b7720c7<>res://.godot/imported/icon.svg-cb8e50b081a310c64183b12c6d12fcf2.ctex::
 index.gd::GDScript::971839668851566764::1761393249::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ::res://addons/dialogic/Resources/::1761393249
 character.gd::GDScript::8170509915016804394::1761393249::0::1::::DialogicCharacter<>Resource<>uid://bbea0efx0ybu7<>0<>1<><>::
@@ -630,15 +630,15 @@ event.gd::GDScript::8763588563558386910::1761393249::0::1::::DialogicEvent<>Reso
 timeline.gd::GDScript::5667425671830628919::1761393249::0::1::::DialogicTimeline<>Resource<>uid://j7ym07anlusi<>0<>1<><>::
 TimelineResourceLoader.gd::GDScript::1953327801557244659::1761393249::0::1::::DialogicTimelineFormatLoader<>ResourceFormatLoader<><>0<>1<><>::
 TimelineResourceSaver.gd::GDScript::6005903703142383367::1761393249::0::1::::DialogicTimelineFormatSaver<>ResourceFormatSaver<><>0<>1<><>::
-::res://addons/dialogue_manager/::1761933736
+::res://addons/dialogue_manager/::1762605750
 constants.gd::GDScript::4240262336831424009::1759589935::0::1::::DMConstants<>RefCounted<><>0<>0<><>::
 dialogue_label.gd::GDScript::480611383085669467::1759589935::0::1::::DialogueLabel<>RichTextLabel<>res://addons/dialogue_manager/assets/icon.svg<>0<>1<><>::
 dialogue_label.tscn::PackedScene::5518490004210093266::1759589935::0::1::::<><><>0<>0<><>::uid://g32um0mltv5d::::res://addons/dialogue_manager/dialogue_label.gd
 dialogue_line.gd::GDScript::1208905219044177333::1759589935::0::1::::DialogueLine<>RefCounted<><>0<>0<><>::
-dialogue_manager.gd::GDScript::6774079045493014679::1761933736::0::1::::<>Node<><>0<>0<><>::
+dialogue_manager.gd::GDScript::6774079045493014679::1762686339::0::1::::<>Node<><>0<>0<><>::
 dialogue_resource.gd::GDScript::7268423792262407282::1759589935::0::1::::DialogueResource<>Resource<>res://addons/dialogue_manager/assets/icon.svg<>0<>1<><>::
 dialogue_response.gd::GDScript::5668140482552713515::1759589935::0::1::::DialogueResponse<>RefCounted<><>0<>0<><>::
-dialogue_responses_menu.gd::GDScript::2520211531407682507::1759589935::0::1::::DialogueResponsesMenu<>HBoxContainer<>res://addons/dialogue_manager/assets/responses_menu.svg<>0<>0<><>::
+dialogue_responses_menu.gd::GDScript::2520211531407682507::1762686339::0::1::::DialogueResponsesMenu<>HBoxContainer<>res://addons/dialogue_manager/assets/responses_menu.svg<>0<>0<><>::
 editor_translation_parser_plugin.gd::GDScript::6952218891186463517::1759589935::0::1::::DMTranslationParserPlugin<>EditorTranslationParserPlugin<><>0<>0<><>::
 export_plugin.gd::GDScript::1265275163198105838::1759589935::0::1::::DMExportPlugin<>EditorExportPlugin<><>0<>0<><>::
 import_plugin.gd::GDScript::7696928728755687928::1759589935::0::1::::DMImportPlugin<>EditorImportPlugin<><>0<>1<><>::
@@ -688,12 +688,13 @@ editor_property_control.gd::GDScript::8171099031067179274::1759589935::0::1::::<
 editor_property_control.tscn::PackedScene::1689506734256736329::1759589935::0::1::::<><><>0<>0<><>::uid://dooe2pflnqtve::::res://addons/dialogue_manager/components/editor_property/editor_property_control.gd<>uid://b16uuqjuof3n5::::res://addons/dialogue_manager/components/editor_property/resource_button.tscn<>uid://dnufpcdrreva3::::res://addons/dialogue_manager/components/files_list.tscn
 resource_button.gd::GDScript::7184489175127453302::1759589935::0::1::::<>Button<><>0<>1<><>::
 resource_button.tscn::PackedScene::4276577239595711888::1759589935::0::1::::<><><>0<>0<><>::uid://damhqta55t67c::::res://addons/dialogue_manager/components/editor_property/resource_button.gd
-::res://addons/dialogue_manager/example_balloon/::1761571554
+::res://addons/dialogue_manager/example_balloon/::1763233724
+Container_Response.gd::GDScript::4175398154555170985::1762686339::0::1::::Container_Response<>VBoxContainer<><>0<>0<><>::
 example_balloon3.tscn::PackedScene::2304415056852043862::1761398025::0::1::::<><><>0<>0<><>::uid://d1wt4ma6055l8::::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://bb52rsfwhkxbn::::res://addons/dialogue_manager/dialogue_responses_menu.gd<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://clfr2oy780nku::::res://texture/folderTres/materials/wow.tres<>uid://b056rcdsyltht::::res://texture/font/Mojangles.ttf<>uid://bqt2mbvrqlrhc::::res://texture/PNG/funds/fundo_de_personagem.png<>uid://dcv5tnyvctthl::::res://texture/PNG/funds/Border All 7.png<>uid://sxqj8grp2l78::::res://addons/dialogue_manager/example_balloon/texture_rect.gd<>uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader<>uid://ucljqcw0m3mk::::res://texture/paleta/palette_20colors_32x1.png<>uid://bjc7fwmqhjoko::::res://texture/PNG/Default/Transparent border/panel-transparent-border-001.png<>uid://b04crvegsktm7::::res://texture/folderTres/BoxTexture/example_balloon.tres<>uid://qps2iq0yi4ti::::res://texture/folderTres/BoxTexture/example_balloonLINE.tres
-example_balloon.gd::GDScript::9030794338866587503::1759589935::0::1::::DialogueManagerExampleBalloon<>CanvasLayer<><>0<>0<><>::
-example_balloon.tscn::PackedScene::3710448712616829697::1761667809::0::1::::<><><>0<>0<><>::uid://d1wt4ma6055l8::::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://bb52rsfwhkxbn::::res://addons/dialogue_manager/dialogue_responses_menu.gd<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://dkpfptdx5dya8::::res://texture/PNG/funds/Border All 6.png<>uid://b056rcdsyltht::::res://texture/font/Mojangles.ttf<>uid://sxqj8grp2l78::::res://addons/dialogue_manager/example_balloon/texture_rect.gd<>uid://bjc7fwmqhjoko::::res://texture/PNG/bordas UI/Default/Transparent border/panel-transparent-border-001.png<>uid://b04crvegsktm7::::res://texture/folderTres/BoxTexture/example_balloon.tres<>uid://qps2iq0yi4ti::::res://texture/folderTres/BoxTexture/example_balloonLINE.tres<>uid://c0q1ahwqu3qem::::res://texture/folderTres/materials/preto_&_branco.tres<>uid://bqt2mbvrqlrhc::::res://texture/PNG/funds/fundo_de_personagem.png<>uid://dwc0h6lg6y3kf::::res://texture/characters/dialogos/bebedouro.tres
+example_balloon.gd::GDScript::9030794338866587503::1762686339::0::1::::DialogueManagerExampleBalloon<>CanvasLayer<><>0<>0<><>::
+example_balloon.tscn::PackedScene::3710448712616829697::1762686339::0::1::::<><><>0<>0<><>::uid://d1wt4ma6055l8::::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://bb52rsfwhkxbn::::res://addons/dialogue_manager/dialogue_responses_menu.gd<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://dkpfptdx5dya8::::res://texture/PNG/funds/Border All 6.png<>uid://b056rcdsyltht::::res://texture/font/Mojangles.ttf<>uid://sxqj8grp2l78::::res://addons/dialogue_manager/example_balloon/texture_rect.gd<>uid://bjc7fwmqhjoko::::res://texture/PNG/bordas UI/Default/Transparent border/panel-transparent-border-001.png<>uid://b04crvegsktm7::::res://texture/folderTres/BoxTexture/example_balloon.tres<>uid://b0qugynm4r7l2::::res://addons/dialogue_manager/example_balloon/Container_Response.gd<>uid://c0q1ahwqu3qem::::res://texture/folderTres/materials/preto_&_branco.tres<>uid://cf8r18omnssev::::res://texture/PNG/icon/almaanimetionambicao.tres<>uid://bqt2mbvrqlrhc::::res://texture/PNG/funds/fundo_de_personagem.png
 small_example_balloon.tscn::PackedScene::1883859960814163368::1759589935::0::1::::<><><>0<>0<><>::uid://d1wt4ma6055l8::::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://bb52rsfwhkxbn::::res://addons/dialogue_manager/dialogue_responses_menu.gd
-texture_rect.gd::GDScript::1311869161190268789::1761408743::0::1::::<>NinePatchRect<><>0<>0<><>::
+texture_rect.gd::GDScript::1311869161190268789::1763233724::0::1::::<>Panel<><>0<>0<><>::
 ::res://addons/dialogue_manager/l10n/::1759589935
 en.mo::Translation::-1::1759589935::0::1::::<><><>0<>0<><>::
 en.po::Translation::-1::1759589935::0::1::::<><><>0<>0<><>::
@@ -725,9 +726,9 @@ credits.txt::TextFile::-1::1759589935::0::1::::<><><>0<>0<><>::
 2d_tweening_example_scene.tscn::PackedScene::5875330861835730161::1759589935::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://t8wa4e5y5hcf::::res://addons/phantom_camera/examples/scripts/2D/2d_trigger_area.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
 ::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/::1759589935
 playable_character_2d.tscn::PackedScene::2267157683035007646::1759589935::0::1::::<><><>0<>0<><>::uid://cb46ypjv5p72s::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://cscjjt55iw2cu::::res://addons/phantom_camera/examples/textures/2D/player_sprite.svg<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/item_focus_phantom_camera_2d_tween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/inventory_phantom_camera_2d_tween.tres
-::res://addons/phantom_camera/examples/example_scenes/2D-4.3/::1759589935
+::res://addons/phantom_camera/examples/example_scenes/2D-4.3/::1763293238
 2d_example_scene.tscn::PackedScene::998447531291583502::1759589935::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
-2d_follow_framed_example_scene.tscn::PackedScene::7635259044284913144::1759589935::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
+2d_follow_framed_example_scene.tscn::PackedScene::7635259044284913144::1763293238::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
 2d_follow_group_example_scene.tscn::PackedScene::2978736400746796671::1759589935::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/phantom_camera_2d_sprite.png<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
 2d_follow_path_example_scene.tscn::PackedScene::4694773633599900829::1759589935::0::1::::<><><>0<>0<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_2d_tween.tres<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd
 2d_limit_example_scene.tscn::PackedScene::1785076392835743211::1759589935::0::1::::<><><>0<>0<><>::uid://dtcuvut1eklnd::::res://addons/phantom_camera/examples/scripts/2D/2d_room_limit_tween_4.3.gd<>uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/ui_inventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/ui_sign.tscn<>uid://7kh0xydx0b1o::::res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://cnnaky2ns2pn4::::res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd
@@ -773,12 +774,12 @@ item_focus_phantom_camera_2d_tween.tres::Resource/PhantomCameraTween::5058781781
 player_phantom_camera_2d_tween.tres::Resource/PhantomCameraTween::9514768340188899::1759589935::0::1::::<><>res://addons/phantom_camera/icons/phantom_camera_tween.svg<>0<>0<><>::uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd
 player_phantom_camera_3d_tween.tres::Resource/PhantomCameraTween::5865226110262250054::1759589935::0::1::::<><>res://addons/phantom_camera/icons/phantom_camera_tween.svg<>0<>0<><>::uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd
 ::res://addons/phantom_camera/examples/scripts/::1759589935
-::res://addons/phantom_camera/examples/scripts/2D/::1759589935
+::res://addons/phantom_camera/examples/scripts/2D/::1763293772
 2d_room_limit_tween.gd::GDScript::6928334148644179433::1759589935::0::1::::<>Node2D<><>0<>0<><>::
 2d_room_limit_tween_4.3.gd::GDScript::8498231758242729465::1759589935::0::1::::<>Node2D<><>0<>0<><>::
 2d_trigger_area.gd::GDScript::1403049799600144021::1759589935::0::1::::<>Area2D<><>0<>0<><>::
 player_character_body_2d.gd::GDScript::4904823054469799264::1759589935::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player_character_body_2d_4.3.gd::GDScript::5712152406308365419::1759589935::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player_character_body_2d_4.3.gd::GDScript::5712152406308365419::1763293772::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://addons/phantom_camera/examples/scripts/3D/::1759589935
 3d_trigger_area.gd::GDScript::3314726582662125036::1759589935::0::1::::<>Area3D<><>0<>0<><>::
 npc.gd::GDScript::1448520737375719462::1759589935::0::1::::<>Node3D<><>0<>0<><>::
@@ -871,11 +872,11 @@ camera_3d_resource.gd::GDScript::4717552271394480598::1759589936::0::1::::Camera
 phantom_camera_noise_2d.gd::GDScript::7746826514819894941::1759589936::0::1::::PhantomCameraNoise2D<>Resource<>res://addons/phantom_camera/icons/phantom_camera_noise_resource.svg<>0<>1<><>::
 phantom_camera_noise_3d.gd::GDScript::6187281538235516492::1759589936::0::1::::PhantomCameraNoise3D<>Resource<>res://addons/phantom_camera/icons/phantom_camera_noise_resource.svg<>0<>1<><>::
 tween_resource.gd::GDScript::2358266811638875852::1759589936::0::1::::PhantomCameraTween<>Resource<>res://addons/phantom_camera/icons/phantom_camera_tween.svg<>0<>0<><>::
-::res://addons/phantom_camera/themes/::1762193971
+::res://addons/phantom_camera/themes/::1763293240
 button_focus.tres::StyleBoxFlat::1106322926052085743::1759589936::0::1::::<><><>0<>0<><>::
 button_hover.tres::StyleBoxFlat::2151354179275418664::1759589936::0::1::::<><><>0<>0<><>::
 button_normal.tres::StyleBoxFlat::2549607310371774247::1759589936::0::1::::<><><>0<>0<><>::
-theme.tres::Theme::2909626652912860453::1762193971::0::1::::<><><>0<>0<><>::uid://dve7mgsjik4dg::::res://addons/phantom_camera/fonts/Nunito-Regular.ttf<>uid://5weqvkjsfso3::::res://addons/phantom_camera/themes/button_hover.tres<>uid://bclbwo3xrdat0::::res://addons/phantom_camera/themes/button_normal.tres
+theme.tres::Theme::2909626652912860453::1763293240::0::1::::<><><>0<>0<><>::uid://dve7mgsjik4dg::::res://addons/phantom_camera/fonts/Nunito-Regular.ttf<>uid://5weqvkjsfso3::::res://addons/phantom_camera/themes/button_hover.tres<>uid://bclbwo3xrdat0::::res://addons/phantom_camera/themes/button_normal.tres
 ::res://addons/simple-gui-transitions/::1760377373
 default_values.gd::GDScript::982051309704504481::1760377363::0::1::::<>RefCounted<><>0<>0<><>::
 icon.png::CompressedTexture2D::2955628939925275373::1760377363::1760388005::1::::<><><>0<>0<>17d7f1decc4b1c3ee2c66d779911d898<>res://.godot/imported/icon.png-a3e64f21cb36cf25b2a1c958ab55ae39.ctex::
@@ -899,153 +900,157 @@ transform.tres::ShaderMaterial::8459458889980608139::1760377363::0::1::::<><><>0
 ::res://addons/simple-gui-transitions/shaders/::1760377363
 transform.gdshader::Shader::709129370839549027::1760377363::0::1::::<><><>0<>0<><>::
 ::res://Areais/::1761933737
-Dungeons2D.gd::GDScript::3408809564487602744::1761933737::0::1::::Dungeons2D<>Node2D<>res://texture/folderTres/texturas/dunjoes.tres<>0<>0<><>::
+Dungeons2D.gd::GDScript::3408809564487602744::1762686337::0::1::::Dungeons2D<>Node2D<>res://texture/folderTres/texturas/dunjoes.tres<>0<>0<><>::
 save.gd::GDScript::4757906948252288629::1761158800::0::1::::<>StaticBody2D<><>0<>0<><>::
 SAVE.tscn::PackedScene::5776015953433785811::1760262790::0::1::::<><><>0<>0<><>::uid://dpuupn1y1hu6a::::res://texture/objetos/SAVE.png<>uid://b811bdlqce6hl::::res://Areais/save.gd<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres
 ::res://Areais/Batalha/::1759589934
-::res://Areais/Batalha/cenas/::1762200138
+::res://Areais/Batalha/cenas/::1763236263
 balabebedouro1.tscn::PackedScene::2953811264271978953::1761667808::0::1::::<><><>0<>0<><>::uid://qnklpnihflc2::::res://Godot/classes/Nodes/bala2D.gd<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png
 balabebedouro2.tscn::PackedScene::8667031297710522069::1761158800::0::1::::<><><>0<>0<><>::uid://qnklpnihflc2::::res://Godot/classes/Nodes/bala2D.gd<>uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
-BATALHA.tscn::PackedScene::2310987047274004657::1762190507::0::1::::<><>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::uid://0hjngdsxlm2y::::res://Areais/Batalha/scripts/batalha2.gd<>uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://dhso7bk8h4wuw::::res://texture/paleta/Screenshot_30-600x600.png<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://dsslpkdcvssk1::::res://Areais/Batalha/scripts/personagens.gd<>uid://45gjom0uh007::::res://texture/folderTres/texturas/lado.tres<>uid://by72qrtpqld7j::::res://Areais/Batalha/cenas/battle_arena.tscn<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://cflugrgbnk4cx::::res://texture/folderTres/BoxTexture/zeko.tres<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://b1cv61ghjk7ko::::res://texture/folderTres/theme_BATALHA.tres<>uid://b47uqjy5sunba::::res://Areais/Batalha/cenas/panel_player.tscn<>uid://c2dkrc2m800uw::::res://Areais/Batalha/scripts/batalha_submenu_itens.gd<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://dibssswvswx5c::::res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
-batalha_submenu_enemies.gd::GDScript::7723963208482796490::1762200138::0::1::::batalha_submenu_enemies<>PanelContainer<><>0<>0<><>::
-battle_arena.tscn::PackedScene::4138681873594549965::1761678680::0::1::::<><><>0<>0<><>::uid://d0bca2weroo3r::::res://texture/PNG/bordas UI/Default/Border/panel-border-014.png<>uid://8sgdpebe3e0a::::res://Characters/Players/cenas/ambição.tscn<>uid://4v1xm7lpqc5j::::res://Areais/Batalha/scripts/battle_arena.gd
+BATALHA.tscn::PackedScene::2310987047274004657::1762686338::0::1::::<><><>0<>0<><>::uid://0hjngdsxlm2y::::res://Areais/Batalha/scripts/batalha2.gd<>uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://dhso7bk8h4wuw::::res://texture/paleta/Screenshot_30-600x600.png<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://dsslpkdcvssk1::::res://Areais/Batalha/scripts/personagens.gd<>uid://45gjom0uh007::::res://texture/folderTres/texturas/lado.tres<>uid://by72qrtpqld7j::::res://Areais/Batalha/cenas/battle_arena.tscn<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://cflugrgbnk4cx::::res://texture/folderTres/BoxTexture/zeko.tres<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://b1cv61ghjk7ko::::res://texture/folderTres/theme_BATALHA.tres<>uid://b47uqjy5sunba::::res://Areais/Batalha/cenas/panel_player.tscn<>uid://c2dkrc2m800uw::::res://Areais/Batalha/scripts/batalha_submenu_itens.gd<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://dibssswvswx5c::::res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
+batalha_submenu_enemies.gd::GDScript::7723963208482796490::1762686338::0::1::::batalha_submenu_enemies<>PanelContainer<><>0<>0<><>::
+battle_arena.tscn::PackedScene::4138681873594549965::1762969961::0::1::::<><><>0<>0<><>::uid://dw4gbgmxx3302::::res://texture/PNG/bordas UI/167406.png<>uid://8sgdpebe3e0a::::res://Characters/Players/cenas/ambição.tscn<>uid://4v1xm7lpqc5j::::res://Areais/Batalha/scripts/battle_arena.gd
+ContainerPlayer.tscn::PackedScene::6826782694494182042::1762690510::0::1::::<><><>0<>0<><>::uid://b33cjhsccjqk8::::res://Areais/Batalha/scripts/panel_player_simples.gd<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://ddmkqij7ityvb::::res://texture/characters/93965.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://ckaefjju4lcp2::::res://Characters/Players/scripts/menu/ContainerMenu.gd<>uid://cflugrgbnk4cx::::res://texture/folderTres/BoxTexture/zeko.tres<>uid://cf8r18omnssev::::res://texture/PNG/icon/almaanimetionambicao.tres<>uid://c2dkrc2m800uw::::res://Areais/Batalha/scripts/batalha_submenu_itens.gd<>uid://b1cv61ghjk7ko::::res://texture/folderTres/theme_BATALHA.tres<>uid://dibssswvswx5c::::res://Areais/Batalha/cenas/batalha_submenu_enemies.gd<>uid://e5vh8ni8ulhb::::res://Areais/Batalha/cenas/inimigoButtao.tscn
+inimigoButtao.tscn::PackedScene::343976018340746507::1762686338::0::1::::<><><>0<>0<><>::uid://b1cv61ghjk7ko::::res://texture/folderTres/theme_BATALHA.tres<>uid://dbgc6uf2jgajf::::res://Areais/Batalha/cenas/InimigoButton.gd<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres
+InimigoButton.gd::GDScript::7242015014268323479::1762686338::0::1::::InimigoButton<>Button<><>0<>0<><>::
 panel_player.tscn::PackedScene::4489200661057135830::1761667808::0::1::::<><><>0<>0<><>::uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://tv0jrm3ipvpe::::res://Areais/Batalha/scripts/panel_player.gd<>uid://ddmkqij7ityvb::::res://texture/characters/93965.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf
-SIMPLES_BATALHA.tscn::PackedScene::6697686587623879851::1762197592::0::1::::<><><>0<>0<><>::uid://2i0hddkuq4tj::::res://Areais/Batalha/scripts/simplesbatalha.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://dhso7bk8h4wuw::::res://texture/paleta/Screenshot_30-600x600.png<>uid://dsslpkdcvssk1::::res://Areais/Batalha/scripts/personagens.gd<>uid://45gjom0uh007::::res://texture/folderTres/texturas/lado.tres<>uid://by72qrtpqld7j::::res://Areais/Batalha/cenas/battle_arena.tscn<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://c2dkrc2m800uw::::res://Areais/Batalha/scripts/batalha_submenu_itens.gd<>uid://b1cv61ghjk7ko::::res://texture/folderTres/theme_BATALHA.tres<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://c4i7d4j4sgiva::::res://Areais/Batalha/cenas/VContainerPlayer.tscn<>uid://dibssswvswx5c::::res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
-VContainerPlayer.tscn::PackedScene::6826782694494182042::1762197361::0::1::::<><><>0<>0<><>::uid://b33cjhsccjqk8::::res://Areais/Batalha/scripts/panel_player_simples.gd<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://ddmkqij7ityvb::::res://texture/characters/93965.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://cflugrgbnk4cx::::res://texture/folderTres/BoxTexture/zeko.tres
-::res://Areais/Batalha/scripts/::1762201366
-batalha2.gd::GDScript::1769741724108424486::1762193059::0::1::::Batalha2D<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
-batalha_submenu_itens.gd::GDScript::6674770954646059578::1762200136::0::1::::batalha_submenu_itens<>PanelContainer<><>0<>0<><>::
-battle_arena.gd::GDScript::2080448793644345053::1761933733::0::1::::<>NinePatchRect<><>0<>0<><>::
-panel_player.gd::GDScript::1378474871640278606::1762193221::0::1::::PanelPlayer<>Panel<><>0<>0<><>::
-panel_player_simples.gd::GDScript::4409648784366205149::1762201249::0::1::::VContainerPlayerSimples<>VBoxContainer<><>0<>0<><>::
-personagens.gd::GDScript::8460515239953543830::1762083265::0::1::::PersonagensBatalha2D<>Node2D<><>0<>0<><>::
-simplesbatalha.gd::GDScript::1913144388322056131::1762201366::0::1::::SimplesBatalha2D<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
-simplesbatalhatest.gd::GDScript::4036839010682516172::1762200152::0::1::::<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
-::res://Areais/TEMPORADA 1/::1762193467
-começo.tscn::PackedScene::6346127075515950629::1762193467::0::1::::<><><>0<>0<><>::uid://botiuinj2k2g7::::res://Areais/Dungeons2D.gd<>uid://dcxot31v0dfa6::::res://texture/folderTres/C1A.tres<>uid://3x7rgqstg6mq::::res://Characters/NPCS/merchant.tscn<>uid://bdro6kmv5j603::::res://Godot/classes/Nodes/AreaCamada2D.gd<>uid://bgs8qnmsvgs1g::::res://Characters/enemies/bebedouro/bebedouro.tscn<>uid://b371rfq2683pb::::res://texture/folderTres/T1B.tres<>uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://cumwbxwjq0etn::::res://texture/tiles top down/textura2/Scene Overview.png<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png<>uid://coj7eysane340::::res://Areais/SAVE.tscn<>uid://dygph1mmtcdv8::::res://Characters/NPCS/blu_blu.tscn<>uid://c4h5fgwajoojy::::res://Areais/TEMPORADA 1/testpalyers.tscn
-descomeço.tscn::PackedScene::5231867472337827040::1759589934::0::1::::<><><>0<>0<><>::uid://botiuinj2k2g7::::res://Areais/Dungeons2D.gd<>uid://dcxot31v0dfa6::::res://texture/folderTres/C1A.tres<>uid://bdro6kmv5j603::::res://Godot/classes/Nodes/AreaCamada2D.gd<>uid://cumwbxwjq0etn::::res://texture/tiles top down/textura2/Scene Overview.png<>uid://h5ek2buto4br::::res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn<>uid://bgs8qnmsvgs1g::::res://Characters/enemies/bebedouro/bebedouro.tscn<>uid://3x7rgqstg6mq::::res://Characters/NPCS/merchant.tscn
-MakerSpawn.gd::GDScript::969354998314338161::1762190007::0::1::::<>Node2D<><>0<>0<><>::
-testpalyers.tscn::PackedScene::6824599265058469890::1762086541::0::1::::<><><>0<>0<><>::uid://h5ek2buto4br::::res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn<>uid://neeruowotbdj::::res://Godot/classes/personagens/niko/niko.tscn
+SIMPLES_BATALHA.tscn::PackedScene::6697686587623879851::1763236263::0::1::::<><><>0<>0<><>::uid://2i0hddkuq4tj::::res://Areais/Batalha/scripts/simplesbatalha.gd<>uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://dhso7bk8h4wuw::::res://texture/paleta/Screenshot_30-600x600.png<>uid://dsslpkdcvssk1::::res://Areais/Batalha/scripts/personagens.gd<>uid://by72qrtpqld7j::::res://Areais/Batalha/cenas/battle_arena.tscn<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://c4i7d4j4sgiva::::res://Areais/Batalha/cenas/ContainerPlayer.tscn
+::res://Areais/Batalha/scripts/::1762974901
+batalha2.gd::GDScript::1769741724108424486::1762686338::0::1::::Batalha2D<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
+batalha_submenu_itens.gd::GDScript::6674770954646059578::1762696991::0::1::::batalha_submenu_itens<>PanelContainer<><>0<>0<><>::
+battle_arena.gd::GDScript::2080448793644345053::1762686338::0::1::::<>NinePatchRect<><>0<>0<><>::
+panel_player.gd::GDScript::1378474871640278606::1762686338::0::1::::PanelPlayer<>Panel<><>0<>0<><>::
+panel_player_simples.gd::GDScript::4409648784366205149::1762690016::0::1::::ContainerPlayerSimples<>PanelContainer<><>0<>0<><>::
+personagens.gd::GDScript::8460515239953543830::1762686338::0::1::::PersonagensBatalha2D<>Node2D<><>0<>0<><>::
+simplesbatalha.gd::GDScript::1913144388322056131::1762974901::0::1::::SimplesBatalha2D<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
+simplesbatalhatest.gd::GDScript::4036839010682516172::1762686338::0::1::::<>Node2D<>res://texture/folderTres/texturas/batalha.tres<>0<>0<><>::
+::res://Areais/TEMPORADA 1/::1762547337
+começo.tscn::PackedScene::6346127075515950629::1762686337::0::1::::<><><>0<>0<><>::uid://botiuinj2k2g7::::res://Areais/Dungeons2D.gd<>uid://dcxot31v0dfa6::::res://texture/folderTres/C1A.tres<>uid://3x7rgqstg6mq::::res://Characters/NPCS/merchant.tscn<>uid://bdro6kmv5j603::::res://Godot/classes/Nodes/AreaCamada2D.gd<>uid://bgs8qnmsvgs1g::::res://Characters/enemies/bebedouro/bebedouro.tscn<>uid://b371rfq2683pb::::res://texture/folderTres/T1B.tres<>uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://cumwbxwjq0etn::::res://texture/tiles top down/textura2/Scene Overview.png<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png<>uid://coj7eysane340::::res://Areais/SAVE.tscn<>uid://dygph1mmtcdv8::::res://Characters/NPCS/blu_blu.tscn<>uid://c4h5fgwajoojy::::res://Areais/TEMPORADA 1/testpalyers.tscn
+MakerSpawn.gd::GDScript::969354998314338161::1762686338::0::1::::<>Node2D<><>0<>0<><>::
+testpalyers.tscn::PackedScene::6824599265058469890::1762686338::0::1::::<><><>0<>0<><>::uid://h5ek2buto4br::::res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn<>uid://neeruowotbdj::::res://Godot/classes/personagens/niko/niko.tscn
 ::res://Characters/::1759589935
 Arceus.tscn::PackedScene::1149898624820827298::1759589935::0::1::::<><><>0<>0<><>::uid://csy3v52ygrgam::::res://texture/Characters/inimigos/Arcade.png
 ::res://Characters/enemies/::1759589935
 ::res://Characters/enemies/bebedouro/::1761933733
-bebedouro.gd::GDScript::9166544254611238352::1761933733::0::1::::ObjectEnemies2D<>CharacterBody2D<>res://texture/folderTres/texturas/makita.tres<>0<>0<><>::
+bebedouro.gd::GDScript::9166544254611238352::1762686338::0::1::::ObjectEnemies2D<>CharacterBody2D<>res://texture/folderTres/texturas/makita.tres<>0<>0<><>::
 bebedouro.tscn::PackedScene::2846745480745506050::1760872249::0::1::::<><><>0<>0<><>::uid://bp6cdr3xf1ujb::::res://texture/characters/inimigos/bebedouro.png<>uid://d3ulv6glaxvc7::::res://Characters/enemies/bebedouro/bebedouro.gd<>uid://qs0gp3vem5db::::res://Godot/classes/Inimigos/bebedouro/bebedouro.tres
-::res://Characters/NPCS/::1762193970
+::res://Characters/NPCS/::1763293239
 blu_blu.tscn::PackedScene::8857105205080725303::1759868192::0::1::::<><><>0<>0<><>::uid://c7vi5togrxhkg::::res://Godot/classes/Nodes/NPC2D.gd<>uid://84wmppkbbltb::::res://shader/black and white.gdshader<>uid://dfpwtsokcjsu4::::res://texture/characters/Assets/Extra/static_shadow.png<>uid://b3lf3a0e0in8w::::res://Godot/Diálogos/testText.dialogue<>uid://dlyi66hgpuhee::::res://shader/paletasWOW.gdshader<>uid://cu1d6yh71q1eh::::res://texture/characters/npcs/bah/blu blu.png
-merchant.tres::SpriteFrames::1354569935880736215::1762193970::0::1::::<><><>0<>0<><>::uid://b0hx4c37f7ysd::::res://texture/characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png
+merchant.tres::SpriteFrames::1354569935880736215::1763293239::0::1::::<><><>0<>0<><>::uid://b0hx4c37f7ysd::::res://texture/characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png
 merchant.tscn::PackedScene::2014741953173663300::1760090369::0::1::::<><><>0<>0<><>::uid://c7vi5togrxhkg::::res://Godot/classes/Nodes/NPC2D.gd<>uid://b3lf3a0e0in8w::::res://Godot/Diálogos/testText.dialogue<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://tkftlxtoee6j::::res://Characters/NPCS/merchant.tres
-::res://Characters/Players/::1761402218
-menu.tscn::PackedScene::3850032718059482332::1761408743::0::1::::<><><>0<>0<><>::uid://bs6qxum1hhhbm::::res://Characters/Players/scripts/menu/menu2.gd<>uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://7pipbd1qddto::::res://texture/folderTres/BoxTexture/menu.tres<>uid://ceshuj24t1q5p::::res://Characters/Players/scripts/menu/inventory_menu.gd<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://c3gupndh6ko5o::::res://texture/PNG/funds/Deco All 3.png<>uid://b1uvtvif0pg8j::::res://Characters/Players/SubMenuBase.gd
+::res://Characters/Players/::1762886187
+menu.tscn::PackedScene::3850032718059482332::1762886187::0::1::::<><><>0<>0<><>::uid://bs6qxum1hhhbm::::res://Characters/Players/scripts/menu/menu2.gd<>uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png<>uid://ckaefjju4lcp2::::res://Characters/Players/scripts/menu/ContainerMenu.gd<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://cf8r18omnssev::::res://texture/PNG/icon/almaanimetionambicao.tres<>uid://ceshuj24t1q5p::::res://Characters/Players/scripts/menu/inventory_menu.gd<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://c3gupndh6ko5o::::res://texture/PNG/funds/Deco All 3.png<>uid://b1uvtvif0pg8j::::res://Characters/Players/SubMenuBase.gd
 SubMenuBase.gd::GDScript::4253928275905398827::1759589935::0::1::::SubMenuBase<>Control<><>0<>0<><>::
-::res://Characters/Players/cenas/::1761678611
-ambição.tscn::PackedScene::2353761093047814690::1761678611::0::1::::<><><>0<>0<><>::uid://b87x0fkq7trfu::::res://Characters/Players/scripts/ambição.gd<>uid://cwryjra5dwabw::::res://texture/PNG/icon/alma.png
+::res://Characters/Players/cenas/::1762970438
+ambição.tscn::PackedScene::2353761093047814690::1762970438::0::1::::<><><>0<>0<><>::uid://b87x0fkq7trfu::::res://Characters/Players/scripts/ambição.gd<>uid://dl13v0ohw07w0::::res://texture/PNG/icon/alma da ambição.png
 zeko.tscn::PackedScene::7267685710660102184::1759589935::0::1::::<><><>0<>0<><>::uid://i6lfw4evyoa8::::res://Characters/Players/scripts/ZekoNode.gd<>uid://nmeinsw5i5xt::::res://texture/Characters/Zeno's/Pequeno_Zeno.png<>uid://cjgvb1l723b2a::::res://Characters/Players/scripts/menu/sprite.gd<>uid://ctutr7jovxxm6::::res://texture/PNG/tilemap_packed.png<>uid://m506ayw5c1lv::::res://texture/PNG/GUI.png<>uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf
 ::res://Characters/Players/scripts/::1761933729
-ambição.gd::GDScript::4770154026394624666::1761933729::0::1::::<>CharacterBody2D<><>0<>0<><>::
+ambição.gd::GDScript::4770154026394624666::1762686338::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ZekoNode.gd::GDScript::626184475893863209::1759589935::0::1::::<>CharacterBody2D<>res://texture/folder tres/zekoCena.tres<>0<>0<><>::
-::res://Characters/Players/scripts/menu/::1760476834
-inventory_menu.gd::GDScript::5091216792102800427::1760872249::0::1::::<>SubMenuBase<><>0<>0<><>::
-menu2.gd::GDScript::3714829194893227570::1760872249::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://Characters/Players/scripts/menu/::1762886141
+ContainerMenu.gd::GDScript::5474982088268404745::1762688675::0::1::::<>VBoxContainer<><>0<>0<><>::
+inventory_menu.gd::GDScript::5091216792102800427::1762886141::0::1::::<>SubMenuBase<><>0<>0<><>::
+menu2.gd::GDScript::3714829194893227570::1762688633::0::1::::<>CanvasLayer<><>0<>0<><>::
 menu.gd::GDScript::3192351169433225034::1760872249::0::1::::<>CanvasLayer<><>0<>0<><>::
 sprite.gd::GDScript::5418205453385922410::1759589935::0::1::::<>Sprite2D<><>0<>0<><>::
 ::res://Godot/::1761395501
 ::res://Godot/characters/::1761397121
 zeno.dch::Resource/DialogicCharacter::5117620996921030518::1761408743::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::res://texture/characters/nikotest.tres
 ::res://Godot/classes/::1759589935
-::res://Godot/classes/DATAS/::1761933734
-Database.gd::GDScript::2972055557816527815::1759589935::0::1::::Database<>Resource<><>0<>0<><>::
-DataBatalha.gd::GDScript::2466635510110660286::1761933734::0::1::::DataBatalha<>Resource<><>0<>0<><>::
-DataConf.gd::GDScript::8872351200239051815::1760262790::0::1::::DataConf<>Resource<><>0<>0<><>::
+::res://Godot/classes/DATAS/::1762974184
+Database.gd::GDScript::2972055557816527815::1762704563::0::1::::Database<>Resource<><>0<>0<><>::
+DataBatalha.gd::GDScript::2466635510110660286::1762686338::0::1::::DataBatalha<>Resource<><>0<>0<><>::
+DataConf.gd::GDScript::8872351200239051815::1762974184::0::1::::DataConf<>Resource<><>0<>0<><>::
 DataExtras.gd::GDScript::1448493928644043166::1759589935::0::1::::DataExtras<>Resource<><>0<>0<><>::
 GlobalSeason.gd::GDScript::7471714711086185924::1760388005::0::1::::GlobalSeasons<>Resource<><>0<>0<><>::
-SaveData.gd::GDScript::1904626202769233796::1761667808::0::1::::SaveData<>Resource<><>0<>0<><>::
-SeasonResource.gd::GDScript::7911597712943575975::1760388005::0::1::::SeasonResource<>Resource<><>0<>0<><>::
+new_script.gd::GDScript::3192461950063087103::1762692822::0::1::::<>PackedScene<><>0<>0<><>::
+SaveData.gd::GDScript::1904626202769233796::1762705123::0::1::::SaveData<>Resource<><>0<>0<><>::
+SeasonResource.gd::GDScript::7911597712943575975::1762705324::0::1::::SeasonResource<>Resource<><>0<>0<><>::
 TimeGame.gd::GDScript::1964630312710032973::1760120663::0::1::::TimeGame<>Resource<><>0<>0<><>::
-::res://Godot/classes/DATAS/SeasonsResource/::1762193971
-Temporada1.tres::Resource/SeasonResource::3687178248364555905::1762193971::0::1::::<><><>0<>0<><>::uid://cd53fp8qruq48::::res://Godot/classes/itens/Inventorys/ZenoInventory.tres<>uid://cwod1ylh8y1cj::::res://Areais/TEMPORADA 1/começo.tscn<>uid://uvwqo1wkbayg::::res://Godot/classes/DATAS/DataExtras.gd<>uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://d302slnl03gy4::::res://Godot/classes/personagens/Zeno T1/zeno.tres<>uid://cs0khqyxc6mmc::::res://Godot/classes/personagens/niko/niko.tres<>uid://dkyo4gl4kpktb::::res://Godot/classes/DATAS/SeasonResource.gd
+::res://Godot/classes/DATAS/SeasonsResource/::1763293240
+Temporada1.tres::Resource/SeasonResource::3687178248364555905::1763293240::0::1::::<><><>0<>0<><>::uid://cwod1ylh8y1cj::::res://Areais/TEMPORADA 1/começo.tscn<>uid://uvwqo1wkbayg::::res://Godot/classes/DATAS/DataExtras.gd<>uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://d302slnl03gy4::::res://Godot/classes/personagens/Zeno T1/zeno.tres<>uid://cs0khqyxc6mmc::::res://Godot/classes/personagens/niko/niko.tres<>uid://dkyo4gl4kpktb::::res://Godot/classes/DATAS/SeasonResource.gd
 ::res://Godot/classes/Inimigos/::1761493346
 EnemiesBase.gd::GDScript::9134850149666727270::1759589935::0::1::::EnemiesBase<>Resource<><>0<>0<><>::
 SpawnProjeteis.gd::GDScript::5020119284787603141::1761667808::0::1::::SpawnProjeteis<>Node<><>0<>0<><>::
-::res://Godot/classes/Inimigos/bebedouro/::1761675600
+::res://Godot/classes/Inimigos/bebedouro/::1762714547
 bebedouro.tres::Resource/DataBatalha::1161709769428956575::1760872249::0::1::::<><><>0<>0<><>::uid://dhdqurm4hxqt::::res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn<>uid://bbe4ekg3rff07::::res://Godot/classes/DATAS/DataBatalha.gd
-bebedouro.tscn::PackedScene::225228976186252375::1761675600::0::1::::<><><>0<>0<><>::uid://kjhutov44bdn::::res://Godot/classes/Nodes/EnemiesBase2D.gd<>uid://bp6cdr3xf1ujb::::res://texture/characters/inimigos/bebedouro.png<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://cdr1vpvtwnywr::::res://Godot/classes/Inimigos/SpawnProjeteis.gd<>uid://5u8fngt38w0w::::res://texture/effects/attack 1 .png<>uid://bic33s886bpyf::::res://Areais/Batalha/cenas/balabebedouro1.tscn
-::res://Godot/classes/itens/::1761933735
-DataItem.gd::GDScript::983478282010797065::1761933735::0::1::::DataItem<>Resource<>res://texture/folderTres/texturas/item.tres<>0<>0<><>::
-::res://Godot/classes/itens/armaduras/::1762193969
+bebedouro.tscn::PackedScene::225228976186252375::1762714547::0::1::::<><><>0<>0<><>::uid://kjhutov44bdn::::res://Godot/classes/Nodes/EnemiesBase2D.gd<>uid://bp6cdr3xf1ujb::::res://texture/characters/inimigos/bebedouro.png<>uid://dkyctc5wpm76t::::res://texture/folderTres/materials/SAVE.tres<>uid://cdr1vpvtwnywr::::res://Godot/classes/Inimigos/SpawnProjeteis.gd<>uid://5u8fngt38w0w::::res://texture/effects/attack 1 .png<>uid://bic33s886bpyf::::res://Areais/Batalha/cenas/balabebedouro1.tscn
+::res://Godot/classes/itens/::1763233519
+DataItem.gd::GDScript::983478282010797065::1762686338::0::1::::DataItem<>Resource<>res://texture/folderTres/texturas/item.tres<>0<>0<><>::
+::res://Godot/classes/itens/armaduras/::1763293238
 ItemArmadura.gd::GDScript::7866587208911746968::1759589935::0::1::::ItemArmadura<>DataItem<>res://texture/folderTres/texturas/armadura.tres<>0<>0<><>::
 sem_armadura.tres::Resource/ItemArmadura::498373237503107248::1759589935::0::1::::<><>res://texture/folderTres/texturas/armadura.tres<>0<>0<><>::uid://dkcvsotc2mgdk::::res://Godot/classes/itens/armaduras/ItemArmadura.gd
-óculos_simples.tres::Resource/ItemArmadura::1810193353115163956::1762193969::0::1::::<><><>0<>0<><>::uid://dkcvsotc2mgdk::::res://Godot/classes/itens/armaduras/ItemArmadura.gd
-::res://Godot/classes/itens/armas/::1762193969
+óculos_simples.tres::Resource/ItemArmadura::1810193353115163956::1763293238::0::1::::<><><>0<>0<><>::uid://dkcvsotc2mgdk::::res://Godot/classes/itens/armaduras/ItemArmadura.gd<>uid://dd4fqed37lxyg::::res://texture/objetos/items/16x16.png
+::res://Godot/classes/itens/armas/::1763236263
 ItemArma.gd::GDScript::7943674776619090098::1759589935::0::1::::ItemArma<>DataItem<>res://texture/folderTres/texturas/espada.tres<>0<>0<><>::
 sem_arma.tres::Resource/ItemArma::5926146334517302463::1759589935::0::1::::<><>res://texture/folderTres/texturas/espada.tres<>0<>0<><>::uid://dlf8fsn8nuxag::::res://Godot/classes/itens/armas/ItemArma.gd
-Signal_Weapon.tres::Resource/ItemArma::7835242339115754626::1762193969::0::1::::<><><>0<>0<><>::uid://dlf8fsn8nuxag::::res://Godot/classes/itens/armas/ItemArma.gd
-::res://Godot/classes/itens/consumíveis/::1762193969
-ItemConsumivel.gd::GDScript::2077625101852680144::1761928993::0::1::::ItemConsumivel<>DataItem<>res://texture/folderTres/texturas/comida.tres<>0<>0<><>::
-sandwich.tres::Resource/ItemConsumivel::3384141331404619687::1762193969::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/items/16x16.png<>uid://4uoggiynaxiu::::res://Godot/classes/itens/consumíveis/ItemConsumivel.gd
-::res://Godot/classes/itens/Inventorys/::1762193969
-Inventory.gd::GDScript::5626795191720783516::1761679996::0::1::::Inventory<>Resource<>res://texture/folderTres/texturas/inventory_png.tres<>0<>0<><>::
-ZenoInventory.tres::Resource/Inventory::5047049075268365995::1762193969::0::1::::<><><>0<>0<><>::uid://oan0jvd28y7r::::res://Godot/classes/itens/DataItem.gd<>uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://bohkkwf5y2kmp::::res://Godot/classes/itens/consumíveis/sandwich.tres<>uid://cmfwq25tt8fwe::::res://Godot/classes/itens/Inventorys/Inventory.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
-::res://Godot/classes/Nodes/::1762086222
+Signal_Weapon.tres::Resource/ItemArma::7835242339115754626::1763236263::0::1::::<><><>0<>0<><>::uid://dlf8fsn8nuxag::::res://Godot/classes/itens/armas/ItemArma.gd<>uid://cywm7dhsr06cp::::res://texture/objetos/Ranitayas Guns Pack (16+ pixelart guns)/Pistols/3Pistol03.png
+::res://Godot/classes/itens/consumíveis/::1763293238
+ItemConsumivel.gd::GDScript::2077625101852680144::1762686338::0::1::::ItemConsumivel<>DataItem<>res://texture/folderTres/texturas/comida.tres<>0<>0<><>::
+sandwich.tres::Resource/ItemConsumivel::3384141331404619687::1763293238::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/items/16x16.png<>uid://4uoggiynaxiu::::res://Godot/classes/itens/consumíveis/ItemConsumivel.gd
+::res://Godot/classes/itens/executaveis/::1763235886
+executables.gd::GDScript::8519169645856970711::1763235886::0::1::::Executables<>Resource<><>0<>0<><>::
+::res://Godot/classes/itens/Inventorys/::1763293240
+Inventory.gd::GDScript::5626795191720783516::1762686338::0::1::::Inventory<>Resource<>res://texture/folderTres/texturas/inventory_png.tres<>0<>0<><>::
+ZenoInventory.tres::Resource/Inventory::5047049075268365995::1763293240::0::1::::<><><>0<>0<><>::uid://oan0jvd28y7r::::res://Godot/classes/itens/DataItem.gd<>uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://bohkkwf5y2kmp::::res://Godot/classes/itens/consumíveis/sandwich.tres<>uid://cmfwq25tt8fwe::::res://Godot/classes/itens/Inventorys/Inventory.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
+::res://Godot/classes/Nodes/::1762984661
 AreaCamada2D.gd::GDScript::2632987578701775538::1759589935::0::1::::AreaCamada2D<>Area2D<><>0<>0<><>::
-audio_player.gd::GDScript::6896282511899600053::1761933730::0::1::::AudioPlayer<>AudioStreamPlayer<><>0<>0<><>::
-bala2D.gd::GDScript::1150486030977670371::1761933730::0::1::::Bala2D<>CharacterBody2D<><>0<>0<><>::
+audio_player.gd::GDScript::6896282511899600053::1762984661::0::1::::AudioPlayer<>AudioStreamPlayer<><>0<>0<><>::
+bala2D.gd::GDScript::1150486030977670371::1762686338::0::1::::Bala2D<>CharacterBody2D<><>0<>0<><>::
 ButtonUI.gd::GDScript::4524514756955408066::1760872249::0::1::::ButtonUI<>Button<><>0<>0<><>::
 door.gd::GDScript::1156407302088497757::1759589935::0::1::::<>Node<><>0<>0<><>::
-EnemiesBase2D.gd::GDScript::720929591559278287::1761933738::0::1::::EnemiesBase2D<>AnimatedSprite2D<><>0<>0<><>::
+EnemiesBase2D.gd::GDScript::720929591559278287::1762714547::0::1::::EnemiesBase2D<>AnimatedSprite2D<><>0<>0<><>::
 NPC2D.gd::GDScript::7062776626264929534::1759589935::0::1::::npc2D<>ObjectDialogue2D<>res://texture/folderTres/texturas/npc.tres<>0<>0<><>::
 ObjectDialogue2D.gd::GDScript::9018204346462781804::1759861112::0::1::::ObjectDialogue2D<>AnimatableBody2D<>res://texture/folderTres/texturas/dialogue.tres<>0<>0<><>::
-ObjectPlayer2D.gd::GDScript::4859349804917285117::1762086222::0::1::::ObjectPlayer2D<>CharacterBody2D<>res://texture/folderTres/texturas/player.tres<>0<>1<><>::
-PlayerBase2D.gd::GDScript::8792531902383411114::1761946153::0::1::::PlayerBase2D<>AnimatedSprite2D<><>0<>0<><>::
-::res://Godot/classes/personagens/::1762195992
-CalculatePlayer.gd::GDScript::658702558772246548::1761933734::0::1::::CalculatePlayer<>Resource<><>0<>0<><>::
-PlayerData.gd::GDScript::3083510553957335722::1762195992::0::1::::PlayerData<>Resource<>res://texture/folderTres/texturas/player_png.tres<>0<>0<><>::
-::res://Godot/classes/personagens/niko/::1762193971
-niko.tres::Resource/PlayerData::6088470545705106754::1762193971::0::1::::<><><>0<>0<><>::uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://oan0jvd28y7r::::res://Godot/classes/itens/DataItem.gd<>uid://cmfwq25tt8fwe::::res://Godot/classes/itens/Inventorys/Inventory.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
-niko.tscn::PackedScene::920986777891409963::1762189927::0::1::::<><><>0<>0<><>::uid://cbh51thjr5kdp::::res://Godot/classes/Nodes/ObjectPlayer2D.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://eo6pojuwje15::::res://texture/characters/Zeno's/Niko.png
+ObjectPlayer2D.gd::GDScript::4859349804917285117::1762686338::0::1::::ObjectPlayer2D<>CharacterBody2D<>res://texture/folderTres/texturas/player.tres<>0<>1<><>::
+PlayerBase2D.gd::GDScript::8792531902383411114::1762686338::0::1::::PlayerBase2D<>AnimatedSprite2D<><>0<>0<><>::
+::res://Godot/classes/personagens/::1762698434
+CalculatePlayer.gd::GDScript::658702558772246548::1762686338::0::1::::CalculatePlayer<>Resource<><>0<>0<><>::
+PlayerData.gd::GDScript::3083510553957335722::1762698434::0::1::::PlayerData<>Resource<>res://texture/folderTres/texturas/player_png.tres<>0<>0<><>::
+::res://Godot/classes/personagens/niko/::1762636312
+niko.tres::Resource/PlayerData::6088470545705106754::1762686338::0::1::::<><><>0<>0<><>::uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://oan0jvd28y7r::::res://Godot/classes/itens/DataItem.gd<>uid://cmfwq25tt8fwe::::res://Godot/classes/itens/Inventorys/Inventory.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
+niko.tscn::PackedScene::920986777891409963::1762686338::0::1::::<><><>0<>0<><>::uid://cbh51thjr5kdp::::res://Godot/classes/Nodes/ObjectPlayer2D.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://eo6pojuwje15::::res://texture/characters/Zeno's/Niko.png
 nikoBatalha.tscn::PackedScene::4051485174411324619::1761388098::0::1::::<><><>0<>0<><>::uid://eo6pojuwje15::::res://texture/characters/Zeno's/Niko.png<>uid://dxjfylq40nfs1::::res://Godot/classes/Nodes/PlayerBase2D.gd
-::res://Godot/classes/personagens/Zeno T1/::1762193971
-scientist_zeno.tscn::PackedScene::553515384608075783::1762086034::0::1::::<><><>0<>0<><>::uid://cbh51thjr5kdp::::res://Godot/classes/Nodes/ObjectPlayer2D.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://dtk8p4pvk17pj::::res://texture/characters/Zeno's/Zenovar.png
-zeno.tres::Resource/PlayerData::9177831218264302325::1762193971::0::1::::<><><>0<>0<><>::uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://oan0jvd28y7r::::res://Godot/classes/itens/DataItem.gd<>uid://cmfwq25tt8fwe::::res://Godot/classes/itens/Inventorys/Inventory.gd<>uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
-zenoBatalha.tscn::PackedScene::7364023471869640969::1762086050::0::1::::<><><>0<>0<><>::uid://dxjfylq40nfs1::::res://Godot/classes/Nodes/PlayerBase2D.gd<>uid://dtk8p4pvk17pj::::res://texture/characters/Zeno's/Zenovar.png
-::res://Godot/Diálogos/::1761567114
-bebedouro.dialogue::Resource::4741819597702699208::1759589935::1759868192::1::::<><><>0<>0<>3e61810c20e133859f6e56a4202e91b2<>res://.godot/imported/bebedouro.dialogue-dff3c82e75e76266521564a8a827eea7.tres::
+::res://Godot/classes/personagens/Zeno T1/::1762886701
+scientist_zeno.tscn::PackedScene::553515384608075783::1762686339::0::1::::<><><>0<>0<><>::uid://cbh51thjr5kdp::::res://Godot/classes/Nodes/ObjectPlayer2D.gd<>uid://bhexx6mj1xv3q::::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd<>uid://8umksf8e80fw::::res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://dtk8p4pvk17pj::::res://texture/characters/Zeno's/Zenovar.png
+zeno.tres::Resource/PlayerData::9177831218264302325::1762886701::0::1::::<><><>0<>0<><>::uid://cd53fp8qruq48::::res://Godot/classes/itens/Inventorys/ZenoInventory.tres<>uid://014vc1tqhv3q::::res://Godot/classes/itens/armaduras/óculos_simples.tres<>uid://bj6w76m0cfh2q::::res://Godot/classes/personagens/PlayerData.gd<>uid://djvpkc34hd5r7::::res://Godot/classes/itens/armas/Signal_Weapon.tres
+zenoBatalha.tscn::PackedScene::7364023471869640969::1762686339::0::1::::<><><>0<>0<><>::uid://dxjfylq40nfs1::::res://Godot/classes/Nodes/PlayerBase2D.gd<>uid://dtk8p4pvk17pj::::res://texture/characters/Zeno's/Zenovar.png
+::res://Godot/Diálogos/::1762697034
+bebedouro.dialogue::Resource::4741819597702699208::1762686338::1762686338::1::::<><><>0<>0<>3e61810c20e133859f6e56a4202e91b2<>res://.godot/imported/bebedouro.dialogue-dff3c82e75e76266521564a8a827eea7.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
 Symptoms.dialogue::Resource::1982395616095927998::1759862239::1759868192::1::::<><><>0<>0<>b8abf8b3def2500854b175147ce353b9<>res://.godot/imported/Symptoms.dialogue-f1b1c5ef7a019c40f1226a74b031d71f.tres::
-testText.dialogue::Resource::4374770086881425852::1761667808::1761667808::1::::<><><>0<>0<>7b0ab86bc6401a42af89410fc2afd388<>res://.godot/imported/testText.dialogue-b5c5302f7baa25ad7cdb23a496edf8f7.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
-::res://Godot/Godot Cenas/::1761864531
+testText.dialogue::Resource::4374770086881425852::1762697032::1762697034::1::::<><><>0<>0<>7b0ab86bc6401a42af89410fc2afd388<>res://.godot/imported/testText.dialogue-b5c5302f7baa25ad7cdb23a496edf8f7.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
+::res://Godot/Godot Cenas/::1762984610
 dead.tscn::PackedScene::8469402684594944675::1761158800::0::1::::<><><>0<>0<><>::uid://b3satd47d8ggd::::res://Godot/Godot Scripts/dead.gd<>uid://b5pydke1gg5le::::res://Godot/classes/Nodes/ButtonUI.gd
 Gameboy.tscn::PackedScene::945845533223793570::1760872249::0::1::::<><><>0<>0<><>::uid://r7l18620ockm::::res://texture/PNG/Default/Panel/panel-000.png<>uid://c62y5t03daplf::::res://texture/PNG/Default/Border/panel-border-000.png<>uid://ctutr7jovxxm6::::res://texture/PNG/tilemap_packed.png<>uid://0js0tewruw13::::res://texture/PNG/Default/Panel/panel-008.png<>uid://2hscw2vj7nvc::::res://texture/PNG/Default/Border/panel-border-008.png<>uid://ppm8h6yqhbt0::::res://texture/PNG/Default/Panel/panel-016.png<>uid://be085m57y7g8q::::res://texture/PNG/Default/Border/panel-border-016.png<>uid://ctppp385maids::::res://texture/PNG/Default/Panel/panel-020.png<>uid://cxn4r53tyc6r1::::res://texture/PNG/Default/Border/panel-border-020.png
-intro0.tscn::PackedScene::2270653627641554043::1760396898::0::1::::<><><>0<>0<><>::uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://cv7h0ru1yski0::::res://Godot/Godot Scripts/intro.gd<>uid://d0a5ye1eatlnt::::res://texture/paleta/Screenshot_31-600x600.png<>uid://dmph4vbnd6qcj::::res://texture/folderTres/materials/tile.tres<>uid://doi7ecbrooaxt::::res://texture/PNG/fundos.png<>uid://d300w44j3djpe::::res://texture/font/m5x7.ttf<>uid://cf6tfynp8qcsu::::res://texture/font/at01.ttf<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://dkpfptdx5dya8::::res://texture/PNG/funds/Border All 6.png<>uid://dvkycf6e8bp1d::::res://texture/font/alma tv show.png<>uid://ce5r0b54upoew::::res://texture/objetos/ITEMS.png
-intro.tscn::PackedScene::6322623801715530587::1761408743::0::1::::<><><>0<>0<><>::uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://d0a5ye1eatlnt::::res://texture/paleta/Screenshot_31-600x600.png<>uid://d300w44j3djpe::::res://texture/font/m5x7.ttf<>uid://bcabr674wkilu::::res://Godot/Godot Scripts/intro2.gd<>uid://cmesx6notnna4::::res://texture/PNG/bordas UI/fundoprovisório.png<>uid://ekh2ult7cdhj::::res://texture/folderTres/texturas/intro.tres<>uid://cf6tfynp8qcsu::::res://texture/font/at01.ttf<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://b5pydke1gg5le::::res://Godot/classes/Nodes/ButtonUI.gd
-manager.tscn::PackedScene::1131277743433575486::1761864531::0::1::::<><><>0<>0<><>::uid://bx34cw14bkhcg::::res://Godot/Godot Scripts/Manager.gd<>uid://c5iu1a2y7eb7r::::res://Godot/classes/Nodes/audio_player.gd<>uid://nqf65ba8dfqg::::res://Godot/Godot Cenas/Gameboy.tscn<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bu38qgxh4wq1i::::res://Characters/Players/menu.tscn<>uid://pivih5e0q7e7::::res://Godot/Godot Cenas/time.tscn
+Global.tscn::PackedScene::763207483237621659::1762984610::0::1::::<><><>0<>0<><>::uid://cm7cbajfhi5k1::::res://Godot/Godot Scripts/Global.gd<>uid://nqf65ba8dfqg::::res://Godot/Godot Cenas/Gameboy.tscn<>uid://c5iu1a2y7eb7r::::res://Godot/classes/Nodes/audio_player.gd
+intro.tscn::PackedScene::6322623801715530587::1762714068::0::1::::<><><>0<>0<><>::uid://cgnunqt42nrdv::::res://texture/folderTres/materials/BATALHA.tres<>uid://d0a5ye1eatlnt::::res://texture/paleta/Screenshot_31-600x600.png<>uid://d300w44j3djpe::::res://texture/font/m5x7.ttf<>uid://bcabr674wkilu::::res://Godot/Godot Scripts/intro2.gd<>uid://cmesx6notnna4::::res://texture/PNG/bordas UI/fundoprovisório.png<>uid://ekh2ult7cdhj::::res://texture/folderTres/texturas/intro.tres<>uid://cf6tfynp8qcsu::::res://texture/font/at01.ttf<>uid://ca1iiaaps77so::::res://texture/folderTres/BoxTexture/intro.tres<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres<>uid://b6aeu0vlmykxt::::res://texture/objetos/items/itensNormais.png<>uid://b5pydke1gg5le::::res://Godot/classes/Nodes/ButtonUI.gd
+manager.tscn::PackedScene::1131277743433575486::1762886701::0::1::::<><><>0<>0<><>::uid://bx34cw14bkhcg::::res://Godot/Godot Scripts/Manager.gd<>uid://c5iu1a2y7eb7r::::res://Godot/classes/Nodes/audio_player.gd<>uid://bd046eokvcnu2::::res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://bu38qgxh4wq1i::::res://Characters/Players/menu.tscn<>uid://pivih5e0q7e7::::res://Godot/Godot Cenas/time.tscn
 time.tscn::PackedScene::1070637434025698488::1759589935::0::1::::<><><>0<>0<><>::
-::res://Godot/Godot Scripts/::1761933736
-dead.gd::GDScript::4388901239043902047::1761933736::0::1::::<>ColorRect<><>0<>0<><>::
-Global.gd::GDScript::5681290813092062070::1761667808::0::1::::<>Node<><>0<>0<><>::
-intro2.gd::GDScript::2526891125463340666::1761667808::0::1::::<>Control<><>0<>0<><>::
-intro.gd::GDScript::6313337760718935841::1760388005::0::1::::<>Control<><>0<>0<><>::
-Manager.gd::GDScript::4060332225857539686::1761929439::0::1::::<>Node<><>0<>0<><>::
-::res://shader/::1762193972
-black and white.gdshader::Shader::2377456809768584779::1762193969::0::1::::<><><>0<>0<><>::
-color.gdshader::Shader::1285003908087479039::1762193972::0::1::::<><><>0<>0<><>::
+::res://Godot/Godot Scripts/::1762984721
+dead.gd::GDScript::4388901239043902047::1762686338::0::1::::<>ColorRect<><>0<>0<><>::
+Global.gd::GDScript::5681290813092062070::1762984721::0::1::::<>CanvasLayer<><>0<>0<><>::
+intro2.gd::GDScript::2526891125463340666::1762704745::0::1::::<>Control<><>0<>0<><>::
+Manager.gd::GDScript::4060332225857539686::1762975037::0::1::::<>Node<><>0<>0<><>::
+::res://shader/::1763293241
+black and white.gdshader::Shader::2377456809768584779::1763293238::0::1::::<><><>0<>0<><>::
+color.gdshader::Shader::1285003908087479039::1763293241::0::1::::<><><>0<>0<><>::
 ItemHighlight.gdshader::Shader::5485207757840643753::1759589936::0::1::::<><><>0<>0<><>::
-paletasWOW.gdshader::Shader::7981427132079214776::1762193971::0::1::::<><><>0<>0<><>::
-paletteWOWOWOW.gdshader::Shader::3783336447421090801::1762193972::0::1::::<><><>0<>0<><>::
-palette_limiterONE.gdshader::Shader::380319088212247429::1762193969::0::1::::<><><>0<>0<><>::
-PSX-Camera.gdshader::Shader::5436089217453256779::1762193972::0::1::::<><><>0<>0<><>::
-PSX.gdshader::Shader::4701447226103278915::1762193971::0::1::::<><><>0<>0<><>::
-ScreenNoise.gdshader::Shader::8069782907481312469::1762193972::0::1::::<><><>0<>0<><>::
-shadow.gdshader::Shader::237056969494193751::1762193972::0::1::::<><><>0<>0<><>::
-SkyShader.gdshader::Shader::3271990737820048076::1762193972::0::1::::<><><>0<>0<><>::
-test.gdshader::Shader::5831201226898331916::1762193972::0::1::::<><><>0<>0<><>::
+paletasWOW.gdshader::Shader::7981427132079214776::1763293240::0::1::::<><><>0<>0<><>::
+paletteWOWOWOW.gdshader::Shader::3783336447421090801::1763293241::0::1::::<><><>0<>0<><>::
+palette_limiterONE.gdshader::Shader::380319088212247429::1763293238::0::1::::<><><>0<>0<><>::
+PSX-Camera.gdshader::Shader::5436089217453256779::1763293241::0::1::::<><><>0<>0<><>::
+PSX.gdshader::Shader::4701447226103278915::1763293240::0::1::::<><><>0<>0<><>::
+ScreenNoise.gdshader::Shader::8069782907481312469::1763293241::0::1::::<><><>0<>0<><>::
+shadow.gdshader::Shader::237056969494193751::1763293241::0::1::::<><><>0<>0<><>::
+SkyShader.gdshader::Shader::3271990737820048076::1763293241::0::1::::<><><>0<>0<><>::
+test.gdshader::Shader::5831201226898331916::1763293241::0::1::::<><><>0<>0<><>::
 time3.gdshader::Shader::5856405297413847630::1759589936::0::1::::<><><>0<>0<><>::
 time.gdshader::Shader::7127398906979616957::1759589936::0::1::::<><><>0<>0<><>::
 transition.tscn::PackedScene::1049441109675093476::1759589936::0::1::::<><><>0<>0<><>::uid://beom23by5hjm0::::res://shader/transitionZ.gdshader
 transitionZ.gdshader::Shader::2696855640480131885::1759589936::0::1::::<><><>0<>0<><>::
 trasonsparentes.gdshader::Shader::2322624243439236936::1759589936::0::1::::<><><>0<>0<><>::
-VHS.gdshader::Shader::8762147295556024288::1762193972::0::1::::<><><>0<>0<><>::
-zeno.gdshader::Shader::4010853392143878215::1762193971::0::1::::<><><>0<>0<><>::
+VHS.gdshader::Shader::8762147295556024288::1763293241::0::1::::<><><>0<>0<><>::
+zeno.gdshader::Shader::4010853392143878215::1763293240::0::1::::<><><>0<>0<><>::
 ::res://sons/::1761348518
 ::res://sons/music/::1760209316
 acid_tunnel.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::3762039436828520972::1759589936::1759589936::1::::<><><>0<>0<>108f8dfa9c97c7647ba6acbb1ce859b9<>res://.godot/imported/acid_tunnel.ogg-aae2f184f560591aca893594f0772a86.oggvorbisstr::
@@ -1086,8 +1091,8 @@ prototype_character.png::CompressedTexture2D::8097364696441329938::1759589941::1
 prototype_character_blue.png::CompressedTexture2D::263581081695813946::1759589941::1759589941::1::::<><><>0<>0<>67ea64eb0e27f2a171dd6f832d40ee36<>res://.godot/imported/prototype_character_blue.png-2d6fdeb2e4ed7edc894f4996d1cc9f44.ctex::
 prototype_character_red.png::CompressedTexture2D::3136677328520775096::1759589941::1759589941::1::::<><><>0<>0<>ed2ba6d73043af0e3d146d0e1d4c25b3<>res://.godot/imported/prototype_character_red.png-b0e9a5bdc6618764925f294583f62dd5.ctex::
 prototype_character_zeno.png::CompressedTexture2D::3719670050972605846::1759589941::1759589941::1::::<><><>0<>0<>2b3ae521db46613dc5f6c9b909b1b424<>res://.godot/imported/prototype_character_zeno.png-e7a3b65e9d378056f2af55104f71dd60.ctex::
-::res://texture/characters/dialogos/::1761572853
-bebedouro.tres::AtlasTexture::8709077437532349049::1761667817::0::1::::<><><>0<>0<><>::uid://bp6cdr3xf1ujb::::res://texture/characters/inimigos/bebedouro.png
+::res://texture/characters/dialogos/::1762608075
+bebedouro.tres::AtlasTexture::8709077437532349049::1762686342::0::1::::<><><>0<>0<><>::uid://bp6cdr3xf1ujb::::res://texture/characters/inimigos/bebedouro.png
 comecio.tres::AtlasTexture::3676638410003945770::1759589941::0::1::::<><><>0<>0<><>::uid://b0hx4c37f7ysd::::res://texture/Characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png
 oi.dtl::Resource/DialogicTimeline::1142358679002375396::1761400869::0::1::::<><>uid://j7ym07anlusi<>0<>0<><>::uid://bkn1oyn7iqm32<>uid://ce6ap8p2vvfva
 ::res://texture/characters/inimigos/::1760130218
@@ -1137,22 +1142,23 @@ Zeno_Signal.png::CompressedTexture2D::7491569260753680811::1759589941::175958994
 ::res://texture/effects/::1761391500
 attack 1 .png::CompressedTexture2D::2148966146927377000::1761348448::1761400869::1::::<><><>0<>0<>963ce77ed2e350f490f702ea7594975c<>res://.godot/imported/attack 1 .png-051d7276e95f898fe84b38affe770315.ctex::
 SAVE.png::CompressedTexture2D::8254624111588848070::1761348448::1761400869::1::::<><><>0<>0<>239804670c34dd6ddec72df3168cee0c<>res://.godot/imported/SAVE.png-f220bc2c409c2e8922db83cc5ca61bd6.ctex::
-::res://texture/folderTres/::1762193971
-C1A.tres::TileSet::7348005906488061179::1762193970::0::1::::<><><>0<>0<><>::uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png
-T1B.tres::TileSet::4419377682599366087::1762193971::0::1::::<><><>0<>0<><>::uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png
-theme_BATALHA.tres::Theme::4216791165455645730::1761931966::0::1::::<><><>0<>0<><>::uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://qps2iq0yi4ti::::res://texture/folderTres/BoxTexture/example_balloonLINE.tres
-::res://texture/folderTres/BoxTexture/::1761849981
-example_balloon.tres::StyleBoxTexture::4201161631460213044::1761408746::0::1::::<><><>0<>0<><>::uid://l2gtm114gd4u::::res://texture/PNG/funds/options.png
-example_balloonLINE.tres::StyleBoxTexture::1155128732896621410::1761849981::0::1::::<><><>0<>0<><>::uid://l2gtm114gd4u::::res://texture/PNG/funds/options.png
+::res://texture/folderTres/::1763293240
+C1A.tres::TileSet::7348005906488061179::1763293239::0::1::::<><><>0<>0<><>::uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png
+T1B.tres::TileSet::4419377682599366087::1763293240::0::1::::<><><>0<>0<><>::uid://bpems8kj61h0w::::res://texture/tiles top down/texture3/chão.png<>uid://bbihxyrn61d1g::::res://texture/tiles top down/texture3/chaomelhor.png<>uid://bfoa3cshnjc2f::::res://texture/folderTres/materials/tile3.tres<>uid://dt81ephegbgig::::res://texture/tiles top down/texture3/escadasTop.png<>uid://5bswcxnd4p4t::::res://texture/tiles top down/texture3/murrosTop.png<>uid://bgx0cr6tpq1mn::::res://texture/tiles top down/texture3/Untitled 09-22-2025 09-26-57 (1).png<>uid://di26a35agfcox::::res://texture/tiles top down/texture3/objetos.png<>uid://cx0gouswnba3i::::res://texture/tiles top down/texture3/árvores.png
+theme_BATALHA.tres::Theme::4216791165455645730::1763293238::0::1::::<><><>0<>0<><>::uid://ckj2wo0x2kbuu::::res://texture/font/kenney_mini_square.ttf<>uid://cflugrgbnk4cx::::res://texture/folderTres/BoxTexture/zeko.tres<>uid://qps2iq0yi4ti::::res://texture/folderTres/BoxTexture/example_balloonLINE.tres<>uid://ehj3gykeutk7::::res://texture/folderTres/BoxTexture/zeno.tres
+::res://texture/folderTres/BoxTexture/::1762607156
+example_balloon.tres::StyleBoxTexture::4201161631460213044::1762686342::0::1::::<><><>0<>0<><>::uid://l2gtm114gd4u::::res://texture/PNG/funds/options.png
+example_balloonLINE.tres::StyleBoxTexture::1155128732896621410::1762686342::0::1::::<><><>0<>0<><>::uid://l2gtm114gd4u::::res://texture/PNG/funds/options.png
+inimigoButtao.tres::StyleBoxTexture::2784788318298691451::1762686342::0::1::::<><><>0<>0<><>::uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png
 intro.tres::StyleBoxTexture::4827015211992007922::1761408746::0::1::::<><><>0<>0<><>::uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png
 menu.tres::StyleBoxTexture::2277521243939225912::1761408746::0::1::::<><><>0<>0<><>::uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png
 zeko.tres::StyleBoxTexture::5147719697718793615::1761408746::0::1::::<><><>0<>0<><>::uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png
 zeno.tres::StyleBoxTexture::295802826670698080::1761408746::0::1::::<><><>0<>0<><>::uid://d0o86rw56xggp::::res://texture/PNG/funds/morte.png
-::res://texture/folderTres/materials/::1762193969
-BATALHA.tres::ShaderMaterial::5222049766272391735::1762083468::0::1::::<><><>0<>0<><>::uid://84wmppkbbltb::::res://shader/black and white.gdshader
+::res://texture/folderTres/materials/::1762806986
+BATALHA.tres::ShaderMaterial::5222049766272391735::1762686342::0::1::::<><><>0<>0<><>::uid://84wmppkbbltb::::res://shader/black and white.gdshader
 fenda.tres::ShaderMaterial::203856284562822086::1759589941::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader
 niko.tres::ShaderMaterial::1769128132366227914::1760113638::0::1::::<><><>0<>0<><>::uid://dlyi66hgpuhee::::res://shader/paletasWOW.gdshader<>uid://b3gas60ua6l2t::::res://texture/folderTres/texturas/Niko.tres
-preto_&_branco.tres::ShaderMaterial::6562171546617857012::1762193969::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader
+preto_&_branco.tres::ShaderMaterial::6562171546617857012::1762806986::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader
 SAVE.tres::ShaderMaterial::7910851070037754433::1760090373::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader<>uid://u7h1n47mymg2::::res://texture/folderTres/texturas/paleta.tres
 tile3.tres::ShaderMaterial::2766316325858394011::1759589941::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader<>uid://bhggqpnthhq4x::::res://texture/folderTres/texturas/fenda_texture.tres
 tile.tres::ShaderMaterial::8032971753150259605::1759589941::0::1::::<><><>0<>0<><>::uid://dlyi66hgpuhee::::res://shader/paletasWOW.gdshader<>uid://l6wg1m1aqei0::::res://textures/paleta/P3.png
@@ -1160,23 +1166,23 @@ wow.tres::ShaderMaterial::5556321715388557940::1760120665::0::1::::<><><>0<>0<><
 zeno.tres::ShaderMaterial::7230585898881533886::1759589941::0::1::::<><><>0<>0<><>::uid://bxe5f02ex8x24::::res://shader/zeno.gdshader
 zenoTest.tres::ShaderMaterial::4950879538806068468::1759589941::0::1::::<><><>0<>0<><>::uid://dlyi66hgpuhee::::res://shader/paletasWOW.gdshader<>uid://co6qn46s58rns::::res://textures/paleta/P2.png
 zipTile.tres::ShaderMaterial::763140876738504555::1759589941::0::1::::<><><>0<>0<><>::uid://foh2gua8ee7f::::res://shader/palette_limiterONE.gdshader<>uid://co6qn46s58rns::::res://texture/paleta/P2.png
-::res://texture/folderTres/texturas/::1762193969
+::res://texture/folderTres/texturas/::1763293238
 armadura.tres::AtlasTexture::6638684435901399444::1759589941::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
 batalha.tres::AtlasTexture::1078667936656230134::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 comida.tres::AtlasTexture::1675250547990610230::1759589941::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
 dialogue.tres::AtlasTexture::5288931835873141917::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 dunjoes.tres::AtlasTexture::3703845678773472995::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 espada.tres::AtlasTexture::926762955321481678::1759589941::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
-fenda_texture.tres::GradientTexture1D::2890522539148395129::1762193969::0::1::::<><><>0<>0<><>::
+fenda_texture.tres::GradientTexture1D::2890522539148395129::1763293238::0::1::::<><><>0<>0<><>::
 globalsave.tres::AtlasTexture::3998946827071306561::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 intro.tres::AtlasTexture::301873455843494323::1761408746::0::1::::<><><>0<>0<><>::uid://cjxxy6qyrm17e::::res://texture/PNG/icon/ícones.png
 inventory_png.tres::AtlasTexture::8428261848217778564::1759589941::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
 item.tres::AtlasTexture::338004779418061771::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
-lado.tres::AtlasTexture::2097788927253947502::1762082663::0::1::::<><><>0<>0<><>::uid://dhf6nxnijhk6x::::res://texture/PNG/icon/233683.png
+lado.tres::AtlasTexture::2097788927253947502::1762686342::0::1::::<><><>0<>0<><>::uid://dhf6nxnijhk6x::::res://texture/PNG/icon/233683.png
 makita.tres::AtlasTexture::2141539517060395585::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 Niko.tres::GradientTexture1D::4364128384126560013::1760872252::0::1::::<><><>0<>0<><>::
 npc.tres::AtlasTexture::3858490065224205758::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
-paleta.tres::GradientTexture1D::1470309139555259991::1762193969::0::1::::<><><>0<>0<><>::
+paleta.tres::GradientTexture1D::1470309139555259991::1763293238::0::1::::<><><>0<>0<><>::
 player.tres::AtlasTexture::3750443458773425851::1759589941::0::1::::<><><>0<>0<><>::uid://c1nkpghk8aght::::res://texture/PNG/icon_sheet_32x32.png
 player_png.tres::AtlasTexture::789899151346565529::1759589941::0::1::::<><><>0<>0<><>::uid://dd4fqed37lxyg::::res://texture/objetos/16x16.png
 zekoCena.tres::AtlasTexture::2399563530941766109::1759589941::0::1::::<><><>0<>0<><>::uid://nmeinsw5i5xt::::res://texture/Characters/Zeno's/Pequeno_Zeno.png
@@ -1258,7 +1264,9 @@ Screenshot_31-600x600.png::CompressedTexture2D/CompressedTexture2D::891584776130
 Free Smoke Fx  Pixel 05.png::CompressedTexture2D::216755001279094735::1761348279::1761400869::1::::<><><>0<>0<>27d7a50a7ea33e62d2944dd4bc7e3dd2<>res://.godot/imported/Free Smoke Fx  Pixel 05.png-70df2a09e17284575ffb976b062c4a47.ctex::
 GUI.png::CompressedTexture2D/CompressedTexture2D::905770778823479715::1759589937::1759589937::1::::<><><>0<>0<>6637e0eb6c2cff25157122fc67c697a6<>res://.godot/imported/GUI.png-54a7eec5fcdcd794bcef0295a0f41b8b.ctex::
 Spritesheet_UI_Flat_Animated.png::CompressedTexture2D/CompressedTexture2D::4261811755892879005::1759589941::1759589941::1::::<><><>0<>0<>211a98ebb736f72274a709b5d46ef672<>res://.godot/imported/Spritesheet_UI_Flat_Animated.png-269e17e2872b7ad2a885b866191a824c.ctex::
-::res://texture/PNG/bordas UI/::1761642739
+::res://texture/PNG/bordas UI/::1762969601
+167406.png::CompressedTexture2D::8763649988488890893::1762630618::1762686342::1::::<><><>0<>0<>2044885079c26469f730805a74ba5466<>res://.godot/imported/167406.png-4b1e6204f8cb3d9e761ffdfeaf573a2e.ctex::
+batalha.png::CompressedTexture2D::2973080092992211273::1762969556::1762969601::1::::<><><>0<>0<>ea2d3af764c82b60ea171895658c1f58<>res://.godot/imported/batalha.png-d5d54b2ac6267993d2c6c6880a74cf9e.ctex::
 fundoprovisório.png::CompressedTexture2D::5624500630156762985::1761400891::1761408746::1::::<><><>0<>0<>53e0fa39305230db9f6b2672920f3631<>res://.godot/imported/fundoprovisório.png-15837023be14d91593f4e287167f497a.ctex::
 fundos.png::CompressedTexture2D::8160371078371547857::1761348262::1761400868::1::::<><><>0<>0<>1524413dcbb56f22931a40c3f1049d9d<>res://.godot/imported/fundos.png-c205fd042071ca6493fb1d4afd389b1c.ctex::
 Pxiel Art UI borders.png::CompressedTexture2D::1444532594538875880::1761348262::1761400869::1::::<><><>0<>0<>2089e95bbd6197532c5030ca0888d287<>res://.godot/imported/Pxiel Art UI borders.png-bc804b98bcf32d290f2a9ee72479ad50.ctex::
@@ -1439,21 +1447,31 @@ options.png::CompressedTexture2D::828214383084193594::1761400406::1761400868::1:
 Ram Border All.png::CompressedTexture2D/CompressedTexture2D::8998999684911213833::1759589941::1759589941::1::::<><><>0<>0<>26719c5d721810a97cd98e762f3a7a57<>res://.godot/imported/Ram Border All.png-da0f63908037fe9f1a26cd4f1091e9b6.ctex::
 Ram Deco All.png::CompressedTexture2D/CompressedTexture2D::1013762939240816553::1759589941::1759589941::1::::<><><>0<>0<>7ae794f9785bcb854757f202e092bfac<>res://.godot/imported/Ram Deco All.png-3db8cd4512697d1fc73649477740bb0b.ctex::
 Ram Panels All.png::CompressedTexture2D/CompressedTexture2D::7968009751359937702::1759589941::1759589941::1::::<><><>0<>0<>c50a9f210267a604255e94fde2f8db13<>res://.godot/imported/Ram Panels All.png-8ed330712c024a6d2833c1e735fe750a.ctex::
-::res://texture/PNG/icon/::1762081876
+::res://texture/PNG/icon/::1762636506
 233683.png::CompressedTexture2D::7662812515907661669::1761348335::1761400867::1::::<><><>0<>0<>f6cb6ccce3fb52c52dbd9f0b61b88eea<>res://.godot/imported/233683.png-7f5e9c18c4bd6f3cba838460b0fbeb03.ctex::
 233686.png::CompressedTexture2D::6159751649961617901::1761348335::1761400867::1::::<><><>0<>0<>a23bc9cd838d09125edf86aae4823f03<>res://.godot/imported/233686.png-d25ff20159a190fe982b1bc10200f53d.ctex::
-alma ambiciosa.png::CompressedTexture2D::2710312824265519301::1761348397::1761400867::1::::<><><>0<>0<>5ebc7c280dfc98ee50511289335d3a43<>res://.godot/imported/alma ambiciosa.png-e1502409cb1d72d363bf03b22682c0fc.ctex::
+alma ambição 1.png::CompressedTexture2D::6893732050729500271::1762632568::1762686340::1::::<><><>0<>0<>2a13dd8057e54ce0eec068abfdb0718a<>res://.godot/imported/alma ambição 1.png-970d46c2f4cbe9022cd5babe4ca0d41d.ctex::
+alma ambição 2.png::CompressedTexture2D::6048141717491946666::1762632585::1762686340::1::::<><><>0<>0<>ccf880a6d7c83dab9b726e125df3de10<>res://.godot/imported/alma ambição 2.png-c2b2a34da6c0fd091ebc5fab238c2d10.ctex::
+alma ambição 3.png::CompressedTexture2D::7424308036195813193::1762632613::1762686340::1::::<><><>0<>0<>305095420ae31fe86c269463cb38b297<>res://.godot/imported/alma ambição 3.png-a82abf0534f3e130b7fb941a8f31762a.ctex::
+alma ambição 4.png::CompressedTexture2D::4917590526679538184::1762632631::1762686340::1::::<><><>0<>0<>755ed88f15a5b797dbce10ee2f4bda47<>res://.godot/imported/alma ambição 4.png-4ab68c6a7ba248f4f2102212e2892e9d.ctex::
+alma da ambição.png::CompressedTexture2D::7986752065232160525::1762631656::1762686340::1::::<><><>0<>0<>e2ee787b62bb5082084e06fb773f0af8<>res://.godot/imported/alma da ambição.png-5f11f637af543a494425f57d347c41f9.ctex::
+alma da determinação.png::CompressedTexture2D::5271683500897616466::1762631039::1762686340::1::::<><><>0<>0<>46bafc28f86333fa086ba8ccde5c533c<>res://.godot/imported/alma da determinação.png-f543a73f954ac679ecea5ba1d2f34d47.ctex::
 alma tv show.png::CompressedTexture2D::8655332635164371851::1761348397::1761400867::1::::<><><>0<>0<>e2e36551e2e530ec522a808339aa9734<>res://.godot/imported/alma tv show.png-05408720adc502b36720044eaa154e9e.ctex::
 alma.png::CompressedTexture2D::6353564523478358872::1761348397::1761400867::1::::<><><>0<>0<>b223d66a35be0abf123db4ca09c68622<>res://.godot/imported/alma.png-db5af16d8504cacbdc813ba25bebe688.ctex::
+almaanimetionambicao.tres::AnimatedTexture::5192990426440036293::1762686340::0::1::::<><><>0<>0<><>::uid://c5hm03g2kiukl::::res://texture/PNG/icon/alma ambição 1.png<>uid://csf1amcoyyldy::::res://texture/PNG/icon/alma ambição 2.png<>uid://dd1njetchvno8::::res://texture/PNG/icon/alma ambição 3.png<>uid://cccd86d7o2q7q::::res://texture/PNG/icon/alma ambição 4.png
+ambição com bordas.png::CompressedTexture2D::601938211122441248::1762631593::1762686340::1::::<><><>0<>0<>76ef8a0338d3b246727c7c6d794822e5<>res://.godot/imported/ambição com bordas.png-36bb817e1bb03f5101044c6cd4ba8fa1.ctex::
 cursor.png::CompressedTexture2D::5717472701713218442::1761348397::1761400867::1::::<><><>0<>0<>fab8a7bc616915afb0ff663ea2d1a18d<>res://.godot/imported/cursor.png-c909c2984f9ec34ad65db864a76bbc7d.ctex::
 cursores .png::CompressedTexture2D::2076632819381442571::1761348397::1761400867::1::::<><><>0<>0<>d817f18ecbeecaa6a8213f29391ada64<>res://.godot/imported/cursores .png-39ef203a6ef99ec92836f6d50e684019.ctex::
+determinação com bordas.png::CompressedTexture2D::985983676870294456::1762631106::1762686340::1::::<><><>0<>0<>943ab94481dc819d3615844557c33ee2<>res://.godot/imported/determinação com bordas.png-bcdb8ebd3a15250b2de445f77dded821.ctex::
 icon_sheet_32x32.png::CompressedTexture2D::6625222496066251561::1761348335::1761400867::1::::<><><>0<>0<>67d3fc301b3cae2c85638d08caa59cd5<>res://.godot/imported/icon_sheet_32x32.png-336639736bce8a7fe6fa3af9704f63b8.ctex::
-Logo The Fractured Signal .jpg::CompressedTexture2D::1775406047345473160::1762000532::1762000597::1::::<><><>0<>0<>6334539c06d8a3bf54beb7c332f47d1b<>res://.godot/imported/Logo The Fractured Signal .jpg-12a17e899ba44d7e868b98c8e1d045d6.ctex::
 logo.png::CompressedTexture2D::5627487427011072041::1761348397::1761400867::1::::<><><>0<>0<>def6eb3b6d39a2fc8561b59bc05bfa14<>res://.godot/imported/logo.png-4019f6737067894016fcacd8c267d7d1.ctex::
-LogoPixelTv.png::CompressedTexture2D::5705645845670081658::1762081863::1762081876::1::::<><><>0<>0<>e07f2a82118d5573fd7bfc4bd825972e<>res://.godot/imported/LogoPixelTv.png-c3abf964c3d04ed157bf515fefdf872f.ctex::
-LogoTV.png::CompressedTexture2D::6856750218641294296::1762000778::1762000793::1::::<><><>0<>0<>bc23b2eb0121bf685a384215059f4f40<>res://.godot/imported/LogoTV.png-d77cdc6bd315267dbe82c784100a3bc8.ctex::
+LogoPixelTv.png::CompressedTexture2D::5705645845670081658::1762081863::1762686340::1::::<><><>0<>0<>e07f2a82118d5573fd7bfc4bd825972e<>res://.godot/imported/LogoPixelTv.png-c3abf964c3d04ed157bf515fefdf872f.ctex::
+selection ambição.png::CompressedTexture2D::1838309215617435924::1762631521::1762686340::1::::<><><>0<>0<>84158ccd0c682f95b979644a8f92892e<>res://.godot/imported/selection ambição.png-65325cc383e0017e476fbdf2a296c848.ctex::
+selection determine.png::CompressedTexture2D::2054955923166367549::1762631403::1762686340::1::::<><><>0<>0<>ad472fe4081c73f75ce2e1f4e4c582b1<>res://.godot/imported/selection determine.png-beb9c1b19497588af5dccfb5e05217db.ctex::
 tilemap_packed.png::CompressedTexture2D::6148902628264493339::1761348355::1761400867::1::::<><><>0<>0<>9e5f6310969fdda8f38f482e18a9e630<>res://.godot/imported/tilemap_packed.png-756e5a26053c8eaaf1e21180f7d6839d.ctex::
 ícones.png::CompressedTexture2D::5453462652413610396::1761401168::1761408744::1::::<><><>0<>0<>a010227894f96a815e9af0173cec20ca<>res://.godot/imported/ícones.png-d716c184f796546a5f62b807f13e1a7a.ctex::
+::res://texture/PNG/icon/almas/::1762636509
+alma ambiciosa.png::CompressedTexture2D::2710312824265519301::1762636506::1762686340::1::::<><><>0<>0<>3e49f7bf8bc78140c313bea533043578<>res://.godot/imported/alma ambiciosa.png-1c57306b16e9eab9f91870c5d69d2313.ctex::
 ::res://texture/PNG/Sprites/::1759589937
 ::res://texture/PNG/Sprites/Highlights A/::1759589937
 ::res://texture/PNG/Sprites/Highlights A/Default/::1759589937
@@ -2417,7 +2435,7 @@ gdb-keyboard-2.png::CompressedTexture2D::8717198578434447492::1761348210::176140
 gdb-playstation-2.png::CompressedTexture2D::6712898643886570474::1761348210::1761400868::1::::<><><>0<>0<>18cb0ce3101094af41d53e52522b408c<>res://.godot/imported/gdb-playstation-2.png-2cd612bb7bd0b8cf2baa2c3277036270.ctex::
 gdb-switch-2.png::CompressedTexture2D::3650729892556012301::1761348210::1761400868::1::::<><><>0<>0<>e3203d700a952d52f7d88cd61fe3f0d0<>res://.godot/imported/gdb-switch-2.png-1aabafee362c99dc603315a590b3781a.ctex::
 gdb-xbox-2.png::CompressedTexture2D::1350110765440792332::1761348210::1761400868::1::::<><><>0<>0<>f4d7a11c61b8dab2be3ffd912f1ddf15<>res://.godot/imported/gdb-xbox-2.png-00c2dc536ff84403c6ceb611ca866fd0.ctex::
-::res://texture/tiles top down/::1759589942
+::res://texture/tiles top down/::1762703247
 ::res://texture/tiles top down/cyberpunk/::1759589942
 animated-door-Sheet.png::CompressedTexture2D/CompressedTexture2D::3464924167962507756::1759589942::1759589942::1::::<><><>0<>0<>fd9594b7a6ad34f849bad8d7ebc66c6e<>res://.godot/imported/animated-door-Sheet.png-e7b71b834a14d4c9d544fe3389af4435.ctex::
 Animated-Monitors-Sheet-14Frames.png::CompressedTexture2D/CompressedTexture2D::8248810686532640789::1759589942::1759589942::1::::<><><>0<>0<>15521e2f2117f746d7004fc280e0c60e<>res://.godot/imported/Animated-Monitors-Sheet-14Frames.png-a14b51b71c8e6b3278c9fbf4b5521aa7.ctex::
@@ -2428,73 +2446,6 @@ pixel-cyberpunk-interior.png::CompressedTexture2D/CompressedTexture2D::906485589
 Sci-FiWindows-Transparent.png::CompressedTexture2D/CompressedTexture2D::1144808442281570428::1759589942::1759589942::1::::<><><>0<>0<>8237a100ec578c82e6a94ee86049ec38<>res://.godot/imported/Sci-FiWindows-Transparent.png-1a82dec7ca04d182e74b2532c92b6c15.ctex::
 SciFiFurniture1.1.png::CompressedTexture2D/CompressedTexture2D::384835223091959891::1759589942::1759589942::1::::<><><>0<>0<>c199a2428afaf0ecf9073678a570f595<>res://.godot/imported/SciFiFurniture1.1.png-7a5250b343ac23da0c00032306dc17a9.ctex::
 teleporter1-Sheet.png::CompressedTexture2D/CompressedTexture2D::3210253697792127906::1759589942::1759589942::1::::<><><>0<>0<>151ac85e26b971d188f76db55508a7cd<>res://.godot/imported/teleporter1-Sheet.png-a063c9c5799ac56fa464cfe23d5b841e.ctex::
-::res://texture/tiles top down/Modern tiles_Free/::1759589942
-free_overview.png::CompressedTexture2D/CompressedTexture2D::2918311275434725468::1759589942::1759589942::1::::<><><>0<>0<>8e8e91c54c653c47f0ae55dc42cfc8c9<>res://.godot/imported/free_overview.png-68f602797c8a3699ced79d5fd8de4db0.ctex::
-::res://texture/tiles top down/Modern tiles_Free/Characters_free/::1759589942
-Adam_16x16.png::CompressedTexture2D/CompressedTexture2D::1344061547117637117::1759589942::1759589942::1::::<><><>0<>0<>142f525930a1c4fe06397e0291825f27<>res://.godot/imported/Adam_16x16.png-1238687748d5ac8782f4c8298363f739.ctex::
-Adam_idle_16x16.png::CompressedTexture2D/CompressedTexture2D::2545229569307186495::1759589942::1759589942::1::::<><><>0<>0<>618ace61667ebad6937a9aa5b84f24e6<>res://.godot/imported/Adam_idle_16x16.png-ea2bfe337c721955a15470322617adfe.ctex::
-Adam_idle_anim_16x16.png::CompressedTexture2D/CompressedTexture2D::5890013767026943287::1759589942::1759589942::1::::<><><>0<>0<>aa29de163d00f4a5dead0788f9f92778<>res://.godot/imported/Adam_idle_anim_16x16.png-2a0e9fc2289ade0ef63addeb36dbb600.ctex::
-Adam_phone_16x16.png::CompressedTexture2D/CompressedTexture2D::4219897508839111011::1759589942::1759589942::1::::<><><>0<>0<>e5cf42c98b92e8043af2387bb4c6e210<>res://.godot/imported/Adam_phone_16x16.png-352834def67b555cabf25d1b4f24987f.ctex::
-Adam_run_16x16.png::CompressedTexture2D/CompressedTexture2D::967514473676723871::1759589942::1759589942::1::::<><><>0<>0<>05c028a1d0155e34a72626cb31058c55<>res://.godot/imported/Adam_run_16x16.png-61132dc5f8c1649525930958159a4970.ctex::
-Adam_sit2_16x16.png::CompressedTexture2D/CompressedTexture2D::3910282677005134565::1759589942::1759589942::1::::<><><>0<>0<>29b2f2c927ed832e11a42600137e9745<>res://.godot/imported/Adam_sit2_16x16.png-f5d48636afe169318104eb31209cc347.ctex::
-Adam_sit3_16x16.png::CompressedTexture2D/CompressedTexture2D::4047122373068663325::1759589942::1759589942::1::::<><><>0<>0<>56a1ca60dd5f9a84038ee0eb2e3e5067<>res://.godot/imported/Adam_sit3_16x16.png-fdc49a684f13568e38faf37fe3f1878a.ctex::
-Adam_sit_16x16.png::CompressedTexture2D/CompressedTexture2D::4324394503556193206::1759589942::1759589942::1::::<><><>0<>0<>3b84586c9bcbc9b1efc6cc77945edbbd<>res://.godot/imported/Adam_sit_16x16.png-75c2fec5ce29f1e1c3540edaeadecf08.ctex::
-Alex_16x16.png::CompressedTexture2D/CompressedTexture2D::7922316720812536199::1759589942::1759589942::1::::<><><>0<>0<>bf72a7bbff841fd7654b9c59bbdaef6e<>res://.godot/imported/Alex_16x16.png-800063bd78dc2908307ed4cf529d0c88.ctex::
-Alex_idle_16x16.png::CompressedTexture2D/CompressedTexture2D::990569734015558836::1759589942::1759589942::1::::<><><>0<>0<>3e4ca6b009ee621f6b01bd5721b18178<>res://.godot/imported/Alex_idle_16x16.png-8c2d5df74efedece61db01f424d55554.ctex::
-Alex_idle_anim_16x16.png::CompressedTexture2D/CompressedTexture2D::3310015841644734382::1759589942::1759589942::1::::<><><>0<>0<>0fae17a74c6d2a20cd419f080c78fbfe<>res://.godot/imported/Alex_idle_anim_16x16.png-3275e03906b66a5ab5fe10ea3e9c7e4c.ctex::
-Alex_phone_16x16.png::CompressedTexture2D/CompressedTexture2D::7970003692517992947::1759589942::1759589942::1::::<><><>0<>0<>ac3de3f077e416f19108bf106c3bbc3d<>res://.godot/imported/Alex_phone_16x16.png-eaebc61c90f5baaf4ad13014b13c028c.ctex::
-Alex_run_16x16.png::CompressedTexture2D/CompressedTexture2D::7466429170891983980::1759589942::1759589942::1::::<><><>0<>0<>05a96101997746395eab80156969dccb<>res://.godot/imported/Alex_run_16x16.png-1c354843cf61d3ca55ffe415470a2d51.ctex::
-Alex_sit2_16x16.png::CompressedTexture2D/CompressedTexture2D::1788772422718742576::1759589942::1759589942::1::::<><><>0<>0<>0e6299bda2374a72286d9adeff490282<>res://.godot/imported/Alex_sit2_16x16.png-d98a37d319121e08844e908d2447d07d.ctex::
-Alex_sit3_16x16.png::CompressedTexture2D/CompressedTexture2D::7046247734493062876::1759589942::1759589942::1::::<><><>0<>0<>76354625b37e4b690db4ad3702e8751b<>res://.godot/imported/Alex_sit3_16x16.png-eb1b915994bc143e926c0d35f86c65dd.ctex::
-Alex_sit_16x16.png::CompressedTexture2D/CompressedTexture2D::2627403042637492112::1759589942::1759589942::1::::<><><>0<>0<>c52cdd87b72f4990e113682066e613c0<>res://.godot/imported/Alex_sit_16x16.png-d2ba89e6e720954e47a3da98c29ea1b4.ctex::
-Amelia_16x16.png::CompressedTexture2D/CompressedTexture2D::896213036524826888::1759589942::1759589942::1::::<><><>0<>0<>894ffc2f71495f235315aacf56881338<>res://.godot/imported/Amelia_16x16.png-5e13f820718cf9a2ec621c83782f9149.ctex::
-Amelia_idle_16x16.png::CompressedTexture2D/CompressedTexture2D::4158375120235705184::1759589942::1759589942::1::::<><><>0<>0<>023f8d1a9a09c798dc95c43479abc471<>res://.godot/imported/Amelia_idle_16x16.png-b6843e6629566cd9e7990051fee7c1be.ctex::
-Amelia_idle_anim_16x16.png::CompressedTexture2D/CompressedTexture2D::186825312779196991::1759589942::1759589942::1::::<><><>0<>0<>b067d62eb32d524858169cefa1f681b2<>res://.godot/imported/Amelia_idle_anim_16x16.png-c2a29f4113505834941651f98a130021.ctex::
-Amelia_phone_16x16.png::CompressedTexture2D/CompressedTexture2D::9188398071002820799::1759589942::1759589942::1::::<><><>0<>0<>2e7fa2d63057ab8b1ddd5ccaecf84bb9<>res://.godot/imported/Amelia_phone_16x16.png-918980a5591dc4026d78fe45c79efddd.ctex::
-Amelia_run_16x16.png::CompressedTexture2D/CompressedTexture2D::2688016090972112756::1759589942::1759589942::1::::<><><>0<>0<>7ea174e74c61162d65be8cce8bbb1300<>res://.godot/imported/Amelia_run_16x16.png-c8fd904c497a725a2c98b60ea2e17d6a.ctex::
-Amelia_sit2_16x16.png::CompressedTexture2D/CompressedTexture2D::2562189261995066244::1759589942::1759589942::1::::<><><>0<>0<>81be988654ca2c6e1ae49241bf92a89e<>res://.godot/imported/Amelia_sit2_16x16.png-a7cfe846dfe1213e570bc1fdfb69eb4d.ctex::
-Amelia_sit3_16x16.png::CompressedTexture2D/CompressedTexture2D::213051455571296284::1759589942::1759589942::1::::<><><>0<>0<>a731c7d1f7bada18749aaca3d900a2fe<>res://.godot/imported/Amelia_sit3_16x16.png-7e874e52a5485efd8b00622dbff42a82.ctex::
-Amelia_sit_16x16.png::CompressedTexture2D/CompressedTexture2D::6326732508080356561::1759589942::1759589942::1::::<><><>0<>0<>5ddcecb309d8cc4bdb33be04a11fa2e4<>res://.godot/imported/Amelia_sit_16x16.png-b6b444fa3c5346ff0d8d25ee0f1d2a84.ctex::
-Bob_16x16.png::CompressedTexture2D/CompressedTexture2D::4959801701564025619::1759589942::1759589942::1::::<><><>0<>0<>58bbf60b57d9c0b9d68fefe32bf3445a<>res://.godot/imported/Bob_16x16.png-53d637741cb9de0feb6a7b1a0f765de7.ctex::
-Bob_idle_16x16.png::CompressedTexture2D/CompressedTexture2D::3909703889826687001::1759589942::1759589942::1::::<><><>0<>0<>01e93297ac542fa4ff41c3c6547feb85<>res://.godot/imported/Bob_idle_16x16.png-8a7d0ea66e4a1bdbf3e81651e215598b.ctex::
-Bob_idle_anim_16x16.png::CompressedTexture2D/CompressedTexture2D::5166293980222622919::1759589942::1759589942::1::::<><><>0<>0<>0aea2b0d19cf6cda455b5ae94fe20904<>res://.godot/imported/Bob_idle_anim_16x16.png-091412eab46fce23fce8042389ce629c.ctex::
-Bob_phone_16x16.png::CompressedTexture2D/CompressedTexture2D::3167050890430037026::1759589942::1759589942::1::::<><><>0<>0<>1d9a6f7c642a142630b00d1857812895<>res://.godot/imported/Bob_phone_16x16.png-5f4f6ee838b5975fc9a6b33959b3b3af.ctex::
-Bob_run_16x16.png::CompressedTexture2D/CompressedTexture2D::988333188318385327::1759589942::1759589942::1::::<><><>0<>0<>219b98f812c18083b078e0370f926b0e<>res://.godot/imported/Bob_run_16x16.png-7cbb46853b2c2d683fd017515d9f8d64.ctex::
-Bob_sit2_16x16.png::CompressedTexture2D/CompressedTexture2D::7281544654446939438::1759589942::1759589942::1::::<><><>0<>0<>2e8ce0f5360a6d143a999dd7823d2643<>res://.godot/imported/Bob_sit2_16x16.png-6cbe50b196a9b1bafcf7573434805fca.ctex::
-Bob_sit3_16x16.png::CompressedTexture2D/CompressedTexture2D::7454084158871348721::1759589942::1759589942::1::::<><><>0<>0<>ffc9b9b3b8e9d7ce29bc399fe1319ade<>res://.godot/imported/Bob_sit3_16x16.png-9eacad03b3fee54409dcba36deac4d08.ctex::
-Bob_sit_16x16.png::CompressedTexture2D/CompressedTexture2D::46755538541316358::1759589942::1759589942::1::::<><><>0<>0<>f81ad8e6ebfc5cc00ba9c013d1b75a99<>res://.godot/imported/Bob_sit_16x16.png-81aeac03a5db1293ffada51d434d373c.ctex::
-::res://texture/tiles top down/Modern tiles_Free/Characters_free/RPGMAKERMV/::1759589942
-Characters_MV.png::CompressedTexture2D/CompressedTexture2D::8369941504916636695::1759589942::1759589942::1::::<><><>0<>0<>c30db9153b1009c153277ff6ebbbdbe0<>res://.godot/imported/Characters_MV.png-677c09f2c8fffe512a077de5c5598462.ctex::
-::res://texture/tiles top down/Modern tiles_Free/Interiors_free/::1759589942
-::res://texture/tiles top down/Modern tiles_Free/Interiors_free/16x16/::1759589942
-Interiors_free_16x16.png::CompressedTexture2D/CompressedTexture2D::2318004637752370857::1759589942::1759589942::1::::<><><>0<>0<>47e20323f19ab43253fdd362ba4d5991<>res://.godot/imported/Interiors_free_16x16.png-3d6b4f555f8f51f04851b12c62a75ecd.ctex::
-Room_Builder_free_16x16.png::CompressedTexture2D/CompressedTexture2D::4102638305117066160::1759589942::1759589942::1::::<><><>0<>0<>987b3adef054c20c398ca25686e2bcdd<>res://.godot/imported/Room_Builder_free_16x16.png-16c7aee214100a0546cb6d3a65670c75.ctex::
-::res://texture/tiles top down/Modern tiles_Free/velho/::1759589942
-idle_16x16_2.png::CompressedTexture2D/CompressedTexture2D::5917425907377934849::1759589942::1759589942::1::::<><><>0<>0<>b3ead1f3438aafd71f575c9369418d99<>res://.godot/imported/idle_16x16_2.png-c17bad9d12a6f3e17ac5d41a676b87f3.ctex::
-idle_32x32_2.png::CompressedTexture2D/CompressedTexture2D::7664304447394878129::1759589942::1759589942::1::::<><><>0<>0<>ae8245409029efa9b44adc09abd7f6ce<>res://.godot/imported/idle_32x32_2.png-b6b77e02d08eb8abbaf9a78820467568.ctex::
-idle_48x48_2.png::CompressedTexture2D/CompressedTexture2D::3374078839506563147::1759589942::1759589942::1::::<><><>0<>0<>f09dc4f866e66dae718947040f6d52e2<>res://.godot/imported/idle_48x48_2.png-d1295f8425fd35414cc2efa17326cadd.ctex::
-run_horizontal_16x16_2.png::CompressedTexture2D/CompressedTexture2D::5368726771599585728::1759589942::1759589942::1::::<><><>0<>0<>61c5cfa3882728e9b54e4132b45dff97<>res://.godot/imported/run_horizontal_16x16_2.png-79b7fe1b064ba2cfd516183decd708c8.ctex::
-run_horizontal_32x32_2.png::CompressedTexture2D/CompressedTexture2D::1588651735001309592::1759589942::1759589942::1::::<><><>0<>0<>1193fc557aadb4f32105f3c1c6b63c37<>res://.godot/imported/run_horizontal_32x32_2.png-3251223ac6283060f10e587037583792.ctex::
-run_horizontal_48x48_2.png::CompressedTexture2D/CompressedTexture2D::3001734223752189476::1759589942::1759589942::1::::<><><>0<>0<>1ede819868c12f8bece5bbae5c785296<>res://.godot/imported/run_horizontal_48x48_2.png-94202fc2e97e3b24b6e0d954468a3cbc.ctex::
-Tileset_16x16_1.png::CompressedTexture2D/CompressedTexture2D::657069546021041320::1759589942::1759589942::1::::<><><>0<>0<>95f61c9026d5f299334bda2e0d56e5af<>res://.godot/imported/Tileset_16x16_1.png-f05aef0c46877ed9dd4b32aaac59e430.ctex::
-Tileset_16x16_2.png::CompressedTexture2D/CompressedTexture2D::4398960896906010544::1759589942::1759589942::1::::<><><>0<>0<>5de2e69d133f5f919e446641c69b37ff<>res://.godot/imported/Tileset_16x16_2.png-569db26c5a9c043a7b5906d9569c529a.ctex::
-Tileset_16x16_3.png::CompressedTexture2D/CompressedTexture2D::6527910616810053748::1759589942::1759589942::1::::<><><>0<>0<>5c824ba9ce9cc96922d4955140648336<>res://.godot/imported/Tileset_16x16_3.png-1bb939e8b7f3ba57dee05ac5a264f15e.ctex::
-Tileset_16x16_9.png::CompressedTexture2D/CompressedTexture2D::2402810079531904024::1759589942::1759589942::1::::<><><>0<>0<>67781550d196983c9d1b1ca82736ccd7<>res://.godot/imported/Tileset_16x16_9.png-62f49deca8eca389b67efe99d44911eb.ctex::
-Tileset_16x16_16.png::CompressedTexture2D/CompressedTexture2D::8310481448057087488::1759589942::1759589942::1::::<><><>0<>0<>83ca3cc9b8327013990e74f88473b80d<>res://.godot/imported/Tileset_16x16_16.png-344234aed8c24c5ef4c71a873bf8ca9b.ctex::
-Tileset_32x32_1.png::CompressedTexture2D/CompressedTexture2D::7186298260745814836::1759589942::1759589942::1::::<><><>0<>0<>90c8791a77f8422c95bbdb5b9c248b06<>res://.godot/imported/Tileset_32x32_1.png-ff2e6a733da21ca3e0e977fa68615c03.ctex::
-Tileset_32x32_2.png::CompressedTexture2D/CompressedTexture2D::4172306514814203400::1759589942::1759589942::1::::<><><>0<>0<>8e76a7eba43381c4be07a1f172a45571<>res://.godot/imported/Tileset_32x32_2.png-24cade8b0409a91b2ba5139b5ec731a6.ctex::
-Tileset_32x32_3.png::CompressedTexture2D/CompressedTexture2D::8020340245453986651::1759589942::1759589942::1::::<><><>0<>0<>4e4857cb5ef8f82f5dfc0867a4d17f6a<>res://.godot/imported/Tileset_32x32_3.png-5575e18f71605e0f4825b187304f348a.ctex::
-Tileset_32x32_9.png::CompressedTexture2D/CompressedTexture2D::7125726233767949487::1759589942::1759589942::1::::<><><>0<>0<>109754d28412b81e2ba3e6ca761cc790<>res://.godot/imported/Tileset_32x32_9.png-78537b72de67a190018778b7ec0711f8.ctex::
-Tileset_32x32_16.png::CompressedTexture2D/CompressedTexture2D::1655475320175420781::1759589942::1759589942::1::::<><><>0<>0<>840f0492d19db216457aada5c804ce59<>res://.godot/imported/Tileset_32x32_16.png-f0fe7323045d34bb39617f68cb123a9a.ctex::
-Tileset_48x48_1.png::CompressedTexture2D/CompressedTexture2D::8059446175160076575::1759589942::1759589942::1::::<><><>0<>0<>31c5149e4b0ca2dafbddc293affaef79<>res://.godot/imported/Tileset_48x48_1.png-843cb46db1f1f8b60ba577df79f6f195.ctex::
-Tileset_48x48_2.png::CompressedTexture2D/CompressedTexture2D::3148838148229595941::1759589942::1759589942::1::::<><><>0<>0<>c29ba3a5acbab6f73d11cb93410cd9ec<>res://.godot/imported/Tileset_48x48_2.png-f4526a80182e430b46c4eb146d7359ff.ctex::
-Tileset_48x48_3.png::CompressedTexture2D/CompressedTexture2D::1163850684146718673::1759589942::1759589942::1::::<><><>0<>0<>fdded6eb6ec8f15d1df7397f985c16b2<>res://.godot/imported/Tileset_48x48_3.png-ee8f44d88341fc732a64c0ecbada570e.ctex::
-Tileset_48x48_9.png::CompressedTexture2D/CompressedTexture2D::2390876831487139565::1759589942::1759589942::1::::<><><>0<>0<>d8ff4432d997b0b9a92cb5bf7f35fe79<>res://.godot/imported/Tileset_48x48_9.png-5ba2585adb8a6a3ba435bc2beed5f0db.ctex::
-Tileset_48x48_16.png::CompressedTexture2D/CompressedTexture2D::2624409851169525283::1759589942::1759589942::1::::<><><>0<>0<>8797bec93a25481ea82580c2ae67bcea<>res://.godot/imported/Tileset_48x48_16.png-de1014fbdfd1578ab05eac457ef60b94.ctex::
-::res://texture/tiles top down/Modern tiles_Free/velho/mv/::1759589942
-Character_2_16x16_RPGMAKER.png::CompressedTexture2D/CompressedTexture2D::886751413878528449::1759589942::1759589942::1::::<><><>0<>0<>7f02bf438311afacd00a2bfcff7e3f21<>res://.godot/imported/Character_2_16x16_RPGMAKER.png-b54c22cebbcff5add887adffcfca1a5b.ctex::
-Character_2_32x32_RPGMAKER.png::CompressedTexture2D/CompressedTexture2D::1830480416174139371::1759589942::1759589942::1::::<><><>0<>0<>9bb659a597f14b78bd57b52c47b56332<>res://.godot/imported/Character_2_32x32_RPGMAKER.png-705e63e8c6d2359716e3dd68f081ae37.ctex::
-Character_2_48x48_RPGMAKER.png::CompressedTexture2D/CompressedTexture2D::903165109134352082::1759589942::1759589942::1::::<><><>0<>0<>e5820604855914982561c77a67d0b8c9<>res://.godot/imported/Character_2_48x48_RPGMAKER.png-6b09b67dd48493126da84fb827819afb.ctex::
 ::res://texture/tiles top down/textura2/::1759589942
 sample map demo.png::CompressedTexture2D/CompressedTexture2D::5118178378961725003::1759589942::1759589942::1::::<><><>0<>0<>90a9aed6d97cc9098a06a1fe9b7a8ab4<>res://.godot/imported/sample map demo.png-57d04241c918164bedff5e279b7823fc.ctex::
 Scene Overview.png::CompressedTexture2D/CompressedTexture2D::6202729575284372747::1759589942::1759589942::1::::<><><>0<>0<>8b336aac00afcaa964b8cbfbc381e8bd<>res://.godot/imported/Scene Overview.png-55d09874a28e0e30a07a32bf952a8932.ctex::

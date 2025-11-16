@@ -3,7 +3,6 @@ class_name PersonagensBatalha2D
 
 @onready var inimigoMarker2D: Array[Marker2D] = [ $inimigo1, $inimigo2, $inimigo3 ]
 @onready var playerMarker2D: Array[Marker2D] = [ $player1, $player2, $player3 ]
-@onready var spritesP: Array[Node2D] = [ $player1/makerlado, $player2/makerlado, $player3/makerlado ]
 
 var index_player: int = 0
 

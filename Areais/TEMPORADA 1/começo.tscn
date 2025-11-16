@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cx0gouswnba3i" path="res://texture/tiles top down/texture3/árvores.png" id="11_dbfj5"]
 [ext_resource type="PackedScene" uid="uid://coj7eysane340" path="res://Areais/SAVE.tscn" id="17_gx5mq"]
 [ext_resource type="PackedScene" uid="uid://dygph1mmtcdv8" path="res://Characters/NPCS/blu_blu.tscn" id="17_mq3an"]
-[ext_resource type="PackedScene" uid="uid://c4h5fgwajoojy" path="res://Areais/TEMPORADA 1/testpalyers.tscn" id="18_gx5mq"]
+[ext_resource type="Script" uid="uid://d3vhy4viwjasy" path="res://Areais/TEMPORADA 1/spawnPlayes.gd" id="18_gx5mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h7q"]
 size = Vector2(48, 8)
@@ -28,7 +28,7 @@ size = Vector2(6.798954, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq3an"]
 size = Vector2(8, 44.922264)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3vw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mq3an"]
 resource_name = "chao"
 texture = ExtResource("4_t2i34")
 0:0/0 = 0
@@ -288,7 +288,7 @@ texture = ExtResource("4_t2i34")
 14:15/0 = 0
 15:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_61d1g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx5mq"]
 resource_name = "murrosSem"
 texture = ExtResource("9_c37eu")
 2:2/0 = 0
@@ -484,7 +484,7 @@ texture = ExtResource("9_c37eu")
 10:21/0 = 0
 11:21/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hh8x7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3toxn"]
 resource_name = "chaomelhor"
 texture = ExtResource("6_mq3an")
 2:0/0 = 0
@@ -688,7 +688,7 @@ texture = ExtResource("6_mq3an")
 7:3/0 = 0
 8:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig1wf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c37eu"]
 texture = ExtResource("8_3toxn")
 27:9/0 = 0
 28:3/0 = 0
@@ -1157,7 +1157,7 @@ texture = ExtResource("8_3toxn")
 10:18/0 = 0
 10:18/0/z_index = -2
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv0fo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2rav"]
 resource_name = "morrosCom"
 texture = ExtResource("9_c37eu")
 2:2/0 = 0
@@ -1529,7 +1529,7 @@ texture = ExtResource("9_c37eu")
 22:15/0 = 0
 22:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 0, -8, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrmo8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbfj5"]
 texture = ExtResource("5_3gyo0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
@@ -1550,7 +1550,7 @@ texture = ExtResource("5_3gyo0")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 0, -8, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfpd1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vt1w1"]
 resource_name = "objetosCom"
 texture = ExtResource("10_q2rav")
 10:5/size_in_atlas = Vector2i(2, 3)
@@ -1644,7 +1644,7 @@ texture = ExtResource("10_q2rav")
 0:6/size_in_atlas = Vector2i(5, 4)
 0:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt8sn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv3vw"]
 resource_name = "objetosSem"
 texture = ExtResource("10_q2rav")
 14:0/0 = 0
@@ -2001,7 +2001,7 @@ texture = ExtResource("10_q2rav")
 18:31/0 = 0
 19:31/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ayn0j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hh8x7"]
 texture = ExtResource("11_dbfj5")
 0:24/size_in_atlas = Vector2i(2, 2)
 0:24/0 = 0
@@ -2057,19 +2057,19 @@ texture = ExtResource("11_dbfj5")
 [sub_resource type="TileSet" id="TileSet_pkhw0"]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 18
-sources/0 = SubResource("TileSetAtlasSource_tv3vw")
-sources/4 = SubResource("TileSetAtlasSource_kfpd1")
-sources/6 = SubResource("TileSetAtlasSource_ayn0j")
-sources/1 = SubResource("TileSetAtlasSource_61d1g")
-sources/10 = SubResource("TileSetAtlasSource_hh8x7")
-sources/2 = SubResource("TileSetAtlasSource_lv0fo")
-sources/11 = SubResource("TileSetAtlasSource_ig1wf")
-sources/5 = SubResource("TileSetAtlasSource_dt8sn")
-sources/3 = SubResource("TileSetAtlasSource_xrmo8")
+sources/0 = SubResource("TileSetAtlasSource_mq3an")
+sources/4 = SubResource("TileSetAtlasSource_vt1w1")
+sources/6 = SubResource("TileSetAtlasSource_hh8x7")
+sources/1 = SubResource("TileSetAtlasSource_gx5mq")
+sources/10 = SubResource("TileSetAtlasSource_3toxn")
+sources/2 = SubResource("TileSetAtlasSource_q2rav")
+sources/11 = SubResource("TileSetAtlasSource_c37eu")
+sources/5 = SubResource("TileSetAtlasSource_tv3vw")
+sources/3 = SubResource("TileSetAtlasSource_dbfj5")
 
 [node name="O Começo" type="Node2D" node_paths=PackedStringArray("players", "inimigos")]
 script = ExtResource("1_ddk66")
-players = NodePath("testpalyers")
+players = NodePath("SpawnPlayers")
 inimigos = NodePath("inimigos")
 caminho_audio = "uid://btumifkni1d13"
 volume = 65.0
@@ -2254,4 +2254,12 @@ position = Vector2(-24, -240)
 [node name="SAVE" parent="npcs" instance=ExtResource("17_gx5mq")]
 position = Vector2(35, -40)
 
-[node name="testpalyers" parent="." instance=ExtResource("18_gx5mq")]
+[node name="SpawnPlayers" type="Node2D" parent="." node_paths=PackedStringArray("makers")]
+script = ExtResource("18_gx5mq")
+makers = [NodePath("Marker2D"), NodePath("Marker2D2")]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPlayers"]
+position = Vector2(-16, 19)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPlayers"]
+position = Vector2(16, 19)

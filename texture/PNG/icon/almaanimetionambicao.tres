@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://cf8r18omnssev"]
+
+[ext_resource type="Texture2D" uid="uid://c5hm03g2kiukl" path="res://texture/PNG/icon/alma ambição 1.png" id="1_yuyq7"]
+[ext_resource type="Texture2D" uid="uid://csf1amcoyyldy" path="res://texture/PNG/icon/alma ambição 2.png" id="2_fphm4"]
+[ext_resource type="Texture2D" uid="uid://dd1njetchvno8" path="res://texture/PNG/icon/alma ambição 3.png" id="3_mjcu7"]
+[ext_resource type="Texture2D" uid="uid://cccd86d7o2q7q" path="res://texture/PNG/icon/alma ambição 4.png" id="4_nuyv1"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_yuyq7")
+frame_0/duration = 0.4
+frame_1/texture = ExtResource("2_fphm4")
+frame_1/duration = 0.4
+frame_2/texture = ExtResource("3_mjcu7")
+frame_2/duration = 0.4
+frame_3/texture = ExtResource("4_nuyv1")
+frame_3/duration = 0.4

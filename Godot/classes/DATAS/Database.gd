@@ -2,7 +2,7 @@
 class_name Database extends Resource
 
 const TOTAL_SLOTS := 5
-const SAVE_PATH := "user://save_slot_%d.tres"
+const SAVE_PATH := "user://season_resource_slot_%d.tres"
 const PLAYERS_DISPONIVEIS_STRING: Array[String] = ["Zeno", "Niko"]
 
 enum PLAYERS_DISPONIVEIS {Zeno, Niko}
@@ -17,21 +17,3 @@ const ARMORNULL: ItemArmadura = preload("res://Godot/classes/itens/armaduras/sem
 
 #Consumíveis
 const SANDWICH: ItemConsumivel = preload("res://Godot/classes/itens/consumíveis/sandwich.tres")
-
-static func has_item(array: Array, item: DataItem) -> bool:
-	for i in array:
-		if i == item:
-			return true
-	return false
-
-static func count_item(array: Array, item: DataItem) -> int:
-	var count := 0
-	for i in array:
-		if i == item:
-			count += 1
-	return count
-
-static func apply_damage(dano_base: int, defesa: int) -> int:
-	var reducao = defesa / (defesa + 1.0)
-	var dano_final = int(dano_base * (1.0 - reducao))
-	return dano_final

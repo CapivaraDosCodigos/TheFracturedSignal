@@ -3,13 +3,16 @@ class_name CalculatePlayer extends Resource
 static func signal_calculator(base: int, growth_rate: float, level: int, extra: int) -> int:
 	return int(base * pow(growth_rate, level -1)) + extra
 
+static func life_calculator(base: int, growth_rate: float, level: int, extra: int) -> int:
+	return int(((base * pow(growth_rate, level -1)) + extra) / 10) * 10
+
 static func calcular_level(_exp: int, base_exp: int, multiplicador: float) -> int:
 	var level = 1
 	var exp_necessaria = base_exp
 	while _exp >= exp_necessaria:
 		_exp -= exp_necessaria
 		level += 1
-		exp_necessaria = int(exp_necessaria * multiplicador)
+		exp_necessaria = int((exp_necessaria * multiplicador))
 	return level
 
 static func filtrar_comsumivel(array_original: Array[DataItem]) -> Array[DataItem]:

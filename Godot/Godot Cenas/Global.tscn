@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://k4x6eumhu0qh"]
+
+[ext_resource type="Script" uid="uid://cm7cbajfhi5k1" path="res://Godot/Godot Scripts/Global.gd" id="1_n1wl8"]
+[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="2_te5ci"]
+[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="3_f4k0t"]
+
+[node name="Global" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_n1wl8")
+
+[node name="Node" parent="." instance=ExtResource("2_te5ci")]
+
+[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_f4k0t")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+
+[node name="AudioPlayerS" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_f4k0t")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"

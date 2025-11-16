@@ -1,11 +1,29 @@
-extends Node
+extends CanvasLayer
 
 const GLOBAl_PATH: String = "user://configures.tres"
 
+@onready var audios: Dictionary[int, AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ }
+
+@export_range(0.0, 100.0, 1) var musica: float = 100:
+	set(value):
+		musica = value
+		set_volume("music", musica)
+		volume_changed.emit()
+		
+@export_range(0.0, 100.0, 1) var efeito: float = 100:
+	set(value):
+		efeito = value
+		set_volume("effects", efeito)
+		volume_changed.emit()
+		
 var configures: DataConf = DataConf.new()
+
+signal volume_changed
 
 func _ready() -> void:
 	Carregar_Arquivo()
+	set_volume("music", musica)
+	set_volume("effects", efeito)
 
 func Carregar_Arquivo() -> DataConf:
 	if not ResourceLoader.exists(GLOBAl_PATH):
@@ -21,7 +39,7 @@ func Salvar_Arquivo() -> void:
 	else:
 		print("💾 Dados salvos")
 
-func hello_OS() -> void:
+func Hello_OS() -> void:
 	match OS.get_name():
 		"Windows":
 			print("Welcome to Windows!")
@@ -35,3 +53,22 @@ func hello_OS() -> void:
 			print("Welcome to iOS!")
 		"Web":
 			print("Welcome to the Web!")
+
+func Tocar_Musica(caminho: String = "", volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1, tipo: String = "music") -> void:
+	if audios.has(canal):
+		audios[canal].tocar(caminho, volume, loop, atraso, tipo)
+	else:
+		push_warning("Canal %s inexistente!" % canal)
+
+func set_volume(tipo: String, valor: float) -> void:
+	valor = clamp(valor, 0.0, 100.0)
+	match tipo:
+		"music":
+			configures.music = valor
+		"effects":
+			configures.sound_effects = valor
+		_:
+			push_warning("⚠️ Tipo de volume desconhecido: " + tipo)
+			return
+	
+	emit_signal("volume_changed")

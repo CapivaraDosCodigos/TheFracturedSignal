@@ -1,13 +1,15 @@
-extends VBoxContainer
-class_name VContainerPlayerSimples
+extends PanelContainer
+class_name ContainerPlayerSimples
 
 @export var player: String
 
 @onready var texture: TextureRect = %Texture
 @onready var life: Label = %life
-@onready var act_label: Label = $ACTLabel
-@onready var h_box_actions: HBoxContainer = $HBoxActions
-@onready var actions: Array[Button] = [ %ATK, %ITM, %EXE, %DEF, %MRC ]
+@onready var act_label: Label = %ACTLabel
+@onready var h_box_actions: HBoxContainer = %HBoxActions
+@onready var itens_menu: batalha_submenu_itens = %itensMenu
+@onready var inimigos_menu: batalha_submenu_enemies = %inimigosMenu
+@onready var actions: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %MRC ]
 
 var isfocus: bool = false
 var current_index: int = 0
@@ -18,10 +20,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Manager.PlayersAtuais.has(player):
-		var playerNew: PlayerData = Manager.PlayersAtuais[player]
-		life.text = str(playerNew.Life) + "/" + str(playerNew.maxlife)
+		life.text = str(Manager.PlayersAtuais[player].Life) + "/" + str(Manager.PlayersAtuais[player].maxlife)
+		act_label.text = player
 	
-	# alterna entre mostrar botões ou texto
 	h_box_actions.visible = isfocus
 	act_label.visible = !isfocus
 
@@ -53,3 +54,13 @@ func get_current_action_name() -> String:
 	if current_index >= 0 and current_index < actions.size():
 		return actions[current_index].name
 	return ""
+
+func fechar_submenus() -> void:
+	itens_menu.end()
+	inimigos_menu.end()
+
+func get_submenu(menu: String) -> Node:
+	match menu:
+		"ITM": return itens_menu
+		"ATK": return inimigos_menu
+		_: return null

@@ -1,19 +1,15 @@
-res://Areais/Batalha/cenas/SIMPLES_BATALHA.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
-res://texture/folderTres/materials/preto_&_branco.tres
+res://texture/folderTres/theme_BATALHA.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/consumíveis/sandwich.tres
-res://Godot/classes/itens/armas/Signal_Weapon.tres
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres
 res://texture/folderTres/texturas/fenda_texture.tres
 res://texture/folderTres/C1A.tres
 res://Characters/NPCS/merchant.tres
 res://texture/folderTres/T1B.tres
 res://shader/paletasWOW.gdshader
-res://Godot/classes/personagens/Zeno T1/zeno.tres
-res://Godot/classes/personagens/niko/niko.tres
+res://Godot/classes/itens/Inventorys/ZenoInventory.tres
 res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres
 res://addons/phantom_camera/themes/theme.tres
 res://shader/PSX.gdshader
@@ -26,8 +22,11 @@ res://shader/PSX-Camera.gdshader
 res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
-res://Godot/Godot Scripts/Manager.gd
+res://addons/dialogic/Modules/Background/Transitions/default_transition_shader.gdshader
+res://Areais/TEMPORADA 1/novo_mundo.tscn
+res://Godot/classes/Nodes/audio_player.gd
+res://Areais/Dungeons2D.gd
+res://Areais/TEMPORADA 1/começo.tscn
+res://Areais/TEMPORADA 1/spawnPlayes.gd
+res://Godot/classes/Nodes/ObjectPlayer2D.gd
 res://Areais/Batalha/scripts/simplesbatalha.gd
-res://Areais/Batalha/scripts/batalha2.gd
-res://Godot/classes/Nodes/EnemiesBase2D.gd
-res://Godot/classes/Nodes/PlayerBase2D.gd

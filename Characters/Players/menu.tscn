@@ -1,14 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://bu38qgxh4wq1i"]
+[gd_scene load_steps=27 format=3 uid="uid://bu38qgxh4wq1i"]
 
 [ext_resource type="Script" uid="uid://bs6qxum1hhhbm" path="res://Characters/Players/scripts/menu/menu2.gd" id="1_jm1s2"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_iae25"]
+[ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Characters/Players/scripts/menu/ContainerMenu.gd" id="3_jm1s2"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="4_djm01"]
-[ext_resource type="StyleBox" uid="uid://7pipbd1qddto" path="res://texture/folderTres/BoxTexture/menu.tres" id="4_ru2aa"]
+[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="4_jm1s2"]
 [ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Characters/Players/scripts/menu/inventory_menu.gd" id="6_6pk31"]
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="6_ru2aa"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_ausow"]
 [ext_resource type="Texture2D" uid="uid://c3gupndh6ko5o" path="res://texture/PNG/funds/Deco All 3.png" id="9_d88dn"]
 [ext_resource type="Script" uid="uid://b1uvtvif0pg8j" path="res://Characters/Players/SubMenuBase.gd" id="10_rk2fv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jm1s2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru2aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
 
@@ -16,13 +21,25 @@
 atlas = ExtResource("6_ru2aa")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iae25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru2aa"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
 atlas = ExtResource("6_ru2aa")
 region = Rect2(64, 0, 16, 16)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eahv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgwpq"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
 atlas = ExtResource("6_ru2aa")
 region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdql4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywl0t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
 atlas = ExtResource("6_ru2aa")
@@ -99,17 +116,35 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="inventory" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="inventory" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/normal = ExtResource("4_ru2aa")
-theme_override_styles/focus = ExtResource("4_djm01")
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="inventory" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jm1s2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ru2aa")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/inventory"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,22 +156,40 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/MarginContainer"]
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/inventory/MarginContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_og32f")
 stretch_mode = 5
 
-[node name="equipment" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="equipment" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/normal = ExtResource("4_ru2aa")
-theme_override_styles/focus = ExtResource("4_djm01")
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="equipment" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iae25")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ru2aa")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/equipment"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,22 +201,40 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/MarginContainer"]
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/equipment/MarginContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_mm3rk")
 stretch_mode = 5
 
-[node name="status" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="status" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/normal = ExtResource("4_ru2aa")
-theme_override_styles/focus = ExtResource("4_djm01")
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="status" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eahv2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgwpq")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/status"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,22 +246,40 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/MarginContainer"]
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/status/MarginContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_rxsed")
 stretch_mode = 5
 
-[node name="settings" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="settings" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_styles/normal = ExtResource("4_ru2aa")
-theme_override_styles/focus = ExtResource("4_djm01")
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="settings" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hdql4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ywl0t")
 button_mask = 0
 icon = SubResource("AtlasTexture_jqdtj")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -202,7 +291,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/MarginContainer"]
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/settings/MarginContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_uow6m")
 stretch_mode = 5

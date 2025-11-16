@@ -20,7 +20,6 @@ func _atulizar() -> void:
 			botoes[i].text = "Iniciar Sistema " + str(i + 1) + "*"
 			botoesDelete[i].visible = false
 		else:
-			#botoes[i].text = "Volta Sistema " + str(i + 1) + "* " + SaveData.CarregarTime(i + 1)
 			botoesDelete[i].visible = true
 			botoes[i].text = SaveData.CarregarCampo(i + 1, "nome") + " " + SaveData.CarregarCampo(i + 1, "TimeSave")
 

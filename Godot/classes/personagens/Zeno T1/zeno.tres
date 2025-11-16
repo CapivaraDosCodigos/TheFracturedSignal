@@ -1,24 +1,18 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=7 format=3 uid="uid://d302slnl03gy4"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=5 format=3 uid="uid://d302slnl03gy4"]
 
+[ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/classes/itens/Inventorys/ZenoInventory.tres" id="1_wk5d7"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_bmyga"]
-[ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="4_kh5wa"]
-[ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/itens/Inventorys/Inventory.gd" id="5_6hj30"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="6_kj3km"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="7_xe788"]
-
-[sub_resource type="Resource" id="Resource_p6llb"]
-script = ExtResource("5_6hj30")
-limite = 5
-name = "Inventory Zeno"
-metadata/_custom_type_script = "uid://cmfwq25tt8fwe"
 
 [resource]
 script = ExtResource("6_kj3km")
 Nome = "Zeno"
 PlayerBatalhaPath = "uid://dc6gnjvpvkwsn"
 ObjectPlayerPath = "uid://h5ek2buto4br"
-base_life = 100
-inventory_pessoal = SubResource("Resource_p6llb")
+Exp = 1000
+InventoryPlayer = ExtResource("1_wk5d7")
 armorE = ExtResource("3_bmyga")
 weaponsE = ExtResource("7_xe788")
+base_life = 100
 metadata/_custom_type_script = "uid://bj6w76m0cfh2q"

@@ -1,36 +1,33 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://b1cv61ghjk7ko"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b1cv61ghjk7ko"]
 
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="1_rm82l"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="2_3j68d"]
 [ext_resource type="StyleBox" uid="uid://qps2iq0yi4ti" path="res://texture/folderTres/BoxTexture/example_balloonLINE.tres" id="2_pem5b"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="3_0dyml"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u14vl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pem5b"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xec70"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3j68d"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f640q"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rm82l"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oohww"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j68d"]
+bg_color = Color(0.06390518, 0.06390518, 0.06390518, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w3el"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ohf0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehcem"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2kbj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvh20"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_laj25"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dyml"]
 
 [resource]
-HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_u14vl")
-HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_xec70")
-HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_f640q")
-HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_oohww")
-HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_3w3el")
-ItemList/colors/font_outline_color = Color(0.35686275, 0.36862746, 0.4392157, 1)
-ItemList/colors/font_selected_color = Color(0.6509804, 0.6509804, 0.6509804, 1)
+Button/colors/font_focus_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
+Button/constants/h_separation = 8
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_rm82l")
+Button/styles/focus = ExtResource("2_3j68d")
+Button/styles/normal = ExtResource("3_0dyml")
+ItemList/colors/font_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
+ItemList/colors/font_hovered_color = Color(1, 1, 1, 1)
+ItemList/colors/font_hovered_selected_color = Color(0.4623747, 0.4623747, 0.4623747, 1)
+ItemList/colors/font_outline_color = Color(0.15739289, 0.16258167, 0.19371432, 1)
+ItemList/colors/font_selected_color = Color(1, 1, 1, 1)
 ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0)
 ItemList/constants/h_separation = 8
 ItemList/constants/icon_margin = 16
@@ -38,10 +35,13 @@ ItemList/constants/outline_size = 8
 ItemList/constants/v_separation = 32
 ItemList/font_sizes/font_size = 16
 ItemList/fonts/font = ExtResource("1_rm82l")
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_pem5b")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_3j68d")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_rm82l")
 ItemList/styles/selected = ExtResource("2_pem5b")
 ItemList/styles/selected_focus = ExtResource("2_pem5b")
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_6ohf0")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_ehcem")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_k2kbj")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_gvh20")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_laj25")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_rm82l")
+ProgressBar/fonts/font = null
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3j68d")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_0dyml")

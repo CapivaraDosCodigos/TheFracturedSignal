@@ -7,13 +7,17 @@ class_name PlayerData extends Resource
 @export_file("*.*tscn") var ObjectPlayerPath: String
 
 @export_group("PlayerStarts")
-@export var Lv: int = 1
 @export var Life: int = 100:
 	set(value):
 		Life = value
 		if Life < -999:
 			Life = -999
 @export var Exp: int = 0
+
+@export_group("Amazenameto")
+@export var InventoryPlayer: Inventory = Inventory.new()
+@export var armorE: ItemArmadura
+@export var weaponsE: ItemArma
 
 @export_group("Dados das Propriedades")
 @export_subgroup("life")
@@ -27,11 +31,7 @@ class_name PlayerData extends Resource
 @export_subgroup("sp")
 @export var base_sp: int = 250; @export var multiplier_sp: float = 1.5
 
-@export_group("Amazenameto")
-@export var inventory_pessoal: Inventory
-@export var armorE: ItemArmadura
-@export var weaponsE: ItemArma
-
+var Lv: int = 1
 var maxlife: int; var attack: int
 var defense: int; var resource: int
 var maxdamage: int; var mindamage: int
@@ -39,10 +39,15 @@ var isDefesa: bool = false
 var skip_turn: bool = false
 var fallen: bool = false
 
+func _init() -> void:
+	if InventoryPlayer == null:
+		InventoryPlayer = Inventory.new()
+		update_properties()
+
 func update_properties() -> void:
 	Lv = CalculatePlayer.calcular_level(Exp, base_sp, multiplier_sp)
 	var extra_life = armorE.extra_life + weaponsE.extra_life
-	maxlife = CalculatePlayer.signal_calculator(base_life, growth_rate_life, Lv, extra_life)
+	maxlife = CalculatePlayer.life_calculator(base_life, growth_rate_life, Lv, extra_life)
 	var extra_defense = armorE.defesa + weaponsE.extra_defense
 	defense = CalculatePlayer.signal_calculator(base_defense, growth_rate_defense, Lv, extra_defense)
 	var extra_resource = armorE.extra_resource + weaponsE.extra_resource
@@ -106,12 +111,6 @@ func apply_damage(dano_base: int) -> void:
 		dano_final = int(dano_final * 0.5)
 	
 	Life -= dano_final
-	
-	#var reducao = defense / (defense + 10.0)
-	#var dano_final = int(dano_base * (1.0 - reducao))
-	#var reducao = defense * 0.05
-	#reducao = clamp(reducao, 0.0, 0.5)
-	#var dano_final = int(dano_base * (1.0 - reducao))
 
 func reset() -> void:
 	Life = maxlife

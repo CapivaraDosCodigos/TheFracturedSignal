@@ -1,10 +1,9 @@
-extends NinePatchRect
+extends Panel
 
-@onready var texture_rect: TextureRect = $TextureRect
+@onready var texture_rect: TextureRect = $MarginContainer/TextureRect
 
 func _process(delta: float) -> void:
 	texture_rect.texture = Manager.textureD
-	texture_rect.material = Manager.materialD
 	if Manager.textureD != null:
 		visible = true
 	else:

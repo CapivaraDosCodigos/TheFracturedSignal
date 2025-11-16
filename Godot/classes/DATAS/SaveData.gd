@@ -19,7 +19,7 @@ static func Carregar(slot: int, temporada: int) -> SeasonResource:
 		push_error("❌ Falha ao carregar arquivo de save: " + path)
 		return null
 	
-	return loaded_data.duplicate(true)
+	return loaded_data.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 
 static func CarregarCampo(slot: int, campo: String) -> Variant:
 	if not _is_slot_valid(slot): return ""

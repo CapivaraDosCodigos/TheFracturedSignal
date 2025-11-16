@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var _noise_emitter: PhantomCameraNoiseEmitter2D
 
 const KEY_STRINGNAME: StringName = "Key"
-const ACTION_STRINGNAME: StringName = "confirm"
+const ACTION_STRINGNAME: StringName = "Down"
 const INPUT_MOVE_LEFT_STRINGNAME: StringName = "Left"
 const INPUT_MOVE_RIGHT_STRINGNAME: StringName = "Right"
 

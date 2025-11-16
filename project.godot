@@ -24,11 +24,11 @@ run/translations/default_csv_locale="en"
 
 [autoload]
 
-Global="*res://Godot/Godot Scripts/Global.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Manager="*res://Godot/Godot Cenas/manager.tscn"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Global="*res://Godot/Godot Cenas/Global.tscn"
 
 [dialogic]
 

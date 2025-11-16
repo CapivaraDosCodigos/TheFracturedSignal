@@ -6,6 +6,7 @@ class_name Dungeons2D extends Node2D
 @export var inimigos: Node2D
 
 @export_group("Som")
+@export var tocarSom: bool = true
 @export_file("*.*ogg", "*.*mp3") var caminho_audio: String = ""
 @export_range(0.0, 100.0) var volume: float = 100.0
 @export var loop: bool = true
@@ -16,7 +17,8 @@ signal end_batalha
 func _ready() -> void:
 	end_batalha.connect(terminar_batalha)
 	Manager.change_state(Manager.GameState.MAP)
-	Manager.tocar_musica(caminho_audio, volume, loop, atraso)
+	if tocarSom:
+		Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 
 func iniciar_batalha() -> void:
 	Manager.change_state(Manager.GameState.DIALOGUE)

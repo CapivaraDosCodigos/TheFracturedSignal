@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ItemArmadura" load_steps=3 format=3 uid="uid://014vc1tqhv3q"]
+[gd_resource type="Resource" script_class="ItemArmadura" load_steps=4 format=3 uid="uid://014vc1tqhv3q"]
 
 [ext_resource type="Script" uid="uid://dkcvsotc2mgdk" path="res://Godot/classes/itens/armaduras/ItemArmadura.gd" id="1_qkvb7"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="1_xf8hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w0ye"]
+atlas = ExtResource("1_xf8hq")
 region = Rect2(64, 784, 16, 16)
 
 [resource]
