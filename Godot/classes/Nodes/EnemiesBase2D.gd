@@ -45,14 +45,14 @@ func poupado() -> void:
 func atacar() -> void:
 	spawns.pick_random().spawn(rootobjeto, time)
 
+func apply_damage(dano_base: int) -> void:
+	var reducao = defense / (defense + 1.0)
+	var dano_final = int(dano_base * (1.0 - reducao))
+	life -= dano_final
+
 func _on_animation_finished() -> void:
 	if animation == "dead" and animation == "dead":
 		queue_free()
 
 func _to_string() -> String:
 	return nome
-
-func apply_damage(dano_base: int) -> void:
-	var reducao = defense / (defense + 1.0)
-	var dano_final = int(dano_base * (1.0 - reducao))
-	life -= dano_final

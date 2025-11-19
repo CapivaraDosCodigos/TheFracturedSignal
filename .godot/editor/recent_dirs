@@ -1,7 +1,10 @@
+res://Godot/classes/personagens/niko
+res://Godot/classes/itens/Inventorys
+res://Godot/classes/personagens/Zeno T1
+res://Godot/classes/personagens/
 res://texture/tiles top down/texture3
 res://texture/PNG/bordas UI
 res://texture/objetos/Ranitayas Guns Pack (16+ pixelart guns)/Pistols
-res://Godot/classes/itens/Inventorys
 res://Godot/Godot Cenas
 res://Godot/Godot Scripts
 res://texture/folderTres/materials
@@ -17,7 +20,4 @@ res://texture/font
 res://Areais/Batalha/cenas
 res://Areais/Batalha/scripts
 res://Areais/TEMPORADA 1
-res://Godot/classes/personagens/niko
-res://texture/characters/Zeno's
-res://Godot/classes/personagens/Zeno T1
 /storage/emulated/0/Documents

@@ -1,5 +1,7 @@
 extends Resource
-class_name Executables
+class_name Executable
+
+@export var Nome: String = ""
 
 func executar() -> void:
-	print('bah')
+	print("voce usou %s" % [Nome])

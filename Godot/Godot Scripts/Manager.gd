@@ -16,7 +16,7 @@ var GameStateString := GameState.keys()
 var textureD: Texture = null
 
 var Data: SeasonResource; var Extras: DataExtras; var CurrentScene: PackedScene
-var CurrentPlayer: PlayerData; var CurrentPlayerString: String
+var CurrentPlayerString: String
 var PlayersAtuais: Dictionary[String, PlayerData]
 var CurrentSlot: int; var CurrentTemporada: int
 var InGame: bool = false
@@ -74,6 +74,7 @@ func Start_Save(slot: int, temporada: int, debug: bool = false) -> void:
 	CurrentSlot = slot
 	CurrentTemporada = temporada
 	
+	print(PlayersAtuais)
 	_atualisar_propriedades()
 	
 	if not debug:
@@ -90,10 +91,6 @@ func Game_Over() -> void:
 	await get_tree().process_frame
 	_clear(true)
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/dead.tscn")
-
-func IsCurrentPlayer(player: PlayerData) -> void:
-	AdicionarPlayer(player)
-	CurrentPlayer = player
 
 func AdicionarPlayer(player: PlayerData) -> void:
 	if not PlayersAtuais.has(player.Nome):
@@ -122,14 +119,13 @@ func _process(_delta: float) -> void:
 	else:
 		Body = null
 	
-	#if InGame and current_status != GameState.NOT_IN_THE_GAME:
-		#_atualisar_propriedades()
+	if InGame and current_status != GameState.NOT_IN_THE_GAME:
+		_atualisar_propriedades()
 
 func _clear(slotON: bool = false) -> void:
 	Data = null
 	Extras = null
 	CurrentScene = null
-	CurrentPlayer = null
 	CurrentPlayerString = ""
 	PlayersAtuais.clear()
 	
@@ -138,10 +134,5 @@ func _clear(slotON: bool = false) -> void:
 		CurrentTemporada = 0
 
 func _atualisar_propriedades():
-	print(PlayersAtuais)
-	CurrentPlayer = PlayersAtuais.get(CurrentPlayerString, null)
-	if CurrentPlayer == null:
-		push_warning("CurrentPlayerString inválido: %s" % CurrentPlayerString)
-	
 	for key in PlayersAtuais.keys():
 		PlayersAtuais[key].update_properties()
