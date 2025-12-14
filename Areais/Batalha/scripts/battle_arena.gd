@@ -1,8 +1,11 @@
 extends NinePatchRect
+class_name BattleArenaControl
 
-@onready var ambicao: CharacterBody2D = %"Ambição"
+@onready var ambicao: AlmaBody2D = %"Ambição"
 @onready var ambicao_make: Marker2D = %AmbiçãoMake
 @onready var objetos: Node2D = $objetos
+
+@export var batalha: SimplesBatalha2D
 
 var last_state = null
 
@@ -18,3 +21,6 @@ func _process(_delta: float) -> void:
 			#ambicao.visible = false
 			
 		last_state = current_state
+
+func set_cp(value: int) -> void:
+	batalha.add_cp(value)

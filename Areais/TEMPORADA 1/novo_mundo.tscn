@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://chcd3yvm6pvji"]
+[gd_scene load_steps=4 format=4 uid="uid://chcd3yvm6pvji"]
 
 [ext_resource type="Script" uid="uid://botiuinj2k2g7" path="res://Areais/Dungeons2D.gd" id="1_30d1t"]
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://texture/folderTres/C1A.tres" id="2_mqnso"]
+[ext_resource type="PackedScene" uid="uid://b0e58l2kwm1fb" path="res://Areais/TEMPORADA 1/spawn_players.tscn" id="3_0eowa"]
 
 [node name="NovoMundo" type="Node2D"]
 script = ExtResource("1_30d1t")
@@ -26,3 +27,5 @@ tile_set = ExtResource("2_mqnso")
 [node name="Layer0C" type="TileMapLayer" parent="tiles/TileMapLayer0"]
 use_parent_material = true
 tile_set = ExtResource("2_mqnso")
+
+[node name="SpawnPlayers" parent="." instance=ExtResource("3_0eowa")]

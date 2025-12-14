@@ -64,7 +64,6 @@ modulate_color = Color(0.408143, 0.275222, 0.581094, 1)
 script = ExtResource("1_jm1s2")
 
 [node name="UI_menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

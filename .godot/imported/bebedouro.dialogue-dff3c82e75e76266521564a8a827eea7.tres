@@ -11,7 +11,7 @@ titles = {
 "279096504/Map": "-13",
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
-"DialogueResource/Map": "-15",
+"DialogueResource/Map": "-14",
 "bebedouro": "3"
 }
 character_names = PackedStringArray("Bebedouro")
@@ -50,11 +50,19 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "esperardialogo",
+&"function": "change_state",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 26,
+&"i": 24,
+&"type": &"string",
+&"value": "MAP"
+}]), Array[Dictionary]([{
+&"i": 31,
+&"type": &"number",
+&"value": 0.5
+}, {
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -65,11 +73,6 @@ lines = {
 },
 "-14": {
 &"id": "-14",
-&"next_id": "-13",
-&"type": ""
-},
-"-15": {
-&"id": "-15",
 &"next_id": "-13",
 &"type": "title"
 },
@@ -103,24 +106,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "BATTLE_MENU"
 }, {
-&"i": 53,
+&"i": 37,
 &"type": &"parens_close"
 }])])
 }]),
@@ -162,24 +151,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "BATTLE"
 }, {
-&"i": 48,
+&"i": 32,
 &"type": &"parens_close"
 }])])
 }]),
@@ -214,24 +189,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "DIALOGUE"
 }, {
-&"i": 50,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -317,7 +278,7 @@ lines = {
 raw_text = "import \"res://Godot/Diálogos/Symptoms.dialogue\" as DialogueResource
 
 ~ bebedouro
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state(\"DIALOGUE\")
 do Manager.DialogoTexture(\"res://texture/Characters/dialogos/bebedouro.tres\")
 Bebedouro: blub blub
 do Manager.DialogoTexture()

@@ -3,19 +3,20 @@ extends CanvasLayer
 const GLOBAl_PATH: String = "user://configures.tres"
 
 @onready var audios: Dictionary[int, AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ }
+@onready var animation_global: AnimationPlayer = $AnimationGlobal
 
 @export_range(0.0, 100.0, 1) var musica: float = 100:
 	set(value):
 		musica = value
 		set_volume("music", musica)
 		volume_changed.emit()
-		
+
 @export_range(0.0, 100.0, 1) var efeito: float = 100:
 	set(value):
 		efeito = value
 		set_volume("effects", efeito)
 		volume_changed.emit()
-		
+
 var configures: DataConf = DataConf.new()
 
 signal volume_changed
@@ -72,3 +73,11 @@ func set_volume(tipo: String, valor: float) -> void:
 			return
 	
 	emit_signal("volume_changed")
+
+func play_transition(anim: String) -> float:
+	animation_global.play(anim)
+	return animation_global.get_animation(anim).length
+
+func test_node(node: Node2D) -> void:
+	var pos: Vector2 = DataUtilities.world_to_screen(node)
+	$Sprite2D.global_position = pos

@@ -1,12 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://k4x6eumhu0qh"]
+[gd_scene load_steps=8 format=3 uid="uid://k4x6eumhu0qh"]
 
 [ext_resource type="Script" uid="uid://cm7cbajfhi5k1" path="res://Godot/Godot Scripts/Global.gd" id="1_n1wl8"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="2_te5ci"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="3_f4k0t"]
 
+[sub_resource type="Animation" id="Animation_5rqxo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4buab"]
+resource_name = "end_transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f4k0t"]
+resource_name = "start_transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rqxo"]
+_data = {
+&"RESET": SubResource("Animation_5rqxo"),
+&"end_transition": SubResource("Animation_4buab"),
+&"start_transition": SubResource("Animation_f4k0t")
+}
+
 [node name="Global" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_n1wl8")
+musica = 50.0
 
 [node name="Node" parent="." instance=ExtResource("2_te5ci")]
 
@@ -19,3 +74,16 @@ metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 unique_name_in_owner = true
 script = ExtResource("3_f4k0t")
 metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationGlobal" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5rqxo")
+}

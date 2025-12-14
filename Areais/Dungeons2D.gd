@@ -2,7 +2,7 @@
 class_name Dungeons2D extends Node2D
 
 @export_group("Nodes")
-@export var players: Node2D
+@export var players: SpawnPlayers
 @export var inimigos: Node2D
 
 @export_group("Som")
@@ -16,12 +16,13 @@ signal end_batalha
 
 func _ready() -> void:
 	end_batalha.connect(terminar_batalha)
-	Manager.change_state(Manager.GameState.MAP)
+	Global.play_transition("end_transition")
+	Manager.change_state("MAP")
 	if tocarSom:
 		Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 
 func iniciar_batalha() -> void:
-	Manager.change_state(Manager.GameState.DIALOGUE)
+	Manager.change_state("DIALOGUE")
 	players.visible = false
 	inimigos.visible = false
 
@@ -30,4 +31,4 @@ func terminar_batalha() -> void:
 	inimigos.visible = true
 	Manager.tocar_musica(caminho_audio, volume, loop, atraso)
 	await get_tree().process_frame
-	Manager.change_state(Manager.GameState.MAP)
+	Manager.change_state("MAP")

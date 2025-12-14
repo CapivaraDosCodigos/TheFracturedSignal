@@ -1,6 +1,3 @@
-res://Godot/classes/personagens/PlayerData.gd
-res://Godot/classes/itens/executaveis/executables.gd
-res://Godot/classes/personagens/CalculatePlayer.gd
 res://Godot/Godot Cenas/manager.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
@@ -13,7 +10,7 @@ res://texture/folderTres/C1A.tres
 res://Characters/NPCS/merchant.tres
 res://texture/folderTres/T1B.tres
 res://shader/paletasWOW.gdshader
-res://Godot/classes/personagens/Zeno T1/zeno.tres
+res://Godot/classes/itens/Inventorys/ZenoInventory.tres
 res://Godot/classes/personagens/niko/niko.tres
 res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres
 res://addons/phantom_camera/themes/theme.tres
@@ -28,5 +25,8 @@ res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
 res://addons/dialogic/Modules/Background/Transitions/default_transition_shader.gdshader
-res://Godot/classes/personagens/CalculatePlayerGlobal.tres
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres
+res://Characters/Players/scripts/ambição.gd
+res://Godot/Godot Cenas/Global.tscn
+res://Areais/TEMPORADA 1/começo.tscn
+res://Areais/TEMPORADA 1/spawn_players.tscn
+res://Areais/Dungeons2D.gd

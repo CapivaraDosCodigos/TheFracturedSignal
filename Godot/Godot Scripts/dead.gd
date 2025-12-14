@@ -4,7 +4,7 @@ extends ColorRect
 @onready var morte: Label = $VBoxContainer/VBoxContainer/morte
 
 func _ready() -> void:
-	Manager.change_state(Manager.GameState.NOT_IN_THE_GAME)
+	Manager.change_state("NOT_IN_THE_GAME")
 	button_ui.grab_focus()
 
 func _on_button_ui_1_pressed() -> void:

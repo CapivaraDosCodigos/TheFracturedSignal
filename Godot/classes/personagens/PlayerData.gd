@@ -58,6 +58,9 @@ func update_properties() -> void:
 	maxdamage = Calculator.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
 	mindamage = Calculator.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
+func reset() -> void:
+	Life = maxlife
+
 func equip_armor(inv: Inventory, slot: int) -> void:
 	if not inv._is_slot_valid(slot): return
 	var item = inv.items[slot]

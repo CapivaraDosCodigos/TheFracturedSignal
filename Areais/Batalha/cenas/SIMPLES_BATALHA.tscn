@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2on6jae8ynix"]
+[gd_scene load_steps=15 format=3 uid="uid://c2on6jae8ynix"]
 
 [ext_resource type="Script" uid="uid://2i0hddkuq4tj" path="res://Areais/Batalha/scripts/simplesbatalha.gd" id="1_x2o57"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="4_846df"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="5_hoeec"]
 [ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Areais/Batalha/scripts/personagens.gd" id="6_jimw3"]
 [ext_resource type="PackedScene" uid="uid://by72qrtpqld7j" path="res://Areais/Batalha/cenas/battle_arena.tscn" id="8_1y7vt"]
+[ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="8_12ipo"]
 [ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://texture/folderTres/BoxTexture/intro.tres" id="12_3c0gs"]
 [ext_resource type="PackedScene" uid="uid://c4i7d4j4sgiva" path="res://Areais/Batalha/cenas/ContainerPlayer.tscn" id="13_feg7f"]
 
@@ -44,7 +45,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-16, 467), Vector2(-16, 377)]
+"values": [Vector2(-16, 469), Vector2(-16, 382)]
 }
 
 [sub_resource type="Animation" id="Animation_h7tth"]
@@ -122,7 +123,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-16, 377), Vector2(-16, 467)]
+"values": [Vector2(-16, 382), Vector2(-16, 469)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -145,6 +146,14 @@ _data = {
 &"RESET": SubResource("Animation_h7tth"),
 &"S_panel": SubResource("Animation_fq6de")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ipo"]
+atlas = ExtResource("8_12ipo")
+region = Rect2(128, 16, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76unj"]
+atlas = ExtResource("8_12ipo")
+region = Rect2(64, 16, 64, 16)
 
 [node name="Batalha2D" type="Node2D"]
 script = ExtResource("1_x2o57")
@@ -201,7 +210,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" instance=ExtResource("8_1y7vt")]
+[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" node_paths=PackedStringArray("batalha") instance=ExtResource("8_1y7vt")]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -215,6 +224,7 @@ offset_left = 432.0
 offset_top = 111.0
 offset_right = 576.0
 offset_bottom = 255.0
+batalha = NodePath("../../..")
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 z_index = 5
@@ -223,7 +233,7 @@ layout_mode = 0
 offset_left = -16.0
 offset_top = 540.0
 offset_right = 1168.0
-offset_bottom = 713.0005
+offset_bottom = 707.0007
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
@@ -255,16 +265,33 @@ alignment = 1
 
 [node name="ContainerPlayer1" parent="BatalhaCanvas/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("13_feg7f")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(381, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 1
 
 [node name="ContainerPlayer2" parent="BatalhaCanvas/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("13_feg7f")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(381, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 1
 
 [node name="ContainerPlayer3" parent="BatalhaCanvas/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource("13_feg7f")]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(381, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 1
+
+[node name="PointsProgressBar" type="TextureProgressBar" parent="BatalhaCanvas/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -15.999999
+offset_right = 230.4
+offset_bottom = 2.000001
+scale = Vector2(5, 5)
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 16
+stretch_margin_right = 16
+texture_under = SubResource("AtlasTexture_12ipo")
+texture_progress = SubResource("AtlasTexture_76unj")

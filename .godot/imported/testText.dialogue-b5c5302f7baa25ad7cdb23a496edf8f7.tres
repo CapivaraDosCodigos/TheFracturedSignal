@@ -11,7 +11,7 @@ titles = {
 "279096504/Map": "-13",
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
-"DialogueResource/Map": "-15",
+"DialogueResource/Map": "-14",
 "Roberto": "37",
 "blublu": "10",
 "comercio": "24",
@@ -53,11 +53,19 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "esperardialogo",
+&"function": "change_state",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 26,
+&"i": 24,
+&"type": &"string",
+&"value": "MAP"
+}]), Array[Dictionary]([{
+&"i": 31,
+&"type": &"number",
+&"value": 0.5
+}, {
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -68,11 +76,6 @@ lines = {
 },
 "-14": {
 &"id": "-14",
-&"next_id": "-13",
-&"type": ""
-},
-"-15": {
-&"id": "-15",
 &"next_id": "-13",
 &"type": "title"
 },
@@ -106,24 +109,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "BATTLE_MENU"
 }, {
-&"i": 53,
+&"i": 37,
 &"type": &"parens_close"
 }])])
 }]),
@@ -165,24 +154,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "BATTLE"
 }, {
-&"i": 48,
+&"i": 32,
 &"type": &"parens_close"
 }])])
 }]),
@@ -207,24 +182,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "DIALOGUE"
 }, {
-&"i": 50,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -310,7 +271,7 @@ lines = {
 "21": {
 &"id": "21",
 &"is_snippet": false,
-&"next_id": "-15",
+&"next_id": "-14",
 &"next_id_after": "",
 &"type": "goto"
 },
@@ -340,24 +301,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "DIALOGUE"
 }, {
-&"i": 50,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -384,12 +331,8 @@ lines = {
 &"i": 26,
 &"type": &"string",
 &"value": "res://texture/Characters/dialogos/comecio.tres"
-}]), Array[Dictionary]([{
-&"i": 76,
-&"type": &"string",
-&"value": "res://texture/folderTres/materials/tile.tres"
 }, {
-&"i": 122,
+&"i": 74,
 &"type": &"parens_close"
 }])])
 }]),
@@ -399,21 +342,7 @@ lines = {
 &"type": "mutation"
 },
 "26": {
-&"character": "Lila",
 &"id": "26",
-&"next_id": "27",
-&"text": "Olá",
-&"type": "dialogue"
-},
-"27": {
-&"character": "Lila",
-&"id": "27",
-&"next_id": "28",
-&"text": "gostaria de comprar alguma coisa?",
-&"type": "dialogue"
-},
-"28": {
-&"id": "28",
 &"mutation": {
 &"expression": Array[Dictionary]([{
 &"i": 3,
@@ -433,8 +362,22 @@ lines = {
 }]),
 &"is_blocking": true
 },
-&"next_id": "29",
+&"next_id": "27",
 &"type": "mutation"
+},
+"27": {
+&"character": "Lila",
+&"id": "27",
+&"next_id": "28",
+&"text": "Olá",
+&"type": "dialogue"
+},
+"28": {
+&"character": "Lila",
+&"id": "28",
+&"next_id": "29",
+&"text": "gostaria de comprar alguma coisa?",
+&"type": "dialogue"
 },
 "29": {
 &"id": "29",
@@ -495,7 +438,7 @@ lines = {
 "34": {
 &"id": "34",
 &"is_snippet": false,
-&"next_id": "-15",
+&"next_id": "-14",
 &"next_id_after": "",
 &"type": "goto"
 },
@@ -525,24 +468,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "DIALOGUE"
 }, {
-&"i": 50,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -581,24 +510,10 @@ lines = {
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
 &"i": 24,
-&"type": &"variable",
-&"value": "Manager"
-}, {
-&"i": 31,
-&"type": &"dot"
-}, {
-&"i": 32,
-&"type": &"variable",
-&"value": "GameState"
-}, {
-&"i": 41,
-&"type": &"dot"
-}, {
-&"i": 42,
-&"type": &"variable",
+&"type": &"string",
 &"value": "DIALOGUE"
 }, {
-&"i": 50,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -617,12 +532,17 @@ lines = {
 "41": {
 &"id": "41",
 &"is_snippet": false,
-&"next_id": "-15",
+&"next_id": "-14",
 &"next_id_after": "",
 &"type": "goto"
 },
 "42": {
 &"id": "42",
+&"next_id": "43",
+&"type": ""
+},
+"43": {
+&"id": "43",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
@@ -645,7 +565,7 @@ lines = {
 "7": {
 &"id": "7",
 &"is_snippet": false,
-&"next_id": "-15",
+&"next_id": "-14",
 &"next_id_after": "",
 &"type": "goto"
 },
@@ -664,13 +584,13 @@ raw_text = "import \"res://Godot/Diálogos/Symptoms.dialogue\" as DialogueResour
 
 
 ~ start
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state(\"DIALOGUE\")
 Sistema Interno: parece só uma parede[next=auto]
 Sistema Interno: não gaste sua energia com isso[next=auto]
 => DialogueResource/Map
 
 ~ blublu
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state(\"DIALOGUE\")
 Desconhecido: Ola, eu me chamo Blu Blu!
 Blu blu: Seja bem vindo ou bem vinda ao reservatorio TAPAJOES!
 Blu blu: Temos o melhor amazenamento de agua desse destrito!
@@ -684,11 +604,11 @@ Blu blu: Quer me fazer um favor?
 => DialogueResource/Map
 
 ~ comercio
-do Manager.change_state(Manager.GameState.DIALOGUE)
-do Manager.DialogoTexture(\"res://texture/Characters/dialogos/comecio.tres\", \"res://texture/folderTres/materials/tile.tres\")
+do Manager.change_state(\"DIALOGUE\")
+do Manager.DialogoTexture(\"res://texture/Characters/dialogos/comecio.tres\")
+do Manager.test()
 Lila: Olá
 Lila: gostaria de comprar alguma coisa?
-do Manager.test()
 - não, obrigado
 	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
 - sim!
@@ -697,9 +617,10 @@ do Manager.DialogoTexture()
 => DialogueResource/Map
 
 ~ Roberto
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state(\"DIALOGUE\")
 Roberto: você sabe pq tu sou modelo 3d?
 Roberto: isso nem faz sentido
 Zeno: complicado isso aí
-=> DialogueResource/Map"
+=> DialogueResource/Map
+"
 metadata/dialogue_manager_version = "3.7.1"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvqm0erxe80w4"]
 
 [ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_0vcwb"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/16x16.png" id="2_0yspn"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="2_0yspn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr1u4"]
 
@@ -13,14 +13,15 @@ region = Rect2(240, 816, 16, 16)
 collision_layer = 2
 script = ExtResource("1_0vcwb")
 dano = 8
-speed = 320.0
-diretion = Vector2(0, 1)
+speed = 300.0
+diretion = Vector2(-1, 0)
 metadata/_custom_type_script = "uid://qnklpnihflc2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yr1u4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
 scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_px5ev")
 

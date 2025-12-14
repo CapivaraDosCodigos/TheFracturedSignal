@@ -30,9 +30,8 @@ func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
 
 func _dead() -> void:
+	life = 0
 	rootbatalha.remover_inimigo(id)
-	rootbatalha.end_batalha()
-	$AnimatedSprite2D.play("default")
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
 

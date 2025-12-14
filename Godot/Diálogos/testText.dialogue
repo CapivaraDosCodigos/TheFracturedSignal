@@ -2,13 +2,13 @@ import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
 
 
 ~ start
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state("DIALOGUE")
 Sistema Interno: parece só uma parede[next=auto]
 Sistema Interno: não gaste sua energia com isso[next=auto]
 => DialogueResource/Map
 
 ~ blublu
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state("DIALOGUE")
 Desconhecido: Ola, eu me chamo Blu Blu!
 Blu blu: Seja bem vindo ou bem vinda ao reservatorio TAPAJOES!
 Blu blu: Temos o melhor amazenamento de agua desse destrito!
@@ -22,11 +22,11 @@ Blu blu: Quer me fazer um favor?
 => DialogueResource/Map
 
 ~ comercio
-do Manager.change_state(Manager.GameState.DIALOGUE)
-do Manager.DialogoTexture("res://texture/Characters/dialogos/comecio.tres", "res://texture/folderTres/materials/tile.tres")
+do Manager.change_state("DIALOGUE")
+do Manager.DialogoTexture("res://texture/Characters/dialogos/comecio.tres")
+do Manager.test()
 Lila: Olá
 Lila: gostaria de comprar alguma coisa?
-do Manager.test()
 - não, obrigado
 	Lila: certo, mas quando quiser comprar, já sabe [next=auto]
 - sim!
@@ -35,7 +35,7 @@ do Manager.DialogoTexture()
 => DialogueResource/Map
 
 ~ Roberto
-do Manager.change_state(Manager.GameState.DIALOGUE)
+do Manager.change_state("DIALOGUE")
 Roberto: você sabe pq tu sou modelo 3d?
 Roberto: isso nem faz sentido
 Zeno: complicado isso aí

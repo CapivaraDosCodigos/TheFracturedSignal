@@ -40,10 +40,8 @@ func aplicar_material_e_salvar(caminho_imagem: String, material: Material) -> vo
 		print(\"✅ Imagem salva em:\", caminho)
 	else:
 		push_error(\"❌ Erro ao salvar a imagem!\")
-								
+	
 	viewport.queue_free()
-	
-	
 "
 
 [node name="time" type="Node"]

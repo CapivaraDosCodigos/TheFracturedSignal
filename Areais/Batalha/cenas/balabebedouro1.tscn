@@ -13,7 +13,7 @@ region = Rect2(240, 816, 16, 16)
 collision_layer = 2
 script = ExtResource("1_758y1")
 dano = 8
-speed = 320.0
+speed = 300.0
 diretion = Vector2(0, 1)
 metadata/_custom_type_script = "uid://qnklpnihflc2"
 

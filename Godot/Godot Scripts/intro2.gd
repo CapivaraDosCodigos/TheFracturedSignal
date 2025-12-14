@@ -10,7 +10,7 @@ var botao_index: int = 0
 
 func _ready() -> void:
 	Manager.tocar_musica(PATH_MUSIC, 90)
-	Manager.change_state(Manager.GameState.NOT_IN_THE_GAME)
+	Manager.change_state("NOT_IN_THE_GAME")
 	_atulizar()
 	botoes[botao_index].grab_focus()
 
@@ -53,8 +53,9 @@ func _on_deletar_4_pressed() -> void:
 func _on_deletar_5_pressed() -> void:
 	_deletar(5)
 
-func _start(slot: int ) -> void:
-	await get_tree().process_frame
+func _start(slot: int) -> void:
+	var duracao: float = Global.play_transition("start_transition")
+	await get_tree().create_timer(duracao).timeout
 	Manager.Start_Save(slot, 1)
 
 func _deletar(slot: int) -> void:

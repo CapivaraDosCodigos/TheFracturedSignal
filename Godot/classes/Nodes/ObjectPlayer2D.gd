@@ -38,7 +38,7 @@ func _ready() -> void:
 	area.area_entered.connect(_on_area_2d_area_entered)
 	area.area_exited.connect(_on_area_2d_area_exited)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
@@ -46,13 +46,13 @@ func _physics_process(_delta: float) -> void:
 		#if Manager.CurrentPlayer != null:
 			#no_player = not (Manager.CurrentPlayer.Nome == Nome)
 			
-		_player_physics()
-		_follower_physics()
+		_player_physics(delta)
+		_follower_physics(delta)
 	
 	elif Manager.current_status == Manager.GameState.DIALOGUE:
 		_update_animation(Vector2.ZERO)
 
-func _player_physics() -> void:
+func _player_physics(_delta: float) -> void:
 	if no_player:
 		return
 		
@@ -66,7 +66,7 @@ func _player_physics() -> void:
 	Manager.raio = RayChat
 	Manager.ObjectPlayer = self
 	
-	var is_running := Input.is_action_pressed("cancel")
+	var is_running: bool = Input.is_action_pressed("cancel")
 	direction = _input_direction()
 	
 	running = speed_running if is_running else speed_walk
@@ -80,7 +80,7 @@ func _player_physics() -> void:
 	if trail.size() > trail_length:
 		trail.pop_back()
 
-func _follower_physics() -> void:
+func _follower_physics(_delta: float) -> void:
 	if not no_player:
 		return
 		
@@ -90,7 +90,7 @@ func _follower_physics() -> void:
 	if leader == null:
 		return
 	
-	var _is_running := Input.is_action_pressed("cancel")
+	var _is_running: bool = Input.is_action_pressed("cancel")
 	anim_player.speed_scale = anim_running if _is_running else anim_walk
 	running = speed_running if _is_running else speed_walk
 	

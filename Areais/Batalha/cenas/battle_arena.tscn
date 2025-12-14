@@ -46,11 +46,12 @@ script = ExtResource("2_ygc8i")
 
 [node name="objetos" type="Node2D" parent="."]
 
-[node name="Ambição" parent="objetos" instance=ExtResource("2_2iyuh")]
+[node name="Ambição" parent="objetos" node_paths=PackedStringArray("area") instance=ExtResource("2_2iyuh")]
 unique_name_in_owner = true
 z_index = 1
 position = Vector2(72.000015, 72)
 scale = Vector2(1, 1)
+area = NodePath("../..")
 
 [node name="AmbiçãoMake" type="Marker2D" parent="objetos"]
 unique_name_in_owner = true

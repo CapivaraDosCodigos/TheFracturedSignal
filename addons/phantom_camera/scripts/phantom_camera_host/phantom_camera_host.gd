@@ -704,24 +704,6 @@ func _check_pcam_physics() -> void:
 				camera_3d.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_INHERIT
 
 
-## TODO - For 0.8 release
-#func _find_pcam_with_highest_priority() -> void:
-	#var highest_priority_pcam: Node
-	#for pcam in _pcam_list:
-		#if not pcam.visible: continue # Prevents hidden PCams from becoming active
-		#if pcam.priority > _active_pcam_priority:
-			#_active_pcam_priority = pcam.priority
-			#highest_priority_pcam = pcam
-		#pcam.set_has_tweened(self, false)
-#
-		#_active_pcam_missing = false
-#
-	#if is_instance_valid(highest_priority_pcam):
-		#_assign_new_active_pcam(highest_priority_pcam)
-	#else:
-		#_active_pcam_missing = true
-
-
 func _process(delta: float) -> void:
 	if _active_pcam_missing: return
 

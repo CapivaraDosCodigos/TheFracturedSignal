@@ -1,12 +1,11 @@
 ~ Map
-#do Manager.change_state(Manager.GameState.MAP)
-do Manager.esperardialogo()
+do Manager.change_state("MAP", 0.5)
 => END
 
 ~ Batalha
-do Manager.change_state(Manager.GameState.BATTLE)
+do Manager.change_state("BATTLE")
 => END
 
 ~ BatalhaMenu
-do Manager.change_state(Manager.GameState.BATTLE_MENU)
+do Manager.change_state("BATTLE_MENU")
 => END

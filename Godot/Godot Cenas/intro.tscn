@@ -361,6 +361,10 @@ control_end = NodePath("../inicia5")
 top_alternative = NodePath("../../../MarginContainer5/HBoxContainer/inicia4")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(18, -18, 18, 18, -18, 18, -18, -12, -12, -12, -12, 12, 12, 12, 12, -12, -18, -12, -18, -18, 12, -18)
+
 [connection signal="pressed" from="menu_de_salves/VBoxContainer/MarginContainer2/HBoxContainer/inicia1" to="menu_de_salves" method="_on_inicia_1_pressed"]
 [connection signal="pressed" from="menu_de_salves/VBoxContainer/MarginContainer2/HBoxContainer/deletar" to="menu_de_salves" method="_on_deletar_1_pressed"]
 [connection signal="pressed" from="menu_de_salves/VBoxContainer/MarginContainer3/HBoxContainer/inicia2" to="menu_de_salves" method="_on_inicia_2_pressed"]
