@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_0vcwb"]
 [ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="2_0yspn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yr1u4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqqmq"]
+size = Vector2(18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px5ev"]
 atlas = ExtResource("2_0yspn")
@@ -18,7 +19,7 @@ diretion = Vector2(-1, 0)
 metadata/_custom_type_script = "uid://qnklpnihflc2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_yr1u4")
+shape = SubResource("RectangleShape2D_wqqmq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964

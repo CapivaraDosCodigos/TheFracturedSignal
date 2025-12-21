@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=6 format=3 uid="uid://d302slnl03gy4"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=7 format=3 uid="uid://d302slnl03gy4"]
 
-[ext_resource type="Resource" uid="uid://da5fs2m2nac0n" path="res://Godot/classes/personagens/CalculatePlayerGlobal.tres" id="1_7rbim"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="1_7rbim"]
 [ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/classes/itens/Inventorys/ZenoInventory.tres" id="1_wk5d7"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="3_bmyga"]
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="6_kj3km"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="7_xe788"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjm6l"]
+atlas = ExtResource("1_7rbim")
+region = Rect2(98, 0, 96, 96)
+
 [resource]
 script = ExtResource("6_kj3km")
 Nome = "Zeno"
+Icone = SubResource("AtlasTexture_bjm6l")
 PlayerBatalhaPath = "uid://dc6gnjvpvkwsn"
 ObjectPlayerPath = "uid://h5ek2buto4br"
 InventoryPlayer = ExtResource("1_wk5d7")

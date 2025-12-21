@@ -30,8 +30,8 @@ anchor_left = 0.375
 anchor_top = 0.207
 anchor_right = 0.625
 anchor_bottom = 0.739
-offset_left = -3.05176e-05
-offset_top = -0.780006
+offset_left = -3.0517578e-05
+offset_top = -0.7800064
 offset_right = -144.0
 offset_bottom = -144.06
 scale = Vector2(2, 2)
@@ -43,6 +43,7 @@ patch_margin_right = 2
 patch_margin_bottom = 2
 axis_stretch_horizontal = 1
 script = ExtResource("2_ygc8i")
+metadata/_custom_type_script = "uid://4v1xm7lpqc5j"
 
 [node name="objetos" type="Node2D" parent="."]
 
@@ -51,7 +52,7 @@ unique_name_in_owner = true
 z_index = 1
 position = Vector2(72.000015, 72)
 scale = Vector2(1, 1)
-area = NodePath("../..")
+area = NodePath("")
 
 [node name="AmbiçãoMake" type="Marker2D" parent="objetos"]
 unique_name_in_owner = true

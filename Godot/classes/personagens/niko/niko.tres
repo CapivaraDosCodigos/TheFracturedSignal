@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://cs0khqyxc6mmc"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://cs0khqyxc6mmc"]
 
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="1_1i2qe"]
-[ext_resource type="Resource" uid="uid://da5fs2m2nac0n" path="res://Godot/classes/personagens/CalculatePlayerGlobal.tres" id="1_v1kb6"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="1_v1kb6"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="2_v1kb6"]
 [ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="3_4b26e"]
 [ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/itens/Inventorys/Inventory.gd" id="4_oyr1p"]
 [ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/itens/armas/Signal_Weapon.tres" id="6_n42id"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1kb6"]
+atlas = ExtResource("1_v1kb6")
+region = Rect2(679, 0, 97, 96)
 
 [sub_resource type="Resource" id="Resource_4b26e"]
 script = ExtResource("4_oyr1p")
@@ -13,10 +17,11 @@ metadata/_custom_type_script = "uid://cmfwq25tt8fwe"
 
 [resource]
 script = ExtResource("1_1i2qe")
+Exp = 1500
 Nome = "Niko"
+Icone = SubResource("AtlasTexture_v1kb6")
 PlayerBatalhaPath = "uid://bxytmso8hirup"
 ObjectPlayerPath = "uid://neeruowotbdj"
-Exp = 1500
 InventoryPlayer = SubResource("Resource_4b26e")
 armorE = ExtResource("2_v1kb6")
 weaponsE = ExtResource("6_n42id")

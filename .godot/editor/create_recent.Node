@@ -1,3 +1,7 @@
+BattleArenaControl
+HBoxContainer
+Label
+VBoxContainer
 SpawnPlayers
 CollisionShape2D
 Timer
@@ -5,11 +9,7 @@ AlmaBody2D
 Area2D
 CollisionPolygon2D
 MarginContainer
-VBoxContainer
 TextureProgressBar
 AnimationPlayer
 ColorRect
 Sprite2D
-AnimatedSprite2D
-Marker2D
-Node2D

@@ -48,6 +48,7 @@ shape = SubResource("CircleShape2D_frmhu")
 debug_color = Color(0.0043103276, 0.06785011, 0.70196074, 0.41960785)
 
 [node name="escudo" type="Area2D" parent="."]
+rotation = 0.78539705
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escudo"]

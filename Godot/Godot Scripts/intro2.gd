@@ -11,6 +11,7 @@ var botao_index: int = 0
 func _ready() -> void:
 	Manager.tocar_musica(PATH_MUSIC, 90)
 	Manager.change_state("NOT_IN_THE_GAME")
+	Global.play_transition("end_transition")
 	_atulizar()
 	botoes[botao_index].grab_focus()
 

@@ -1,5 +1,5 @@
 @icon("res://texture/folderTres/texturas/batalha.tres")
-class_name SimplesBatalha2D
+class_name Batalha2D
 extends Node2D
 
 
@@ -7,14 +7,15 @@ extends Node2D
 
 const MAX_ENENINES: int = 3
 
-@onready var containers_players: Array[ContainerPlayerSimples] = [ %ContainerPlayer1, %ContainerPlayer2, %ContainerPlayer3 ]
+@onready var containers_players: Array[ContainerPlayer] = [ %ContainerPlayer1, %ContainerPlayer2, %ContainerPlayer3 ]
 
 @onready var personagens: PersonagensBatalha2D = $BatalhaCanvas/Personagens
 @onready var points_progress_bar: TextureProgressBar = %PointsProgressBar
-@onready var battle_arena: NinePatchRect = %BATTLE_ARENA
+@onready var battle_arena: BattleArenaControl = %BATTLE_ARENA
 @onready var anim: AnimationPlayer = $AnimationPanel
 
 var itens_usados_temp: Dictionary[String, DataItem] = {}
+var cp_delta_por_jogador: Dictionary[String, int] = {}
 var enemiesNodes: Dictionary[int, EnemiesBase2D] = {}
 var PlayersDIR: Dictionary[String, PlayerData] = {}
 var selecoes: Dictionary[String, String] = {}
@@ -28,8 +29,9 @@ var batalha: DataBatalha = null
 var last_state = null
 
 var jogador_atual: String = ""
+var concentration_points_visual: float = 0.0
+var concentration_points: int = 0
 var current_index: int = 0
-var players: int = 0
 
 var selecao_finalizada: bool = false
 var selecao_ativa: bool = false
@@ -37,18 +39,19 @@ var submenu_ativo: bool = false
 
 #endregion
 
-var concentration_points: int = 0
 
 func _ready() -> void:
+	concentration_points_visual = concentration_points
+	points_progress_bar.value = concentration_points_visual
+	
 	while batalha.inimigos.size() > MAX_ENENINES:
 		batalha.inimigos.pop_back()
 
 	PlayersDIR = Manager.PlayersAtuais
 	player_keys = PlayersDIR.keys()
 	player_keys.reverse()
-	players = player_keys.size()
 
-	for idx in players:
+	for idx in player_keys.size():
 		adicionar_jogador(idx, player_keys[idx])
 
 	for i in batalha.inimigos.size():
@@ -59,7 +62,7 @@ func _ready() -> void:
 
 	Manager.tocar_musica(batalha.caminho, batalha.volume, batalha.loop, 0.0, 1)
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	var state = Manager.current_status
 	if state != last_state:
 
@@ -71,10 +74,17 @@ func _process(_delta: float) -> void:
 		elif state == Manager.GameState.BATTLE_MENU:
 			anim.play("E_panel")
 			_iniciar_selecao()
-
+		
 		last_state = state
+		
+	if last_state == Manager.GameState.BATTLE_MENU and state != Manager.GameState.BATTLE_MENU:
+		cp_delta_por_jogador.clear()
+
+	concentration_points_visual = lerp(concentration_points_visual, float(concentration_points), 8.0 * delta)
+
+	points_progress_bar.value = concentration_points_visual
+	$BatalhaCanvas/Control/PointsProgressBar/Label.text = str(round(concentration_points_visual))
 	
-	points_progress_bar.value = concentration_points
 	if verificar_dead():
 		dead_batalha()
 
@@ -82,7 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
 		return
 	
-	var container: ContainerPlayerSimples = _get_container_do_jogador(jogador_atual)
+	var container: ContainerPlayer = _get_container_do_jogador(jogador_atual)
 	if not container:
 		return
 	
@@ -111,6 +121,7 @@ func _iniciar_selecao() -> void:
 	selecoes.clear()
 	submenu_resultados.clear()
 	itens_usados_temp.clear()
+	cp_delta_por_jogador.clear()
 	
 	itens_locais = Manager.get_Inventory().get_in_items_batalha().duplicate(true)
 
@@ -121,7 +132,7 @@ func _iniciar_selecao() -> void:
 	_focus_container_atual()
 
 func _abrir_submenu(act: String) -> void:
-	var container: ContainerPlayerSimples = _get_container_do_jogador(jogador_atual)
+	var container: ContainerPlayer = _get_container_do_jogador(jogador_atual)
 	if not container: return
 	
 	match act:
@@ -147,11 +158,11 @@ func _abrir_submenu(act: String) -> void:
 				return
 	
 			container.itens_menu.atualizar_itemlist(itens_locais)
-			var result: int = await container.itens_menu.itemsIvt()
+			var result: Dictionary = await container.itens_menu.itemsIvt(PlayersDIR.values())
 	
-			if result >= 0 and result < itens_locais.size():
-				var item: DataItem = itens_locais[result]
-				submenu_resultados[jogador_atual] = item
+			if result["index"] >= 0 and result["index"] < itens_locais.size():
+				var item: DataItem = itens_locais[result["index"]]
+				submenu_resultados[jogador_atual] = {"item": item, "player": result["player"]}
 				itens_usados_temp[jogador_atual] = item
 				itens_locais.erase(item)
 				container.itens_menu.atualizar_itemlist(itens_locais)
@@ -161,26 +172,41 @@ func _abrir_submenu(act: String) -> void:
 			submenu_ativo = false
 
 func _confirmar_acao(nome: String, _extra = null) -> void:
+	if cp_delta_por_jogador.has(jogador_atual):
+		_reverter_concentration_temporario(jogador_atual)
+
+	match nome:
+		"DEF":
+			var ganho: int = min(10, 100 - concentration_points)
+			if ganho > 0:
+				_aplicar_concentration_temporario(jogador_atual, ganho)
+
+		"MRC":
+			if concentration_points < 20:
+				return
+			_aplicar_concentration_temporario(jogador_atual, -20)
+
 	selecoes[jogador_atual] = nome
 
 	var idx: int = player_keys.find(jogador_atual)
 	var prox: String = proximo_jogador_valido(idx + 1)
-	
+
 	while prox != "" and deve_pular_jogador(prox):
 		prox = proximo_jogador_valido(player_keys.find(prox) + 1)
-	
+
 	jogador_atual = prox
-	
+
 	if jogador_atual == "":
 		selecao_finalizada = true
 		selecao_ativa = false
-	
+
 		for key in player_keys:
 			_act(selecoes.get(key, ""), key)
 
 		if enemiesNodes.is_empty():
 			return
 
+		cp_delta_por_jogador.clear()
 		Manager.change_state("BATTLE")
 	else:
 		_focus_container_atual()
@@ -197,6 +223,10 @@ func _cancelar_jogador_anterior() -> void:
 		ant = player_keys[idx]
 	
 	jogador_atual = ant
+	
+	if cp_delta_por_jogador.has(jogador_atual):
+		_reverter_concentration_temporario(jogador_atual)
+	
 	_focus_container_atual()
 
 func _focus_container_atual() -> void:
@@ -207,7 +237,7 @@ func _focus_container_atual() -> void:
 	if idx >= 0 and idx < containers_players.size():
 		containers_players[idx].set_focus(true)
 
-func _get_container_do_jogador(key: String) -> ContainerPlayerSimples:
+func _get_container_do_jogador(key: String) -> ContainerPlayer:
 	var idx: int = player_keys.find(key)
 
 	if idx >= 0 and idx < containers_players.size():
@@ -217,7 +247,7 @@ func _get_container_do_jogador(key: String) -> ContainerPlayerSimples:
 
 func _fechar_submenu() -> void:
 	submenu_ativo = false
-	var cont: ContainerPlayerSimples = _get_container_do_jogador(jogador_atual)
+	var cont: ContainerPlayer = _get_container_do_jogador(jogador_atual)
 	if cont:
 		cont.fechar_submenus()
 	_focus_container_atual()
@@ -258,13 +288,11 @@ func _act(act: String, key: String) -> void:
 		if not submenu_resultados.has(key):
 			return
 	
-		var item_usado: DataItem = submenu_resultados[key]
+		var item_usado: DataItem = submenu_resultados[key].get("item")
 		if item_usado == null:
 			return
 	
-		for pkey in Manager.PlayersAtuais.keys():
-			if item_usado.has_method("usar"):
-				item_usado.usar(pkey)
+		item_usado.usar(submenu_resultados[key].get("player"))
 	
 		Manager.get_Inventory().remove_for_item(item_usado)
 		var container := _get_container_do_jogador(key)
@@ -273,6 +301,22 @@ func _act(act: String, key: String) -> void:
 	
 	elif act == "MRC":
 			end_batalha(false)
+
+func _aplicar_concentration_temporario(jogador: String, valor: int) -> void:
+	concentration_points = clamp(concentration_points + valor, 0, 100)
+	cp_delta_por_jogador[jogador] = cp_delta_por_jogador.get(jogador, 0) + valor
+
+func _reverter_concentration_temporario(jogador: String) -> void:
+	if not cp_delta_por_jogador.has(jogador):
+		return
+	
+	concentration_points = clamp(
+		concentration_points - cp_delta_por_jogador[jogador],
+		0,
+		100
+	)
+	
+	cp_delta_por_jogador.erase(jogador)
 
 func proximo_jogador_valido(inicio: int) -> String:
 	for i in range(inicio, player_keys.size()):
@@ -315,11 +359,8 @@ func dead_batalha() -> void:
 	Manager.Game_Over()
 	queue_free()
 
-func add_cp(value: int) -> void:
-	if concentration_points + value < 100:
-		concentration_points += value
-	else:
-		concentration_points = 100
+func add_concentration_points(value: int) -> void:
+	concentration_points = clamp(concentration_points + value, 0.0, 100.0)
 
 func adicionar_jogador(index: int, key: String) -> void:
 	var inst: PlayerBase2D = load(PlayersDIR[key].PlayerBatalhaPath).instantiate()
@@ -380,8 +421,6 @@ func remover_jogador_(key: String) -> void:
 			containers_players[i].player = ""
 			containers_players[i].visible = false
 			containers_players[i].reset()
-
-	players = player_keys.size()
 
 	if jogador_atual == key:
 		jogador_atual = proximo_jogador_valido(0)

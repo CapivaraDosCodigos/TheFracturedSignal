@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_pt70x")
-inimigos = Array[PackedScene]([ExtResource("1_cf5rl")])
+inimigos = Array[PackedScene]([ExtResource("1_cf5rl"), ExtResource("1_cf5rl")])
 dialogo = "uid://b8s8ct3smhv3e"
 start_dialogo = "bebedouro"
 caminho = "uid://dix6um187yv5o"

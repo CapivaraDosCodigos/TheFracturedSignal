@@ -70,12 +70,14 @@ func _abrir_submenu(button: Control) -> void:
 			submenu_atual = %StatusMenu
 			
 		"settings":
+			var duracao: float = Global.play_transition("start_transition")
+			await get_tree().create_timer(duracao).timeout
 			Manager.Return_To_Title()
 			menu = false
 			$UI_menu.visible = false
+			submenu_atual = %SettingsMenu
+			_fechar_submenu()
 			return
-			#print("Abrindo Configurações")
-			#submenu_atual = %SettingsMenu
 		
 	submenu_atual.abrir()
 

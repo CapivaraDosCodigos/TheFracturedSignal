@@ -1,5 +1,5 @@
 extends PanelContainer
-class_name batalha_submenu_enemies
+class_name BatalhaSubmenuEnemies
 
 @onready var buttaos: Array[InimigoButton] = [ %Inimigo1, %Inimigo2, %Inimigo3 ]
 

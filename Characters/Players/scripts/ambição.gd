@@ -6,7 +6,6 @@ class_name AlmaBody2D
 
 @export var speed: float = 150.0
 @export var divide_cp: int = 4
-@export var area: BattleArenaControl
 @export_range(0.1, 3.0) var invincible_time: float = 0.5
 
 var direction: Vector2 = Vector2.ZERO
@@ -56,7 +55,7 @@ func _on_escudo_body_exited(body: Node2D) -> void:
 	if bullets_processed.has(body):
 		return
 
-	area.set_cp(2)
+	Manager.CurrentBatalha.add_concentration_points(1)
 	Manager.tocar_musica("res://sons/sounds/power_up_2.wav", 40, false, 0.0, 2, "effects")
 	
 	#area.set_cp(int(body.dano / divide_cp))

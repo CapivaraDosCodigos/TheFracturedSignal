@@ -29,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
+text = "FPS: %s | Estado: %s | slot: %s"
 
 [node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
 

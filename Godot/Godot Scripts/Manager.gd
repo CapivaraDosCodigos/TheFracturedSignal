@@ -20,13 +20,14 @@ var PlayersAtuais: Dictionary[String, PlayerData] = {}
 
 var GameStateString := GameState.keys()
 
+var CurrentBatalha: Batalha2D
 var CurrentScene: PackedScene
 var Data: SeasonResource
 var Extras: DataExtras
 
 var CurrentPlayerString: String = ""
-var CurrentSlot: int = 0
 var CurrentTemporada: int = 1
+var CurrentSlot: int = 0
 var InGame: bool = false
 
 #endregion
@@ -65,15 +66,16 @@ func tocar_musica(caminho: String = "", volume: float = 100.0, loop: bool = true
 	else:
 		push_warning("Canal %s inexistente!" % canal)
 
-func StartBatalha(batalha: DataBatalha, pos: Vector2 = Vector2.ZERO):
-	var inst := BATALHA_SCENE.instantiate()
+func StartBatalha(batalhaData: DataBatalha, pos: Vector2 = Vector2.ZERO):
+	var instBatalha: Batalha2D = BATALHA_SCENE.instantiate()
 	tocar_musica("res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3",
 		100, false, 0.0, 2, "effects")
-
-	batalha.dungeons2D.iniciar_batalha()
-	inst.batalha = batalha
-	inst.global_position = pos
-	get_tree().root.add_child(inst)
+	
+	batalhaData.dungeons2D.iniciar_batalha()
+	instBatalha.batalha = batalhaData
+	instBatalha.global_position = pos
+	CurrentBatalha = instBatalha
+	get_tree().root.add_child(instBatalha)
 
 func DialogoTexture(texture: String = ""):
 	textureD = load(texture) if texture != "" else null

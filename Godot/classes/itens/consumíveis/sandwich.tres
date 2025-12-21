@@ -10,8 +10,11 @@ region = Rect2(160, 528, 16, 16)
 [resource]
 script = ExtResource("2_7ur3f")
 cura = 1000
+need_player = true
 nome = "sandwich"
 preco = 30
+descricao = "pão"
 icone = SubResource("AtlasTexture_dqt6t")
 inbatalha = true
+need_player = true
 metadata/_custom_type_script = "uid://4uoggiynaxiu"

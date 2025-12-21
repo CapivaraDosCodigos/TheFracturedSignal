@@ -43,3 +43,7 @@
 	#salvar_print_visivel()
 	#$time.aplicar_material_e_salvar(_path, _shader_material)
 	#$time.aplicar_material_e_salvar(_path2, _shader_material)
+
+
+
+oi 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4i7d4j4sgiva"]
+[gd_scene load_steps=25 format=3 uid="uid://c4i7d4j4sgiva"]
 
 [ext_resource type="Script" uid="uid://b33cjhsccjqk8" path="res://Areais/Batalha/scripts/panel_player_simples.gd" id="1_srdai"]
+[ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_olg25"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="2_rwiij"]
 [ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="3_8r4q0"]
 [ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="4_e0j8l"]
@@ -16,11 +17,25 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5qq5"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1poc"]
+texture = ExtResource("2_olg25")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(192, 320, 64, 64)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_6ohf0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjm6l"]
 atlas = ExtResource("4_e0j8l")
-region = Rect2(0, 0, 96, 96)
+region = Rect2(98, 0, 96, 96)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2o57"]
+font = ExtResource("5_3vpe8")
+font_size = 48
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eohca"]
 atlas = ExtResource("6_3og78")
@@ -42,10 +57,6 @@ region = Rect2(112, 656, 16, 16)
 atlas = ExtResource("6_3og78")
 region = Rect2(176, 0, 16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_x2o57"]
-font = ExtResource("5_3vpe8")
-font_size = 48
-
 [node name="ContainerPlayer" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,13 +68,19 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_h5qq5")
 script = ExtResource("1_srdai")
 metadata/_custom_type_script = "uid://b33cjhsccjqk8"
 
+[node name="PanelFundo" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_c1poc")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 66)
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_rwiij")
@@ -114,12 +131,32 @@ theme_override_font_sizes/font_size = 32
 text = "100/100"
 vertical_alignment = 1
 
+[node name="ActionsLabel" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_3vpe8")
+theme_override_font_sizes/font_size = 24
+text = "none"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ACTLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Error"
+label_settings = SubResource("LabelSettings_x2o57")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxActions" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = -2
+theme_override_constants/separation = -3
 
 [node name="ATK" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
@@ -290,16 +327,6 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="ACTLabel" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-text = "Error"
-label_settings = SubResource("LabelSettings_x2o57")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="itensMenu" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -317,7 +344,10 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ItemList" type="ItemList" parent="itensMenu/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="itensMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="itensMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -327,6 +357,31 @@ mouse_force_pass_scroll_events = false
 theme = ExtResource("9_e0j8l")
 icon_scale = 1.6
 fixed_icon_size = Vector2i(32, 16)
+
+[node name="ItemLabel" type="Label" parent="itensMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_3vpe8")
+
+[node name="ListPlayer" type="VBoxContainer" parent="itensMenu"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Player1" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Player2" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Player3" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
 
 [node name="inimigosMenu" type="PanelContainer" parent="."]
 unique_name_in_owner = true

@@ -2,19 +2,16 @@
 class_name PlayerData
 extends Resource
 
+const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
+
+
+@export var Exp: int = 0
+
 @export_group("GamePLayer")
 @export var Nome: String = "Player"
-@export_file("*.*tscn") var PlayerBatalhaPath: String
-@export_file("*.*tscn") var ObjectPlayerPath: String
-@export var Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
-
-@export_group("PlayerStarts")
-@export var Life: int = 100:
-	set(value):
-		Life = value
-		if Life < -999:
-			Life = -999
-@export var Exp: int = 0
+@export var Icone: Texture
+@export_file("*.*tscn") var PlayerBatalhaPath: String = ""
+@export_file("*.*tscn") var ObjectPlayerPath: String = ""
 
 @export_group("Armazem")
 @export var InventoryPlayer: Inventory = Inventory.new()
@@ -26,13 +23,18 @@ extends Resource
 @export var EXE_slot_2: Executable
 @export var EXE_slot_3: Executable
 
+var Life: int = 100:
+	set(value):
+		Life = value
+		if Life < -999:
+			Life = -999
+var maxlife: int = 100
 var Lv: int = 1
-var maxlife: int
-var attack: int
-var defense: int
-var resource: int
-var maxdamage: int
-var mindamage: int
+var attack: int = 1
+var defense: int = 1
+var resource: int = 1
+var maxdamage: int = 1
+var mindamage: int = 1
 
 var isDefesa: bool = false
 var skip_turn: bool = false
