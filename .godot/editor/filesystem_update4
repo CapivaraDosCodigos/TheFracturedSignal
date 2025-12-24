@@ -1,9 +1,7 @@
-res://Areais/Batalha/scripts/batalha_submenu_itens.gd
-res://Godot/classes/itens/DataItem.gd
 res://Areais/Batalha/cenas/ContainerPlayer.tscn
+res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://texture/folderTres/texturas/paleta.tres
-res://shader/black and white.gdshader
 res://texture/folderTres/theme_BATALHA.tres
 res://Godot/classes/itens/armaduras/óculos_simples.tres
 res://Godot/classes/itens/consumíveis/sandwich.tres
@@ -14,6 +12,7 @@ res://texture/folderTres/T1B.tres
 res://shader/paletasWOW.gdshader
 res://Godot/classes/itens/consumíveis/cafe.tres
 res://Godot/classes/itens/Inventorys/ZenoInventory.tres
+res://Godot/classes/itens/executaveis/HitKill.tres
 res://Godot/classes/personagens/Zeno T1/zeno.tres
 res://Godot/classes/personagens/niko/niko.tres
 res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres
@@ -29,6 +28,8 @@ res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
 res://addons/dialogic/Modules/Background/Transitions/default_transition_shader.gdshader
-res://Godot/classes/itens/consumíveis/ItemConsumivel.gd
-res://Areais/Batalha/cenas/batalha_submenu_enemies.gd
-res://Areais/Batalha/scripts/panel_player_simples.gd
+res://Areais/Batalha/scripts/ExecutableMenu.gd
+res://Areais/Batalha/scripts/batalha_submenu_enemies.gd
+res://Areais/Batalha/scripts/simplesbatalha.gd
+res://Godot/classes/itens/executaveis/executables.gd
+res://Areais/Batalha/cenas/SIMPLES_BATALHA.tscn

@@ -1,7 +1,7 @@
 @icon("res://texture/folderTres/texturas/comida.tres")
 class_name ItemConsumivel extends DataItem
 
-enum Tipo { CuraHP, AumentaCP }
+enum Tipo { CuraHP, CuraMAX, CuraMIN, AumentaCP }
 
 @export var cura: int = 50
 @export var concentration: int = 0
@@ -12,5 +12,15 @@ func usar(player: String) -> void:
 		Tipo.CuraHP:
 			Manager.get_Player(player).Life += cura
 	
+		Tipo.CuraMAX:
+			Manager.get_Player(player).reset() 
+	
+		Tipo.CuraMIN:
+			var LocalPlayer: PlayerData = Manager.get_Player(player)
+			if LocalPlayer.Life + cura >= LocalPlayer.maxlife:
+				LocalPlayer.reset()
+			else:
+				LocalPlayer.Life += cura
+	
 		Tipo.AumentaCP:
-			Manager.CurrentBatalha.add_concentration_points(25)
+			Manager.CurrentBatalha.add_concentration_points(concentration)

@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvqm0erxe80w4"]
 
 [ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_0vcwb"]
-[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="2_0yspn"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="2_0vcwb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqqmq"]
 size = Vector2(18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px5ev"]
-atlas = ExtResource("2_0yspn")
+atlas = ExtResource("2_0vcwb")
 region = Rect2(240, 816, 16, 16)
 
 [node name="Bala2D" type="CharacterBody2D"]

@@ -1,5 +1,8 @@
-res://texture/characters
+res://texture/objetos/items
+res://Godot/classes/itens/executaveis/
+res://Areais/Batalha/scripts
 res://texture/PNG
+res://texture/characters
 res://Areais/TEMPORADA 1
 res://texture/characters/Assets/Animations
 res://texture/characters/Assets
@@ -14,10 +17,7 @@ res://texture/objetos/Ranitayas Guns Pack (16+ pixelart guns)/Pistols
 res://Godot/Godot Cenas
 res://Godot/Godot Scripts
 res://texture/folderTres/materials
-res://texture/objetos/items
 res://Characters/Players/scripts/menu
 res://
 res://texture/characters/dialogos
-res://texture/PNG/funds
-res://texture/folderTres/BoxTexture
 /storage/emulated/0/Documents

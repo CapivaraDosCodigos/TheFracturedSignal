@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://cs0khqyxc6mmc"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=10 format=3 uid="uid://cs0khqyxc6mmc"]
 
 [ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/personagens/PlayerData.gd" id="1_1i2qe"]
+[ext_resource type="Script" uid="uid://dtm0qkgm2180b" path="res://Godot/classes/itens/executaveis/executables.gd" id="1_4b26e"]
 [ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="1_v1kb6"]
 [ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/itens/armaduras/óculos_simples.tres" id="2_v1kb6"]
 [ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/itens/DataItem.gd" id="3_4b26e"]

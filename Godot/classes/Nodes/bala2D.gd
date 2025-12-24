@@ -8,6 +8,9 @@ class_name Bala2D
 func _physics_process(_delta: float) -> void:
 	if !visible:
 		queue_free()
+		
+	#if Manager.current_status != Manager.GameState.BATTLE:
+		#queue_free()
 	
 	if Manager.current_status == Manager.GameState.BATTLE:
 		velocity = diretion * speed

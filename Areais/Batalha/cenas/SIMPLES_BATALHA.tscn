@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2on6jae8ynix"]
+[gd_scene load_steps=14 format=3 uid="uid://c2on6jae8ynix"]
 
 [ext_resource type="Script" uid="uid://2i0hddkuq4tj" path="res://Areais/Batalha/scripts/simplesbatalha.gd" id="1_x2o57"]
-[ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/classes/Inimigos/bebedouro/bebedouro.tres" id="2_12ipo"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="4_846df"]
 [ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="5_hoeec"]
 [ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Areais/Batalha/scripts/personagens.gd" id="6_jimw3"]
 [ext_resource type="PackedScene" uid="uid://by72qrtpqld7j" path="res://Areais/Batalha/cenas/battle_arena.tscn" id="8_1y7vt"]
 [ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="8_12ipo"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_76unj"]
 [ext_resource type="PackedScene" uid="uid://c4i7d4j4sgiva" path="res://Areais/Batalha/cenas/ContainerPlayer.tscn" id="13_feg7f"]
 
 [sub_resource type="Animation" id="Animation_nt1gt"]
@@ -147,18 +147,13 @@ _data = {
 &"S_panel": SubResource("Animation_fq6de")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_12ipo"]
-atlas = ExtResource("8_12ipo")
-region = Rect2(128, 16, 64, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_76unj"]
 atlas = ExtResource("8_12ipo")
-region = Rect2(64, 16, 64, 16)
+region = Rect2(91, 22, 30, 3)
 
 [node name="Batalha2D" type="Node2D"]
 editor_description = "oi galera"
 script = ExtResource("1_x2o57")
-batalha = ExtResource("2_12ipo")
 metadata/_custom_type_script = "uid://2i0hddkuq4tj"
 
 [node name="AnimationPanel" type="AnimationPlayer" parent="."]
@@ -212,7 +207,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" node_paths=PackedStringArray("batalha") instance=ExtResource("8_1y7vt")]
+[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" instance=ExtResource("8_1y7vt")]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -226,7 +221,6 @@ offset_left = 432.0
 offset_top = 111.0
 offset_right = 576.0
 offset_bottom = 255.0
-batalha = NodePath("../../..")
 
 [node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
 z_index = 5
@@ -235,7 +229,7 @@ layout_mode = 0
 offset_left = -16.0
 offset_top = 540.0
 offset_right = 1136.0
-offset_bottom = 672.0002
+offset_bottom = 672.00073
 size_flags_vertical = 3
 theme_override_constants/margin_bottom = 4
 
@@ -254,7 +248,6 @@ size_flags_horizontal = 1
 
 [node name="ContainerPlayer2" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer" instance=ExtResource("13_feg7f")]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(381, 0)
 layout_mode = 2
 size_flags_horizontal = 1
@@ -266,26 +259,50 @@ custom_minimum_size = Vector2(381, 0)
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="PointsProgressBar" type="TextureProgressBar" parent="BatalhaCanvas/Control"]
-unique_name_in_owner = true
+[node name="PointsNinePatchRect" type="NinePatchRect" parent="BatalhaCanvas/Control"]
 layout_mode = 0
-offset_top = 400.0
-offset_right = 80.0
-offset_bottom = 416.0
+offset_left = 16.0
+offset_top = 368.0
+offset_right = 100.0
+offset_bottom = 376.0
 rotation = -1.5707964
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
+texture = ExtResource("8_12ipo")
+region_rect = Rect2(135, 20, 52, 7)
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="PointsMarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/PointsNinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PointsProgressBar" type="TextureProgressBar" parent="BatalhaCanvas/Control/PointsNinePatchRect/PointsMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 value = 100.0
 nine_patch_stretch = true
-stretch_margin_left = 16
-stretch_margin_right = 16
-texture_under = SubResource("AtlasTexture_12ipo")
+stretch_margin_left = 2
+stretch_margin_right = 3
+stretch_margin_bottom = 2
 texture_progress = SubResource("AtlasTexture_76unj")
 
-[node name="Label" type="Label" parent="BatalhaCanvas/Control/PointsProgressBar"]
+[node name="Label" type="Label" parent="BatalhaCanvas/Control"]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 11.000006
-offset_right = 120.0
-offset_bottom = 30.000006
-rotation = 1.5707964
+offset_left = 57.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("8_76unj")
+theme_override_font_sizes/font_size = 64
 text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

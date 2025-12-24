@@ -1,7 +1,8 @@
 extends PanelContainer
-class_name BatalhaSubmenuItens
+class_name BatalhaSubmenuExecutable
 
 @export var submenu_players: BatalhaSubmenuPlayers
+@export var submenu_inimigos: BatalhaSubmenuEnemies
 
 @onready var list: ItemList = $MarginContainer/HBoxContainer/ItemList
 @onready var item_label: Label = $MarginContainer/HBoxContainer/ItemLabel
@@ -11,8 +12,10 @@ var current_index: int = 0
 
 var last_index: int = -1
 var last_player: String = ""
+var last_inimigo: int = -1
 
-var itemslocais: Array[DataItem] = []
+var ExesLocais: Array[Executable] = []
+var playerLocais: PlayerData
 
 func _ready() -> void:
 	visible = false
@@ -35,14 +38,23 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	elif event.is_action_pressed("confirm"):
 		last_index = current_index
-		var item: DataItem = itemslocais[current_index]
-
-		if item.need_player:
-			set_process_unhandled_input(false)
-			last_player = await submenu_players.selecionar()
-			end()
-		else:
-			end()
+		var exe: Executable = ExesLocais[current_index]
+		if !exe.get_disponivel():
+			return
+		
+		match exe.needs:
+			Executable.NEED.Player:
+				set_process_unhandled_input(false)
+				last_player = await submenu_players.selecionar()
+				end()
+				
+			Executable.NEED.Enemie:
+				set_process_unhandled_input(false)
+				last_inimigo = await submenu_inimigos.get_inimigo()
+				end()
+				
+			Executable.NEED.None, _:
+				end()
 
 	elif event.is_action_pressed("cancel"):
 		_reset_result()
@@ -51,21 +63,25 @@ func _unhandled_input(event: InputEvent) -> void:
 func _reset_result() -> void:
 	last_index = -1
 	last_player = ""
+	last_inimigo = -1
 
 func _focus_item() -> void:
 	list.select(current_index, true)
 	list.ensure_current_is_visible()
-	var item: DataItem = itemslocais[current_index]
-	item_label.text = item.descricao
+	var exe: Executable = ExesLocais[current_index]
+	item_label.text = exe.descricao
 
-func atualizar_itemlist(custom_items: Array = []) -> void:
+func atualizar_itemlist(Exes: Array[Executable]) -> void:
 	list.clear()
-	itemslocais = custom_items if not custom_items.is_empty() else Manager.get_Inventory().get_in_items_batalha()
+	for exe in Exes:
+		if exe:
+			list.add_item(exe.Nome, exe.icone)
 
-	for item in itemslocais:
-		list.add_item(item.nome, item.icone)
-
-func itemsIvt() -> Dictionary:
+func get_Executable(player: PlayerData) -> Dictionary:
+	playerLocais = player
+	ExesLocais = player.get_Executables()
+	atualizar_itemlist(ExesLocais)
+	
 	selecting = true
 	current_index = 0
 	_focus_item()
@@ -83,7 +99,7 @@ func itemsIvt() -> Dictionary:
 	set_process_unhandled_input(false)
 	visible = false
 
-	return { "index": last_index, "player": last_player }
+	return { "index": last_index, "player": last_player, "inimigo": last_inimigo }
 
 func end() -> void:
 	selecting = false

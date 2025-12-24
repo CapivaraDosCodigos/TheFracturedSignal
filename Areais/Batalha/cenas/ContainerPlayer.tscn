@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4i7d4j4sgiva"]
+[gd_scene load_steps=27 format=3 uid="uid://c4i7d4j4sgiva"]
 
 [ext_resource type="Script" uid="uid://b33cjhsccjqk8" path="res://Areais/Batalha/scripts/panel_player_simples.gd" id="1_srdai"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_olg25"]
@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="7_olg25"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu_itens.gd" id="8_8r4q0"]
 [ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://texture/folderTres/theme_BATALHA.tres" id="9_e0j8l"]
-[ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/cenas/batalha_submenu_enemies.gd" id="10_e0j8l"]
+[ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/scripts/batalha_submenu_enemies.gd" id="10_e0j8l"]
 [ext_resource type="PackedScene" uid="uid://e5vh8ni8ulhb" path="res://Areais/Batalha/cenas/inimigoButtao.tscn" id="11_3vpe8"]
+[ext_resource type="Script" uid="uid://caiby2lvrcodw" path="res://Areais/Batalha/scripts/BatalhaSubmenuPlayers.gd" id="13_c1poc"]
+[ext_resource type="Script" uid="uid://dua2jkxyih01c" path="res://Areais/Batalha/scripts/ExecutableMenu.gd" id="15_d35g0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5qq5"]
 
@@ -61,6 +63,8 @@ region = Rect2(176, 0, 16, 16)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -771.0
+offset_bottom = -412.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -293,7 +297,7 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="MRC" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="ACT" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -302,7 +306,7 @@ theme_override_constants/separation = 0
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/MRC"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ACT"]
 visible = false
 z_index = 1
 custom_minimum_size = Vector2(0, 16)
@@ -311,7 +315,7 @@ texture = ExtResource("7_olg25")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="MRC" type="Button" parent="VBoxContainer/HBoxActions/MRC"]
+[node name="ACT" type="Button" parent="VBoxContainer/HBoxActions/ACT"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -327,7 +331,7 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="itensMenu" type="PanelContainer" parent="."]
+[node name="itensMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("submenu_players")]
 unique_name_in_owner = true
 visible = false
 z_index = 9
@@ -335,6 +339,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_rwiij")
 script = ExtResource("8_8r4q0")
+submenu_players = NodePath("../playerMenu")
 metadata/_custom_type_script = "uid://c2dkrc2m800uw"
 
 [node name="MarginContainer" type="MarginContainer" parent="itensMenu"]
@@ -362,26 +367,50 @@ fixed_icon_size = Vector2i(32, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("5_3vpe8")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ListPlayer" type="VBoxContainer" parent="itensMenu"]
+[node name="ExecutableMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("submenu_players", "submenu_inimigos")]
+unique_name_in_owner = true
 visible = false
+z_index = 9
 layout_mode = 2
-theme_override_constants/separation = -2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_rwiij")
+script = ExtResource("15_d35g0")
+submenu_players = NodePath("../playerMenu")
+submenu_inimigos = NodePath("../inimigosMenu")
+metadata/_custom_type_script = "uid://dua2jkxyih01c"
 
-[node name="Player1" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="ExecutableMenu"]
 layout_mode = 2
-size_flags_vertical = 1
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="Player2" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="ExecutableMenu/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
 
-[node name="Player3" parent="itensMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
-unique_name_in_owner = true
+[node name="ItemList" type="ItemList" parent="ExecutableMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme = ExtResource("9_e0j8l")
+icon_scale = 1.6
+fixed_icon_size = Vector2i(32, 16)
+
+[node name="ItemLabel" type="Label" parent="ExecutableMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_3vpe8")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="inimigosMenu" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -408,6 +437,35 @@ layout_mode = 2
 size_flags_vertical = 1
 
 [node name="Inimigo3" parent="inimigosMenu/VBoxContainer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="playerMenu" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 9
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_rwiij")
+script = ExtResource("13_c1poc")
+metadata/_custom_type_script = "uid://caiby2lvrcodw"
+
+[node name="ListPlayer" type="VBoxContainer" parent="playerMenu"]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Player1" parent="playerMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Player2" parent="playerMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Player3" parent="playerMenu/ListPlayer" instance=ExtResource("11_3vpe8")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1

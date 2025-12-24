@@ -62,6 +62,7 @@ _data = {
 layer = 100
 script = ExtResource("1_n1wl8")
 musica = 0.0
+efeito = 0.0
 
 [node name="Node" parent="." instance=ExtResource("2_te5ci")]
 

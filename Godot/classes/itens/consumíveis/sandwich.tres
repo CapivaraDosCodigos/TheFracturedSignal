@@ -10,7 +10,6 @@ region = Rect2(160, 528, 16, 16)
 [resource]
 script = ExtResource("2_7ur3f")
 cura = 1000
-need_player = true
 nome = "sandwich"
 preco = 30
 descricao = "pão"

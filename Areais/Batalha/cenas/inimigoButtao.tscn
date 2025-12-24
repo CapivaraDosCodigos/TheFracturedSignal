@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://e5vh8ni8ulhb"]
 
 [ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://texture/folderTres/theme_BATALHA.tres" id="1_b2k8i"]
-[ext_resource type="Script" uid="uid://dbgc6uf2jgajf" path="res://Areais/Batalha/cenas/InimigoButton.gd" id="2_1vh1s"]
+[ext_resource type="Script" uid="uid://dbgc6uf2jgajf" path="res://Areais/Batalha/scripts/InimigoButton.gd" id="2_1vh1s"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_ysiwp"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="3_1vh1s"]
 [ext_resource type="Texture2D" uid="uid://itt3ms8j2g85" path="res://texture/PNG/icon/ambição com bordas.png" id="5_ysiwp"]

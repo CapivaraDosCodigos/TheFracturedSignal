@@ -12,9 +12,8 @@ func _ready() -> void:
 	visible = false
 	current_index = 0
 	set_process_unhandled_input(false)
-	
-func get_inimigo(inimigos_custom: Dictionary[int, EnemiesBase2D]) -> int:
-	inimigos = inimigos_custom.values()
+
+func get_inimigo() -> int:
 	if inimigos.is_empty():
 		return -1
 	
@@ -23,7 +22,6 @@ func get_inimigo(inimigos_custom: Dictionary[int, EnemiesBase2D]) -> int:
 	set_process_unhandled_input(true)
 	current_index = 0
 	
-	_atualizar_inimigos()
 	_focus_button()
 
 	while ativo:
@@ -63,7 +61,8 @@ func end() -> void:
 	ativo = false
 	visible = false
 
-func _atualizar_inimigos() -> void:
+func atualizar_inimigos(inimigos_custom: Dictionary[int, EnemiesBase2D]) -> void:
+	inimigos = inimigos_custom.values()
 	for b in buttaos:
 		b.visible = false
 	

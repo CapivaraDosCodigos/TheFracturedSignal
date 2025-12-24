@@ -4,12 +4,13 @@ extends Resource
 
 const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
 
-
 @export var Exp: int = 0
 
-@export_group("GamePLayer")
+@export_group("Visual")
 @export var Nome: String = "Player"
 @export var Icone: Texture
+
+@export_group("PackedScenes")
 @export_file("*.*tscn") var PlayerBatalhaPath: String = ""
 @export_file("*.*tscn") var ObjectPlayerPath: String = ""
 
@@ -18,10 +19,12 @@ const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/Cal
 @export var armorE: ItemArmadura
 @export var weaponsE: ItemArma
 
-@export_subgroup("EXEs", "EXE")
+@export_group("EXEs", "EXE")
+@export var EXE_Inventory_Executables: Array[Executable]
 @export var EXE_slot_1: Executable
 @export var EXE_slot_2: Executable
 @export var EXE_slot_3: Executable
+@export var EXE_slot_4: Executable
 
 var Life: int = 100:
 	set(value):
@@ -44,6 +47,9 @@ func _init() -> void:
 	if InventoryPlayer == null:
 		InventoryPlayer = Inventory.new()
 
+func _to_string() -> String:
+	return Nome
+
 func update_properties() -> void:
 	Lv = Calculator.calcular_level(Exp)
 	
@@ -60,8 +66,19 @@ func update_properties() -> void:
 	maxdamage = Calculator.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
 	mindamage = Calculator.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
+func apply_damage(dano: int) -> void:
+	var reducao = log(defense + 1.0) / 10.0
+	var dano_final = int(dano * (1.0 - reducao))
+	if isDefesa:
+		dano_final = int(dano_final * 0.5)
+	Life -= dano_final
+
 func reset() -> void:
 	Life = maxlife
+
+func get_Executables() -> Array[Executable]:
+	var Exes: Array[Executable] = [EXE_slot_1, EXE_slot_2, EXE_slot_3, EXE_slot_4]
+	return Exes.filter(func(value): return value != null)
 
 func equip_armor(inv: Inventory, slot: int) -> void:
 	if not inv._is_slot_valid(slot): return
@@ -100,13 +117,3 @@ func unequip_weapon(inv: Inventory) -> void:
 	if slot == -1: return
 	inv.set_item(weaponsE, slot)
 	weaponsE = null
-
-func apply_damage(dano_base: int) -> void:
-	var reducao = log(defense + 1.0) / 10.0
-	var dano_final = int(dano_base * (1.0 - reducao))
-	if isDefesa:
-		dano_final = int(dano_final * 0.5)
-	Life -= dano_final
-
-func _to_string() -> String:
-	return Nome

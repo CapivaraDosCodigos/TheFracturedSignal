@@ -2,7 +2,6 @@
 class_name Batalha2D
 extends Node2D
 
-
 #region vars
 
 const MAX_ENENINES: int = 3
@@ -32,6 +31,7 @@ var jogador_atual: String = ""
 var concentration_points_visual: float = 0.0
 var concentration_points: int = 0
 var current_index: int = 0
+var shift: int = 0
 
 var selecao_finalizada: bool = false
 var selecao_ativa: bool = false
@@ -39,10 +39,9 @@ var submenu_ativo: bool = false
 
 #endregion
 
-
 func _ready() -> void:
-	concentration_points_visual = concentration_points
-	points_progress_bar.value = concentration_points_visual
+	#concentration_points_visual = concentration_points
+	#points_progress_bar.value = concentration_points_visual
 	
 	while batalha.inimigos.size() > MAX_ENENINES:
 		batalha.inimigos.pop_back()
@@ -76,14 +75,14 @@ func _process(delta: float) -> void:
 			_iniciar_selecao()
 		
 		last_state = state
-		
+	
 	if last_state == Manager.GameState.BATTLE_MENU and state != Manager.GameState.BATTLE_MENU:
 		cp_delta_por_jogador.clear()
 
 	concentration_points_visual = lerp(concentration_points_visual, float(concentration_points), 8.0 * delta)
 
 	points_progress_bar.value = concentration_points_visual
-	$BatalhaCanvas/Control/PointsProgressBar/Label.text = str(round(concentration_points_visual))
+	$BatalhaCanvas/Control/Label.text = str(round(concentration_points_visual))
 	
 	if verificar_dead():
 		dead_batalha()
@@ -92,7 +91,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not selecao_ativa or selecao_finalizada:
 		return
 	
-	var container: ContainerPlayer = _get_container_do_jogador(jogador_atual)
+	var container: ContainerPlayer = _get_container_player(jogador_atual)
 	if not container:
 		return
 	
@@ -117,6 +116,8 @@ func _iniciar_selecao() -> void:
 	selecao_ativa = true
 	selecao_finalizada = false
 	current_index = 0
+	shift += 1
+	print(shift)
 	
 	selecoes.clear()
 	submenu_resultados.clear()
@@ -125,27 +126,50 @@ func _iniciar_selecao() -> void:
 	
 	itens_locais = Manager.get_Inventory().get_in_items_batalha().duplicate(true)
 
-	for p in Manager.PlayersAtuais.values():
-		p.isDefesa = false
+	for player in Manager.PlayersAtuais.values():
+		player.isDefesa = false
 
 	jogador_atual = proximo_jogador_valido(0)
 	_focus_container_atual()
 
 func _abrir_submenu(act: String) -> void:
-	var container: ContainerPlayer = _get_container_do_jogador(jogador_atual)
+	var container: ContainerPlayer = _get_container_player(jogador_atual)
 	if not container: return
 	
 	match act:
-	
-		"DEF", "EXE", "MRC":
+		"DEF", "ACT":
 			_confirmar_acao(act)
 	
 		"ATK":
 			submenu_ativo = true
-			var res: int = await container.inimigos_menu.get_inimigo(enemiesNodes)
+			container.inimigos_menu.atualizar_inimigos(enemiesNodes)
+			var res: int = await container.inimigos_menu.get_inimigo()
 			if res >= 0:
 				submenu_resultados[jogador_atual] = res
 				_confirmar_acao(act, res)
+			container.fechar_submenus()
+			submenu_ativo = false
+	
+		"EXE":
+			submenu_ativo = true
+			if PlayersDIR[jogador_atual].get_Executables().is_empty():
+				container.fechar_submenus()
+				submenu_ativo = false
+				_focus_container_atual()
+				return
+			
+			container.inimigos_menu.atualizar_inimigos(enemiesNodes)
+			container.player_menu.atualizar_players(PlayersDIR.values())
+			var result: Dictionary = await container.executable_menu.get_Executable(PlayersDIR[jogador_atual])
+			if result["index"] >= 0:
+				var exe: Executable = PlayersDIR[jogador_atual].get_Executables().get(result["index"])
+				submenu_resultados[jogador_atual] = {
+					"exe": exe,
+					"player": result["player"],
+					"inimigo": result["inimigo"]
+				}
+				_confirmar_acao(act)
+
 			container.fechar_submenus()
 			submenu_ativo = false
 	
@@ -156,18 +180,23 @@ func _abrir_submenu(act: String) -> void:
 				submenu_ativo = false
 				_focus_container_atual()
 				return
-	
+				
 			container.itens_menu.atualizar_itemlist(itens_locais)
-			var result: Dictionary = await container.itens_menu.itemsIvt(PlayersDIR.values())
-	
+			container.player_menu.atualizar_players(PlayersDIR.values())
+			
+			var result: Dictionary = await container.itens_menu.itemsIvt()
 			if result["index"] >= 0 and result["index"] < itens_locais.size():
 				var item: DataItem = itens_locais[result["index"]]
-				submenu_resultados[jogador_atual] = {"item": item, "player": result["player"]}
+				submenu_resultados[jogador_atual] = {
+					"item": item,
+					"player": result["player"],
+					"index": result["index"]
+				}
 				itens_usados_temp[jogador_atual] = item
 				itens_locais.erase(item)
 				container.itens_menu.atualizar_itemlist(itens_locais)
 				_confirmar_acao(act)
-	
+
 			container.fechar_submenus()
 			submenu_ativo = false
 
@@ -180,11 +209,18 @@ func _confirmar_acao(nome: String, _extra = null) -> void:
 			var ganho: int = min(10, 100 - concentration_points)
 			if ganho > 0:
 				_aplicar_concentration_temporario(jogador_atual, ganho)
+				
+		"EXE":
+			var resut: Dictionary = submenu_resultados[jogador_atual]
+			var exe: Executable = resut["exe"]
+			exe.coprando()
 
-		"MRC":
+		"ACT":
 			if concentration_points < 20:
 				return
 			_aplicar_concentration_temporario(jogador_atual, -20)
+		
+		
 
 	selecoes[jogador_atual] = nome
 
@@ -216,17 +252,26 @@ func _cancelar_jogador_anterior() -> void:
 	if idx <= 0 or selecao_finalizada:
 		return
 	
-	var ant: String = player_keys[idx - 1]
-	
-	while idx > 0 and deve_pular_jogador(ant):
+	var jogador_cancelado: String = player_keys[idx - 1]
+	while idx > 0 and deve_pular_jogador(jogador_cancelado):
 		idx -= 1
-		ant = player_keys[idx]
+		jogador_cancelado = player_keys[idx]
 	
-	jogador_atual = ant
-	
-	if cp_delta_por_jogador.has(jogador_atual):
-		_reverter_concentration_temporario(jogador_atual)
-	
+	if submenu_resultados.has(jogador_cancelado):
+		var dado = submenu_resultados[jogador_cancelado]
+		if typeof(dado) == TYPE_DICTIONARY and dado.has("item"):
+			var item: DataItem = dado["item"]
+			var index_original: int = dado.get("index", itens_locais.size())
+			index_original = clamp(index_original, 0, itens_locais.size())
+			itens_locais.insert(index_original, item)
+			
+		submenu_resultados.erase(jogador_cancelado)
+		itens_usados_temp.erase(jogador_cancelado)
+		selecoes.erase(jogador_cancelado)
+		
+	if cp_delta_por_jogador.has(jogador_cancelado):
+		_reverter_concentration_temporario(jogador_cancelado)
+	jogador_atual = jogador_cancelado
 	_focus_container_atual()
 
 func _focus_container_atual() -> void:
@@ -237,7 +282,7 @@ func _focus_container_atual() -> void:
 	if idx >= 0 and idx < containers_players.size():
 		containers_players[idx].set_focus(true)
 
-func _get_container_do_jogador(key: String) -> ContainerPlayer:
+func _get_container_player(key: String) -> ContainerPlayer:
 	var idx: int = player_keys.find(key)
 
 	if idx >= 0 and idx < containers_players.size():
@@ -247,7 +292,7 @@ func _get_container_do_jogador(key: String) -> ContainerPlayer:
 
 func _fechar_submenu() -> void:
 	submenu_ativo = false
-	var cont: ContainerPlayer = _get_container_do_jogador(jogador_atual)
+	var cont: ContainerPlayer = _get_container_player(jogador_atual)
 	if cont:
 		cont.fechar_submenus()
 	_focus_container_atual()
@@ -282,7 +327,9 @@ func _act(act: String, key: String) -> void:
 		Manager.PlayersAtuais[key].isDefesa = true
 	
 	elif act == "EXE":
-		pass
+		var resut: Dictionary = submenu_resultados[key]
+		var exe: Executable = resut["exe"]
+		exe.executar()
 	
 	elif act == "ITM":
 		if not submenu_resultados.has(key):
@@ -295,12 +342,12 @@ func _act(act: String, key: String) -> void:
 		item_usado.usar(submenu_resultados[key].get("player"))
 	
 		Manager.get_Inventory().remove_for_item(item_usado)
-		var container := _get_container_do_jogador(key)
+		var container :ContainerPlayer = _get_container_player(key)
 		if container:
 			container.itens_menu.atualizar_itemlist()
 	
-	elif act == "MRC":
-			end_batalha(false)
+	elif act == "ACT":
+		end_batalha(false)
 
 func _aplicar_concentration_temporario(jogador: String, valor: int) -> void:
 	concentration_points = clamp(concentration_points + valor, 0, 100)
@@ -320,7 +367,7 @@ func _reverter_concentration_temporario(jogador: String) -> void:
 
 func proximo_jogador_valido(inicio: int) -> String:
 	for i in range(inicio, player_keys.size()):
-		var key := player_keys[i]
+		var key: String = player_keys[i]
 
 		if not Manager.PlayersAtuais.has(key):
 			continue
@@ -346,10 +393,11 @@ func verificar_dead() -> bool:
 
 func end_batalha(enemie: bool = true) -> void:
 	if enemiesNodes.size() > 0 and enemie: return
-	await get_tree().create_timer(2.0).timeout
+	#await get_tree().create_timer(2.0).timeout
 	Manager.tocar_musica()
 	set_process(false)
 	batalha.dungeons2D.end_batalha.emit()
+	Manager.CurrentBatalha = null
 	queue_free()
 
 func dead_batalha() -> void:
@@ -357,6 +405,7 @@ func dead_batalha() -> void:
 	Manager.tocar_musica()
 	set_process(false)
 	Manager.Game_Over()
+	Manager.CurrentBatalha = null
 	queue_free()
 
 func add_concentration_points(value: int) -> void:

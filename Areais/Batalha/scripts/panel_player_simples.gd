@@ -10,14 +10,16 @@ class_name ContainerPlayer
 @onready var h_box_actions: HBoxContainer = %HBoxActions
 @onready var itens_menu: BatalhaSubmenuItens = %itensMenu
 @onready var inimigos_menu: BatalhaSubmenuEnemies = %inimigosMenu
-@onready var actions: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %MRC ]
+@onready var executable_menu: BatalhaSubmenuExecutable = %ExecutableMenu
+@onready var player_menu: BatalhaSubmenuPlayers = %playerMenu
+@onready var actions: Array[Control] = [ %ATK, %ITM, %EXE, %DEF, %ACT ]
 
 var action_display_names: Dictionary[String, String] = {
 	"ATK": "Atacar",
 	"ITM": "Item",
 	"EXE": "Executar",
 	"DEF": "Defender",
-	"MRC": "Poupar" }
+	"MRC": "Agir" }
 var isfocus: bool = false
 var current_index: int = 0
 
@@ -93,9 +95,12 @@ func get_current_action_name() -> String:
 func fechar_submenus() -> void:
 	itens_menu.end()
 	inimigos_menu.end()
+	player_menu.end()
+	executable_menu.end()
 
 func get_submenu(menu: String) -> Node:
 	match menu:
 		"ITM": return itens_menu
 		"ATK": return inimigos_menu
+		"EXE": return executable_menu
 		_: return null
