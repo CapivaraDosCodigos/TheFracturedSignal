@@ -1,7 +1,7 @@
 extends Node
 class_name SpawnProjeteis
 
-@export var bala: PackedScene
+@export var bala: PackedScene  
 @export var makers: Array[Vector2]
 @export var numero_de_balas: int = 1
 @export var espera: float = 1.0

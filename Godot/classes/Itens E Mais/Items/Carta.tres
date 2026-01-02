@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DataItem" load_steps=4 format=3 uid="uid://bbxepni1dhfyo"]
+
+[ext_resource type="Texture2D" uid="uid://pntubgklq1ly" path="res://texture/objetos/items/free preview.png" id="1_mv4kj"]
+[ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/Itens E Mais/Items/DataItem.gd" id="1_u2eu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxdi6"]
+atlas = ExtResource("1_mv4kj")
+region = Rect2(48, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_u2eu3")
+nome = "Carta"
+icone = SubResource("AtlasTexture_vxdi6")
+preco = -1
+metadata/_custom_type_script = "uid://oan0jvd28y7r"

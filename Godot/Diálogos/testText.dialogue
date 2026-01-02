@@ -40,3 +40,14 @@ Roberto: você sabe pq tu sou modelo 3d?
 Roberto: isso nem faz sentido
 Zeno: complicado isso aí
 => DialogueResource/Map
+
+~ Flower
+do Manager.change_state("DIALOGUE")
+do Manager.DialogoTexture("res://texture/characters/inimigos/flore.png")
+Flower: Oi amigo
+Flower: Eu estou aqui so pra cobrir tabela
+Flower: Estamos com falta de personagens
+Zeno: Vagabundagem isso ai
+Flower: Pois nao eh?
+do Manager.DialogoTexture()
+=> DialogueResource/Map

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://cd53fp8qruq48"]
+
+[ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/Itens E Mais/Items/DataItem.gd" id="1_1ras7"]
+[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/Itens E Mais/armaduras/óculos_simples.tres" id="1_ma64n"]
+[ext_resource type="Resource" uid="uid://bohkkwf5y2kmp" path="res://Godot/classes/Itens E Mais/consumíveis/sandwich.tres" id="2_36n3i"]
+[ext_resource type="Resource" uid="uid://cs5wv0rc184y3" path="res://Godot/classes/Itens E Mais/consumíveis/cafe.tres" id="3_kh168"]
+[ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/Itens E Mais/Inventorys/Inventory.gd" id="5_ma64n"]
+[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/Itens E Mais/armas/Signal_Weapon.tres" id="5_qmuw0"]
+
+[resource]
+script = ExtResource("5_ma64n")
+items = Array[ExtResource("1_1ras7")]([ExtResource("5_qmuw0"), ExtResource("3_kh168"), ExtResource("2_36n3i"), ExtResource("3_kh168"), ExtResource("2_36n3i"), ExtResource("1_ma64n"), ExtResource("2_36n3i"), ExtResource("2_36n3i"), ExtResource("2_36n3i"), ExtResource("3_kh168")])
+limite = 10
+name = "Zeno"
+metadata/_custom_type_script = "uid://cmfwq25tt8fwe"

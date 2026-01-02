@@ -12,12 +12,13 @@ titles = {
 "DialogueResource/Batalha": "-10",
 "DialogueResource/BatalhaMenu": "-6",
 "DialogueResource/Map": "-14",
+"Flower": "44",
 "Roberto": "37",
 "blublu": "10",
 "comercio": "24",
 "start": "4"
 }
-character_names = PackedStringArray("Sistema Interno", "Desconhecido", "Blu blu", "Lila", "Roberto", "Zeno")
+character_names = PackedStringArray("Sistema Interno", "Desconhecido", "Blu blu", "Lila", "Roberto", "Zeno", "Flower")
 first_title = "3"
 lines = {
 "-1": {
@@ -543,10 +544,92 @@ lines = {
 },
 "43": {
 &"id": "43",
-&"is_snippet": false,
-&"next_id": "end",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "44",
+&"type": "title"
+},
+"44": {
+&"id": "44",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "change_state",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 24,
+&"type": &"string",
+&"value": "DIALOGUE"
+}, {
+&"i": 34,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "45",
+&"type": "mutation"
+},
+"45": {
+&"id": "45",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "DialogoTexture",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 26,
+&"type": &"string",
+&"value": "res://texture/characters/inimigos/flore.png"
+}, {
+&"i": 71,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "46",
+&"type": "mutation"
+},
+"46": {
+&"character": "Flower",
+&"id": "46",
+&"next_id": "47",
+&"text": "Oi amigo",
+&"type": "dialogue"
+},
+"47": {
+&"character": "Flower",
+&"id": "47",
+&"next_id": "48",
+&"text": "Eu estou aqui so pra cobrir tabela",
+&"type": "dialogue"
+},
+"48": {
+&"character": "Flower",
+&"id": "48",
+&"next_id": "49",
+&"text": "Estamos com falta de personagens",
+&"type": "dialogue"
+},
+"49": {
+&"character": "Zeno",
+&"id": "49",
+&"next_id": "50",
+&"text": "Vagabundagem isso ai",
+&"type": "dialogue"
 },
 "5": {
 &"character": "Sistema Interno",
@@ -554,6 +637,56 @@ lines = {
 &"next_id": "6",
 &"text": "parece só uma parede[next=auto]",
 &"type": "dialogue"
+},
+"50": {
+&"character": "Flower",
+&"id": "50",
+&"next_id": "51",
+&"text": "Pois nao eh?",
+&"type": "dialogue"
+},
+"51": {
+&"id": "51",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Manager"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"function": "DialogoTexture",
+&"i": 11,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "52",
+&"type": "mutation"
+},
+"52": {
+&"id": "52",
+&"is_snippet": false,
+&"next_id": "-14",
+&"next_id_after": "",
+&"type": "goto"
+},
+"53": {
+&"id": "53",
+&"next_id": "54",
+&"type": ""
+},
+"54": {
+&"id": "54",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "6": {
 &"character": "Sistema Interno",
@@ -621,6 +754,17 @@ do Manager.change_state(\"DIALOGUE\")
 Roberto: você sabe pq tu sou modelo 3d?
 Roberto: isso nem faz sentido
 Zeno: complicado isso aí
+=> DialogueResource/Map
+
+~ Flower
+do Manager.change_state(\"DIALOGUE\")
+do Manager.DialogoTexture(\"res://texture/characters/inimigos/flore.png\")
+Flower: Oi amigo
+Flower: Eu estou aqui so pra cobrir tabela
+Flower: Estamos com falta de personagens
+Zeno: Vagabundagem isso ai
+Flower: Pois nao eh?
+do Manager.DialogoTexture()
 => DialogueResource/Map
 "
 metadata/dialogue_manager_version = "3.7.1"

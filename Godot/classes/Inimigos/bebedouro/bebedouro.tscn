@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="1_sc6bt"]
 [ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
-[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="4_tyq3r"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://Resources/materials/SAVE.tres" id="4_tyq3r"]
 [ext_resource type="Script" uid="uid://cdr1vpvtwnywr" path="res://Godot/classes/Inimigos/SpawnProjeteis.gd" id="5_k5ax6"]
 [ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/effects/attack 1 .png" id="5_rsb1r"]
-[ext_resource type="PackedScene" uid="uid://bic33s886bpyf" path="res://Areais/Batalha/cenas/balabebedouro1.tscn" id="6_htrfx"]
-[ext_resource type="PackedScene" uid="uid://dvqm0erxe80w4" path="res://Areais/Batalha/cenas/balabebedouro2.tscn" id="7_2jc4c"]
+[ext_resource type="PackedScene" uid="uid://bic33s886bpyf" path="res://Godot/classes/Inimigos/bebedouro/Bala1.tscn" id="6_htrfx"]
+[ext_resource type="PackedScene" uid="uid://dvqm0erxe80w4" path="res://Godot/classes/Inimigos/bebedouro/Bala2.tscn" id="7_2jc4c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
 atlas = ExtResource("1_y5qht")
@@ -67,7 +67,9 @@ sprite_frames = SubResource("SpriteFrames_adxu8")
 frame_progress = 0.556025
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
-time = 15.0
+life = 75
+maxlife = 75
+time = 10.0
 spawns = [NodePath("SpawnProjeteis"), NodePath("SpawnProjeteis2")]
 metadata/_custom_type_script = "uid://kjhutov44bdn"
 

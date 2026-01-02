@@ -4,9 +4,8 @@ class_name DataBatalha
 @export var inimigos: Array[PackedScene]
 @export_file("*.*dialogue") var dialogo: String
 @export var start_dialogo: String
-@export_file("*.*ogg", "*.*mp3") var caminho: String
-@export_range(0.0, 100.0) var volume: float = 100.0
-@export var loop: bool = true
+@export var DataAudio: DataAudioPlayer
+var id: String = ""
 
 var dungeons2D: Dungeons2D
 

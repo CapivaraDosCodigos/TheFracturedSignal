@@ -1,5 +1,5 @@
 @tool
-@icon("res://texture/folderTres/texturas/player.tres")
+@icon("res://Resources/texturas/player.tres")
 class_name ObjectPlayer2D extends CharacterBody2D
 
 @export var speed: float = 70.0
@@ -59,7 +59,7 @@ func _player_physics(_delta: float) -> void:
 	if can.has_method("set_priority"):
 		can.priority = 10
 	#
-	if Manager.Menu.menu:
+	if Manager.isState("MENU"):
 		_update_animation(Vector2.ZERO)
 		return
 	

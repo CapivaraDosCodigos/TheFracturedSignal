@@ -1,15 +1,12 @@
 extends Control
 
-const PATH_MUSIC: String = "res://sons/music/audio_story.ogg"
-
 @onready var botoes: Array[ButtonUI] = [ %inicia1, %inicia2, %inicia3, %inicia4, %inicia5 ] 
 @onready var botoesDelete: Array[ButtonUI] = [ %deletar, %deletar2, %deletar3, %deletar4, %deletar5 ]
 
-var botaodelete: bool = false
 var botao_index: int = 0
 
 func _ready() -> void:
-	Manager.tocar_musica(PATH_MUSIC, 90)
+	Manager.tocar_musica(PathsMusic.AUDIO_STORY, 1)
 	Manager.change_state("NOT_IN_THE_GAME")
 	Global.play_transition("end_transition")
 	_atulizar()
@@ -55,10 +52,12 @@ func _on_deletar_5_pressed() -> void:
 	_deletar(5)
 
 func _start(slot: int) -> void:
+	Manager.tocar_musica(PathsMusic.INTRO_1, 2)
 	var duracao: float = Global.play_transition("start_transition")
 	await get_tree().create_timer(duracao).timeout
 	Manager.Start_Save(slot, 1)
 
 func _deletar(slot: int) -> void:
+	Manager.tocar_musica(PathsMusic.CANCEL, 2)
 	SaveData.Deletar(slot)
 	_atulizar()

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpe1p37pp5j35"]
+
+[ext_resource type="Script" uid="uid://c7vi5togrxhkg" path="res://Godot/classes/Nodes/NPC2D.gd" id="1_p8kxy"]
+[ext_resource type="Resource" uid="uid://b3lf3a0e0in8w" path="res://Godot/Diálogos/testText.dialogue" id="2_nppep"]
+[ext_resource type="Texture2D" uid="uid://cnfltn3x56dq7" path="res://texture/characters/inimigos/flore.png" id="3_p8kxy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nppep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p8kxy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8i7l"]
+radius = 10.5
+height = 23.0
+
+[node name="Flower" type="AnimatableBody2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_p8kxy")
+sprite = NodePath("AnimatedSprite")
+dialogue = ExtResource("2_nppep")
+start_dialogo = "Flower"
+metadata/_custom_type_script = "uid://c7vi5togrxhkg"
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -36)
+sprite_frames = SubResource("SpriteFrames_nppep")
+autoplay = "default"
+speed_scale = 2.0
+offset = Vector2(0, 36)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_a8i7l")
+debug_color = Color(0.621562, 0.529536, 0.189281, 0.42)

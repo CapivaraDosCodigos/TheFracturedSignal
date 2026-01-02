@@ -1,3 +1,4 @@
+@icon("res://Resources/texturas/global.tres")
 extends CanvasLayer
 
 const GLOBAl_PATH: String = "user://configures.tres"
@@ -9,22 +10,19 @@ const GLOBAl_PATH: String = "user://configures.tres"
 	set(value):
 		musica = value
 		set_volume("music", musica)
-		volume_changed.emit()
 
 @export_range(0.0, 100.0, 1) var efeito: float = 100:
 	set(value):
 		efeito = value
 		set_volume("effects", efeito)
-		volume_changed.emit()
 
 var configures: DataConf = DataConf.new()
-
-signal volume_changed
+var AllAudios: Array[AudioPlayer] = []
 
 func _ready() -> void:
-	Carregar_Arquivo()
-	set_volume("music", musica)
-	set_volume("effects", efeito)
+	configures = Carregar_Arquivo()
+	musica = configures.music
+	efeito = configures.sound_effects
 
 func Carregar_Arquivo() -> DataConf:
 	if not ResourceLoader.exists(GLOBAl_PATH):
@@ -34,6 +32,9 @@ func Carregar_Arquivo() -> DataConf:
 	return conf
 
 func Salvar_Arquivo() -> void:
+	configures.music = musica
+	configures.sound_effects = efeito
+	
 	var err := ResourceSaver.save(configures, GLOBAl_PATH)
 	if err != OK:
 		push_error("❌ Falha ao salvar. Código de erro: %s" % [err])
@@ -55,9 +56,9 @@ func Hello_OS() -> void:
 		"Web":
 			print("Welcome to the Web!")
 
-func Tocar_Musica(caminho: String = "", volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1, tipo: String = "music") -> void:
+func Tocar_Musica(DataAudio: DataAudioPlayer, canal: int = 1) -> void:
 	if audios.has(canal):
-		audios[canal].tocar(caminho, volume, loop, atraso, tipo)
+		audios[canal].tocar(DataAudio)
 	else:
 		push_warning("Canal %s inexistente!" % canal)
 
@@ -72,7 +73,8 @@ func set_volume(tipo: String, valor: float) -> void:
 			push_warning("⚠️ Tipo de volume desconhecido: " + tipo)
 			return
 	
-	emit_signal("volume_changed")
+	for audio: AudioPlayer in AllAudios:
+		audio.atualizar_volume()
 
 func play_transition(anim: String) -> float:
 	animation_global.play(anim)

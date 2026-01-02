@@ -1,21 +1,21 @@
 [gd_scene load_steps=27 format=3 uid="uid://c4i7d4j4sgiva"]
 
-[ext_resource type="Script" uid="uid://b33cjhsccjqk8" path="res://Areais/Batalha/scripts/panel_player_simples.gd" id="1_srdai"]
+[ext_resource type="Script" uid="uid://b33cjhsccjqk8" path="res://Areais/Batalha/scripts/ContainerPlayer.gd" id="1_srdai"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_olg25"]
-[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="2_rwiij"]
-[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://texture/folderTres/materials/SAVE.tres" id="3_8r4q0"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://Resources/BoxTexture/zeno.tres" id="2_rwiij"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://Resources/materials/SAVE.tres" id="3_8r4q0"]
 [ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="4_e0j8l"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="5_3vpe8"]
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="6_3og78"]
-[ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Characters/Players/scripts/menu/ContainerMenu.gd" id="6_8k4ry"]
-[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://texture/folderTres/BoxTexture/zeko.tres" id="7_8k4ry"]
+[ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Godot/Godot Scripts/menu/ContainerMenu.gd" id="6_8k4ry"]
+[ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://Resources/BoxTexture/zeko.tres" id="7_8k4ry"]
 [ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="7_olg25"]
-[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/batalha_submenu_itens.gd" id="8_8r4q0"]
-[ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://texture/folderTres/theme_BATALHA.tres" id="9_e0j8l"]
-[ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/scripts/batalha_submenu_enemies.gd" id="10_e0j8l"]
-[ext_resource type="PackedScene" uid="uid://e5vh8ni8ulhb" path="res://Areais/Batalha/cenas/inimigoButtao.tscn" id="11_3vpe8"]
+[ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/BatalhaSubmenuItens.gd" id="8_8r4q0"]
+[ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://Resources/folderTres/theme_BATALHA.tres" id="9_e0j8l"]
+[ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/scripts/BatalhaSubmenuEnemies.gd" id="10_e0j8l"]
+[ext_resource type="PackedScene" uid="uid://e5vh8ni8ulhb" path="res://Areais/Batalha/cenas/InimigoButton.tscn" id="11_3vpe8"]
 [ext_resource type="Script" uid="uid://caiby2lvrcodw" path="res://Areais/Batalha/scripts/BatalhaSubmenuPlayers.gd" id="13_c1poc"]
-[ext_resource type="Script" uid="uid://dua2jkxyih01c" path="res://Areais/Batalha/scripts/ExecutableMenu.gd" id="15_d35g0"]
+[ext_resource type="Script" uid="uid://dua2jkxyih01c" path="res://Areais/Batalha/scripts/BatalhaSubmenuExecutable.gd" id="15_d35g0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5qq5"]
 
@@ -162,19 +162,20 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -3
 
-[node name="ATK" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="ATK" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect", "ButtonContainer")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
+ButtonContainer = NodePath("ATK")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ATK"]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 texture = ExtResource("7_olg25")
 expand_mode = 1
@@ -196,19 +197,20 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="ITM" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="ITM" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect", "ButtonContainer")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
+ButtonContainer = NodePath("ITM")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ITM"]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 texture = ExtResource("7_olg25")
 expand_mode = 1
@@ -230,19 +232,20 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="EXE" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="EXE" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect", "ButtonContainer")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
+ButtonContainer = NodePath("EXE")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/EXE"]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 texture = ExtResource("7_olg25")
 expand_mode = 1
@@ -263,19 +266,20 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="DEF" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="DEF" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect", "ButtonContainer")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
+ButtonContainer = NodePath("DEF")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/DEF"]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 texture = ExtResource("7_olg25")
 expand_mode = 1
@@ -297,19 +301,20 @@ button_mask = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="ACT" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect")]
+[node name="ACT" type="VBoxContainer" parent="VBoxContainer/HBoxActions" node_paths=PackedStringArray("texture_rect", "ButtonContainer")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 1
-theme_override_constants/separation = 0
+theme_override_constants/separation = -3
 script = ExtResource("6_8k4ry")
 texture_rect = NodePath("TextureRect")
+ButtonContainer = NodePath("ACT")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ACT"]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 texture = ExtResource("7_olg25")
 expand_mode = 1
@@ -342,17 +347,12 @@ script = ExtResource("8_8r4q0")
 submenu_players = NodePath("../playerMenu")
 metadata/_custom_type_script = "uid://c2dkrc2m800uw"
 
-[node name="MarginContainer" type="MarginContainer" parent="itensMenu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="itensMenu"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/separation = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="itensMenu/MarginContainer"]
-layout_mode = 2
-
-[node name="ItemList" type="ItemList" parent="itensMenu/MarginContainer/HBoxContainer"]
+[node name="ItemList" type="ItemList" parent="itensMenu/HBoxContainer"]
+custom_minimum_size = Vector2(174.5, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -363,13 +363,41 @@ theme = ExtResource("9_e0j8l")
 icon_scale = 1.6
 fixed_icon_size = Vector2i(32, 16)
 
-[node name="ItemLabel" type="Label" parent="itensMenu/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="itensMenu/HBoxContainer"]
+custom_minimum_size = Vector2(165.5, 0)
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="itensMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="HPLabel" type="RichTextLabel" parent="itensMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("5_3vpe8")
-theme_override_font_sizes/font_size = 16
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_3vpe8")
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CPLabel" type="RichTextLabel" parent="itensMenu/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_3vpe8")
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemLabel" type="RichTextLabel" parent="itensMenu/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 74)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_3vpe8")
+bbcode_enabled = true
 
 [node name="ExecutableMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("submenu_players", "submenu_inimigos")]
 unique_name_in_owner = true
@@ -404,11 +432,10 @@ theme = ExtResource("9_e0j8l")
 icon_scale = 1.6
 fixed_icon_size = Vector2i(32, 16)
 
-[node name="ItemLabel" type="Label" parent="ExecutableMenu/MarginContainer/HBoxContainer"]
+[node name="ItemLabel" type="RichTextLabel" parent="ExecutableMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("5_3vpe8")
-theme_override_font_sizes/font_size = 16
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 

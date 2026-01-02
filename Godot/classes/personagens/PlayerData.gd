@@ -1,10 +1,17 @@
-@icon("res://texture/folderTres/texturas/player_png.tres")
+@icon("res://Resources/texturas/PlayerPng.tres")
 class_name PlayerData
 extends Resource
 
 const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
 
 @export var Exp: int = 0
+@export var Life: int = 100:
+	set(value):
+		Life = value
+		if Life < -999:
+			Life = -999
+@export var effects: Array[Effect] = []
+@export var blocked_actions: Array[String] = []
 
 @export_group("Visual")
 @export var Nome: String = "Player"
@@ -26,11 +33,8 @@ const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/Cal
 @export var EXE_slot_3: Executable
 @export var EXE_slot_4: Executable
 
-var Life: int = 100:
-	set(value):
-		Life = value
-		if Life < -999:
-			Life = -999
+var force_mult: float = 1.0
+var resistance_mult: float = 1.0
 var maxlife: int = 100
 var Lv: int = 1
 var attack: int = 1
@@ -63,15 +67,27 @@ func update_properties() -> void:
 	resource = Calculator.resource_calculator(Lv, extra_resource)
 	attack = Calculator.attack_calculator(Lv, extra_attack)
 	
-	maxdamage = Calculator.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack)
+	maxdamage = Calculator.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack, force_mult)
 	mindamage = Calculator.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
-func apply_damage(dano: int) -> void:
-	var reducao = log(defense + 1.0) / 10.0
+func apply_damage(dano: int, ignore: bool = false) -> void:
+	if ignore:
+		Life -= dano
+		return
+
+	var defesa_final: float = defense * resistance_mult
+	var reducao = log(defesa_final + 1.0) / 10.0
+
 	var dano_final = int(dano * (1.0 - reducao))
+
 	if isDefesa:
 		dano_final = int(dano_final * 0.5)
+
 	Life -= dano_final
+
+func apply_effects() -> void:
+	for effect in effects:
+		effect.sofrer(self)
 
 func reset() -> void:
 	Life = maxlife

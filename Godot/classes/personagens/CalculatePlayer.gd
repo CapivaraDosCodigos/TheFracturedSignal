@@ -36,22 +36,22 @@ func resource_calculator(level: int, extra: int) -> int:
 func attack_calculator(level: int, extra: int) -> int:
 	return signal_calculator(base_attack, growth_rate_attack, level, extra)
 
-func calcular_level(_exp: int) -> int:
+func calcular_level(expi: int) -> int:
 	var level = 1
 	var exp_need = base_sp
 	
-	while _exp >= exp_need:
-		_exp -= exp_need
+	while expi >= exp_need:
+		expi -= exp_need
 		level += 1
 		exp_need = int(exp_need * multiplier_sp)
 	
 	return level
 
-func calcular_max_damage(_damage: int, _extra: int, _strength: int) -> int:
-	return int((_damage + _extra) * (1.0 + _strength / 10.0))
+func calcular_max_damage(damage: int, extra: int, strength: int, multiple: float) -> int:
+	return int((damage + extra) * (1.0 + strength / 10.0) * multiple)
 
-func calcular_min_damage(_maxdamage: int, _damage: int, _extra: int) -> int:
-	var diff = _maxdamage - (_damage + _extra)
+func calcular_min_damage(maxdamage: int, damage: int, extra: int) -> int:
+	var diff = maxdamage - (damage + extra)
 	if diff <= 0:
 		return diff
 	return 0

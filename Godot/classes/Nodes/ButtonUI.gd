@@ -43,9 +43,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _mover_foco(principal: Control, alternativo: Control) -> void:
 	if principal != null and principal.visible:
+		Manager.tocar_musica(PathsMusic.MODERN_3, 3)
 		principal.grab_focus()
 		return
 	
 	if alternativo != null and alternativo.visible:
+		Manager.tocar_musica(PathsMusic.MODERN_3, 3)
 		alternativo.grab_focus()
 		return

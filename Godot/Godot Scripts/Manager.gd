@@ -2,14 +2,15 @@ extends Node
 
 #region variables
 
-enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME, SAVE_MENU }
-const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/SIMPLES_BATALHA.tscn")
+enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME, SAVE_MENU, MENU }
+const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn")
 
-@onready var audios: Dictionary[int , AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ }
+@onready var audios: Dictionary[int , AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ, 3: $AudioPlayer5 }
 @onready var fps_label: Label = %fps_label
 @onready var Menu: CanvasLayer = $MENU
 
 @export var current_status: GameState = GameState.MAP
+@export var Sound_Battle: DataAudioPlayer = DataAudioPlayer.new()
 
 var ObjectPlayer: ObjectPlayer2D = null
 var textureD: Texture = null
@@ -37,40 +38,44 @@ func test():
 
 func get_Player(nome: String = CurrentPlayerString) -> PlayerData:
 	if PlayersAtuais.has(nome):
+		PlayersAtuais[nome].update_properties()
 		return PlayersAtuais[nome]
 	push_error("Jogador '%s' não encontrado!" % nome)
 	return null
 
 func get_Inventory(nome: String = CurrentPlayerString) -> Inventory:
-	var player: PlayerData= get_Player(nome)
+	var player: PlayerData = get_Player(nome)
 	return player.InventoryPlayer if player != null else null
 
-func update_all_properties():
-	for player in PlayersAtuais.values():
-		player.update_properties()
-		player.reset()
+func change_state(estado: String, espera: float = 0.0) -> void:
+	estado = estado.strip_edges().to_upper()
 
-func change_state(nome_estado: String, espera: float = 0.0):
-	nome_estado = nome_estado.strip_edges().to_upper()
-
-	if nome_estado in GameStateString:
+	if GameStateString.has(estado):
 		if espera > 0:
 			await get_tree().create_timer(espera).timeout
-		current_status = GameState[nome_estado]
+		current_status = GameState[estado]
 	else:
-		push_warning("⚠️ Estado inválido: '%s'" % nome_estado)
+		push_warning("⚠️ Estado inválido: '%s'" % estado)
 
-func tocar_musica(caminho: String = "", volume: float = 100.0, loop: bool = true, atraso: float = 0.0, canal: int = 1, tipo: String = "music"):
+func isState(estado: String) -> bool:
+	estado = estado.strip_edges().to_upper()
+	if GameStateString.has(estado):
+		if current_status == GameState[estado]:
+			return true
+		return false
+	else:
+		push_warning("⚠️ Estado inválido: '%s'" % estado)
+		return false
+
+func tocar_musica(DataAudio: DataAudioPlayer, canal: int = 1) -> void:
 	if audios.has(canal):
-		audios[canal].tocar(caminho, volume, loop, atraso, tipo)
+		audios[canal].tocar(DataAudio)
 	else:
 		push_warning("Canal %s inexistente!" % canal)
 
 func StartBatalha(batalhaData: DataBatalha, pos: Vector2 = Vector2.ZERO):
 	var instBatalha: Batalha2D = BATALHA_SCENE.instantiate()
-	tocar_musica("res://sons/sounds/Deltarune - Sound Effect Battle Start Jingle(MP3_160K).mp3",
-		100, false, 0.0, 2, "effects")
-	
+	tocar_musica(Sound_Battle)
 	batalhaData.dungeons2D.iniciar_batalha()
 	instBatalha.batalha = batalhaData
 	instBatalha.global_position = pos
@@ -81,7 +86,7 @@ func DialogoTexture(texture: String = ""):
 	textureD = load(texture) if texture != "" else null
 
 func SAVE(slot: int):
-	update_all_properties()
+	_updatePlayers()
 	
 	Data.Extras = Extras
 	Data.CurrentScene = CurrentScene
@@ -104,8 +109,8 @@ func Start_Save(slot: int, temporada: int, debug: bool = false):
 	CurrentTemporada = temporada
 
 	print(PlayersAtuais)
-	update_all_properties()
-
+	_updatePlayers()
+	
 	if not debug:
 		get_tree().change_scene_to_packed(CurrentScene)
 
@@ -134,17 +139,28 @@ func InGameIsTrue():
 
 func _process(_delta):
 	fps_label.text = "FPS: %s | Estado: %s | slot: %s" % [Engine.get_frames_per_second(), GameStateString[current_status], CurrentSlot]
-
+	
+	_updatePlayers()
+	
 	if raio:
 		if Input.is_action_just_pressed("confirm") and raio.is_colliding():
 			Body = raio.get_collider()
 		else:
 			Body = null
 
+func _updatePlayers():
+	for player in PlayersAtuais.values():
+		player.update_properties()
+
 func _clear(slotON: bool = false):
 	Data = null
 	Extras = null
 	CurrentScene = null
+	CurrentBatalha = null
+	ObjectPlayer = null
+	textureD = null
+	raio = null
+	Body = null
 	CurrentPlayerString = ""
 	PlayersAtuais.clear()
 

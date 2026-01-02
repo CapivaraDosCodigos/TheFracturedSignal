@@ -1,3 +1,7 @@
+DataAudioPlayer
+AudioStream
+DataItem
+Effect
 Executable
 CalculatePlayer
 PlayerData
@@ -7,5 +11,4 @@ SpriteFrames
 ItemArma
 ItemArmadura
 ItemConsumivel
-DataItem
 DialogueResource

@@ -1,0 +1,622 @@
+[gd_scene load_steps=41 format=3 uid="uid://bu38qgxh4wq1i"]
+
+[ext_resource type="Script" uid="uid://bs6qxum1hhhbm" path="res://Godot/Godot Scripts/menu/menu.gd" id="1_jm1s2"]
+[ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_iae25"]
+[ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Godot/Godot Scripts/menu/ContainerMenu.gd" id="3_jm1s2"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://Resources/BoxTexture/zeno.tres" id="4_djm01"]
+[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="4_jm1s2"]
+[ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Godot/Godot Scripts/menu/inventory_menu.gd" id="6_6pk31"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="6_ru2aa"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_ausow"]
+[ext_resource type="Texture2D" uid="uid://opcr61y2gmer" path="res://texture/PNG/funds/Ram Deco All.png" id="9_uevak"]
+[ext_resource type="Script" uid="uid://b1uvtvif0pg8j" path="res://Godot/Godot Scripts/menu/SubMenuBase.gd" id="10_rk2fv"]
+[ext_resource type="Texture2D" uid="uid://dxqofff42ffwr" path="res://icon.svg" id="10_uevak"]
+[ext_resource type="Script" uid="uid://dbhbkxqhdj4xc" path="res://Godot/Godot Cenas/equipment_menu.gd" id="11_fldv3"]
+[ext_resource type="Script" uid="uid://b5pydke1gg5le" path="res://Godot/classes/Nodes/ButtonUI.gd" id="13_gkhfh"]
+[ext_resource type="FontFile" uid="uid://cf6tfynp8qcsu" path="res://texture/font/at01.ttf" id="13_l44dq"]
+[ext_resource type="Script" uid="uid://7gjasejyr8j" path="res://Godot/Godot Cenas/settings_menu.gd" id="13_vx6ok"]
+[ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://Resources/BoxTexture/intro.tres" id="15_771do"]
+[ext_resource type="Texture2D" uid="uid://itt3ms8j2g85" path="res://texture/PNG/icon/ambição com bordas.png" id="17_us1wh"]
+[ext_resource type="Texture2D" uid="uid://ct03heo8t2yc8" path="res://texture/PNG/icon/233686.png" id="17_vx6ok"]
+[ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="18_771do"]
+[ext_resource type="Script" uid="uid://chq8ro3atu5f6" path="res://Godot/Godot Cenas/HSliderUI.gd" id="19_7dnvh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uevak"]
+texture = ExtResource("2_iae25")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(256, 448, 64, 64)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jm1s2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru2aa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqdtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og32f"]
+atlas = ExtResource("6_ru2aa")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iae25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru2aa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm3rk"]
+atlas = ExtResource("6_ru2aa")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eahv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgwpq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxsed"]
+atlas = ExtResource("6_ru2aa")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdql4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywl0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uow6m"]
+atlas = ExtResource("6_ru2aa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5mvp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxsed"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5mvp"]
+texture = ExtResource("9_uevak")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(128, 192, 64, 64)
+modulate_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_771do"]
+atlas = ExtResource("17_vx6ok")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dnvh"]
+texture = ExtResource("18_771do")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(48, 48, 48, 16)
+modulate_color = Color(0.23, 0.23, 0.23, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_771do"]
+texture = ExtResource("18_771do")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(112, 80, 32, 16)
+modulate_color = Color(0.44, 0.44, 0.44, 1)
+
+[node name="MENU" type="CanvasLayer"]
+script = ExtResource("1_jm1s2")
+
+[node name="UI_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="NinePatchRect" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer"]
+clip_children = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_uevak")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="inventory" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="inventory" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jm1s2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ru2aa")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory/inventory/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_og32f")
+stretch_mode = 5
+
+[node name="equipment" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="equipment" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iae25")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ru2aa")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/equipment"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment/equipment/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_mm3rk")
+stretch_mode = 5
+
+[node name="status" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="status" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eahv2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgwpq")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/status"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status/status/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rxsed")
+stretch_mode = 5
+
+[node name="settings" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" node_paths=PackedStringArray("texture_rect")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+script = ExtResource("3_jm1s2")
+texture_rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+texture = ExtResource("4_jm1s2")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="settings" type="Button" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme_override_styles/normal = ExtResource("4_djm01")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hdql4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ywl0t")
+button_mask = 0
+icon = SubResource("AtlasTexture_jqdtj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings/settings/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_uow6m")
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI_menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="InventoryMenu" type="Control" parent="UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("6_6pk31")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelItems" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer"]
+clip_children = 2
+custom_minimum_size = Vector2(710, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_uevak")
+
+[node name="ItemList" type="ItemList" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer/PanelItems"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
+theme_override_colors/font_selected_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_colors/font_outline_color = Color(0.21293521, 0.21293521, 0.21293521, 1)
+theme_override_colors/guide_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+theme_override_constants/outline_size = 12
+theme_override_constants/line_separation = 100
+theme_override_constants/icon_margin = 8
+theme_override_fonts/font = ExtResource("8_ausow")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k5mvp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rxsed")
+theme_override_styles/selected = SubResource("StyleBoxTexture_k5mvp")
+text_overrun_behavior = 0
+item_count = 5
+max_columns = 3
+same_column_width = true
+fixed_column_width = 194
+icon_scale = 1.6
+fixed_icon_size = Vector2i(16, 16)
+item_0/text = "oiiiik"
+item_0/icon = ExtResource("10_uevak")
+item_1/text = "oiiii9ikdwd"
+item_1/icon = ExtResource("10_uevak")
+item_2/text = "oiiii9ikdwd"
+item_2/icon = ExtResource("10_uevak")
+item_3/text = "oiiii9ikdwd"
+item_3/icon = ExtResource("10_uevak")
+item_4/text = "oiiii9ikdwd"
+item_4/icon = ExtResource("10_uevak")
+
+[node name="PanelDescricao" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer"]
+clip_children = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_uevak")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer/PanelDescricao"]
+layout_mode = 2
+
+[node name="RichTextItem" type="RichTextLabel" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer/PanelDescricao/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("8_ausow")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+scroll_active = false
+
+[node name="RichTextDescricao" type="RichTextLabel" parent="UI_menu/VBoxContainer/MarginContainer2/InventoryMenu/MarginContainer/HBoxContainer/PanelDescricao/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("8_ausow")
+bbcode_enabled = true
+scroll_active = false
+
+[node name="EquipmentMenu" type="Control" parent="UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("11_fldv3")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="StatusMenu" type="Control" parent="UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("10_rk2fv")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="SettingsMenu" type="Control" parent="UI_menu/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("13_vx6ok")
+metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="PanelItems" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer"]
+clip_children = 2
+custom_minimum_size = Vector2(710, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_uevak")
+
+[node name="ContainerButtons" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems"]
+layout_mode = 2
+
+[node name="VoltarAoTitulo" type="Button" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons" node_paths=PackedStringArray("control_top", "control_bottom")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 3
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("15_771do")
+theme_override_styles/focus = ExtResource("4_djm01")
+text = "Voltar ao Titulo"
+expand_icon = true
+script = ExtResource("13_gkhfh")
+control_top = NodePath(".")
+control_bottom = NodePath("../Sons")
+metadata/_custom_type_script = "uid://b5pydke1gg5le"
+
+[node name="Sons" type="Button" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons" node_paths=PackedStringArray("control_top")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 3
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("15_771do")
+theme_override_styles/focus = ExtResource("4_djm01")
+text = "Sons"
+expand_icon = true
+script = ExtResource("13_gkhfh")
+control_top = NodePath("../VoltarAoTitulo")
+metadata/_custom_type_script = "uid://b5pydke1gg5le"
+
+[node name="ContainerSons" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ContainerMusica" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("17_us1wh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+text = "Musica"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica" type="HSlider" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica" node_paths=PackedStringArray("texture", "label", "control_bottom")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_mode = 1
+focus_behavior_recursive = 2
+theme_override_icons/grabber = SubResource("AtlasTexture_771do")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_771do")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_771do")
+theme_override_icons/tick = SubResource("AtlasTexture_771do")
+theme_override_styles/slider = SubResource("StyleBoxTexture_7dnvh")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_771do")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_771do")
+value = 100.0
+editable = false
+scrollable = false
+ticks_position = 3
+script = ExtResource("19_7dnvh")
+text = "Musica %d"
+texture = NodePath("../TextureRect")
+label = NodePath("../PanelContainer/Label")
+control_bottom = NodePath("../../ContainerEfeito/efeitos sonoros")
+
+[node name="ContainerEfeito" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("17_us1wh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+text = "Musica"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="efeitos sonoros" type="HSlider" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito" node_paths=PackedStringArray("texture", "label", "control_top")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_mode = 1
+focus_behavior_recursive = 2
+theme_override_icons/grabber = SubResource("AtlasTexture_771do")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_771do")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_771do")
+theme_override_icons/tick = SubResource("AtlasTexture_771do")
+theme_override_styles/slider = SubResource("StyleBoxTexture_7dnvh")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_771do")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_771do")
+value = 100.0
+editable = false
+scrollable = false
+ticks_position = 3
+script = ExtResource("19_7dnvh")
+text = "Efeitos Sonoros %d"
+texture = NodePath("../TextureRect")
+label = NodePath("../PanelContainer/Label")
+control_top = NodePath("../../ContainerMusica/musica")
+
+[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/VoltarAoTitulo" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_voltar_ao_titulo_pressed"]
+[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/Sons" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_sons_pressed"]
+[connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/musica" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_musica_value_changed"]
+[connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/efeitos sonoros" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_efeitos_sonoros_value_changed"]

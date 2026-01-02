@@ -8,9 +8,9 @@
 [ext_resource type="FontFile" uid="uid://b056rcdsyltht" path="res://texture/font/Mojangles.ttf" id="5_v42gu"]
 [ext_resource type="Script" uid="uid://sxqj8grp2l78" path="res://addons/dialogue_manager/example_balloon/texture_rect.gd" id="7_83g4i"]
 [ext_resource type="Texture2D" uid="uid://bjc7fwmqhjoko" path="res://texture/PNG/bordas UI/Default/Transparent border/panel-transparent-border-001.png" id="8_v42gu"]
-[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://texture/folderTres/BoxTexture/example_balloon.tres" id="8_wqs7j"]
+[ext_resource type="StyleBox" uid="uid://b04crvegsktm7" path="res://Resources/BoxTexture/example_balloon.tres" id="8_wqs7j"]
 [ext_resource type="Script" uid="uid://b0qugynm4r7l2" path="res://addons/dialogue_manager/example_balloon/Container_Response.gd" id="9_wbrl0"]
-[ext_resource type="Material" uid="uid://c0q1ahwqu3qem" path="res://texture/folderTres/materials/preto_&_branco.tres" id="10_83g4i"]
+[ext_resource type="Material" uid="uid://c0q1ahwqu3qem" path="res://Resources/materials/preto_&_branco.tres" id="10_83g4i"]
 [ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="10_wbrl0"]
 [ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="11_wbrl0"]
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemArma" load_steps=3 format=3 uid="uid://djvpkc34hd5r7"]
+
+[ext_resource type="Script" uid="uid://dlf8fsn8nuxag" path="res://Godot/classes/Itens E Mais/armas/ItemArma.gd" id="1_itcqd"]
+[ext_resource type="Texture2D" uid="uid://cywm7dhsr06cp" path="res://texture/objetos/Ranitayas Guns Pack (16+ pixelart guns)/Pistols/3Pistol03.png" id="1_ll8v3"]
+
+[resource]
+script = ExtResource("1_itcqd")
+nome = "Signal Weapon"
+preco = 5
+icone = ExtResource("1_ll8v3")
+metadata/_custom_type_script = "uid://dlf8fsn8nuxag"

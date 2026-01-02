@@ -6,8 +6,6 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 @export_group("EnemiesStarts")
 @export var life: int = 30
 @export var maxlife: int = 30
-@export var strength: int = 1
-@export var defense: int = 1
 @export_range(0, 100, 1) var merce: float = 0
 @export_range(0.0, 30.0, 0.1) var time: float = 5.0
 @export var poupavel: bool = true
@@ -44,10 +42,8 @@ func poupado() -> void:
 func atacar() -> void:
 	spawns.pick_random().spawn(rootobjeto, time)
 
-func apply_damage(dano_base: int) -> void:
-	var reducao = defense / (defense + 1.0)
-	var dano_final = int(dano_base * (1.0 - reducao))
-	life -= dano_final
+func apply_damage(dano: int) -> void:
+	life -= dano
 
 func _on_animation_finished() -> void:
 	if animation == "dead" and animation == "dead":

@@ -1,0 +1,315 @@
+[gd_scene load_steps=14 format=3 uid="uid://c2on6jae8ynix"]
+
+[ext_resource type="Script" uid="uid://2i0hddkuq4tj" path="res://Areais/Batalha/scripts/Batalha2D.gd" id="1_70dkh"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://Resources/materials/BATALHA.tres" id="2_hwfyg"]
+[ext_resource type="Texture2D" uid="uid://dhso7bk8h4wuw" path="res://texture/paleta/Screenshot_30-600x600.png" id="3_333nv"]
+[ext_resource type="Script" uid="uid://dsslpkdcvssk1" path="res://Areais/Batalha/scripts/personagens.gd" id="4_ewv1s"]
+[ext_resource type="PackedScene" uid="uid://by72qrtpqld7j" path="res://Areais/Batalha/cenas/BattleArenaControl.tscn" id="5_xk5k1"]
+[ext_resource type="PackedScene" uid="uid://c4i7d4j4sgiva" path="res://Areais/Batalha/cenas/ContainerPlayer.tscn" id="6_n8fcj"]
+[ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="7_1glvl"]
+[ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_bjm6l"]
+
+[sub_resource type="Animation" id="Animation_nt1gt"]
+resource_name = "E_panel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 485), Vector2(0, 408)]
+}
+
+[sub_resource type="Animation" id="Animation_h7tth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_fq6de"]
+resource_name = "S_panel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BATTLE_ARENA:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BATTLE_ARENA:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 408), Vector2(0, 485)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_exe_atacar"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nt1gt"]
+_data = {
+&"E_panel": SubResource("Animation_nt1gt"),
+&"RESET": SubResource("Animation_h7tth"),
+&"S_panel": SubResource("Animation_fq6de")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76unj"]
+atlas = ExtResource("7_1glvl")
+region = Rect2(73, 6, 41, 3)
+
+[node name="Batalha2D" type="Node2D"]
+script = ExtResource("1_70dkh")
+metadata/_custom_type_script = "uid://2i0hddkuq4tj"
+
+[node name="AnimationPanel" type="AnimationPlayer" parent="."]
+root_node = NodePath("../BatalhaCanvas")
+libraries = {
+&"": SubResource("AnimationLibrary_nt1gt")
+}
+
+[node name="BatalhaCanvas" type="CanvasLayer" parent="."]
+layer = 0
+metadata/_edit_vertical_guides_ = [256.0]
+
+[node name="FundoRect" type="TextureRect" parent="BatalhaCanvas"]
+material = ExtResource("2_hwfyg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_333nv")
+expand_mode = 1
+
+[node name="Personagens" type="Node2D" parent="BatalhaCanvas"]
+scale = Vector2(4, 4)
+script = ExtResource("4_ewv1s")
+metadata/_custom_type_script = "uid://dsslpkdcvssk1"
+
+[node name="player1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(72, 56)
+
+[node name="player2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(32, 32)
+
+[node name="player3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(32, 80)
+
+[node name="inimigo1" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(216, 56)
+
+[node name="inimigo2" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(256, 32)
+
+[node name="inimigo3" type="Marker2D" parent="BatalhaCanvas/Personagens"]
+position = Vector2(256, 80)
+
+[node name="Control" type="Control" parent="BatalhaCanvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BATTLE_ARENA" parent="BatalhaCanvas/Control" instance=ExtResource("5_xk5k1")]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 432.0
+offset_top = 111.0
+offset_right = 576.0
+offset_bottom = 255.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control"]
+z_index = 5
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = -16.0
+offset_top = 540.0
+offset_right = 1136.0
+offset_bottom = 672.00073
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BatalhaCanvas/Control/MarginContainer"]
+z_index = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ContainerPlayer1" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer" instance=ExtResource("6_n8fcj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="ContainerPlayer2" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer" instance=ExtResource("6_n8fcj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="ContainerPlayer3" parent="BatalhaCanvas/Control/MarginContainer/HBoxContainer" instance=ExtResource("6_n8fcj")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(381, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="PointsNinePatchRect" type="NinePatchRect" parent="BatalhaCanvas/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 368.0
+offset_right = 100.0
+offset_bottom = 376.0
+rotation = -1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("7_1glvl")
+region_rect = Rect2(135, 20, 52, 7)
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="PointsMarginContainer" type="MarginContainer" parent="BatalhaCanvas/Control/PointsNinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PointsProgressBar" type="TextureProgressBar" parent="BatalhaCanvas/Control/PointsNinePatchRect/PointsMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_right = 3
+stretch_margin_bottom = 2
+texture_progress = SubResource("AtlasTexture_76unj")
+
+[node name="Label" type="Label" parent="BatalhaCanvas/Control"]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 0, 0.26666668, 1)
+theme_override_colors/font_shadow_color = Color(0.64705884, 0.21568628, 0.2627451, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("8_bjm6l")
+theme_override_font_sizes/font_size = 64
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

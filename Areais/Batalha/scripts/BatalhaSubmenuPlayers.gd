@@ -4,9 +4,9 @@ class_name BatalhaSubmenuPlayers
 @onready var botoes: Array[InimigoButton] = [ %Player1, %Player2, %Player3 ]
 
 var players_dis: Array[PlayerData] = []
-var current_index := 0
-var selecting := false
-var last_player := ""
+var current_index: int = 0
+var selecting: bool = false
+var last_player: String = ""
 
 func _ready() -> void:
 	visible = false
@@ -35,18 +35,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("Down"):
+		Manager.tocar_musica(PathsMusic.MODERN_3, 2)
 		current_index = (current_index + 1) % players_dis.size()
 		_focus_button()
 
 	elif event.is_action_pressed("Up"):
+		Manager.tocar_musica(PathsMusic.MODERN_3, 2)
 		current_index = (current_index - 1 + players_dis.size()) % players_dis.size()
 		_focus_button()
 
 	elif event.is_action_pressed("confirm"):
+		Manager.tocar_musica(PathsMusic.MODERN_9, 3)
 		last_player = players_dis[current_index].Nome
 		end()
 
 	elif event.is_action_pressed("cancel"):
+		Manager.tocar_musica(PathsMusic.CANCEL, 3)
 		last_player = ""
 		end()
 

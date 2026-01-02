@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cm7cbajfhi5k1" path="res://Godot/Godot Scripts/Global.gd" id="1_n1wl8"]
 [ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="2_te5ci"]
-[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/audio_player.gd" id="3_f4k0t"]
+[ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/AudioPlayer.gd" id="3_f4k0t"]
 
 [sub_resource type="Animation" id="Animation_5rqxo"]
 length = 0.001
@@ -61,8 +61,6 @@ _data = {
 [node name="Global" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_n1wl8")
-musica = 0.0
-efeito = 0.0
 
 [node name="Node" parent="." instance=ExtResource("2_te5ci")]
 

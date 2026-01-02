@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=4 format=3 uid="uid://ss4w0anoxktl"]
+
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="1_mi3c8"]
+[ext_resource type="Script" uid="uid://cioncjdbh77k8" path="res://Godot/classes/Itens E Mais/effects/Effects.gd" id="1_olfjs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3bfx"]
+atlas = ExtResource("1_mi3c8")
+region = Rect2(16, 1072, 16, 16)
+
+[resource]
+script = ExtResource("1_olfjs")
+duracao = 5
+Nome = "Paralisia"
+icone = SubResource("AtlasTexture_e3bfx")
+descricao = "Paralisia não permite o ataque"
+tipos = 3
+dano = 5
+blocked_actions = Array[String](["ATK", "EXE", "ACT"])
+metadata/_custom_type_script = "uid://cioncjdbh77k8"

@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://nqf65ba8dfqg"]
 
-[ext_resource type="Texture2D" uid="uid://r7l18620ockm" path="res://texture/PNG/Default/Panel/panel-000.png" id="3_436f3"]
-[ext_resource type="Texture2D" uid="uid://c62y5t03daplf" path="res://texture/PNG/Default/Border/panel-border-000.png" id="4_bcos8"]
-[ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://texture/PNG/tilemap_packed.png" id="5_cmsyx"]
-[ext_resource type="Texture2D" uid="uid://0js0tewruw13" path="res://texture/PNG/Default/Panel/panel-008.png" id="6_feppd"]
-[ext_resource type="Texture2D" uid="uid://2hscw2vj7nvc" path="res://texture/PNG/Default/Border/panel-border-008.png" id="7_aeaoo"]
-[ext_resource type="Texture2D" uid="uid://ppm8h6yqhbt0" path="res://texture/PNG/Default/Panel/panel-016.png" id="8_sps8e"]
-[ext_resource type="Texture2D" uid="uid://be085m57y7g8q" path="res://texture/PNG/Default/Border/panel-border-016.png" id="9_bnlop"]
-[ext_resource type="Texture2D" uid="uid://ctppp385maids" path="res://texture/PNG/Default/Panel/panel-020.png" id="10_oaeeq"]
-[ext_resource type="Texture2D" uid="uid://cxn4r53tyc6r1" path="res://texture/PNG/Default/Border/panel-border-020.png" id="11_ey15c"]
+[ext_resource type="Texture2D" uid="uid://r7l18620ockm" path="res://texture/PNG/bordas UI/Default/Panel/panel-000.png" id="3_436f3"]
+[ext_resource type="Texture2D" uid="uid://c62y5t03daplf" path="res://texture/PNG/bordas UI/Default/Border/panel-border-000.png" id="4_bcos8"]
+[ext_resource type="Texture2D" uid="uid://ctutr7jovxxm6" path="res://texture/PNG/icon/tilemap_packed.png" id="5_cmsyx"]
+[ext_resource type="Texture2D" uid="uid://0js0tewruw13" path="res://texture/PNG/bordas UI/Default/Panel/panel-008.png" id="6_feppd"]
+[ext_resource type="Texture2D" uid="uid://2hscw2vj7nvc" path="res://texture/PNG/bordas UI/Default/Border/panel-border-008.png" id="7_aeaoo"]
+[ext_resource type="Texture2D" uid="uid://ppm8h6yqhbt0" path="res://texture/PNG/bordas UI/Default/Panel/panel-016.png" id="8_sps8e"]
+[ext_resource type="Texture2D" uid="uid://be085m57y7g8q" path="res://texture/PNG/bordas UI/Default/Border/panel-border-016.png" id="9_bnlop"]
+[ext_resource type="Texture2D" uid="uid://ctppp385maids" path="res://texture/PNG/bordas UI/Default/Panel/panel-020.png" id="10_oaeeq"]
+[ext_resource type="Texture2D" uid="uid://cxn4r53tyc6r1" path="res://texture/PNG/bordas UI/Default/Border/panel-border-020.png" id="11_ey15c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylfkn"]
 atlas = ExtResource("5_cmsyx")

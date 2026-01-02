@@ -6,6 +6,8 @@ class_name DataExtras extends Resource
 ## Lista de desbloqueios do jogador (strings que representam chaves únicas).
 @export var desbloqueios: Array[String] = []
 
+@export var EnemiesVistos: Array[String] = []
+
 ## Lista de cenas já visualizadas pelo jogador.
 @export var cenas_vistas: Array[String] = []
 

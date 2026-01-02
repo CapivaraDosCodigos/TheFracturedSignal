@@ -1,4 +1,4 @@
-@icon("res://texture/folderTres/texturas/npc.tres")
+@icon("res://Resources/texturas/npc.tres")
 extends ObjectDialogue2D
 class_name npc2D
 

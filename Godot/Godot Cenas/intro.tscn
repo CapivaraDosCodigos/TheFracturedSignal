@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://cwcyxp7jea15x"]
 
-[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://texture/folderTres/materials/BATALHA.tres" id="1_ry48r"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://Resources/materials/BATALHA.tres" id="1_ry48r"]
 [ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="2_nyooo"]
 [ext_resource type="FontFile" uid="uid://d300w44j3djpe" path="res://texture/font/m5x7.ttf" id="3_r86ht"]
 [ext_resource type="Script" uid="uid://bcabr674wkilu" path="res://Godot/Godot Scripts/intro2.gd" id="4_ry48r"]
 [ext_resource type="Texture2D" uid="uid://cmesx6notnna4" path="res://texture/PNG/bordas UI/fundoprovisório.png" id="5_bqs7j"]
-[ext_resource type="Texture2D" uid="uid://ekh2ult7cdhj" path="res://texture/folderTres/texturas/intro.tres" id="7_bqs7j"]
+[ext_resource type="Texture2D" uid="uid://ekh2ult7cdhj" path="res://Resources/texturas/intro.tres" id="7_bqs7j"]
 [ext_resource type="FontFile" uid="uid://cf6tfynp8qcsu" path="res://texture/font/at01.ttf" id="7_nx36f"]
-[ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://texture/folderTres/BoxTexture/intro.tres" id="9_4n26g"]
-[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://texture/folderTres/BoxTexture/zeno.tres" id="10_cy7ck"]
+[ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://Resources/BoxTexture/intro.tres" id="9_4n26g"]
+[ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://Resources/BoxTexture/zeno.tres" id="10_cy7ck"]
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="11_7k7oo"]
 [ext_resource type="Script" uid="uid://b5pydke1gg5le" path="res://Godot/classes/Nodes/ButtonUI.gd" id="11_nyooo"]
 
