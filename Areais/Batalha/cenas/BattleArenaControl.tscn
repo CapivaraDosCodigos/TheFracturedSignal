@@ -59,34 +59,26 @@ z_index = 1
 position = Vector2(72.000015, 72)
 
 [node name="Static2D" type="StaticBody2D" parent="."]
-collision_layer = 8
-collision_mask = 9
+collision_layer = 128
+collision_mask = 160
 
 [node name="Shape2D" type="CollisionShape2D" parent="Static2D"]
-visible = false
 position = Vector2(0, -7)
 shape = SubResource("SegmentShape2D_7ig8w")
 
 [node name="Shape2D2" type="CollisionShape2D" parent="Static2D"]
-visible = false
 position = Vector2(9, 129.5)
 shape = SubResource("SegmentShape2D_py3aq")
 
 [node name="Shape2D3" type="CollisionShape2D" parent="Static2D"]
-visible = false
 position = Vector2(-3.5, 126)
 rotation = -1.57079
 shape = SubResource("SegmentShape2D_fq6de")
 
 [node name="Shape2D4" type="CollisionShape2D" parent="Static2D"]
-visible = false
 position = Vector2(115.5, 128)
 rotation = -1.57079
 shape = SubResource("SegmentShape2D_h7tth")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Static2D"]
-visible = false
-polygon = PackedVector2Array(0, 0, 144, 0, 144, 4, 0, 4)
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

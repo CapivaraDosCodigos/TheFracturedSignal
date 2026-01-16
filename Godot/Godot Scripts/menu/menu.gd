@@ -22,8 +22,10 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
+		Manager.tocar_musica(PathsMusic.MODERN_5, 2)
 		if Manager.isState("MAP"):
 			_abrir_menu()
+		
 		elif Manager.isState("MENU"):
 			_fechar_menu()
 		return
@@ -37,11 +39,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("Right"):
-		current_index = (current_index + 1) % buttons.size()
+		current_index = min(current_index + 1, buttons.size() - 1)
 		_focus_current_panel()
 
 	elif event.is_action_pressed("Left"):
-		current_index = (current_index - 1 + buttons.size()) % buttons.size()
+		current_index = max(current_index - 1, 0)
 		_focus_current_panel()
 
 	elif event.is_action_pressed("confirm"):
@@ -55,6 +57,7 @@ func _process(_delta: float) -> void:
 
 func _abrir_menu() -> void:
 	Manager.change_state("MENU")
+	Manager.tocar_musica(PathsMusic.MODERN_9, 2)
 	ui_menu.visible = true
 	current_index = 0
 	_focus_current_panel()
@@ -63,13 +66,14 @@ func _fechar_menu() -> void:
 	_fechar_submenu()
 	ui_menu.visible = false
 	Manager.change_state("MAP")
+	Manager.tocar_musica(PathsMusic.CANCEL, 2)
 
 func _focus_current_panel() -> void:
-	if not buttons.is_empty():
-		await get_tree().process_frame
-		buttons[current_index].grab_focus()
-		for submenu in submenus:
-			submenu.fechar()
+	await get_tree().process_frame
+	Manager.tocar_musica(PathsMusic.MODERN_3, 3)
+	buttons[current_index].grab_focus()
+	for submenu in submenus:
+		submenu.fechar()
 
 func _abrir_submenu(button: Control) -> void:
 	submenu_ativo = true

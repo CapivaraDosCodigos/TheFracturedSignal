@@ -3,6 +3,7 @@ class_name PlayerData
 extends Resource
 
 const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
+enum Souls { Empty = 1, Hope = 2, Ambition = 3}
 
 @export var Exp: int = 0
 @export var Life: int = 100:
@@ -10,8 +11,12 @@ const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/Cal
 		Life = value
 		if Life < -999:
 			Life = -999
+@export var Soul: Souls = Souls.Empty
+
+@export_group("Array's")
 @export var effects: Array[Effect] = []
 @export var blocked_actions: Array[String] = []
+@export var hidden_actions: Array[String] = []
 
 @export_group("Visual")
 @export var Nome: String = "Player"

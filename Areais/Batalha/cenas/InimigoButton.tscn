@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dbgc6uf2jgajf" path="res://Areais/Batalha/scripts/InimigoButton.gd" id="2_1vh1s"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_ysiwp"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="3_1vh1s"]
-[ext_resource type="Texture2D" uid="uid://itt3ms8j2g85" path="res://texture/PNG/icon/ambição com bordas.png" id="5_ysiwp"]
+[ext_resource type="Texture2D" uid="uid://coebsgftmwiva" path="res://texture/PNG/icon/almas/alma branca.png" id="4_ekw22"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qwlhx"]
 texture = ExtResource("2_ysiwp")
@@ -67,10 +67,11 @@ layout_mode = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
-texture = ExtResource("5_ysiwp")
+texture = ExtResource("4_ekw22")
 expand_mode = 1
 stretch_mode = 3
 

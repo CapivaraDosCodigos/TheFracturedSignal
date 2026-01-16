@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="6_3og78"]
 [ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Godot/Godot Scripts/menu/ContainerMenu.gd" id="6_8k4ry"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://Resources/BoxTexture/zeko.tres" id="7_8k4ry"]
-[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="7_olg25"]
+[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almas/almaanimetionambicao.tres" id="7_olg25"]
 [ext_resource type="Script" uid="uid://c2dkrc2m800uw" path="res://Areais/Batalha/scripts/BatalhaSubmenuItens.gd" id="8_8r4q0"]
 [ext_resource type="Theme" uid="uid://b1cv61ghjk7ko" path="res://Resources/folderTres/theme_BATALHA.tres" id="9_e0j8l"]
 [ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/scripts/BatalhaSubmenuEnemies.gd" id="10_e0j8l"]
@@ -174,6 +174,7 @@ ButtonContainer = NodePath("ATK")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ATK"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
@@ -209,6 +210,7 @@ ButtonContainer = NodePath("ITM")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ITM"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
@@ -244,6 +246,7 @@ ButtonContainer = NodePath("EXE")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/EXE"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
@@ -278,6 +281,7 @@ ButtonContainer = NodePath("DEF")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/DEF"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
@@ -312,7 +316,7 @@ texture_rect = NodePath("TextureRect")
 ButtonContainer = NodePath("ACT")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxActions/ACT"]
-visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2

@@ -13,5 +13,8 @@ class_name DataConf extends Resource
 ## Se verdadeiro, o jogo executa automaticamente (auto-run).
 @export var auto_run: bool = false
 
+## Se verdadeiro, mostra o fps na tela.
+@export var fps_bool: bool = false
+
 ## Idioma selecionado no jogo (por padrão "pt").
 @export var idioma: String = "pt"

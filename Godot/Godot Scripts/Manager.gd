@@ -9,24 +9,24 @@ const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.t
 @onready var fps_label: Label = %fps_label
 @onready var Menu: CanvasLayer = $MENU
 
-@export var current_status: GameState = GameState.MAP
-@export var Sound_Battle: DataAudioPlayer = DataAudioPlayer.new()
-
-var ObjectPlayer: ObjectPlayer2D = null
-var textureD: Texture = null
-var raio: RayCast2D = null
-var Body: Node = null
+@export var CurrentStatus: GameState = GameState.MAP
 
 var PlayersAtuais: Dictionary[String, PlayerData] = {}
 
-var GameStateString := GameState.keys()
+var GameStateString: Array = GameState.keys()
 
+var NodeVariant: Node
+var textureD: Texture
+var raio: RayCast2D
+var Body: Node
+
+var ObjectPlayer: ObjectPlayer2D
 var CurrentBatalha: Batalha2D
-var CurrentScene: PackedScene
 var Data: SeasonResource
 var Extras: DataExtras
 
 var CurrentPlayerString: String = ""
+var CurrentScene: String = ""
 var CurrentTemporada: int = 1
 var CurrentSlot: int = 0
 var InGame: bool = false
@@ -34,7 +34,7 @@ var InGame: bool = false
 #endregion
 
 func test():
-	get_Player().InventoryPlayer.add_item(Database.SIGNAL_WEAPON)
+	get_Player().InventoryPlayer.add_item(ContainerItems.SIGNAL_WEAPON)
 
 func get_Player(nome: String = CurrentPlayerString) -> PlayerData:
 	if PlayersAtuais.has(nome):
@@ -53,14 +53,14 @@ func change_state(estado: String, espera: float = 0.0) -> void:
 	if GameStateString.has(estado):
 		if espera > 0:
 			await get_tree().create_timer(espera).timeout
-		current_status = GameState[estado]
+		CurrentStatus = GameState[estado]
 	else:
 		push_warning("⚠️ Estado inválido: '%s'" % estado)
 
 func isState(estado: String) -> bool:
 	estado = estado.strip_edges().to_upper()
 	if GameStateString.has(estado):
-		if current_status == GameState[estado]:
+		if CurrentStatus == GameState[estado]:
 			return true
 		return false
 	else:
@@ -75,7 +75,7 @@ func tocar_musica(DataAudio: DataAudioPlayer, canal: int = 1) -> void:
 
 func StartBatalha(batalhaData: DataBatalha, pos: Vector2 = Vector2.ZERO):
 	var instBatalha: Batalha2D = BATALHA_SCENE.instantiate()
-	tocar_musica(Sound_Battle)
+	tocar_musica(PathsMusic.SOUND_EFFECT_BATTLE_START_JINGLE)
 	batalhaData.dungeons2D.iniciar_batalha()
 	instBatalha.batalha = batalhaData
 	instBatalha.global_position = pos
@@ -86,12 +86,14 @@ func DialogoTexture(texture: String = ""):
 	textureD = load(texture) if texture != "" else null
 
 func SAVE(slot: int):
-	_updatePlayers()
+	await get_tree().process_frame
+	for player in PlayersAtuais.values():
+		player.update_properties()
 	
 	Data.Extras = Extras
 	Data.CurrentScene = CurrentScene
 	Data.CurrentPlayer = CurrentPlayerString
-	Data.PlayersAtuais = PlayersAtuais.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	Data.PlayersAtuais = PlayersAtuais#.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	SaveData.Salvar(slot, Data)
 
@@ -104,15 +106,18 @@ func Start_Save(slot: int, temporada: int, debug: bool = false):
 	CurrentScene = Data.CurrentScene
 	CurrentPlayerString = Data.CurrentPlayer
 	PlayersAtuais = Data.PlayersAtuais
-
 	CurrentSlot = slot
 	CurrentTemporada = temporada
 
-	print(PlayersAtuais)
-	_updatePlayers()
+	#print(PlayersAtuais)
+	for player in PlayersAtuais.values():
+		player.update_properties()
 	
 	if not debug:
-		get_tree().change_scene_to_packed(CurrentScene)
+		if CurrentScene:
+			get_tree().change_scene_to_file(CurrentScene)
+		else:
+			get_tree().change_scene_to_file(Data.StartScene)
 
 	InGame = true
 
@@ -123,6 +128,7 @@ func Game_Over() -> void:
 
 func Return_To_Title() -> void:
 	await get_tree().process_frame
+	change_state("NOT_IN_THE_GAME")
 	_clear(true)
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
 
@@ -138,9 +144,8 @@ func InGameIsTrue():
 		await get_tree().process_frame
 
 func _process(_delta):
-	fps_label.text = "FPS: %s | Estado: %s | slot: %s" % [Engine.get_frames_per_second(), GameStateString[current_status], CurrentSlot]
-	
-	_updatePlayers()
+	fps_label.text = "FPS: %s | Estado: %s | slot: %s" % [Engine.get_frames_per_second(), GameStateString[CurrentStatus], CurrentSlot]
+	fps_label.visible = Global.configures.fps_bool
 	
 	if raio:
 		if Input.is_action_just_pressed("confirm") and raio.is_colliding():
@@ -148,20 +153,16 @@ func _process(_delta):
 		else:
 			Body = null
 
-func _updatePlayers():
-	for player in PlayersAtuais.values():
-		player.update_properties()
-
 func _clear(slotON: bool = false):
-	Data = null
-	Extras = null
-	CurrentScene = null
 	CurrentBatalha = null
 	ObjectPlayer = null
 	textureD = null
+	Extras = null
+	Data = null
 	raio = null
 	Body = null
 	CurrentPlayerString = ""
+	CurrentScene = ""
 	PlayersAtuais.clear()
 
 	if not slotON:

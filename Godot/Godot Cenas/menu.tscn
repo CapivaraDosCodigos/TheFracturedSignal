@@ -1,10 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bu38qgxh4wq1i"]
+[gd_scene load_steps=45 format=3 uid="uid://bu38qgxh4wq1i"]
 
 [ext_resource type="Script" uid="uid://bs6qxum1hhhbm" path="res://Godot/Godot Scripts/menu/menu.gd" id="1_jm1s2"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_iae25"]
 [ext_resource type="Script" uid="uid://ckaefjju4lcp2" path="res://Godot/Godot Scripts/menu/ContainerMenu.gd" id="3_jm1s2"]
 [ext_resource type="StyleBox" uid="uid://ehj3gykeutk7" path="res://Resources/BoxTexture/zeno.tres" id="4_djm01"]
-[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almaanimetionambicao.tres" id="4_jm1s2"]
+[ext_resource type="Texture2D" uid="uid://cf8r18omnssev" path="res://texture/PNG/icon/almas/almaanimetionambicao.tres" id="4_jm1s2"]
 [ext_resource type="Script" uid="uid://ceshuj24t1q5p" path="res://Godot/Godot Scripts/menu/inventory_menu.gd" id="6_6pk31"]
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="6_ru2aa"]
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="8_ausow"]
@@ -16,10 +16,11 @@
 [ext_resource type="FontFile" uid="uid://cf6tfynp8qcsu" path="res://texture/font/at01.ttf" id="13_l44dq"]
 [ext_resource type="Script" uid="uid://7gjasejyr8j" path="res://Godot/Godot Cenas/settings_menu.gd" id="13_vx6ok"]
 [ext_resource type="StyleBox" uid="uid://ca1iiaaps77so" path="res://Resources/BoxTexture/intro.tres" id="15_771do"]
-[ext_resource type="Texture2D" uid="uid://itt3ms8j2g85" path="res://texture/PNG/icon/ambição com bordas.png" id="17_us1wh"]
-[ext_resource type="Texture2D" uid="uid://ct03heo8t2yc8" path="res://texture/PNG/icon/233686.png" id="17_vx6ok"]
-[ext_resource type="Texture2D" uid="uid://m506ayw5c1lv" path="res://texture/PNG/GUI.png" id="18_771do"]
+[ext_resource type="Texture2D" uid="uid://coebsgftmwiva" path="res://texture/PNG/icon/almas/alma branca.png" id="17_us1wh"]
 [ext_resource type="Script" uid="uid://chq8ro3atu5f6" path="res://Godot/Godot Cenas/HSliderUI.gd" id="19_7dnvh"]
+[ext_resource type="Texture2D" uid="uid://bmlymyl488ki3" path="res://texture/PNG/one_bit_pixel_icons/Icons_Tools_Crafting.png" id="19_7qmos"]
+[ext_resource type="Texture2D" uid="uid://c1nkpghk8aght" path="res://texture/PNG/icon/icon_sheet_32x32.png" id="20_gpjf8"]
+[ext_resource type="Script" uid="uid://b2evb66sv1854" path="res://Godot/Godot Cenas/CheckBoxUI.gd" id="21_gpjf8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uevak"]
 texture = ExtResource("2_iae25")
@@ -80,31 +81,39 @@ axis_stretch_vertical = 1
 region_rect = Rect2(128, 192, 64, 64)
 modulate_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_771do"]
-atlas = ExtResource("17_vx6ok")
-region = Rect2(208, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yl6l"]
+atlas = ExtResource("19_7qmos")
+region = Rect2(16, 208, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dnvh"]
-texture = ExtResource("18_771do")
-texture_margin_left = 8.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qmos"]
+texture = ExtResource("19_7qmos")
+texture_margin_left = 6.0
 texture_margin_top = 8.0
-texture_margin_right = 8.0
+texture_margin_right = 6.0
 texture_margin_bottom = 8.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(48, 48, 48, 16)
-modulate_color = Color(0.23, 0.23, 0.23, 1)
+region_rect = Rect2(16, 240, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_771do"]
-texture = ExtResource("18_771do")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture = ExtResource("19_7qmos")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(112, 80, 32, 16)
-modulate_color = Color(0.44, 0.44, 0.44, 1)
+region_rect = Rect2(16, 224, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpjf8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpjf8"]
+atlas = ExtResource("20_gpjf8")
+region = Rect2(544, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qmos"]
+atlas = ExtResource("20_gpjf8")
+region = Rect2(576, 96, 32, 32)
 
 [node name="MENU" type="CanvasLayer"]
 script = ExtResource("1_jm1s2")
@@ -157,6 +166,7 @@ texture_rect = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/inventory"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
@@ -202,6 +212,7 @@ texture_rect = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/equipment"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
@@ -247,6 +258,7 @@ texture_rect = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/status"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
@@ -292,6 +304,7 @@ texture_rect = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/settings"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
@@ -486,11 +499,12 @@ theme_override_styles/focus = ExtResource("4_djm01")
 text = "Voltar ao Titulo"
 expand_icon = true
 script = ExtResource("13_gkhfh")
+icon_alma = ExtResource("17_us1wh")
 control_top = NodePath(".")
 control_bottom = NodePath("../Sons")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="Sons" type="Button" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons" node_paths=PackedStringArray("control_top")]
+[node name="Sons" type="Button" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons" node_paths=PackedStringArray("control_top", "control_bottom")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
@@ -506,7 +520,29 @@ theme_override_styles/focus = ExtResource("4_djm01")
 text = "Sons"
 expand_icon = true
 script = ExtResource("13_gkhfh")
+icon_alma = ExtResource("17_us1wh")
 control_top = NodePath("../VoltarAoTitulo")
+control_bottom = NodePath("../Tela")
+metadata/_custom_type_script = "uid://b5pydke1gg5le"
+
+[node name="Tela" type="Button" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons" node_paths=PackedStringArray("control_top")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 3
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("15_771do")
+theme_override_styles/focus = ExtResource("4_djm01")
+text = "Tela"
+expand_icon = true
+script = ExtResource("13_gkhfh")
+icon_alma = ExtResource("17_us1wh")
+control_top = NodePath("../Sons")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
 [node name="ContainerSons" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems"]
@@ -517,9 +553,20 @@ size_flags_vertical = 0
 [node name="ContainerMusica" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 
-[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica"]
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/PanelContainer/HBoxContainer"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -527,13 +574,9 @@ texture = ExtResource("17_us1wh")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica"]
-custom_minimum_size = Vector2(256, 0)
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/PanelContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("15_771do")
-
-[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/PanelContainer"]
-layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("13_l44dq")
 theme_override_font_sizes/font_size = 32
@@ -548,29 +591,40 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 focus_mode = 1
 focus_behavior_recursive = 2
-theme_override_icons/grabber = SubResource("AtlasTexture_771do")
-theme_override_icons/grabber_highlight = SubResource("AtlasTexture_771do")
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_771do")
-theme_override_icons/tick = SubResource("AtlasTexture_771do")
-theme_override_styles/slider = SubResource("StyleBoxTexture_7dnvh")
+theme_override_icons/grabber = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/tick = SubResource("AtlasTexture_0yl6l")
+theme_override_styles/slider = SubResource("StyleBoxTexture_7qmos")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_771do")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_771do")
-value = 100.0
+value = 50.0
 editable = false
 scrollable = false
 ticks_position = 3
 script = ExtResource("19_7dnvh")
 text = "Musica %d"
-texture = NodePath("../TextureRect")
-label = NodePath("../PanelContainer/Label")
-control_bottom = NodePath("../../ContainerEfeito/efeitos sonoros")
+texture = NodePath("../PanelContainer/HBoxContainer/TextureRect")
+label = NodePath("../PanelContainer/HBoxContainer/Label")
+control_bottom = NodePath("../../ContainerEfeito/EfeitosSonoros")
+metadata/_custom_type_script = "uid://chq8ro3atu5f6"
 
 [node name="ContainerEfeito" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 
-[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito"]
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/PanelContainer/HBoxContainer"]
 visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -578,45 +632,98 @@ texture = ExtResource("17_us1wh")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito"]
-custom_minimum_size = Vector2(256, 0)
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/PanelContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("15_771do")
-
-[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/PanelContainer"]
-layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("13_l44dq")
 theme_override_font_sizes/font_size = 32
-text = "Musica"
+text = "Efeito Sonoros"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="efeitos sonoros" type="HSlider" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito" node_paths=PackedStringArray("texture", "label", "control_top")]
+[node name="EfeitosSonoros" type="HSlider" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito" node_paths=PackedStringArray("texture", "label", "control_top")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 focus_mode = 1
 focus_behavior_recursive = 2
-theme_override_icons/grabber = SubResource("AtlasTexture_771do")
-theme_override_icons/grabber_highlight = SubResource("AtlasTexture_771do")
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_771do")
-theme_override_icons/tick = SubResource("AtlasTexture_771do")
-theme_override_styles/slider = SubResource("StyleBoxTexture_7dnvh")
+theme_override_icons/grabber = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/tick = SubResource("AtlasTexture_0yl6l")
+theme_override_styles/slider = SubResource("StyleBoxTexture_7qmos")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_771do")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_771do")
-value = 100.0
+value = 50.0
 editable = false
 scrollable = false
 ticks_position = 3
 script = ExtResource("19_7dnvh")
 text = "Efeitos Sonoros %d"
-texture = NodePath("../TextureRect")
-label = NodePath("../PanelContainer/Label")
+texture = NodePath("../PanelContainer/HBoxContainer/TextureRect")
+label = NodePath("../PanelContainer/HBoxContainer/Label")
 control_top = NodePath("../../ContainerMusica/musica")
+metadata/_custom_type_script = "uid://chq8ro3atu5f6"
+
+[node name="ContainerTela" type="VBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer/HBoxContainer"]
+modulate = Color(0.85, 0.85, 0.85, 1)
+z_index = 1
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("17_us1wh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+text = "FPS Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FPS" type="CheckBox" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer" node_paths=PackedStringArray("texture")]
+unique_name_in_owner = true
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gpjf8")
+theme_override_icons/checked = SubResource("AtlasTexture_gpjf8")
+theme_override_icons/unchecked = SubResource("AtlasTexture_7qmos")
+theme_override_icons/checked_disabled = SubResource("AtlasTexture_gpjf8")
+theme_override_icons/unchecked_disabled = SubResource("AtlasTexture_7qmos")
+disabled = true
+button_pressed = true
+script = ExtResource("21_gpjf8")
+texture = NodePath("../PanelContainer/HBoxContainer/TextureRect")
+metadata/_custom_type_script = "uid://b2evb66sv1854"
 
 [connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/VoltarAoTitulo" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_voltar_ao_titulo_pressed"]
 [connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/Sons" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_sons_pressed"]
+[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/Tela" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_tela_pressed"]
 [connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/musica" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_musica_value_changed"]
-[connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/efeitos sonoros" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_efeitos_sonoros_value_changed"]
+[connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/EfeitosSonoros" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_efeitos_sonoros_value_changed"]
+[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/FPS" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_fps_pressed"]

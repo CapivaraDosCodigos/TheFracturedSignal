@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DataAudioPlayer" load_steps=2 format=3 uid="uid://ciglxe6bvxe7d"]
+
+[ext_resource type="Script" uid="uid://cau662oka6mjm" path="res://Godot/classes/DATAS/DataAudioPlayer.gd" id="1_460py"]
+
+[resource]
+script = ExtResource("1_460py")
+caminho = "uid://ndxjin6vdp1w"
+tipo = "effects"
+volume = 40.0
+pitchRandom = true
+metadata/_custom_type_script = "uid://cau662oka6mjm"

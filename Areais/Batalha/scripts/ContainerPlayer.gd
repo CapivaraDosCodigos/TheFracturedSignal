@@ -43,8 +43,6 @@ func _process(_delta: float) -> void:
 	_update_actions_label()
 
 func _focus_button() -> void:
-	if actions.is_empty():
-		return
 	await get_tree().process_frame
 	actions[current_index].grab_focus()
 
@@ -69,7 +67,7 @@ func _atualizar_acoes_bloqueadas(p: PlayerData) -> void:
 			action.ButtonContainer.modulate = Color.WHITE
 
 func _can_show_actions_label() -> bool:
-	return isfocus and Manager.current_status == Manager.GameState.BATTLE_MENU
+	return isfocus and Manager.isState("BATTLE_MENU")
 
 func set_focus(active: bool) -> void:
 	isfocus = active

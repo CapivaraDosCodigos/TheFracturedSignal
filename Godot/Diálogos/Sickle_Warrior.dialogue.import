@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://w52cka1b774n"
+path="res://.godot/imported/Sickle_Warrior.dialogue-77b929df055e5f7bf13cceb25bfc02a8.tres"
+
+[deps]
+
+source_file="res://Godot/Diálogos/Sickle_Warrior.dialogue"
+dest_files=["res://.godot/imported/Sickle_Warrior.dialogue-77b929df055e5f7bf13cceb25bfc02a8.tres"]
+
+[params]
+
+defaults=true

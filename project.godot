@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Fractured Signal"
-config/version="alfa 3.0"
+config/version="alfa 4.5"
 run/main_scene="uid://cwcyxp7jea15x"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.5", "GL Compatibility")
@@ -21,6 +21,10 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/image="uid://cmf85pqbfm1sn"
 run/translations/default_csv_locale="en"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [autoload]
 
@@ -76,6 +80,7 @@ folder_colors={
 "res://Characters/Extras/": "blue",
 "res://Characters/enemies/": "red",
 "res://Characters/enemies/Arceus/": "yellow",
+"res://Characters/enemies/Sickle Warrior/": "blue",
 "res://Characters/enemies/bebedouro/": "blue",
 "res://Godot/": "green",
 "res://Godot/Diálogos/": "teal",
@@ -220,7 +225,7 @@ dialogic_default_action={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.dialogue", "res://Godot/Diálogos/bebedouro.dialogue", "res://Godot/Diálogos/Symptoms.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.dialogue", "res://Godot/Diálogos/bebedouro.dialogue", "res://Godot/Diálogos/Symptoms.dialogue", "res://Godot/Diálogos/IntroTemporada1.dialogue", "res://Godot/Diálogos/Sickle_Warrior.dialogue")
 
 [layer_names]
 
@@ -229,6 +234,9 @@ locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.
 2d_physics/layer_3="Cenario 1"
 2d_physics/layer_4="Cenario 2"
 2d_physics/layer_5="Cenario 1"
+2d_physics/layer_6="Almas"
+2d_physics/layer_7="Projeteis"
+2d_physics/layer_8="Barreira"
 
 [rendering]
 

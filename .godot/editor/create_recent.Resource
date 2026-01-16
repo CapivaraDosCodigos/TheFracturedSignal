@@ -1,3 +1,5 @@
+AtlasTexture
+DialogueResource
 DataAudioPlayer
 AudioStream
 DataItem
@@ -5,10 +7,8 @@ Effect
 Executable
 CalculatePlayer
 PlayerData
-AtlasTexture
 Shader
 SpriteFrames
 ItemArma
 ItemArmadura
 ItemConsumivel
-DialogueResource

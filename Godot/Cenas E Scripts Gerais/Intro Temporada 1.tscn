@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://d07sx3chbl5sd"]
+
+[ext_resource type="Script" uid="uid://d1te3jvibndoi" path="res://Godot/Cenas E Scripts Gerais/intro_temporadas.gd" id="1_fptxn"]
+[ext_resource type="Resource" uid="uid://c3c0v0mkwqk1s" path="res://Godot/Diálogos/IntroTemporada1.dialogue" id="2_52r54"]
+[ext_resource type="PackedScene" uid="uid://cwod1ylh8y1cj" path="res://Areais/TEMPORADA 1/cenas/começo.tscn" id="2_ahkoo"]
+[ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://Resources/materials/BATALHA.tres" id="2_ynep7"]
+[ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="3_52r54"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="3_ahkoo"]
+[ext_resource type="Material" uid="uid://c0q1ahwqu3qem" path="res://Resources/materials/preto_&_branco.tres" id="4_ahkoo"]
+[ext_resource type="Texture2D" uid="uid://bqt2mbvrqlrhc" path="res://texture/PNG/funds/fundo_de_personagem.png" id="6_rufmr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71p7w"]
+atlas = ExtResource("3_ahkoo")
+region = Rect2(97, 0, 97, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rufmr"]
+atlas = ExtResource("3_ahkoo")
+region = Rect2(97, 291, 97, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52r54"]
+atlas = ExtResource("3_ahkoo")
+region = Rect2(582, 291, 97, 97)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muv6b"]
+texture = ExtResource("6_rufmr")
+texture_margin_left = 16.0
+texture_margin_top = 48.0
+texture_margin_right = 16.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(256, 192, 64, 64)
+
+[node name="IntroTemporada1" type="CanvasLayer" node_paths=PackedStringArray("texture_intro")]
+script = ExtResource("1_fptxn")
+scene_intro = ExtResource("2_ahkoo")
+texture_intro = NodePath("MarginContainer/VBoxContainer/MarginContainer/TextureRect")
+esquetes = Array[Texture]([SubResource("AtlasTexture_71p7w"), SubResource("AtlasTexture_rufmr")])
+dialogue = ExtResource("2_52r54")
+
+[node name="TextureIntro" type="TextureRect" parent="."]
+material = ExtResource("2_ynep7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_52r54")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 148
+theme_override_constants/margin_right = 148
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer"]
+z_index = -1
+material = ExtResource("4_ahkoo")
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+texture = SubResource("AtlasTexture_52r54")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TextureRect"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -4
+theme_override_constants/margin_top = -4
+theme_override_constants/margin_right = -4
+theme_override_constants/margin_bottom = -4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/MarginContainer/TextureRect/MarginContainer/MarginContainer"]
+z_index = -1
+layout_mode = 2
+color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/MarginContainer/TextureRect/MarginContainer"]
+z_index = 1
+use_parent_material = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_muv6b")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 148)
+layout_mode = 2

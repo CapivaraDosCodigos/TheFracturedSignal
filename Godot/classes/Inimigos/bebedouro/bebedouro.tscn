@@ -1,27 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhdqurm4hxqt"]
+[gd_scene load_steps=13 format=3 uid="uid://dhdqurm4hxqt"]
 
+[ext_resource type="SpriteFrames" uid="uid://8pnircha6h5b" path="res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres" id="1_2jc4c"]
 [ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="1_sc6bt"]
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_y5qht"]
 [ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://Resources/materials/SAVE.tres" id="4_tyq3r"]
 [ext_resource type="Script" uid="uid://cdr1vpvtwnywr" path="res://Godot/classes/Inimigos/SpawnProjeteis.gd" id="5_k5ax6"]
 [ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/effects/attack 1 .png" id="5_rsb1r"]
 [ext_resource type="PackedScene" uid="uid://bic33s886bpyf" path="res://Godot/classes/Inimigos/bebedouro/Bala1.tscn" id="6_htrfx"]
 [ext_resource type="PackedScene" uid="uid://dvqm0erxe80w4" path="res://Godot/classes/Inimigos/bebedouro/Bala2.tscn" id="7_2jc4c"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i37ya"]
-atlas = ExtResource("1_y5qht")
-region = Rect2(0, 0, 27, 43)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_adxu8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i37ya")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tahm4"]
 atlas = ExtResource("5_rsb1r")
@@ -63,8 +48,9 @@ animations = [{
 }]
 
 [node name="Bebedouro" type="AnimatedSprite2D" node_paths=PackedStringArray("spawns")]
-sprite_frames = SubResource("SpriteFrames_adxu8")
-frame_progress = 0.556025
+scale = Vector2(1.8, 1.8)
+sprite_frames = ExtResource("1_2jc4c")
+animation = &"Attack"
 script = ExtResource("1_sc6bt")
 nome = "Bebedouro"
 life = 75

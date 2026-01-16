@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wv6c3f2k5r8r"
+path="res://.godot/imported/Sound Effect Battle Start Jingle.mp3-2087497f773b8c2992e34ece50247713.mp3str"
+
+[deps]
+
+source_file="res://sons/sounds/Sound Effect Battle Start Jingle.mp3"
+dest_files=["res://.godot/imported/Sound Effect Battle Start Jingle.mp3-2087497f773b8c2992e34ece50247713.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

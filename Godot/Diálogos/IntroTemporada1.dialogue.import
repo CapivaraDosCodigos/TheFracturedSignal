@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c3c0v0mkwqk1s"
+path="res://.godot/imported/IntroTemporada1.dialogue-84c59f25a42d77353dd0ed3e4c87e44f.tres"
+
+[deps]
+
+source_file="res://Godot/Diálogos/IntroTemporada1.dialogue"
+dest_files=["res://.godot/imported/IntroTemporada1.dialogue-84c59f25a42d77353dd0ed3e4c87e44f.tres"]
+
+[params]
+
+defaults=true

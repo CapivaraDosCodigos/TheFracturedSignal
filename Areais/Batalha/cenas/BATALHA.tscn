@@ -45,7 +45,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 485), Vector2(0, 408)]
+"values": [Vector2(0, 485), Vector2(0, 396)]
 }
 
 [sub_resource type="Animation" id="Animation_h7tth"]
@@ -123,7 +123,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 408), Vector2(0, 485)]
+"values": [Vector2(0, 396), Vector2(0, 485)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -228,7 +228,7 @@ layout_mode = 0
 offset_left = -16.0
 offset_top = 540.0
 offset_right = 1136.0
-offset_bottom = 672.00073
+offset_bottom = 671.9998
 size_flags_vertical = 3
 theme_override_constants/margin_bottom = 4
 
@@ -259,6 +259,7 @@ layout_mode = 2
 size_flags_horizontal = 1
 
 [node name="PointsNinePatchRect" type="NinePatchRect" parent="BatalhaCanvas/Control"]
+z_index = 1
 layout_mode = 0
 offset_left = 16.0
 offset_top = 368.0
@@ -288,7 +289,6 @@ theme_override_constants/margin_bottom = 2
 [node name="PointsProgressBar" type="TextureProgressBar" parent="BatalhaCanvas/Control/PointsNinePatchRect/PointsMarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-value = 100.0
 nine_patch_stretch = true
 stretch_margin_left = 2
 stretch_margin_right = 3
@@ -299,9 +299,9 @@ texture_progress = SubResource("AtlasTexture_76unj")
 visible = false
 layout_mode = 0
 offset_left = 48.0
-offset_top = 16.0
+offset_top = 32.0
 offset_right = 176.0
-offset_bottom = 96.0
+offset_bottom = 112.0
 theme_override_colors/font_color = Color(1, 0, 0.26666668, 1)
 theme_override_colors/font_shadow_color = Color(0.64705884, 0.21568628, 0.2627451, 1)
 theme_override_constants/shadow_offset_x = 4

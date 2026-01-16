@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://cwod1ylh8y1cj"]
+[gd_scene load_steps=22 format=4 uid="uid://cwod1ylh8y1cj"]
 
 [ext_resource type="Script" uid="uid://botiuinj2k2g7" path="res://Areais/Extras/scripts/Dungeons2D.gd" id="1_brwl7"]
 [ext_resource type="TileSet" uid="uid://dcxot31v0dfa6" path="res://Resources/folderTres/C1A.tres" id="2_arruh"]
-[ext_resource type="Script" uid="uid://cau662oka6mjm" path="res://Godot/classes/DATAS/DataAudioPlayer.gd" id="2_x2xq7"]
+[ext_resource type="Resource" uid="uid://b08syt6jomfjw" path="res://sons/Data music/Acid_Tunnel.tres" id="2_x2xq7"]
 [ext_resource type="Script" uid="uid://bdro6kmv5j603" path="res://Godot/classes/Nodes/AreaCamada2D.gd" id="3_6bncr"]
 [ext_resource type="TileSet" uid="uid://b371rfq2683pb" path="res://Resources/folderTres/T1B.tres" id="4_1m3o1"]
+[ext_resource type="PackedScene" uid="uid://bcxdjru1chnie" path="res://Characters/enemies/Sickle Warrior/Sickle_Warrior.tscn" id="8_wh20a"]
 [ext_resource type="PackedScene" uid="uid://cpe1p37pp5j35" path="res://Characters/NPCS/Flower.tscn" id="9_wh20a"]
 [ext_resource type="Texture2D" uid="uid://cumwbxwjq0etn" path="res://texture/tiles top down/textura2/Scene Overview.png" id="13_6jqb6"]
 [ext_resource type="PackedScene" uid="uid://bgs8qnmsvgs1g" path="res://Characters/enemies/bebedouro/bebedouro.tscn" id="14_ao2sf"]
@@ -15,13 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://chcd3yvm6pvji" path="res://Areais/TEMPORADA 1/cenas/novo_mundo.tscn" id="19_dc6q7"]
 [ext_resource type="PackedScene" uid="uid://b0e58l2kwm1fb" path="res://Areais/Extras/cenas/spawn_players.tscn" id="20_gnfsm"]
 
-[sub_resource type="Resource" id="Resource_wh20a"]
-script = ExtResource("2_x2xq7")
-caminho = "uid://btumifkni1d13"
-volume = 65.0
-loop = true
-atraso = 1.0
-metadata/_custom_type_script = "uid://cau662oka6mjm"
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_b4uff"]
+vertices = PackedVector2Array(-412.79688, -58.828125, -330, -96.46875, -330, -78.42969, -419.47656, -37.773438, 102, -518, 134, -518, 134, -466, 70.953125, -466, 152.67188, -454, 198, -454, 198, -358, 144.67188, -398, 262, -358, 262, -274, 174, -274, 174, -242, 158, -242, 114, -274, 158, -102, 174, -102, 174, -46, 238, -46, 238, -18, 174, -18, 201.21094, 50, 230, 50, 230, 146, 193.17188, 146.39063, 238, 146, 238, 338, 306, 338, 306, 250, 358, 250, 358, 398, 230, 398, 230, 462, -6, 462, -6, 398, -390, 398, -390, 250, -338, 250, -338, 338, -286, 368.84375, -286, 274, -258, 274, -258, 368.84375, 146, 206, -206, 206, -206, 142, -142, 18, -47.5625, -12.9921875, -30, -15.15625, -2, -15.15625, 15.5625, -12.9921875, -270, 142, -270, 46, -454, -134, -338, -134, -338, -118.171875, -421.25, -76.546875, -454, 46, -416.0703, -22, -338, -22, -338, 18, -142, -46, -55.8125, -46, -30, -110, -2, -110, 114, -46, 114, -102, 130, -102, 130, -242, 114, -242, -110, -274, -110, -338, -48.671875, -398, 16.546875, -364.54688, -198, -338, -198, -454, -56.671875, -454, 25.046875, -466, -38, -466, -38, -518, -6, -518, -6, -550, 102, -550, 61.117188, -367.7422, 34.882813, -367.7422, 146, 338, -240.4375, 371.0078, 79.453125, -364.54688, 87.8125, -398, 8.1875, -398, -311.8125, 338, -303.5625, 371.0078, -232.1875, 338, 23.8125, -46, 174, 145.59375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(10, 12, 13, 14), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(26, 28, 29, 27), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(30, 33, 34, 29), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49, 50, 51, 52, 53), PackedInt32Array(48, 54, 55, 49), PackedInt32Array(56, 57, 58, 59), PackedInt32Array(60, 56, 59, 0, 3), PackedInt32Array(60, 3, 61), PackedInt32Array(61, 62, 63, 60), PackedInt32Array(49, 64, 65, 50), PackedInt32Array(51, 66, 67, 52), PackedInt32Array(46, 68, 69, 70, 20, 23), PackedInt32Array(71, 72, 17), PackedInt32Array(17, 73, 74, 75, 76), PackedInt32Array(74, 77, 78, 79, 75), PackedInt32Array(80, 81, 82, 83), PackedInt32Array(83, 84, 85, 4, 7, 80), PackedInt32Array(80, 7, 86, 87), PackedInt32Array(55, 60, 63, 49), PackedInt32Array(88, 29, 34, 37, 89), PackedInt32Array(17, 90, 91, 11, 10, 14), PackedInt32Array(75, 92, 76), PackedInt32Array(17, 76, 87, 86, 90), PackedInt32Array(71, 17, 16), PackedInt32Array(71, 16, 18, 70), PackedInt32Array(41, 93, 94, 38), PackedInt32Array(37, 38, 94, 42, 89), PackedInt32Array(89, 95, 88), PackedInt32Array(53, 96, 68, 46), PackedInt32Array(46, 97, 27, 29, 88), PackedInt32Array(70, 18, 20), PackedInt32Array(46, 23, 97), PackedInt32Array(89, 42, 45)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(72, -376, 80, -408, 136, -408, 144, -464, 208, -464, 208, -368, 272, -368, 272, -264, 184, -264, 184, -232, 168, -232, 168, -112, 184, -112, 184, -56, 248, -56, 248, -8, 184, -8, 184, 136, 192, 40, 240, 40, 240, 136, 248, 136, 248, 328, 296, 328, 296, 240, 368, 240, 368, 408, 240, 408, 240, 472, -16, 472, -16, 408, -112, 408, -320, 408, -400, 408, -400, 240, -328, 240, -328, 328, -304, 328, -296, 360, -296, 264, -248, 264, -248, 360, -240, 328, 136, 328, 136, 216, -216, 216, -216, 152, -280, 152, -280, 56, -464, 56, -464, -144, -328, -144, -328, -112, -408, -72, -320, -112, -320, -72, -408, -32, -328, -32, -328, 8, -152, 8, -152, -56, -48, -56, -40, -24, -40, -120, 8, -120, 8, -24, 16, -56, 104, -56, 104, -112, 120, -112, 120, -232, 104, -232, 104, -264, -120, -264, -120, -328, -208, -328, -208, -464, -48, -464, -40, -408, 16, -408, 24, -376, 16, -456, -48, -456, -48, -528, -16, -528, -16, -560, 112, -560, 112, -528, 144, -528, 144, -456, 80, -456)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o02wh"]
+vertices = PackedVector2Array(-326, -80.85156, -414, -32.84375, -414, -65.59375, -326, -106.1875, -239.5625, -140.99219, 320.85156, -78.74219, 316.20313, -102, 422, -102, 389.21875, -44.570313, 422, 110, 395.3828, -6.21875, -286.7422, -242, -293.20313, -326, -122.796875, -326, -222, -242, 321.35938, 110, 314.6875, 10, 392.2578, 10, -38, -114, -110.86719, -174, -102.86719, -262, 102, -262, 102, -230, 6, -114, 186, -230, 186, -262, 294, -262, 294, -65.5, 250, -114, 294, -46.773438, 294, 270, 250, 270, 250, 46, 222, 46, 222, 134, 194, 134, 194, 46.4375, 186, 46.070313, 186, -6, 250, -6, 186, -114, 186, -178, 102, -178, 102, -114, 6, -18, -38, -18, -154, -114, -154, -50, -282, -50, -222, -143.15625, -194, -143.15625, -176.4375, -140.99219, -282, 154, -218, 154, -218, 218, -250, 270, -294, 270, 134, 218, 134, 270, -250, 366, -294, 366, -326, 270, -326, -262, -313.1328, -262, -305.1328, -174, -129.25781, -242, -194, -242, -168.1875, -174, -247.8125, -174, 380.8672, -26.890625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(8, 7, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 9), PackedInt32Array(18, 19, 20, 21, 22, 23), PackedInt32Array(24, 25, 26, 27, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(36, 37, 38, 39, 33), PackedInt32Array(32, 33, 39, 29), PackedInt32Array(29, 39, 28, 27), PackedInt32Array(28, 40, 41), PackedInt32Array(42, 43, 23), PackedInt32Array(23, 44, 45, 18), PackedInt32Array(46, 47, 48, 0, 4, 49, 50, 51), PackedInt32Array(52, 53, 54, 55, 56), PackedInt32Array(54, 57, 58, 55), PackedInt32Array(55, 59, 60, 56), PackedInt32Array(52, 56, 61, 0, 48), PackedInt32Array(3, 62, 63, 64), PackedInt32Array(13, 65, 66), PackedInt32Array(14, 13, 66), PackedInt32Array(14, 66, 50, 49), PackedInt32Array(46, 51, 67, 19, 18), PackedInt32Array(64, 68, 4, 3), PackedInt32Array(42, 23, 22), PackedInt32Array(42, 22, 24, 41), PackedInt32Array(28, 41, 24), PackedInt32Array(29, 27, 69, 10), PackedInt32Array(10, 69, 8), PackedInt32Array(10, 9, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-272, -40, -144, -40, -144, -104, -48, -104, -48, -8, 16, -8, 16, -104, 112, -104, 112, -168, 176, -168, 176, -104, 240, -104, 240, -16, 176, -16, 176, 144, 184, 56, 184, 144, 232, 144, 232, 56, 240, 56, 240, 160, 240, 280, 304, 280, 304, 128, 304, -32, 384, 0, 304, 0, 312, 120, 432, 120, 432, 0.4993744, 432, -32, 432, -112, 304, -112, 312, -72, 376, -40, 304, -72, 304, -272, 176, -272, 176, -240, 112, -240, 112, -272, -112, -272, -120, -184, -176, -184, -184, -152, -184, -232, -120, -232, -112, -336, -304, -336, -296, -232, -232, -232, -232, -152, -240, -184, -296, -184, -304, -272, -336, -272, -336, -112.58694, -424, -72, -424, -16, -336, -64, -336, 280, -304, 280, -304, 376, -240, 376, -240, 280, 144, 280, 144, 208, -208, 208, -208, 144, -272, 144)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0h7q"]
 size = Vector2(48, 8)
@@ -36,10 +39,22 @@ size = Vector2(8, 44.922264)
 
 [node name="O Começo" type="Node2D" node_paths=PackedStringArray("players", "inimigos")]
 script = ExtResource("1_brwl7")
+scene_file = "uid://cwod1ylh8y1cj"
 players = NodePath("SpawnPlayers")
 inimigos = NodePath("inimigos")
-DataAudio = SubResource("Resource_wh20a")
+DataAudio = ExtResource("2_x2xq7")
 metadata/_custom_type_script = "uid://botiuinj2k2g7"
+
+[node name="PlayerRegions" type="Node2D" parent="."]
+visible = false
+
+[node name="PlayerRegion1" type="NavigationRegion2D" parent="PlayerRegions"]
+navigation_polygon = SubResource("NavigationPolygon_b4uff")
+
+[node name="PlayerRegion2" type="NavigationRegion2D" parent="PlayerRegions"]
+position = Vector2(0, -2)
+navigation_polygon = SubResource("NavigationPolygon_o02wh")
+navigation_layers = 2
 
 [node name="tiles" type="Node2D" parent="."]
 
@@ -61,9 +76,11 @@ use_parent_material = true
 tile_set = ExtResource("2_arruh")
 
 [node name="areas" type="Node2D" parent="tiles/TileMapLayer0"]
+visible = false
+z_index = 2
 
 [node name="AreaCamada2D" type="Area2D" parent="tiles/TileMapLayer0/areas"]
-position = Vector2(-16, -32)
+position = Vector2(-16, -30)
 script = ExtResource("3_6bncr")
 metadata/_custom_type_script = "uid://bdro6kmv5j603"
 
@@ -116,6 +133,8 @@ tile_map_data = PackedByteArray("AAD///P/BAASABMAAAAGAAwABAAOABIAAAAGAA4ABAAOABQ
 tile_set = ExtResource("4_1m3o1")
 
 [node name="areas" type="Node2D" parent="tiles/TileMapLayer1"]
+visible = false
+z_index = 2
 
 [node name="AreaCamada2D2" type="Area2D" parent="tiles/TileMapLayer1/areas"]
 visible = false
@@ -179,15 +198,26 @@ metadata/_edit_use_anchors_ = true
 
 [node name="inimigos" type="Node2D" parent="."]
 
-[node name="bebedouro" parent="inimigos" node_paths=PackedStringArray("dungeons2D") groups=["Enemie"] instance=ExtResource("14_ao2sf")]
-position = Vector2(31, 123)
-id = "None1"
-dungeons2D = NodePath("../..")
-
-[node name="bebedouro2" parent="inimigos" node_paths=PackedStringArray("dungeons2D") groups=["Enemie"] instance=ExtResource("14_ao2sf")]
+[node name="bebedouro" parent="inimigos" node_paths=PackedStringArray("dungeons2D") instance=ExtResource("14_ao2sf")]
 position = Vector2(-204, 7)
 id = "None2"
 dungeons2D = NodePath("../..")
+
+[node name="Sickle Warrior" parent="inimigos" node_paths=PackedStringArray("dungeons2D", "marker") instance=ExtResource("8_wh20a")]
+position = Vector2(144, 16)
+id = "tv"
+dungeons2D = NodePath("../..")
+marker = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="inimigos/Sickle Warrior"]
+
+[node name="Sickle Warrior2" parent="inimigos" node_paths=PackedStringArray("dungeons2D", "marker") instance=ExtResource("8_wh20a")]
+position = Vector2(-135, -400)
+id = "tv"
+dungeons2D = NodePath("../..")
+marker = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="inimigos/Sickle Warrior2"]
 
 [node name="npcs" type="Node2D" parent="."]
 
@@ -214,3 +244,4 @@ metadata/_custom_type_script = "uid://qqf4hmn2cvmr"
 shape = SubResource("RectangleShape2D_c37eu")
 
 [node name="SpawnPlayers" parent="." instance=ExtResource("20_gnfsm")]
+position = Vector2(-144, 80)

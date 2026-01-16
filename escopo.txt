@@ -1,7 +1,21 @@
-* ESCOPO DO PRIMEIRO CAPITULO *
-
-- Sinopse:
+- Sinopse (desuatalisado):
 	Tres cientistas acabam se encontrando em planeta que era usando como prisao
 	para criminosos que acabam por formar um sociedade caotica, o objetivo deles
 	conseguir pegar e neutralisar uma "Fenda Espacial" que reside nesse planeta
 	mas os habitantes nao vao querer ajudar.
+
+* ESCOPO DO Alfa 4.5 *
+	- Começar a intro da primeira temporada (40% feito)
+	- Desvolver Novos Inimigos / Estruturar a sistema de Inimigos
+	- Desvolver Novos Items e Exes
+	- Fazer a parte inicial do mapa
+	- Fazer o sistema das Almas
+
+* ESCOPO Sem Ordem *
+	- Personagens Jogaveis -
+		- Zeno -
+		- Zero -
+		- Abel -
+		- Mita (nome temporaio) -
+		- Gelo (nome temporaio) -
+	

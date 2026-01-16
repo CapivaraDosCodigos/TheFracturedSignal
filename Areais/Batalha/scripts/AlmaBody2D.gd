@@ -2,9 +2,6 @@
 extends CharacterBody2D
 class_name AlmaBody2D
 
-@export var audioHurt: DataAudioPlayer
-@export var audioPowerUp: DataAudioPlayer
-
 @onready var invincible_timer: Timer = %invincible_timer
 
 @export var speed: float = 150.0
@@ -17,9 +14,10 @@ var bullets_processed: Dictionary = {}
 
 func _ready() -> void:
 	invincible_timer.one_shot = true
+	_reset_color()
 
 func _physics_process(_delta: float) -> void:
-	if Manager.current_status == Manager.GameState.BATTLE:
+	if Manager.isState("BATTLE"):
 		_batalha()
 
 func _batalha() -> void:
@@ -44,7 +42,7 @@ func _apply_damage(body: Node2D) -> void:
 
 	for key in Manager.PlayersAtuais.keys():
 		Manager.PlayersAtuais[key].apply_damage(body.dano)
-	Manager.tocar_musica(audioHurt, 3)
+	Manager.tocar_musica(PathsMusic.HURT, 3)
 
 	body.queue_free()
 
@@ -59,9 +57,16 @@ func _on_escudo_body_exited(body: Node2D) -> void:
 		return
 
 	Manager.CurrentBatalha.add_concentration_points(1)
-	Manager.tocar_musica(audioPowerUp, 2)
+	Manager.tocar_musica(PathsMusic.POWER_UP, 2)
 	
 	#area.set_cp(int(body.dano / divide_cp))
+
+func _reset_color() -> void:
+	if Manager.get_Player().Soul == PlayerData.Souls.Empty:
+		modulate = Color(1.0, 1.0, 1.0)
+	
+	elif Manager.get_Player().Soul == PlayerData.Souls.Hope:
+		modulate = Color(0.561, 0.494, 0.816)
 
 func _start_invincibility() -> void:
 	is_invincible = true
@@ -72,7 +77,7 @@ func _start_invincibility() -> void:
 
 func _end_invincibility() -> void:
 	is_invincible = false
-	modulate = Color(1.0, 1.0, 1.0)
+	_reset_color()
 	set_collision_mask_value(1, true)
 	set_collision_layer_value(1, true)
 	bullets_processed.clear()

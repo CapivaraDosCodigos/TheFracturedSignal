@@ -287,7 +287,7 @@ _data = {
 radius = 7.0
 height = 23.333334
 
-[node name="niko" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "can", "area") groups=["Player"]]
+[node name="Niko" type="CharacterBody2D" node_paths=PackedStringArray("anim_player", "RayChat", "area", "agent", "can") groups=["Player"]]
 z_index = -2
 collision_mask = 6
 script = ExtResource("1_56p2h")
@@ -295,8 +295,9 @@ no_player = true
 Nome = "Niko"
 anim_player = NodePath("Anim")
 RayChat = NodePath("RayCast")
-can = NodePath("Camera2D")
 area = NodePath("Area2D")
+agent = NodePath("NavigationAgent2D")
+can = NodePath("Camera2D")
 metadata/_custom_type_script = "uid://cbh51thjr5kdp"
 
 [node name="Camera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
@@ -345,3 +346,10 @@ collision_mask = 16
 [node name="Collision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_7qrlc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 8.0
+navigation_layers = 3
+max_speed = 70.0
+debug_enabled = true

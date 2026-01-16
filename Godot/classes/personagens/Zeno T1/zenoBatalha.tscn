@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="ZenoBatalha" type="AnimatedSprite2D"]
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_es7ui")
 script = ExtResource("1_lxsey")
 player = "Zeno"

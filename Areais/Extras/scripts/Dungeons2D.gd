@@ -1,6 +1,8 @@
 @icon("res://Resources/texturas/dunjoes.tres")
 class_name Dungeons2D extends Node2D
 
+@export_file("*.*tscn") var scene_file: String
+
 @export_group("Nodes")
 @export var players: SpawnPlayers
 @export var inimigos: Node2D
@@ -15,7 +17,7 @@ func _ready() -> void:
 	end_batalha.connect(terminar_batalha)
 	Global.play_transition("end_transition")
 	Manager.change_state("MAP")
-	if tocarSom:
+	if tocarSom and not Manager.audios.get(1).isAudio(DataAudio.caminho):
 		Manager.tocar_musica(DataAudio)
 
 func iniciar_batalha() -> void:
@@ -29,6 +31,3 @@ func terminar_batalha() -> void:
 	Manager.tocar_musica(DataAudio)
 	await get_tree().process_frame
 	Manager.change_state("MAP")
-
-func test(...args):
-	print(args)

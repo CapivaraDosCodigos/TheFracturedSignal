@@ -1,0 +1,9 @@
+import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
+
+~ start
+Narrador: Estamos sem verba pra dialogos
+do Manager.NodeVariant.call_deferred("next_texture")
+Narrador: Depois vamos colocar
+do Manager.NodeVariant.call_deferred("next_texture")
+do Manager.NodeVariant.call_deferred("open_scene")
+=> END

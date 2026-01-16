@@ -8,7 +8,7 @@ class_name BattleArenaControl
 var last_state = null
 
 func _process(_delta: float) -> void:
-	var current_state = Manager.current_status
+	var current_state = Manager.CurrentStatus
 	if current_state != last_state:
 		if current_state == Manager.GameState.BATTLE:
 			ambicao.position = ambicao_make.position

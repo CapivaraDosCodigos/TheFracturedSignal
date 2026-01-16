@@ -9,9 +9,10 @@ static func Carregar(slot: int, temporada: int) -> SeasonResource:
 		push_warning("⚠️ Slot inválido: %d" % slot)
 		return null
 	
-	var path := Database.SAVE_PATH % slot
+	var path: String = Database.SAVE_PATH % slot
 	if not FileAccess.file_exists(path):
 		if temporada == 1:
+			prints_sizes("res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres")
 			return GlobalSeasons.T1.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		return null
 	
@@ -25,7 +26,7 @@ static func Carregar(slot: int, temporada: int) -> SeasonResource:
 
 static func CarregarCampo(slot: int, campo: String) -> Variant:
 	if not _is_slot_valid(slot): return ""
-	var path := Database.SAVE_PATH % slot
+	var path: String = Database.SAVE_PATH % slot
 	if not FileAccess.file_exists(path): return ""
 	var data: SeasonResource = ResourceLoader.load(path)
 	if data == null:
@@ -36,7 +37,7 @@ static func Salvar(slot: int, origem: SeasonResource) -> void:
 	if not _is_slot_valid(slot): return
 	
 	origem.TimeSave = TimeGame.get_time()
-	var path := Database.SAVE_PATH % slot
+	var path: String = Database.SAVE_PATH % slot
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir()))
 	
 	var err := ResourceSaver.save(origem, path)
@@ -49,7 +50,7 @@ static func Salvar(slot: int, origem: SeasonResource) -> void:
 static func Deletar(slot: int) -> void:
 	if not _is_slot_valid(slot): return
 	
-	var path := Database.SAVE_PATH % slot
+	var path: String = Database.SAVE_PATH % slot
 	if FileAccess.file_exists(path):
 		var err = OS.move_to_trash(ProjectSettings.globalize_path(path))
 		if err == OK:

@@ -2,8 +2,8 @@ extends AudioStreamPlayer
 class_name AudioPlayer
 
 var volume_local: float = 100.0
-
 var tipo_audio: String = "music"
+var path_audio: String = ""
 
 func _ready() -> void:
 	Global.AllAudios.append(self)
@@ -44,6 +44,7 @@ func tocar(DataAudio: DataAudioPlayer) -> void:
 		som.loop = DataAudio.loop
 	
 	stream = som
+	path_audio = DataAudio.caminho
 	volume_local = clamp(DataAudio.volume, 0.0, 100.0)
 	pitch_scale = 1.0
 	if DataAudio.pitchRandom:
@@ -57,3 +58,8 @@ func tocar(DataAudio: DataAudioPlayer) -> void:
 		await get_tree().create_timer(DataAudio.atraso).timeout
 	
 	play()
+
+func isAudio(Audio: String) -> bool:
+	if path_audio == Audio:
+		return true
+	return false

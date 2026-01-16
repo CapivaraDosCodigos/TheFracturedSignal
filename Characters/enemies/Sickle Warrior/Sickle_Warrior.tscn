@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcxdjru1chnie"]
+
+[ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Godot/classes/Nodes/ObjectEnemies2D.gd" id="1_ssgwk"]
+[ext_resource type="Resource" uid="uid://cqc56s08t71id" path="res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tres" id="2_ssgwk"]
+[ext_resource type="SpriteFrames" uid="uid://dx8pn0dd7mhkq" path="res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres" id="3_rweb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]
+size = Vector2(24, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ssgwk"]
+radius = 21.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nenr"]
+radius = 85.333336
+
+[node name="Sickle Warrior" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "agent") groups=["Enemie"]]
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+script = ExtResource("1_ssgwk")
+isMove = true
+speed = 40.0
+databatalha = ExtResource("2_ssgwk")
+sprite = NodePath("Sprite")
+agent = NodePath("NavigationAgent2D")
+metadata/_custom_type_script = "uid://d3ulv6glaxvc7"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_rweb3")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 2.0
+offset = Vector2(2, 0)
+flip_h = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_e81kj")
+
+[node name="AreaColisao" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 9
+
+[node name="collision" type="CollisionShape2D" parent="AreaColisao"]
+shape = SubResource("CircleShape2D_ssgwk")
+debug_color = Color(0.231373, 0.639216, 0, 0.117647)
+
+[node name="AreaObeservacao" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 9
+
+[node name="collision" type="CollisionShape2D" parent="AreaObeservacao"]
+shape = SubResource("CircleShape2D_3nenr")
+debug_color = Color(0.2402782, 0.5120708, 0.6392157, 0.11764706)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 20.0
+debug_enabled = true
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="AreaColisao" to="." method="_on_area_colisao_body_entered"]
+[connection signal="body_entered" from="AreaObeservacao" to="." method="_on_area_observacao_body_entered"]
+[connection signal="body_exited" from="AreaObeservacao" to="." method="_on_area_observacao_body_exited"]

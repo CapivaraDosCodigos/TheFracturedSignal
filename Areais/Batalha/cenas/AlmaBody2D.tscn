@@ -1,24 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://8sgdpebe3e0a"]
+[gd_scene load_steps=9 format=3 uid="uid://8sgdpebe3e0a"]
 
 [ext_resource type="Script" uid="uid://b87x0fkq7trfu" path="res://Areais/Batalha/scripts/AlmaBody2D.gd" id="1_3xyvn"]
-[ext_resource type="Texture2D" uid="uid://dl13v0ohw07w0" path="res://texture/PNG/icon/alma da ambição.png" id="2_frmhu"]
-[ext_resource type="Script" uid="uid://cau662oka6mjm" path="res://Godot/classes/DATAS/DataAudioPlayer.gd" id="2_pnbn4"]
-
-[sub_resource type="Resource" id="Resource_rt36v"]
-script = ExtResource("2_pnbn4")
-caminho = "uid://curnncewyka3j"
-tipo = "effects"
-volume = 60.0
-pitchRandom = true
-metadata/_custom_type_script = "uid://cau662oka6mjm"
-
-[sub_resource type="Resource" id="Resource_pnbn4"]
-script = ExtResource("2_pnbn4")
-caminho = "uid://ndxjin6vdp1w"
-tipo = "effects"
-volume = 60.0
-pitchRandom = true
-metadata/_custom_type_script = "uid://cau662oka6mjm"
+[ext_resource type="Texture2D" uid="uid://luclo7tqem4y" path="res://texture/PNG/icon/almas/Alma.png" id="2_11kbl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
 radius = 9.5
@@ -44,10 +27,9 @@ b = Vector2(-16, 16)
 
 [node name="Ambição" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_mask = 9
+collision_layer = 32
+collision_mask = 160
 script = ExtResource("1_3xyvn")
-audioHurt = SubResource("Resource_rt36v")
-audioPowerUp = SubResource("Resource_pnbn4")
 invincible_time = 0.25
 metadata/_custom_type_script = "uid://b87x0fkq7trfu"
 
@@ -56,11 +38,12 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_uryig")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_frmhu")
+texture = ExtResource("2_11kbl")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
-collision_mask = 2
+collision_layer = 32
+collision_mask = 64
 
 [node name="Collision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1)
@@ -69,7 +52,8 @@ debug_color = Color(0.0043103276, 0.06785011, 0.70196074, 0.41960785)
 
 [node name="escudo" type="Area2D" parent="."]
 rotation = 0.78539705
-collision_mask = 2
+collision_layer = 32
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escudo"]
 shape = SubResource("SegmentShape2D_frmhu")

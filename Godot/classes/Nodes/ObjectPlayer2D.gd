@@ -6,10 +6,14 @@ class_name ObjectPlayer2D extends CharacterBody2D
 @export var no_player: bool = false
 @export var Nome: String
 @export var trail_length: int = 20
-@export_range(1, 3) var camada: int = 1:
+@export_range(1, 3, 1) var camada: int = 1:
 	set(value):
 		camada = value
 		_update_camada()
+@export_range(1, 8, 1) var local: int = 1:
+	set(value):
+		local = clamp(value, 1, 8)
+		_update_navigation_layer()
 
 @export_group("Velocidades")
 @export var speed_running: float = 1.5
@@ -22,9 +26,10 @@ class_name ObjectPlayer2D extends CharacterBody2D
 @export_group("Nodes")
 @export var anim_player: AnimationPlayer
 @export var RayChat: RayCast2D
+@export var area: Area2D
+@export var agent: NavigationAgent2D
 @export var leader: ObjectPlayer2D
 @export var can: PhantomCamera2D
-@export var area: Area2D
 
 var direction: Vector2 = Vector2.ZERO
 var last_facing: String = "Down"
@@ -37,19 +42,26 @@ func _ready() -> void:
 	await get_tree().process_frame
 	area.area_entered.connect(_on_area_2d_area_entered)
 	area.area_exited.connect(_on_area_2d_area_exited)
+	agent.path_desired_distance = 8.0
+	agent.target_desired_distance = 8.0
+	agent.max_speed = speed
+	agent.velocity_computed.connect(_on_velocity_computed)
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	if Manager.current_status == Manager.GameState.MAP:
+	if Manager.isState("MAP"):
 		#if Manager.CurrentPlayer != null:
 			#no_player = not (Manager.CurrentPlayer.Nome == Nome)
 			
 		_player_physics(delta)
 		_follower_physics(delta)
 	
-	elif Manager.current_status == Manager.GameState.DIALOGUE:
+	elif Manager.isState("DIALOGUE"):
+		_update_animation(Vector2.ZERO)
+		
+	elif Manager.isState("MENU"):
 		_update_animation(Vector2.ZERO)
 
 func _player_physics(_delta: float) -> void:
@@ -76,9 +88,9 @@ func _player_physics(_delta: float) -> void:
 	move_and_slide()
 	_update_animation(direction)
 	
-	trail.push_front(global_position)
-	if trail.size() > trail_length:
-		trail.pop_back()
+	#trail.push_front(global_position)
+	#if trail.size() > trail_length:
+		#trail.pop_back()
 
 func _follower_physics(_delta: float) -> void:
 	if not no_player:
@@ -106,21 +118,41 @@ func _follower_physics(_delta: float) -> void:
 		move_and_slide()
 		return
 	
-	if leader.trail.size() < trail_length:
+	#if leader.trail.size() < trail_length:
+		#velocity = Vector2.ZERO
+		#_update_animation(Vector2.ZERO)
+		#move_and_slide()
+		#return
+	
+	#var target_pos = leader.trail.back()
+	#var dir = (target_pos - global_position).normalized()
+	#velocity = dir * speed * running
+	#move_and_slide()
+	#_update_animation(dir)
+	#
+	#trail.push_front(global_position)
+	#if trail.size() > trail_length:
+		#trail.pop_back()
+	
+	agent.target_position = leader.global_position
+
+	if agent.is_navigation_finished():
 		velocity = Vector2.ZERO
-		_update_animation(Vector2.ZERO)
-		move_and_slide()
-		return
-	
-	var target_pos = leader.trail.back()
-	var dir = (target_pos - global_position).normalized()
-	velocity = dir * speed * running
+	else:
+		var next_path_position = agent.get_next_path_position()
+		direction = (next_path_position - global_position).normalized()
+		velocity = direction * speed * running
+
+	_update_animation(direction)
+		
 	move_and_slide()
-	_update_animation(dir)
-	
-	trail.push_front(global_position)
-	if trail.size() > trail_length:
-		trail.pop_back()
+
+func _update_navigation_layer() -> void:
+	if agent:
+		agent.navigation_layers = 1 << (local - 1)
+
+func _on_velocity_computed(_safe_velocity: Vector2) -> void:
+	pass
 
 func _update_animation(dir: Vector2) -> void:
 	if dir != Vector2.ZERO:

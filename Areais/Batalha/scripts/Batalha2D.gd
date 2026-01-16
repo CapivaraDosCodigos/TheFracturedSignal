@@ -39,6 +39,7 @@ var submenu_ativo: bool = false
 #endregion
 
 func _ready() -> void:
+	
 	while batalha.inimigos.size() > MAX_ENENINES:
 		batalha.inimigos.pop_back()
 
@@ -58,7 +59,7 @@ func _ready() -> void:
 	Manager.tocar_musica(batalha.DataAudio, 1)
 
 func _process(delta: float) -> void:
-	var state = Manager.current_status
+	var state = Manager.CurrentStatus
 	if state != last_state:
 
 		if state == Manager.GameState.BATTLE:
@@ -108,7 +109,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("confirm"):
 		Manager.tocar_musica(PathsMusic.MODERN_9, 3)
 		_abrir_submenu(container.get_current_action_name())
-
+	
 	elif event.is_action_pressed("cancel"):
 		Manager.tocar_musica(PathsMusic.CANCEL, 3)
 		_cancelar_jogador_anterior()
@@ -315,7 +316,7 @@ func _act(act: String, key: String) -> void:
 		
 		if inimigo != null:
 			inimigo.apply_damage(PlayersDIR[key].maxdamage)
-			print(PlayersDIR[key].maxdamage)
+			#print(PlayersDIR[key].maxdamage)
 
 		await get_tree().process_frame
 		if enemiesNodes.is_empty():
@@ -438,8 +439,6 @@ func adicionar_inimigo(inimigo: PackedScene, intex: int) -> void:
 
 	personagens.add_child(inst)
 	enemiesNodes[chave] = inst
-
-	inst.play("default")
 
 func remover_jogador_(key: String) -> void:
 	if not PlayersDIR.has(key):

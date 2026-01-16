@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgs8qnmsvgs1g"]
 
-[ext_resource type="Texture2D" uid="uid://bp6cdr3xf1ujb" path="res://texture/characters/inimigos/bebedouro.png" id="1_jeaxr"]
-[ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Characters/enemies/bebedouro/bebedouro.gd" id="1_s6x8t"]
+[ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Godot/classes/Nodes/ObjectEnemies2D.gd" id="1_s6x8t"]
 [ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/classes/Inimigos/bebedouro/bebedouro.tres" id="2_ou5q7"]
+[ext_resource type="SpriteFrames" uid="uid://8pnircha6h5b" path="res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres" id="3_ou5q7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]
 size = Vector2(14, 22)
@@ -10,19 +10,22 @@ size = Vector2(14, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jeaxr"]
 size = Vector2(24, 28)
 
-[node name="bebedouro" type="CharacterBody2D"]
+[node name="bebedouro" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "agent") groups=["Enemie"]]
 scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_s6x8t")
 databatalha = ExtResource("2_ou5q7")
+sprite = NodePath("Sprite")
+agent = NodePath("NavigationAgent2D")
 metadata/_custom_type_script = "uid://d3ulv6glaxvc7"
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 0)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_jeaxr")
-hframes = 2
+sprite_frames = ExtResource("3_ou5q7")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
@@ -40,4 +43,8 @@ position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_jeaxr")
 debug_color = Color(0.231373, 0.639216, 0, 0.117647)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_colisao_body_entered"]

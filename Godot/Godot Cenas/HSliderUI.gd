@@ -13,6 +13,15 @@ class_name HSliderUI
 func _process(_delta: float) -> void:
 	texture.visible = has_focus()
 	label.text = text % [int(value)]
+	if not Manager.isState("NOT_IN_THE_GAME"):
+		_reset_color()
+
+func _reset_color() -> void:
+	if Manager.get_Player().Soul == PlayerData.Souls.Empty:
+		texture.modulate = Color(1.0, 1.0, 1.0)
+	
+	elif Manager.get_Player().Soul == PlayerData.Souls.Hope:
+		texture.modulate = Color(0.561, 0.494, 0.816)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not has_focus():

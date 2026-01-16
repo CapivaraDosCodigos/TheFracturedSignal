@@ -13,8 +13,8 @@ class_name EnemiesBase2D extends AnimatedSprite2D
 @export_group("nodes")
 @export var spawns: Array[SpawnProjeteis]
 
-var rootobjeto: Node2D = null
-var rootbatalha: Batalha2D = null
+var rootobjeto: Node2D
+var rootbatalha: Batalha2D
 var id: int = 0
 
 func _process(_delta: float) -> void:
@@ -26,28 +26,32 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
+	play("idle")
 
 func _dead() -> void:
 	life = 0
 	rootbatalha.remover_inimigo(id)
-	await get_tree().create_timer(0.2).timeout
-	queue_free()
+	play("Dead")
 
 func poupado() -> void:
 	rootbatalha.remover_inimigo(id)
-	rootbatalha.end_batalha()
 	#play("poupado")
 	queue_free()
 
 func atacar() -> void:
-	spawns.pick_random().spawn(rootobjeto, time)
+	play("Attack")
+	if not spawns.is_empty():
+		spawns.pick_random().spawn(rootobjeto, time)
 
 func apply_damage(dano: int) -> void:
 	life -= dano
 
 func _on_animation_finished() -> void:
-	if animation == "dead" and animation == "dead":
+	if animation == "Dead" or animation == "Spared":
 		queue_free()
+		
+	elif animation == "Attack":
+		play("idle")
 
 func _to_string() -> String:
 	return nome
