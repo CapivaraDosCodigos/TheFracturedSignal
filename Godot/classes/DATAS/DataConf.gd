@@ -16,5 +16,8 @@ class_name DataConf extends Resource
 ## Se verdadeiro, mostra o fps na tela.
 @export var fps_bool: bool = false
 
+## Porcentagem de visibilidade do hub.
+@export_range(0, 100) var hub: int = 100
+
 ## Idioma selecionado no jogo (por padrão "pt").
 @export var idioma: String = "pt"

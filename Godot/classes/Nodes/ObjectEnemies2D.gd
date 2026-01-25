@@ -78,6 +78,7 @@ func _process_movement() -> void:
 	direction = (next_pos - global_position).normalized()
 
 	var speed_mult: float = 1.0 if dentro_area else 0.5
+	sprite.flip_h = direction.x < 0
 	velocity = direction * speed * speed_mult
 
 	_update_animation(direction)

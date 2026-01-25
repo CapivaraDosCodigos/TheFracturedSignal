@@ -11,7 +11,6 @@ size = Vector2(14, 22)
 size = Vector2(24, 28)
 
 [node name="bebedouro" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "agent") groups=["Enemie"]]
-scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_s6x8t")
@@ -22,23 +21,21 @@ metadata/_custom_type_script = "uid://d3ulv6glaxvc7"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 0)
-scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_ou5q7")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(2, 0)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_e81kj")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
+scale = Vector2(2, 2)
 collision_layer = 6
 collision_mask = 9
 
 [node name="collision" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_jeaxr")
 debug_color = Color(0.231373, 0.639216, 0, 0.117647)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CirurgiaoClasse" load_steps=4 format=3 uid="uid://cpyq1bqrnbgj0"]
+
+[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/classes/Itens E Mais/armas/Signal_Weapon.tres" id="1_157wt"]
+[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/classes/Itens E Mais/armaduras/óculos_simples.tres" id="2_rtuqm"]
+[ext_resource type="Script" uid="uid://dg13ubj4h7w4m" path="res://Godot/classes/Itens E Mais/Classes/CirurgiaoClasse.gd" id="3_7hn30"]
+
+[resource]
+script = ExtResource("3_7hn30")
+Arma = ExtResource("1_157wt")
+Armadura = ExtResource("2_rtuqm")
+metadata/_custom_type_script = "uid://dg13ubj4h7w4m"

@@ -204,7 +204,7 @@ id = "None2"
 dungeons2D = NodePath("../..")
 
 [node name="Sickle Warrior" parent="inimigos" node_paths=PackedStringArray("dungeons2D", "marker") instance=ExtResource("8_wh20a")]
-position = Vector2(144, 16)
+position = Vector2(208, 240)
 id = "tv"
 dungeons2D = NodePath("../..")
 marker = NodePath("Marker2D")

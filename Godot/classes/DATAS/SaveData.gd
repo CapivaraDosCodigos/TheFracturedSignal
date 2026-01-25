@@ -60,8 +60,7 @@ static func Deletar(slot: int) -> void:
 
 static func prints_sizes(path: String) -> void:
 	var size_bytes: int = FileAccess.get_size(path)
-	print("Arquivo contem: ", size_bytes)
-	print("KB: ", bytes_to_kb(size_bytes))
+	print("Arquivo contem KB: ", bytes_to_kb(size_bytes))
 	print("MB: ", bytes_to_mb(size_bytes))
 
 static func bytes_to_kb(bytes: int) -> float:

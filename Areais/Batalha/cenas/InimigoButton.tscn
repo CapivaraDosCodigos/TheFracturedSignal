@@ -57,9 +57,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 16
+theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 16
+theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
@@ -100,10 +100,10 @@ theme_override_fonts/font = ExtResource("3_1vh1s")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/fill = SubResource("StyleBoxFlat_b2k8i")
 value = 100.0
+show_percentage = false
 
 [node name="LifeLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/Life"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,5 +111,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
-text = "Life"
+text = "100/100"
+horizontal_alignment = 1
 vertical_alignment = 1

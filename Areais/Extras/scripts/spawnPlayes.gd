@@ -6,7 +6,7 @@ class_name SpawnPlayers
 func _ready() -> void:
 	var players_data: Array[PlayerData] = Manager.PlayersAtuais.values()
 	var players_inst: Array[ObjectPlayer2D] = []
-
+	
 	for i: int in players_data.size():
 		var data: PlayerData = players_data[i]
 		var obj: ObjectPlayer2D = load(data.ObjectPlayerPath).instantiate()
@@ -18,7 +18,7 @@ func _ready() -> void:
 		if i < makers.size():
 			obj.global_position = makers[i].global_position
 	
-	players_inst.reverse()
+	#players_inst.reverse()
 	var leader := players_inst[0]
 	
 	for player in players_inst:

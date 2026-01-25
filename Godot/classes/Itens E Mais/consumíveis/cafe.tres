@@ -12,9 +12,9 @@ script = ExtResource("2_pat6h")
 cura = 0
 concentration = 25
 efeito = 3
+preco = 10
+inBatalha = true
 nome = "cafe"
 icone = SubResource("AtlasTexture_dqt6t")
 descricao = "cafe diferente [color=green]Wow[/color]"
-preco = 10
-inBatalha = true
 metadata/_custom_type_script = "uid://4uoggiynaxiu"

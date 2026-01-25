@@ -11,8 +11,6 @@ const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.t
 
 @export var CurrentStatus: GameState = GameState.MAP
 
-var PlayersAtuais: Dictionary[String, PlayerData] = {}
-
 var GameStateString: Array = GameState.keys()
 
 var NodeVariant: Node
@@ -20,12 +18,13 @@ var textureD: Texture
 var raio: RayCast2D
 var Body: Node
 
+var PlayersAtuais: Dictionary[String, PlayerData]
 var ObjectPlayer: ObjectPlayer2D
 var CurrentBatalha: Batalha2D
 var Data: SeasonResource
 var Extras: DataExtras
 
-var CurrentPlayerString: String = ""
+var CurrentPlayer: String = ""
 var CurrentScene: String = ""
 var CurrentTemporada: int = 1
 var CurrentSlot: int = 0
@@ -33,17 +32,13 @@ var InGame: bool = false
 
 #endregion
 
-func test():
-	get_Player().InventoryPlayer.add_item(ContainerItems.SIGNAL_WEAPON)
-
-func get_Player(nome: String = CurrentPlayerString) -> PlayerData:
+func get_Player(nome: String = CurrentPlayer) -> PlayerData:
 	if PlayersAtuais.has(nome):
-		PlayersAtuais[nome].update_properties()
-		return PlayersAtuais[nome]
+		return PlayersAtuais.get(nome)
 	push_error("Jogador '%s' não encontrado!" % nome)
 	return null
 
-func get_Inventory(nome: String = CurrentPlayerString) -> Inventory:
+func get_Inventory(nome: String = CurrentPlayer) -> Inventory:
 	var player: PlayerData = get_Player(nome)
 	return player.InventoryPlayer if player != null else null
 
@@ -87,13 +82,10 @@ func DialogoTexture(texture: String = ""):
 
 func SAVE(slot: int):
 	await get_tree().process_frame
-	for player in PlayersAtuais.values():
-		player.update_properties()
 	
 	Data.Extras = Extras
 	Data.CurrentScene = CurrentScene
-	Data.CurrentPlayer = CurrentPlayerString
-	Data.PlayersAtuais = PlayersAtuais#.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	Data.CurrentPlayer = CurrentPlayer
 	
 	SaveData.Salvar(slot, Data)
 
@@ -104,14 +96,10 @@ func Start_Save(slot: int, temporada: int, debug: bool = false):
 	Data = SaveData.Carregar(slot, temporada)
 	Extras = Data.Extras
 	CurrentScene = Data.CurrentScene
-	CurrentPlayerString = Data.CurrentPlayer
-	PlayersAtuais = Data.PlayersAtuais
+	CurrentPlayer = Data.CurrentPlayer
 	CurrentSlot = slot
 	CurrentTemporada = temporada
-
-	#print(PlayersAtuais)
-	for player in PlayersAtuais.values():
-		player.update_properties()
+	PlayersAtuais = Data.get_players()
 	
 	if not debug:
 		if CurrentScene:
@@ -131,13 +119,6 @@ func Return_To_Title() -> void:
 	change_state("NOT_IN_THE_GAME")
 	_clear(true)
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
-
-func AdicionarPlayer(player: PlayerData):
-	if not PlayersAtuais.has(player.Nome):
-		PlayersAtuais[player.Nome] = player
-
-func RemoverPlayer(nome: String):
-	PlayersAtuais.erase(nome)
 
 func InGameIsTrue():
 	while not InGame:
@@ -161,10 +142,10 @@ func _clear(slotON: bool = false):
 	Data = null
 	raio = null
 	Body = null
-	CurrentPlayerString = ""
+	CurrentPlayer = ""
 	CurrentScene = ""
 	PlayersAtuais.clear()
-
+	
 	if not slotON:
 		CurrentSlot = 0
 		CurrentTemporada = 0

@@ -1,3 +1,4 @@
+
 extends PanelContainer
 class_name ContainerPlayer
 
@@ -31,7 +32,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Manager.PlayersAtuais.has(player):
 		var playerProcess: PlayerData = Manager.get_Player(player)
-		life.text = str(playerProcess.Life) + "/" + str(playerProcess.maxlife)
+		life.text = str(playerProcess.Life) + "/" + str(playerProcess.maxLife)
 		act_label.text = player
 		texture.texture = playerProcess.Icone
 	

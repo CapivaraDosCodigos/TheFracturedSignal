@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource("1_itcqd")
-nome = "Signal Weapon"
-preco = 5
+damage = 15
+slot = 1
+nome = "Arma"
 icone = ExtResource("1_ll8v3")
 metadata/_custom_type_script = "uid://dlf8fsn8nuxag"

@@ -18,4 +18,20 @@
 		- Abel -
 		- Mita (nome temporaio) -
 		- Gelo (nome temporaio) -
-	
+	- Classes -
+		- Cirurgião -
+		- Filósofo -
+		- Moralista -
+		- Engenheira -
+		- Físico -
+	- Items Iquipaveis -
+		- Items leves -
+		- Items medios -
+		- items pesados -
+		- items amaldiçoados -
+		- items tecnológicos -
+		- items normais -
+	- Slots -
+		- Defesa -
+		- Ataque -
+		- Suporte -

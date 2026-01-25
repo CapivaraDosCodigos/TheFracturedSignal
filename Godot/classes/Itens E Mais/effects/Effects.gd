@@ -11,23 +11,20 @@ enum EffectType {
 }
 
 @export var duracao: int = 1
-
-@export_group("Visual")
-@export var Nome: String = ""
-@export var icone: Texture2D
-@export_multiline var descricao: String = ""
-
-@export_group("Especificações")
-@export_subgroup("Tipos")
-@export_flags("DANO", "BLOCKED", "SKIP", "RESISTANCE", "CURA", "FORÇA") var tipos: int = 0
-
-@export_subgroup("")
 @export_range(0.0, 2.0, 0.05) var resistencia: float = 1.0
 @export_range(0.0, 2.0, 0.05) var forca: float = 1.0
 @export var cura: int = 0
 @export var dano: int = 0
 @export var dano_com_armadura: bool = false
-@export var blocked_actions: Array[String] = []
+@export_enum("ATK", "ITM", "EXE", "DEF", "ACT") var blocked_actions: Array[String] = []
+
+@export_subgroup("Tipos")
+@export_flags("DANO", "BLOCKED", "SKIP", "RESISTANCE", "CURA", "FORÇA") var tipos: int = 0
+
+@export_category("Visual")
+@export var Nome: String = ""
+@export var icone: Texture2D
+@export_multiline var descricao: String = ""
 
 var turnos: int = 0
 
@@ -70,10 +67,10 @@ func remover(player: PlayerData) -> void:
 		player.skip_turn = false
 
 	if has_tipo(EffectType.FORÇA):
-		player.force_mult = 1
+		player.force_mult = 1.0
 
 	if has_tipo(EffectType.RESISTANCE):
-		player.resistance_mult = 1
+		player.resistance_mult = 1.0
 
 	turnos = 0
 

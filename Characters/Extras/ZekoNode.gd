@@ -1,4 +1,3 @@
-@icon("res://texture/folder tres/zekoCena.tres")
 extends CharacterBody2D
 
 @export_subgroup("velocity x")
@@ -30,9 +29,7 @@ var chouch := false
 
 func _ready() -> void:
 	Manager.raio = RayChat
-	Manager.tocar_musica_manager("res://sons/music/music.ogg", 90, true)
-	#Manager.nova_palette("res://texture/paleta/P3.png", true)
-		
+	
 	jump_velocity = (junp_height * 2) / max_time_to_peak
 	gravity = (junp_height * 2) / pow(max_time_to_peak, 2)
 	fall_gravity = gravity * 2
@@ -93,7 +90,7 @@ func Zeno_physics(_delta):
 	position = position.snapped(Vector2.ONE)
 	move_and_slide()
 	update_animation()
-	
+
 func update_animation():
 	var state := ""
 	if chouch:
@@ -128,6 +125,3 @@ func _on_timer_timeout() -> void:
 		
 	if abs(velocity.x) > speed * 1.5 and bar_velocity > 4 and is_on_floor():
 		bar_velocity -= 4
-	
-	
-	

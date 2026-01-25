@@ -65,12 +65,12 @@ func atualizar_players(players: Array[PlayerData]) -> void:
 		b.visible = false
 
 	for i in range(min(players.size(), botoes.size())):
-		var p := players[i]
-		var btn := botoes[i]
+		var p: PlayerData = players[i]
+		var btn: InimigoButton = botoes[i]
 
 		btn.visible = true
 		btn.nome.text = p.Nome
-		btn.life.max_value = p.maxlife
+		btn.life.max_value = p.maxLife
 		btn.life.value = p.Life
 
 func end() -> void:

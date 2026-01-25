@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [node name="Bebedouro" type="AnimatedSprite2D" node_paths=PackedStringArray("spawns")]
-scale = Vector2(1.8, 1.8)
+scale = Vector2(0.8, 0.8)
 sprite_frames = ExtResource("1_2jc4c")
 animation = &"Attack"
 script = ExtResource("1_sc6bt")

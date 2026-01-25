@@ -2,78 +2,61 @@
 class_name PlayerData
 extends Resource
 
-const Calculator: CalculatePlayer = preload("res://Godot/classes/personagens/CalculatePlayerGlobal.tres")
 enum Souls { Empty = 1, Hope = 2, Ambition = 3}
 
-@export var Exp: int = 0
 @export var Life: int = 100:
 	set(value):
 		Life = value
 		if Life < -999:
 			Life = -999
+@export var baseLife: int = 100
+@export var baseAttack: int = 1
+@export var baseDefense: int = 1
+
+@export_group("Informaçoes")
+@export var InventoryPlayer: Inventory
 @export var Soul: Souls = Souls.Empty
+@export var Classe: ClasseData
 
-@export_group("Array's")
+@export_subgroup("Array's")
 @export var effects: Array[Effect] = []
-@export var blocked_actions: Array[String] = []
-@export var hidden_actions: Array[String] = []
+@export_enum("ATK", "ITM", "EXE", "DEF", "ACT") var blocked_actions: Array[String] = []
+@export_enum("ATK", "ITM", "EXE", "DEF", "ACT") var hidden_actions: Array[String] = []
 
-@export_group("Visual")
-@export var Nome: String = "Player"
-@export var Icone: Texture
-
-@export_group("PackedScenes")
-@export_file("*.*tscn") var PlayerBatalhaPath: String = ""
-@export_file("*.*tscn") var ObjectPlayerPath: String = ""
-
-@export_group("Armazem")
-@export var InventoryPlayer: Inventory = Inventory.new()
-@export var armorE: ItemArmadura
-@export var weaponsE: ItemArma
-
-@export_group("EXEs", "EXE")
-@export var EXE_Inventory_Executables: Array[Executable]
+@export_subgroup("EXEs", "EXE")
+@export var EXE_Inventory_Executables: Array[Executable] = []
 @export var EXE_slot_1: Executable
 @export var EXE_slot_2: Executable
 @export var EXE_slot_3: Executable
 @export var EXE_slot_4: Executable
 
-var force_mult: float = 1.0
+@export_group("PackedScenes")
+@export_file("*.*tscn") var PlayerBatalhaPath: String = ""
+@export_file("*.*tscn") var ObjectPlayerPath: String = ""
+
+@export_category("Visual")
+@export_placeholder("Character") var Nome: String = ""
+@export var Icone: Texture
+
 var resistance_mult: float = 1.0
-var maxlife: int = 100
-var Lv: int = 1
-var attack: int = 1
-var defense: int = 1
-var resource: int = 1
-var maxdamage: int = 1
-var mindamage: int = 1
+var force_mult: float = 1.0
+var maxDamage: int = 1:
+	get = _get_maxDamage
+var minDamage: int = 1:
+	get = _get_minDamage
+var maxLife: int = 1:
+	get = _get_maxLife
+var defense: int = 1:
+	get = _get_defense
+var attack: int = 1:
+	get = _get_attack
 
-var isDefesa: bool = false
 var skip_turn: bool = false
+var isDefesa: bool = false
 var fallen: bool = false
-
-func _init() -> void:
-	if InventoryPlayer == null:
-		InventoryPlayer = Inventory.new()
 
 func _to_string() -> String:
 	return Nome
-
-func update_properties() -> void:
-	Lv = Calculator.calcular_level(Exp)
-	
-	var extra_life = armorE.extra_life + weaponsE.extra_life
-	var extra_defense = armorE.defesa + weaponsE.extra_defense
-	var extra_resource = armorE.extra_resource + weaponsE.extra_resource
-	var extra_attack = armorE.extra_strength + weaponsE.extra_strength
-	
-	maxlife = Calculator.life_calculator(Lv, extra_life)
-	defense = Calculator.defense_calculator(Lv, extra_defense)
-	resource = Calculator.resource_calculator(Lv, extra_resource)
-	attack = Calculator.attack_calculator(Lv, extra_attack)
-	
-	maxdamage = Calculator.calcular_max_damage(weaponsE.damage, armorE.extra_damage, attack, force_mult)
-	mindamage = Calculator.calcular_min_damage(maxdamage, weaponsE.damage, armorE.extra_damage)
 
 func apply_damage(dano: int, ignore: bool = false) -> void:
 	if ignore:
@@ -95,46 +78,48 @@ func apply_effects() -> void:
 		effect.sofrer(self)
 
 func reset() -> void:
-	Life = maxlife
+	Life = maxLife
 
 func get_Executables() -> Array[Executable]:
 	var Exes: Array[Executable] = [EXE_slot_1, EXE_slot_2, EXE_slot_3, EXE_slot_4]
 	return Exes.filter(func(value): return value != null)
 
-func equip_armor(inv: Inventory, slot: int) -> void:
-	if not inv._is_slot_valid(slot): return
-	var item = inv.items[slot]
-	if item == null: return
-	if item is ItemArmadura:
-		if armorE != null:
-			var free_slot = inv.get_free_slot()
-			if free_slot != -1:
-				inv.set_item(armorE, free_slot)
-		armorE = item
-		inv.remove_item(slot)
+func _get_maxLife() -> int:
+	if not Classe:
+		push_error("erro, sem classe")
+		return 0
+	
+	maxLife = baseLife + Classe.get_life()
+	return maxLife
 
-func equip_weapon(inv: Inventory, slot: int) -> void:
-	if not inv._is_slot_valid(slot): return
-	var item = inv.items[slot]
-	if item == null: return
-	if item is ItemArma:
-		if weaponsE != null:
-			var free_slot = inv.get_free_slot()
-			if free_slot != -1:
-				inv.set_item(weaponsE, free_slot)
-		weaponsE = item
-		inv.remove_item(slot)
+func _get_defense() -> int:
+	if not Classe:
+		push_error("erro, sem classe")
+		return 0
+	
+	defense = baseDefense + Classe.get_defense()
+	return defense
 
-func unequip_armor(inv: Inventory) -> void:
-	if armorE == null: return
-	var slot = inv.get_free_slot()
-	if slot == -1: return
-	inv.set_item(armorE, slot)
-	armorE = null
+func _get_attack() -> int:
+	if not Classe:
+		push_error("erro, sem classe")
+		return 0
+	
+	attack = baseAttack + Classe.get_attack()
+	return attack
 
-func unequip_weapon(inv: Inventory) -> void:
-	if weaponsE == null: return
-	var slot = inv.get_free_slot()
-	if slot == -1: return
-	inv.set_item(weaponsE, slot)
-	weaponsE = null
+func _get_maxDamage() -> int:
+	if not Classe:
+		push_error("erro, sem classe")
+		return 0
+	
+	maxDamage = int((Classe.get_damage()) * (1.0 + attack / 10.0))
+	return int(maxDamage * force_mult)
+
+func _get_minDamage() -> int:
+	if not Classe:
+		push_error("erro, sem classe")
+		return 0
+	
+	minDamage = min(maxDamage - (Classe.get_damage()), 0)
+	return minDamage

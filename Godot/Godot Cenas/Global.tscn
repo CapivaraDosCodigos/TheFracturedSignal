@@ -62,7 +62,8 @@ _data = {
 layer = 100
 script = ExtResource("1_n1wl8")
 
-[node name="Node" parent="." instance=ExtResource("2_te5ci")]
+[node name="Gamepad" parent="." instance=ExtResource("2_te5ci")]
+modulate = Color(1, 1, 1, 0)
 
 [node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

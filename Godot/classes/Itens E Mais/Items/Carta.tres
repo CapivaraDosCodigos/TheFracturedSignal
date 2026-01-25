@@ -9,7 +9,7 @@ region = Rect2(48, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_u2eu3")
+preco = -1
 nome = "Carta"
 icone = SubResource("AtlasTexture_vxdi6")
-preco = -1
 metadata/_custom_type_script = "uid://oan0jvd28y7r"

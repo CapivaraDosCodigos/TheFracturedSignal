@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4i7d4j4sgiva"]
+[gd_scene load_steps=28 format=3 uid="uid://c4i7d4j4sgiva"]
 
 [ext_resource type="Script" uid="uid://b33cjhsccjqk8" path="res://Areais/Batalha/scripts/ContainerPlayer.gd" id="1_srdai"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="2_olg25"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dibssswvswx5c" path="res://Areais/Batalha/scripts/BatalhaSubmenuEnemies.gd" id="10_e0j8l"]
 [ext_resource type="PackedScene" uid="uid://e5vh8ni8ulhb" path="res://Areais/Batalha/cenas/InimigoButton.tscn" id="11_3vpe8"]
 [ext_resource type="Script" uid="uid://caiby2lvrcodw" path="res://Areais/Batalha/scripts/BatalhaSubmenuPlayers.gd" id="13_c1poc"]
+[ext_resource type="Script" uid="uid://cgs6lo88bmepg" path="res://Areais/Batalha/scripts/ActMenu.gd" id="14_xramv"]
 [ext_resource type="Script" uid="uid://dua2jkxyih01c" path="res://Areais/Batalha/scripts/BatalhaSubmenuExecutable.gd" id="15_d35g0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5qq5"]
@@ -437,6 +438,45 @@ icon_scale = 1.6
 fixed_icon_size = Vector2i(32, 16)
 
 [node name="ItemLabel" type="RichTextLabel" parent="ExecutableMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="actsMenu" type="PanelContainer" parent="." node_paths=PackedStringArray("submenu_inimigos")]
+unique_name_in_owner = true
+visible = false
+z_index = 9
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_rwiij")
+script = ExtResource("14_xramv")
+submenu_inimigos = NodePath("../inimigosMenu")
+metadata/_custom_type_script = "uid://cgs6lo88bmepg"
+
+[node name="MarginContainer" type="MarginContainer" parent="actsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="actsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="actsMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme = ExtResource("9_e0j8l")
+icon_scale = 1.6
+fixed_icon_size = Vector2i(32, 16)
+
+[node name="ItemLabel" type="RichTextLabel" parent="actsMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true

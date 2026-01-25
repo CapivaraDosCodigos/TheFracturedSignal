@@ -5,6 +5,7 @@ const GLOBAl_PATH: String = "user://configures.tres"
 
 @onready var audios: Dictionary[int, AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ }
 @onready var animation_global: AnimationPlayer = $AnimationGlobal
+@onready var gamepad: Node2D = $Gamepad
 
 @export_range(0.0, 100.0, 1) var musica: float = 100:
 	set(value):
@@ -23,6 +24,9 @@ func _ready() -> void:
 	configures = Carregar_Arquivo()
 	musica = configures.music
 	efeito = configures.sound_effects
+
+func _process(_delta: float) -> void:
+	gamepad.modulate = Color(1.0, 1.0, 1.0, 0.0025 * configures.hub)
 
 func Carregar_Arquivo() -> DataConf:
 	if not ResourceLoader.exists(GLOBAl_PATH):

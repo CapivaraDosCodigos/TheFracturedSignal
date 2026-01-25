@@ -87,6 +87,6 @@ func confirmar(_valor: Variant) -> void:
 	if item_usado == null:
 		return
 
-	Manager.PlayersAtuais[Manager.CurrentPlayerString].InventoryPlayer.remove_item(current_index)
+	Manager.get_Inventory().remove_item(current_index)
 
 	print("[InventoryMenu] Item confirmado:", item_usado)

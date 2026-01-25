@@ -17,10 +17,14 @@ func _process(_delta: float) -> void:
 		_reset_color()
 
 func _reset_color() -> void:
-	if Manager.get_Player().Soul == PlayerData.Souls.Empty:
-		texture.modulate = Color(1.0, 1.0, 1.0)
+	var player: PlayerData = Manager.get_Player()
+	if not player:
+		return
 	
-	elif Manager.get_Player().Soul == PlayerData.Souls.Hope:
+	if player.Soul == PlayerData.Souls.Empty:
+		texture.modulate = Color.WHITE
+	
+	elif player.Soul == PlayerData.Souls.Hope:
 		texture.modulate = Color(0.561, 0.494, 0.816)
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -2,9 +2,7 @@ class_name PlayerBase2D extends AnimatedSprite2D
 
 @export var player: String
 @export var fallen: bool = false
-@export var size_marker: float = 20
 
-var rootbatalha: Batalha2D
 var id: int = 0
 
 func _process(_delta: float) -> void:

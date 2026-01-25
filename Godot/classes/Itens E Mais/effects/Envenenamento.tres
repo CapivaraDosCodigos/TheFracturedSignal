@@ -10,9 +10,9 @@ region = Rect2(128, 1040, 16, 16)
 [resource]
 script = ExtResource("1_abegt")
 duracao = 10
+dano = 10
+tipos = 1
 Nome = "Envenenamento"
 icone = SubResource("AtlasTexture_cyl0e")
 descricao = "Envenenamento dano curto mas ficou um longo período de tempo"
-tipos = 1
-dano = 10
 metadata/_custom_type_script = "uid://cioncjdbh77k8"

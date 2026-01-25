@@ -39,14 +39,12 @@ var submenu_ativo: bool = false
 #endregion
 
 func _ready() -> void:
-	
 	while batalha.inimigos.size() > MAX_ENENINES:
 		batalha.inimigos.pop_back()
 
 	PlayersDIR = Manager.PlayersAtuais
 	player_keys = PlayersDIR.keys()
-	player_keys.reverse()
-
+	
 	for idx in player_keys.size():
 		adicionar_jogador(idx, player_keys[idx])
 
@@ -315,8 +313,8 @@ func _act(act: String, key: String) -> void:
 		var inimigo = enemiesNodes.get(inimigo_id, null)
 		
 		if inimigo != null:
-			inimigo.apply_damage(PlayersDIR[key].maxdamage)
-			#print(PlayersDIR[key].maxdamage)
+			inimigo.apply_damage(PlayersDIR[key].maxDamage)
+			print(PlayersDIR[key].maxDamage, " dano do player ", key)
 
 		await get_tree().process_frame
 		if enemiesNodes.is_empty():
@@ -417,7 +415,6 @@ func adicionar_jogador(index: int, key: String) -> void:
 	playersNodes.append(inst)
 	inst.id = playersNodes.size() - 1
 	inst.player = key
-	inst.rootbatalha = self
 	inst.position = personagens.playerMarker2D[index].position
 
 	containers_players[index].player = key
@@ -433,7 +430,6 @@ func adicionar_inimigo(inimigo: PackedScene, intex: int) -> void:
 		chave += 1
 
 	inst.id = chave
-	inst.rootbatalha = self
 	inst.rootobjeto = battle_arena.objetos
 	inst.position = personagens.inimigoMarker2D[intex].position
 

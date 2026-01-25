@@ -7,8 +7,10 @@ extends SubMenuBase
 @onready var musica: HSliderUI = %musica
 @onready var efeitos_sonoros: HSliderUI = %EfeitosSonoros
 @onready var fps: CheckBoxUI = %FPS
+@onready var hub: HSliderUI = %HUB
 
 var sincronizando: bool = false
+var sincronizando2: bool = false
 
 func _on_opened() -> void:
 	container_buttons.visible = true
@@ -41,10 +43,14 @@ func _on_sons_pressed() -> void:
 	musica.grab_focus()
 
 func _on_tela_pressed() -> void:
+	sincronizando2 = true
+	
 	fps.button_pressed = Global.configures.fps_bool
+	hub.value = Global.configures.hub
 	
 	await get_tree().process_frame
 	
+	sincronizando2 = false
 	container_buttons.visible = false
 	container_sons.visible = false
 	container_tela.visible = true
@@ -62,3 +68,8 @@ func _on_efeitos_sonoros_value_changed(value: float) -> void:
 
 func _on_fps_pressed() -> void:
 	Global.configures.fps_bool = fps.button_pressed
+
+func _on_hub_value_changed(value: float) -> void:
+	if sincronizando2:
+		return
+	Global.configures.hub = int(value)

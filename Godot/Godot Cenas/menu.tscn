@@ -672,20 +672,20 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela"]
+[node name="ContainerFPS" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("15_771do")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS/PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS/PanelContainer/HBoxContainer"]
 modulate = Color(0.85, 0.85, 0.85, 1)
 z_index = 1
 custom_minimum_size = Vector2(24, 0)
@@ -694,7 +694,7 @@ texture = ExtResource("17_us1wh")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -704,7 +704,7 @@ text = "FPS Mode"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FPS" type="CheckBox" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer" node_paths=PackedStringArray("texture")]
+[node name="FPS" type="CheckBox" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS" node_paths=PackedStringArray("texture", "control_bottom")]
 unique_name_in_owner = true
 modulate = Color(0.85, 0.85, 0.85, 1)
 layout_mode = 2
@@ -719,11 +719,72 @@ disabled = true
 button_pressed = true
 script = ExtResource("21_gpjf8")
 texture = NodePath("../PanelContainer/HBoxContainer/TextureRect")
+control_bottom = NodePath("../../ContainerHUB/HUB")
 metadata/_custom_type_script = "uid://b2evb66sv1854"
+
+[node name="ContainerHUB" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_771do")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB/PanelContainer/HBoxContainer"]
+visible = false
+modulate = Color(0.85, 0.85, 0.85, 1)
+z_index = 1
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("17_us1wh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("13_l44dq")
+theme_override_font_sizes/font_size = 32
+text = "HUB Visible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HUB" type="HSlider" parent="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB" node_paths=PackedStringArray("texture", "label", "control_top")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_mode = 1
+focus_behavior_recursive = 2
+theme_override_icons/grabber = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_0yl6l")
+theme_override_icons/tick = SubResource("AtlasTexture_0yl6l")
+theme_override_styles/slider = SubResource("StyleBoxTexture_7qmos")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_771do")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_771do")
+value = 50.0
+editable = false
+scrollable = false
+ticks_position = 3
+script = ExtResource("19_7dnvh")
+text = "FPS Mode %d"
+texture = NodePath("../PanelContainer/HBoxContainer/TextureRect")
+label = NodePath("../PanelContainer/HBoxContainer/Label")
+control_top = NodePath("../../ContainerFPS/FPS")
+metadata/_custom_type_script = "uid://chq8ro3atu5f6"
 
 [connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/VoltarAoTitulo" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_voltar_ao_titulo_pressed"]
 [connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/Sons" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_sons_pressed"]
 [connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerButtons/Tela" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_tela_pressed"]
 [connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerMusica/musica" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_musica_value_changed"]
 [connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerSons/ContainerEfeito/EfeitosSonoros" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_efeitos_sonoros_value_changed"]
-[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/HBoxContainer/FPS" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_fps_pressed"]
+[connection signal="pressed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerFPS/FPS" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_fps_pressed"]
+[connection signal="value_changed" from="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu/MarginContainer/PanelItems/ContainerTela/ContainerHUB/HUB" to="UI_menu/VBoxContainer/MarginContainer2/SettingsMenu" method="_on_hub_value_changed"]

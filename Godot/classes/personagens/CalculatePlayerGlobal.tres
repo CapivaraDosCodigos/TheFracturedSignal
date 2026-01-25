@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="CalculatePlayer" load_steps=2 format=3 uid="uid://da5fs2m2nac0n"]
-
-[ext_resource type="Script" uid="uid://jncy8sypkenk" path="res://Godot/classes/personagens/CalculatePlayer.gd" id="1_pnxx8"]
-
-[resource]
-script = ExtResource("1_pnxx8")
-metadata/_custom_type_script = "uid://jncy8sypkenk"

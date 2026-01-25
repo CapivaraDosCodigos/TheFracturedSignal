@@ -4,23 +4,22 @@ class_name Executable
 enum TIPO { DanoNormal, DanoEmArea, CuraHP, CuraMAX, CuraMIN }
 enum NEED { None, Player, Enemie }
 
-@export_group("Visual")
-@export var Nome: String = ""
-@export var icone: Texture2D
-@export_multiline var descricao: String = ""
-
-@export_group("Especifcaçoes")
-@export_enum("Zeno", "Niko") var Character: String = ""
+@export_enum("Nome", "Zeno", "Niko") var Character: String = "Zeno"
 @export var efeito: TIPO = TIPO.DanoNormal
 @export var needs: NEED = NEED.None
 
-@export_subgroup("Preços", "preco")
+@export_group("Preços", "preco")
 @export var preco_HP: int = 0
 @export var preco_CP: int = 0
 
-@export_subgroup("Valores")
+@export_group("Valores")
 @export var dano: int = 0
 @export var cura: int = 0
+
+@export_category("Visual")
+@export var Nome: String = ""
+@export var icone: Texture2D
+@export_multiline var descricao: String = ""
 
 func executar(propriedades: Dictionary) -> void:
 	if !Manager.CurrentBatalha:
@@ -38,13 +37,13 @@ func executar(propriedades: Dictionary) -> void:
 			_executar_Enemie(propriedades["inimigo"])
 
 func get_disponivel() -> bool:
-	if Manager.get_Player(Character).Life < preco_HP:
-		return false
+	if Manager.get_Player(Character).Life >= preco_HP:
+		return true
 	
-	if Manager.CurrentBatalha.concentration_points < preco_CP:
-		return false
+	if Manager.CurrentBatalha.concentration_points >= preco_CP:
+		return true
 	
-	return true
+	return false
 
 func coprando() -> void:
 	Manager.CurrentBatalha.aplicar_concentration_temporario(Character, preco_CP * -1)
@@ -97,6 +96,11 @@ func _executar_Enemie(inimigoIndex: int) -> void:
 			var Batalha: Batalha2D = Manager.CurrentBatalha
 			var inimigo = Batalha.enemiesNodes.get(inimigoIndex, null)
 			if inimigo != null:
+				inimigo.apply_damage(dano)
+				
+		TIPO.DanoEmArea:
+			var Batalha: Batalha2D = Manager.CurrentBatalha
+			for inimigo: EnemiesBase2D in Batalha.enemiesNodes.values():
 				inimigo.apply_damage(dano)
 	
 		_:
