@@ -4,11 +4,9 @@ class_name Inventory extends Resource
 @export var items: Array[DataItem]:
 	get = _get_items
 @export var limite: int = 15
-@export var Bitcoin: int = 25
-@export var name: String = "New Inventory"
 
 func _to_string() -> String:
-	return name
+	return str(items)
 
 func _get_items() -> Array[DataItem]:
 	items.filter(func(a): return a != null)

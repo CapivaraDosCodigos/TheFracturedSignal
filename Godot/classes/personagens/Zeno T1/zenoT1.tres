@@ -14,9 +14,10 @@ region = Rect2(582, 291, 96, 96)
 
 [resource]
 script = ExtResource("7_xk8oo")
+baseAttack = 5
 InventoryPlayer = ExtResource("5_cklbm")
-Soul = 2
 Classe = ExtResource("1_dlqet")
+Soul = 2
 EXE_slot_2 = ExtResource("3_tnnjx")
 PlayerBatalhaPath = "uid://dc6gnjvpvkwsn"
 ObjectPlayerPath = "uid://h5ek2buto4br"

@@ -42,6 +42,7 @@ func _apply_damage(body: Node2D) -> void:
 
 	for key in Manager.PlayersAtuais.keys():
 		Manager.PlayersAtuais[key].apply_damage(body.dano)
+	
 	Manager.tocar_musica(PathsMusic.HURT, 3)
 
 	body.queue_free()

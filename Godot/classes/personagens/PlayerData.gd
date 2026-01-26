@@ -13,17 +13,19 @@ enum Souls { Empty = 1, Hope = 2, Ambition = 3}
 @export var baseAttack: int = 1
 @export var baseDefense: int = 1
 
-@export_group("Informaçoes")
+@export_category("Informaçoes")
 @export var InventoryPlayer: Inventory
-@export var Soul: Souls = Souls.Empty
 @export var Classe: ClasseData
+@export var Soul: Souls = Souls.Empty
+@export var Bitcoin: int = 0
+@export_range(0, 10, 1) var Disquetes: int = 0
 
 @export_subgroup("Array's")
 @export var effects: Array[Effect] = []
 @export_enum("ATK", "ITM", "EXE", "DEF", "ACT") var blocked_actions: Array[String] = []
 @export_enum("ATK", "ITM", "EXE", "DEF", "ACT") var hidden_actions: Array[String] = []
 
-@export_subgroup("EXEs", "EXE")
+@export_subgroup("Exes", "EXE")
 @export var EXE_Inventory_Executables: Array[Executable] = []
 @export var EXE_slot_1: Executable
 @export var EXE_slot_2: Executable
@@ -89,7 +91,7 @@ func _get_maxLife() -> int:
 		push_error("erro, sem classe")
 		return 0
 	
-	maxLife = baseLife + Classe.get_life()
+	maxLife = baseLife + Classe.get_life(Disquetes)
 	return maxLife
 
 func _get_defense() -> int:
@@ -113,7 +115,7 @@ func _get_maxDamage() -> int:
 		push_error("erro, sem classe")
 		return 0
 	
-	maxDamage = int((Classe.get_damage()) * (1.0 + attack / 10.0))
+	maxDamage = Classe.get_damage() + attack
 	return int(maxDamage * force_mult)
 
 func _get_minDamage() -> int:
@@ -121,5 +123,5 @@ func _get_minDamage() -> int:
 		push_error("erro, sem classe")
 		return 0
 	
-	minDamage = min(maxDamage - (Classe.get_damage()), 0)
+	minDamage = int(maxDamage * 0.1)
 	return minDamage

@@ -25,7 +25,7 @@ b = Vector2(-16, 16)
 a = Vector2(-16, -16)
 b = Vector2(-16, 16)
 
-[node name="Ambição" type="CharacterBody2D"]
+[node name="AlmaBody2D" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 32
 collision_mask = 160
@@ -70,6 +70,5 @@ shape = SubResource("SegmentShape2D_dww0e")
 [node name="invincible_timer" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_apply_damage"]
 [connection signal="body_exited" from="escudo" to="." method="_on_escudo_body_exited"]
 [connection signal="timeout" from="invincible_timer" to="." method="_end_invincibility"]

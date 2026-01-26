@@ -1,17 +1,28 @@
-res://Areais/Extras/scripts/spawnPlayes.gd
-res://Godot/Godot Scripts/Manager.gd
-res://Areais/TEMPORADA 1/cenas/começo.tscn
+res://Godot/classes/personagens/PlayerData.gd
+res://Godot/classes/Itens E Mais/Inventorys/Inventory.gd
+res://Godot/classes/Itens E Mais/Classes/ClasseData.gd
+res://Godot/classes/Itens E Mais/Classes/CirurgiaoClasse.gd
+res://Areais/Batalha/cenas/BATALHA.tscn
 res://shader/black and white.gdshader
 res://shader/palette_limiterONE.gdshader
 res://Resources/texturas/paleta.tres
 res://Resources/folderTres/theme_BATALHA.tres
-res://Godot/classes/personagens/niko/niko.tres
 res://Godot/classes/Itens E Mais/executaveis/HitKill.tres
 res://Godot/classes/Itens E Mais/consumíveis/sandwich.tres
 res://Godot/classes/Itens E Mais/consumíveis/cafe.tres
-res://Godot/classes/personagens/Zeno T1/zeno.tres
+res://Godot/classes/Itens E Mais/Inventorys/ZenoInventory.tres
+res://Godot/classes/personagens/Zeno T1/zenoT1.tres
+res://Godot/classes/personagens/niko/niko.tres
 res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres
 res://addons/phantom_camera/themes/theme.tres
+res://Resources/texturas/fenda_texture.tres
+res://Resources/folderTres/C1A.tres
+res://Resources/folderTres/T1B.tres
+res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres
+res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tres
+res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres
+res://Godot/classes/Inimigos/bebedouro/bebedouro.tres
+res://Characters/NPCS/merchant.tres
 res://shader/paletasWOW.gdshader
 res://shader/PSX.gdshader
 res://shader/zeno.gdshader
@@ -24,23 +35,7 @@ res://shader/paletteWOWOWOW.gdshader
 res://shader/shadow.gdshader
 res://shader/color.gdshader
 res://addons/dialogic/Modules/Background/Transitions/default_transition_shader.gdshader
-res://Resources/texturas/fenda_texture.tres
-res://Resources/folderTres/C1A.tres
-res://Resources/folderTres/T1B.tres
-res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres
-res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tres
-res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres
-res://Godot/classes/Inimigos/bebedouro/bebedouro.tres
-res://Characters/NPCS/merchant.tres
-res://Godot/classes/DATAS/SeasonResource.gd
-res://Areais/Batalha/scripts/Batalha2D.gd
-res://Godot/Godot Scripts/menu/inventory_menu.gd
-res://Areais/Batalha/cenas/BATALHA.tscn
-res://Godot/classes/DATAS/SaveData.gd
-res://Godot/classes/personagens/PlayerData.gd
-res://Godot/classes/Itens E Mais/effects/Effects.gd
-res://Godot/classes/Itens E Mais/effects/Envenenamento.tres
-res://Godot/classes/personagens/Zeno T1/zenoT1.tres
-res://Godot/classes/Itens E Mais/executaveis/executables.gd
-res://Areais/Batalha/cenas/ContainerPlayer.tscn
-res://Godot/classes/Itens E Mais/armas/Signal_Weapon.tres
+res://Godot/Godot Scripts/Manager.gd
+res://Areais/Batalha/cenas/AlmaBody2D.tscn
+res://Areais/Batalha/scripts/AlmaBody2D.gd
+res://Godot/classes/Nodes/bala2D.gd

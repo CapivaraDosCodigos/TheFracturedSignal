@@ -100,6 +100,8 @@ func Start_Save(slot: int, temporada: int, debug: bool = false):
 	CurrentSlot = slot
 	CurrentTemporada = temporada
 	PlayersAtuais = Data.get_players()
+	for player: PlayerData in PlayersAtuais.values():
+		player.reset()
 	
 	if not debug:
 		if CurrentScene:

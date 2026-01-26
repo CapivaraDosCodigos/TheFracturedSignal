@@ -4,7 +4,7 @@ class_name CirurgiaoClasse
 @export var Arma: ItemArma
 @export var Armadura: ItemArmadura 
 
-func get_life() -> int:
+func get_life(dis: int = 0) -> int:
 	var life: int = 0
 	
 	if Arma:
@@ -13,9 +13,10 @@ func get_life() -> int:
 	if Armadura:
 		life += Armadura.extra_life
 	
+	life += _calcularLife(dis)
 	return life
 
-func get_damage() -> int:
+func get_damage(_dis: int = 0) -> int:
 	var damage: int = 0
 	
 	if Arma != null:
@@ -26,7 +27,7 @@ func get_damage() -> int:
 	
 	return damage
 
-func get_defense() -> int:
+func get_defense(_dis: int = 0) -> int:
 	var defense: int = 0
 	
 	if Arma != null:
@@ -37,7 +38,7 @@ func get_defense() -> int:
 	
 	return defense
 
-func get_attack() -> int:
+func get_attack(_dis: int = 0) -> int:
 	var attack: int = 0
 	
 	if Arma != null:
