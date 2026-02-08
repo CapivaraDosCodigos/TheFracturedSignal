@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvqm0erxe80w4"]
+
+[ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_0vcwb"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="2_0vcwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqqmq"]
+size = Vector2(18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px5ev"]
+atlas = ExtResource("2_0vcwb")
+region = Rect2(240, 816, 16, 16)
+
+[node name="Bala2D" type="CharacterBody2D" unique_id=1428085147 node_paths=PackedStringArray("time")]
+collision_layer = 64
+collision_mask = 256
+script = ExtResource("1_0vcwb")
+dano = 8
+speed = 300.0
+direction = Vector2(-1, 0)
+time = NodePath("")
+metadata/_custom_type_script = "uid://qnklpnihflc2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357778275]
+shape = SubResource("RectangleShape2D_wqqmq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=574841587]
+rotation = 1.5707964
+scale = Vector2(1.25, 1.25)
+texture = SubResource("AtlasTexture_px5ev")
+
+[node name="Visible" type="VisibleOnScreenEnabler2D" parent="." unique_id=363195996]
+
+[connection signal="screen_exited" from="Visible" to="." method="_on_visible_screen_exited"]

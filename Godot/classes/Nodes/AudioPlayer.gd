@@ -1,3 +1,4 @@
+@icon("res://texture/PNG/icon/godot/headphones.svg")
 extends AudioStreamPlayer
 class_name AudioPlayer
 

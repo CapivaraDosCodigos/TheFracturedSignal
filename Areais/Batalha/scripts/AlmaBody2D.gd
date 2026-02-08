@@ -1,4 +1,4 @@
-@icon("res://texture/PNG/icon/alma da determinação.png")
+@icon("res://texture/PNG/icon/almas/Alma.png")
 extends CharacterBody2D
 class_name AlmaBody2D
 
@@ -29,23 +29,24 @@ func _batalha() -> void:
 	velocity = direction * speed
 	move_and_slide()
 
-func _apply_damage(body: Node2D) -> void:
+func apply_damage(body: Node2D) -> void:
 	if not body is Bala2D:
 		return
-
+	
 	if is_invincible:
 		return
 
-	bullets_processed[body] = true
-
+	#bullets_processed[body] = true
+	#body.speed = 0
+	body.queue_free()
+	
 	_start_invincibility()
 
 	for key in Manager.PlayersAtuais.keys():
 		Manager.PlayersAtuais[key].apply_damage(body.dano)
 	
 	Manager.tocar_musica(PathsMusic.HURT, 3)
-
-	body.queue_free()
+	#print("ai", randf_range(1, 3))
 
 func _on_escudo_body_exited(body: Node2D) -> void:
 	if not body is Bala2D:
@@ -63,22 +64,34 @@ func _on_escudo_body_exited(body: Node2D) -> void:
 	#area.set_cp(int(body.dano / divide_cp))
 
 func _reset_color() -> void:
-	if Manager.get_Player().Soul == PlayerData.Souls.Empty:
-		modulate = Color(1.0, 1.0, 1.0)
-	
-	elif Manager.get_Player().Soul == PlayerData.Souls.Hope:
-		modulate = Color(0.561, 0.494, 0.816)
+	if Manager.isState("NOT_IN_THE_GAME"):
+		modulate = Color.WHITE
+		return
+		
+	var player: PlayerData = Manager.get_Player()
+	if player == null:
+		return
+		
+	match player.Soul:
+		PlayerData.Souls.Empty:
+			modulate = Color.WHITE
+		
+		PlayerData.Souls.Hope:
+			modulate = Color(0.561, 0.494, 0.816)
+		
+		_:
+			modulate = Color.WHITE
 
 func _start_invincibility() -> void:
 	is_invincible = true
 	modulate = Color(18.892, 18.892, 18.892)
-	set_collision_mask_value(1, false)
-	set_collision_layer_value(1, false)
+	#set_collision_mask_value(1, false)
+	#set_collision_layer_value(1, false)
 	invincible_timer.start(invincible_time)
 
 func _end_invincibility() -> void:
 	is_invincible = false
 	_reset_color()
-	set_collision_mask_value(1, true)
-	set_collision_layer_value(1, true)
+	#set_collision_mask_value(1, true)
+	#set_collision_layer_value(1, true)
 	bullets_processed.clear()

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://c26c8d86rlc6r"]
+
+[ext_resource type="Script" uid="uid://cioncjdbh77k8" path="res://Godot/classes/Itens E Mais/Effects.gd" id="1_abegt"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="1_v2hkx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyl0e"]
+atlas = ExtResource("1_v2hkx")
+region = Rect2(128, 1040, 16, 16)
+
+[resource]
+script = ExtResource("1_abegt")
+duracao = 10
+dano = 10
+tipos = 1
+Nome = "Envenenamento"
+icone = SubResource("AtlasTexture_cyl0e")
+descricao = "Envenenamento dano curto mas ficou um longo período de tempo"
+metadata/_custom_type_script = "uid://cioncjdbh77k8"

@@ -1,11 +1,11 @@
 ~ Map
-do Manager.change_state("MAP", 0.5)
+do Manager.set_state("MAP", 0.5)
 => END
 
 ~ Batalha
-do Manager.change_state("BATTLE")
+do Manager.set_state("BATTLE")
 => END
 
 ~ BatalhaMenu
-do Manager.change_state("BATTLE_MENU")
+do Manager.set_state("BATTLE_MENU")
 => END

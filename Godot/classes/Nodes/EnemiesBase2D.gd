@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 		poupado()
 
 func _ready() -> void:
+	rootobjeto = Manager.CurrentBatalha.battleArena.objetos
 	animation_finished.connect(_on_animation_finished)
 	play("idle")
 
@@ -40,7 +41,7 @@ func _on_animation_finished() -> void:
 
 func dead() -> void:
 	life = 0
-	Manager.CurrentBatalha.remover_inimigo(id)
+	Manager.CurrentBatalha.entityManager.remover_inimigo(id)
 	play("Dead")
 
 func poupado() -> void:

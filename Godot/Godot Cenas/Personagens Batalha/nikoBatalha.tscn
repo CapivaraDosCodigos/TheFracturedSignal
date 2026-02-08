@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bxytmso8hirup"]
+
+[ext_resource type="Texture2D" uid="uid://eo6pojuwje15" path="res://texture/characters/Zeno's/Niko.png" id="1_4mey8"]
+[ext_resource type="Script" uid="uid://dxjfylq40nfs1" path="res://Godot/classes/Nodes/PlayerBase2D.gd" id="2_6hi5s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3m4k"]
+atlas = ExtResource("1_4mey8")
+region = Rect2(105, 0, 21, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_es7ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3m4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ZenoBatalha" type="AnimatedSprite2D" unique_id=1008070369]
+scale = Vector2(3.2, 3.2)
+sprite_frames = SubResource("SpriteFrames_es7ui")
+script = ExtResource("2_6hi5s")
+player = "Niko"
+metadata/_custom_type_script = "uid://dxjfylq40nfs1"

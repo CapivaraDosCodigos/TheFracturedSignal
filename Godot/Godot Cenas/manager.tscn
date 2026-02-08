@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qd88j5u4y4ji"]
+[gd_scene format=3 uid="uid://qd88j5u4y4ji"]
 
 [ext_resource type="Script" uid="uid://bx34cw14bkhcg" path="res://Godot/Godot Scripts/Manager.gd" id="1_cconj"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/AudioPlayer.gd" id="2_cconj"]
@@ -6,41 +6,54 @@
 [ext_resource type="PackedScene" uid="uid://bu38qgxh4wq1i" path="res://Godot/Godot Cenas/menu.tscn" id="6_pvfw1"]
 [ext_resource type="PackedScene" uid="uid://pivih5e0q7e7" path="res://Godot/Godot Cenas/time.tscn" id="8_oug2w"]
 
-[node name="Manager" type="Node"]
+[node name="Manager" type="Node" unique_id=967397771]
 script = ExtResource("1_cconj")
+CurrentStatus = 1
 
-[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="." unique_id=51300397]
 script = ExtResource("2_cconj")
 metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 
-[node name="AudioPlayerS" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayerS" type="AudioStreamPlayer" parent="." unique_id=316526115]
 script = ExtResource("2_cconj")
 metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 
-[node name="AudioPlayer5" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayer5" type="AudioStreamPlayer" parent="." unique_id=985642370]
 script = ExtResource("2_cconj")
 metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
 
-[node name="CanvasL" type="CanvasLayer" parent="."]
+[node name="CanvasL" type="CanvasLayer" parent="." unique_id=88020391]
 layer = 98
 
-[node name="fps_label" type="Label" parent="CanvasL"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasL" unique_id=1782690352]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasL/HBoxContainer" unique_id=821352231]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fps_label" type="Label" parent="CanvasL/HBoxContainer" unique_id=861538896]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(952, 0)
+layout_mode = 2
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 32
 text = "FPS: %s | Estado: %s | slot: %s"
 
-[node name="MENU" parent="." instance=ExtResource("6_pvfw1")]
+[node name="Control2" type="Control" parent="CanvasL/HBoxContainer" unique_id=1182045789]
+layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="time" parent="." instance=ExtResource("8_oug2w")]
+[node name="MENU" parent="." unique_id=1781003773 instance=ExtResource("6_pvfw1")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="time" parent="." unique_id=981817200 instance=ExtResource("8_oug2w")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1106112607]
 physics_interpolation_mode = 1
-visible = false
 zoom = Vector2(4.8, 4.8)
 limit_left = -387
 limit_top = -528
@@ -48,7 +61,7 @@ limit_right = 433
 limit_bottom = 288
 editor_draw_limits = true
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=494451059]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("6_2jxmm")

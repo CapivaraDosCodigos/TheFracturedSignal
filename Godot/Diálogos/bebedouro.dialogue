@@ -1,7 +1,7 @@
 import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
 
 ~ bebedouro
-do Manager.change_state("DIALOGUE")
+do Manager.set_state("DIALOGUE")
 do Manager.DialogoTexture("res://texture/Characters/dialogos/bebedouro.tres")
 Bebedouro: blub blub
 do Manager.DialogoTexture()

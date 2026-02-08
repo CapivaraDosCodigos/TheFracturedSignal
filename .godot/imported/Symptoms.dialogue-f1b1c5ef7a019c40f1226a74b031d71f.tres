@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_6y7ih"]
 
@@ -29,19 +29,19 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "change_state",
+&"function": "set_state",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 24,
+&"i": 21,
 &"type": &"string",
 &"value": "MAP"
 }]), Array[Dictionary]([{
-&"i": 31,
+&"i": 28,
 &"type": &"number",
 &"value": 0.5
 }, {
-&"i": 34,
+&"i": 31,
 &"type": &"parens_close"
 }])])
 }]),
@@ -92,15 +92,15 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "change_state",
+&"function": "set_state",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 24,
+&"i": 21,
 &"type": &"string",
 &"value": "BATTLE"
 }, {
-&"i": 32,
+&"i": 29,
 &"type": &"parens_close"
 }])])
 }]),
@@ -137,15 +137,15 @@ lines = {
 &"i": 10,
 &"type": &"dot"
 }, {
-&"function": "change_state",
+&"function": "set_state",
 &"i": 11,
 &"type": &"function",
 &"value": Array[Array]([Array[Dictionary]([{
-&"i": 24,
+&"i": 21,
 &"type": &"string",
 &"value": "BATTLE_MENU"
 }, {
-&"i": 37,
+&"i": 34,
 &"type": &"parens_close"
 }])])
 }]),
@@ -156,14 +156,14 @@ lines = {
 }
 }
 raw_text = "~ Map
-do Manager.change_state(\"MAP\", 0.5)
+do Manager.set_state(\"MAP\", 0.5)
 => END
 
 ~ Batalha
-do Manager.change_state(\"BATTLE\")
+do Manager.set_state(\"BATTLE\")
 => END
 
 ~ BatalhaMenu
-do Manager.change_state(\"BATTLE_MENU\")
+do Manager.set_state(\"BATTLE_MENU\")
 => END"
 metadata/dialogue_manager_version = "3.7.1"

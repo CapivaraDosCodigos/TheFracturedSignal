@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://8sgdpebe3e0a"]
+[gd_scene format=3 uid="uid://8sgdpebe3e0a"]
 
 [ext_resource type="Script" uid="uid://b87x0fkq7trfu" path="res://Areais/Batalha/scripts/AlmaBody2D.gd" id="1_3xyvn"]
 [ext_resource type="Texture2D" uid="uid://luclo7tqem4y" path="res://texture/PNG/icon/almas/Alma.png" id="2_11kbl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_11kbl"]
 radius = 9.5
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_frmhu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnbn4"]
 radius = 10.5
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_frmhu"]
@@ -25,50 +25,49 @@ b = Vector2(-16, 16)
 a = Vector2(-16, -16)
 b = Vector2(-16, 16)
 
-[node name="AlmaBody2D" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+[node name="AlmaBody2D" type="CharacterBody2D" unique_id=1395483969]
 collision_layer = 32
 collision_mask = 160
 script = ExtResource("1_3xyvn")
 invincible_time = 0.25
 metadata/_custom_type_script = "uid://b87x0fkq7trfu"
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_uryig")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1933948039]
 texture = ExtResource("2_11kbl")
 
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-collision_layer = 32
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=797579028]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_11kbl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=350609650]
+collision_layer = 256
 collision_mask = 64
 
-[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+[node name="Collision" type="CollisionShape2D" parent="Area2D" unique_id=1249720679]
 position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_frmhu")
+shape = SubResource("CircleShape2D_pnbn4")
 debug_color = Color(0.0043103276, 0.06785011, 0.70196074, 0.41960785)
 
-[node name="escudo" type="Area2D" parent="."]
+[node name="escudo" type="Area2D" parent="." unique_id=1280627651]
+visible = false
 rotation = 0.78539705
 collision_layer = 32
 collision_mask = 64
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="escudo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escudo" unique_id=442636944]
 shape = SubResource("SegmentShape2D_frmhu")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="escudo"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="escudo" unique_id=639842854]
 shape = SubResource("SegmentShape2D_skc7f")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="escudo"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="escudo" unique_id=467031508]
 shape = SubResource("SegmentShape2D_nkp3r")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="escudo"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="escudo" unique_id=1891777619]
 shape = SubResource("SegmentShape2D_dww0e")
 
-[node name="invincible_timer" type="Timer" parent="."]
+[node name="invincible_timer" type="Timer" parent="." unique_id=1594450964]
 unique_name_in_owner = true
 
-[connection signal="body_exited" from="escudo" to="." method="_on_escudo_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="apply_damage"]
 [connection signal="timeout" from="invincible_timer" to="." method="_end_invincibility"]

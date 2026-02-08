@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcxdjru1chnie"]
+[gd_scene format=3 uid="uid://bcxdjru1chnie"]
 
 [ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Godot/classes/Nodes/ObjectEnemies2D.gd" id="1_ssgwk"]
-[ext_resource type="Resource" uid="uid://cqc56s08t71id" path="res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tres" id="2_ssgwk"]
+[ext_resource type="Resource" uid="uid://cqc56s08t71id" path="res://Godot/Resources/Inimigos/Sickle Warrior.tres" id="2_ssgwk"]
 [ext_resource type="SpriteFrames" uid="uid://dx8pn0dd7mhkq" path="res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres" id="3_rweb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]

@@ -1,7 +1,7 @@
 import "res://Godot/Diálogos/Symptoms.dialogue" as DialogueResource
 
 ~ SickleWarrior
-do Manager.change_state("DIALOGUE")
+do Manager.set_state("DIALOGUE")
 do Manager.DialogoTexture("res://texture/characters/dialogos/SickleWarrior.tres")
 Sickle Warrior: ...
 do Manager.DialogoTexture()

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://k4x6eumhu0qh"]
+[gd_scene format=3 uid="uid://k4x6eumhu0qh"]
 
 [ext_resource type="Script" uid="uid://cm7cbajfhi5k1" path="res://Godot/Godot Scripts/Global.gd" id="1_n1wl8"]
-[ext_resource type="PackedScene" uid="uid://nqf65ba8dfqg" path="res://Godot/Godot Cenas/Gameboy.tscn" id="2_te5ci"]
+[ext_resource type="PackedScene" uid="uid://blybmmlevej5n" path="res://Godot/Godot Cenas/Gamepad.tscn" id="3_5rqxo"]
 [ext_resource type="Script" uid="uid://c5iu1a2y7eb7r" path="res://Godot/classes/Nodes/AudioPlayer.gd" id="3_f4k0t"]
 
 [sub_resource type="Animation" id="Animation_5rqxo"]
@@ -58,24 +58,32 @@ _data = {
 &"start_transition": SubResource("Animation_f4k0t")
 }
 
-[node name="Global" type="CanvasLayer"]
+[node name="Global" type="CanvasLayer" unique_id=1324133359]
 layer = 100
 script = ExtResource("1_n1wl8")
 
-[node name="Gamepad" parent="." instance=ExtResource("2_te5ci")]
-modulate = Color(1, 1, 1, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1586956986]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-script = ExtResource("3_f4k0t")
-metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=24706143]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
 
-[node name="AudioPlayerS" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-script = ExtResource("3_f4k0t")
-metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1008666479]
+custom_minimum_size = Vector2(952, 0)
+layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer" unique_id=1998610336]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=687212579]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -83,7 +91,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="AnimationGlobal" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5rqxo")
-}
+[node name="AudioPlayerZ" type="AudioStreamPlayer" parent="." unique_id=1374990990]
+unique_name_in_owner = true
+script = ExtResource("3_f4k0t")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+
+[node name="AudioPlayerS" type="AudioStreamPlayer" parent="." unique_id=815466789]
+unique_name_in_owner = true
+script = ExtResource("3_f4k0t")
+metadata/_custom_type_script = "uid://c5iu1a2y7eb7r"
+
+[node name="AnimationGlobal" type="AnimationPlayer" parent="." unique_id=1128138665]
+libraries/ = SubResource("AnimationLibrary_5rqxo")
+
+[node name="Gamepad" parent="." unique_id=615683249 instance=ExtResource("3_5rqxo")]

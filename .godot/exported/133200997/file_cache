@@ -110,8 +110,7 @@ res://addons/dialogic/Modules/Text/character_settings/character_moods_settings.t
 res://addons/dialogic/Modules/Text/character_settings/character_portrait_mood_settings.tscn::5039b5540515dd57d8de08f4e8a6fbc7::1761393248::res://.godot/exported/133200997/export-37c35566857061453231ad11bc175413-character_portrait_mood_settings.scn
 res://addons/dialogic/Modules/Text/settings_text.tscn::7fd26a01948e3cf285ea7c0d67fcbfa1::1761393248::res://.godot/exported/133200997/export-67100a9f8a5726886cf8dbc525c7a035-settings_text.scn
 res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.tscn::1f4a64952b7986e6aa5ae128a589dbc8::1761393249::res://.godot/exported/133200997/export-81d6117e9fbfcc345d9d0dd8f77e3c55-variables_editor.scn
-res://addons/dialogue_manager/example_balloon/example_balloon3.tscn::5f540cecf3485d1b4935a4904f5873db::1761398025::res://.godot/exported/133200997/export-92a1242b4440835fc26c0c6e2927b581-example_balloon3.scn
-res://addons/dialogue_manager/example_balloon/example_balloon.tscn::0bc36b8324a152e970fc376e07548cef::1761667809::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
+res://addons/dialogue_manager/example_balloon/example_balloon.tscn::830b3cb73ffff1ff1a6cb485db35be45::1768500099::res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn
 res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn::505cc067befdb1daaca453fd87d0a6a2::1759589935::res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn
 res://addons/dialogue_manager/dialogue_label.tscn::5087c11b45dfaf8effc779674dfe11e8::1759589935::res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn
 res://addons/dialogue_manager/test_scene.tscn::5946a9a55ceff988ba46e7f734ff0538::1759589935::res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn
@@ -123,7 +122,7 @@ res://addons/phantom_camera/examples/example_scenes/2D/2d_follow_path_example_sc
 res://addons/phantom_camera/examples/example_scenes/2D/2d_limit_example_scene.tscn::e7f3a2b647eaf46d1a1385319e0e525c::1759589935::res://.godot/exported/133200997/export-e934043ae4da326500f405296ccdfb82-2d_limit_example_scene.scn
 res://addons/phantom_camera/examples/example_scenes/2D/2d_tweening_example_scene.tscn::828f818b5e3b22ea34b4ad7d6d7cb565::1759589935::res://.godot/exported/133200997/export-09c9dd6308553c24394bbd7eb6ed0590-2d_tweening_example_scene.scn
 res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_example_scene.tscn::55c232baad2df059a3cc0f191fd4981b::1759589935::res://.godot/exported/133200997/export-20337a3894930028b83da0e6998351e1-2d_example_scene.scn
-res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_framed_example_scene.tscn::451ec7f6d50faefd93e47af87d5e622f::1759589935::res://.godot/exported/133200997/export-78461aa5dc4caecd607632efaaf525a0-2d_follow_framed_example_scene.scn
+res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_framed_example_scene.tscn::451ec7f6d50faefd93e47af87d5e622f::1763910131::res://.godot/exported/133200997/export-78461aa5dc4caecd607632efaaf525a0-2d_follow_framed_example_scene.scn
 res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_group_example_scene.tscn::7cf08c20a07243a41d726413a983b75f::1759589935::res://.godot/exported/133200997/export-50725e9c32787c0a30485f69a426d99c-2d_follow_group_example_scene.scn
 res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_follow_path_example_scene.tscn::1336f8743bef1c3ffaafebccdf68f70f::1759589935::res://.godot/exported/133200997/export-13dd309c0fb4b9bb124577584b7686ac-2d_follow_path_example_scene.scn
 res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_limit_example_scene.tscn::a4ba6c1b77a0f2be6a5f721758c190c5::1759589935::res://.godot/exported/133200997/export-bfba61eacd4748ba3b26aaf6151194f3-2d_limit_example_scene.scn
@@ -174,90 +173,128 @@ res://addons/phantom_camera/panel/editor.tscn::0fa1038b9df55d356b28683d2a0c1e13:
 res://addons/phantom_camera/themes/button_focus.tres::aba93842cd51514adc1d0eb09ba4a71b::1759589936::res://.godot/exported/133200997/export-c2d52f8824b1bc567d558b9c148cee0f-button_focus.res
 res://addons/phantom_camera/themes/button_hover.tres::d863dce054a565f7fd2cc107ad0bec80::1759589936::res://.godot/exported/133200997/export-bf72e12c2ddcea6f1381ea8f179cf6d9-button_hover.res
 res://addons/phantom_camera/themes/button_normal.tres::407ecb984ab7b94ab5bf55a2462e56d5::1759589936::res://.godot/exported/133200997/export-056e5cffeb06d1c067d5922cfcb1322b-button_normal.res
-res://addons/phantom_camera/themes/theme.tres::acc54255fb9a598e40cf6c301405dffb::1761943880::res://.godot/exported/133200997/export-4f46c67cc7d9a94d41450e7d2c070643-theme.res
+res://addons/phantom_camera/themes/theme.tres::23e4783277e8d699cd836177cf7f282d::1769707865::res://.godot/exported/133200997/export-4f46c67cc7d9a94d41450e7d2c070643-theme.res
 res://addons/simple-gui-transitions/example/layout_1.tscn::c98eaf920492662017d97248b8811a4f::1760377363::res://.godot/exported/133200997/export-bb42ef7081c34ba0c46e6603eb1ba945-layout_1.scn
 res://addons/simple-gui-transitions/example/layout_2.tscn::938369598e2e3b36cf79b42b4be636db::1760377363::res://.godot/exported/133200997/export-f583b451f0e89c26ab395b9cd72a634e-layout_2.scn
 res://addons/simple-gui-transitions/example/layout_3.tscn::0e17125714d7c3983290cdba89051f6d::1760377363::res://.godot/exported/133200997/export-e466e131323cfbfe61d8bf20d18ceb05-layout_3.scn
 res://addons/simple-gui-transitions/example/main.tscn::9c7bdd24a2f7d69012d8de41f5cc2716::1760377363::res://.godot/exported/133200997/export-f98e5f3d7a5ef027dcf5b6219566dd4e-main.scn
 res://addons/simple-gui-transitions/example/theme.tres::ad35e629eaf9d4f0a3101e3499799b46::1760377363::res://.godot/exported/133200997/export-50d7f0dda6a7970aef4bee6c9da8757b-theme.res
 res://addons/simple-gui-transitions/materials/transform.tres::c3822ade4edd779de8bd2c67a081e5d6::1760377363::res://.godot/exported/133200997/export-aa0e646a31cf0784fa9d33dd2b890e94-transform.res
-res://Areais/Batalha/cenas/balabebedouro1.tscn::e4fbc6126004498de334e9c80d97fd30::1761667808::res://.godot/exported/133200997/export-0c15f68fe69451ca31179deaa30ed64c-balabebedouro1.scn
-res://Areais/Batalha/cenas/balabebedouro2.tscn::038cd4988aea8286b17d6572ff642ecf::1761158800::res://.godot/exported/133200997/export-35933d2f63b33b430de11ff3d167f77e-balabebedouro2.scn
-res://Areais/Batalha/cenas/BATALHA.tscn::1ef2c05b689da1f249c73e6591b34d10::1761945902::res://.godot/exported/133200997/export-501de291e03cc544369c88ff23fb2128-BATALHA.scn
-res://Areais/Batalha/cenas/battle_arena.tscn::0daa614f88be2cd233be10f305f74d35::1761678680::res://.godot/exported/133200997/export-54162fdcb9fcba17e43397a833ace8dd-battle_arena.scn
-res://Areais/Batalha/cenas/panel_player.tscn::977fb4858c80c2cbb858b89a364c9094::1761667808::res://.godot/exported/133200997/export-5c2df2e731715022dc391c05d6d86f5c-panel_player.scn
-res://Areais/Batalha/cenas/testBATALHA.tscn::4a9cba34cd1adb7c551720b7e99f3094::1761932021::res://.godot/exported/133200997/export-a0b9cd8f7c006164a86e6e1c0ad73ed1-testBATALHA.scn
-res://Areais/TEMPORADA 1/começo.tscn::e33e26679a0f282e34aa5ae59f0afd75::1761667808::res://.godot/exported/133200997/export-8b441d197cb702c418fe8c81e5747d5d-começo.scn
-res://Areais/TEMPORADA 1/descomeço.tscn::a10e2ac000df0843460378f372eb1800::1759589934::res://.godot/exported/133200997/export-3fbbecd38cfcf3ff9c6a5db6c6ee67bb-descomeço.scn
-res://Areais/SAVE.tscn::dd680974f12b79623a7de0777808c7fc::1760262790::res://.godot/exported/133200997/export-84dd21223c2f7af3091fc79922973469-SAVE.scn
-res://Characters/enemies/bebedouro/bebedouro.tscn::c9c5c49cb324e6d3e384d037fc74e996::1760872249::res://.godot/exported/133200997/export-b4f6141567915de71a8c2236c6e3d47a-bebedouro.scn
+res://Areais/Batalha/cenas/BATALHA.tscn::2f3a8a8dee60fc8979886acfd117905b::1769632381::res://.godot/exported/133200997/export-501de291e03cc544369c88ff23fb2128-BATALHA.scn
+res://Characters/enemies/bebedouro/bebedouro.tscn::09b56d5b61f631468c87faf9428909cc::1768659035::res://.godot/exported/133200997/export-b4f6141567915de71a8c2236c6e3d47a-bebedouro.scn
 res://Characters/NPCS/blu_blu.tscn::0f83a510e228c3fbd1aa67070bebc639::1759868192::res://.godot/exported/133200997/export-c1829a87736b8a0f1a867699d7079003-blu_blu.scn
-res://Characters/NPCS/merchant.tres::ee2581ac30c91d47d3764a0bda549ee1::1761943878::res://.godot/exported/133200997/export-0f02dba2fe470723cc84828d2944d360-merchant.res
-res://Characters/NPCS/merchant.tscn::16823548aa9b9b1e178e0908fdb8dbf2::1760090369::res://.godot/exported/133200997/export-d830eef0c19ff543b3742d36203dfce8-merchant.scn
-res://Characters/Players/cenas/ambição.tscn::6212f1b86e6309bc449bc017e5ab4139::1761678611::res://.godot/exported/133200997/export-578fb4913cadb69e86e922bc9bf5d69a-ambição.scn
-res://Characters/Players/cenas/zeko.tscn::4e8456720beec342326dcd8a4d650602::1759589935::res://.godot/exported/133200997/export-8ceba3d766ccd458844d11ddd680bb39-zeko.scn
-res://Characters/Players/menu.tscn::fb40ae55297c6816013ab622e6e66682::1761408743::res://.godot/exported/133200997/export-982ee79766eb3c7006d7191adf9864a5-menu.scn
-res://Characters/Arceus.tscn::86637d8ea3064bd4438a4254208e25d0::1759589935::res://.godot/exported/133200997/export-f4632dd5fa4782e8be677f5cd6393310-Arceus.scn
-res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres::7820e86f8ac9fefb62308c26ba3fb16a::1761943880::res://.godot/exported/133200997/export-a38c8f41b8928eb11f0a3f34bbae5bf7-Temporada1.res
-res://Godot/classes/Inimigos/bebedouro/bebedouro.tres::c033720d572c9061d419319ae43dbb96::1760872249::res://.godot/exported/133200997/export-376cbcf7ad98d04abb9a551a51ae6761-bebedouro.res
-res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn::9ea39c12fccc5e87d482f3e8dd35e910::1761675600::res://.godot/exported/133200997/export-901c03e12013611851f67adcea8bcb94-bebedouro.scn
-res://Godot/classes/itens/armaduras/sem_armadura.tres::7703ca0a210d8214da7c17942b2faaf1::1759589935::res://.godot/exported/133200997/export-18e12397d3b917e5657a7fc9614e5a01-sem_armadura.res
-res://Godot/classes/itens/armaduras/óculos_simples.tres::f1756cfd15cd4b51e2a676f6c87d88fe::1761943877::res://.godot/exported/133200997/export-cf8a28379fe00ee3f6a4393e7ad707bc-óculos_simples.res
-res://Godot/classes/itens/armas/sem_arma.tres::803bba11329e26c37f4f8fbcb84c3075::1759589935::res://.godot/exported/133200997/export-917c2d3b8a0f146819b882392cfe1237-sem_arma.res
-res://Godot/classes/itens/armas/Signal_Weapon.tres::d1514969ae02e1ad74637b8dd8128d86::1761943877::res://.godot/exported/133200997/export-98a5e86a5460aae0482ffcd3b960da37-Signal_Weapon.res
-res://Godot/classes/itens/consumíveis/sandwich.tres::24e3ddebf87f9a91898453551fae4141::1761943877::res://.godot/exported/133200997/export-4b2517fe33c37f2a2effd29a39e529d4-sandwich.res
-res://Godot/classes/itens/Inventorys/ZenoInventory.tres::2474a95f92166242fa6b0873422852aa::1761943878::res://.godot/exported/133200997/export-03a1c76ac1df5903909caad5f2cd967b-ZenoInventory.res
-res://Godot/classes/personagens/niko/niko.tres::0d842daebe5b6da593b6ccf626336c61::1761943880::res://.godot/exported/133200997/export-0f6ea093aa6c44faf1c4eec689f0cbe7-niko.res
-res://Godot/classes/personagens/niko/nikoBatalha.tscn::19faf928f6a3e28e1ddc6f2e4f32b98c::1761388098::res://.godot/exported/133200997/export-0eb375da33cb10686fd066a4829d5100-nikoBatalha.scn
-res://Godot/classes/personagens/Zeno T1/scientist_zeno.tscn::c8320f453eccbb434e7abbebfee0f0f2::1761667809::res://.godot/exported/133200997/export-e4afc631d20a307deadaa76c8ad6d4a2-scientist_zeno.scn
-res://Godot/classes/personagens/Zeno T1/zeno.tres::0e36055c50e1380c1ba3df429389cd87::1761943879::res://.godot/exported/133200997/export-ae637e7b086dcbaa82a767830ee6efa9-zeno.res
-res://Godot/classes/personagens/Zeno T1/zenoBatalha.tscn::c22d0fe0abc707e69347316b3e017d7a::1761680815::res://.godot/exported/133200997/export-7fe1ea4c7490814dc9aa61d9a26f9a40-zenoBatalha.scn
+res://Characters/NPCS/merchant.tres::1d537233e34366b4a85267d4c1a9a8f1::1769707867::res://.godot/exported/133200997/export-0f02dba2fe470723cc84828d2944d360-merchant.res
+res://Characters/NPCS/merchant.tscn::7467dfc2467db6b0edee4bbd6dd02651::1766885634::res://.godot/exported/133200997/export-d830eef0c19ff543b3742d36203dfce8-merchant.scn
+res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres::9bf7bed2d3d93c2bed2c0e4c6865a689::1769707865::res://.godot/exported/133200997/export-a38c8f41b8928eb11f0a3f34bbae5bf7-Temporada1.res
+res://Godot/classes/Inimigos/bebedouro/bebedouro.tres::653afd5f9beedb4b6f4b07cf91c62621::1769707867::res://.godot/exported/133200997/export-376cbcf7ad98d04abb9a551a51ae6761-bebedouro.res
+res://Godot/classes/Inimigos/bebedouro/bebedouro.tscn::f7d8da313b4a1b6797260a53b748ddef::1768658931::res://.godot/exported/133200997/export-901c03e12013611851f67adcea8bcb94-bebedouro.scn
+res://Godot/classes/personagens/niko/niko.tres::4c94e07f7e16f7e0ecee205ecb9dd60f::1769707865::res://.godot/exported/133200997/export-0f6ea093aa6c44faf1c4eec689f0cbe7-niko.res
+res://Godot/classes/personagens/niko/nikoBatalha.tscn::6c3037f48016661fdcea6ad532b46c10::1768500098::res://.godot/exported/133200997/export-0eb375da33cb10686fd066a4829d5100-nikoBatalha.scn
 res://Godot/Godot Cenas/dead.tscn::d89acd95958666fc943723761d5dcffd::1761158800::res://.godot/exported/133200997/export-78f413ddd1250595a0e0c22a3d05437f-dead.scn
-res://Godot/Godot Cenas/Gameboy.tscn::f4a35304f68aae66e52efb18395f3128::1760872249::res://.godot/exported/133200997/export-a327c4176b9d59d5b6be6079eb16146f-Gameboy.scn
-res://Godot/Godot Cenas/intro0.tscn::6a4ae024bdee1bba702297d831684b64::1760396898::res://.godot/exported/133200997/export-c2e4fae4ba4e5fb31e52c593546499da-intro0.scn
-res://Godot/Godot Cenas/intro.tscn::b3b9ec27ea23d561914818de25252a38::1761408743::res://.godot/exported/133200997/export-a1078bbbae42641efe2519260cd5e86d-intro.scn
-res://Godot/Godot Cenas/manager.tscn::8eea25df4a5b450504e4b19762e49f59::1761864531::res://.godot/exported/133200997/export-f6a090fadadaccb7c129bacbcc271e03-manager.scn
-res://Godot/Godot Cenas/time.tscn::21486293b2c1a653d774e30dda3900ae::1759589935::res://.godot/exported/133200997/export-8270c14b492982a2de47a3a97c7dab32-time.scn
+res://Godot/Godot Cenas/Gameboy.tscn::2d12881c9dd98efeb163d7667e547c83::1769693203::res://.godot/exported/133200997/export-a327c4176b9d59d5b6be6079eb16146f-Gameboy.scn
+res://Godot/Godot Cenas/intro.tscn::139644be7f165a74c474d02c68d9af23::1769693203::res://.godot/exported/133200997/export-a1078bbbae42641efe2519260cd5e86d-intro.scn
+res://Godot/Godot Cenas/manager.tscn::6439ca98e7d1ad96e0dbab6b2faf6df1::1769694986::res://.godot/exported/133200997/export-f6a090fadadaccb7c129bacbcc271e03-manager.scn
+res://Godot/Godot Cenas/time.tscn::80b0d0801cf8e14c5fecfbad5196cd45::1763910131::res://.godot/exported/133200997/export-8270c14b492982a2de47a3a97c7dab32-time.scn
 res://shader/transition.tscn::7597a4a12fe3127128d410eba2b087c7::1759589936::res://.godot/exported/133200997/export-1deaa09613b785d2dd15467000e5be1d-transition.scn
-res://texture/characters/dialogos/bebedouro.tres::c34c355b2ec2f8b0d08313b4cf467c34::1761667817::res://.godot/exported/133200997/export-ff6600be3bf689e171b172ff55011196-bebedouro.res
+res://texture/characters/dialogos/bebedouro.tres::9a7732741382142f2bb794cc5cfa1d92::1762686342::res://.godot/exported/133200997/export-ff6600be3bf689e171b172ff55011196-bebedouro.res
 res://texture/characters/dialogos/comecio.tres::6c2cf4df86b736bea15b93d109be7098::1759589941::res://.godot/exported/133200997/export-d2f759647269f1afac87ba06e63264eb-comecio.res
 res://texture/characters/nikotest.tres::c08d313cbcc607575143eab219e52e92::1761400869::res://.godot/exported/133200997/export-c21db50c635dc3e548cf37a90904f672-nikotest.res
-res://texture/folderTres/BoxTexture/example_balloon.tres::1798c319c33a8baff079de75cfee2420::1761408746::res://.godot/exported/133200997/export-b0ab4b805df34212699c4e3cf36f66d6-example_balloon.res
-res://texture/folderTres/BoxTexture/example_balloonLINE.tres::dfb2a5a24e075ffbfde0b5e0ccc77c5f::1761849981::res://.godot/exported/133200997/export-618a2377a284eef096ca36daafff2edf-example_balloonLINE.res
-res://texture/folderTres/BoxTexture/intro.tres::b21e6be52ecd9af06a0f5defe86e0892::1761408746::res://.godot/exported/133200997/export-480736bde51ca5796063e74c0d5f13e9-intro.res
-res://texture/folderTres/BoxTexture/menu.tres::d25acac191a5f21c3624de28583ae4e4::1761408746::res://.godot/exported/133200997/export-0c620d416df5d8926cec3d87349e40b4-menu.res
-res://texture/folderTres/BoxTexture/zeko.tres::8bdd47e43c00211899fa1c16ab6f7261::1761408746::res://.godot/exported/133200997/export-5df89d96fa6c9957b48ae44824807770-zeko.res
-res://texture/folderTres/BoxTexture/zeno.tres::ad0d7f209509ce9f24e11e54cfc33867::1761408746::res://.godot/exported/133200997/export-feb638df326b0e2a75b061f9a6427b67-zeno.res
-res://texture/folderTres/materials/BATALHA.tres::432f7cc43b0cb6d1b3498ae4cebb2b6f::1759589941::res://.godot/exported/133200997/export-14f5329775e9926f5ee5b5f38938302b-BATALHA.res
-res://texture/folderTres/materials/fenda.tres::b1706e3eae0b9570d3d9b24e34b75237::1759589941::res://.godot/exported/133200997/export-9a57875a0d742eddab8048d77f0d75d8-fenda.res
-res://texture/folderTres/materials/niko.tres::6b469c798e050e35b3d15c6207f1465c::1760113638::res://.godot/exported/133200997/export-41b9954ec3e06739b380a868af3914f0-niko.res
-res://texture/folderTres/materials/preto_&_branco.tres::e35fe371ed28d1d8d04d0349f55e3103::1761943877::res://.godot/exported/133200997/export-0f6f2593a744f7dbd7051c5648c3cda0-preto_&_branco.res
-res://texture/folderTres/materials/SAVE.tres::12336a055fbce705fc2ceec769d6ce7a::1760090373::res://.godot/exported/133200997/export-829f2033c2326ff980d83ebc97e18730-SAVE.res
-res://texture/folderTres/materials/tile3.tres::185e93c6f1aa3438aec2c8a9028618a0::1759589941::res://.godot/exported/133200997/export-abd44b71049d5adf7eb09d904c7a86f0-tile3.res
-res://texture/folderTres/materials/tile.tres::4563b0a2a8a0e9e09196f2bcc5c140a8::1759589941::res://.godot/exported/133200997/export-e2d2d8f157f3aff3bca6d8d69d7eec5b-tile.res
-res://texture/folderTres/materials/wow.tres::353695430c2f88795508247eb52fbb91::1760120665::res://.godot/exported/133200997/export-37d742e7d5acbe5a4dc1514fe97b0a53-wow.res
-res://texture/folderTres/materials/zeno.tres::a335772fdc983450ca8e177d6a90c9a3::1759589941::res://.godot/exported/133200997/export-3fc01324469d90f7446cb2479e7c6a9f-zeno.res
-res://texture/folderTres/materials/zenoTest.tres::eda793fe6e6ab4ea47891e25753d601c::1759589941::res://.godot/exported/133200997/export-417609eaa9508facefc98ee3813d8774-zenoTest.res
-res://texture/folderTres/materials/zipTile.tres::d0e0eedf1da1bcd1f8d53f413a9dec92::1759589941::res://.godot/exported/133200997/export-40ed7e2cf1a3cfbcbb9cce7cb4c955f5-zipTile.res
-res://texture/folderTres/texturas/armadura.tres::8be691b683319b24aa66e1ffb28368e8::1759589941::res://.godot/exported/133200997/export-de8d8e3b31431f650f67541415e588c5-armadura.res
-res://texture/folderTres/texturas/batalha.tres::c2e19c0f19a10340434f534414695d3e::1759589941::res://.godot/exported/133200997/export-1da1baf3246531ba4edb135e3577d5e0-batalha.res
-res://texture/folderTres/texturas/comida.tres::0968f2c39ec60d1ca52a6de3c72d2faa::1759589941::res://.godot/exported/133200997/export-3d23a16b39866d9bfd8d998d14e4dfdb-comida.res
-res://texture/folderTres/texturas/dialogue.tres::4b73da6b0dd101098bfa6ebc8c1f46fa::1759589941::res://.godot/exported/133200997/export-43d7b0400ec5efdca208a45401dda6ec-dialogue.res
-res://texture/folderTres/texturas/dunjoes.tres::4a6f72b20733279ceaccb6551782f7b0::1759589941::res://.godot/exported/133200997/export-8ac91e0b0534241bc3952d1432fcb2e2-dunjoes.res
-res://texture/folderTres/texturas/espada.tres::1aeb4f8bf6e17c03f1823de4550af0a3::1759589941::res://.godot/exported/133200997/export-8f5af0cc97fc628021796cd311b417b7-espada.res
-res://texture/folderTres/texturas/fenda_texture.tres::ba49d2765cacbf6cb1eb60663e74b407::1761943878::res://.godot/exported/133200997/export-58b45d2503e64b30c9a5d4bdd94cc2d1-fenda_texture.res
-res://texture/folderTres/texturas/globalsave.tres::eafa21b253cf0b1f0a9ad1b45a591414::1759589941::res://.godot/exported/133200997/export-756117a26505f69073d3cf54a1810235-globalsave.res
-res://texture/folderTres/texturas/intro.tres::1703c77c2d2a5c77cfafaf6d9b0a5701::1761408746::res://.godot/exported/133200997/export-dedb83f78ad8d6c7866e3c1e41c9268a-intro.res
-res://texture/folderTres/texturas/inventory_png.tres::7a45376474e709f1cf3de7576ff300d2::1759589941::res://.godot/exported/133200997/export-9529fccc80b15cd7862809320a48cdcc-inventory_png.res
-res://texture/folderTres/texturas/item.tres::3ccc0667f51cb4eba1f84d2436ef0233::1759589941::res://.godot/exported/133200997/export-3f3006ee4dacbd0b87fa2ea3769bc598-item.res
-res://texture/folderTres/texturas/lado.tres::f9f347848dfcb93e38af065ba6e72556::1761388103::res://.godot/exported/133200997/export-25efbb0879e90d66abfdfe2e02d74a0f-lado.res
-res://texture/folderTres/texturas/makita.tres::62af5306881b958799167dd562690772::1759589941::res://.godot/exported/133200997/export-b098dcbae34f7b1e19a0300e4744cff2-makita.res
-res://texture/folderTres/texturas/Niko.tres::96f25d92670a051368b8580df39d8ddc::1760872252::res://.godot/exported/133200997/export-42b4bc503c1489d8d5d07c8826374b8f-Niko.res
-res://texture/folderTres/texturas/npc.tres::57562cc036c04ce34588c415e85d3230::1759589941::res://.godot/exported/133200997/export-1d1a086abd8f5d6c14bf8daa2bd8cd01-npc.res
-res://texture/folderTres/texturas/paleta.tres::8d2e90e133ccf1101c8a375d78ca6cbf::1761943877::res://.godot/exported/133200997/export-a790e6f26e74327fd3e428a7ca41e1de-paleta.res
-res://texture/folderTres/texturas/player.tres::18b92c0f89ccf027b9850ab2f6152ad2::1759589941::res://.godot/exported/133200997/export-1f11abb79e3e2707c315c0a9f5afb849-player.res
-res://texture/folderTres/texturas/player_png.tres::571ca24cbc927d3efd546752a8a80656::1759589941::res://.godot/exported/133200997/export-10f8f5a948447ade421a7a142489f311-player_png.res
-res://texture/folderTres/texturas/zekoCena.tres::e8e7be8f636cefecc0df7f973c26df54::1759589941::res://.godot/exported/133200997/export-7ad48403700d3d06c5b0824f4f7c98d2-zekoCena.res
-res://texture/folderTres/C1A.tres::2a08693a3147bedf01017e9434601147::1761943878::res://.godot/exported/133200997/export-fa09a87beec0799a24cc372aa1504397-C1A.res
-res://texture/folderTres/T1B.tres::835de578b03f33a53ca4b8a111922346::1761943879::res://.godot/exported/133200997/export-1465b1c18fee3c2485fd3ae66d25fa8b-T1B.res
-res://texture/folderTres/theme_BATALHA.tres::378086f6facd04ddf247f856cc5ecf31::1761931966::res://.godot/exported/133200997/export-40c6fa44979b0b91bb6b20705ed2db74-theme_BATALHA.res
+res://Areais/Batalha/cenas/AlmaBody2D.tscn::4180cdfb8a63d3cdfc3df2097abfd98a::1769453460::res://.godot/exported/133200997/export-ea82b568599f62440e0747dff53b9bf7-AlmaBody2D.scn
+res://Areais/Batalha/cenas/BATALHASave.tscn::9c8225db2a0a424ea0943574afb6fcf3::1769707864::res://.godot/exported/133200997/export-693460a920008774952c80a451131a47-BATALHASave.scn
+res://Areais/Batalha/cenas/BattleArenaControl.tscn::7fe3314b9783847e822531dab1d3be35::1768500097::res://.godot/exported/133200997/export-5412c48e10a7de982763fc9298f31acb-BattleArenaControl.scn
+res://Areais/Batalha/cenas/ContainerPlayer.tscn::1c15a0f87f0fd0fb2d83aa0aea8f299d::1769367177::res://.godot/exported/133200997/export-1f3533796cf61c47d4240822b8b3e5ea-ContainerPlayer.scn
+res://Areais/Batalha/cenas/InimigoButton.tscn::1b8f9efb5ca24c59c74136e2332e8227::1769197699::res://.godot/exported/133200997/export-5e50ebaabc1fb549d53bb6b342d0ddb4-InimigoButton.scn
+res://Areais/Extras/cenas/SAVE.tscn::c60752636faf8f8fec6edeb99ac23125::1766885634::res://.godot/exported/133200997/export-90ce9222ff0c8bd8593a3b6ec9a1cb92-SAVE.scn
+res://Areais/Extras/cenas/spawn_players.tscn::97b8619138e3f78ccd1b3f476757b68c::1766885634::res://.godot/exported/133200997/export-cf0cebff413a45347ab459430ac0d2cc-spawn_players.scn
+res://Areais/TEMPORADA 1/cenas/começo.tscn::e212c23ecc42ed94d5e997a04d933ba1::1769472166::res://.godot/exported/133200997/export-930402515810823c4b93fbaaf404293d-começo.scn
+res://Areais/TEMPORADA 1/cenas/novo_mundo.tscn::da4c15c373a746af6e32fbab1bb69552::1767781510::res://.godot/exported/133200997/export-6c3c5da1548e9a24cd3dfd11e98039b6-novo_mundo.scn
+res://Characters/enemies/Arceus/Arceus.tscn::86637d8ea3064bd4438a4254208e25d0::1766663367::res://.godot/exported/133200997/export-a6954de4c0e0b2bd49b594d644c48778-Arceus.scn
+res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres::a9a4a4c6de581b4a8804f958e748ee54::1769707866::res://.godot/exported/133200997/export-f030b8e422aa4467d74c9c4a167b1c59-bebedouro_sprite_frames.res
+res://Characters/enemies/Sickle Warrior/Sickle_Warrior.tscn::b4f17459f4a4c37c3cbd456b52a86d80::1768939576::res://.godot/exported/133200997/export-0b2a9d4f58b4c7421d389a1ab0c1a01d-Sickle_Warrior.scn
+res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres::8fa82e8a4fa985a792a8f32dc92c8d39::1769707866::res://.godot/exported/133200997/export-0075ff4bf323b19a6192051b69f7ad16-Sickle_Warriorsprite_frames.res
+res://Characters/Extras/zeko.tscn::76c4d4fb3fad090b09f7229a4022cd0b::1766885634::res://.godot/exported/133200997/export-2d395817cc862d94ab48975cdc6b093b-zeko.scn
+res://Characters/NPCS/Flower.tscn::21e47ff317d09d705dc1f9a2715a791d::1767106490::res://.godot/exported/133200997/export-987e9f606de02eaa2fb127156633ed23-Flower.scn
+res://Godot/Cenas E Scripts Gerais/Intro Temporada 1.tscn::dd0ba9c1e5e1c27184b488813574f09b::1768180979::res://.godot/exported/133200997/export-ae7afd3802bfa98c243448496e220302-Intro Temporada 1.scn
+res://Godot/classes/Inimigos/bebedouro/Bala1.tscn::61598498314841c66c4b69dd9f5ed896::1768500098::res://.godot/exported/133200997/export-4c33f02ba4b708fd027185a8976d9e3a-Bala1.scn
+res://Godot/classes/Inimigos/bebedouro/Bala2.tscn::03b1003fc728babf52f62e3422b4ef86::1768500098::res://.godot/exported/133200997/export-208d081da0771f1455a72c083b1a2e2e-Bala2.scn
+res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tres::42cd1fe7a2c459d0ae129b2471f00740::1769707866::res://.godot/exported/133200997/export-74a4c6faba2f86f1d2f7a2c688899247-Sickle Warrior.res
+res://Godot/classes/Inimigos/Sickle_Warrior/Sickle Warrior.tscn::cebc7b210c583bc262888ca805491e5b::1768500098::res://.godot/exported/133200997/export-f049dba8d1b7bcda921571de65137035-Sickle Warrior.scn
+res://Godot/classes/Inimigos/Sickle_Warrior/sickle_warrior_bala_2d.tscn::8e2f9be669d87831e3d6d82249f0e32a::1768500098::res://.godot/exported/133200997/export-d01eb1180ef9e30a35a93247c84594f1-sickle_warrior_bala_2d.scn
+res://Godot/classes/Itens E Mais/armaduras/óculos_simples.tres::1932163b19f4a269adef4f2338dfdbdb::1769196310::res://.godot/exported/133200997/export-3350527f9f8a16f2225a6e132e005a31-óculos_simples.res
+res://Godot/classes/Itens E Mais/armas/Signal_Weapon.tres::7d2e0933b10666a9dcd6dd6ae70db370::1769367177::res://.godot/exported/133200997/export-7936c7f914ca6b77e7acc5b0acb7aeb3-Signal_Weapon.res
+res://Godot/classes/Itens E Mais/consumíveis/cafe.tres::b1914ba891bf6e20db3d32fb0e361870::1769707864::res://.godot/exported/133200997/export-6d8ac5f9a0163cac22d3880a4cf2469c-cafe.res
+res://Godot/classes/Itens E Mais/consumíveis/sandwich.tres::61a58e6db3c8a1b612637d3bf0bcee7f::1769707864::res://.godot/exported/133200997/export-e2c3e1289979d93130a05d2e3394536f-sandwich.res
+res://Godot/classes/Itens E Mais/effects/Envenenamento.tres::a38dc80f2f969612862c02f09df79dcb::1769366111::res://.godot/exported/133200997/export-4a92673e2a12f372f2ed17c219bb91ee-Envenenamento.res
+res://Godot/classes/Itens E Mais/effects/Força.tres::8a17bff7191b12bd81e0f1c2e356d367::1767106490::res://.godot/exported/133200997/export-4e596b3b401f7ef67077a7584112e37a-Força.res
+res://Godot/classes/Itens E Mais/effects/Paralisia.tres::727bcfee9659f82f0132e3be460bb3dc::1767106490::res://.godot/exported/133200997/export-bf9fd67020001ed495c2bad256fe8737-Paralisia.res
+res://Godot/classes/Itens E Mais/effects/Queimação.tres::e06c3509a3f72d218717c7541ea4ad0d::1766885634::res://.godot/exported/133200997/export-b550ef85867af3ef568c3ef4f595f158-Queimação.res
+res://Godot/classes/Itens E Mais/effects/Regeneração.tres::ab0e46968da69984e8dc59d0ba26a636::1767106490::res://.godot/exported/133200997/export-5a686903f40eac08039b87745b8d101e-Regeneração.res
+res://Godot/classes/Itens E Mais/effects/Resistência.tres::97e33a9981f4d34eca474b661701a0cd::1767106490::res://.godot/exported/133200997/export-67d8eb2a20a0ef0cf36fcb6b68e81af9-Resistência.res
+res://Godot/classes/Itens E Mais/executaveis/HitKill.tres::8136fb31a853b25e357b78b8f5d74050::1769707864::res://.godot/exported/133200997/export-3e3d52668de7485752a46703c5a1da22-HitKill.res
+res://Godot/classes/Itens E Mais/Inventorys/ZenoInventory.tres::ec052504339a50d3a14c70e20143d795::1769450624::res://.godot/exported/133200997/export-6b6f3c06514d43b620e6c52dc16a439f-ZenoInventory.res
+res://Godot/classes/Itens E Mais/Items/Carta.tres::7a2efce5d6da4347ece5f2a59e378d77::1769193718::res://.godot/exported/133200997/export-8d295f58bca6b4b58b0b5e7e093f38ac-Carta.res
+res://Godot/classes/personagens/niko/niko.tscn::7920bdd1ab364359918520e4b15abc3a::1768515196::res://.godot/exported/133200997/export-bfe9e3c6e79ebf5190366c80cb9ecf02-niko.scn
+res://Godot/classes/personagens/placeholder/placeholder.tscn::612288a1ff2db72175f55dc25546073f::1765727567::res://.godot/exported/133200997/export-cd5d660a2b9bc2e17a07a41e6f8fe445-placeholder.scn
+res://Godot/classes/personagens/Zeno T1/CirurgiaoT1.tres::ada5d513912550338a34985d77145a81::1769366077::res://.godot/exported/133200997/export-56037b9d699490c4b2840a701dcfdba5-CirurgiaoT1.res
+res://Godot/classes/personagens/Zeno T1/zenoBatalhaT1.tscn::a88ca6a59296c92816f355906988862b::1769366062::res://.godot/exported/133200997/export-ce3cb0752b456c749147efd0bab90827-zenoBatalhaT1.scn
+res://Godot/classes/personagens/Zeno T1/zenoT1.tres::db6107b8c232daff283354a1320e2448::1769707865::res://.godot/exported/133200997/export-8f4090d1a19ad07c0039ef93b62793a0-zenoT1.res
+res://Godot/classes/personagens/Zeno T1/zenoT1.tscn::21f206f179da0a121deb8eaa7cc2f547::1769631872::res://.godot/exported/133200997/export-2af3502bb4f228d74e3e6139ae0849b8-zenoT1.scn
+res://Godot/Godot Cenas/Gamepad.tscn::1c42e6c541979f3c5c0e62de8f614572::1769693207::res://.godot/exported/133200997/export-ccd7a2fbf8a4d5251a138d05ab41a41a-Gamepad.scn
+res://Godot/Godot Cenas/Global.tscn::c95290503c1a5e8f8cfe20a3e8412e1e::1769701594::res://.godot/exported/133200997/export-98b8d2f84d9d2d369354aa96cf3e6a85-Global.scn
+res://Godot/Godot Cenas/menu.tscn::2020bde5dd86a3b318c4e4499b214c84::1769693203::res://.godot/exported/133200997/export-d5cce75ed6382b4f827c36b94262184c-menu.scn
+res://Resources/BoxTexture/example_balloon.tres::2522775a0d81f17824b6c642deab1aa9::1766665306::res://.godot/exported/133200997/export-24f433b3c2c3f053429b14519f3082cf-example_balloon.res
+res://Resources/BoxTexture/example_balloonLINE.tres::dfb2a5a24e075ffbfde0b5e0ccc77c5f::1766665306::res://.godot/exported/133200997/export-70e1b98da1e1ab9cc5a4e3f6d3892a5b-example_balloonLINE.res
+res://Resources/BoxTexture/inimigoButtao.tres::c23f267506555457c5f34f2a6218d68a::1766665306::res://.godot/exported/133200997/export-48732c4e07dc775e4201ad30028f08e7-inimigoButtao.res
+res://Resources/BoxTexture/intro.tres::b21e6be52ecd9af06a0f5defe86e0892::1766665306::res://.godot/exported/133200997/export-d6929fdd3d9f45127c5dafd6184b9076-intro.res
+res://Resources/BoxTexture/menu.tres::d25acac191a5f21c3624de28583ae4e4::1766665306::res://.godot/exported/133200997/export-f471f5d503d0a54021e7df9523832f97-menu.res
+res://Resources/BoxTexture/zeko.tres::8bdd47e43c00211899fa1c16ab6f7261::1766665306::res://.godot/exported/133200997/export-f133631bdfda7b7a3ccc7a14bcf85a0b-zeko.res
+res://Resources/BoxTexture/zeno.tres::ad0d7f209509ce9f24e11e54cfc33867::1766665306::res://.godot/exported/133200997/export-bdbc839decbc447834bf7b3856a299c2-zeno.res
+res://Resources/folderTres/C1A.tres::a918df32772a57f98f7a3675cc1dde31::1769707866::res://.godot/exported/133200997/export-a787ac0f9df847d690c6fb0351012b00-C1A.res
+res://Resources/folderTres/T1B.tres::07c5aacb18b1659c14e109daeb15f42d::1769707866::res://.godot/exported/133200997/export-d2cbf5f38d229ebf40f169a756655b18-T1B.res
+res://Resources/folderTres/theme_BATALHA.tres::fbb8fcf5c21b48660fba63f7d44187be::1769707864::res://.godot/exported/133200997/export-65bf9421f4f176c0147fc0209761c390-theme_BATALHA.res
+res://Resources/materials/BATALHA.tres::0d0015dcdef5c66c581e23673271ef7f::1766665316::res://.godot/exported/133200997/export-64240096869b8a4b00852f4026c9af10-BATALHA.res
+res://Resources/materials/fenda.tres::b1706e3eae0b9570d3d9b24e34b75237::1766665316::res://.godot/exported/133200997/export-98dc5d988d9c0436cdd53cdeaa289460-fenda.res
+res://Resources/materials/niko.tres::969a61792989cc6e275772cc3b73f803::1766885662::res://.godot/exported/133200997/export-f71406e4606f0360012af5f3a5df3b2e-niko.res
+res://Resources/materials/preto_&_branco.tres::e35fe371ed28d1d8d04d0349f55e3103::1768500122::res://.godot/exported/133200997/export-5e4cd31397b664e9f950bce791926b87-preto_&_branco.res
+res://Resources/materials/SAVE.tres::f6bddc57978af8ea0c096af623570b37::1766885662::res://.godot/exported/133200997/export-4f86e0461ad9b34843f372a7e93b947b-SAVE.res
+res://Resources/materials/tile3.tres::e1bd119faebd5be7cf50ea57c1495eb9::1766885662::res://.godot/exported/133200997/export-6af93e62cefcbf4c893e03918d73aa47-tile3.res
+res://Resources/materials/tile.tres::4563b0a2a8a0e9e09196f2bcc5c140a8::1766665316::res://.godot/exported/133200997/export-7743efe3859ce2cf43bb687f8c4e4601-tile.res
+res://Resources/materials/wow.tres::353695430c2f88795508247eb52fbb91::1766665316::res://.godot/exported/133200997/export-9fcd69c370180fb6688f03e00fba85fd-wow.res
+res://Resources/materials/zeno.tres::a335772fdc983450ca8e177d6a90c9a3::1766665316::res://.godot/exported/133200997/export-cbf15c1a463d12a5b086f50ab1cd47b0-zeno.res
+res://Resources/materials/zenoTest.tres::eda793fe6e6ab4ea47891e25753d601c::1766665316::res://.godot/exported/133200997/export-8f4cf613cc535a213fc7b4f24a3c3002-zenoTest.res
+res://Resources/materials/zipTile.tres::d0e0eedf1da1bcd1f8d53f413a9dec92::1766665316::res://.godot/exported/133200997/export-423747e96047fa117d315576a1129f56-zipTile.res
+res://Resources/texturas/armadura.tres::8be691b683319b24aa66e1ffb28368e8::1766665331::res://.godot/exported/133200997/export-1bbf1e551795963840b85ff5ad546ca9-armadura.res
+res://Resources/texturas/batalha.tres::c2e19c0f19a10340434f534414695d3e::1766665331::res://.godot/exported/133200997/export-d08702bf19e2e6272cc023fec544648d-batalha.res
+res://Resources/texturas/cena.tres::331ea69c4e2d59e6ca610ebd1164d8b9::1769346540::res://.godot/exported/133200997/export-13f203241c379edf9213bc5df060b6a8-cena.res
+res://Resources/texturas/comida.tres::7abe2ee7e778f89ba63c3b599d5461b2::1766885662::res://.godot/exported/133200997/export-93101a40e7ed532ef116a043a5bd9a30-comida.res
+res://Resources/texturas/dialogue.tres::4b73da6b0dd101098bfa6ebc8c1f46fa::1766665331::res://.godot/exported/133200997/export-0a472f76cfa5d87aa04366360f740e22-dialogue.res
+res://Resources/texturas/dunjoes.tres::4a6f72b20733279ceaccb6551782f7b0::1766665331::res://.godot/exported/133200997/export-bf5f3cc216c85531026350c5ff29f5ed-dunjoes.res
+res://Resources/texturas/espada.tres::1aeb4f8bf6e17c03f1823de4550af0a3::1766665331::res://.godot/exported/133200997/export-e0785484bbf437e6e77894d4b418a5e6-espada.res
+res://Resources/texturas/fenda_texture.tres::f7b382433833cabd680498dddd7e23ab::1769707865::res://.godot/exported/133200997/export-3920fffc307e621d1ce96be66eca733a-fenda_texture.res
+res://Resources/texturas/global.tres::32bcc21f62675345eab04edeae249665::1766885662::res://.godot/exported/133200997/export-a7f11738aef9f0f365cea93a316aafd9-global.res
+res://Resources/texturas/globalsave.tres::eafa21b253cf0b1f0a9ad1b45a591414::1766665331::res://.godot/exported/133200997/export-18c989416b92873298bc10e1bd20d54e-globalsave.res
+res://Resources/texturas/intro.tres::1703c77c2d2a5c77cfafaf6d9b0a5701::1766665331::res://.godot/exported/133200997/export-dd823f6f66a384e86949b3c4cce56c6c-intro.res
+res://Resources/texturas/inventory_png.tres::7a45376474e709f1cf3de7576ff300d2::1766665331::res://.godot/exported/133200997/export-ecd24cec6ead45d599ed1a126027d0bb-inventory_png.res
+res://Resources/texturas/item.tres::3ccc0667f51cb4eba1f84d2436ef0233::1766665331::res://.godot/exported/133200997/export-dacfb06ede73b766b3037dcd29f81864-item.res
+res://Resources/texturas/lado.tres::1ab917c497e28e000bb4cb632f052270::1766665331::res://.godot/exported/133200997/export-9e2ba4a208a316db494e20f77050cd50-lado.res
+res://Resources/texturas/makita.tres::7512453329ebdf7d5ae5f812288fcb22::1768180984::res://.godot/exported/133200997/export-858ccda3f73fb43a2a770de25836620d-makita.res
+res://Resources/texturas/Niko.tres::96f25d92670a051368b8580df39d8ddc::1766665331::res://.godot/exported/133200997/export-f65bbe0a928ca295d111f57677590efc-Niko.res
+res://Resources/texturas/npc.tres::57562cc036c04ce34588c415e85d3230::1766665331::res://.godot/exported/133200997/export-26e27a75c916a1fad0163a7f384c323b-npc.res
+res://Resources/texturas/paleta.tres::6e4ce692923b17c21bddfdc651533cf8::1769707864::res://.godot/exported/133200997/export-6853a670b41a03f043105d1c826d68cb-paleta.res
+res://Resources/texturas/player.tres::18b92c0f89ccf027b9850ab2f6152ad2::1766665331::res://.godot/exported/133200997/export-87cfc1740cb8e84b98d2b1b106bc81ef-player.res
+res://Resources/texturas/PlayerPng.tres::571ca24cbc927d3efd546752a8a80656::1766666578::res://.godot/exported/133200997/export-940f39b137ced76277b12e369b849912-PlayerPng.res
+res://sons/Data music/Acid_Tunnel.tres::1aa22d3a015fab26797997dc27c8fec3::1767781512::res://.godot/exported/133200997/export-f7f15dd3bed9c37b471c24e9b991b47e-Acid_Tunnel.res
+res://sons/Data music/Audio_Story.tres::84d8959cc700a443e2038c5fcd809c2f::1767722934::res://.godot/exported/133200997/export-dd5f9a58cd36c29d9ab01954091123db-Audio_Story.res
+res://sons/Data sounds/Cancel.tres::38867654971abc9f8498704c4864f837::1767722772::res://.godot/exported/133200997/export-f90a9d554d3821c32214c7acd5f307e6-Cancel.res
+res://sons/Data sounds/Hurt.tres::ced2e6972fb98de0f4a2eedc49b0eae0::1767781513::res://.godot/exported/133200997/export-e67c778238df35fc68a8bec59e677810-Hurt.res
+res://sons/Data sounds/Intro1.tres::c04bc4402447d92643aeab8c7f262421::1767722772::res://.godot/exported/133200997/export-cadd647886bd7398c45c5c3037845b9f-Intro1.res
+res://sons/Data sounds/Modern3.tres::28975cdecedbc04f86ec4648b6bf1f9b::1767722772::res://.godot/exported/133200997/export-52649e45df24fc1f76c5f427aca30c7c-Modern3.res
+res://sons/Data sounds/Modern5.tres::ecae5a24ce015faf7700be909412a7d9::1767722772::res://.godot/exported/133200997/export-3cdf5caef3d9de238dc3044318a3ff42-Modern5.res
+res://sons/Data sounds/Modern9.tres::ca52d44daa544c6c38a4626539c94755::1767722772::res://.godot/exported/133200997/export-21abe3f13a525196bc8575c745b50b56-Modern9.res
+res://sons/Data sounds/Power_Up.tres::85ede6140cb030b1249bc9578fe31b35::1768180980::res://.godot/exported/133200997/export-ce4f8e28ffa415544fb0c827bbc28c7e-Power_Up.res
+res://sons/Data sounds/Sci_Fi_Error.tres::4e101092f1e4e16d62034cff54fdd712::1767722772::res://.godot/exported/133200997/export-1cb639324ae2ecce7b291361c0074ab3-Sci_Fi_Error.res
+res://sons/Data sounds/Sound_Effect_Battle_Start_Jingle.tres::3e6eae831ef7c9b414f8d50fb3f2c6d8::1767781513::res://.godot/exported/133200997/export-47c5f9248c672578aa72d18efd6db51e-Sound_Effect_Battle_Start_Jingle.res
+res://sons/Data sounds/Toggle_Off.tres::383150dc117f5bdd3a25e7ecef7144a5::1767722772::res://.godot/exported/133200997/export-4ce43191d48e9e02bdb873fcb339c269-Toggle_Off.res
+res://sons/Data sounds/Toggle_On.tres::319b23c84b8250158c5cfb279b032b24::1767722772::res://.godot/exported/133200997/export-bc2b8dc25b93373779698422a1087824-Toggle_On.res
+res://texture/characters/dialogos/SickleWarrior.tres::98bd5dc33b8efaa41629a468515eb0a0::1768180980::res://.godot/exported/133200997/export-27d142331390de684e66ed674c62b51a-SickleWarrior.res
+res://texture/PNG/icon/almas/almaanimetionambicao.tres::4e460e534f160145ee372779765a0b74::1767554861::res://.godot/exported/133200997/export-4fc55bd3352f5c1968d3283bba2f0d57-almaanimetionambicao.res

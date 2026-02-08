@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://nqf65ba8dfqg"]
+[gd_scene format=3 uid="uid://nqf65ba8dfqg"]
 
 [ext_resource type="Texture2D" uid="uid://r7l18620ockm" path="res://texture/PNG/bordas UI/Default/Panel/panel-000.png" id="3_436f3"]
 [ext_resource type="Texture2D" uid="uid://c62y5t03daplf" path="res://texture/PNG/bordas UI/Default/Border/panel-border-000.png" id="4_bcos8"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://be085m57y7g8q" path="res://texture/PNG/bordas UI/Default/Border/panel-border-016.png" id="9_bnlop"]
 [ext_resource type="Texture2D" uid="uid://ctppp385maids" path="res://texture/PNG/bordas UI/Default/Panel/panel-020.png" id="10_oaeeq"]
 [ext_resource type="Texture2D" uid="uid://cxn4r53tyc6r1" path="res://texture/PNG/bordas UI/Default/Border/panel-border-020.png" id="11_ey15c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t84d"]
+size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylfkn"]
 atlas = ExtResource("5_cmsyx")
@@ -26,6 +29,9 @@ region = Rect2(208, 48, 16, 16)
 atlas = ExtResource("5_cmsyx")
 region = Rect2(192, 48, 16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oir2"]
+size = Vector2(54, 54)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngigx"]
 atlas = ExtResource("5_cmsyx")
 region = Rect2(272, 112, 16, 16)
@@ -38,18 +44,19 @@ region = Rect2(272, 0, 16, 16)
 atlas = ExtResource("5_cmsyx")
 region = Rect2(176, 0, 16, 16)
 
-[node name="Gamepad" type="Node2D"]
+[node name="Gamepad" type="Node2D" unique_id=233292432]
 
-[node name="up" type="TouchScreenButton" parent="."]
+[node name="up" type="TouchScreenButton" parent="." unique_id=1249445073]
 use_parent_material = true
-position = Vector2(96, 272)
-scale = Vector2(1.667, 1.667)
+position = Vector2(88, 312)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_436f3")
 texture_pressed = ExtResource("4_bcos8")
+shape = SubResource("RectangleShape2D_5t84d")
 passby_press = true
 action = "Up"
 
-[node name="TextureRect" type="TextureRect" parent="up"]
+[node name="TextureRect" type="TextureRect" parent="up" unique_id=133830084]
 use_parent_material = true
 offset_left = 10.0
 offset_top = 10.0
@@ -57,16 +64,17 @@ offset_right = 38.0
 offset_bottom = 38.0
 texture = SubResource("AtlasTexture_ylfkn")
 
-[node name="down" type="TouchScreenButton" parent="."]
+[node name="down" type="TouchScreenButton" parent="." unique_id=162570048]
 use_parent_material = true
-position = Vector2(96, 432)
-scale = Vector2(1.66667, 1.66667)
+position = Vector2(88, 456)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_436f3")
 texture_pressed = ExtResource("4_bcos8")
+shape = SubResource("RectangleShape2D_5t84d")
 passby_press = true
 action = "Down"
 
-[node name="TextureRect" type="TextureRect" parent="down"]
+[node name="TextureRect" type="TextureRect" parent="down" unique_id=2073326813]
 use_parent_material = true
 offset_left = 10.0
 offset_top = 10.0
@@ -74,16 +82,17 @@ offset_right = 38.0
 offset_bottom = 38.0
 texture = SubResource("AtlasTexture_vj6wd")
 
-[node name="left" type="TouchScreenButton" parent="."]
+[node name="left" type="TouchScreenButton" parent="." unique_id=142655380]
 use_parent_material = true
-position = Vector2(16, 352)
-scale = Vector2(1.667, 1.667)
+position = Vector2(16, 384)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_436f3")
 texture_pressed = ExtResource("4_bcos8")
+shape = SubResource("RectangleShape2D_5t84d")
 passby_press = true
 action = "Left"
 
-[node name="TextureRect2" type="TextureRect" parent="left"]
+[node name="TextureRect2" type="TextureRect" parent="left" unique_id=1233486046]
 use_parent_material = true
 offset_left = 9.59808
 offset_top = 9.59808
@@ -91,16 +100,17 @@ offset_right = 37.5981
 offset_bottom = 37.5981
 texture = SubResource("AtlasTexture_wuym2")
 
-[node name="right" type="TouchScreenButton" parent="."]
+[node name="right" type="TouchScreenButton" parent="." unique_id=1543532330]
 use_parent_material = true
-position = Vector2(176, 352)
-scale = Vector2(1.667, 1.667)
+position = Vector2(160, 384)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_436f3")
 texture_pressed = ExtResource("4_bcos8")
+shape = SubResource("RectangleShape2D_5t84d")
 passby_press = true
 action = "Right"
 
-[node name="TextureRect" type="TextureRect" parent="right"]
+[node name="TextureRect" type="TextureRect" parent="right" unique_id=170835601]
 use_parent_material = true
 offset_left = 10.0
 offset_top = 10.0
@@ -108,16 +118,17 @@ offset_right = 38.0
 offset_bottom = 38.0
 texture = SubResource("AtlasTexture_070s6")
 
-[node name="confirm" type="TouchScreenButton" parent="."]
+[node name="confirm" type="TouchScreenButton" parent="." unique_id=1824192141]
 use_parent_material = true
-position = Vector2(1000, 392)
-scale = Vector2(2.50033, 2.50033)
+position = Vector2(824, 408)
+scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("6_feppd")
 texture_pressed = ExtResource("7_aeaoo")
+shape = SubResource("RectangleShape2D_7oir2")
 passby_press = true
 action = "confirm"
 
-[node name="TextureRect" type="TextureRect" parent="confirm"]
+[node name="TextureRect" type="TextureRect" parent="confirm" unique_id=1405244123]
 use_parent_material = true
 offset_left = 10.0
 offset_top = 10.0
@@ -125,15 +136,16 @@ offset_right = 38.0
 offset_bottom = 38.0
 texture = SubResource("AtlasTexture_ngigx")
 
-[node name="cancel" type="TouchScreenButton" parent="."]
+[node name="cancel" type="TouchScreenButton" parent="." unique_id=451535384]
 use_parent_material = true
-position = Vector2(1000, 256)
-scale = Vector2(2.50033, 2.50033)
+position = Vector2(824, 272)
+scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("8_sps8e")
 texture_pressed = ExtResource("9_bnlop")
+shape = SubResource("RectangleShape2D_7oir2")
 action = "cancel"
 
-[node name="TextureRect" type="TextureRect" parent="cancel"]
+[node name="TextureRect" type="TextureRect" parent="cancel" unique_id=323160880]
 use_parent_material = true
 offset_left = 6.0
 offset_top = 6.0
@@ -141,15 +153,16 @@ offset_right = 42.0
 offset_bottom = 42.0
 texture = SubResource("AtlasTexture_vk12c")
 
-[node name="menu" type="TouchScreenButton" parent="."]
+[node name="menu" type="TouchScreenButton" parent="." unique_id=19901818]
 use_parent_material = true
-position = Vector2(1000, 112)
-scale = Vector2(2.50033, 2.50033)
+position = Vector2(824, 136)
+scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("10_oaeeq")
 texture_pressed = ExtResource("11_ey15c")
+shape = SubResource("RectangleShape2D_7oir2")
 action = "menu"
 
-[node name="TextureRect" type="TextureRect" parent="menu"]
+[node name="TextureRect" type="TextureRect" parent="menu" unique_id=254329006]
 use_parent_material = true
 offset_left = 10.0
 offset_top = 10.0

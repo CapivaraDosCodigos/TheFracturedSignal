@@ -8,31 +8,33 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="The Fractured Signal"
-config/version="alfa 4.5"
+config/version="0.4.9"
+config/tags=PackedStringArray("game")
 run/main_scene="uid://cwcyxp7jea15x"
 config/auto_accept_quit=false
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://cmf85pqbfm1sn"
-boot_splash/fullsize=false
+config/macos_native_icon="uid://cmf85pqbfm1sn"
+config/windows_native_icon="uid://cmf85pqbfm1sn"
+boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://cmf85pqbfm1sn"
 run/translations/default_csv_locale="en"
 
-[audio]
-
-buses/default_bus_layout=""
-
 [autoload]
 
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Manager="*res://Godot/Godot Cenas/manager.tscn"
-GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Global="*res://Godot/Godot Cenas/Global.tscn"
+PhantomCameraManager="*uid://duq6jhf6unyis"
+Global="*uid://k4x6eumhu0qh"
 
 [dialogic]
 
@@ -55,12 +57,11 @@ runtime/balloon_path="res://Godot/balloon.tscn"
 [display]
 
 window/size/viewport_height=540
-window/size/mode=4
 window/size/initial_position_type=0
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/handheld/orientation=4
 window/custom_image="uid://4t63sbm15mlv"
+window/stretch_mode=1
 
 [editor]
 
@@ -69,7 +70,7 @@ movie_writer/size/initial_position_type=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+enabled=PackedStringArray("res://addons/TileMapLayer3D/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [file_customization]
 
@@ -82,17 +83,16 @@ folder_colors={
 "res://Characters/enemies/Arceus/": "yellow",
 "res://Characters/enemies/Sickle Warrior/": "blue",
 "res://Characters/enemies/bebedouro/": "blue",
-"res://Godot/": "green",
+"res://Godot 3d/": "red",
+"res://Godot/": "blue",
 "res://Godot/Diálogos/": "teal",
 "res://Godot/Godot Cenas/": "blue",
+"res://Godot/Godot Cenas/Inimigos Batalha/bebedouro/": "blue",
+"res://Godot/Resources/": "gray",
 "res://Godot/classes/": "orange",
 "res://Godot/classes/DATAS/": "blue",
-"res://Godot/classes/Inimigos/": "orange",
-"res://Godot/classes/Inimigos/bebedouro/": "blue",
 "res://Godot/classes/Itens E Mais/": "gray",
 "res://Godot/classes/Itens E Mais/Classes/": "orange",
-"res://Godot/classes/Itens E Mais/Inventorys/": "yellow",
-"res://Godot/classes/Itens E Mais/executaveis/": "blue",
 "res://Godot/classes/Nodes/": "teal",
 "res://Resources/": "orange",
 "res://Resources/folderTres/": "orange",
@@ -123,18 +123,6 @@ NPC=""
 [gui]
 
 theme/custom_font="uid://b056rcdsyltht"
-
-[gui_transitions]
-
-config/default/auto_start=true
-config/default/fade_layout=true
-config/default/center_pivot=true
-config/default/duration=0.5
-config/default/delay=0.5
-config/default/transition_type="QUAD"
-config/default/ease_type="IN_OUT"
-config/default/animation_enter=4
-config/default/animation_leave=4
 
 [input]
 
@@ -225,6 +213,10 @@ dialogic_default_action={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.dialogue", "res://Godot/Diálogos/bebedouro.dialogue", "res://Godot/Diálogos/Symptoms.dialogue", "res://Godot/Diálogos/IntroTemporada1.dialogue", "res://Godot/Diálogos/Sickle_Warrior.dialogue")
@@ -239,6 +231,7 @@ locale/translations_pot_files=PackedStringArray("res://Godot/Diálogos/testText.
 2d_physics/layer_6="Almas"
 2d_physics/layer_7="Projeteis"
 2d_physics/layer_8="Barreira"
+2d_physics/layer_9="Almas Areas"
 
 [rendering]
 

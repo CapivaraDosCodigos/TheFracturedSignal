@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://b371rfq2683pb"]
+[gd_resource type="TileSet" format=3 uid="uid://b371rfq2683pb"]
 
 [ext_resource type="Texture2D" uid="uid://bkn1oyn7iqm32" path="res://texture/tiles top down/Texture/TX Tileset Grass.png" id="1_5du7w"]
 [ext_resource type="Texture2D" uid="uid://bsl7of8j3hu65" path="res://texture/tiles top down/Texture/TX Tileset Stone Ground.png" id="2_qdwb6"]

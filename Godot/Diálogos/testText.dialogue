@@ -42,7 +42,7 @@ Zeno: complicado isso aí
 => DialogueResource/Map
 
 ~ Flower
-do Manager.change_state("DIALOGUE")
+do Manager.set_state("DIALOGUE")
 do Manager.DialogoTexture("res://texture/characters/inimigos/flore.png")
 Flower: Oi amigo
 Flower: Eu estou aqui so pra cobrir tabela

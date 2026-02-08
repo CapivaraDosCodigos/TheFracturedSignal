@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://d302slnl03gy4"]
+
+[ext_resource type="Resource" uid="uid://cpyq1bqrnbgj0" path="res://Godot/Resources/Itens E Mais/Classes/CirurgiaoT1.tres" id="1_2a31m"]
+[ext_resource type="Script" uid="uid://dtm0qkgm2180b" path="res://Godot/classes/Itens E Mais/executables.gd" id="2_2ingj"]
+[ext_resource type="Resource" uid="uid://cut0suxhym1mp" path="res://Godot/Resources/Itens E Mais/Executaveis/HitKill.tres" id="3_i585o"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="4_2tli8"]
+[ext_resource type="Resource" uid="uid://cd53fp8qruq48" path="res://Godot/Resources/Itens E Mais/Inventorys/ZenoInventory.tres" id="5_r2bnb"]
+[ext_resource type="Script" uid="uid://cioncjdbh77k8" path="res://Godot/classes/Itens E Mais/Effects.gd" id="6_skv60"]
+[ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/DATAS/PlayerData.gd" id="7_d8w68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe788"]
+atlas = ExtResource("4_2tli8")
+region = Rect2(582, 291, 96, 96)
+
+[resource]
+script = ExtResource("7_d8w68")
+baseAttack = 5
+InventoryPlayer = ExtResource("5_r2bnb")
+Classe = ExtResource("1_2a31m")
+Soul = 2
+EXE_slot_2 = ExtResource("3_i585o")
+PlayerBatalhaPath = "uid://dc6gnjvpvkwsn"
+ObjectPlayerPath = "uid://h5ek2buto4br"
+Nome = "Zeno"
+Icone = SubResource("AtlasTexture_xe788")
+metadata/_custom_type_script = "uid://bj6w76m0cfh2q"

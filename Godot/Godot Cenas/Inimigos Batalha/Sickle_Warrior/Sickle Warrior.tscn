@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b63e1rlaxs4he"]
+
+[ext_resource type="SpriteFrames" uid="uid://dx8pn0dd7mhkq" path="res://Characters/enemies/Sickle Warrior/Sickle_Warriorsprite_frames.tres" id="1_of8um"]
+[ext_resource type="Script" uid="uid://kjhutov44bdn" path="res://Godot/classes/Nodes/EnemiesBase2D.gd" id="2_s4kjb"]
+[ext_resource type="Material" uid="uid://dkyctc5wpm76t" path="res://Resources/materials/SAVE.tres" id="3_rpkuq"]
+[ext_resource type="Texture2D" uid="uid://5u8fngt38w0w" path="res://texture/effects/attack 1 .png" id="4_2il6t"]
+[ext_resource type="Script" uid="uid://3yjtm0w3xip8" path="res://Godot/Godot Cenas/Inimigos Batalha/Sickle_Warrior/sickle_warrior_spawn.gd" id="5_i2ond"]
+[ext_resource type="PackedScene" uid="uid://crvo8xvq6vxih" path="res://Godot/Godot Cenas/Inimigos Batalha/Sickle_Warrior/sickle_warrior_bala_2d.tscn" id="6_roewa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tahm4"]
+atlas = ExtResource("4_2il6t")
+region = Rect2(0, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_080wo"]
+atlas = ExtResource("4_2il6t")
+region = Rect2(41, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxoew"]
+atlas = ExtResource("4_2il6t")
+region = Rect2(82, 0, 41, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiolp"]
+atlas = ExtResource("4_2il6t")
+region = Rect2(123, 0, 41, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32i2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tahm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_080wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxoew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiolp")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SickleWarrior" type="AnimatedSprite2D" unique_id=1426479043 node_paths=PackedStringArray("spawns")]
+scale = Vector2(5.2, 5.2)
+sprite_frames = ExtResource("1_of8um")
+animation = &"Dead"
+autoplay = "idle"
+speed_scale = 2.0
+offset = Vector2(2, 0)
+flip_h = true
+script = ExtResource("2_s4kjb")
+nome = "Sickle Warrior"
+life = 120
+maxlife = 120
+time = 10.0
+spawns = [NodePath("AnimatedSprite2D/SickleWarriorSpawn"), NodePath("AnimatedSprite2D/SickleWarriorSpawn2"), NodePath("AnimatedSprite2D/SickleWarriorSpawn3")]
+metadata/_custom_type_script = "uid://kjhutov44bdn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1450821879]
+material = ExtResource("3_rpkuq")
+sprite_frames = SubResource("SpriteFrames_32i2b")
+frame = 4
+frame_progress = 1.0
+
+[node name="SickleWarriorSpawn" type="Node" parent="AnimatedSprite2D" unique_id=597190939]
+script = ExtResource("5_i2ond")
+quantidade = 3
+balas = Array[PackedScene]([ExtResource("6_roewa")])
+makers = Array[Vector2]([Vector2(72.000015, 72)])
+espera = 0.5
+metadata/_custom_type_script = "uid://cdr1vpvtwnywr"
+
+[node name="SickleWarriorSpawn2" type="Node" parent="AnimatedSprite2D" unique_id=1895175702]
+script = ExtResource("5_i2ond")
+quantidade = 4
+makers = Array[Vector2]([Vector2(72.000015, 72)])
+espera = 0.5
+metadata/_custom_type_script = "uid://cdr1vpvtwnywr"
+
+[node name="SickleWarriorSpawn3" type="Node" parent="AnimatedSprite2D" unique_id=981452721]
+script = ExtResource("5_i2ond")
+quantidade = 5
+makers = Array[Vector2]([Vector2(72.000015, 72)])
+espera = 0.5
+metadata/_custom_type_script = "uid://cdr1vpvtwnywr"

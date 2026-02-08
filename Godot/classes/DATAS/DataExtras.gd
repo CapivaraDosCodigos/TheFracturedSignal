@@ -9,7 +9,7 @@ class_name DataExtras extends Resource
 @export var EnemiesVistos: Array[String] = []
 
 ## Lista de cenas já visualizadas pelo jogador.
-@export var cenas_vistas: Array[String] = []
+@export var cenasVistas: Array[String] = []
 
 ## Lista de conquistas desbloqueadas.
 @export var conquistas: Array[String] = []

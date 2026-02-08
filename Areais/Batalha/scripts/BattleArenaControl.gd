@@ -1,3 +1,4 @@
+@icon("res://texture/PNG/icon/godot/tank.svg")
 extends NinePatchRect
 class_name BattleArenaControl
 

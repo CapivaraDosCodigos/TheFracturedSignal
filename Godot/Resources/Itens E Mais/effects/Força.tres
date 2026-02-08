@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://bp7ek1yb8kxml"]
+
+[ext_resource type="Script" uid="uid://cioncjdbh77k8" path="res://Godot/classes/Itens E Mais/Effects.gd" id="1_0vxck"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="1_kft3s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ddl3"]
+atlas = ExtResource("1_kft3s")
+region = Rect2(16, 1088, 16, 16)
+
+[resource]
+script = ExtResource("1_0vxck")
+duracao = 3
+Nome = "Força"
+icone = SubResource("AtlasTexture_7ddl3")
+descricao = "Força aumenta o dano em 25%"
+tipos = 32
+forca = 1.25
+metadata/_custom_type_script = "uid://cioncjdbh77k8"

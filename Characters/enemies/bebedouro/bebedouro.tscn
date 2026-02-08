@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgs8qnmsvgs1g"]
+[gd_scene format=3 uid="uid://bgs8qnmsvgs1g"]
 
 [ext_resource type="Script" uid="uid://d3ulv6glaxvc7" path="res://Godot/classes/Nodes/ObjectEnemies2D.gd" id="1_s6x8t"]
-[ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/classes/Inimigos/bebedouro/bebedouro.tres" id="2_ou5q7"]
+[ext_resource type="Resource" uid="uid://qs0gp3vem5db" path="res://Godot/Resources/Inimigos/bebedouro.tres" id="2_ou5q7"]
 [ext_resource type="SpriteFrames" uid="uid://8pnircha6h5b" path="res://Characters/enemies/bebedouro/bebedouro_sprite_frames.tres" id="3_ou5q7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e81kj"]

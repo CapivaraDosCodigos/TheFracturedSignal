@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://pivih5e0q7e7"]
+[gd_scene format=3 uid="uid://pivih5e0q7e7"]
 
 [sub_resource type="GDScript" id="GDScript_sts5m"]
 script/source = "extends Node
@@ -8,11 +8,10 @@ func aplicar_material_e_salvar(caminho_imagem: String, material: Material) -> vo
 	if img.load(caminho_imagem) != OK:
 		push_error(\"❌ Erro ao carregar imagem.\")
 		return
-								
-	# Cria textura a partir da imagem
+
 	var tex := ImageTexture.create_from_image(img)
-	
-	# Cria um Viewport do mesmo tamanho da imagem
+
+	# Viewport
 	var viewport := SubViewport.new()
 	viewport.disable_3d = true
 	viewport.size = tex.get_size()
@@ -20,29 +19,34 @@ func aplicar_material_e_salvar(caminho_imagem: String, material: Material) -> vo
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	viewport.transparent_bg = true
 	add_child(viewport)
-	
-	# Sprite com o material aplicado
+
+	# Sprite com shader/material
 	var sprite := Sprite2D.new()
 	sprite.texture = tex
 	sprite.material = material
-	sprite.position = tex.get_size() / 2
+	sprite.position = tex.get_size() * 0.5
 	viewport.add_child(sprite)
-						
+
+	# Espera renderizar
 	await RenderingServer.frame_post_draw
-	
-	# Salva como PNG no diretório de imagens
-	var imagem_editada := viewport.get_texture().get_image()
-	var dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
-	var nome = \"imagem_editada_\" + Time.get_time_string_from_system().replace(\":\", \"-\") + \".png\"
-	var caminho = dir + \"/\" + nome
-	
-	if imagem_editada.save_png(caminho) == OK:
-		print(\"✅ Imagem salva em:\", caminho)
+
+	# Captura imagem
+	var imagem_editada: Image = viewport.get_texture().get_image()
+
+	# =========================
+	# Salvar NA MESMA PASTA
+	# =========================
+	var dir := caminho_imagem.get_base_dir()
+	var nome_base := caminho_imagem.get_file().get_basename()
+	var novo_caminho := \"%s/%s_editada.png\" % [dir, nome_base]
+
+	if imagem_editada.save_png(novo_caminho) == OK:
+		print(\"✅ Imagem salva em:\", novo_caminho)
 	else:
 		push_error(\"❌ Erro ao salvar a imagem!\")
-	
+
 	viewport.queue_free()
 "
 
-[node name="time" type="Node"]
+[node name="time" type="Node" unique_id=194913602]
 script = SubResource("GDScript_sts5m")

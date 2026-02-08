@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DataBatalha" format=3 uid="uid://cqc56s08t71id"]
+
+[ext_resource type="Script" uid="uid://cau662oka6mjm" path="res://Godot/classes/DATAS/DataAudioPlayer.gd" id="1_hlft3"]
+[ext_resource type="PackedScene" uid="uid://b63e1rlaxs4he" path="res://Godot/Godot Cenas/Inimigos Batalha/Sickle_Warrior/Sickle Warrior.tscn" id="2_m8br4"]
+[ext_resource type="Script" uid="uid://bbe4ekg3rff07" path="res://Godot/classes/DATAS/DataBatalha.gd" id="3_cwvvq"]
+
+[sub_resource type="Resource" id="Resource_x30qe"]
+script = ExtResource("1_hlft3")
+caminho = "uid://by2wfqtc1k0m0"
+volume = 95.0
+loop = true
+atraso = 0.5
+metadata/_custom_type_script = "uid://cau662oka6mjm"
+
+[resource]
+script = ExtResource("3_cwvvq")
+inimigos = Array[PackedScene]([ExtResource("2_m8br4")])
+dialogo = "uid://w52cka1b774n"
+start_dialogo = "SickleWarrior"
+DataAudio = SubResource("Resource_x30qe")
+metadata/_custom_type_script = "uid://bbe4ekg3rff07"

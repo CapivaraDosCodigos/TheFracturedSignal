@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bs4msvygwgrdh"]
+[gd_scene format=3 uid="uid://bs4msvygwgrdh"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -79,31 +79,45 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(320, 192, 64, 64)
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=145033243]
 layer = 95
 script = ExtResource("1_36de5")
 next_action = &"confirm"
 
-[node name="Balloon" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=423268552]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer" unique_id=864584994]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Balloon" type="Control" parent="HBoxContainer" unique_id=287748164]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(952, 0)
+layout_mode = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Balloon" unique_id=1995601526]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 379
 
-[node name="PanelContainer" type="NinePatchRect" parent="Balloon/MarginContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/Balloon/VBoxContainer" unique_id=1423116006]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Balloon/VBoxContainer" unique_id=1222257339]
+custom_minimum_size = Vector2(0, 179)
+layout_mode = 2
+
+[node name="PanelContainer" type="NinePatchRect" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer" unique_id=1961446934]
 clip_children = 2
 layout_mode = 2
 texture = ExtResource("4_83g4i")
@@ -115,7 +129,7 @@ patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer" unique_id=2027223957]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,15 +141,15 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=1303742716]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1258438135]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1705078615]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
@@ -146,7 +160,7 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=201673315 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -157,7 +171,7 @@ skip_action = &"menu"
 seconds_per_step = 0.05
 seconds_per_pause_step = 0.35
 
-[node name="ResponsesMenu" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="HBoxContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1232367989 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -168,7 +182,7 @@ script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 next_action = &"confirm"
 
-[node name="ResponseExample" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" node_paths=PackedStringArray("texture_rect", "response_example")]
+[node name="ResponseExample" type="VBoxContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" unique_id=1207432868 node_paths=PackedStringArray("texture_rect", "response_example")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -4
@@ -176,7 +190,7 @@ script = ExtResource("9_wbrl0")
 texture_rect = NodePath("TextureRect")
 response_example = NodePath("ResponseExample")
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample" unique_id=992889500]
 modulate = Color(0.85, 0.85, 0.85, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -185,7 +199,7 @@ texture = ExtResource("10_wbrl0")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="ResponseExample" type="Button" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample"]
+[node name="ResponseExample" type="Button" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu/ResponseExample" unique_id=710092135]
 material = ExtResource("10_83g4i")
 layout_mode = 2
 size_flags_horizontal = 4
@@ -203,7 +217,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_icj72")
 button_mask = 0
 text = "Response example"
 
-[node name="Panel" type="Panel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=957855306]
 visible = false
 z_index = 1
 material = ExtResource("10_83g4i")
@@ -213,7 +227,7 @@ size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_83g4i")
 script = ExtResource("7_83g4i")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel" unique_id=603500323]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -223,7 +237,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_right = 30
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Panel/MarginContainer" unique_id=1413415754]
 z_index = -1
 use_parent_material = true
 custom_minimum_size = Vector2(108, 108)
@@ -231,5 +245,9 @@ layout_mode = 2
 expand_mode = 5
 stretch_mode = 5
 
-[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="response_selected" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=2017352539]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="gui_input" from="HBoxContainer/Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="HBoxContainer/Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

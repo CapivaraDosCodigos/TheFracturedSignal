@@ -12,7 +12,7 @@ static func Carregar(slot: int, temporada: int) -> SeasonResource:
 	var path: String = Database.SAVE_PATH % slot
 	if not FileAccess.file_exists(path):
 		if temporada == 1:
-			prints_sizes("res://Godot/classes/DATAS/SeasonsResource/Temporada1.tres")
+			prints_sizes(GlobalSeasons.T1.resource_path)
 			return GlobalSeasons.T1.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		return null
 	

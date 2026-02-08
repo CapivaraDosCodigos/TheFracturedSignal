@@ -95,7 +95,7 @@ func _trocar_para_batalha(player_pos: Vector2) -> void:
 
 	var spawn_pos: Vector2 = (player_pos + global_position) * 0.5
 	Manager.StartBatalha(databatalha, spawn_pos)
-	queue_free()
+	#queue_free()
 
 func _update_camada() -> void:
 	for i in [3, 4, 5]:
@@ -129,7 +129,7 @@ func _on_area_colisao_body_entered(body: Node2D) -> void:
 
 	if body is ObjectPlayer2D and Manager.isState("MAP"):
 		local_body = body
-		Manager.change_state("DIALOGUE")
+		Manager.set_state("DIALOGUE")
 		sprite.play("Attack")
 
 func _on_sprite_animation_finished() -> void:

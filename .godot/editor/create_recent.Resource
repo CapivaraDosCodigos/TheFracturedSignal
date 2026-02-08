@@ -1,4 +1,5 @@
-DataPackedScene
+ShaderMaterial
+Shader
 AtlasTexture
 PackedScene
 DialogueResource
@@ -8,7 +9,6 @@ DataItem
 Effect
 Executable
 PlayerData
-Shader
 SpriteFrames
 ItemArma
 ItemArmadura

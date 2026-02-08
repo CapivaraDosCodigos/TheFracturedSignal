@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://oswh2pmkxvff"]
+
+[ext_resource type="Script" uid="uid://b87x0fkq7trfu" path="res://Areais/Batalha/scripts/AlmaBody2D.gd" id="1_uwuaw"]
+[ext_resource type="Texture2D" uid="uid://luclo7tqem4y" path="res://texture/PNG/icon/almas/Alma.png" id="2_bcymp"]
+[ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="3_vtkos"]
+[ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="4_g87we"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uryig"]
+radius = 9.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frmhu"]
+radius = 10.5
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_frmhu"]
+a = Vector2(16, -16)
+b = Vector2(-16, -16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_skc7f"]
+a = Vector2(16, -16)
+b = Vector2(16, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nkp3r"]
+a = Vector2(16, 16)
+b = Vector2(-16, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dww0e"]
+a = Vector2(-16, -16)
+b = Vector2(-16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqqmq"]
+size = Vector2(18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px5ev"]
+atlas = ExtResource("4_g87we")
+region = Rect2(240, 816, 16, 16)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=334154456]
+
+[node name="testes" type="Node2D" parent="." unique_id=1726821607]
+scale = Vector2(4, 4)
+
+[node name="AlmaBody2D" type="CharacterBody2D" parent="testes" unique_id=1395483969]
+position = Vector2(128, 128)
+scale = Vector2(0.5, 0.5)
+collision_layer = 32
+collision_mask = 160
+script = ExtResource("1_uwuaw")
+invincible_time = 0.25
+metadata/_custom_type_script = "uid://b87x0fkq7trfu"
+
+[node name="Collision" type="CollisionShape2D" parent="testes/AlmaBody2D" unique_id=797579028]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_uryig")
+
+[node name="Sprite2D" type="Sprite2D" parent="testes/AlmaBody2D" unique_id=1933948039]
+texture = ExtResource("2_bcymp")
+
+[node name="Area2D" type="Area2D" parent="testes/AlmaBody2D" unique_id=350609650]
+collision_layer = 32
+collision_mask = 64
+
+[node name="Collision" type="CollisionShape2D" parent="testes/AlmaBody2D/Area2D" unique_id=1249720679]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_frmhu")
+debug_color = Color(0.0043103276, 0.06785011, 0.70196074, 0.41960785)
+
+[node name="escudo" type="Area2D" parent="testes/AlmaBody2D" unique_id=1280627651]
+rotation = 0.78539705
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testes/AlmaBody2D/escudo" unique_id=442636944]
+shape = SubResource("SegmentShape2D_frmhu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="testes/AlmaBody2D/escudo" unique_id=639842854]
+shape = SubResource("SegmentShape2D_skc7f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="testes/AlmaBody2D/escudo" unique_id=467031508]
+shape = SubResource("SegmentShape2D_nkp3r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="testes/AlmaBody2D/escudo" unique_id=1891777619]
+shape = SubResource("SegmentShape2D_dww0e")
+
+[node name="invincible_timer" type="Timer" parent="testes/AlmaBody2D" unique_id=1594450964]
+unique_name_in_owner = true
+
+[node name="Bala2D" type="CharacterBody2D" parent="testes" unique_id=1870544469 node_paths=PackedStringArray("alma")]
+position = Vector2(128, 48)
+scale = Vector2(0.5, 0.5)
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("3_vtkos")
+dano = 8
+speed = 100.0
+direction = Vector2(0, 1)
+alma = NodePath("../AlmaBody2D")
+metadata/_custom_type_script = "uid://qnklpnihflc2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testes/Bala2D" unique_id=471911]
+shape = SubResource("RectangleShape2D_wqqmq")
+
+[node name="Sprite2D" type="Sprite2D" parent="testes/Bala2D" unique_id=1220535002]
+scale = Vector2(1.25, 1.25)
+texture = SubResource("AtlasTexture_px5ev")
+
+[node name="Visible" type="VisibleOnScreenEnabler2D" parent="testes/Bala2D" unique_id=217568662]
+
+[connection signal="timeout" from="testes/AlmaBody2D/invincible_timer" to="testes/AlmaBody2D" method="_end_invincibility"]
+[connection signal="screen_exited" from="testes/Bala2D/Visible" to="testes/Bala2D" method="_on_visible_screen_exited"]

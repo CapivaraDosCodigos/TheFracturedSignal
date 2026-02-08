@@ -1,10 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwcyxp7jea15x"]
+[gd_scene format=3 uid="uid://cwcyxp7jea15x"]
 
-[ext_resource type="Script" uid="uid://chx8dnnb34sp4" path="res://Godot/Godot Cenas/intro.gd" id="1_4n26g"]
+[ext_resource type="Script" uid="uid://chx8dnnb34sp4" path="res://Godot/Godot Scripts/intro/intro.gd" id="1_4n26g"]
 [ext_resource type="Material" uid="uid://cgnunqt42nrdv" path="res://Resources/materials/BATALHA.tres" id="1_ry48r"]
 [ext_resource type="Texture2D" uid="uid://d0a5ye1eatlnt" path="res://texture/paleta/Screenshot_31-600x600.png" id="2_nyooo"]
 [ext_resource type="FontFile" uid="uid://d300w44j3djpe" path="res://texture/font/m5x7.ttf" id="3_r86ht"]
-[ext_resource type="Script" uid="uid://bcabr674wkilu" path="res://Godot/Godot Scripts/introSAVES.gd" id="4_ry48r"]
+[ext_resource type="Script" uid="uid://bcabr674wkilu" path="res://Godot/Godot Scripts/intro/introSAVES.gd" id="4_ry48r"]
 [ext_resource type="Texture2D" uid="uid://cmesx6notnna4" path="res://texture/PNG/bordas UI/fundoprovisório.png" id="5_bqs7j"]
 [ext_resource type="Texture2D" uid="uid://ekh2ult7cdhj" path="res://Resources/texturas/intro.tres" id="7_bqs7j"]
 [ext_resource type="FontFile" uid="uid://cf6tfynp8qcsu" path="res://texture/font/at01.ttf" id="7_nx36f"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b6aeu0vlmykxt" path="res://texture/objetos/items/itensNormais.png" id="11_7k7oo"]
 [ext_resource type="Script" uid="uid://b5pydke1gg5le" path="res://Godot/classes/Nodes/ButtonUI.gd" id="11_nyooo"]
 [ext_resource type="Texture2D" uid="uid://coebsgftmwiva" path="res://texture/PNG/icon/almas/alma branca.png" id="12_6ps33"]
-[ext_resource type="Script" uid="uid://cs48h1atcstb4" path="res://Godot/Godot Cenas/sair.gd" id="14_6ps33"]
+[ext_resource type="Script" uid="uid://cs48h1atcstb4" path="res://Godot/Godot Scripts/intro/sair.gd" id="14_6ps33"]
 [ext_resource type="Texture2D" uid="uid://d0o86rw56xggp" path="res://texture/PNG/funds/morte.png" id="14_cd2wy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0a7ni"]
@@ -47,10 +47,10 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(448, 192, 64, 64)
 
-[node name="Intro" type="CanvasLayer"]
+[node name="Intro" type="CanvasLayer" unique_id=210929064]
 script = ExtResource("1_4n26g")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1025994476]
 material = ExtResource("1_ry48r")
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +60,7 @@ grow_vertical = 2
 texture = ExtResource("2_nyooo")
 expand_mode = 1
 
-[node name="MarginContainer5" type="MarginContainer" parent="."]
+[node name="MarginContainer5" type="MarginContainer" parent="." unique_id=186807723]
 visible = false
 offset_top = 133.0
 offset_right = 1152.0
@@ -70,40 +70,47 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 24
 
-[node name="Label" type="Label" parent="MarginContainer5"]
+[node name="Label" type="Label" parent="MarginContainer5" unique_id=1095280489]
 layout_mode = 2
 text = "The Fractured Signal"
 label_settings = SubResource("LabelSettings_0a7ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuSaves" type="Control" parent="."]
-layout_mode = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1286805608]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1841178357]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuSaves" type="Control" parent="HBoxContainer" unique_id=128381237]
+custom_minimum_size = Vector2(952, 0)
+layout_mode = 2
 script = ExtResource("4_ry48r")
 metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuSaves"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MenuSaves" unique_id=1527789369]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 64
+theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 64
+theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="Panel" type="Panel" parent="MenuSaves/MarginContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/MenuSaves/MarginContainer" unique_id=391680809]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u2rf6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuSaves"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MenuSaves" unique_id=527634425]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,22 +118,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="MenuSaves/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/MenuSaves/VBoxContainer" unique_id=158600750]
 layout_mode = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 70
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuSaves/VBoxContainer/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer2" unique_id=203161311]
 layout_mode = 2
 
-[node name="inicia1" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer" node_paths=PackedStringArray("control_right", "control_bottom")]
+[node name="inicia1" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1346915748 node_paths=PackedStringArray("control_right", "control_bottom")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
@@ -143,11 +150,12 @@ control_right = NodePath("../deletar")
 control_bottom = NodePath("../../../MarginContainer3/HBoxContainer/inicia2")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="deletar" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer" node_paths=PackedStringArray("control_left", "control_bottom", "control_end", "control_bottom_alternative")]
+[node name="deletar" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=486604361 node_paths=PackedStringArray("control_left", "control_bottom", "control_end", "control_bottom_alternative")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
@@ -166,22 +174,22 @@ control_end = NodePath("../inicia1")
 control_bottom_alternative = NodePath("../../../MarginContainer3/HBoxContainer/inicia2")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MenuSaves/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/MenuSaves/VBoxContainer" unique_id=1302572977]
 layout_mode = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuSaves/VBoxContainer/MarginContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer3" unique_id=651297275]
 layout_mode = 2
 
-[node name="inicia2" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer" node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
+[node name="inicia2" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=956320148 node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
@@ -197,10 +205,10 @@ control_right = NodePath("../deletar2")
 control_bottom = NodePath("../../../MarginContainer4/HBoxContainer/inicia3")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="deletar2" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer" node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
+[node name="deletar2" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=1006901049 node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 2
 mouse_behavior_recursive = 1
@@ -222,22 +230,22 @@ top_alternative = NodePath("../../../MarginContainer2/HBoxContainer/inicia1")
 control_bottom_alternative = NodePath("../../../MarginContainer4/HBoxContainer/inicia3")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="MarginContainer4" type="MarginContainer" parent="MenuSaves/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/MenuSaves/VBoxContainer" unique_id=1612222555]
 layout_mode = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuSaves/VBoxContainer/MarginContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer4" unique_id=184880525]
 layout_mode = 2
 
-[node name="inicia3" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer" node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
+[node name="inicia3" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer" unique_id=1779093962 node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
@@ -253,11 +261,12 @@ control_right = NodePath("../deletar3")
 control_bottom = NodePath("../../../MarginContainer5/HBoxContainer/inicia4")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="deletar3" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer" node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
+[node name="deletar3" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer" unique_id=1519489656 node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
@@ -278,22 +287,22 @@ top_alternative = NodePath("../../../MarginContainer3/HBoxContainer/inicia2")
 control_bottom_alternative = NodePath("../../../MarginContainer5/HBoxContainer/inicia4")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="MarginContainer5" type="MarginContainer" parent="MenuSaves/VBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="HBoxContainer/MenuSaves/VBoxContainer" unique_id=533462217]
 layout_mode = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuSaves/VBoxContainer/MarginContainer5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer5" unique_id=614480235]
 layout_mode = 2
 
-[node name="inicia4" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer" node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
+[node name="inicia4" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer" unique_id=1505571246 node_paths=PackedStringArray("control_top", "control_right", "control_bottom")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
@@ -309,11 +318,12 @@ control_right = NodePath("../deletar4")
 control_bottom = NodePath("../../../MarginContainer6/HBoxContainer/inicia5")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="deletar4" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer" node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
+[node name="deletar4" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer" unique_id=1351003106 node_paths=PackedStringArray("control_left", "control_top", "control_bottom", "control_end", "top_alternative", "control_bottom_alternative")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
@@ -334,21 +344,21 @@ top_alternative = NodePath("../../../MarginContainer4/HBoxContainer/inicia3")
 control_bottom_alternative = NodePath("../../../MarginContainer6/HBoxContainer/inicia5")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="MarginContainer6" type="MarginContainer" parent="MenuSaves/VBoxContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="HBoxContainer/MenuSaves/VBoxContainer" unique_id=1797530217]
 layout_mode = 2
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 70
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuSaves/VBoxContainer/MarginContainer6"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer6" unique_id=1380449488]
 layout_mode = 2
 
-[node name="inicia5" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer" node_paths=PackedStringArray("control_top", "control_right")]
+[node name="inicia5" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer" unique_id=1512487508 node_paths=PackedStringArray("control_top", "control_right")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(820, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
 theme_override_fonts/font = ExtResource("7_nx36f")
 theme_override_font_sizes/font_size = 48
@@ -363,11 +373,12 @@ control_top = NodePath("../../../MarginContainer5/HBoxContainer/inicia4")
 control_right = NodePath("../deletar5")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="deletar5" type="Button" parent="MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer" node_paths=PackedStringArray("control_left", "control_top", "control_end", "top_alternative")]
+[node name="deletar5" type="Button" parent="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer" unique_id=1266860859 node_paths=PackedStringArray("control_left", "control_top", "control_end", "top_alternative")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_color = Color(0.454902, 0.662745, 0.960784, 1)
@@ -386,7 +397,11 @@ control_end = NodePath("../inicia5")
 top_alternative = NodePath("../../../MarginContainer5/HBoxContainer/inicia4")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="Sair" type="Control" parent="."]
+[node name="Control2" type="Control" parent="HBoxContainer" unique_id=813959654]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sair" type="Control" parent="." unique_id=1826398651]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -397,7 +412,7 @@ grow_vertical = 2
 script = ExtResource("14_6ps33")
 metadata/_custom_type_script = "uid://b1uvtvif0pg8j"
 
-[node name="MarginContainer" type="MarginContainer" parent="Sair"]
+[node name="MarginContainer" type="MarginContainer" parent="Sair" unique_id=1143044510]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,14 +424,14 @@ theme_override_constants/margin_top = 192
 theme_override_constants/margin_right = 318
 theme_override_constants/margin_bottom = 188
 
-[node name="PanelContainer" type="PanelContainer" parent="Sair/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Sair/MarginContainer" unique_id=468346754]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6ps33")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Sair/MarginContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Sair/MarginContainer/PanelContainer" unique_id=1978388550]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Sair/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Sair/MarginContainer/PanelContainer/VBoxContainer" unique_id=1842322366]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("7_nx36f")
@@ -425,15 +440,16 @@ text = "Deseja realmente sair do jogo?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Sair/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Sair/MarginContainer/PanelContainer/VBoxContainer" unique_id=785493745]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Voltar" type="Button" parent="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("control_right")]
+[node name="Voltar" type="Button" parent="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=156810194 node_paths=PackedStringArray("control_right")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
@@ -448,10 +464,11 @@ icon_alma = ExtResource("12_6ps33")
 control_right = NodePath("../Sair")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[node name="Sair" type="Button" parent="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("control_left")]
+[node name="Sair" type="Button" parent="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=531224642 node_paths=PackedStringArray("control_left")]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 3
+focus_mode = 1
+focus_behavior_recursive = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 theme_override_colors/font_focus_color = Color(0.5578202, 0.5578202, 0.5578202, 1)
@@ -466,15 +483,15 @@ icon_alma = ExtResource("12_6ps33")
 control_left = NodePath("../Voltar")
 metadata/_custom_type_script = "uid://b5pydke1gg5le"
 
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer/inicia1" to="MenuSaves" method="_on_inicia_1_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer/deletar" to="MenuSaves" method="_on_deletar_1_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer/inicia2" to="MenuSaves" method="_on_inicia_2_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer/deletar2" to="MenuSaves" method="_on_deletar_2_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer/inicia3" to="MenuSaves" method="_on_inicia_3_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer/deletar3" to="MenuSaves" method="_on_deletar_3_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer/inicia4" to="MenuSaves" method="_on_inicia_4_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer/deletar4" to="MenuSaves" method="_on_deletar_4_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer/inicia5" to="MenuSaves" method="_on_inicia_5_pressed"]
-[connection signal="pressed" from="MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer/deletar5" to="MenuSaves" method="_on_deletar_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer/inicia1" to="HBoxContainer/MenuSaves" method="_on_inicia_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer2/HBoxContainer/deletar" to="HBoxContainer/MenuSaves" method="_on_deletar_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer/inicia2" to="HBoxContainer/MenuSaves" method="_on_inicia_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer3/HBoxContainer/deletar2" to="HBoxContainer/MenuSaves" method="_on_deletar_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer/inicia3" to="HBoxContainer/MenuSaves" method="_on_inicia_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer4/HBoxContainer/deletar3" to="HBoxContainer/MenuSaves" method="_on_deletar_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer/inicia4" to="HBoxContainer/MenuSaves" method="_on_inicia_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer5/HBoxContainer/deletar4" to="HBoxContainer/MenuSaves" method="_on_deletar_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer/inicia5" to="HBoxContainer/MenuSaves" method="_on_inicia_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/MenuSaves/VBoxContainer/MarginContainer6/HBoxContainer/deletar5" to="HBoxContainer/MenuSaves" method="_on_deletar_5_pressed"]
 [connection signal="pressed" from="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Voltar" to="Sair" method="_on_voltar_pressed"]
 [connection signal="pressed" from="Sair/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Sair" to="Sair" method="_on_sair_pressed"]

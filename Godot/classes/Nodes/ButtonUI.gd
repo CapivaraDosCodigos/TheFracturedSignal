@@ -38,6 +38,8 @@ func _atualizar_cor_icon() -> void:
 		return
 
 	var player: PlayerData = Manager.get_Player()
+	if not player:
+		return
 	match player.Soul:
 		PlayerData.Souls.Empty:
 			modulate = Color.WHITE

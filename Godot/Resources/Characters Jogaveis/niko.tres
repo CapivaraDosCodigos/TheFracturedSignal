@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://cs0khqyxc6mmc"]
+
+[ext_resource type="Resource" uid="uid://djvpkc34hd5r7" path="res://Godot/Resources/Itens E Mais/Armas/Signal_Weapon.tres" id="1_vf178"]
+[ext_resource type="Resource" uid="uid://014vc1tqhv3q" path="res://Godot/Resources/Itens E Mais/Armaduras/óculos_simples.tres" id="2_cf0ll"]
+[ext_resource type="Script" uid="uid://dg13ubj4h7w4m" path="res://Godot/classes/Itens E Mais/Classes/CirurgiaoClasse.gd" id="3_6gx86"]
+[ext_resource type="Script" uid="uid://dtm0qkgm2180b" path="res://Godot/classes/Itens E Mais/executables.gd" id="4_sr2sl"]
+[ext_resource type="Texture2D" uid="uid://ddmkqij7ityvb" path="res://texture/characters/93965.png" id="5_7yaji"]
+[ext_resource type="Script" uid="uid://oan0jvd28y7r" path="res://Godot/classes/Itens E Mais/Items/DataItem.gd" id="6_nhf8f"]
+[ext_resource type="Script" uid="uid://cmfwq25tt8fwe" path="res://Godot/classes/Itens E Mais/Inventory.gd" id="7_p44v2"]
+[ext_resource type="Script" uid="uid://cioncjdbh77k8" path="res://Godot/classes/Itens E Mais/Effects.gd" id="8_6olpg"]
+[ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/DATAS/PlayerData.gd" id="9_gdjip"]
+
+[sub_resource type="Resource" id="Resource_qhnxs"]
+script = ExtResource("3_6gx86")
+Arma = ExtResource("1_vf178")
+Armadura = ExtResource("2_cf0ll")
+metadata/_custom_type_script = "uid://dg13ubj4h7w4m"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1kb6"]
+atlas = ExtResource("5_7yaji")
+region = Rect2(679, 0, 97, 96)
+
+[sub_resource type="Resource" id="Resource_4b26e"]
+script = ExtResource("7_p44v2")
+metadata/_custom_type_script = "uid://cmfwq25tt8fwe"
+
+[resource]
+script = ExtResource("9_gdjip")
+Life = 150
+baseLife = 150
+baseAttack = 10
+baseDefense = 10
+InventoryPlayer = SubResource("Resource_4b26e")
+Classe = SubResource("Resource_qhnxs")
+Disquetes = 1
+PlayerBatalhaPath = "uid://bxytmso8hirup"
+ObjectPlayerPath = "uid://neeruowotbdj"
+Nome = "Niko"
+Icone = SubResource("AtlasTexture_v1kb6")
+metadata/_custom_type_script = "uid://bj6w76m0cfh2q"

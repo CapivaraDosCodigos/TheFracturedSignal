@@ -1,15 +1,16 @@
+@icon("res://texture/PNG/icon/godot/device-gamepad-2.svg")
 extends Node
 
 #region variables
 
 enum GameState { MAP, BATTLE, CUTSCENES, DIALOGUE, BATTLE_MENU, NOT_IN_THE_GAME, SAVE_MENU, MENU }
-const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/BATALHA.tscn")
+const BATALHA_SCENE: PackedScene = preload("res://Areais/Batalha/cenas/BATALHASave1.tscn")
 
 @onready var audios: Dictionary[int , AudioPlayer] = { 1: $AudioPlayerS, 2: $AudioPlayerZ, 3: $AudioPlayer5 }
 @onready var fps_label: Label = %fps_label
 @onready var Menu: CanvasLayer = $MENU
 
-@export var CurrentStatus: GameState = GameState.MAP
+@export var CurrentStatus: GameState = GameState.NOT_IN_THE_GAME
 
 var GameStateString: Array = GameState.keys()
 
@@ -35,14 +36,14 @@ var InGame: bool = false
 func get_Player(nome: String = CurrentPlayer) -> PlayerData:
 	if PlayersAtuais.has(nome):
 		return PlayersAtuais.get(nome)
-	push_error("Jogador '%s' não encontrado!" % nome)
+	#push_error("Jogador '%s' não encontrado!" % nome)
 	return null
 
 func get_Inventory(nome: String = CurrentPlayer) -> Inventory:
 	var player: PlayerData = get_Player(nome)
 	return player.InventoryPlayer if player != null else null
 
-func change_state(estado: String, espera: float = 0.0) -> void:
+func set_state(estado: String, espera: float = 0.0) -> void:
 	estado = estado.strip_edges().to_upper()
 
 	if GameStateString.has(estado):
@@ -69,6 +70,7 @@ func tocar_musica(DataAudio: DataAudioPlayer, canal: int = 1) -> void:
 		push_warning("Canal %s inexistente!" % canal)
 
 func StartBatalha(batalhaData: DataBatalha, pos: Vector2 = Vector2.ZERO):
+	await get_tree().process_frame
 	var instBatalha: Batalha2D = BATALHA_SCENE.instantiate()
 	tocar_musica(PathsMusic.SOUND_EFFECT_BATTLE_START_JINGLE)
 	batalhaData.dungeons2D.iniciar_batalha()
@@ -118,7 +120,7 @@ func Game_Over() -> void:
 
 func Return_To_Title() -> void:
 	await get_tree().process_frame
-	change_state("NOT_IN_THE_GAME")
+	set_state("NOT_IN_THE_GAME")
 	_clear(true)
 	get_tree().change_scene_to_file("res://Godot/Godot Cenas/intro.tscn")
 
@@ -126,8 +128,12 @@ func InGameIsTrue():
 	while not InGame:
 		await get_tree().process_frame
 
+#func _ready() -> void:
+	#$time.aplicar_material_e_salvar("res://texture/paleta/PaletaDeCores.png" , load("res://shader/testtop.tres"))
+
 func _process(_delta):
 	fps_label.text = "FPS: %s | Estado: %s | slot: %s" % [Engine.get_frames_per_second(), GameStateString[CurrentStatus], CurrentSlot]
+	#fps_label.text = "FPS: %s" % [Engine.get_frames_per_second()]
 	fps_label.visible = Global.configures.fps_bool
 	
 	if raio:

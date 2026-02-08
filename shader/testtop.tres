@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dgpriprn74fd4"]
+
+[ext_resource type="Shader" uid="uid://s2v2mubiwj7f" path="res://shader/menussaturacao.gdshader" id="1_tlx44"]
+
+[resource]
+shader = ExtResource("1_tlx44")
+shader_parameter/saturation = 0.4

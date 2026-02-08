@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://by72qrtpqld7j"]
+[gd_scene format=3 uid="uid://by72qrtpqld7j"]
 
 [ext_resource type="Texture2D" uid="uid://dw4gbgmxx3302" path="res://texture/PNG/bordas UI/167406.png" id="1_c4x04"]
 [ext_resource type="Script" uid="uid://4v1xm7lpqc5j" path="res://Areais/Batalha/scripts/BattleArenaControl.gd" id="2_4xah7"]
@@ -23,18 +23,10 @@ b = Vector2(-11.4998, 24.0001)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ig8w"]
 size = Vector2(139.5, 139)
 
-[node name="BATTLE_ARENA" type="NinePatchRect"]
+[node name="BATTLE_ARENA" type="NinePatchRect" unique_id=1217143061]
 z_index = 4
-anchors_preset = -1
-anchor_left = 0.375
-anchor_top = 0.207
-anchor_right = 0.625
-anchor_bottom = 0.739
-offset_left = -3.0517578e-05
-offset_top = -0.7800064
-offset_right = -144.0
-offset_bottom = -144.06
-scale = Vector2(2, 2)
+offset_right = 288.0
+offset_bottom = 288.0
 texture = ExtResource("1_c4x04")
 region_rect = Rect2(37, 25, 75, 75)
 patch_margin_left = 2
@@ -45,47 +37,49 @@ axis_stretch_horizontal = 1
 script = ExtResource("2_4xah7")
 metadata/_custom_type_script = "uid://4v1xm7lpqc5j"
 
-[node name="objetos" type="Node2D" parent="."]
+[node name="objetos" type="Node2D" parent="." unique_id=401097349]
+scale = Vector2(2, 2)
 
-[node name="Ambição" parent="objetos" instance=ExtResource("3_4yhrn")]
+[node name="Ambição" parent="objetos" unique_id=1321818376 instance=ExtResource("3_4yhrn")]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(72.000015, 72)
-scale = Vector2(1, 1)
+position = Vector2(72.5, 72)
 
-[node name="AmbiçãoMake" type="Marker2D" parent="objetos"]
+[node name="AmbiçãoMake" type="Marker2D" parent="objetos" unique_id=997309304]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(72.000015, 72)
+position = Vector2(72, 72)
 
-[node name="Static2D" type="StaticBody2D" parent="."]
+[node name="Static2D" type="StaticBody2D" parent="." unique_id=947001811]
+scale = Vector2(2, 2)
 collision_layer = 128
 collision_mask = 160
 
-[node name="Shape2D" type="CollisionShape2D" parent="Static2D"]
+[node name="Shape2D" type="CollisionShape2D" parent="Static2D" unique_id=545517419]
 position = Vector2(0, -7)
 shape = SubResource("SegmentShape2D_7ig8w")
 
-[node name="Shape2D2" type="CollisionShape2D" parent="Static2D"]
+[node name="Shape2D2" type="CollisionShape2D" parent="Static2D" unique_id=2102042642]
 position = Vector2(9, 129.5)
 shape = SubResource("SegmentShape2D_py3aq")
 
-[node name="Shape2D3" type="CollisionShape2D" parent="Static2D"]
+[node name="Shape2D3" type="CollisionShape2D" parent="Static2D" unique_id=1088183128]
 position = Vector2(-3.5, 126)
 rotation = -1.57079
 shape = SubResource("SegmentShape2D_fq6de")
 
-[node name="Shape2D4" type="CollisionShape2D" parent="Static2D"]
+[node name="Shape2D4" type="CollisionShape2D" parent="Static2D" unique_id=1661007330]
 position = Vector2(115.5, 128)
 rotation = -1.57079
 shape = SubResource("SegmentShape2D_h7tth")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=887014501]
 visible = false
+scale = Vector2(2, 2)
 collision_layer = 128
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=786894173]
 position = Vector2(72.25, 72)
 shape = SubResource("RectangleShape2D_7ig8w")
 debug_color = Color(0.834632, 0.367256, 0.347572, 0.42)

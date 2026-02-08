@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c0q1ahwqu3qem"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c0q1ahwqu3qem"]
 
 [ext_resource type="Shader" uid="uid://foh2gua8ee7f" path="res://shader/palette_limiterONE.gdshader" id="1_qibnp"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://dx8pn0dd7mhkq"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dx8pn0dd7mhkq"]
 
 [ext_resource type="Texture2D" uid="uid://bloi5xhuuln3q" path="res://texture/characters/inimigos/sickle_sheet.png" id="1_7kd4u"]
 

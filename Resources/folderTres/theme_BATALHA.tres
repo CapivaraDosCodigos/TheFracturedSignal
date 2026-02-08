@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b1cv61ghjk7ko"]
+[gd_resource type="Theme" format=3 uid="uid://b1cv61ghjk7ko"]
 
 [ext_resource type="FontFile" uid="uid://ckj2wo0x2kbuu" path="res://texture/font/kenney_mini_square.ttf" id="1_rm82l"]
 [ext_resource type="StyleBox" uid="uid://cflugrgbnk4cx" path="res://Resources/BoxTexture/zeko.tres" id="2_3j68d"]

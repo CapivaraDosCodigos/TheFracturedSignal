@@ -47,10 +47,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			_atualizar_itemlist()
 
 func _atualizar_itemlist() -> void:
-	var items = Manager.get_Inventory().items
+	var inventory = Manager.get_Inventory()
+	if not inventory:
+		return
+	
 	lista.clear()
+	if inventory.items.is_empty():
+		return
 
-	for item in items:
+	for item in inventory.items:
 		lista.add_item(item.nome, item.icone)
 
 	if current_index >= lista.get_item_count():

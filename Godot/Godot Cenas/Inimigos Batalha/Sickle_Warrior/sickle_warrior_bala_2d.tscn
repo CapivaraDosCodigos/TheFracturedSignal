@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://crvo8xvq6vxih"]
+
+[ext_resource type="Script" uid="uid://qnklpnihflc2" path="res://Godot/classes/Nodes/bala2D.gd" id="1_nhq22"]
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="2_071ev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li26n"]
+atlas = ExtResource("2_071ev")
+region = Rect2(0, 784, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj8lf"]
+size = Vector2(16, 16)
+
+[node name="SickleWarriorBala2D" type="CharacterBody2D" unique_id=1227747840 node_paths=PackedStringArray("time")]
+scale = Vector2(1.25, 1.25)
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("1_nhq22")
+dano = 5
+speed = 320.0
+time = NodePath("")
+metadata/_custom_type_script = "uid://qnklpnihflc2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=900124734]
+texture = SubResource("AtlasTexture_li26n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1719015969]
+shape = SubResource("RectangleShape2D_vj8lf")
+
+[node name="Visible" type="VisibleOnScreenEnabler2D" parent="." unique_id=2141398261]
+rect = Rect2(-8, -8, 16, 16)

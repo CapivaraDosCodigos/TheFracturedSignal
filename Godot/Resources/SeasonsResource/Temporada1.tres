@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SeasonResource" format=3 uid="uid://bssdj03dl2g86"]
+
+[ext_resource type="Script" uid="uid://uvwqo1wkbayg" path="res://Godot/classes/DATAS/DataExtras.gd" id="3_4rbso"]
+[ext_resource type="Resource" uid="uid://cs0khqyxc6mmc" path="res://Godot/Resources/Characters Jogaveis/niko.tres" id="3_g38ra"]
+[ext_resource type="Script" uid="uid://bj6w76m0cfh2q" path="res://Godot/classes/DATAS/PlayerData.gd" id="4_pyvuc"]
+[ext_resource type="Resource" uid="uid://d302slnl03gy4" path="res://Godot/Resources/Characters Jogaveis/zenoT1.tres" id="4_x4jtl"]
+[ext_resource type="Script" uid="uid://dkyo4gl4kpktb" path="res://Godot/classes/DATAS/SeasonResource.gd" id="6_wvp6x"]
+
+[sub_resource type="Resource" id="Resource_apewl"]
+script = ExtResource("3_4rbso")
+metadata/_custom_type_script = "uid://uvwqo1wkbayg"
+
+[resource]
+script = ExtResource("6_wvp6x")
+nome = "Prison Of Nightmares"
+Players = Dictionary[String, ExtResource("4_pyvuc")]({
+"Niko": ExtResource("3_g38ra"),
+"Outro": ExtResource("3_g38ra"),
+"Zeno": ExtResource("4_x4jtl")
+})
+PlayersAtuais = Array[String](["Zeno", "Niko"])
+Extras = SubResource("Resource_apewl")
+StartScene = "uid://d07sx3chbl5sd"
+metadata/_custom_type_script = "uid://dkyo4gl4kpktb"

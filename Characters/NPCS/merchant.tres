@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://tkftlxtoee6j"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://tkftlxtoee6j"]
 
 [ext_resource type="Texture2D" uid="uid://b0hx4c37f7ysd" path="res://texture/characters/npcs/Characters/NPC merchant - with animated items/NPC Merchant-idle.png" id="1_oe8jh"]
 

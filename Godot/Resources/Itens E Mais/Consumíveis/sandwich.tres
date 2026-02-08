@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemConsumivel" format=3 uid="uid://bohkkwf5y2kmp"]
+
+[ext_resource type="Texture2D" uid="uid://dd4fqed37lxyg" path="res://texture/objetos/items/16x16.png" id="1_hm3bp"]
+[ext_resource type="Script" uid="uid://4uoggiynaxiu" path="res://Godot/classes/Itens E Mais/Items/ItemConsumivel.gd" id="2_7ur3f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqt6t"]
+atlas = ExtResource("1_hm3bp")
+region = Rect2(160, 528, 16, 16)
+
+[resource]
+script = ExtResource("2_7ur3f")
+cura = 1000
+preco = 30
+inBatalha = true
+need_player = true
+nome = "sandwich"
+icone = SubResource("AtlasTexture_dqt6t")
+descricao = "pão"
+metadata/_custom_type_script = "uid://4uoggiynaxiu"
